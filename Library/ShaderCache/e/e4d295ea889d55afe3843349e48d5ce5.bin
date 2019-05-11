@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: kibble -->
+  <Kibble.label>pinso</Kibble.label>
+  <!-- EN: Animal feed made from mixed meat and plant sources. Humans can eat it, but they really, really don't like it. -->
+  <Kibble.description>Pinso per l'alimentació d'animals fabricat amb carn i vegetals. Les persones en poden menjar, però no els agrada gens.</Kibble.description>
+  
+  <!-- EN: fine meal -->
+  <MealFine.label>ració bona</MealFine.label>
+  <!-- EN: A complex dish assembled with care from a variety of ingredients. -->
+  <MealFine.description>Un plat complex, preparat amb cura i utilitzant una àmplia selecció d'ingredients.</MealFine.description>
+  
+  <!-- EN: lavish meal -->
+  <MealLavish.label>ració exquisida</MealLavish.label>
+  <!-- EN: A masterpiece of the culinary arts, this meal nourishes the body, mind, and soul. -->
+  <MealLavish.description>Una obra d'art culinàr

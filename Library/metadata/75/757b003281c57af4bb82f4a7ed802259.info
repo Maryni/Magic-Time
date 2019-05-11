@@ -1,0 +1,24 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf12:version{cf2e4e5e-e5e0-4da9-930b-a526a91236e2} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 4
+	m_BoundingBoxMin = [ -512.0, -512.0, -32.0 ]
+	m_BoundingBoxMax = [ 512.0, 512.0, 32.0 ]
+	m_flConstantRadius = 1024.0
+	m_ConstantColor = [ 99, 170, 186, 255 ]
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderProjected"
+			m_bDisableOperator = true
+			m_hProjectedMaterial = resource:"materials/particle/particle_glow_01_projected.vmat"
+			m_bFlipHorizontal = true
+			m_nHSVShiftControlPoint = 62
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = 

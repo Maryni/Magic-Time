@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 34624edaccd9d704a95ed404d919b492
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: stud
+    100004: stud_short
+    400000: //RootNode
+    400002: stud
+    400004: stud_short
+    2100000: mat_wood_Plywood
+    2300000: stud
+    2300002: stud_short
+    3300000: stud
+    3300002: stud_short
+    4300000: stud
+    4300002: stud_short
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    ani

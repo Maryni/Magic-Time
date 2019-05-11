@@ -1,0 +1,83 @@
+rid.</para>
+      </summary>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the buttons.</param>
+      <param name="images">An array of textures on the buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The elements will be scaled to fit unless the style defines a fixedWidth to use. The height of the control will be determined from the number of elements.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.SelectionGrid(System.Int32,System.String[],System.Int32,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a Selection Grid.</para>
+      </summary>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the buttons.</param>
+      <param name="images">An array of textures on the buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The elements will be scaled to fit unless the style defines a fixedWidth to use. The height of the control will be determined from the number of elements.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.SelectionGrid(System.Int32,UnityEngine.Texture[],System.Int32,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a Selection Grid.</para>
+      </summary>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the buttons.</param>
+      <param name="images">An array of textures on the buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The elements will be scaled to fit unless the style defines a fixedWidth to use. The height of the control will be determined from the number of elements.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.SelectionGrid(System.Int32,UnityEngine.GUIContent[],System.Int32,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a Selection Grid.</para>
+      </summary>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the buttons.</param>
+      <param name="images">An array of textures on the buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The elements will be scaled to fit unless the style defines a fixedWidth to use. The height of the control will be determined from the number of elements.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Space(System.Single)">
+      <summary>
+        <para>Insert a space in the current layout group.</para>
+      </summary>
+      <param name="pixels"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.TextArea(System.String,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a multi-line text field where the user can edit a string.</para>
+      </summary>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textFi

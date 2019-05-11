@@ -1,0 +1,499 @@
+{
+    "name": "mouse_2", 
+    "script": "main.as", 
+    "min_version": 6, 
+    "effects": [
+        {
+            "name": "facemodel", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    1
+                ], 
+                "material_file": "BilateralFilter2/horizontalPass.xml", 
+                "diffuse": "Textures/bilateral_lut_3.png", 
+                "shader": "BilateralFilter2"
+            }
+        }, 
+        {
+            "name": "facemodel", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    1
+                ], 
+                "material_file": "BilateralFilter2/verticalPass.xml", 
+                "diffuse": "Textures/bilateral_lut_3.png", 
+                "shader": "BilateralFilter2"
+            }
+        }, 
+        {
+            "size": [
+                15, 
+                15
+            ], 
+            "name": "patch", 
+            "texture": {
+                "MatSpecColor": [
+                    0.4, 
+                    1.2, 
+                    1.0, 
+                    0
+                ], 
+                "shader": "Liquify"
+            }, 
+            "anchor": "right_eye"
+        }, 
+        {
+            "size": [
+                15, 
+                15
+            ], 
+            "name": "patch", 
+            "texture": {
+                "MatSpecColor": [
+                    0.4, 
+                    1.2, 
+                    1.0, 
+                    0
+                ], 
+                "shader": "Liquify"
+            }, 
+            "anchor": "left_eye"
+        }, 
+        {
+            "tag": "lenses", 
+            "name": "patch", 
+            "texture": {
+                "MatSpecColor": [
+                    0.4, 
+                    1.4, 
+                    1.0, 
+                    0
+                ], 
+                "shader": "Lenses"
+            }, 
+            "anchor": "fullscreen"
+        }, 
+        {
+            "eyes": true, 
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    0.0, 
+                    0.0, 
+                    0.0, 
+                    0.5
+                ], 
+                "ps_shader_defs": "INTENSITY_VALUE", 
+                "shader": "ColorFilter", 
+                "texture": "lookup1.png"
+            }, 
+            "visible": "always", 
+            "tag": "filter", 
+            "mouth": true, 
+            "anchor": "fullscreen"
+        }, 
+        {
+            "name": "facemodel", 
+            "texture": {
+                "color": [
+                    1.0, 
+                    1.0, 
+                    1.0, 
+                    0.3
+                ], 
+                "UseAlphaMask": true, 
+                "texture": "lico.png", 
+                "blend_mode": "Multiply"
+            }
+        }, 
+        {
+            "name": "facemodel", 
+            "texture": {
+                "color": [
+                    1.0, 
+                    1.0, 
+                    1.0, 
+                    0.3
+                ], 
+                "UseAlphaMask": true, 
+                "texture": "lico2.png", 
+                "blend_mode": "Multiply"
+            }
+        }, 
+        {
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    0.8
+                ], 
+                "auto_mirror": true, 
+                "animation": {
+                    "frames": 30, 
+                    "num_atlas_files": 2, 
+                    "rows": 3, 
+                    "cols": 5, 
+                    "timeline": [
+                        440, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60
+                    ]
+                }, 
+                "texture": "heart.png", 
+                "blend_mode": "alpha"
+            }, 
+            "offset": [
+                -20, 
+                150, 
+                40
+            ], 
+            "type": "loop", 
+            "anchor": "forehead", 
+            "size": [
+                30, 
+                130
+            ]
+        }, 
+        {
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    0.4
+                ], 
+                "auto_mirror": true, 
+                "animation": {
+                    "frames": 30, 
+                    "num_atlas_files": 2, 
+                    "rows": 3, 
+                    "cols": 5, 
+                    "timeline": [
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60
+                    ]
+                }, 
+                "texture": "heart.png", 
+                "blend_mode": "alpha"
+            }, 
+            "offset": [
+                0, 
+                150, 
+                40
+            ], 
+            "type": "loop", 
+            "anchor": "forehead", 
+            "size": [
+                30, 
+                130
+            ]
+        }, 
+        {
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    0.6
+                ], 
+                "texture": "heart.png", 
+                "auto_mirror": true, 
+                "animation": {
+                    "frames": 30, 
+                    "num_atlas_files": 2, 
+                    "rows": 3, 
+                    "cols": 5, 
+                    "timeline": [
+                        140, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40, 
+                        40
+                    ]
+                }, 
+                "blend_mode": "alpha", 
+                "UseAlphaMask": true
+            }, 
+            "offset": [
+                30, 
+                130, 
+                40
+            ], 
+            "type": "loop", 
+            "anchor": "forehead", 
+            "size": [
+                20, 
+                90
+            ]
+        }, 
+        {
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    0.6
+                ], 
+                "texture": "heart.png", 
+                "auto_mirror": true, 
+                "animation": {
+                    "frames": 30, 
+                    "num_atlas_files": 2, 
+                    "rows": 3, 
+                    "cols": 5, 
+                    "timeline": [
+                        270, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30, 
+                        30
+                    ]
+                }, 
+                "blend_mode": "alpha", 
+                "UseAlphaMask": true
+            }, 
+            "offset": [
+                -30, 
+                130, 
+                40
+            ], 
+            "type": "loop", 
+            "anchor": "forehead", 
+            "size": [
+                20, 
+                90
+            ]
+        }, 
+        {
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    0.4
+                ], 
+                "texture": "heart.png", 
+                "auto_mirror": true, 
+                "animation": {
+                    "frames": 30, 
+                    "num_atlas_files": 2, 
+                    "rows": 3, 
+                    "cols": 5, 
+                    "timeline": [
+                        150, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60
+                    ]
+                }, 
+                "blend_mode": "alpha", 
+                "UseAlphaMask": true
+            }, 
+            "offset": [
+                -30, 
+                100, 
+                40
+            ], 
+            "type": "loop", 
+            "anchor": "forehead", 
+            "size": [
+                10, 
+                40
+            ]
+        }, 
+        {
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    0.5
+                ], 
+                "texture": "heart.png", 
+                "auto_mirror": true, 
+                "animation": {
+                    "frames": 30, 
+                    "num_atlas_files": 2, 
+                    "rows": 3, 
+                    "cols": 5, 
+                    "timeline": [
+                        420, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60, 
+                        60
+                    ]
+                }, 
+                "blend_mode": "alpha", 
+                "UseAlphaMask": true
+            }, 
+            "of

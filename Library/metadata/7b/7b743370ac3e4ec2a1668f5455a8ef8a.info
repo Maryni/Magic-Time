@@ -1,0 +1,12 @@
+			<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.21839523 0.64875114 -1.21799821E-05 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!30" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!49" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!30" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!30">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!30" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_fence_e_col_01_shape" width="1.528551" height="0.26" length="0.1705193" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATESHAPEBOX id="core_barr_fence_e_col_02_shape" width="1.585

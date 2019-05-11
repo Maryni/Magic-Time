@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- WITab titles -->
+  <TabTerrain>Terreno</TabTerrain>
+  <TabPlanet>Planeta</TabPlanet>
+  <TabCaravanSocial>Social</TabCaravanSocial>
+  <TabCaravanHealth>Salud</TabCaravanHealth>
+  <TabCaravanNeeds>Necesidad</TabCaravanNeeds>
+  <TabCaravanGear>Equipo</TabCaravanGear>
+  <TabCaravanItems>Objetos</TabCaravanItems>
+  
+  <!-- Misc -->
+  <AbandonSliderText>Abandonar {{0}}x {0}</AbandonSliderText>
+  <ConfirmAbandonItemDialog>¿De verdad quieres abandonar {0}?\n\nLos objetos abandonados se desvanecen y nunca se pueden recuperar.</ConfirmAbandonItemDialog>
+  <AbandonTip>Abandon</AbandonTip>
+  <BanishTip>Destierro</BanishTip>
+  <AbandonSpecificCountTip>Abandono recuento específico</AbandonSpecificCountTip>
+  <AbandonAllTip>Abandonar (todo)</AbandonAllTi

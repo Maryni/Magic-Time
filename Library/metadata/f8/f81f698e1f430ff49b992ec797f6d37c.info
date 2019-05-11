@@ -1,0 +1,134 @@
+>
+        <para>Determines how toolbar button size is calculated.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GUI.ToolbarButtonSize.FitToContents">
+      <summary>
+        <para>The width of each toolbar button is calculated based on the width of its content.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.GUI.ToolbarButtonSize.Fixed">
+      <summary>
+        <para>Calculates the button size by dividing the available width by the number of buttons. The minimum size is the maximum content width.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUI.UnfocusWindow">
+      <summary>
+        <para>Remove focus from all windows.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUI.VerticalScrollbar(UnityEngine.Rect,System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Make a vertical scrollbar. Scrollbars are what you use to scroll through a document. Most likely, you want to use scrollViews instead.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the scrollbar.</param>
+      <param name="value">The position between min and max.</param>
+      <param name="size">How much can we see?</param>
+      <param name="topValue">The value at the top of the scrollbar.</param>
+      <param name="bottomValue">The value at the bottom of the scrollbar.</param>
+      <param name="style">The style to use for the scrollbar background. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <returns>
+        <para>The modified value. This can be changed by the user by dragging the scrollbar, or clicking the arrows at the end.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.VerticalScrollbar(UnityEngine.Rect,System.Single,System.Single,System.Single,System.Single,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make a vertical scrollbar. Scrollbars are what you use to scroll through a document. Most likely, you want to use scrollViews instead.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the scrollbar.</param>
+      <param name="value">The position between min and max.</param>
+      <param name="size">How much can we see?</param>
+      <param name="topValue">The value at the top of the scrollbar.</param>
+      <param name="bottomValue">The value at the bottom of the scrollbar.</param>
+      <param name="style">The style to use for the scrollbar background. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <returns>
+        <para>The modified value. This can be changed by the user by dragging the scrollbar, or clicking the arrows at the end.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.VerticalSlider(UnityEngine.Rect,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>A vertical slider the user can drag to change a value between a min and a max.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the slider.</param>
+      <param name="value">The value the slider shows. This determines the position of the draggable thumb.</param>
+      <param name="topValue">The value at the top end of the slider.</param>
+      <param name="bottomValue">The value at the bottom end of the slider.</param>
+      <param name="slider">The GUIStyle to use for displaying the dragging area. If left out, the horizontalSlider style from the current GUISkin is used.</param>
+      <param name="thumb">The GUIStyle to use for displaying draggable thumb. If left out, the horizontalSliderThumb style from the current GUISkin is used.</param>
+      <returns>
+        <para>The value that has been set by the user.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.VerticalSlider(UnityEngine.Rect,System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUIStyle)">
+      <summary>
+        <para>A vertical slider the user can drag to change a value between a min and a max.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the slider.</param>
+      <param name="value">The value the slider shows. This determines the position of the draggable thumb.</param>
+      <param name="topValue">The value at the top end of the slider.</param>
+      <param name="bottomValue">The value at the bottom end of the slider.</param>
+      <param name="slider">The GUIStyle to use for displaying the dragging area. If left out, the horizontalSlider style from the current GUISkin is used.</param>
+      <param name="thumb">The GUIStyle to use for displaying draggable thumb. If left out, the horizontalSliderThumb style from the current GUISkin is used.</param>
+      <returns>
+        <para>The value that has been set by the user.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,System.String)">
+      <summary>
+        <para>Make a popup window.</para>
+      </summary>
+      <param name="Style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="id">ID number for the window (can be any value as long as it is unique).</param>
+      <param name="clientRect">Onscreen rectangle denoting the window's position and size.</param>
+      <param name="func">Script function to display the window's contents.</param>
+      <param name="text">Text to render inside the window.</param>
+      <param name="image">Image to render inside the window.</param>
+      <param name="content">GUIContent to render inside the window.</param>
+      <param name="style">Style information for the window.</param>
+      <param name="title">Text displayed in the window's title bar.</param>
+      <returns>
+        <para>Onscreen rectangle denoting the window's position and size.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,UnityEngine.Texture)">
+      <summary>
+        <para>Make a popup window.</para>
+      </summary>
+      <param name="Style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="id">ID number for the window (can be any value as long as it is unique).</param>
+      <param name="clientRect">Onscreen rectangle denoting the window's position and size.</param>
+      <param name="func">Script function to display the window's contents.</param>
+      <param name="text">Text to render inside the window.</param>
+      <param name="image">Image to render inside the window.</param>
+      <param name="content">GUIContent to render inside the window.</param>
+      <param name="style">Style information for the window.</param>
+      <param name="title">Text displayed in the window's title bar.</param>
+      <returns>
+        <para>Onscreen rectangle denoting the window's position and size.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,UnityEngine.GUIContent)">
+      <summary>
+        <para>Make a popup window.</para>
+      </summary>
+      <param name="Style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="id">ID number for the window (can be any value as long as it is unique).</param>
+      <param name="clientRect">Onscreen rectangle denoting the window's position and size.</param>
+      <param name="func">Script function to display the window's contents.</param>
+      <param name="text">Text to render inside the window.</param>
+      <param name="image">Image to render inside the window.</param>
+      <param name="content">GUIContent to render inside the window.</param>
+      <param name="style">Style information for the window.</param>
+      <param name="title">Text displayed in the window's title bar.</param>
+      <returns>
+        <para>Onscreen rectangle denoting the window's position and size.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,System.String,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make a popup window.</para>
+      </summary>
+      <param name="Style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="id">ID number for the window (can be any value as long as it is unique).</param>
+      <param name="clientRect">Onscreen rectangle denoting the window's position and size.</param>
+      <param name="func">Script function to display the wind

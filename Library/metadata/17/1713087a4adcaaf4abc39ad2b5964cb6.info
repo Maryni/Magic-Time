@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Arresting worsens faction relations -->
+  <ArrestingCreatesEnemies.label>Capturar gent empitjora la relació amb la seva facció</ArrestingCreatesEnemies.label>
+  <!-- EN: Warning: The person you are trying to arrest may not go quietly.\n\nIf you arrest a non-colonist, their entire faction will become your enemy. -->
+  <ArrestingCreatesEnemies.helpText>Avís: La persona que esteu intentant capturar no es quedarà callada.\n\nSi captureu una persona de fora de la colònia, la seva facció es convertirà en el vostre enemic.</ArrestingCreatesEnemies.helpText>
+  
+  <!-- EN: Maximum number of player colonies -->
+  <MaxNumberOfPla

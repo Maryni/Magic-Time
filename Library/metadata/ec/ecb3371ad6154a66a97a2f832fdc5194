@@ -1,0 +1,305 @@
+tego ze wspólczuciem.[P=1] Przekleci czarodzieje bez plecaków!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">language joke: poor = unfortunate. Poor = without money.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Go away you poor, poor man...[P=0.5] And I don't mean in the &quot;I feel sorry for you&quot; kind of way.[P=1] Damn contemptible wizards with no inventory!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_curiosity2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Mam winic twórców?[P=0.5] Phi![P=1] Wstydz sie!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">creators ~ mythological sounding term, but she more-or-less means the game designers</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I should blame the creators?[P=0.5] Hah![P=1] You should be ashamed.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_curiosity3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Zamykam sklep, dopóki sobie nie pójdziesz.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Now, I'm going to close the shoppe until you go away.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Now, I'm going to close the shoppe until you go away.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_curiosity4</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Na brakujace oko Odyna![P=0.5] Odejdz!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">By Odin's missing eye![P=0.5] Go away!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">By Odin's missing eye![P=0.5] Go away!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_curiosity5</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wyczuwam zaburzenia[P=0.33].[P=0.33].[P=0.33].[P=0.5] W MOJEJ OKOLICY!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">joke about the star wars &quot;disurbance in the force&quot;</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I feel a disturbance in[P=0.5].[P=0.5].[P=0.5].[P=1.5] MY VICINITY!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_curiosity6</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Dalabym ci cale zloto ze swojego sklepu, zebys sobie poszedl... ALE NIE MASZ PLECAKA!!!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I could give you all the money in my shoppe if you would go away -- but YOU DON'T HAVE AN INVENTORY!!!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I could give you all the money in my shoppe if you would go away -- but YOU DON'T HAVE AN INVENTORY!!!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_drunk0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Co?[P=0.5]![P=0.5] Kto ty?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">This guy is drunk, hence his sluggish language</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wha!?[P=0.25] Who are you?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_drunk1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Podejdz no, cos ci rzekne...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Come closer I'mma tell you somthin'... </Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Come closer I'mma tell you somthin'... </Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_drunk2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Aach![P=0.5] Nie tak blisko![P=0.5] *hep*</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Aagh![P=0.5] not tha' close![P=1]*hiccup*</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Aagh![P=0.5] not tha' close![P=0.5]*hiccup*</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_drunk3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Posluchaj no mnie...[P=0.5] Posluchaj...[P=0.5] Musisz uwazac na Chta...[P=0.75] *hep*[P=0.75] na Chtong...[P=0.75] Nie, na Chtonh'ng...[P=0.75] Ach, do diabla![P=0.5] Moze lepiej opowiem ci o Endermanach.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">He can't pronounce the word Chthonian, Lovecraft creatures. \n Spoof on the coming enemies in Minecraft, named the Endermen.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">List'n...[P=0.5] List'n...[P=1] You must beware of the Chta..[P=1] *hiccup*[P=0.75] the Chtong...[P=0.75] No, the Chtonh'ng...[P=1] ah heck![P=1] Let me tell you 'bout them Endermen 'nstead.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_drunk4</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">To paskudne sfory...[P=0.5] stwory.[P=0.5] Normalnie zajmuja sie swoimi sprawami, ale skads skubance wie-[P=0.5] *hep*[P=0.5] -dza, ze na nie patrzysz...[P=0.5] ZIUM![P=0.25] *hep* [P=1] I sa przy tobie w magnie...[P=0.5] miginie...[P=0.5] maginieniu...[P=0.5] No wiesz... zium!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Accidently says beans instead of beings. He's having trouble forming his words.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">They're nasty beans...[P=1.5] bein's.[P=1.25] They use'lly keep to themselves but they has th's creepy way of kno-[P=2.75]*hiccup*[P=1]-wing you be lookin' at 'em and once you do...[P=1.5] BAM![P=0.25] *hiccup* [P=1] They be in your face like inst'...[P=0.5] instentanie'...[P=0.5] insteraneus'...[P=0.5] Like bam.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_drunk5</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Badz ostrozny. Trzymaj [P=0.5]*hep*[P=0.5] sie od nich z dul... z daleka, a bedzie dobrze...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">So you best be stayin' clear o'em.[P=0.5] Avoid bein' [P=0.75]*hiccup*[P=1] in their gen'ral vishinity, and you migh' be ok...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">So you best be stayin' clear o'em. Avoid bein' [P=0.5]*hiccup*[P=0.5] in their gen'ral vishinity, and you migh' be ok...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_drunk6</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">*he-[P=0.5] *hep* [P=0.5]-p*</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">he interrupts his hiccup with another hiccup in the middle.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">*hic-[P=0.5]*hiccup*[P=0.5]-up*</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_cultist0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Nie mozesz sie ukrywac w nieskonczonosc![P=0.5] Gdy najwyzszy sie przebudzi, pozre cie tysiac wyglodnialych paszcz i bedziesz blagal, by odejsc w niepamiec... [P=0.5]A my, wybrani, zostaniemy wyniesieni do gwiazd w...[P=0.5]</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">You cannot hide for an eternity![P=0.5] When the great one awakens, a thousand hungry maws will devour you, and you shall pray for oblivion... [P=0.5]And we, the chosen ones, shall rise to the stars in a-[P=0.5]</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">You cannot hide for an eternity![P=0.5] When the great one awakens, a thousand hungry maws will devour you, and you shall pray for oblivion... [P=0.5]And we, the chosen ones, shall rise to the stars in a-[P=0.5]</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_cultist1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Cóz to?[P=0.5] Wyznawca falszywej nauki?[P=0.5] Zalosne. Pewnie wciaz kisicie sie w tej swojej szkole?[P=0.5] Powinniscie do nas dolaczyc, a otrzymalibyscie bezkresna moc![P=0.5] I mozliwosc rzucania zaklec bez kostura!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">What's this?[P=0.5] A practitioner of the false arts?[P=2.5] How pathetic.[P=2] I suppose you still hold up in that old school of yours?[P=2] You should join us instead, and receive infinite power![P=2] And the ability to cast spells without a staff!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">What's this?[P=0.5] A practitioner of the false arts?[P=0.5] How pathetic. I suppose you still hold up in that old school of yours?[P=0.5] You should join us instead, and receive infinite power![P=0.5] And the ability to cast spells without a staff!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_cultist2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Klan?[P=0.5] O czym ty bredzisz?[P=0.5] Jestesmy kultem!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Clan?[P=0.5] What are you talking about?[P=0.5] We're a cult!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Clan?[P=0.5] What are you talking about?[P=0.5] We're a cult!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_cultist3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">To spora róznica![P=0.5] To co, dolaczasz do nas?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">There's a major difference![P=0.5] Will you join us or not?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">There's a major difference![P=0.5] Will you join us or not?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_cultist4</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ignorujesz mnie?[P=0.5] Niech bedzie![P=0.5] Skonczymy z toba wlasnie tu, dokladnie w miejscu, w którym stoisz!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">We'll end you = we'll kill you.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The silent treatment eh?[P=0.5] Fine. Be that way![P=0.5] We'll just end you where you stand! </Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_scared_cultist0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Co ty tu robisz?[P=1] Wynocha!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">What are you doing here?[P=1] Get away!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">What are you doing here?[P=1] Get away!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_scared_cultist1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Pomocy![P=0.5] Pomocy![P=0.5] Jestem przesladowany!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Help![P=0.5] help![P=0.5] I'm being oppressed!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Help![P=0.5] help![P=0.5] I'm being oppressed!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_scared_cultist2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Dlaczego te drzwi sa ciagle zamkniete!?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Why are these doors always locked!?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Why are these doors always locked!?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_scared_cultist3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Eee... Haslo to...[P=0.5] „fhtagn”?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">making a joke about how unpronouncable Lovecraft's terminology can be. No need to translate the password.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Uh, the password is...[P=0.5] &quot;fhtagn&quot;?</Data>
+          </Cell>
+        </Row>
+        <Row>
+      

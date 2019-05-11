@@ -1,0 +1,248 @@
+       </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Cthulhu</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#BOSS_Cthulhu_sub</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Kaplan Przedwiecznych</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">High Priest of the Old Gods</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#BOSS_Dagon</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Dagon</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Another famous Cthulhu character. No need to translate his name.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Dagon</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#BOSS_Dagon_sub</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Pierwszy rybak siedmiu mew</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Fishmaster of the seven seagulls</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+      </Table>
+    </Worksheet>
+    <Worksheet ss:Name="Menu">
+      <Table>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">ID</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">pol</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Comments</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Localized Text</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Search_Scope</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Zakres</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Scope as in search scope</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Scope</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#LAN</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">LAN</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Local Area Network</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">LAN</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#VAC_Only</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Tylko z VAC</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">http://en.wikipedia.org/wiki/Valve_Anti-Cheat</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">VAC Only</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Playing</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Rozpoczeta</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Playing</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Playing</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Hide_private_games</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ukryj gry prywatne</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Hide Private Games</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Hide Private Games</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Hide_games_in_progress</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ukryj gry rozpoczete</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Hide Games in Progress</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Hide Games in Progress</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Show_VAC_Only</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Pokaz tylko gry chronione przez VAC</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">VAC (as above) is software designed by Valve (Steam) to prevent people from cheating in a multiplayer game. You can protect your multiplayer game from cheaters, if you have this software.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Show only games protected by VAC</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Change_Chapter</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Zmien rozdzial</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">menu option</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Change Chapter</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Chapter_Notification</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Zmiana rozdzialu spowoduje utrate postepów w aktualnym rozdziale. Czy na pewno chcesz zmienic rozdzial?</Data>
+          </Cell>
+         

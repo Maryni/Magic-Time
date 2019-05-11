@@ -1,0 +1,15 @@
+// Find the closest line segment to position.
+                            float dbl = DistanceToLine(bl, tl, position); 
+                            float dtl = DistanceToLine(tl, tr, position); 
+                            float dtr = DistanceToLine(tr, br, position); 
+                            float dbr = DistanceToLine(br, bl, position);
+
+                            float d = dbl < dtl ? dbl : dtl;
+                            d = d < dtr ? d : dtr;
+                            d = d < dbr ? d : dbr;
+
+                            if (distanceSqr > d)
+                            {
+                                distanceSqr = d;
+                                closest = i;
+   

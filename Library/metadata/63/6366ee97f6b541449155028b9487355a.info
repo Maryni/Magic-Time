@@ -1,0 +1,18 @@
+   int index = EditorGUILayout.Popup(s_TempLabel, (int)property.floatValue, options);
+            if (EndProperty())
+            {
+                property.floatValue = index;
+            }
+        }
+
+        protected void DoCubeMap(string name, string label)
+        {
+            DoTexture(name, label, typeof(Cubemap));
+        }
+
+        protected void DoTexture2D(string name, string label, bool withTilingOffset = false, string[] speedNames = null)
+        {
+            DoTexture(name, label, typeof(Texture2D), withTilingOffset, speedNames);
+        }
+
+        void DoTexture(string name, string label, System.Type type, bool withTilingOffset = false, string[] speedNames = 

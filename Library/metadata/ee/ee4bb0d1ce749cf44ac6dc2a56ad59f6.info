@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <BloodLoss.label>pérdida de sangre</BloodLoss.label>
+  <BloodLoss.stages.0.label>ligera</BloodLoss.stages.0.label>
+  <BloodLoss.stages.1.label>leve</BloodLoss.stages.1.label>
+  <BloodLoss.stages.2.label>moderada</BloodLoss.stages.2.label>
+  <BloodLoss.stages.3.label>grave</BloodLoss.stages.3.label>
+  <BloodLoss.stages.4.label>extrema</BloodLoss.stages.4.label>
+
+  <Anesthetic.label>anestesia</Anesthetic.label>
+
+  <CatatonicBreakdown.label>colapso catatónico</CatatonicBreakdown.label>
+  <CatatonicBreakdown.labelNoun>un colapso catatónico</CatatonicBreakdown.labelN

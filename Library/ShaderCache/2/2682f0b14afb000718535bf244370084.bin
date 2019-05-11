@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+ 
+  <MessageSiegersAssaulting>Asediatorii {0} din {1} atacă colonia.</MessageSiegersAssaulting>
+
+  <MessageRaidersBeginningAssault>{0} din {1} își încep atacul.</MessageRaidersBeginningAssault>
+  <MessageRaidersDetectedEarlyAssault>{0} din {1} vă asediază și își încep atacul imediat.</MessageRaidersDetectedEarlyAssault>
+  <MessageRaidersKidnapping>{0} din {1} au decis să răpească pe cine pot si să se retragă.</MessageRaidersKidnapping>
+
+  <MessageRaidersLeaving>{0} din {1} pleacă.</MessageRaidersLeaving>
+	<MessageRaidersGivenUpLeaving>{0} din {1} au renunțat la asediu și se retrag.</MessageRaidersGivenUpLeaving>
+  <MessageRaidersSatisfiedLeaving>{0} din {1} sunt satisfăcuți de asalt și au decis să plece.</MessageRaidersSatisfiedLeaving>
+
+  
+  <MessageFightersFleeing>{0} din {1} au început să fugă.</MessageFightersFleeing>
+  <MessageFriendlyFightersLeaving>Aliații {0} din {1} vor pleca regiunea.</MessageFriendlyFightersLeaving>
+
+  <MessageSeasonBegun>{0} a început.</MessageSeasonBegun>
+
+  <MessageShipHasLeftCommsRange>{0} a părăsit raza de comunicare.</MessageShipHasLeftCommsRange>
+	
+	<MessageNeedBeac

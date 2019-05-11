@@ -1,0 +1,392 @@
+y>
+        <para>Reserve layout space for a rectangle with a fixed content area.</para>
+      </summary>
+      <param name="width">The width of the area you want.</param>
+      <param name="height">The height of the area you want.</param>
+      <param name="style">An optional GUIStyle to layout for. If specified, the style's padding value will be added to your sizes &amp; its margin value will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectanlge to put your control in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.GUISettings">
+      <summary>
+        <para>General settings for how the GUI behaves.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.cursorColor">
+      <summary>
+        <para>The color of the cursor in text fields.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.cursorFlashSpeed">
+      <summary>
+        <para>The speed of text field cursor flashes.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.doubleClickSelectsWord">
+      <summary>
+        <para>Should double-clicking select words in text fields.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.selectionColor">
+      <summary>
+        <para>The color of the selection rect in text fields.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.tripleClickSelectsLine">
+      <summary>
+        <para>Should triple-clicking select whole text in text fields.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GUISkin">
+      <summary>
+        <para>Defines how GUI looks and behaves.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.box">
+      <summary>
+        <para>Style used by default for GUI.Box controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.button">
+      <summary>
+        <para>Style used by default for GUI.Button controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.customStyles">
+      <summary>
+        <para>Array of GUI styles for specific needs.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.font">
+      <summary>
+        <para>The default font to use for all styles.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbar">
+      <summary>
+        <para>Style used by default for the background part of GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbarLeftButton">
+      <summary>
+        <para>Style used by default for the left button on GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbarRightButton">
+      <summary>
+        <para>Style used by default for the right button on GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbarThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalSlider">
+      <summary>
+        <para>Style used by default for the background part of GUI.HorizontalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalSliderThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.HorizontalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.label">
+      <summary>
+        <para>Style used by default for GUI.Label controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.scrollView">
+      <summary>
+        <para>Style used by default for the background of ScrollView controls (see GUI.BeginScrollView).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.settings">
+      <summary>
+        <para>Generic settings for how controls should behave with this skin.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.textArea">
+      <summary>
+        <para>Style used by default for GUI.TextArea controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.textField">
+      <summary>
+        <para>Style used by default for GUI.TextField controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.toggle">
+      <summary>
+        <para>Style used by default for GUI.Toggle controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbar">
+      <summary>
+        <para>Style used by default for the background part of GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbarDownButton">
+      <summary>
+        <para>Style used by default for the down button on GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbarThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbarUpButton">
+      <summary>
+        <para>Style used by default for the up button on GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalSlider">
+      <summary>
+        <para>Style used by default for the background part of GUI.VerticalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalSliderThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.VerticalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.window">
+      <summary>
+        <para>Style used by default for Window controls (SA GUI.Window).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUISkin.FindStyle(System.String)">
+      <summary>
+        <para>Try to search for a GUIStyle. This functions returns NULL and does not give an error.</para>
+      </summary>
+      <param name="styleName"></param>
+    </member>
+    <member name="M:UnityEngine.GUISkin.GetStyle(System.String)">
+      <summary>
+        <para>Get a named GUIStyle.</para>
+      </summary>
+      <param name="styleName"></param>
+    </member>
+    <member name="T:UnityEngine.GUIStyle">
+      <summary>
+        <para>Styling information for GUI elements.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.active">
+      <summary>
+        <para>Rendering settings for when the control is pressed down.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.alignment">
+      <summary>
+        <para>Text alignment.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.border">
+      <summary>
+        <para>The borders of all background images.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.clipping">
+      <summary>
+        <para>What to do when the contents to be rendered is too large to fit within the area given.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.contentOffset">
+      <summary>
+        <para>Pixel offset to apply to the content of this GUIstyle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fixedHeight">
+      <summary>
+        <para>If non-0, any GUI elements rendered with this style will have the height specified here.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fixedWidth">
+      <summary>
+        <para>If non-0, any GUI elements rendered with this style will have the width specified here.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.focused">
+      <summary>
+        <para>Rendering settings for when the element has keyboard focus.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.font">
+      <summary>
+        <para>The font to use for rendering. If null, the default font for the current GUISkin is used instead.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fontSize">
+      <summary>
+        <para>The font size to use (for dynamic fonts).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fontStyle">
+      <summary>
+        <para>The font style to use (for dynamic fonts).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.hover">
+      <summary>
+        <para>Rendering settings for when the mouse is hovering over the control.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.imagePosition">
+      <summary>
+        <para>How image and text of the GUIContent is combined.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.lineHeight">
+      <summary>
+        <para>The height of one line of text with this style, measured in pixels. (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.margin">
+      <summary>
+        <para>The margins between elements rendered in this style and any other GUI elements.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.name">
+      <summary>
+        <para>The name of this GUIStyle. Used for getting them based on name.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.none">
+      <summary>
+        <para>Shortcut for an empty GUIStyle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.normal">
+      <summary>
+        <para>Rendering settings for when the component is displayed normally.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onActive">
+      <summary>
+        <para>Rendering settings for when the element is turned on and pressed down.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onFocused">
+      <summary>
+        <para>Rendering settings for when the element has keyboard and is turned on.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onHover">
+      <summary>
+        <para>Rendering settings for when the control is turned on and the mouse is hovering it.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onNormal">
+      <summary>
+        <para>Rendering settings for when the control is turned on.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.overflow">
+      <summary>
+        <para>Extra space to be added to the background image.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.padding">
+      <summary>
+        <para>Space from the edge of GUIStyle to the start of the contents.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.richText">
+      <summary>
+        <para>Enable HTML-style tags for Text Formatting Markup.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.stretchHeight">
+      <summary>
+        <para>Can GUI elements of this style be stretched vertically for better layout?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.stretchWidth">
+      <summary>
+        <para>Can GUI elements of this style be stretched horizontally for better layouting?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.wordWrap">
+      <summary>
+        <para>Should the text be wordwrapped?</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.CalcHeight(UnityEngine.GUIContent,System.Single)">
+      <summary>
+        <para>How tall this element will be when rendered with content and a specific width.</para>
+      </summary>
+      <param name="content"></param>
+      <param name="width"></param>
+    </member>
+    <member name="M:

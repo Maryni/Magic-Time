@@ -1,0 +1,28 @@
+p of viewport.
+                AdjustTextPositionRelativeToViewport(0);
+
+                m_forceRectTransformAdjustment = true;
+
+                SendOnValueChangedAndUpdateLabel();
+            }
+        }
+
+        public bool isFocused
+        {
+            get { return m_AllowInput; }
+        }
+
+        public float caretBlinkRate
+        {
+            get { return m_CaretBlinkRate; }
+            set
+            {
+                if (SetPropertyUtility.SetStruct(ref m_CaretBlinkRate, value))
+                {
+                    if (m_AllowInput)
+                        SetCaretActive();
+                }
+            }
+        }
+
+        public int caretWidth { get { return m_CaretWidth; } set { if (SetPropert

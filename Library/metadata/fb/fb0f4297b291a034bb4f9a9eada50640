@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: archotech arm -->
+  <ArchotechArm.label>braç arco-tecnològic</ArchotechArm.label>
+  <!-- EN: An artifical arm built by an archotech. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds. -->
+  <ArchotechArm.description>Un braç artificial arco-tecnològic. És prou fort per trencar una branca gruixuda amb la mà i prou precís per escriure un sonet en un gra d’arròs. Sembla carn natural, però és més difícil de trencar que el plastacer. Fins i tot si s’abonyega, es repara sol amb el temps. EL funcionament intern és un misteri per al cervell humà.</ArchotechArm.description>
+  
+  <!-- EN: archotech eye -->
+  <ArchotechEye.label>ull arco-tecnològic</ArchotechEye.label>
+  <!-- EN: An artifical eye built by an archotech. It perceives every type of electromagnetic radiation, including radio waves, infrared, light, x-rays, and gamma rays. Its visual acuity is precise enough to read handwriting from twenty meters away. It can emit various wavelengths of radiation like a flashlight, and has an internal subpersona AI which helps highlight useful visual information. Externally, it looks like a natural human eye, except it can change color at will. Its internal workings are a mystery to all human minds. -->
+  <ArchotechEye.description>Un ull artificial arco-tecnològic. Percep qualsevol tipus de radiació electromagnètica, fins i tot les ones de ràdio, els infrarojos, la llum, els rajos X i els gammes. Té una agudesa prou precisa per llegir un text escrit a mà a vint metres de distància. Pot emetre diverses longituds d’ona com un flash, i té una IA de subpersona que proporciona informació molt útil. Des de fora sembla un ull natural, excepte pel fet que va canviant de color. El seu funcionament intern és un misteri per la humanitat.</ArchotechEye.description>
+  
+  <!-- EN: archotech leg -->
+  <ArchotechLeg.label>cama arco-tecnològica</ArchotechLeg.label>
+  <!-- EN: An artifical leg built by an archotech. It looks and feels like natural flesh, but a pair of these can move the user as fast as a decent car, and it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds. -->
+  <ArchotechLeg.description>Una cama artificial arco-tecnològica. Sembla ben bé una cama de carn natural, però tenir-ne un parell permet un desplaçament tan ràpid com un cotxe decent, i és més difícil de trencar que el plastacer. Fins i tot si s’abonyega, es repara sol amb el temps. EL funcionament intern és un misteri per al cervell humà.</ArchotechLeg.description>
+  
+  <!-- EN: bionic arm -->
+  <BionicArm.label>braç biònic</BionicArm.label>
+  <!-- EN: An advanced artificial arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way. -->
+  <BionicArm.description>Un braç artificial avançat. Els silenciosos servomotors li proporcionen molta força, mentre que els enllaços nerviosos de biogel li donen un control exquisit. Un sistema d'auto-reparació d’entramat i pols li permeten recuperar-se dels danys. És millor que un braç biològic en gairebé tots els sentits.</BionicArm.description>
+  
+  <!-- EN: bionic ear -->
+  <BionicEar.label>oïda biònica</BionicEar.label>
+  <!-- EN: An advanced artificial ear implant. A collection of invisible subdermal microphones capture sound and transmit it to a biogel nerve interface that links directly with the auditory nerve. It's sensitive enough to hear a cat before you see it, can't be damaged by loud noise, and automatically tunes itself to pick out meaningful sounds in noisy environments. -->
+  <BionicEar.description>Un implant avançat d’oïda artificial. Un grup de microfons subcutanis invisibles que capturen el so i el transmeten a una interfície nerviosa de b

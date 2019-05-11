@@ -1,0 +1,32 @@
+// Load modules
+
+var Code = require('code');
+var Cryptiles = require('..');
+var Lab = require('lab');
+
+
+// Declare internals
+
+var internals = {};
+
+
+// Test shortcuts
+
+var lab = exports.lab = Lab.script();
+var describe = lab.describe;
+var it = lab.it;
+var expect = Code.expect;
+
+
+describe('randomString()', function () {
+
+    it('should generate the right length string', function (done) {
+
+        for (var i = 1; i <= 1000; ++i) {
+            expect(Cryptiles.randomString(i).length).to.equal(i);
+        }
+
+        done();
+    });
+
+    it('returns an error on invalid bits size', function (done)

@@ -1,0 +1,61 @@
+="physparams.xml#cMediumPostBase">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -4.371139E-08 -1 0 0 1 -4.371139E-08 0 0.000207781792 0 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="NeonConstraint002_subent!3" body1uri="#cot_road_sign_b_obj_03_rigidbody" body2uri="#cot_road_sign_b_obj_02_rigidbody" props="physparams.xml#cLightPostMiddle">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -4.371139E-08 -1 0 0 1 -4.371139E-08 0 0 0.332091331 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATEBEHAVIOUR id="initial!50" impulse="physparams.xml#bDefault" typeuri="#cot_road_sign_b_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="cot_road_sign_b_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_b_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_b_obj_02_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_b_obj_03_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#NeonConstraint001_subent!3" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#NeonConstraint002_subent!3" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_road_sign_b_col_04_shape" width="0.04489268" height="2.609336" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_road_sign_b_col_05_shape" width="0.8348927" height="1.201553" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPECYLINDER id="cot_road_sign_b_col_06_shape" height="0.03" radius="0.4197227" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="cot_road_sign_b_default_01_renderable" uri="route_objects.pssg#cot_road_sign_b_default_01" />
+		<TEMPLATEBEHAVIOURTYPE id="cot_road_sign_b_damage_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_b_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_b_obj_02_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_b_obj_03_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#NeonConstraint001_subent!3" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#NeonConstraint002_subent!3" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_road_sign_b_col_07_shape" width="0.04489268" height="1.947002" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_road_sign_b_col_08_shape" width="0.8348927" height="1.201553" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPECYLINDER id="cot_road_sign_b_col_09_shape" height="0.03" radius="0.4197227" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="cot_road_sign_b_damage_01_renderable" uri="route_objects.pssg#cot_road_sign_b_damage_01" />
+		<TEMPLATESHAPEBOX id="cot_road_sign_b_col_10_shape" width="0.04489268" height="0.5958406" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATEENTITY id="core_brand_board_b~0.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!31">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!31" infMass="1" props="physparams.xml#rbDefault" />
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!31" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!51" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!31" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!31">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!31" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATERENDERABLE id="default_renderable!31" uri="route_objects.pssg#default!11" />
+		<TEMPLATEENTITY id="core_brand_board_b~1.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!32">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!32" infMass="1" props="physparams.xml#rbDefault" />
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!32" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!52" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!32" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!32">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!32" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATERENDERABLE id="default_renderable!32" uri="route_objects.pssg#default!12" />
+		<TEMPLATEENTITY id="cot_oasis_hotel_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!33">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!33" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_oasis_hotel_a_col_06_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -1.055635 -0.536174536 -2.45245981 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_oasis_hotel_a_col_05_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 6.735285 -0.102932453 1.61469269 1 </TEMPLATETRANSFORM>

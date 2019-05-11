@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<SpeedOffset.degreeDatas.0.label>tigu</SpeedOffset.degreeDatas.0.label>
+	<SpeedOffset.degreeDatas.1.label>kiire kõndaja</SpeedOffset.degreeDatas.1.label>
+	<SpeedOffset.degreeDatas.2.label>jooksja</SpeedOffset.degreeDatas.2.label>
+	
+	<DrugDesire.degreeDatas.0.label>keemiline vaimustus</DrugDesire.degreeDatas.0.label>
+	<DrugDesire.degreeDatas.1.label>keemiline huvi</DrugDesire.degreeDatas.1.label>
+	<DrugDesire.degreeDatas.2.label>karsklane</DrugDesire.degreeDatas.2.label>
+	
+	<NaturalMood.degreeDatas.0.label>elavaloomuline</NaturalMood.degreeDatas.0.label>
+	<NaturalMood.degreeDatas.1.label>optimist</NaturalMood.degreeDatas.1.label>
+	<NaturalMood.degreeDatas.2.label>pessimist</NaturalMood.degreeDatas.2.label>
+	<NaturalMood.degreeDatas.3.label>depressiivne</NaturalMood.degreeDatas.3.label>
+	
+	<Nerves.degreeDatas.0.label>raudse tahtega</Nerves.degreeDatas.0.label>
+	

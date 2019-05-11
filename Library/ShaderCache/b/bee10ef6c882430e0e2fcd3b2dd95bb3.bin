@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <GutWorms.label>lombrices intestinales</GutWorms.label>
+  <MuscleParasites.label>parásitos musculares</MuscleParasites.label>
+
+  <FibrousMechanites.label>mecanitas fibrosos</FibrousMechanites.label>
+  <FibrousMechanites.stages.0.label>dolor leve</FibrousMechanites.stages.0.label>
+  <FibrousMechanites.stages.1.label>dolor intenso</FibrousMechanites.stages.1.label>
+
+  <SensoryMechanites.label>mecanitas sensoriales</SensoryMechanites.label>
+  <SensoryMechanites.stages.0.label>dolor leve</SensoryMechanites.stages.0.label>
+  <SensoryMechanites.stages.1.label>dolor intenso</SensoryMechanites.stages

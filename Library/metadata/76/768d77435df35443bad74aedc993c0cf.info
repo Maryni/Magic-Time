@@ -1,0 +1,29 @@
+               Remove(m_PagerTop);
+
+            if (m_PagerBottom.parent != this && totalPages > 1)
+                Add(m_PagerBottom);
+            if (m_PagerBottom.parent == this && totalPages <= 1)
+                Remove(m_PagerBottom);
+
+            m_PagerTop.Refresh();
+            m_PagerBottom.Refresh();
+        }
+
+        int pageCount
+        {
+            get
+            {
+                var pages = m_TotalItems / m_PageSize;
+                if (m_TotalItems % m_PageSize > 0)
+                    pages++;
+
+                return pages;
+            }
+        }
+
+        public int curPage
+        {
+            get { return m_CurPage; }
+            set
+            {
+                

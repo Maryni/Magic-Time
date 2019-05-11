@@ -1,0 +1,13 @@
+InputType = InputType.Standard;
+                        m_KeyboardType = TouchScreenKeyboardType.EmailAddress;
+                        m_CharacterValidation = CharacterValidation.EmailAddress;
+                        return;
+                    }
+                case ContentType.Password:
+                    {
+                        m_LineType = LineType.SingleLine;
+                        m_TextComponent.enableWordWrapping = false;
+                        m_InputType = InputType.Password;
+                        m_KeyboardType = TouchScreenKeyboardType.Default;
+                        m_CharacterValidation = CharacterValidation.None;
+                        return;

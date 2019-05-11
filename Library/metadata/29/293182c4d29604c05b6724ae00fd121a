@@ -1,0 +1,197 @@
+          {
+                message = "An Error Occurred",
+                icon = EditorGUIUtility.LoadIconRequired("Collab.Warning") as Texture,
+            };
+
+            var noInternetView = new StatusView()
+            {
+                message = "No Internet Connection",
+                icon = EditorGUIUtility.LoadIconRequired("Collab.NoInternet") as Texture,
+            };
+
+            var maintenanceView = new StatusView()
+            {
+                message = "Maintenance",
+            };
+
+            var loginView = new StatusView()
+            {
+                message = "Sign in to access Collaborate",
+                buttonText = "Sign in...",
+                callback = SignInClick,
+            };
+
+            var noSeatView = new StatusView()
+            {
+                message = "Ask your project owner for access to Unity Teams",
+                buttonText = "Learn More",
+                callback = NoSeatClick,
+            };
+
+            var waitingView = new StatusView()
+            {
+                message = "Updating...",
+            };
+
+            m_HistoryView = new ScrollView() { name = "HistoryContainer", showHorizontal = false};
+            m_HistoryView.contentContainer.StretchToParentWidth();
+            m_HistoryView.Add(m_Pager);
+
+            m_Views = new Dictionary<HistoryState, VisualElement>()
+            {
+                {HistoryState.Error,       errorView},
+                {HistoryState.Offline,     noInternetView},
+                {HistoryState.Maintenance, maintenanceView},
+                {HistoryState.LoggedOut,   loginView},
+                {HistoryState.NoSeat,      noSeatView},
+                {HistoryState.Waiting,     waitingView},
+                {HistoryState.Ready,       m_HistoryView}
+            };
+        }
+
+        public void UpdateState(HistoryState state, bool force)
+        {
+            if (state == m_State && !force)
+                return;
+
+            m_State = state;
+            switch (state)
+            {
+                case HistoryState.Ready:
+                    UpdateHistoryView(m_Pager);
+                    break;
+                case HistoryState.Disabled:
+                    Close();
+                    return;
+            }
+
+            m_Container.Clear();
+            m_Container.Add(m_Views[m_State]);
+        }
+
+        public void UpdateRevisions(IEnumerable<RevisionData> datas, string tip, int totalRevisions, int currentPage)
+        {
+            var elements = new List<VisualElement>();
+            var isFullDateObtained = false; // Has everything from this date been obtained?
+            m_HistoryItems.Clear();
+
+            if (datas != null)
+            {
+                DateTime currentDate = DateTime.MinValue;
+                foreach (var data in datas)
+                {
+                    if (data.timeStamp.Date != currentDate.Date)
+                    {
+                        elements.Add(new CollabHistoryRevisionLine(data.timeStamp, isFullDateObtained));
+                        currentDate = data.timeStamp;
+                    }
+
+                    var item = new CollabHistoryItem(data);
+                    m_HistoryItems.Add(item);
+
+                    var container = new VisualElement();
+                    container.style.flexDirection = FlexDirection.Row;
+                    if (data.current)
+                    {
+                        isFullDateObtained = true;
+                        container.AddToClassList("currentRevision");
+                        container.AddToClassList("obtainedRevision");
+                    }
+                    else if (data.obtained)
+                    {
+                        container.AddToClassList("obtainedRevision");
+                    }
+                    else
+                    {
+                        container.AddToClassList("absentRevision");
+                    }
+                    // If we use the index as-is, the latest commit will become #1, but we want it to be last
+                    container.Add(new CollabHistoryRevisionLine(data.index));
+                    container.Add(item);
+                    elements.Add(container);
+                }
+            }
+
+            m_HistoryView.scrollOffset = new Vector2(0, 0);
+            m_Pager.totalItems = totalRevisions;
+            m_Pager.curPage = currentPage;
+            m_Pager.items = elements;
+        }
+
+        public string inProgressRevision
+        {
+            get { return m_InProgressRev; }
+            set
+            {
+                m_InProgressRev = value;
+                foreach (var historyItem in m_HistoryItems)
+                {
+                    historyItem.SetInProgressStatus(value);
+                }
+            }
+        }
+
+        public int itemsPerPage
+        {
+            set
+            {
+                if (m_ItemsPerPage == value)
+                    return;
+                m_Pager.pageSize = m_ItemsPerPage;
+            }
+        }
+
+        public PageChangeAction OnPageChangeAction
+        {
+            set { m_Pager.OnPageChanged = value; }
+        }
+
+        public RevisionAction OnGoBackAction
+        {
+            set { CollabHistoryItem.s_OnGoBack = value; }
+        }
+
+        public RevisionAction OnUpdateAction
+        {
+            set { CollabHistoryItem.s_OnUpdate = value; }
+        }
+
+        public RevisionAction OnRestoreAction
+        {
+            set { CollabHistoryItem.s_OnRestore = value; }
+        }
+
+        public ShowBuildAction OnShowBuildAction
+        {
+            set { CollabHistoryItem.s_OnShowBuild = value; }
+        }
+
+        public Action OnShowServicesAction
+        {
+            set { CollabHistoryItem.s_OnShowServices = value; }
+        }
+
+        void UpdateHistoryView(VisualElement history)
+        {
+        }
+
+        void NoSeatClick()
+        {
+            var connection = UnityConnect.instance;
+            var env = connection.GetEnvironment();
+            // Map environment to url - prod is special
+            if (env == "production")
+                env = "";
+            else
+                env += "-";
+
+            var url = "https://" + env + kServiceUrl
+                + "/orgs/" + connection.GetOrganizationId()
+                + "/projects/" + connection.GetProjectName()
+                + "/unity-teams/";
+            Application.OpenURL(url);
+        }
+
+        void SignInClick()
+        {
+            UnityConnec

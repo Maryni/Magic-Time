@@ -1,0 +1,364 @@
+<?xml version="1.0" ?>
+  <?mso-application progid="Excel.Sheet"?>
+  <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+    <Worksheet ss:Name="TWC">
+      <Table>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">ID</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">pol</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Comments</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Localized Text</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_trapped_scholar0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Na chwale Asgardu!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Trapped Scholar</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Asgård be praised!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_trapped_scholar1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Tkwilem tu przez wieki. Udalo mi sie przezyc jedynie dzieki jedzeniu robali i czystej sile woli. Wreszcie moge pójsc, gdzie mi sie podoba!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Trapped Scholar</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I've been stuck in here for ages, surviving on maggots and sheer force of will. Finally, I'm free to go wherever I want!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_trapped_scholar2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Prawde mówiac, po tak dlugim czasie mysl o tym, by opuscic to miejsce, jest dosc przerazajaca.[P=1] Chyba jeszcze troche zostane...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Trapped Scholar</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">It actually feels kind of scary to leave now after all this time.[P=1] I think I better stay here for a little while longer.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_trapped_scholar3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Sluchaj...[P=1] Kilka lat temu widzialem, jak jeden czarodziej upuscil ksiege ze szczytu wiezy.[P=0.5] Chyba utknela na tym drzewie.[P=0.5] Mysle, ze jak porzadnie przywalisz, to spadnie ci prosto w rece..</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Trapped Scholar</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">You know...[P=1] A couple of years back I saw this wizard drop a tome out of the tower.[P=0.5] I think it got stuck in this tree.[P=0.5] I bet if you gave it a big thwack it might come thumbling down.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_gardener_scholar0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Nigdy tak naprawde nie pociagala mnie walka ani podróze...[P=1] Ogrodnictwo! To jest moje powolanie!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Gardener Mogge</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I never really cared for adventure and combat[P=1] -- gardening is my true calling!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_gardener_scholar1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">...Ziolo?[P=1] Nie mam pojecia, o co ci chodzi.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Gardener Mogge</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">...Weeds?[P=1] I don't know what you mean.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_lumberjack0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Cha, cha![P=1] Pokazalismy temu lasowi, kto tu rzadzi.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Orc 1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ha ha![P=1] We sure showed that forest who's boss.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_lumberjack1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">No raczej!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Orc 2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">We sure did!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_lumberjack2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wy dwaj![P=2] Wracac do roboty!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Orcs Boss</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">You two![P=2] Get back to work!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_lumberjack3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Znowu robota?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Orc 1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">More work?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_goblin_runner0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Och, nie![P=1] Kapitan polegl!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goblin Runner</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Oh no![P=1] The captain has fallen!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_goblin_captain</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ratujcie mnie![P=0.5] Ratujcie![P=1] Zabic ich![P=0.5] Zabic ich!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goblin Captain 1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Save me![P=0.5] Save me![P=1] Hurt them![P=0.5] Hurt them!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_goblin_idiot0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Tak jest![P=1] Ratowac ich![P=0.5] Ratowac ich![P=1] Zabic mnie![P=0.5] Zabic mnie![P=0.5] Zalapalem!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goblin Moron</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Right![P=1] Save them![P=0.5] Save them![P=1] Hurt you![P=0.5] Hurt you![P=0.5] I've got it!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_goblin_ambush0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">CZARODZIEJE![P=1] Idioci znów wybrali te sama droge!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goblin Captain 2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">WIZARDS![P=1] They were stupid enough to take this road again!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_goblin_ambush1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">DOBIERZCIE SIE IM DO SZAT!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goblin Captain 2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">GET THEIR ROBES!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_log1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Olbrzymi pien tarasuje droge.\n[P=1]W okolicy nie ma zadnych drzew o chocby zblizonym rozmiarze.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A giant log is blocking the road.\n[P=1]… There aren't any trees around here even close to this size.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A giant log is blocking the road.\n[P=1]… There aren't any trees around here even close to this size.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_locked0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Te drzwi sa chyba zamkniete od 20 lat.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">These doors have probably been locked for 20 years.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">These doors have probably been locked for 20 years.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_repaired</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Te drzwi przeszly przez te wszystkie lata kilka gruntownych napraw. Ciekawe, ile jeszcze wytrzymaja...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">This door has undergone some extensive repairs over the years. Wonder how much punishment it can take...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">This door has undergone some extensive repairs over the years. Wonder how much punishment it can take...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_spam</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wciaz nic tylko spam.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Still nothing but spam.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Still nothing but spam.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_baleyg</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">„Tu lezy Baelig, jeden z najbardziej obrotnych czarodziejów w zakonie. Zmarl z przyczyn naturalnych.” Szkoda tylko, ze zrobili literówke w imieniu.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">&quot;Here lies Baelig, one of the most resourceful wizards of the order. Died of natural causes.&quot; Sadly, his name was misspelled.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">&quot;Here lies Baelig, one of the most resourceful wizards of the order. Died of natural causes.&quot; Sadly, his name was misspelled.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_moose0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Prawdziwie królewski szkielet.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A most royal skeleton.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A most royal skeleton.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_bridge</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Naprawili most. Kiedys wszystko bylo lepsze...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The bridge has been repaired. Things were better back in the day.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The bridge has been repaired. Things were better back in the day.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_checkpoint0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ten punkt kontrolny ma juz chyba dni swej swietnosci za soba...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">This old checkpoint has seen better days...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">This old checkpoint has seen better days...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_checkpoint1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Leci lekko na lewo...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">It's listing lazily to the left...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">It's listing lazily to the left...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_poi_oldlady0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Byla tu kiedys pewna kobieta.</Data>
+          </Cell>
+          <Cell>
+           

@@ -1,0 +1,16 @@
+ype
+                fontAsset.fontAssetType = TMP_FontAsset.FontAssetTypes.Bitmap;
+
+                // Add FaceInfo to Font Asset
+                FaceInfo face = GetFaceInfo(m_FontFaceInfo, 1);
+                fontAsset.AddFaceInfo(face);
+
+                // Add GlyphInfo[] to Font Asset
+                TMP_Glyph[] glyphs = GetGlyphInfo(m_FontGlyphInfo, 1);
+                fontAsset.AddGlyphInfo(glyphs);
+
+                // Get and Add Kerning Pairs to Font Asset
+                if (m_IncludeKerningPairs)
+                {
+                    string fontFilePath = AssetDatabase.GetAssetPath(m_SourceFontFile);
+                    KerningTable ker

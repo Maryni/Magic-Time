@@ -1,0 +1,142 @@
+430\u0442\u0430
+    \u0420\u0438\u0445\u0430\u0440\u0434\u0430. \u041D\u043E \u0441\u043F\u0435\u0440\u0432\u0430
+    \u0441\u0442\u043E\u0438\u043B\u043E \u0431\u044B \u043D\u0430\u0443\u0447\u0438\u0442\u044C\u0441\u044F
+    \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F \u0443\u043C\u043E\u043C
+    \u0438 \u0445\u0438\u0442\u0440\u043E\u0441\u0442\u044C\u044E, \u0430 \u0437\u0430\u0442\u0435\u043C
+    \u0443\u0436\u0435 \u043C\u0430\u0445\u0430\u0442\u044C \u043C\u0435\u0447\u043E\u043C.(rep-0.5)"
+  - <>
+  - "\u0428\u043E\u043D"
+  - "-\u0427\u0442\u043E \u044D\u0442\u043E \u0431\u044B\u043B\u043E? "
+  - "\u042D\u043D\u0435\u0439"
+  - "-\u041F\u043E\u0445\u043E\u0436\u0435, \u0432 \u0446\u0435\u043D\u0442\u0440\u0435
+    \u0440\u044B\u043D\u043A\u0430 \u0432\u043D\u043E\u0432\u044C \u0437\u0430\u0432\u044F\u0437\u0430\u043B\u0430\u0441\u044C
+    \u0434\u0440\u0430\u043A\u0430 \u0434\u0432\u0443\u0445 \u043F\u044C\u044F\u043D\u0447\u0443\u0433,
+    \u043D\u0435 \u0441\u0443\u043C\u0435\u0432\u0448\u0438\u0445 \u043F\u043E\u0434\u0435\u043B\u0438\u0442\u044C
+    \u0447\u0430\u0440\u043A\u0443 \u044D\u0442\u043E\u0439 \u0441\u043C\u0440\u0430\u0434\u043D\u043E\u0439
+    \u0432\u044B\u043F\u0438\u0432\u043A\u0438.  \u0423\u043C\u0430 \u043D\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0443,
+    \u0438\u0437 \u0447\u0435\u0433\u043E \u043E\u043D\u0438 \u0435\u0435 \u0434\u0435\u043B\u0430\u044E\u0442.
+    \u0418 \u0443\u0436 \u043F\u043E\u0434\u0430\u0432\u043D\u043E, \u043A\u0430\u043A
+    \u0441\u0430\u043C \u043F\u0440\u0438\u0441\u0442\u0440\u0430\u0441\u0442\u0438\u043B\u0441\u044F
+    \u043A \u043D\u0435\u0439. "
+  - "\u0428\u043E\u043D"
+  - "-\u041F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u044E \u0441\u0434\u0435\u043B\u0430\u0442\u044C
+    \u0441\u0442\u0430\u0432\u043A\u0438 \u043D\u0430 \u043F\u043E\u0431\u0435\u0434\u0443
+    \u043E\u0434\u043D\u043E\u0433\u043E \u0438\u0437 \u043D\u0438\u0445."
+  - "\u042D\u043D\u0435\u0439"
+  - "-\u041E\u0442\u043B\u0438\u0447\u043D\u0430\u044F \u0438\u0434\u0435\u044F, \u043C\u043E\u0439
+    \u043C\u0430\u043B\u044C\u0447\u0438\u043A. \u0425\u0432\u0430\u0442\u0438\u0442
+    \u0441 \u043C\u0435\u043D\u044F \u043D\u0430 \u0441\u0435\u0433\u043E\u0434\u043D\u044F
+    \u0431\u0440\u0430\u0433\u0438. "
+  test_text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  actor_name:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  rep: 0
+  TextField: {fileID: 0}
+  actors_field: {fileID: 0}
+  i: 0
+  k: 0
+  j: 0
+  z: 0
+  head: {fileID: 1597152539676282}
+  check_text: 
+  timer: 1
+  reading: 0
+  answers: {fileID: 114511158729871418}
+  check_answers: 0
+  after_answers: 0
+  answers_text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+--- !u!114 &114511158729871418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1688589361552662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838cf2492bae2d6419d3e0f515f772bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dia: {fileID: 114332254708535378}
+  rep: 0
+  b1: {fileID: 0}
+  b2: {fileID: 0}
+  b3: {fileID: 0}
+  a1: {fileID: 0}
+  a2: {fileID: 0}
+  a3: {fileID: 0}
+  clicked: 000000
+  step: 0
+--- !u!114 &114547318156296672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1688589361552662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff48bd5fb1298b468b5b3e7e9d549aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 114332254708535378}
+  rep: 0
+--- !u!212 &212075343111123030
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597152539676282}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchR

@@ -1,0 +1,32 @@
+﻿using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+using System.Collections;
+using System.Collections.Generic;
+
+[RequireComponent(typeof(MeshFilter))]
+public class SoftNormalsToVertexColor : MonoBehaviour {
+
+	public enum Method { Simple, AngularDeviation };
+
+	public Method method = Method.AngularDeviation;
+	public bool generateOnAwake = false;
+	public bool generateNow = false;
+
+	void OnDrawGizmos() {
+		if( generateNow ) {
+			generateNow = false;
+			TryGenerate();
+		}
+	}
+
+	void Awake() {
+		if(generateOnAwake)
+			TryGenerate();
+	}
+
+	void TryGenerate() {
+		MeshFilter mf = GetComponent<MeshFilter>();
+		if( mf == null ) {
+			Debug.LogError( "MeshFilter missing

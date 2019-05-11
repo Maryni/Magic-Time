@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <LetterDay>d</LetterDay>
+  <LetterHour>h</LetterHour>
+  <LetterMinute>m</LetterMinute>
+  <LetterSecond>s</LetterSecond>
+  
+  <DaysLower>days</DaysLower>
+  <SecondsLower>seconds</SecondsLower>
+
+  <SeasonSpring>spring</SeasonSpring>
+  <SeasonSummer>summer</SeasonSummer>
+  <SeasonFall>fall</SeasonFall>
+  <SeasonWinter>winter</SeasonWinter>
+  <SeasonPermanentSummer>permanent summer</SeasonPermanentSummer>
+  <SeasonPermanentWinter>permanent winter</SeasonPermanentWinter>
+
+  <QuadrumAprimay>Aprimay</QuadrumAprimay>
+  <QuadrumJugust>Jugust</QuadrumJugust>
+  <QuadrumSe

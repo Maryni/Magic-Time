@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<MechanicalThorax.label>tórax</MechanicalThorax.label>
+	
+	<LeftKnifeProtrusion.label>protusão da faca esquerda</LeftKnifeProtrusion.label>
+	
+	<RightKnifeProtrusion.label>protusão da faca direita</RightKnifeProtrusion.label>
+	
+	<MechanicalNeck.label>pescoço</MechanicalNeck.label>
+	
+	<MechanicalHead.label>cabeça</MechanicalHead.label>
+	
+	<LeftSightSensor.label>sensor visual esquerdo</LeftSightSensor.label>
+	
+	<RightSightSensor.label>sensor visual direito</RightSightSensor.label>
+	
+	<LeftHearingSensor.label>sensor auditivo esquerdo</LeftHearingSensor.label>
+	
+	<RightHearingSensor.label>sensor auditivo direito</RightHearingSensor.label>
+	
+	<SmellSensor.label>sensor olfativo</SmellSensor.label>
+	
+	<LeftMechanicalShoulder.label>ombro esquerdo</LeftMechanicalShoulder.label>
+	
+	<LeftMechanicalArm.label>braço esquerdo</LeftMechanicalArm.label>
+	
+	<LeftMechanicalHand.label>mão esquerda</LeftMechanicalHand.label>
+	
+	<LeftHandMechanicalPinky.label>mindinho da mão

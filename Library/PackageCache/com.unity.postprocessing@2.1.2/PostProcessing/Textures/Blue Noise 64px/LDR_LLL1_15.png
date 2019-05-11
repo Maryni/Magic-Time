@@ -1,0 +1,249 @@
+var CC = require('config-chain').ConfigChain
+var inherits = require('inherits')
+var configDefs = require('./defaults.js')
+var types = configDefs.types
+var once = require('once')
+var fs = require('fs')
+var path = require('path')
+var nopt = require('nopt')
+var ini = require('ini')
+var Umask = configDefs.Umask
+var mkdirp = require('mkdirp')
+var umask = require('../utils/umask')
+var isWindows = require('../utils/is-windows.js')
+
+exports.load = load
+exports.Conf = Conf
+exports.loaded = false
+exports.rootConf = null
+exports.usingBuiltin = false
+exports.defs = configDefs
+
+Object.defineProperty(exports, 'defaults', { get: function () {
+  return configDefs.defaults
+}, enumerable: true })
+
+Object.defineProperty(exports, 'types', { get: function () {
+  return configDefs.types
+}, enumerable: true })
+
+exports.validate = validate
+
+var myUid = process.env.SUDO_UID !== undefined
+          ? process.env.SUDO_UID : (process.getuid && process.getuid())
+var myGid = process.env.SUDO_GID !== undefined
+          ? process.env.SUDO_GID : (process.getgid && process.getgid())
+
+var loading = false
+var loadCbs = []
+function load () {
+  var cli, builtin, cb
+  for (var i = 0; i < arguments.length; i++) {
+    switch (typeof arguments[i]) {
+      case 'string': builtin = arguments[i]; break
+      case 'object': cli = arguments[i]; break
+      case 'function': cb = arguments[i]; break
+    }
+  }
+
+  if (!cb) cb = function () {}
+
+  if (exports.loaded) {
+    var ret = exports.loaded
+    if (cli) {
+      ret = new Conf(ret)
+      ret.unshift(cli)
+    }
+    return process.nextTick(cb.bind(null, null, ret))
+  }
+
+  // either a fresh object, or a clone of the passed in obj
+  if (!cli) {
+    cli = {}
+  } else {
+    cli = Object.keys(cli).reduce(function (c, k) {
+      c[k] = cli[k]
+      return c
+    }, {})
+  }
+
+  loadCbs.push(cb)
+  if (loading) return
+
+  loading = true
+
+  cb = once(function (er, conf) {
+    if (!er) {
+      exports.loaded = conf
+      loading = false
+    }
+    loadCbs.forEach(function (fn) {
+      fn(er, conf)
+    })
+    loadCbs.length = 0
+  })
+
+  // check for a builtin if provided.
+  exports.usingBuiltin = !!builtin
+  var rc = exports.rootConf = new Conf()
+  if (builtin) {
+    rc.addFile(builtin, 'builtin')
+  } else {
+    rc.add({}, 'builtin')
+  }
+
+  rc.on('load', function () {
+    load_(builtin, rc, cli, cb)
+  })
+  rc.on('error', cb)
+}
+
+function load_ (builtin, rc, cli, cb) {
+  var defaults = configDefs.defaults
+  var conf = new Conf(rc)
+
+  conf.usingBuiltin = !!builtin
+  conf.add(cli, 'cli')
+  conf.addEnv()
+
+  conf.loadPrefix(function (er) {
+    if (er) return cb(er)
+
+    // If you're doing `npm --userconfig=~/foo.npmrc` then you'd expect
+    // that ~/.npmrc won't override the stuff in ~/foo.npmrc (or, indeed
+    // be used at all).
+    //
+    // However, if the cwd is ~, then ~/.npmrc is the home for the project
+    // config, and will override the userconfig.
+    //
+    // If you're not setting the userconfig explicitly, then it will be loaded
+    // twice, which is harmless but excessive.  If you *are* setting the
+    // userconfig explicitly then it will override your explicit intent, and
+    // that IS harmful and unexpected.
+    //
+    // Solution: Do not load project config file that is the same as either
+    // the default or resolved userconfig value.  npm will log a "verbose"
+    // message about this when it happens, but it is a rare enough edge case
+    // that we don't have to be super concerned about it.
+    var projectConf = path.resolve(conf.localPrefix, '.npmrc')
+    var defaultUserConfig = rc.get('userconfig')
+    var resolvedUserConfig = conf.get('userconfig')
+    if (!conf.get('global') &&
+        projectConf !== defaultUserConfig &&
+        projectConf !== resolvedUserConfig) {
+      conf.addFile(projectConf, 'project')
+      conf.once('load', afterPrefix)
+    } else {
+      conf.add({}, 'project')
+      afterPrefix()
+    }
+  })
+
+  function afterPrefix () {
+    conf.addFile(conf.get('userconfig'), 'user')
+    conf.once('error', cb)
+    conf.once('load', afterUser)
+  }
+
+  function afterUser () {
+    // globalconfig and globalignorefile defaults
+    // need to respond to the 'prefix' setting up to this point.
+    // Eg, `npm config get globalconfig --prefix ~/local` should
+    // return `~/local/etc/npmrc`
+    // annoying humans and their expectations!
+    if (conf.get('prefix')) {
+      var etc = path.resolve(conf.get('prefix'), 'etc')
+      mkdirp(etc, function () {
+        defaults.globalconfig = path.resolve(etc, 'npmrc')
+        defaults.globalignorefile = path.resolve(etc, 'npmignore')
+        afterUserContinuation()
+      })
+    } else {
+      afterUserContinuation()
+    }
+  }
+
+  function afterUserContinuation () {
+    conf.addFile(conf.get('globalconfig'), 'global')
+
+    // move the builtin into the conf stack now.
+    conf.root = defaults
+    conf.add(rc.shift(), 'builtin')
+    conf.once('load', function () {
+      conf.loadExtras(afterExtras)
+    })
+  }
+
+  function afterExtras (er) {
+    if (er) return cb(er)
+
+    // warn about invalid bits.
+    validate(conf)
+
+    var cafile = conf.get('cafile')
+
+    if (cafile) {
+      return conf.loadCAFile(cafile, finalize)
+    }
+
+    finalize()
+  }
+
+  function finalize (er) {
+    if (er) {
+      return cb(er)
+    }
+
+    exports.loaded = conf
+    cb(er, conf)
+  }
+}
+
+// Basically the same as CC, but:
+// 1. Always ini
+// 2. Parses environment variable names in field values
+// 3. Field values that start with ~/ are replaced with process.env.HOME
+// 4. Can inherit from another Conf object, using it as the base.
+inherits(Conf, CC)
+function Conf (base) {
+  if (!(this instanceof Conf)) return new Conf(base)
+
+  CC.apply(this)
+
+  if (base) {
+    if (base instanceof Conf) {
+      this.root = base.list[0] || base.root
+    } else {
+      this.root = base
+    }
+  } else {
+    this.root = configDefs.defaults
+  }
+}
+
+Conf.prototype.loadPrefix = require('./load-prefix.js')
+Conf.prototype.loadCAFile = require('./load-cafile.js')
+Conf.prototype.loadUid = require('./load-uid.js')
+Conf.prototype.setUser = require('./set-user.js')
+Conf.prototype.findPrefix = require('./find-prefix.js')
+Conf.prototype.getCredentialsByURI = require('./get-credentials-by-uri.js')
+Conf.prototype.setCredentialsByURI = require('./set-credentials-by-uri.js')
+Conf.prototype.clearCredentialsByURI = require('./clear-credentials-by-uri.js')
+
+Conf.prototype.loadExtras = function (cb) {
+  this.setUser(function (er) {
+    if (er) return cb(er)
+    this.loadUid(function (er) {
+      if (er) return cb(er)
+      // Without prefix, nothing will ever work
+      mkdirp(this.prefix, cb)
+    }.bind(this))
+  }.bind(this))
+}
+
+Conf.prototype.save = function (where, cb) {
+  var target = this.sources[where]
+  if (!target || !(target.path || target.source) || !target.data) {
+    var er
+    if (where !== 'builtin') er = new Error('bad save target: ' + where)
+    if (c

@@ -1,0 +1,1120 @@
+       def get_sensitive(self):
+            return self.sensitive
+
+        def __call__(self):
+
+            state.filename = self.lle.filename
+            state.linenumber = self.lle.line
+            state.showing = self.lle.showing
+
+            state.kind = None
+            state.mode = "kind"
+
+            state.tag = None
+            state.original_tag = None
+
+            state.attributes = [ ]
+            state.original_attributes = [ ]
+
+            state.transforms = [ ]
+            state.original_transforms = [ ]
+
+            state.transition = None
+            state.original_transition = None
+
+            state.behind = [ ]
+            state.original_behind = [ ]
+
+            state.channel = None
+            state.original_channel = None
+
+            state.audio = None
+            state.original_audio = None
+
+            state.added_statement = None
+            state.change = False
+
+            update_ast()
+
+
+    def is_scene_show_hide_editable(node):
+        """
+        Return true if a Scene, Show, or Hide ATL node is editable, or
+        False otherwise.
+        """
+
+        if not node.imspec:
+            return True
+
+        if node.imspec[1]: # expression
+            return False
+
+        if node.imspec[2]: # tag
+            return False
+
+        if node.imspec[4]: # layer
+            return False
+
+        if node.imspec[5]: # zorder
+            return False
+
+        if getattr(node, "atl", None):
+            return False
+
+        return True
+
+
+    class ChangeStatement(Action):
+        """
+        An action that changes the statement at `filename`:`linenumber`.
+
+        `node`
+            Should be the AST node corresponding to that statement.
+        """
+
+        def __init__(self, lle, node):
+            self.lle = lle
+
+            self.tag = None
+            self.attributes = [ ]
+            self.transforms = [ ]
+            self.transition = None
+            self.behind = [ ]
+
+            self.channel = None
+            self.audio = None
+
+            self.sensitive = True
+
+            def audio(n):
+
+                self.sensitive = False
+
+                name = n.parsed[0]
+                p = n.parsed[1]
+
+                self.kind = name[0]
+                self.channel = p["channel"] or name[1]
+
+                if "file" in p:
+                    try:
+                        self.audio = eval(p["file"])
+                    except:
+                        return
+
+                    self.audio = audio_code_to_filename(self.channel, self.audio)
+                else:
+                    self.audio = None
+
+                if p.get("loop", None):
+                    return
+
+                fadeout = p.get("fadeout", None)
+
+                if (fadeout is not None) and (fadeout != "None"):
+                    return
+
+                if p.get("if_changed", False):
+                    return
+
+                if p.get("fadein", "0") != "0":
+                    return
+
+                self.sensitive = True
+
+
+            if isinstance(node, renpy.ast.Show):
+                self.kind = "show"
+
+                self.tag = node.imspec[0][0]
+                self.attributes = list(node.imspec[0][1:])
+                self.transforms = list(node.imspec[3])
+                self.behind = list(node.imspec[6])
+
+                self.sensitive = is_scene_show_hide_editable(node)
+
+            elif isinstance(node, renpy.ast.Scene):
+                self.kind = "scene"
+
+                # The scene statement does not need to show an image.
+                if node.imspec is not None:
+
+                    self.tag = node.imspec[0][0]
+                    self.attributes = list(node.imspec[0][1:])
+                    self.transforms = list(node.imspec[3])
+                    self.behind = list(node.imspec[6])
+
+                else:
+
+                    self.tag = None
+                    self.attributes = [ ]
+                    self.transforms = [ ]
+                    self.behind = [ ]
+
+                self.sensitive = is_scene_show_hide_editable(node)
+
+            elif isinstance(node, renpy.ast.Hide):
+                self.kind = "hide"
+
+                self.tag = node.imspec[0][0]
+                self.attributes = list(node.imspec[0][1:])
+                self.transforms = list(node.imspec[3])
+
+                self.sensitive = is_scene_show_hide_editable(node)
+
+            elif isinstance(node, renpy.ast.With):
+                self.kind = "with"
+                self.transition = node.expr
+
+            elif is_play(node) or is_queue(node) or is_stop(node):
+                audio(node)
+
+            elif is_voice(node):
+                p = node.parsed[1]
+
+                self.kind = "voice"
+                self.sensitive = False
+                self.channel = voice_channel
+
+                try:
+                    self.audio = eval(p)
+                except:
+                    return
+
+                self.audio = audio_code_to_filename(self.channel, self.audio)
+                self.sensitive = True
+
+        def get_sensitive(self):
+            return self.sensitive
+
+        def __call__(self):
+            state.filename = self.lle.filename
+            state.linenumber = self.lle.line
+            state.showing = self.lle.showing
+
+            state.kind = self.kind
+            state.original_kind = self.kind
+
+            if self.kind == "with":
+                state.mode = "with"
+            elif self.kind == "hide":
+                state.mode = "tag"
+            elif self.kind == "play" or self.kind == "queue":
+                state.mode = "audio"
+            elif self.kind == "stop":
+                state.mode = "channel"
+            elif self.kind == "voice":
+                state.mode = "audio"
+            else:
+                if self.tag is None:
+                    state.mode = "tag"
+                else:
+                    state.mode = "attributes"
+
+            state.tag = self.tag
+            state.original_tag = self.tag
+
+            state.attributes = self.attributes
+            state.original_attributes = list(self.attributes)
+
+            state.transforms = list(self.transforms)
+            state.original_transforms = list(self.transforms)
+
+            state.transition = self.transition
+            state.original_transition = self.transition
+
+            state.behind = self.behind
+            state.original_behind = list(self.behind)
+
+            state.channel = self.channel
+            state.original_channel = self.channel
+
+            state.audio = self.audio
+            state.original_audio = self.audio
+
+            state.added_statement = True
+            state.change = True
+
+            update_ast()
+
+
+    class SetKind(Action):
+
+        def __init__(self, kind):
+            self.kind = kind
+
+        def __call__(self):
+
+            if self.kind != state.kind:
+                state.kind = self.kind
+                state.tag = None
+                state.attributes = [ ]
+
+            if self.kind in ("scene", "show", "hide"):
+                state.mode = "tag"
+                pick_tag()
+
+            if self.kind == "with":
+                state.mode = "with"
+
+            if self.kind in ("play", "queue", "stop"):
+                state.mode = "channel"
+
+            if self.kind == "voice":
+                state.channel = "voice"
+                state.mode = "audio"
+
+            update_ast()
+
+
+    class SetTag(Action):
+        """
+        An action that sets the image tag.
+        """
+
+        def __init__(self, tag):
+            self.tag = tag
+
+        def __call__(self):
+
+            if state.tag != self.tag:
+
+                state.tag = self.tag
+                state.attributes = [ ]
+
+            if state.kind != "hide":
+                state.mode = "attributes"
+
+            update_ast()
+
+        def get_selected(self):
+            return self.tag == state.tag
+
+
+    class ToggleAttribute(Action):
+        """
+        This action toggles on and off an attribute. If an attribute being
+        toggled on conflicts with other attributes, those attributes are
+        removed.
+
+        Then the AST is updated.
+        """
+
+        def __init__(self, attribute):
+            self.attribute = attribute
+
+        def __call__(self):
+            if self.attribute in state.attributes:
+                state.attributes.remove(self.attribute)
+            else:
+
+                state.attributes.append(self.attribute)
+
+                compatible = set()
+
+                for i in renpy.get_ordered_image_attributes(state.tag, [ self.attribute ]):
+                    compatible.add(i)
+
+                state.attributes = [ i for i in state.attributes if i in compatible ]
+
+            update_ast()
+
+        def get_selected(self):
+            return self.attribute in state.attributes
+
+
+    class SetList(Action):
+        """
+        When clicked once, sets l to [ v ]. When clicked again, sets l to [ ]
+        """
+
+        def __init__(self, l, v):
+            self.l = l
+            self.v = v
+
+        def __call__(self):
+            if self.v in self.l:
+                self.l.remove(self.v)
+            else:
+                self.l[:] = [ self.v ]
+
+            update_ast()
+
+        def get_selected(self):
+            return self.v in self.l
+
+
+    class ToggleList(Action):
+        """
+        Toggles the presence or absence of v in l, appending it to the end
+        of the list when necessary.
+        """
+
+        def __init__(self, l, v):
+            self.l = l
+            self.v = v
+
+        def __call__(self):
+            if self.v in self.l:
+                self.l.remove(self.v)
+            else:
+                self.l.append(self.v)
+
+            update_ast()
+
+        def get_selected(self):
+            return self.v in self.l
+
+
+    class SetTransition(Action):
+        """
+        This sets the transition used by a with statement.
+        """
+
+        def __init__(self, transition):
+            self.transition = transition
+
+        def __call__(self):
+            state.transition = self.transition
+
+            update_ast()
+
+        def get_selected(self):
+            return self.transition == state.transition
+
+
+    class SetChannel(Action):
+        """
+        This sets the channel used by an audio statement.
+        """
+
+        def __init__(self, channel):
+            self.channel = channel
+
+        def __call__(self):
+            if state.kind != "stop":
+                state.mode = "audio"
+
+            state.channel = self.channel
+
+            update_ast()
+
+        def get_selected(self):
+            return self.channel == state.channel
+
+
+    class SetAudio(Action):
+        """
+        This sets the audio file played by a statement.
+        """
+
+        def __init__(self, filename):
+            self.filename = filename
+
+        def __call__(self):
+            state.audio = self.filename
+
+            update_ast()
+
+        def get_selected(self):
+            return state.audio == self.filename
+
+
+    class Commit(Action):
+        """
+        Commits the current statement to the .rpy files.
+        """
+
+        def __call__(self):
+            statement = get_statement()
+
+            if statement:
+                renpy.scriptedit.insert_line_before(statement, state.filename, state.linenumber)
+
+            if state.change:
+                if statement:
+                    renpy.scriptedit.remove_line(state.filename, state.linenumber + 1)
+                else:
+                    renpy.scriptedit.remove_line(state.filename, state.linenumber)
+
+            if not state.change and statement:
+                add_spacing(state.filename, state.linenumber)
+
+            if state.change and not statement:
+                remove_spacing(state.filename, state.linenumber)
+
+            state.mode = "lines"
+            renpy.clear_line_log()
+            renpy.rollback(checkpoints=0, force=True, greedy=True)
+
+        def get_sensitive(self):
+            return get_statement()
+
+    class Reset(Action):
+        """
+        This action resets the AST to what it was when we started adjusting the
+        statement.
+        """
+
+        def __call__(self):
+
+            state.kind = state.original_kind
+            state.tag = state.original_tag
+            state.attributes = state.original_attributes
+            state.transforms = state.original_transforms
+
+            if state.kind is None:
+                state.mode = "kind"
+            elif state.tag is None:
+                state.mode = "tag"
+
+            update_ast()
+
+    class Cancel(Action):
+        """
+        This action cancels the operation, resetting the AST and returning to
+        the lines screen.
+        """
+
+        def __call__(self):
+
+            state.kind = state.original_kind
+            state.tag = state.original_tag
+            state.attributes = state.original_attributes
+            state.transforms = state.original_transforms
+
+            state.transition = state.original_transition
+
+            state.channel = state.original_channel
+            state.audio = state.original_audio
+
+            state.mode = "lines"
+
+            update_ast()
+
+    class Remove(Action):
+        """
+        This action removes the current line from the AST and the script.
+        """
+
+        def __call__(self):
+
+            state.kind = None
+            state.tag = None
+            state.mode = "lines"
+
+            try:
+                update_ast(force=True)
+            finally:
+                if state.change:
+                    renpy.scriptedit.remove_line(state.filename, state.linenumber)
+
+
+    # Displayables #############################################################
+
+    class SemiModal(renpy.Displayable):
+        """
+        This wraps a displayable, and ignores
+        """
+
+        def __init__(self, child):
+            renpy.Displayable.__init__(self)
+
+            self.child = child
+            self.w = 0
+            self.h = 0
+
+        def per_interact(self):
+            renpy.display.render.redraw(self, 0)
+
+        def render(self, width, height, st, at):
+
+            if renpy.get_screen("confirm"):
+                return renpy.Render(0, 0)
+
+            surf = renpy.render(self.child, width, height, st, at)
+            w, h = surf.get_size()
+
+            self.w = w
+            self.h = h
+
+            rv = renpy.Render(w, h)
+            rv.blit(surf, (0, 0))
+
+            return rv
+
+        def event(self, ev, x, y, st):
+
+            if renpy.get_screen("confirm"):
+                return
+
+            rv = self.child.event(ev, x, y, st)
+            if rv is not None:
+                return rv
+
+            if ev.type == renpy.display.core.TIMEEVENT:
+                return None
+
+            if state.mode != "lines":
+
+                if renpy.map_event(ev, "rollback") or renpy.map_event(ev, "rollforward"):
+                    raise renpy.IgnoreEvent()
+
+                raise renpy.display.layout.IgnoreLayers()
+
+            if (0 <= x < self.w) and (0 <= y < self.h):
+                raise renpy.display.layout.IgnoreLayers()
+
+            return None
+
+        def get_placement(self):
+            return self.child.get_placement()
+
+        def visit(self):
+            return [ self.child ]
+
+    # Sort #####################################################################
+
+    import re
+
+    def component_key(s):
+        """
+        Sorts l in a way that groups numbers together and treats them as
+        numbers (so c10 comes after c9, not c1.)
+        """
+        rv = [ ]
+
+        for i, v in enumerate(re.split(r'(\d+)', s.lower())):
+            if not v:
+                continue
+
+            if i & 1:
+                v = int(v)
+
+            rv.append(v)
+
+        return tuple(rv)
+
+init 2202 python hide in director:
+
+    if state.active:
+
+        for name, file, _line in renpy.dump.transforms:
+            if file.startswith("renpy/common/"):
+                continue
+
+            if file == "game/screens.rpy":
+                continue
+
+            transforms.append(name)
+            transforms.sort(key=component_key)
+
+        import fnmatch
+
+        for c in audio_channels + [ voice_channel ]:
+
+            patterns = audio_channel_patterns.get(c, audio_patterns)
+
+            if c not in audio_files:
+                audio_files[c] = [ ]
+
+            for fn in renpy.list_files():
+
+                for p in patterns:
+                    if fnmatch.fnmatch(fn, p):
+                        break
+                else:
+                    continue
+
+                audio_files[c].append(fn)
+
+            audio_files[c].sort()
+
+    if blacklist_prefixed_tags:
+
+        available = set()
+
+        for i in sorted(renpy.get_available_image_tags()):
+
+            blacklist = False
+
+            for j in available:
+                if i.startswith(j + "_"):
+                    blacklist = True
+
+            if i in scene_tags:
+                blacklist = False
+            if i in show_tags:
+                blacklist = False
+
+            if blacklist:
+                tag_blacklist.add(i)
+            else:
+                available.add(i)
+
+
+
+# Styles and screens ###########################################################
+
+style director_frame is _frame:
+    xfill True
+    yfill False
+    ypadding 0
+
+style director_top_frame is director_frame:
+    background "#d0d0d0d0"
+    yalign 0.0
+
+style director_bottom_frame is director_frame:
+    background "#d0d0d0f0"
+    yalign 1.0
+
+
+style director_text is _text:
+    size 18
+
+style director_label
+
+style director_label_text is director_text:
+    bold True
+
+style director_button is empty
+
+style director_button_text is director_text:
+    color "#405060"
+    hover_color "#048"
+    insensitive_color "#00000020"
+    selected_color "#0099cc"
+
+style director_edit_button is director_button:
+    xsize 18
+
+style director_edit_button_text is director_button_text:
+    font "DejaVuSans.ttf"
+    xalign 0.5
+
+style director_action_button is director_button
+
+style director_action_button_text is director_button_text:
+    size 26
+
+style director_icon_action_button is director_action_button:
+    xpadding 10
+
+style director_icon_action_button_text is director_action_button_text:
+    font "DejaVuSans.ttf"
+
+style director_statement_text is director_text:
+    size 20
+
+style director_statement_button is director_button
+
+style director_statement_button_text is director_button_text:
+    size 20
+
+style director_vscrollbar is _vscrollbar
+
+screen director_move_button():
+
+    if persistent._director_bottom:
+
+        textbutton _("â¬†"):
+            style "director_icon_action_button"
+            action SetField(persistent, "_director_bottom", False)
+            xalign 1.0
+    else:
+
+        textbutton _("â¬‡"):
+            style "director_icon_action_button"
+            action SetField(persistent, "_director_bottom", True)
+            xalign 1.0
+
+screen director_lines(state):
+
+    frame:
+        style "empty"
+        background Solid("#fff8", xsize=20, xpos=gui._scale(300))
+
+        has vbox:
+            xfill True
+
+        viewport:
+            scrollbars "vertical"
+            ymaximum director.viewport_height
+            mousewheel True
+            yinitial 1.0
+            viewport_yfill False
+
+            has vbox:
+                xfill True
+
+            for line_pos, line_text, add_action, change_action in state.lines:
+
+                fixed:
+                    yfit True
+                    textbutton "+":
+                        xpos gui._scale(300)
+                        action add_action
+                        style "director_edit_button"
+                        alt ("add before " + line_text)
+
+                fixed:
+                    yfit True
+
+                    text "[line_pos]":
+                        xpos (gui._scale(300) - 10)
+                        xalign 1.0
+                        text_align 1.0
+                        style "director_text"
+
+                    if change_action:
+                        textbutton "âœ":
+                            action change_action
+                            xpos gui._scale(300)
+                            style "director_edit_button"
+                            alt ("change " + line_text)
+
+                    frame:
+                        style "empty"
+                        left_padding (gui._scale(300) + 30)
+
+                        text "[line_text!q]" style "director_text"
+
+        null height 14
+
+        fixed:
+            yfit True
+
+            hbox:
+                xpos (gui._scale(300) + 30)
+
+                textbutton _("Done"):
+                    action director.Stop()
+                    style "director_action_button"
+
+            use director_move_button()
+
+
+
+screen director_statement(state):
+
+    $ kind = state.kind or __("(statement)")
+    $ tag = state.tag or __("(tag)")
+    $ attributes =  " ".join(director.get_ordered_attributes()) or __("(attributes)")
+    $ transforms = ", ".join(state.transforms) or __("(transform)")
+    $ behind = ", ".join(state.behind) or __("(tag)")
+    $ behind_tags = director.get_behind_tags(state.tag)
+
+    hbox:
+        style_prefix "director_statement"
+
+        textbutton "[kind] " action SetField(state, "mode", "kind")
+        textbutton "[tag] " action SetField(state, "mode", "tag")
+
+        if state.attributes or state.kind in { "scene", "show"}:
+            textbutton "[attributes] " action SetField(state, "mode", "attributes")
+
+        if state.transforms or state.kind in { "scene", "show"}:
+            text "at "
+            textbutton "[transforms] " action SetField(state, "mode", "transform")
+
+        if behind_tags and (state.kind in { "show" }):
+            text "behind "
+            textbutton "[behind]" action SetField(state, "mode", "behind")
+
+    null height 14
+
+screen director_with_statement(state):
+
+    $ transition = state.transition or __("(transition)")
+
+    hbox:
+        style_prefix "director_statement"
+
+        text "with "
+        textbutton "[transition]" action SetField(state, "mode", "with")
+
+    null height 14
+
+screen director_audio_statement(state):
+
+    $ channel = state.channel or __("(channel)")
+    $ audio = director.quote_audio() or __("(filename)")
+
+    hbox:
+        style_prefix "director_statement"
+
+        textbutton "[state.kind] " action SetField(state, "mode", "kind")
+
+        if state.kind != "voice":
+            textbutton "[channel] " action SetField(state, "mode", "channel")
+
+        if state.kind != "stop":
+            textbutton "[audio!q]" action SetField(state, "mode", "audio")
+
+    null height 14
+
+screen director_footer(state):
+
+    null height 14
+
+    fixed:
+
+        yfit True
+
+        hbox:
+            style_prefix "director_action"
+
+            spacing 26
+
+            if state.change:
+                textbutton _("Change") action director.Commit()
+            else:
+                textbutton _("Add") action director.Commit()
+
+
+            textbutton _("Cancel") action director.Cancel()
+
+            if state.change:
+                textbutton _("Remove") action director.Remove()
+
+        use director_move_button()
+
+
+# Formats the choices.
+screen director_choices(title):
+
+    text title size 20
+
+    frame:
+        style "empty"
+        left_margin 10
+
+        viewport:
+            scrollbars "vertical"
+            ymaximum director.viewport_height
+            mousewheel True
+            yinitial 0.0
+            viewport_yfill False
+
+            hbox:
+                box_wrap True
+                spacing 20
+
+                transclude
+
+
+screen director_kind(state):
+
+    vbox:
+        xfill True
+
+        use director_statement(state)
+
+        use director_choices(_("Statement:")):
+
+            textbutton "scene" action director.SetKind("scene")
+            textbutton "show" action director.SetKind("show")
+            textbutton "hide" action director.SetKind("hide")
+            textbutton "with" action director.SetKind("with")
+            textbutton "play" action director.SetKind("play")
+            textbutton "queue" action director.SetKind("queue")
+            textbutton "stop" action director.SetKind("stop")
+            textbutton "voice" action director.SetKind("voice")
+
+        use director_footer(state)
+
+
+screen director_tag(state):
+
+    vbox:
+        xfill True
+
+        use director_statement(state)
+
+        use director_choices(_("Tag:")):
+
+            for t in director.get_tags():
+                textbutton "[t]":
+                    action director.SetTag(t)
+
+        use director_footer(state)
+
+
+screen director_attributes(state):
+
+    vbox:
+        xfill True
+
+        use director_statement(state)
+
+        use director_choices(_("Attributes:")):
+
+            for t in director.get_attributes():
+                textbutton "[t]":
+                    action director.ToggleAttribute(t)
+                    style "director_button"
+                    ypadding 0
+
+        use director_footer(state)
+
+
+screen director_transform(state):
+
+    vbox:
+        xfill True
+
+        use director_statement(state)
+
+        use director_choices(_("Transforms:")):
+
+            for t in director.get_transforms():
+                textbutton "[t]":
+                    action director.SetList(state.transforms, t)
+                    alternate director.ToggleList(state.transforms, t)
+                    style "director_button"
+                    ypadding 0
+
+        use director_footer(state)
+
+
+screen director_behind(state):
+
+    vbox:
+        xfill True
+
+        use director_statement(state)
+
+        use director_choices(_("Behind:")):
+
+            for t in director.get_behind_tags(state.tag):
+                textbutton "[t]":
+                    action director.SetList(state.behind, t)
+                    alternate director.ToggleList(state.behind, t)
+                    style "director_button"
+                    ypadding 0
+
+        use director_footer(state)
+
+
+screen director_with(state):
+
+    vbox:
+        xfill True
+
+        use director_with_statement(state)
+
+        use director_choices(_("Transition:")):
+
+            for t in director.transitions:
+                textbutton "[t]":
+                    action director.SetTransition(t)
+                    style "director_button"
+                    ypadding 0
+
+        use director_footer(state)
+
+
+screen director_channel(state):
+
+    vbox:
+        xfill True
+
+        use director_audio_statement(state)
+
+        use director_choices(_("Channel:")):
+
+            for c in director.audio_channels:
+                textbutton "[c]":
+                    action director.SetChannel(c)
+                    style "director_button"
+                    ypadding 0
+
+        use director_footer(state)
+
+
+screen director_audio(state):
+
+    vbox:
+        xfill True
+
+        use director_audio_statement(state)
+
+        use director_choices(_("Audio Filename:")):
+
+            for fn in director.audio_files.get(state.channel, [ ]):
+                $ elided_fn = director.audio_filename_to_display(state.channel, fn)
+
+                textbutton "[elided_fn]":
+                    action director.SetAudio(fn)
+                    style "director_button"
+                    ypadding 0
+
+        use director_footer(state)
+
+
+
+screen director():
+    zorder 1400
+
+    $ state = director.state
+
+    if renpy.loadable("id/" + state.mode + ".png"):
+        add ("id/" + state.mode + ".png")
+
+    frame:
+        style_prefix "director"
+
+        style ("director_bottom_frame" if persistent._director_bottom else "director_top_frame")
+
+        xpadding ( 0 if state.mode == "lines" else gui._scale(20) )
+
+        at director.SemiModal
+
+        has fixed:
+            fit_first True
+
+        if state.mode == "lines":
+            use director_lines(state)
+        elif state.mode == "kind":
+            use director_kind(state)
+        elif state.mode == "tag":
+            use director_tag(state)
+        elif state.mode == "attributes":
+            use director_attributes(state)
+        elif state.mode == "transform":
+            use director_transform(state)
+        elif state.mode == "behind":
+            use director_behind(state)
+        elif state.mode == "with":
+            use director_with(state)
+        elif state.mode == "channel":
+            use director_channel(state)
+        elif state.mode == "audio":
+            use director_audio(state)
+
+    if state.mode == "lines":
+        key "director" action director.Stop()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Ïúíş              …          x  __TEXT                   `               `                   __text          __TEXT          `      d?      `               €            __stubs         __TEXT          ÄP      €      ÄP              €           __stub_helper   __TEXT          DR      ’      DR               €            __const         __TEXT          àT      ó      àT                             __cstring       __TEXT          ÓV      (      ÓV                             __unwind_info   __TEXT          ü[      ˆ       ü[                             __eh_frame      __TEXT          ˆ\      p      ˆ\                                (  __DATA           `              `                          __got           __DATA           `      ¨        `                @           __nl_symbol_ptr __DATA          ¨`             ¨`                U           __la_symbol_ptr __DATA          ¸`             ¸`                W           __data          __DATA          Àb      x      Àb                             __common        __DATA          8i                                           __bss           __DATA          @i      °                                       H   __LINKEDIT       p      ô       p      ô                    "  €0    p  P   Pp  À          r  (  8x  P         Èx  Y   ´€  @     P                   V                           X~  —                         ª§Õ;³¤;®£İú¦éšj$       
+  
+    8           ä   /usr/lib/libSystem.B.dylib      &      ˆx  (   )      °x                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     UH‰åAWAVAUATSHìø   H‹%O  H‹ H‰EĞH±I  H½èşÿÿ¾   ¹   A¸   1ÀèÑ?  èb@  H‰ÁHŠI  H½ìşÿÿ¾   1Àè¯?  Š…èşÿÿ:…ìşÿÿuŠ…êşÿÿ:…îşÿÿtIHWI  LÍD  H ÿÿÿHèşÿÿLìşÿÿ¾È   1ÀH‰ßèa?  1ÿº   H‰Şè?  …Àˆ  1ÿè©?  H‰W  H…À„N  H=‡D  1öèy?  H‰şV  H…À„W  H=iD  1öè—?  H‰èV  H…À„`  H=LD  H5áV  1Ò1ÉA¸õ  èv?  H‰ëV  H…À„Ä  Hÿ H‰Çè¹>  H‰ØV  H…À„`  Hÿ H=	D  èp>  H‰ÁV  H…À„h  H=ùC  èT>  H‰­V  H…À„s  H‹=…V  H‹V  H5ŞC  è–>  …Àˆs  Hƒ=BQ   „|   H5Q  D  €{  tH‹{H‹sHÿÎ1Òèª>  ë&fD  €{" H‹{tèc>  ëH‹sHÿÎèO>   H‹H‰H‹H‹8H…ÿ„+  èü=  HƒøÿuèU=  Hƒ{( H[(uƒ=U   t"H‹=ĞU  H‹éU  H5"A  èá=  …Àˆ-  H‹FV  H‹=·U  H‹OH‹   H…À„¡  H‰ŞÿĞH…À„ß  H‰V  H‹5wV  ¿   1Àè¿=  H‰ŒV  H…À„  H‹5TV  ¿   1Àèœ=  H‰qV  H…À„€  H‹5éU  H‹ÒU  H‹V  L‹4V  ¿   1Àèd=  H‰AV  H…À„l  L‹ÁT  L‹²T  ¿   ¾   º    ¹   APhâ   ÿ5YU  ÿ5‹U  AQAQPAQèÿ;  HƒÄ@H‰ôU  H…À„;  HÌT  H‰İT  HÖ  H‰·T  H¸  H‰±T  HŠ  H‰«T  H=œM  èÍ<  …Àˆ³  HÇ¼M      L‹5…N  H‹=†T  1ö1Òèw;  H‰ÃH…Û„Ü  H‹5U  L‰÷H‰Úè};  H‹HÿÉ…ÀH‰ˆª  H…Éu
+H‹CH‰ßÿP0H‹=øS  H5eA  HM  è	<  …ÀˆA  H‹5†T  HÿL  H‰ßè]<  H…À…  H‹5§T  H‹= J  èA<  H‰ÃH…Û„*  H‹5ˆT  H‹ÉL  H‹   H…À„Z  H=ªL  ÿĞE1ÿH…À„÷  H9Ø„F  E1íE1äE1öHƒL  Hÿ…I  é:  HA  H‰çR  ÇåR     ÇßR  ¥  éë   HŞ@  H‰ÀR  Ç¾R     Ç¸R  Ì  éÄ   H·@  H‰™R  Ç—R     Ç‘R  Õ  é   H@  H‰rR  ÇpR     ÇjR  ×  ëyHl@  H‰NR  ÇLR  0   ÇFR  ò  ëUHH@  H‰*R  Ç(R     Ç"R  Ü  ë1H…Éu
+H‹CH‰ßÿP0H@  H‰÷Q  ÇõQ  0   ÇïQ  ô  H‹=,R  H…ÿtEHƒ='R   t"‹ÏQ  H‹ÀQ  H=«?  1öèâ  H‹=ûQ  HÿuH‹GÿP0HÇäQ      ë è_9  H…ÀuH‹YH  H‹8H5i?  èV9  H‹ËH  H‹ H;EĞ…  HÄø   [A\A]A^A_]ÃH\?  H‰>Q  Ç<Q  0   Ç6Q  õ  éBÿÿÿ1ÀH‰…ğşÿÿ1ÛE1íE1äE1öèŞ8  H…ÀuH‹ğG  H‹8H‹J  H5 B  1Àè®8  A¿ÿÿÿÿH‹½ğşÿÿH…ÿ…÷  éş  H‰øşÿÿH‹5ïQ  H‹=xG  è™9  H‰ÃH…Û„Ü  H‹5ĞQ  H‹!J  H‹   H…À„Í  H=J  ÿĞH‰ÇH…ÿ„©  H9ßH‰½ğşÿÿtqL‹5™Q  H‹5zQ  H‹OH‹   H…À„  ÿĞH‰ÃH…Û„*  º   H‰ßL‰öè8  A‰ÆE…öˆ+  HÿH‹½ğşÿÿuH‹CI‰ÿH‰ßÿP0L‰ÿE…ö„¿  H‹5(Q  H‹qI  H‹   H…À„3  H=RI  ÿĞI‰ÅH‹øşÿÿM…í„£şÿÿH‹=>J  H‹5ßP  L‰êèU7  …ÀˆˆşÿÿH‹= J  H‹5ÉP  è"7  A‰ÇE…ÿˆişÿÿH‹5ÑP  H‹úH  H‹   H…À„Ò  H=ÛH  ÿĞI‰ÄM…ä„ê  H‹¦P  H‰…àşÿÿH‹5XP  I‹L$H‹   H…À„q  L‰çÿĞI‰ÆM…ö„‰  º   L‰÷H‹µàşÿÿèf7  …Àˆz  Iÿu‰…àşÿÿI‹FL‰÷ÿP0‹…àşÿÿ…À…u  E1öéİ  1ÀH‰…ğşÿÿE1íE1äE1öH‹øşÿÿéœıÿÿH½<  H‰ŸN  ÇN     Ç—N  ¦  é£üÿÿH–<  H‰xN  ÇvN     ÇpN  §  é|üÿÿHo<  H‰QN  ÇON     ÇIN  ¨  éUüÿÿE1öE1äE1íE1ÿH‹øşÿÿHÿ…M  éA  H'<  H‰	N  ÇN     ÇN  Î  éüÿÿH <  H‰âM  ÇàM     ÇÚM  Ğ  éæûÿÿHÙ;  H‰»M  Ç¹M     Ç³M  Ñ  é¿ûÿÿH‹A@H…À„.
+  Hs$éLøÿÿH;  H‰~M  Ç|M     ÇvM  =  ëjHk;  H‰ZM  ÇXM     ÇRM  F  ëFHT;  H‰6M  Ç4M  â   Ç.M  P  ë"H0;  H‰M  ÇM  â   Ç
+M  S  H;  H‰ğL  ÇîL     ÇèL  é  éôúÿÿH‹A@H…À„È
+  HƒÆ$éùÿÿè®5  H‹A@H…À„”  HƒÆ$éüÿÿH‹A@H…À„  HƒÆ$é·üÿÿH‹A@H…À„Š  HƒÆ$H=øE  ÿĞI‰ÄH‹øşÿÿM…ä…ıÿÿè4  H‹5·M  H‹ØE  H‹   H…À„\  H=¹E  ÿĞI‰ÆM…ö„ûÿÿH‹=¬F  H‹5uM  L‰òèÃ3  …ÀˆüúÿÿH‹=F  H‹5_M  è3  A‰ÇE…ÿˆİúÿÿH=gE  è’4  H‹½ğşÿÿHÿuH‹GÿP0H…ÛH‰ØHBE  tHÿu
+H‹HH‰ÇÿQ0M…ítIÿM u
+I‹EL‰ïÿP0M…ätIÿ$uI‹D$L‰çÿP0M…ötIÿu
+I‹FL‰÷ÿP0E…ÿˆG  H‰úK  H=B9  ¾8   èa  H‰êK  H…À„Å  H='9  ¾(   è@  H‰ÑK  H…À„Ë  H‹=ÉK  èd  H‰ÃH…Û„Ú  H‹=YK  H‹5ªK  H‰Úè 2  …Àˆh  Hÿu
+H‹CH‰ßÿP0H‹=ŒK  è  H‰ÃH…Û„¼  H‹=K  H‹5mK  H‰Úè[2  …ÀˆS  Hÿu
+H‹CH‰ßÿP0H‹GK  H‹=àJ  H‰Şè2  I‰ÄM…ä„”  Iÿ$H‹5)K  I‹L$H‹   H…À„æ  L‰çÿĞI‰ÆM…ö„ë  Iÿ$uI‹D$L‰çÿP0I‹FH;OA  „  H‹*A  H‰ ÿÿÿH;$A  „  H;Ç@  …%  I‹Fö@„  L‹`I‹^L‹=A  I‹‹HÿÁ‰HH‹
+A  ;~H=&;  è¦2  …À…­  H‹5»@  H‰ßAÿÔH‰ÃI‹ÿHH…Û„€  M‰÷Iÿ…¾   é¯   H’7  H‰tI  ÇrI     ÇlI    Hÿ…t÷ÿÿéÇ  Hb7  H‰DI  ÇBI     Ç<I    Hÿ…D÷ÿÿé—  H27  H‰I  ÇI  0   ÇI  ö  é÷ÿÿHµ ÿÿÿº   L‰÷è‡  H‰ÃH…Û„Ö  M‰÷Iÿu
+I‹GL‰ÿÿP0H‹=I  H‹5ƒI  H‰Úèa0  …Àˆœ   Hÿu
+H‹CH‰ßÿP0H‹eI  H=–C  1öè0  H‰ÃH…Û„A  H‹=ÌH  H‹5EI  H‰Úè0  …Àx~Hÿu
+H‹CH‰ßÿP0èï/  H‰ÃH…Û„—  H‹=’H  H‹5I  H‰ÚèÙ/  …ÀxqHÿ…¬öÿÿH‹CH‰ßÿP0éöÿÿH6  H‰H  ÇÿG     ÇùG  Q  H…ÛuTé öÿÿHó5  H‰ÕG  ÇÓG  â   ÇÍG  \  Hÿ…Õõÿÿë+HÆ5  H‰¨G  Ç¦G     Ç G  f  Hÿ…¨õÿÿH‹CH‰ßÿP0é™õÿÿH˜5  H‰nG  ÇlG  !   ÇfG  ù  érõÿÿHq5  H‰GG  ÇEG  F   Ç?G  ú  éKõÿÿH>5  H‰ G  ÇG     ÇG  	  é$õÿÿH5  H‰ùF  Ç÷F     ÇñF    éıôÿÿH‹=9G  H‹OH‹   H…À„À  H‰ŞÿĞI‰ÄM…ä…DüÿÿH‹=  H‹8HƒÃ$H5Ò4  1ÀH‰Úè[.  H¥4  H‰‡F  Ç…F     ÇF  !  é‹ôÿÿH‹A@H…À„r  HƒÆ$éüÿÿHh4  H‰JF  ÇHF     ÇBF  #  E1ÿIÿ$uI‹D$L‰çÿP0E1íM…ÿ…>  éH  M‹fM…ä„"  M‹~Iÿ$IÿIÿu
+I‹FL‰÷ÿP0I‹GH;÷<  „V  ¿   èm.  I‰ÅM…í„Ò  M‰eH‹È<  Hÿ I‰E I‹GH‹˜€   H…Û„İ  L‹5Î<  I‹‹HÿÁ‰HH‹Ä<  ;~H=à6  è`.  …À…Õ  1ÒL‰ÿL‰îÿÓH‰ÃI‹ÿHH…Û„«  IÿM …nüÿÿI‹EL‰ïéş   HJ3  H‰,E  Ç*E  â   Ç$E  Z  é0óÿÿèà,  H…À„  H3  H‰÷D  ÇõD     ÇïD  1  E1íM‰÷M…ÿtIÿu
+I‹GL‰ÿÿP0M…í„İòÿÿIÿM …ÓòÿÿI‹EL‰ïé&ıÿÿHº2  H‰œD  ÇšD     Ç”D  d  é òÿÿL‰¥ ÿÿÿH‹…;  H‰…ÿÿÿHµ ÿÿÿº   L‰ÿèú  H‰ÃH…Û„  Iÿ$…lûÿÿI‹D$L‰çÿP0Iÿ…gûÿÿéXûÿÿH‹A@H…À„6  HƒÆ$H‹½ğşÿÿéÈóÿÿèÃ+  E1öE1äE1íE1ÿH‹øşÿÿéøÿÿè¦+  E1öéÈóÿÿH‹A@H…À„   HƒÆ$H=L=  ÿĞI‰ÆH‹øşÿÿM…ö…Œ÷ÿÿéòÿÿH‹A@H…À„ß  HƒÆ$L‰çÿĞI‰ÆH‹øşÿÿM…ö…wôÿÿè>+  E1öé÷ÿÿè1+  1ÀIÿ…‘ôÿÿévôÿÿH‰Şè¯+  H…À…!îÿÿH‹/:  H‹8HƒÃ$H5t1  1ÀH‰Úèı*  HÇœD      H<1  H‰C  ÇC     ÇC  ç  é"ñÿÿH‹A@H…À„Z  Hs$é-üÿÿL‰çè7+  é“øÿÿH‹ë9  H‰… ÿÿÿ¿   èh+  I‰ÇM…ÿ„¹ıÿÿH‹Ç9  Hÿ I‰GI‹FH‹˜€   H…ÛthL‹%Ñ9  I‹$‹HÿÁ‰HH‹Æ9  ;~H=â3  èb+  …Àuc1ÒL‰÷L‰şÿÓH‰ÃI‹$ÿHH…Ût<Iÿ…lùÿÿI‹GL‰ÿÿP0H…Û…bùÿÿé3ıÿÿ1ÒL‰÷L‰şèi*  H‰ÃIÿ…;ùÿÿëÍèê)  H…À„V  1ÛIÿ… ùÿÿë²H={;  èF*  éÉîÿÿH0  H‰ãA  ÇáA     ÇÛA  E  Iÿ$…£ûÿÿé“ûÿÿ1ÒL‰ÿL‰îèñ)  H‰ÃH…Û…Wüÿÿëèr)  H…À„  H§/  H‰‰A  Ç‡A     ÇA  K  M…ÿ…”üÿÿéüÿÿH‹X8  H‹8H5Ü2  è5)  éGüÿÿH\/  H‰>A  Ç<A     Ç6A  7  Iÿ$…şúÿÿéîúÿÿH=”:  è_)  éŠğÿÿH=ƒ:  èN)  é)ñÿÿH=r:  è=)  érôÿÿH‹½ğşÿÿè,)  é“ğÿÿH=P:  è)  éüüÿÿL‰çè)  éıÿÿH‹ª7  H‹8H5.2  è‡(  éşÿÿH‰Şèæ(  éÑùÿÿH‹‚7  H‹8H52  è_(  éßşÿÿfD  UH‰åSI‰ùI‹y(HÿE‹Y E…Û„±   M‹AD‰ŞI‹A8HcÖD‹AK9ÑŠ   HcÑFD)ØDVşE)Úƒàt(HRIÈ÷Ø€    H‹ÇC    HÿÂHƒÁÿÀuë‰ÑAƒúrGHRIÀ)Îf„     H‹ÇA    H‹HÇA    H‹H0ÇA    H‹HHÇA    HƒÀ`ƒÆüuÌE…Û…SÿÿÿH…ÿtHÿt[]ÃH‹G[]ÿ`0ffff.„     UH‰åAWAVAUATSHƒì‰MÔA‰×A‰ôH‰}ÈL‹wD‹o AEHcøH‰}À¾   è=(  H‰ÃH‹EÈH‰X0¾   H‹}Àè$(  D‹]ÔH‹MÈH‰A8E…í_  A¹   ò©*  ò©*  EQÿE…ÛIcòH4vòA\öuE9éuf(ĞE‰ĞD‰ïë!„     f(ĞE‰ĞD‰Ïë}@ ÿÇf(ÔA‰øHc÷~ÿH…ö×   HcÏò$ËòXáHIf(ëòA\lÖ…ÉD‰ùADÌò*ñf.îvD9×Œ    ò\îòYéòXåHÿÎÿÏf.Ôv©ë—€    ÿÇf(ÔA‰øHc÷~ÿH…ö~kHcÏò$ËHIf(óòA\tÖ…ÉD‰ùADÌò*éf.õv!D9×|<ò\õòYñf(îëfffff.„     ò\îòYíòXáòXåHÿÎÿÏf.Ôv•ëƒ IcÉòËD‰ˆAÿÁE9é¸şÿÿHƒÄ[A\A]A^A_]Ãf„     UH‰åAWAVAUATSHƒì8H‰ğI‰şH;Ê4  „"  H‹XHƒûÿ„Q  Hcû¾   H‰EÀèU&  L‹MÀI‹IL‹)L;-“4  „  H‹Ş=  H…É„?  M‹EI9È„p  I‹X  H…Ò„=  H‹rH…ö~"1ÿffff.„     H9Lú„=  HÿÇH9÷|íH‹æ3  H‹:I‹PH‹IH5+  1Àè“$  Hİ*  H‰¿<  Ç½<  ¸   Ç·<  ;  H‹Ü3  H‹L‹kHL‹cPH‹CXHÇCX    HÇCP    HÇCH    M…ítIÿE M…ätIÿ$H…ÀtHÿ H‹{HL‹{PL‹sXL‰kHL‰cPH‰CXH…ÿH‰EÈtHÿuH‹GÿP0M…ÿtIÿu
+I‹GL‰ÿÿP0L‰eĞM…ötIÿu
+I‹FL‰÷ÿP0¿   èØ#  H=p*  èz$  I‰ÆH‹{HL‹cPL‹{XL‰kHH‹EĞH‰CPH‹EÈH‰CXH…ÿtHÿuH‹GÿP0M…ätIÿ$uI‹D$L‰çÿP0M…ÿtIÿu
+I‹GL‰ÿÿP0M…ötL‰÷èy#  Iÿ…Z  I‹FL‰÷éd  H‹=µ2  HƒÄ8[A\A]A^A_]éJ#  H‹S2  H‹8H5™)  è(#  HT)  H‰6;  Ç4;  ±   Ç.;    érşÿÿH-)  H‰;  Ç;  ±   Ç;    éKşÿÿH‹ç1  H‹8H5Š)  èÄ"  éşÿÿL‰ÂH…ÒtH‹’   H9ÊuïëH;~1  …ËıÿÿL‰u¨IÿE óAE,óZÈƒûH‰E°Œ&  ‰Ú1ÿfWÒA¼   I‰ÇE1öH‰U¸I‹AJ‹àHÿH…ÿt(Hÿu#H‹GòMĞòUÈÿP0òUÈH‹U¸òMĞL‹MÀƒ{ „º   ‹Cƒøtcƒø…œ   M‰/òAWòAOAÿÆIƒÇóC,WÒóZĞòXÑHÿIÿM u&I‹EL‰ïòMĞòUÈÿP0òUÈH‹U¸òMĞL‹MÀI‰İëBM‰/òAWòAOAÿÆIƒÇHÿIÿM uI‹EL‰ïòMĞÿP0H‹U¸òMĞL‹MÀI‰İf(ÑóC,óZÀòXÈIÿÄL9âH‰ß…õşÿÿëfWÒE1ö1ÛI‰ÇM‰/òAWòAOAÿÆH‹E¨D‰p H‹M°H‰HH…ÛtHÿu
+H‹CH‰ßÿP0M…ítIÿM tHƒÄ8[A\A]A^A_]ÃI‹EL‰ïHƒÄ8[A\A]A^A_]ÿ`0ffffff.„     UH‰åAWAVAUATSPI‰÷I‰şH=¥&  èV!  H‰ÃH…Û„ğ   

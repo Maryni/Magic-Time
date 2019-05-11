@@ -1,0 +1,51 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ansi-regex@*",
+        "scope": null,
+        "escapedName": "ansi-regex",
+        "name": "ansi-regex",
+        "rawSpec": "*",
+        "spec": "*",
+        "type": "range"
+      },
+      "C:\\Users\\luc\\work\\unity\\External\\nodejs\\builds\\win64\\node_modules\\npm"
+    ]
+  ],
+  "_from": "ansi-regex@*",
+  "_id": "ansi-regex@2.1.1",
+  "_inCache": true,
+  "_location": "/ansi-regex",
+  "_nodeVersion": "0.10.32",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/ansi-regex-2.1.1.tgz_1484363378013_0.4482989883981645"
+  },
+  "_npmUser": {
+    "name": "qix",
+    "email": "i.am.qix@gmail.com"
+  },
+  "_npmVersion": "2.14.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ansi-regex@*",
+    "scope": null,
+    "escapedName": "ansi-regex",
+    "name": "ansi-regex",
+    "rawSpec": "*",
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/",
+    "/has-ansi",
+    "/strip-ansi"
+  ],
+  "_resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
+  "_shasum": "c3b33ab5ee360d86e0e628f0468ae7ef27d654df",
+  "_shrinkwrap": null,
+  "_spec": "ansi-regex@*",
+  "_where": "C:\\Users\\luc\\work\\unity\\External\\nodejs\\builds\\win64\\node_modules\\npm",
+  "author": {
+    "name": "Sindre Sorh

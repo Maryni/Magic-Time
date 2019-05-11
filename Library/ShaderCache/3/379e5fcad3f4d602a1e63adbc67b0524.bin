@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+  <!-- Psychic drone -->
+  <rep>
+    <path>PsychicDrone.stages[0].label</path>
+    <trans>Psychiche Beruhigung (mittel)</trans>
+  </rep>
+  <rep>
+    <path>PsychicDrone.stages[0].description</path>
+    <trans>Es ist wie eine beruhigende Stimme in meinem Kopf. Sie beruhigt mich, entspannt meine Nerven.</trans>
+  </rep>
+  <rep>
+    <path>PsychicDrone.stages[1].label</path>
+    <trans>Psychiches Brummen (leicht)</trans>
+  </rep>
+  <rep>
+    <path>PsychicDrone.stages[1].description</path>
+    <trans>Es ist wie ein leichtes Flüstern. Eine Stimme, die mir etwas zuflüstert. Ich kann nur ein paar Worte verstehen, aber sie gefallen mir nicht.</trans>
+  </rep>
+  <rep>
+    <path>PsychicDrone.stages[2].label</path>
+    <trans>Psychiches Brummen (mittel)</trans>
+  </rep>
+  <rep>
+    <path>PsychicDrone.stages[2].description</path>
+    <trans>Ich fühle mich, als 

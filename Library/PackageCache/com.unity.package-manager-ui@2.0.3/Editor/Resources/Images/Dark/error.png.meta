@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<BloodLoss.label>失血</BloodLoss.label>
+	<BloodLoss.stages.minor-0.label>微量</BloodLoss.stages.minor-0.label>
+	<BloodLoss.stages.minor-1.label>少量</BloodLoss.stages.minor-1.label>
+	<BloodLoss.stages.moderate.label>中程度</BloodLoss.stages.moderate.label>
+	<BloodLoss.stages.severe.label>多量</BloodLoss.stages.severe.label>
+	<BloodLoss.stages.extreme.label>致死量</BloodLoss.stages.extreme.label>
+
+	<Anesthetic.label>麻酔</Anesthetic.label>
+    <CatatonicBreakdown.label>緊張性衰弱</CatatonicBreakdown.label>
+    <CatatonicBreakdown.labelNoun>緊張性衰弱</CatatonicBreakdown.labelNoun>
+
+	<PsychicShock.label>サイキックショック</PsychicShock.label>
+	<PsychicShock.labelNoun>サイキックショック</PsychicShock.labelNoun>
+
+	<CryptosleepSickness.label>冷凍睡眠病</CryptosleepSickness.label>
+
+	<FoodPoisoning.label>食中毒</FoodPoisoning.label>
+	<FoodPoisoning.stages.recovering.label>回復</FoodPoisoning.stages.recovering.label>
+	<FoodPoisoning.stages.major.label>重大</FoodPoisoning.stages.major.label>
+	<FoodPoisoning.stages.initial.label>初期症状</FoodPoisoning.stages.initial.label>
+	<ToxicBuildup.label>毒物が蓄積</ToxicBuildup.label>
+	<ToxicBuildup.stages.initial-0.label>症状なし</ToxicBuildup.stages.initial-0.label>
+	<ToxicBuildup.stages.initial-1.label>初期</ToxicBuildup.stages.initial-1.label>
+	<ToxicBuildup.stages.minor.label>軽度</ToxicBuildup.stages.minor.label>
+	<ToxicBuildup.stages.moderate.label>中度</ToxicBuildup.stages.moderate.label>
+	<ToxicBuildup.stages.serious.label>重度</ToxicBuildup.stages.serious.label>
+	<ToxicBuildup.stages.extreme.label>極度</ToxicBuildup.stages.extreme.label>
+
+	<Pregnant.label>妊娠</Pregnant.label>
+	<Pregnant.labelNoun>妊娠</Pregnant.labelNoun>
+	<Pregnant.comps.HediffComp_Discoverable.discoverLetterLabel>{0} おめでた!!</Pregnant.comps.HediffComp_Discoverable.discoverLetterLabel>
+	<Pregnant.comps.HediffComp_Discoverable.discoverLetterText>{0}は身籠もった</Pregnant.comps.HediffComp_Discoverable.discoverLetterText>
+	<Pregnant.st

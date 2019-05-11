@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+	<MentalBreakThreshold.label>Hranica nervového zrútenia</MentalBreakThreshold.label>
+	<MentalBreakThreshold.description>Akonáhle ide niekoho nálada pod tento level, je tu vysoká šanca na nervové zrútenie.</MentalBreakThreshold.description>
+	
+	<PsychicSensitivity.label>Psychická senzitivita</PsychicSensitivity.label>
+	<PsychicSensitivity.description>Koľkokrát viacej je táto osoba ovplyvnená psychickými javmi.</PsychicSensitivity.description>
+	
+	<MoveSpeed.label>Rýchlosť pohybu</MoveSpeed.la

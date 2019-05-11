@@ -1,0 +1,12 @@
+
+            SearchTextField.RegisterCallback<FocusEvent>(OnSearchTextFieldFocus);
+            SearchTextField.RegisterCallback<FocusOutEvent>(OnSearchTextFieldFocusOut);
+            SearchTextField.RegisterCallback<ChangeEvent<string>>(OnSearchTextFieldChange);
+            SearchTextField.RegisterCallback<KeyDownEvent>(OnKeyDownShortcut);
+        }
+
+        private void OnLeavePanel(DetachFromPanelEvent evt)
+        {
+            SearchTextField.UnregisterCallback<FocusEvent>(OnSearchTextFieldFocus);
+            SearchTextField.UnregisterCallback<FocusOutEvent>(OnSearchTextFieldFocusOut);
+            SearchTextField.UnregisterCallback<ChangeEvent<string>>(OnS

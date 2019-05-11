@@ -1,0 +1,20 @@
+Need to initialize these Extents structures
+            m_meshExtents.min = k_LargePositiveVector2;
+            m_meshExtents.max = k_LargeNegativeVector2;
+
+            // Initialize lineInfo
+            m_textInfo.ClearLineInfo();
+
+            // Tracking of the highest Ascender
+            m_maxCapHeight = 0;
+            m_maxAscender = 0;
+            m_maxDescender = 0;
+            float pageAscender = 0;
+            float maxVisibleDescender = 0;
+            bool isMaxVisibleDescenderSet = false;
+            m_isNewPage = false;
+
+            // Initialize struct to track states of word wrapping
+            bool isFirstWord = true;
+            m_isNonBreakingSpace = false;
+        

@@ -1,0 +1,324 @@
+nt 7256] Requesting folder Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal 56
+2018/12/21 16:02:04 690104446 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/shields/Microtransactions" 55
+2018/12/21 16:02:04 690104696 2a5 [INFO Client 7256] Requesting folder Art/Textures/Items/armour/shields/Microtransactions/InnocenceShield 56
+2018/12/21 16:02:04 690104696 2a5 [INFO Client 7256] Requesting folder Art/Textures/Items/armour/shields/Microtransactions/SinShield 57
+2018/12/21 16:02:04 690104696 2a5 [INFO Client 7256] Requesting folder Art/Textures/Items/armour/shields/Microtransactions/SinAndInnocenceShield 58
+2018/12/21 16:02:04 690104696 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/Capes/EmpyreanBackAttach" 57
+2018/12/21 16:02:04 690104727 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/EmpyreanBackAttach/EmpyreanBackAttachSpecularc.mat
+2018/12/21 16:02:04 690104727 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/EmpyreanBackAttach/EmpyreanBackAttach_normal_DXT5.dds
+2018/12/21 16:02:04 690104727 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/Capes/PitfighterCape" 56
+2018/12/21 16:02:04 690104742 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/PitfighterCape/PitfighterCapeSpecularc.mat
+2018/12/21 16:02:04 690104742 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/PitfighterCape/PitfighterCape_normal_DXT5.dds
+2018/12/21 16:02:04 690104742 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/Capes/EmpyreanApparitionEffect" 55
+2018/12/21 16:02:04 690104774 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/EmpyreanApparitionEffect/EmpyreanApparitionEffect_normal_DXT5.dds
+2018/12/21 16:02:04 690104774 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/EmpyreanApparitionEffect/EmpyreanApparitionEffect_colour_DXT5.dds
+2018/12/21 16:02:04 690104789 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/EmpyreanApparitionEffect/EmpyreanApparitionEffect_colour.dds
+2018/12/21 16:02:04 690104789 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/Capes/EmpyreanApparitionEffect/EmpyreanApparitionEffectc.mat
+2018/12/21 16:02:04 690104789 26d [INFO Client 7256] Got file list for "Art/Textures/Items/weapon/bows/Microtransactions" 54
+2018/12/21 16:02:04 690104836 2a5 [INFO Client 7256] Requesting folder Art/Textures/Items/weapon/bows/Microtransactions/ArcticCrystalBow 55
+2018/12/21 16:02:04 690104836 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/Tiles/MastermindFight" 54
+2018/12/21 16:02:04 690104836 2b3 [INFO Client 7256] Queue file to download: Metadata/Terrain/Leagues/Betrayal/Tiles/MastermindFight/ArenaCrypt_Entrance_v01_01.tdt
+2018/12/21 16:02:04 690104836 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/MastermindFight/Rooms" 53
+2018/12/21 16:02:04 690104852 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/MastermindFight/Rooms/Unique 54
+2018/12/21 16:02:04 690104852 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/MastermindFight/Graphs" 53
+2018/12/21 16:02:04 690104852 2b3 [INFO Client 7256] Queue file to download: Metadata/Terrain/Leagues/Betrayal/MastermindFight/Graphs/Mastermind_01.dgr
+2018/12/21 16:02:04 690104852 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/SafeHouses/Arena" 52
+2018/12/21 16:02:04 690104867 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/SafeHouses/Arena/Rooms 53
+2018/12/21 16:02:04 690104867 2b3 [INFO Client 7256] Queue file to download: Metadata/Terrain/Leagues/Betrayal/SafeHouses/Arena/generate.rs
+2018/12/21 16:02:04 690104867 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/SafeHouses/Arena/Graphs 54
+2018/12/21 16:02:04 690104867 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/SafeHouses/Caravan" 53
+2018/12/21 16:02:04 690104867 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/SafeHouses/Caravan/Graphs 54
+2018/12/21 16:02:04 690104867 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/SafeHouses/Assassins" 53
+2018/12/21 16:02:04 690104883 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/SafeHouses/Assassins/Graphs 54
+2018/12/21 16:02:04 690104883 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/SafeHouses/Laboratory" 53
+2018/12/21 16:02:04 690104883 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/SafeHouses/Laboratory/Graphs 54
+2018/12/21 16:02:04 690104883 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal/SafeHouses/Fortress" 53
+2018/12/21 16:02:04 690104883 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/SafeHouses/Fortress/Graphs 54
+2018/12/21 16:02:04 690104883 26d [INFO Client 7256] Got file list for "Metadata/Particles/monster_effects/League_Betrayal/BossCatarina/graveyard" 53
+2018/12/21 16:02:04 690104883 2b3 [INFO Client 7256] Queue file to download: Metadata/Particles/monster_effects/League_Betrayal/BossCatarina/graveyard/fire_ritual_01.pet
+2018/12/21 16:02:04 690104883 2b3 [INFO Client 7256] Queue file to download: Metadata/Particles/monster_effects/League_Betrayal/BossCatarina/graveyard/fire_box.pet
+2018/12/21 16:02:04 690104883 2b3 [INFO Client 7256] Queue file to download: Metadata/Particles/monster_effects/League_Betrayal/BossCatarina/graveyard/fire_edge.pet
+2018/12/21 16:02:04 690104898 2b3 [INFO Client 7256] Queue file to download: Metadata/Particles/monster_effects/League_Betrayal/BossCatarina/graveyard/arrow.pet
+2018/12/21 16:02:04 690104898 2b3 [INFO Client 7256] Queue file to download: Metadata/Particles/monster_effects/League_Betrayal/BossCatarina/graveyard/sparks_up.pet
+2018/12/21 16:02:04 690104898 26d [INFO Client 7256] Got file list for "Metadata/Effects/Spells/monsters_effects/League_Betrayal/BossCatarina" 52
+2018/12/21 16:02:04 690104930 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Spells/monsters_effects/League_Betrayal/BossCatarina/graveyard 53
+2018/12/21 16:02:05 690104930 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/ezomyte" 52
+2018/12/21 16:02:05 690104930 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/ezomyte/pets 53
+2018/12/21 16:02:05 690104930 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/kraken" 52
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/kraken/staff.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/kraken/dagger_mace_wand.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/kraken/1H_axe_mace.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/kraken/sword.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/kraken/2H_axe_mace.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/kraken/bow.epk
+2018/12/21 16:02:05 690104945 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean" 51
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/pets 52
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/staff.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/dwc.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/axe_mace.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/axe_mace_2h.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/sword.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/bow.epk
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/empyrean/graphs 53
+2018/12/21 16:02:05 690104945 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter" 52
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/DaggerWandClaw.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/oneHanded_mace.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/staff.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/mace.epk
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/pet 53
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/sword.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/axe.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects/pit_fighter/bow.epk
+2018/12/21 16:02:05 690104945 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/graph" 52
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/graph/masked_scroll.fxgraph
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/graph/ADD.fxgraph
+2018/12/21 16:02:05 690104945 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet" 51
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet/SLV_UP.pet
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet/townportal_midline.pet
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet/SLV_OP_beams.pet
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet/OP_carryon.pet
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet/SLV_floor.pet
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet/OP_fx.pet
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal/pet/SLV_OP_cyl.pet
+2018/12/21 16:02:05 690104945 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian" 50
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/stygian.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/fadeout.epk
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/PET 51
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/stygian_weapon.epk
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/stygian_poof.aoc
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/stygian_poof.ao
+2018/12/21 16:02:05 690104945 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/fadein.epk
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Spells/mirage_archer/stygian/Graphs 52
+2018/12/21 16:02:05 690104945 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura/CrucibleDemon/fx" 51
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/CrucibleDemon/fx/ao 52
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/CrucibleDemon/fx/pet 53
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/CrucibleDemon/fx/graphs 54
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/CrucibleDemon/fx/epk 55
+2018/12/21 16:02:05 690104945 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura/PitfighterDemon/fx" 54
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/PitfighterDemon/fx/pet 55
+2018/12/21 16:02:05 690104945 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/PitfighterDemon/fx/graphs 56
+2018/12/21 16:02:05 690104961 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/PitfighterDemon/fx/epk 57
+2018/12/21 16:02:05 690104961 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura/EmpyreanDemon/pets" 56
+2018/12/21 16:02:05 690104961 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/EmpyreanDemon/pets/Body.pet
+2018/12/21 16:02:05 690104961 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/EmpyreanDemon/pets/Arms.pet
+2018/12/21 16:02:05 690104961 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/EmpyreanDemon/pets/OUT_mid.pet
+2018/12/21 16:02:05 690104961 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/EmpyreanDemon/pets/glow_body.pet
+2018/12/21 16:02:05 690104961 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/EmpyreanDemon/pets/glow.pet
+2018/12/21 16:02:05 690104961 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/EmpyreanDemon/pets/OT_glow.pet
+2018/12/21 16:02:05 690104961 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura/VanguardDemon/fx" 55
+2018/12/21 16:02:05 690104961 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/VanguardDemon/fx/ao 56
+2018/12/21 16:02:05 690104961 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/VanguardDemon/fx/pet 57
+2018/12/21 16:02:05 690104961 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/VanguardDemon/fx/graphs 58
+2018/12/21 16:02:05 690104961 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/VanguardDemon/fx/epk 59
+2018/12/21 16:02:05 690104961 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura/ArcticCrystalDemon/fx" 58
+2018/12/21 16:02:05 690104976 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/ArcticCrystalDemon/fx/ao 59
+2018/12/21 16:02:05 690104976 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/ArcticCrystalDemon/fx/graphs 60
+2018/12/21 16:02:05 690104976 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura/AssassinDemon/PET" 59
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/PET/dagger_blade.trl
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/PET/arrow.trl
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/PET/shockwave.pet
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/PET/portal_fadein.pet
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/PET/slash.trl
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/PET/circle_fx.pet
+2018/12/21 16:02:05 690104976 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura/AssassinDemon/Graphs" 58
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/Graphs/forShadowOnly.fxgraph
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/Aura/AssassinDemon/Graphs/EzomyteGlow.fxgraph
+2018/12/21 16:02:05 690104976 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/BodyArmours/empyrean/pets" 57
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/BodyArmours/empyrean/pets/body.pet
+2018/12/21 16:02:05 690104976 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/BodyArmours/empyrean/pets/shoulder.pet
+2018/12/21 16:02:05 690104976 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/BodyArmours/Wings/CrucibleWings" 56
+2018/12/21 16:02:05 690105008 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/BodyArmours/Wings/CrucibleWings/pet 57
+2018/12/21 16:02:05 690105008 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Microtransactions/BodyArmours/Wings/CrucibleWings/CrucibleWingsHeld.aoc
+2018/12/21 16:02:05 690105008 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/League_Betrayal/BossCatarina/graveyard/fx" 56
+2018/12/21 16:02:05 690105008 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Betrayal/BossCatarina/graveyard/fx/arrow.dds
+2018/12/21 16:02:05 690105008 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Betrayal/BossCatarina/graveyard/fx/arrow_aura.mat
+2018/12/21 16:02:05 690105008 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Betrayal/BossCatarina/graveyard/fx/arrow.mat
+2018/12/21 16:02:05 690105008 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Betrayal/BossCatarina/graveyard/fx/black_wisps.mat
+2018/12/21 16:02:05 690105008 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Betrayal/BossCatarina/graveyard/fx/arrow_aura.dds
+2018/12/21 16:02:05 690105008 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/League_Betrayal/Fort_Seige/Ice/projectileAoE" 55
+2018/12/21 16:02:05 690105039 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Betrayal/Fort_Seige/Ice/projectileAoE/groundns.dds
+2018/12/21 16:02:05 690105054 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/League_Bestiary/Spider_Boss/tail_strike/web_ground" 54
+2018/12/21 16:02:05 690105086 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Bestiary/Spider_Boss/tail_strike/web_ground/web_03_colour.dds
+2018/12/21 16:02:05 690105086 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Bestiary/Spider_Boss/tail_strike/web_ground/web_01_colour.dds
+2018/12/21 16:02:05 690105086 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Bestiary/Spider_Boss/tail_strike/web_ground/web_02_colour.dds
+2018/12/21 16:02:05 690105086 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/AtlasofWorlds/TheShaper/teleport_slam/slam" 53
+2018/12/21 16:02:05 690105117 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/AtlasofWorlds/TheShaper/teleport_slam/slam/solid.dds
+2018/12/21 16:02:05 690105117 26d [INFO Client 7256] Got file list for "Art/Models/Terrain/Forest/Walls/Betrayal/tgms" 52
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c3r1.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_v01_01_c1r1.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c1r2.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c1r3.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c2r3.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c2r2.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c3r3.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c2r1.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c3r2.tgm
+2018/12/21 16:02:05 690105148 2b3 [INFO Client 7256] Queue file to download: Art/Models/Terrain/Forest/Walls/Betrayal/tgms/ArenaCrypt_Entrance_v01_01_c1r1.tgm
+2018/12/21 16:02:05 690105164 26d [INFO Client 7256] Got file list for "Art/Models/Effects/monster_effects/League_Betrayal/BossCatarina/graveyard" 51
+2018/12/21 16:02:05 690105164 2b3 [INFO Client 7256] Queue file to download: Art/Models/Effects/monster_effects/League_Betrayal/BossCatarina/graveyard/rig.ast
+2018/12/21 16:02:05 690105164 2a5 [INFO Client 7256] Requesting folder Art/Models/Effects/monster_effects/League_Betrayal/BossCatarina/graveyard/arrow 52
+2018/12/21 16:02:05 690105164 26d [INFO Client 7256] Got file list for "Art/Models/Effects/monster_effects/AtlasofWorldsBoss/TheShaper/teleport_slam" 51
+2018/12/21 16:02:05 690105179 2b3 [INFO Client 7256] Queue file to download: Art/Models/Effects/monster_effects/AtlasofWorldsBoss/TheShaper/teleport_slam/teleport_appear_d2bf13f2.smd
+2018/12/21 16:02:05 690105179 2b3 [INFO Client 7256] Queue file to download: Art/Models/Effects/monster_effects/AtlasofWorldsBoss/TheShaper/teleport_slam/teleport_slam_7045674c.smd
+2018/12/21 16:02:05 690105179 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Boots/Microtransactions/PinkCrystal" 50
+2018/12/21 16:02:05 690105242 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Boots/Microtransactions/PinkCrystal/PinkCrystalArmourBootsDex.sm
+2018/12/21 16:02:05 690105242 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Boots/Microtransactions/PinkCrystal/PinkCrystalArmourBootsStrInt.sm
+2018/12/21 16:02:05 690105242 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Boots/Microtransactions/PinkCrystal/PinkCrystalArmourBootsStrInt_e9d2196f.smd
+2018/12/21 16:02:05 690105242 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Boots/Microtransactions/PinkCrystal/PinkCrystalArmourBootsDex_9f193d67.smd
+2018/12/21 16:02:05 690105242 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Boots/Microtransactions/PitFighter" 49
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Boots/Microtransactions/PitFighter/PitFighterBootsDexInt.sm
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Boots/Microtransactions/PitFighter/PitFighterBootsDexInt_552cb023.smd
+2018/12/21 16:02:05 690105257 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Shields/Microtransactions/InnocenceShield" 48
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/InnocenceShield/InnocenceShield.amd
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/InnocenceShield/InnocenceShield.sm
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/InnocenceShield/InnocenceShield.ast
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/InnocenceShield/InnocenceShield_feaa30bb.smd
+2018/12/21 16:02:05 690105257 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Shields/Microtransactions/SinAndInnocenceShield" 47
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShield.ast
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShield.sm
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShield_a1e5958b.smd
+2018/12/21 16:02:05 690105257 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShield.amd
+2018/12/21 16:02:05 690105257 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean" 46
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStrInt_5a1eafba.smd
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStrDex_4afa23c4.smd
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStr_fe1d4be8.smd
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStrDex.sm
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetDexInt_9283876f.smd
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetDex_68d6c435.smd
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStrDexInt_2e43580e.smd
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStrDexInt.sm
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetInt_1bdb6766.smd
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStrInt.sm
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetInt.sm
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetStr.sm
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetDex.sm
+2018/12/21 16:02:05 690105273 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/Helmets/Microtransactions/Empyrean/EmpyreanArmourHelmetDexInt.sm
+2018/12/21 16:02:05 690105273 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/BodyArmours/Microtransactions/PinkCrystal" 45
+2018/12/21 16:02:05 690105351 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PinkCrystal/PinkCrystalArmourBodyStrInt.sm
+2018/12/21 16:02:05 690105351 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PinkCrystal/PinkCrystalArmourBodyDex.sm
+2018/12/21 16:02:05 690105351 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PinkCrystal/PinkCrystalArmourDex_50b4e8f1.smd
+2018/12/21 16:02:05 690105351 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PinkCrystal/PinkCrystalArmourStrInt_8867ed78.smd
+2018/12/21 16:02:05 690105351 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean" 44
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourInt_99bebdda.smd
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourStr_bd56aa94.smd
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourStrDex_2ec84d2f.smd
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourBodyInt.sm
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourBodyStrDex.sm
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourDex_fb3649b9.smd
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourBodyStr.sm
+2018/12/21 16:02:05 690105382 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/Empyrean/EmpyreanArmourBodyDex.sm
+2018/12/21 16:02:05 690105382 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter" 43
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterBodyDex.sm
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterBodyStr.sm
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterBodyStrInt.sm
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterStrInt_7d28a611.smd
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterBodyInt.sm
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterStr_c12485fa.smd
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterInt_48d189f8.smd
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterBodyDexInt.sm
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterDexInt_cac093e1.smd
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterStrDexInt_eb0f250c.smd
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterDex_04fbfa1f.smd
+2018/12/21 16:02:05 690105398 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/Armours/BodyArmours/Microtransactions/PitFighter/PitFighterBodyStrDexInt.sm
+2018/12/21 16:02:05 690105398 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/BodyArmours/Microtransactions/wings" 42
+2018/12/21 16:02:05 690105663 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/BodyArmours/Microtransactions/wings/CrucibleWings 43
+2018/12/21 16:02:05 690105678 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/helmet/Mtx/CrucibleAltHelm" 42
+2018/12/21 16:02:05 690105694 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/helmet/Mtx/CrucibleAltHelm/CrucibleAltHelmet_normal_DXT5.dds
+2018/12/21 16:02:05 690105694 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/helmet/Mtx/CrucibleAltHelm/CrucibleAltHelmetSpecularc.mat
+2018/12/21 16:02:05 690105694 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/helmet/Mtx/EzomyteHalo1" 41
+2018/12/21 16:02:05 690105710 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/helmet/Mtx/EzomyteHalo1/EzomyteHalo1_specular_DXT5.dds
+2018/12/21 16:02:05 690105710 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/helmet/Mtx/EzomyteHalo1/EzomyteHalo1_colour_DXT5.dds
+2018/12/21 16:02:05 690105710 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/helmet/Mtx/EzomyteHalo1/EzomyteHalo1_colour.dds
+2018/12/21 16:02:05 690105710 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/helmet/Mtx/CrucibleHelmAttach" 40
+2018/12/21 16:02:05 690105710 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/helmet/Mtx/CrucibleHelmAttach/CrucibleHeadAttachment_normal_DXT5.dds
+2018/12/21 16:02:05 690105710 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/helmet/Mtx/CrucibleHelmAttach/CrucibleHeadAttachmentSpecularc.mat
+2018/12/21 16:02:05 690105710 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/body/Microtransactions/CrucibleWings" 39
+2018/12/21 16:02:05 690105741 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/CrucibleWings/CrucibleWings_ColourSpecular.dds
+2018/12/21 16:02:05 690105741 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/CrucibleWings/CrucibleWings_glow_DXT5.dds
+2018/12/21 16:02:05 690105741 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/CrucibleWings/CrucibleWingsSpecularc.mat
+2018/12/21 16:02:05 690105741 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/CrucibleWings/CrucibleWings_ColourSpecular_DXT5.dds
+2018/12/21 16:02:05 690105741 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/CrucibleWings/CrucibleWings_normal_DXT5.dds
+2018/12/21 16:02:05 690105741 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/body/Microtransactions/PinkCrystal" 38
+2018/12/21 16:02:06 690105928 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalGlovesSpecularc.mat
+2018/12/21 16:02:06 690105928 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalGloves_normal_DXT5.dds
+2018/12/21 16:02:06 690105928 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalBody_normal_DXT5.dds
+2018/12/21 16:02:06 690105944 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalHelmet_normal_DXT5.dds
+2018/12/21 16:02:06 690105944 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalHelmetSpecularc.mat
+2018/12/21 16:02:06 690105944 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalBoots_normal_DXT5.dds
+2018/12/21 16:02:06 690105944 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalBootsSpecularc.mat
+2018/12/21 16:02:06 690105944 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PinkCrystal/PinkCrystalBodySpecularc.mat
+2018/12/21 16:02:06 690105944 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/body/Microtransactions/Empyrean" 37
+2018/12/21 16:02:06 690105975 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanBootsSpecularc.mat
+2018/12/21 16:02:06 690105975 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanBodyFSpecularc.mat
+2018/12/21 16:02:06 690105975 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanGlovesSpecularc.mat
+2018/12/21 16:02:06 690105990 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanBoots_normal_DXT5.dds
+2018/12/21 16:02:06 690105990 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanHelmetSpecularc.mat
+2018/12/21 16:02:06 690105990 2a5 [INFO Client 7256] Requesting folder Art/Textures/Items/armour/body/Microtransactions/Empyrean/fx 38
+2018/12/21 16:02:06 690105990 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanHood_normal_DXT5.dds
+2018/12/21 16:02:06 690105990 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanBodyMSpecularc.mat
+2018/12/21 16:02:06 690105990 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanHoodSpecularc.mat
+2018/12/21 16:02:06 690105990 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Empyrean/EmpyreanGloves_normal_DXT5.dds
+2018/12/21 16:02:06 690105990 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/body/Microtransactions/Crucible" 37
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleBodySpecularc.mat
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleHood_normal_DXT5.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleBody_normal_DXT5.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleGloves_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleCloak_normal_DXT5.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleGloves_normal_DXT5.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleCloak_colour.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleCloak_colour_DXT5.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleBootsSpecularc.mat
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleGloves_ColourSpecular.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleBoots_normal_DXT5.dds
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleGlovesSpecularc.mat
+2018/12/21 16:02:06 690106053 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/Crucible/CrucibleHoodc.mat
+2018/12/21 16:02:06 690106053 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/body/Microtransactions/PitFighter" 36
+2018/12/21 16:02:06 690106131 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBodySpecularc.mat
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterApparition_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterHelmetAttachment_ColourSpecular.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterHelmet_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBody_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBootsSpecularc.mat
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBody_normal_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterGloves_normal_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBody_ColourSpecular.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterGloves_ColourSpecular.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterApparition_normal_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterHelmet_normal_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBoots_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterApparitionSpecularc.mat
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterHelmetAttachmentSpecularc.mat
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBoots_ColourSpecular.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterGlovesSpecularc.mat
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterHelmet_ColourSpecular.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterGloves_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterHelmetAttachment_normal_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterHelmetSpecularc.mat
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitFighterBoots_normal_DXT5.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterApparition_ColourSpecular.dds
+2018/12/21 16:02:06 690106146 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/PitFighter/PitfighterHelmetAttachment_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106146 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal" 35
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalBootsSpecularc.mat
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalGloves_normal_DXT5.dds
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalHelmet_normal_DXT5.dds
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalBoots_normal_DXT5.dds
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalBodySpecularc.mat
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalGlovesSpecularc.mat
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalBody_normal_DXT5.dds
+2018/12/21 16:02:06 690106224 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/body/Microtransactions/ArcticCrystal/CrystalHelmetSpecularc.mat
+2018/12/21 16:02:06 690106224 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/shields/Microtransactions/InnocenceShield" 34
+2018/12/21 16:02:06 690106240 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/InnocenceShield/InnocenceShield_normal_DXT5.dds
+2018/12/21 16:02:06 690106240 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/InnocenceShield/InnocenceShieldSpecularc.mat
+2018/12/21 16:02:06 690106240 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/InnocenceShield/InnocenceShield_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106240 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/InnocenceShield/InnocenceShield_ColourSpecular.dds
+2018/12/21 16:02:06 690106240 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/shields/Microtransactions/SinShield" 33
+2018/12/21 16:02:06 690106256 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinShield/SinShield_ColourSpecular.dds
+2018/12/21 16:02:06 690106256 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinShield/SinShield_normal_DXT5.dds
+2018/12/21 16:02:06 690106256 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinShield/SinShieldSpecularc.mat
+2018/12/21 16:02:06 690106256 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinShield/SinShield_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106256 26d [INFO Client 7256] Got file list for "Art/Textures/Items/armour/shields/Microtransactions/SinAndInnocenceShield" 32
+2018/12/21 16:02:06 690106271 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShield_ColourSpecular.dds
+2018/12/21 16:02:06 690106271 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShield_normal_DXT5.dds
+2018/12/21 16:02:06 690106271 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShieldSpecularc.mat
+2018/12/21 16:02:06 690106271 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Items/armour/shields/Microtransactions/SinAndInnocenceShield/SinAndInnocenceShield_ColourSpecular_DXT5.dds
+2018/12/21 16:02:06 690106271 26d [INFO Client 7256] Got file list for "Art/Textures/Items/we

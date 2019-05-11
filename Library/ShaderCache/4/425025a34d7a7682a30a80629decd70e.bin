@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: boreal forest -->
+  <BorealForest.label>тайга</BorealForest.label>
+  <!-- EN: Forests of coniferous trees. Despite the harsh winters, boreal forests sustain a diverse population of small and large animals, and have warm summers. -->
+  <BorealForest.description>Хвойный северный лес. Несмотря на суровые зимы, северные леса поддерживают разнообразную популяцию малых и больших животных. Зимой толстый слой снега очень затрудняет движение по местности.</BorealForest.description>
+  
+  <!-- EN: cold bog -->
+  <ColdBog.label>холодная топь</ColdBog.label>
+  <!-- EN: A wetland packed with trees and vines. Much of the marshy land here can't support heavy structures, moving around is slow due to choking vegetation. Disease is endemic in this dense, wet ecosystem. -->
+  <ColdBog.description>Топи, покрытые кустарниками и деревьями. Большая часть суши не выдержит тяжёлых конструкций, а передвижение затруднено из-за густых зарослей. Находясь в экосистеме этого влажного региона с буйной растительностью, следует быть готовым к частым заболеваниям.</ColdBog.description>
+  
+  <!-- EN: ice sheet -->
+  <IceSheet.label>ледник</IceSheet.label>
+  <!-- EN: Sheets of ice which can be kilometers thick. There is no soil for plants to grow in. The only animals here are migrating to somewhere else - or badly lost. -->
+  <IceSheet.description>Поверхность покр�

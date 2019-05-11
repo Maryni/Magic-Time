@@ -1,0 +1,27 @@
+#pragma once
+
+#include <stdint.h>
+#include <string>
+#include "il2cpp-config.h"
+
+struct MethodInfo;
+struct PropertyInfo;
+struct ParameterInfo;
+
+struct Il2CppString;
+struct Il2CppType;
+struct Il2CppClass;
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API Method
+    {
+    public:
+        static const Il2CppType* GetReturnType(const MethodInfo* method);
+        static const char* GetName(const MethodInfo *method);
+        static std::string GetNameWithGenericTypes(const MethodInfo* method);
+        static std::string GetFullName(const MethodInfo* method);
+        static bool IsGeneric(const MethodInfo *method);
+        static bo

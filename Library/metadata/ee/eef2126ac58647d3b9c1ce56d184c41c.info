@@ -1,0 +1,68 @@
+age...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_mirror1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ach, czarodzieju... [P=1]Te lustra prawdopodobnie odbijaja zaklecia skladajace sie arkanum lub zycia...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad is sad and not at all in the mood for playing games.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Oh, wizards... [P=1]These mirrors will probably reflect your Arcane and Life spells....</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_mirror2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad sighs and then dissapears, because he is depressed</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_cthulhu</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Przybylem jedynie, by zlozyc ci kondolencje.[P=1]\nPowodzenia!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">As if Vlad is attending the wizard's funeral</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I just came here to offer you my condolences.[P=2]\nGood &quot;Luck&quot;!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_cthulhu_dead0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Cos takiego![P=0.5] Naprawde myslalem, ze po pokonaniu Cthulhu zostaniesz w magiczny sposób przeniesiony do naszego swiata...[P=0.5] Chyba musisz poczekac na odpowiedni uklad gwiazd...[P=1] Po raz kolejny.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad really surprised that his plan didn't work out.\n\nPlease consider the title when you translate the joke in this line.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Honestly![P=1] I really did think that after defeating Cthulhu you would be magically returned to our world[P=4] -- I suppose you will just have to wait until the stars are left-[P=2] ...I mean right,[P=1.5] once again,[P=1.5] again.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_cthulhu_dead1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Cóz... [P=1] To ja lece do zamku Aldrheim.[P=1] Jest tam pewna lampka wina, której musze poswiecic troche uwagi.[P=1] Powodzenia!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">He doesn't really care anymore, as if he tried

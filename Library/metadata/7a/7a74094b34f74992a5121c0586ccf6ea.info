@@ -1,0 +1,10 @@
+1139E-08 -1 0 0 1 -4.371139E-08 0 0 0 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="NeonConstraint002_subent!2" body1uri="#cot_road_sign_a_obj_003_rigidbody" body2uri="#cot_road_sign_a_obj_002_rigidbody" props="physparams.xml#cLightPostMiddle">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -4.371139E-08 -1 0 0 1 -4.371139E-08 0 0 0.311351418 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATEBEHAVIOUR id="initial!29" impulse="physparams.xml#bDefault" typeuri="#cot_road_sign_a_default_001_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="cot_road_sign_a_default_001_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_a_obj_001_subent" operation="add" />
+			<TEMPLATE

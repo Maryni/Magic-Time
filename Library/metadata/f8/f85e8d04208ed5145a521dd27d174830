@@ -1,0 +1,308 @@
+ndOp.LogicalOrReverse">
+      <summary>
+        <para>Logical reverse OR (s | !d) (D3D11.1 only).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.LogicalSet">
+      <summary>
+        <para>Logical SET (1) (D3D11.1 only).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.LogicalXor">
+      <summary>
+        <para>Logical XOR (s XOR d) (D3D11.1 only).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.Max">
+      <summary>
+        <para>Max.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.Min">
+      <summary>
+        <para>Min.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.Multiply">
+      <summary>
+        <para>Multiply (Advanced OpenGL blending).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.Overlay">
+      <summary>
+        <para>Overlay (Advanced OpenGL blending).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.ReverseSubtract">
+      <summary>
+        <para>Reverse subtract.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.Screen">
+      <summary>
+        <para>Screen (Advanced OpenGL blending).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.SoftLight">
+      <summary>
+        <para>Soft light (Advanced OpenGL blending).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BlendOp.Subtract">
+      <summary>
+        <para>Subtract.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.BuiltinRenderTextureType">
+      <summary>
+        <para>Built-in temporary render textures produced during camera's rendering.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.BufferPtr">
+      <summary>
+        <para>The raw RenderBuffer pointer to be used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.CameraTarget">
+      <summary>
+        <para>Target texture of currently rendering camera.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.CurrentActive">
+      <summary>
+        <para>Currently active render target.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.Depth">
+      <summary>
+        <para>Camera's depth texture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.DepthNormals">
+      <summary>
+        <para>Camera's depth+normals texture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer0">
+      <summary>
+        <para>Deferred shading G-buffer #0 (typically diffuse color).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer1">
+      <summary>
+        <para>Deferred shading G-buffer #1 (typically specular + roughness).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer2">
+      <summary>
+        <para>Deferred shading G-buffer #2 (typically normals).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer3">
+      <summary>
+        <para>Deferred shading G-buffer #3 (typically emission/lighting).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer4">
+      <summary>
+        <para>Deferred shading G-buffer #4 (typically occlusion mask for static lights if any).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer5">
+      <summary>
+        <para>G-buffer #5 Available.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer6">
+      <summary>
+        <para>G-buffer #6 Available.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.GBuffer7">
+      <summary>
+        <para>G-buffer #7 Available.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.MotionVectors">
+      <summary>
+        <para>Motion Vectors generated when the camera has motion vectors enabled.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.PrepassLight">
+      <summary>
+        <para>Deferred lighting light buffer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.PrepassLightSpec">
+      <summary>
+        <para>Deferred lighting HDR specular light buffer (Xbox 360 only).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.PrepassNormalsSpec">
+      <summary>
+        <para>Deferred lighting (normals+specular) G-buffer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.PropertyName">
+      <summary>
+        <para>A globally set property name.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.Reflections">
+      <summary>
+        <para>Reflections gathered from default reflection and reflections probes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinRenderTextureType.ResolvedDepth">
+      <summary>
+        <para>Resolved depth buffer from deferred.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.BuiltinShaderDefine">
+      <summary>
+        <para>Defines set by editor when compiling shaders, depending on target platform and tier.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.SHADER_API_DESKTOP">
+      <summary>
+        <para>SHADER_API_DESKTOP is set when compiling shader for "desktop" platforms.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.SHADER_API_MOBILE">
+      <summary>
+        <para>SHADER_API_MOBILE is set when compiling shader for mobile platforms.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_COLORSPACE_GAMMA">
+      <summary>
+        <para>UNITY_COLORSPACE_GAMMA is set when compiling shaders for Gamma Color Space.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_ENABLE_DETAIL_NORMALMAP">
+      <summary>
+        <para>UNITY_ENABLE_DETAIL_NORMALMAP is set if Detail Normal Map should be sampled if assigned.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_ENABLE_NATIVE_SHADOW_LOOKUPS">
+      <summary>
+        <para>UNITY_ENABLE_NATIVE_SHADOW_LOOKUPS enables use of built-in shadow comparison samplers on OpenGL ES 2.0.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_ENABLE_REFLECTION_BUFFERS">
+      <summary>
+        <para>UNITY_ENABLE_REFLECTION_BUFFERS is set when deferred shading renders reflection probes in deferred mode. With this option set reflections are rendered into a per-pixel buffer. This is similar to the way lights are rendered into a per-pixel buffer. UNITY_ENABLE_REFLECTION_BUFFERS is on by default when using deferred shading, but you can turn it off by setting “No support” for the Deferred Reflections shader option in Graphics Settings. When the setting is off, reflection probes are rendered per-object, similar to the way forward rendering works.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_FRAMEBUFFER_FETCH_AVAILABLE">
+      <summary>
+        <para>UNITY_FRAMEBUFFER_FETCH_AVAILABLE is set when compiling shaders for platforms where framebuffer fetch is potentially available.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_HARDWARE_TIER1">
+      <summary>
+        <para>UNITY_HARDWARE_TIER1 is set when compiling shaders for GraphicsTier.Tier1.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_HARDWARE_TIER2">
+      <summary>
+        <para>UNITY_HARDWARE_TIER2 is set when compiling shaders for GraphicsTier.Tier2.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_HARDWARE_TIER3">
+      <summary>
+        <para>UNITY_HARDWARE_TIER3 is set when compiling shaders for GraphicsTier.Tier3.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_LIGHT_PROBE_PROXY_VOLUME">
+      <summary>
+        <para>UNITY_LIGHT_PROBE_PROXY_VOLUME is set when Light Probe Proxy Volume feature is supported by the current graphics API and is enabled in the current Tier Settings(Graphics Settings).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_LIGHTMAP_DLDR_ENCODING">
+      <summary>
+        <para>UNITY_LIGHTMAP_DLDR_ENCODING is set when lightmap textures are using double LDR encoding to store the values in the texture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_LIGHTMAP_FULL_HDR">
+      <summary>
+        <para>UNITY_LIGHTMAP_FULL_HDR is set when lightmap textures are not using any encoding to store the values in the texture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_LIGHTMAP_RGBM_ENCODING">
+      <summary>
+        <para>UNITY_LIGHTMAP_RGBM_ENCODING is set when lightmap textures are using RGBM encoding to store the values in the texture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_METAL_SHADOWS_USE_POINT_FILTERING">
+      <summary>
+        <para>UNITY_METAL_SHADOWS_USE_POINT_FILTERING is set if shadow sampler should use point filtering on iOS Metal.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_NO_DXT5nm">
+      <summary>
+        <para>UNITY_NO_DXT5nm is set when compiling shader for platform that do not support DXT5NM, meaning that normal maps will be encoded in RGB instead.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_NO_FULL_STANDARD_SHADER">
+      <summary>
+        <para>UNITY_NO_FULL_STANDARD_SHADER is set if Standard shader BRDF3 with extra simplifications should be used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_NO_RGBM">
+      <summary>
+        <para>UNITY_NO_RGBM is set when compiling shader for platform that do not support RGBM, so dLDR will be used instead.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_NO_SCREENSPACE_SHADOWS">
+      <summary>
+        <para>UNITY_NO_SCREENSPACE_SHADOWS is set when screenspace cascaded shadow maps are disabled.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_PBS_USE_BRDF1">
+      <summary>
+        <para>UNITY_PBS_USE_BRDF1 is set if Standard Shader BRDF1 should be used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_PBS_USE_BRDF2">
+      <summary>
+        <para>UNITY_PBS_USE_BRDF2 is set if Standard Shader BRDF2 should be used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_PBS_USE_BRDF3">
+      <summary>
+        <para>UNITY_PBS_USE_BRDF3 is set if Standard Shader BRDF3 should be used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_SPECCUBE_BLENDING">
+      <summary>
+        <para>UNITY_SPECCUBE_BLENDING is set if Reflection Probes Blending is enabled.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_SPECCUBE_BOX_PROJECTION">
+      <summary>
+        <para>UNITY_SPECCUBE_BLENDING is set if Reflection Probes Box Projection is enabled.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderDefine.UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS">
+      <summary>
+        <para>UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS is set when Semitransparent Shadows are enabled.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.BuiltinShaderMode">
+      <summary>
+        <para>Built-in shader modes used by Rendering.GraphicsSettings.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderMode.Disabled">
+      <summary>
+        <para>Don't use any shader, effectively disabling the functionality.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderMode.UseBuiltin">
+      <summary>
+        <para>Use built-in shader (default).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.BuiltinShaderMode.UseCustom">
+      <summary>
+        <para>Use custom shader ins

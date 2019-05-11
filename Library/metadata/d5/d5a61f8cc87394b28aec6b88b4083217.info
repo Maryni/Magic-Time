@@ -1,0 +1,17 @@
+t)TMP_InputField.ContentType.Custom)
+                    {
+                        EditorGUI.BeginChangeCheck();
+                        EditorGUILayout.PropertyField(m_LineType);
+                        if (EditorGUI.EndChangeCheck())
+                        {
+                            if (text != null)
+                            {
+                                if (m_LineType.enumValueIndex == (int)TMP_InputField.LineType.SingleLine)
+                                    text.enableWordWrapping = false;
+                                else
+                                    text.enableWordWrapping = true;
+                            }
+                        }
+                    }
+
+                    if (m_Con

@@ -1,0 +1,136 @@
+//if (m_destination_Atlas != null)
+                //    m_font_Atlas = m_destination_Atlas;
+
+                // If using the C# SDF creation mode, we need the scale down factor.
+                int scaleDownFactor = 1; // ((RasterModes)m_RenderMode & RasterModes.Raster_Mode_SDF) == RasterModes.Raster_Mode_SDF || m_RenderMode == RenderModes.DistanceFieldAA ? 1 : font_scaledownFactor;
+
+                // Add FaceInfo to Font Asset
+                FaceInfo face = GetFaceInfo(m_FontFaceInfo, scaleDownFactor);
+                fontAsset.AddFaceInfo(face);
+
+                // Add GlyphInfo[] to Font Asset
+                TMP_Glyph[] glyphs = GetGlyphInfo(m_FontGlyphInfo, scaleDownFactor);
+                fontAsset.AddGlyphInfo(glyphs);
+
+                // Get and Add Kerning Pairs to Font Asset
+                if (m_IncludeKerningPairs)
+                {
+                    string fontFilePath = AssetDatabase.GetAssetPath(m_SourceFontFile);
+                    KerningTable kerningTable = GetKerningTable(fontFilePath, (int)face.PointSize);
+                    fontAsset.AddKerningInfo(kerningTable);
+                }
+
+                // Add Line Breaking Rules
+                //LineBreakingTable lineBreakingTable = new LineBreakingTable();
+                //
+
+                // Add Font Atlas as Sub-Asset
+                fontAsset.atlas = m_FontAtlas;
+                m_FontAtlas.name = tex_FileName + " Atlas";
+
+                AssetDatabase.AddObjectToAsset(m_FontAtlas, fontAsset);
+
+                // Create new Material and Add it as Sub-Asset
+                Shader default_Shader = Shader.Find("TextMeshPro/Distance Field"); //m_shaderSelection;
+                Material tmp_material = new Material(default_Shader);
+
+                tmp_material.name = tex_FileName + " Material";
+                tmp_material.SetTexture(ShaderUtilities.ID_MainTex, m_FontAtlas);
+                tmp_material.SetFloat(ShaderUtilities.ID_TextureWidth, m_FontAtlas.width);
+                tmp_material.SetFloat(ShaderUtilities.ID_TextureHeight, m_FontAtlas.height);
+
+                int spread = m_Padding + 1;
+                tmp_material.SetFloat(ShaderUtilities.ID_GradientScale, spread); // Spread = Padding for Brute Force SDF.
+
+                tmp_material.SetFloat(ShaderUtilities.ID_WeightNormal, fontAsset.normalStyle);
+                tmp_material.SetFloat(ShaderUtilities.ID_WeightBold, fontAsset.boldStyle);
+
+                fontAsset.material = tmp_material;
+
+                AssetDatabase.AddObjectToAsset(tmp_material, fontAsset);
+
+            }
+            else
+            {
+                // Find all Materials referencing this font atlas.
+                Material[] material_references = TMP_EditorUtility.FindMaterialReferences(fontAsset);
+
+                // Destroy Assets that will be replaced.
+                DestroyImmediate(fontAsset.atlas, true);
+
+                //Set Font Asset Type
+                fontAsset.fontAssetType = TMP_FontAsset.FontAssetTypes.SDF;
+
+                int scaleDownFactor = 1; // ((RasterModes)m_RenderMode & RasterModes.Raster_Mode_SDF) == RasterModes.Raster_Mode_SDF || m_RenderMode == RenderModes.DistanceFieldAA ? 1 : font_scaledownFactor;
+                // Add FaceInfo to Font Asset  
+                FaceInfo face = GetFaceInfo(m_FontFaceInfo, scaleDownFactor);
+                fontAsset.AddFaceInfo(face);
+
+                // Add GlyphInfo[] to Font Asset
+                TMP_Glyph[] glyphs = GetGlyphInfo(m_FontGlyphInfo, scaleDownFactor);
+                fontAsset.AddGlyphInfo(glyphs);
+
+                // Get and Add Kerning Pairs to Font Asset
+                if (m_IncludeKerningPairs)
+                {
+                    string fontFilePath = AssetDatabase.GetAssetPath(m_SourceFontFile);
+                    KerningTable kerningTable = GetKerningTable(fontFilePath, (int)face.PointSize);
+                    fontAsset.AddKerningInfo(kerningTable);
+                }
+
+                // Add Font Atlas as Sub-Asset
+                fontAsset.atlas = m_FontAtlas;
+                m_FontAtlas.name = tex_FileName + " Atlas";
+
+                // Special handling due to a bug in earlier versions of Unity.
+                m_FontAtlas.hideFlags = HideFlags.None;
+                fontAsset.material.hideFlags = HideFlags.None;
+
+                AssetDatabase.AddObjectToAsset(m_FontAtlas, fontAsset);
+
+                // Assign new font atlas texture to the existing material.
+                fontAsset.material.SetTexture(ShaderUtilities.ID_MainTex, fontAsset.atlas);
+
+                // Update the Texture reference on the Material
+                for (int i = 0; i < material_references.Length; i++)
+                {
+                    material_references[i].SetTexture(ShaderUtilities.ID_MainTex, m_FontAtlas);
+                    material_references[i].SetFloat(ShaderUtilities.ID_TextureWidth, m_FontAtlas.width);
+                    material_references[i].SetFloat(ShaderUtilities.ID_TextureHeight, m_FontAtlas.height);
+
+                    int spread = m_Padding + 1;
+                    material_references[i].SetFloat(ShaderUtilities.ID_GradientScale, spread); // Spread = Padding for Brute Force SDF.
+
+                    material_references[i].SetFloat(ShaderUtilities.ID_WeightNormal, fontAsset.normalStyle);
+                    material_references[i].SetFloat(ShaderUtilities.ID_WeightBold, fontAsset.boldStyle);
+                }
+            }
+
+            // Saving File for Debug
+            //var pngData = destination_Atlas.EncodeToPNG();
+            //File.WriteAllBytes("Assets/Textures/Debug Distance Field.png", pngData);
+
+            // Save Font Asset creation settings
+            m_SelectedFontAsset = fontAsset;
+            m_LegacyFontAsset = null;
+            fontAsset.creationSettings = SaveFontCreationSettings();
+
+            AssetDatabase.SaveAssets();
+
+            AssetDatabase.ImportAsset(AssetDatabase.GetAssetPath(fontAsset));  // Re-import font asset to get the new updated version.
+
+            fontAsset.ReadFontDefinition();
+
+            AssetDatabase.Refresh();
+
+            m_FontAtlas = null;
+
+            // NEED TO GENERATE AN EVENT TO FORCE A REDRAW OF ANY TEXTMESHPRO INSTANCES THAT MIGHT BE USING THIS FONT ASSET
+            TMPro_EventManager.ON_FONT_PROPERTY_CHANGED(true, fontAsset);
+        }
+
+
+        /// <summary>
+        /// Internal method to save the Font Asset Creation Settings
+        /// </summary>
+        /// <returns></returns>

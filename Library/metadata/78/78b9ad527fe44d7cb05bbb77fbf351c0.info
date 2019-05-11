@@ -1,0 +1,10 @@
+aviour!2">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!2" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPESPHERE id="cot_bush_rock_01_b_col_01_shape" radius="0.5572512" shell="0.02" props="physparams.xml#sMediumSoftVegetation" />
+		<TEMPLATERENDERABLE id="default_renderable!2" uri="trees.pssg#default!6" />
+		<TEMPLATEENTITY id="cot_bush_01_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!3">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!3" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bush_01_a_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.06786871 2.07149935 -

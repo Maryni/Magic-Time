@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <Elephant.label>słoń</Elephant.label>
+  <Elephant.description>Największe niezmodyfikowane zwierzę lądowe. Może użyć swoich kłów jako narzędzia do przenoszenia obiektów albo jako śmiercionośnej broń.</Elephant.description>
+  <Elephant.tools.0.label>kieł</Elephant.tools.0.label>
+  <Elephant.tools.1.label>lewa stopa</Elephant.tools.1.label>
+  <Elephant.tools.2.label>prawa stopa</Elephant.tools.2.label>
+  <Elephant.tools.3.label>głowa</Elephant.tools.3.label>
+  <Elephant_Leather.label>skóra słonia</Elephant_Leather.label>
+  <Elephant_Leather.description>skóra słonia</Elephant_Leather.description>
+  <Elephant_Leather.stuffProps.stuffAdjective>ze skóry słonia</Elephant_Leather.stuffProps.stuffAdjective>
+  <Elephant_Meat.label>mięso ze słonia</Elephant_Meat.label>
+  <Elephant_Meat.description>mięso słonia</Elephant_Meat.description>
+  <Elephant_Corpse.label>ciało słonia</Elephant_Corpse.label>
+  <Elephant_Corpse.description>ciało słonia.</Eleph

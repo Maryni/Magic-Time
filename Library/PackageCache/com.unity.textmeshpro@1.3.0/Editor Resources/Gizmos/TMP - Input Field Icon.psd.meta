@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <SolarFlare.label>太陽フレア</SolarFlare.label>
+	<SolarFlare.description>太陽フレアが惑星に吹き続けています.電磁気障害が,ほとんどの電気機器を働きを妨げます.</SolarFlare.description>
+    <SolarFlare.endMessage>太陽フレアは終わろうとしている.</SolarFlare.endMessage>
+
+	<Eclipse.label>日食</Eclipse.label>
+	<Eclipse.description>日食の影が地面を覆っていきます,やがて昼間であっても暗くなるでしょう.</Eclipse.description>
+    <Eclipse.endMessage>日食は終わろうとしている.</Eclipse.endMessage>
+
+	<PsychicDrone.label>サイコドローン</PsychicDrone.label>
+	<PsychicDrone.description>離れたところにある強力なAIが,人々を狂気へいざなおうとサイコウェーブを照射しています.</PsychicDrone.description>
+	<PsychicDrone.endMessage>サイコドローンは終わろうとしている.</PsychicDrone.endMessage>
+
+	<PsychicSoothe.label>サイコスード</PsychicSoothe.label>
+	<PsychicSoothe.description>離れたところにある強力なAIが,人々の心を穏やかにさせようとサイ�

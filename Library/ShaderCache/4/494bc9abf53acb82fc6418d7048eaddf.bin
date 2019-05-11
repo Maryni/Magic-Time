@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: bird -->
+  <Bird.label>птица</Bird.label>
+  <!-- EN: left lung -->
+  <Bird.corePart.parts.left_lung.customLabel>левое лёгкое</Bird.corePart.parts.left_lung.customLabel>
+  <!-- EN: right lung -->
+  <Bird.corePart.parts.right_lung.customLabel>правое лёгкое</Bird.corePart.parts.right_lung.customLabel>
+  <!-- EN: left kidney -->
+  <Bird.corePart.parts.left_kidney.customLabel>левая почка</Bird.corePart.parts.left_kidney.customLabel>
+  <!-- EN: right kidney -->
+  <Bird.corePart.parts.right_kidney.customLabel>правая почка</Bird.corePart.parts.right_kidney.customLabel>
+  <!-- EN: left eye -->
+  <Bird.corePart.parts.Neck.parts.Head.parts.left_eye.customLabel>левый глаз</Bird.corePart.parts.Neck.parts.Head.parts.left_eye.customLabel>
+  <!-- EN: right eye -->
+  <Bird.corePart

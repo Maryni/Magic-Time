@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+# Copyright (c) 2012 Google Inc. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+""" Unit tests for the ninja.py file. """
+
+import gyp.generator.ninja as ninja
+import unittest
+import StringIO
+import sys
+import TestCommon
+
+
+class TestPrefixesAndSuffixes(unittest.TestCase):
+  def test_BinaryNamesWindows(self):
+    # These cannot run on non-Windows as they require a VS installation to
+    # correctly handle variable expansion.
+    if sys.platform.startswith('win'):
+      writer = ninja.NinjaWriter('foo', 'wee', '.', '.', 'build.ninja', '.',
+          'build.ninja', 'win')
+      spec = { 'target_name': 'wee' }
+    

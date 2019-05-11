@@ -1,0 +1,24 @@
+e, item.buildState);
+        }
+
+        [Test]
+        public void CollabHistoryPresenter_OnUpdatePage__BuildStateHasConfigureWhenZeroBuildStatus()
+        {
+            _service.result = new RevisionsResult()
+            {
+                Revisions = new List<Revision>()
+                {
+                    new Revision(revisionID: "0"),
+                }
+            };
+            _service.tipRevision = "0";
+            _presenter.BuildServiceEnabled = false;
+
+            _presenter.OnUpdatePage(0);
+            var item = _window.items.First();
+
+            Assert.AreEqual(BuildState.Configure, item.buildState);
+        }
+
+        [Test]
+        public void CollabHistoryPresenter_OnUpdatePage

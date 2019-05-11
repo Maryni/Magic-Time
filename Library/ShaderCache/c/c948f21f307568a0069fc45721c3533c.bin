@@ -1,0 +1,32 @@
+#if ENABLE_UNIT_TESTS
+#if IL2CPP_TARGET_WINDOWS
+
+#include "UnitTest++.h"
+
+#include "../COM-c-api.h"
+#include "../../COM.h"
+
+SUITE(Com)
+{
+    struct ComFixture
+    {
+        ComFixture()
+        {
+            int dimCount = 1;
+            int elemSize = 2;
+            safeBound.element_count = 123;
+            safeBound.lower_bound = 0;
+            safeArray = UnityPalCOMSafeArrayCreate(IL2CPP_VT_BOOL, dimCount, &safeBound);
+            UnityPalCOMVariantInit(&classVariant);
+            UnityPalCOMVariantInit(&classVariant);
+        }
+
+        ~ComFixture()
+        {
+            UnityPalCOMSafeArrayDestroy(safeArray);
+        }
+
+        Il2CppSafeArrayBound safeBound;
+        UnityPalIl2CppSafeArray* safeArray;
+        Il2CppVariant apiVariant;
+  

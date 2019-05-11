@@ -1,0 +1,32 @@
+#pragma once
+
+#include <assert.h>
+
+#ifdef __EMSCRIPTEN__
+#include <emscripten/threading.h>
+#endif
+
+inline int32_t UnityPalAdd(volatile int32_t* location1, int32_t value)
+{
+    ASSERT_ALIGNMENT(location1, 4);
+    return __sync_add_and_fetch(location1, value);
+}
+
+inline int64_t UnityPalAdd64(volatile int64_t* location1, int64_t value)
+{
+    ASSERT_ALIGNMENT(location1, 8);
+    return __sync_add_and_fetch(location1, value);
+}
+
+inline int32_t UnityPalIncrement(volatile int32_t* value)
+{
+    ASSERT_ALIGNMENT(value, 4);
+    return __sync_add_and_fetch(value, 1);
+}
+
+inline int64_t UnityPalIncrement64(volatile int64_t* value)
+{
+    ASSERT_ALIGNMENT(value, 8);
+    return __sync_add_and_fetch(value, 1);
+}
+

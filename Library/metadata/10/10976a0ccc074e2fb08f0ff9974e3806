@@ -1,0 +1,64 @@
+">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginHorizontal(UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin a Horizontal control group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginHorizontal(UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin a Horizontal control group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginHorizontal(System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin a Horizontal control group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginHorizontal(UnityEngine.Texture,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin a Horizontal control group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginHorizontal(UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin a Horizontal control group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayo

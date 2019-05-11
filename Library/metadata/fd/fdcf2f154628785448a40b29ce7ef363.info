@@ -1,0 +1,21 @@
+ingle" />
+	  <Bank bankName="noisemakers_vuvuzelas_single" />
+	  <Bank bankName="noisemakers_whistles" />
+    </FilteredBankGroup>
+
+    <FilteredBankGroup track="okutama" >
+
+      <Bank bankName="amb_okutama" />
+      <Bank bankName="props_okutama" />
+
+      <Bank bankName="sfc_grass" />
+      <Bank bankName="sfc_gravel" />
+      <Bank bankName="sfc_cobble" />
+
+      <Bank bankName="crowd_group" />
+      <Bank bankName="crowd_small" />
+      <Bank bankName="crowd_large" />
+      <Bank bankName="speech_crowd_japanese" />
+      <Bank bankName="speech_tannoy_japanese" />
+
+	  <Bank bankName="noisemakers_airhorns_single" /

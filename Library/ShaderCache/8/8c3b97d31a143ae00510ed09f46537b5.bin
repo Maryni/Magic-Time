@@ -1,0 +1,22 @@
+using System;
+
+namespace UnityEngine.Rendering.PostProcessing
+{
+    /// <summary>
+    /// This class holds settings for the Lens Distortion effect.
+    /// </summary>
+    [Serializable]
+    [PostProcess(typeof(LensDistortionRenderer), "Unity/Lens Distortion")]
+    public sealed class LensDistortion : PostProcessEffectSettings
+    {
+        /// <summary>
+        /// The total amount of distortion to apply.
+        /// </summary>
+        [Range(-100f, 100f), Tooltip("Total distortion amount.")]
+        public FloatParameter intensity = new FloatParameter { value = 0f };
+
+        /// <summary>
+        /// Multiplies the intensity value on the x-axis. Setting this value to 0 will disable distortion on this axis.
+        /// </summary>
+        [Range(0f, 1f), DisplayName("X Multiplier"), Tooltip("Intensity multiplier on the x-axis. Set it to 0 to disable distortion on this axis.")]
+        public FloatParameter intensityX = new FloatPa

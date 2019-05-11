@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<configuration>
+
+	<!-- Do not remove. Sets up configsectionhandler section for log4net -->
+    <configSections>
+        <section name="log4net" type="System.Configuration.IgnoreSectionHandler" />
+    </configSections>
+
+	<!--
+     Application settings for NUnit-console.exe. Do NOT put settings
+	 for use by your tests here.
+	-->
+	<appSettings>
+
+	<!--
+	 Specify the location to be used by .NET for the cache
+	-->
+    <add key="shadowfiles.path" value="%temp%\nunit20\ShadowCopyCache" />
+  
+	</appSettings>
+  
+    <system.diagnostics>
+	  <switches>
+		<add name="NTrace" value="4" />
+	  </switches>
+	  <trace autoflush="true" indentsize="4">
+		<listeners>
+<!--
+			<add name="NUnitInternalTrace" type="System.Diagnostics.TextWriterTraceListener" 
+				initializeData="C:\NUnitPrimaryTrace.txt"/>
+-->
+		</listeners>
+	  </trace>
+	</system.diagnostics>
+	
+	<!-- 
+     The

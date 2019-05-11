@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: floors -->
+  <Floors.label>покрытие</Floors.label>
+  <Floors.description>Полы.</Floors.description>
+  
+  <!-- EN: furniture -->
+  <Furniture.label>мебель</Furniture.label>
+  <Furniture.description>Предметы обстановки жилых и общественных помещений.</Furniture.description>
+  
+  <!-- EN: recreation -->
+  <Joy.label>развлечения</Joy.label>
+  <Joy.description>Занимательные или приятные вещи для развлечения поселенцев.</Joy.description>
+  
+  <!-- EN: misc -->
+  <Misc.label>разное</Misc.label>
+  <Misc.description>Структуры различного назначения.</Misc.description>
+  
+  <!-- EN: orders -->
+  <Orders.label>приказы</Orders.label>
+  <Orders.description>Назначить действи

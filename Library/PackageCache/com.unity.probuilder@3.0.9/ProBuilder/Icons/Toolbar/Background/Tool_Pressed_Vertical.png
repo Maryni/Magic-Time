@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: alocasia -->
+  <Plant_Alocasia.label>海芋</Plant_Alocasia.label>
+  <!-- EN: A tropical plant. Its extremely broad leaves are a commonly-recognized signifier of tropical forests. -->
+  <Plant_Alocasia.description>是一种常见的热带阔叶植物。</Plant_Alocasia.description>
+  
+  <!-- EN: clivia -->
+  <Plant_Clivia.label>君子兰</Plant_Clivia.label>
+  <!-- EN: An unusual plant with tall, pretty flowers. Some call it the 'bush lily'. -->
+  <Plant_Clivia.description>一种稀有植物，花又高又漂亮。有人称之为“灌木中的百合花”。</Plant_Clivia.description>
+  
+  <!-- EN: giant rafflesia -->
+  <Plant_Rafflesia.label>大王花</Plant_Rafflesia.label>
+  <!-- EN: A rare, giant flower which can be found deep in steaming jungles. You would think a giant flower would be beautiful, but this one looks and smells like rotting flesh. -->
+  <Plant_Rafflesia.description>一种罕见的巨大的花。你可能会认为巨大的花是美丽的，但这种花

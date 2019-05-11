@@ -1,0 +1,455 @@
+ight.</para>
+      </summary>
+      <param name="height"></param>
+    </member>
+    <member name="T:UnityEngine.GUILayout.HorizontalScope">
+      <summary>
+        <para>Disposable helper class for managing BeginHorizontal / EndHorizontal.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalScope.#ctor(UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new HorizontalScope and begin the corresponding horizontal group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalScope.#ctor(UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new HorizontalScope and begin the corresponding horizontal group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalScope.#ctor(System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new HorizontalScope and begin the corresponding horizontal group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalScope.#ctor(UnityEngine.Texture,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new HorizontalScope and begin the corresponding horizontal group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalScope.#ctor(UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new HorizontalScope and begin the corresponding horizontal group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalScrollbar(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a horizontal scrollbar.</para>
+      </summary>
+      <param name="value">The position between min and max.</param>
+      <param name="size">How much can we see?</param>
+      <param name="leftValue">The value at the left end of the scrollbar.</param>
+      <param name="rightValue">The value at the right end of the scrollbar.</param>
+      <param name="style">The style to use for the scrollbar background. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <returns>
+        <para>The modified value. This can be changed by the user by dragging the scrollbar, or clicking the arrows at the end.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalScrollbar(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a horizontal scrollbar.</para>
+      </summary>
+      <param name="value">The position between min and max.</param>
+      <param name="size">How much can we see?</param>
+      <param name="leftValue">The value at the left end of the scrollbar.</param>
+      <param name="rightValue">The value at the right end of the scrollbar.</param>
+      <param name="style">The style to use for the scrollbar background. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <returns>
+        <para>The modified value. This can be changed by the user by dragging the scrollbar, or clicking the arrows at the end.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalSlider(System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>A horizontal slider the user can drag to change a value between a min and a max.</para>
+      </summary>
+      <param name="value">The value the slider shows. This determines the position of the draggable thumb.</param>
+      <param name="leftValue">The value at the left end of the slider.</param>
+      <param name="rightValue">The value at the right end of the slider.</param>
+      <param name="slider">The GUIStyle to use for displaying the dragging area. If left out, the horizontalSlider style from the current GUISkin is used.</param>
+      <param name="thumb">The GUIStyle to use for displaying draggable thumb. If left out, the horizontalSliderThumb style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <returns>
+        <para>The value that has been set by the user.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.HorizontalSlider(System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>A horizontal slider the user can drag to change a value between a min and a max.</para>
+      </summary>
+      <param name="value">The value the slider shows. This determines the position of the draggable thumb.</param>
+      <param name="leftValue">The value at the left end of the slider.</param>
+      <param name="rightValue">The value at the right end of the slider.</param>
+      <param name="slider">The GUIStyle to use for displaying the dragging area. If left out, the horizontalSlider style from the current GUISkin is used.</param>
+      <param name="thumb">The GUIStyle to use for displaying draggable thumb. If left out, the horizontalSliderThumb style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <returns>
+        <para>The value that has been set by the user.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Label(UnityEngine.Texture,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make an auto-layout label.</para>
+      </summary>
+      <param name="text">Text to display on the label.</param>
+      <param name="image">Texture to display on the label.</param>
+      <param name="content">Text, image and tooltip for this label.</param>
+      <param name="style">The style to use. If left out, the label style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Label(System.String,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make an auto-layout label.</para>
+      </summary>
+      <param name="text">Text to display on the label.</param>
+      <param name="image">Texture to display on the label.</param>
+      <param name="content">Text, image and tooltip for this label.</param>
+      <param name="style">The style to use. If left out, the label style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Label(UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make an auto-layout label.</para>
+      </summary>
+      <param name="text">Text to display on the label.</param>
+      <param name="image">Texture to display on the label.</param>
+      <param name="content">Text, image and tooltip for this label.</param>
+      <param name="style">The style to use. If left out, the label style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Label(UnityEngine.Texture,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make an auto-layout label.</para>
+      </summary>
+      <param name="text">Text to display on the label.</param>
+      <param name="image">Texture to display on the label.</param>
+      <param name="content">Text, image and tooltip for this label.</param>
+      <param name="style">The style to use. If left out, the label style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Label(System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make an auto-layout label.</para>
+      </summary>
+      <param name="text">Text to display on the label.</param>
+      <param name="image">Texture to display on the label.</param>
+      <param name="content">Text, image and tooltip for this label.</param>
+      <param name="style">The style to use. If left out, the label style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Label(UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make an auto-layout label.</para>
+      </summary>
+      <param name="text">Text to display on the label.</param>
+      <param name="image">Texture to display on the label.</param>
+      <param name="content">Text, image and tooltip for this label.</param>
+      <param name="style">The style to use. If left out, the label style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.MaxHeight(System.Single)">
+      <summary>
+        <para>Option passed to a control to specify a maximum height.</para>
+      </summary>
+      <param name="maxHeight"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.MaxWidth(System.Single)">
+      <summary>
+        <para>Option passed to a control to specify a maximum width.</para>
+      </summary>
+      <param name="maxWidth"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.MinHeight(System.Single)">
+      <summary>
+        <para>Option passed to a control to specify a minimum height.</para>
+      </summary>
+      <param name="minHeight"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.MinWidth(System.Single)">
+      <summary>
+        <para>Option passed to a control to specify a minimum width.
+</para>
+      </summary>
+      <param name="minWidth"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.PasswordField(System.String,System.Char,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a text field where the user can enter a password.</para>
+      </summary>
+      <param name="password">Password to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maskChar">Character to mask the password with.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <returns>
+        <para>The edited password.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.PasswordField(System.String,System.Char,System.Int32,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a text field where the user can enter a password.</para>
+      </summary>
+      <param name="password">Password to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maskChar">Character to mask the password with.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <returns>
+        <para>The edited password.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.PasswordField(System.String,System.Char,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a text field where the user can enter a password.</para>
+      </summary>
+      <param name="password">Password to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maskChar">Character to mask the password with.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <returns>
+        <para>The edited password.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.PasswordField(System.String,System.Char,System.Int32,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a text field where the user can enter a password.</para>
+      </summary>
+      <param name="password">Password to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maskChar">Character to mask the password with.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <returns>
+        <para>The edited password.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.RepeatButton(UnityEngine.Texture,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a repeating button. The button returns true as long as the user holds down the mouse.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the holds down the mouse.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.RepeatButton(System.String,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a repeating button. The button returns true as long as the user holds down the mouse.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the holds down the mouse.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.RepeatButton(UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a repeating button. The button returns true as long as the user holds down the mouse.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the holds down the mouse.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.RepeatButton(UnityEngine.Texture,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a repeating button. The button returns true as long as the user holds down the mouse.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the holds down the mouse.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.RepeatButton(System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a repeating button. The button returns true as long as the user holds down the mouse.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the holds down the mouse.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.RepeatButton(UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a repeating button. The button returns true as long as the user holds down the mouse.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the holds down the mouse.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.GUILayout.ScrollViewScope">
+      <summary>
+        <para>Disposable helper class for managing BeginScrollView / EndScrollView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUILayout.ScrollViewScope.handleScrollWheel">
+      <summary>
+        <para>Whether this ScrollView should handle scroll wheel events. (default: true).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUILayout.ScrollViewScope.scrollPosition">
+      <summary>
+        <para>The modified scrollPosition. Feed this back into the variable you pass in, as shown in the example.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUILayout.ScrollViewScope.#ctor(UnityEngine.Vector2,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new ScrollViewScope and begin the corresponding ScrollView.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwaysShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwaysShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.ScrollViewScope.#ctor(UnityEngine.Vector2,System.Boolean,System.Boolean,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new ScrollViewScope and begin the corresponding ScrollView.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwaysShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwaysShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.ScrollViewScope.#ctor(UnityEngine.Vector2,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new ScrollViewScope and begin the corresponding ScrollView.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwaysShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwaysShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.ScrollViewScope.#ctor(UnityEngine.Vector2,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new ScrollViewScope and begin the corresponding ScrollView.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwaysShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwaysShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.ScrollViewScope.#ctor(UnityEngine.Vector2,System.Boolean,System.Boolean,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new ScrollViewScope and begin the corresponding ScrollView.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwaysShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwaysShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.ScrollViewScope.#ctor(UnityEngine.Vector2,System.Boolean,System.Boolean,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new ScrollViewScope and begin the corresponding ScrollView.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwaysShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwaysShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="style"

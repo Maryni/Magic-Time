@@ -1,0 +1,24 @@
+Shader "Hidden/Shader Forge/SFN_Max_4" {
+    Properties {
+        _OutputMask ("Output Mask", Vector) = (1,1,1,1)
+        _A ("A", 2D) = "black" {}
+        _B ("B", 2D) = "black" {}
+        _C ("C", 2D) = "black" {}
+        _D ("D", 2D) = "black" {}
+    }
+    SubShader {
+        Tags {
+            "RenderType"="Opaque"
+        }
+        Pass {
+        CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #define UNITY_PASS_FORWARDBASE
+            #include "UnityCG.cginc"
+            #pragma target 3.0
+            uniform float4 _OutputMask;
+            uniform sampler2D _A;
+            uniform sampler2D _B;
+            uniform sampler2D _C;
+            uniform sampler2D _

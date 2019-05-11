@@ -1,0 +1,25 @@
+#include "il2cpp-config.h"
+#include "vm/InternalCalls.h"
+#include "vm/Runtime.h"
+
+#include <map>
+#include <string>
+
+typedef std::map<std::string, Il2CppMethodPointer> ICallMap;
+static ICallMap s_InternalCalls;
+
+namespace il2cpp
+{
+namespace vm
+{
+    void InternalCalls::Add(const char* name, Il2CppMethodPointer method)
+    {
+        //ICallMap::iterator res = s_InternalCalls.find(name);
+
+        // TODO: Don't assert right now because Unity adds some icalls multiple times.
+        //if (res != icalls.end())
+        //  IL2CPP_ASSERT(0 && "Adding internal call twice!");
+
+        IL2CPP_ASSERT(method);
+
+        s_Int

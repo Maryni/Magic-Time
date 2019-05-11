@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Audiovisuals -->
+  <Audiovisuals>Audio-vizual</Audiovisuals>
+  <GameVolume>Volum Joc</GameVolume>
+  <MusicVolume>Volum Muzică</MusicVolume>
+  <GraphicsQuality>Calitate grafică</GraphicsQuality>
+  <GraphicsQualityNormal>Normală</GraphicsQualityNormal>
+  <GraphicsQualityGreat>Bună</GraphicsQualityGreat>
+
+  
+  <!-- Gameplay -->
+  <EdgeScreenScroll>Deplasare cameră cu mouse</EdgeScreenScroll>
+  <CustomCursor>Cursor special</CustomCursor>
+  <KeyboardConfig>Configurare tastatură</KeyboardConfig>
+  <ChooseLanguage>Alege limba</Ch

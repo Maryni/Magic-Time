@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <Autosaving>Automaatsalvestamine</Autosaving>
+  
+  <GameStartDialog>Kolm teist ärkavad krüptoune sarkofaagist sireenide ja rebeneva metalli hääle peale. Te jõuate napilt pääste laevadesse enne kui teie kosmoselaev puruneb.\n\nMõnda aega hiljem te maandute tundmatul kettamaailmal.\n\nSel ajal kui kosmoselaeva tükid kukuvad teie ümber hakkate tegema plaane ellujäämiseks.</GameStartDialog>
+
+  <Colony>Koloonia</Colony>
+  
+  <ChangeLanguageFromMainMenu>Sa saad vahetada keelt ainult põhimenüüst.</ChangeLanguageFromMainMenu>
+
+  <AndLower>ja</AndLower>
+  <DisabledLower>disabled</DisabledLower>
+
+  <CloseButton>Sulge</CloseButto

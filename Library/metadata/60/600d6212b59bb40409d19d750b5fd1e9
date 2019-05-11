@@ -1,0 +1,721 @@
+] Building Uncached Shader 2ef59fe3036e585b4fef859c0cc793fadd00d06789830f0ba4780f6161fbd04f Resampler_OutColor_Downsample_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582214950 65 [INFO Client 5896] Building Uncached Shader 66e3d7061fe3d46a6393b090817efafb89c3d1e472d320941eeca3c07cc56dc1 Resampler_OutDepth_Downsample_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582214966 65 [INFO Client 5896] Building Uncached Shader 943e9070d38c79a6d7bd222ea9fd05dd3a3bcf32b9af1b9118519cfd7a8607c9 Resampler_OutColor_Downsample_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582214997 65 [INFO Client 5896] Building Uncached Shader 56dee8bb160772298554749d5eb794ac9d1fcbbb882ddc6383845cc9fb6900d5 Resampler_OutDepth_Downsample_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215028 65 [INFO Client 5896] Building Uncached Shader 821af3bd8affb61185aa60423693a88cd02280012e128d015c6a37056368af0c Resampler_OutColor_Copy_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215044 65 [INFO Client 5896] Building Uncached Shader 6ebb2dd9a5fe2a91523a92f97bd780d9d9bd160634b08353780f55370f346e78 Resampler_OutDepth_Copy_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215044 65 [INFO Client 5896] Building Uncached Shader a8376c94f6ed08bdcbefaf54b474c3ee4848f10f8355b295c9ffa0b54cd0032d Resampler_OutColor_Copy_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215059 65 [INFO Client 5896] Building Uncached Shader ed10314b5a33c1b1c22dd579b7dccfd5b56ce5ba942b323aed0290587271e0ed Resampler_OutDepth_Copy_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215059 65 [INFO Client 5896] Building Uncached Shader f6cbd70af8ef52d2df3374b35a2e3637677a1a1b9682fb19f70ece0a998632aa Resampler_OutColor_Copy_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215075 65 [INFO Client 5896] Building Uncached Shader 1c524a46f0c1139fad8a1ba0a0fdf26e5648f556142710ebd25456db77217556 Resampler_OutDepth_Copy_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215075 65 [INFO Client 5896] Building Uncached Shader 67d113deb08617843420289de403c97da91184b8b02da8126b4a11a6494b0a62 Resampler_OutColor_Copy_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215106 65 [INFO Client 5896] Building Uncached Shader fae08cf3067425a19b1c580a1d987cd2334e9924e8463ddc8a60720e5d7985c5 Resampler_OutDepth_Copy_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/20 10:02:53 582215106 65 [INFO Client 5896] Building Uncached Shader 94df0c1996902c44ddde4e02c0d2526ac032b6124a78f3fa9dd82f8d31b2f2af Resampler_OutColor_Upsample_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215137 65 [INFO Client 5896] Building Uncached Shader d9053b30387a7c3a3f464341a8ade59ef58402012c6ad66e0ad8ec68332883aa Resampler_OutDepth_Upsample_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215137 65 [INFO Client 5896] Building Uncached Shader 641c73b58492c926db2b17a43f52b638fce16c20089c7f0c0257e3e4f452f2d3 Resampler_OutColor_Upsample_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215153 65 [INFO Client 5896] Building Uncached Shader 75722442949409ac93ec279ecc7ecd812b940bdffd3525fcf0c02e6797e196db Resampler_OutDepth_Upsample_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215169 65 [INFO Client 5896] Building Uncached Shader db50b5d33a498caa29c9e7d4d693f9eeb8c581a7b493267fdcc6d1e94bc11b78 Resampler_OutColor_Upsample_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215184 65 [INFO Client 5896] Building Uncached Shader 6790701d7a83d19ffcbbf38c1feb049c8daa3d679e2c0146adc7d31d427ea7ca Resampler_OutDepth_Upsample_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215184 65 [INFO Client 5896] Building Uncached Shader adaa38a0ffd5779ae56eee33cd1b9542a03064ed8594896bf6a52d2fd686e630 Resampler_OutColor_Upsample_Mixed_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215200 65 [INFO Client 5896] Building Uncached Shader 059cf8bb05a8a062f4e265743363878da08c51e6f9cab32454139dc35ebca868 Resampler_OutDepth_Upsample_Mixed_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215215 65 [INFO Client 5896] Building Uncached Shader 8596d9b2e9de05217ad88fe98ed5637f7f073bc43e6645d5e55271cd35921b1c Resampler_OutColor_Downsample_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215247 65 [INFO Client 5896] Building Uncached Shader be6d0930ccad1d85ae664f5a88564f34dcbde9c7319ffb9bfcba687581ca74b6 Resampler_OutDepth_Downsample_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215278 65 [INFO Client 5896] Building Uncached Shader dfaa5364075aec99efd1802f1e83699336bf86ba6b1ba397645ad1f791cd6178 Resampler_OutColor_Downsample_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215309 65 [INFO Client 5896] Building Uncached Shader 3f711bdbbf4640dadbe4ad5986f5b9e5f4ed3d5a3363f87a76bf4050141ec4a8 Resampler_OutDepth_Downsample_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215340 65 [INFO Client 5896] Building Uncached Shader 8bcfa7c1d6bf10d838bba24a4059088cf935a680fe7ba6976a61200c57e9f5e7 Resampler_OutColor_Downsample_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215340 65 [INFO Client 5896] Building Uncached Shader ec35823365f75ddf28899b3c509ca6e974a8492458280c961fcd1fcbd70a388b Resampler_OutDepth_Downsample_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215356 65 [INFO Client 5896] Building Uncached Shader 0dbef67554a5d45b557c97cb62bff44613a0d712c9a53dbad9e9e6368b86b4fe Resampler_OutColor_Downsample_Mixed_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215387 65 [INFO Client 5896] Building Uncached Shader 1691994f609c6a37d0bc8478eae0358737f496f6248eddd6fa858f103199e829 Resampler_OutDepth_Downsample_Mixed_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215418 65 [INFO Client 5896] Building Uncached Shader 24d103d7008ae3737b93ebb348d65e29e935244e0459a5fad5120c7ea8613506 Resampler_OutColor_Copy_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215449 65 [INFO Client 5896] Building Uncached Shader bba65bb316602a7daf6302a130bf5f727b5a0896f43d8bad4c1ca0e6ff9b0d23 Resampler_OutDepth_Copy_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215465 65 [INFO Client 5896] Building Uncached Shader 366ba70dde67acc606a296b4eedc05540c2a242dc5d046aa943f0006815cd820 Resampler_OutColor_Copy_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:53 582215481 65 [INFO Client 5896] Building Uncached Shader 2362a2eb8a178e013902140468f4946cf37d03e4b04b259cc176f5e4fd5e0b97 Resampler_OutDepth_Copy_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:54 582215496 65 [INFO Client 5896] Building Uncached Shader ca546ad30e5654ed20355e3ff4cb97b8c093e1154a0903b0401740e256d51c18 Resampler_OutColor_Copy_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:54 582215496 65 [INFO Client 5896] Building Uncached Shader dd7354c423e077838813ed1be8b1f9e546e6aac43a36b3ae4d53ee6a3277a6ef Resampler_OutDepth_Copy_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:54 582215512 65 [INFO Client 5896] Building Uncached Shader 0a5db1c9b92dac147b697384f088ac56536b5d913b04e634a7ed82ed7aac456d Resampler_OutColor_Copy_Mixed_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:54 582215527 65 [INFO Client 5896] Building Uncached Shader 369f4a06610f07f0507c4f73b62b1f6b83398da18fb55c2c0643751fb2469397 Resampler_OutDepth_Copy_Mixed_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/20 10:02:54 582215543 65 [INFO Client 5896] Building Uncached Shader fb759e34033c76c5edd779b4fc03f9f4e19ddcc45aa6a43760dc07f15a63e4e5 Resampler_OutColor_Upsample_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215574 65 [INFO Client 5896] Building Uncached Shader dbcada715702f529e1d175307fbc12cede1127ccc0ffaab34df1eeee78740031 Resampler_OutDepth_Upsample_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215605 65 [INFO Client 5896] Building Uncached Shader 0312b6b27f1fd9c876167e04aa92a8ba02dd1ca5f2c4b6e279f09dfc0581eb36 Resampler_OutColor_Upsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215621 65 [INFO Client 5896] Building Uncached Shader 2c9f830cf9573bcad567a75dd48d4def09178fb66ec145ee91c224abe9c0a6c2 Resampler_OutDepth_Upsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215652 65 [INFO Client 5896] Building Uncached Shader 951d2878fcb3465adc2b21cab4849f2893dd67279f3184d5ecab12b26b801d5b Resampler_OutColor_Upsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215668 65 [INFO Client 5896] Building Uncached Shader bf618d29fb3df4b0efc66c35cc37198e7db843ff97f4c81442c9cf613274851f Resampler_OutDepth_Upsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215715 65 [INFO Client 5896] Building Uncached Shader 330e8393ac5c1a156fb5bbb2b6faccb1028cdc989ab196da205313a60d392cc9 Resampler_OutColor_Upsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215761 65 [INFO Client 5896] Building Uncached Shader f3c9b7d7893b6fb43020b2b0fcabb48ddd7f0284f17b1b01767ce3484ad11952 Resampler_OutDepth_Upsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215793 65 [INFO Client 5896] Building Uncached Shader b792e30120ecb57a9f777ba36dee8886bfb07d9cc2dd2fe5c609d3cca1848f97 Resampler_OutColor_Downsample_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215824 65 [INFO Client 5896] Building Uncached Shader 6885d2eac04126000d8687d6308b67c376861f32fa572e5da9dd62bf9aa066f4 Resampler_OutDepth_Downsample_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215871 65 [INFO Client 5896] Building Uncached Shader cf7c5c6875fe677567d00ae192cc3de50d0cd2c89cac0dbc4719833411650dd6 Resampler_OutColor_Downsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215902 65 [INFO Client 5896] Building Uncached Shader 20dc4694605ae0c37b2581ac501119fb2a79ffad1d8b947db160c9f73dd34588 Resampler_OutDepth_Downsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215933 65 [INFO Client 5896] Building Uncached Shader 26dc7464b5193879ba6fe864976e97f32f69387c98e0dea4bba65b0c82d946ad Resampler_OutColor_Downsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215933 65 [INFO Client 5896] Building Uncached Shader 962bb4f2765b09635e3ea2c7c38fc8503d74a31f0078eca3e1412b5d92c0f73f Resampler_OutDepth_Downsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215949 65 [INFO Client 5896] Building Uncached Shader 6d56f15df6fd96fb8ecd544ee55a27c3f4bec1b932db2616b491131e58411afb Resampler_OutColor_Downsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582215995 65 [INFO Client 5896] Building Uncached Shader 265f2a297238e0e0c54cb27ceb752aeb36024090d4924331a6b6fc6a4372067d Resampler_OutDepth_Downsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216027 65 [INFO Client 5896] Building Uncached Shader f8c5303a6850c95fb983fce1178660976a2b436208a6c4eb1741256f0a52c375 Resampler_OutColor_Copy_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216058 65 [INFO Client 5896] Building Uncached Shader 78028077bcfb7c9867813c40cf121e12cd6dbfcf453f86c1498d18f63ca6fa6f Resampler_OutDepth_Copy_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216089 65 [INFO Client 5896] Building Uncached Shader 024204e0e0ee16e3e65f7076672087fa4c147e094eca3607b21aec0f34fdd367 Resampler_OutColor_Copy_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216105 65 [INFO Client 5896] Building Uncached Shader 4128c5e5dd836370b87cbefa1b364ab8ca47c54a6c9c6548897b96eab6fc8186 Resampler_OutDepth_Copy_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216120 65 [INFO Client 5896] Building Uncached Shader ab1f7970787bef1dcd28227c4d727afc0af9fe5f5b2b028aeac1a64118286a48 Resampler_OutColor_Copy_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216136 65 [INFO Client 5896] Building Uncached Shader ee35f0ee815d7940747fca9d8a497cb1ae4bfae4682ce85ce18baad8e78b189d Resampler_OutDepth_Copy_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216136 65 [INFO Client 5896] Building Uncached Shader 3b5c4801db86809c26a4f1fb828119ac78f7f8c2a7ccaee02e2dc09c97ceaf56 Resampler_OutColor_Copy_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:02:54 582216167 65 [INFO Client 5896] Building Uncached Shader a3bd71cd54955eb6eefe258b89b7e4b55dedce9aedbfa3aa3cf47943ee031ef6 Resampler_OutDepth_Copy_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/20 10:03:14 582236338 ac [INFO Client 5896] Async connecting to mos01.login.pathofexile.com:20481
+2018/12/20 10:03:14 582236385 d3 [INFO Client 5896] Connected to mos01.login.pathofexile.com in 16ms.
+2018/12/20 10:03:25 582246618 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:03:25 582246837 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:03:25 582246837 dc [INFO Client 5896] Connecting to instance server at 109.95.212.50:6112
+2018/12/20 10:03:25 582246868 164 [DEBUG Client 5896] Connect time to instance server was 15ms
+2018/12/20 10:03:34 582255900 a24 [INFO Client 5896] : You have entered Highgate.
+2018/12/20 10:03:52 582273856 a24 [INFO Client 5896] : You have joined global chat channel 1 Русский.
+2018/12/20 10:03:52 582273856 a24 [INFO Client 5896] : You have joined trade chat channel 3 Русский.
+2018/12/20 10:03:52 582274012 a24 [INFO Client 5896] #Гус: ___
+2018/12/20 10:03:52 582274059 a24 [INFO Client 5896] #Гус: ___
+2018/12/20 10:03:52 582274059 a24 [INFO Client 5896] $ПредательствоНоги: куплю уник кольца любые по 2х
+2018/12/20 10:03:59 582281360 a24 [INFO Client 5896] #<~ROFL> Anime_Pavuk: да , шейпер так же
+2018/12/20 10:04:07 582288645 a24 [INFO Client 5896] #UMGE_JohnnyMnemonic: ребята шифтаните в ПМ внешки что давали за прогресс в прошлой лиге если нетрудно плиз
+2018/12/20 10:04:11 582293060 a24 [INFO Client 5896] #<[SF]> kyau_: помогите элдера ****ть 1 порт остался хд т10
+2018/12/20 10:04:12 582293965 a24 [INFO Client 5896] #<ZaK> PoetWithPenIsGood: насчёт гвардов точно?
+2018/12/20 10:04:13 582295135 a24 [INFO Client 5896] #<LUCK+> ЭкЗоРцИсТт:  боевой раж у кого есть банка
+2018/12/20 10:04:19 582300782 a24 [INFO Client 5896] $Джоржуан: лево верх нид кому?
+2018/12/20 10:04:19 582300797 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:04:19 582301000 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:04:19 582301000 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:04:19 582301047 164 [DEBUG Client 5896] Connect time to instance server was 16ms
+2018/12/20 10:04:23 582304885 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:04:29 582311421 a24 [INFO Client 5896] #<~ROFL> Anime_Pavuk: в ласт лиг
+2018/12/20 10:04:29 582311421 a24 [INFO Client 5896] #UMGE_JohnnyMnemonic: ребята шифтаните в ПМ внешки что давали за прогресс в прошлой лиге если нетрудно плиз
+2018/12/20 10:04:29 582311421 a24 [INFO Client 5896] #<~ROFL> Anime_Pavuk: закрыл квест так
+2018/12/20 10:04:30 582312310 a24 [INFO Client 5896] $unclelom: куплю 18 раскаяний за 10 хаос
+2018/12/20 10:04:31 582312654 a24 [INFO Client 5896] #SunkenCity: ты там поди у элдера всю арену уже гавной залил
+2018/12/20 10:04:35 582317412 a24 [INFO Client 5896] #<[SF]> kyau_: нет
+2018/12/20 10:04:51 582332512 a24 [INFO Client 5896] #<~ROFL> Anime_Pavuk: убью , если уже внутри
+2018/12/20 10:05:02 582344041 a24 [INFO Client 5896] #Gremlan: _ ПАРНИ ЧТО ПО ЦЕНЕ? БОЛЬШЕ 15Х?
+2018/12/20 10:05:07 582349049 a24 [INFO Client 5896] $Джоржуан: право верх нид кому
+2018/12/20 10:05:12 582354462 a24 [INFO Client 5896] #UMGE_JohnnyMnemonic: ребята шифтаните в ПМ внешки что давали за прогресс в прошлой лиге если нетрудно плиз
+2018/12/20 10:05:24 582365585 a24 [INFO Client 5896] #Холод_В_ТрусаХ: я куею с этой игры, зашёл к трио азири игра зависла я быстро нажал альт ф4и не здох, перезашёл в игру опять игра зафризила на трио и меня убили и сразу фризы прошли
+2018/12/20 10:05:24 582365585 a24 [INFO Client 5896] #НекрСпектр: 2в
+2018/12/20 10:05:32 582374102 a24 [INFO Client 5896] #МишаБольшеНеТрап: ГДЕ ЭТОТ ЕБУЧИЙ СУЛЬФИТ СОБИРАТЬ?? НА КАРТАХ СЮЖЕТКЕ ЕГО НЕТ
+2018/12/20 10:05:33 582375304 a24 [INFO Client 5896] #<~ROFL> Anime_Pavuk: __
+2018/12/20 10:05:34 582376489 a24 [INFO Client 5896] #magma_dogma: сасай химера
+2018/12/20 10:05:47 582388501 a24 [INFO Client 5896] @To МишаБольшеНеТрап: после сюжетки
+2018/12/20 10:05:48 582390358 a24 [INFO Client 5896] #UMGE_JohnnyMnemonic: спс аниме
+2018/12/20 10:05:49 582390670 a24 [INFO Client 5896] #ENJsvnsx: на картах по сюжетке сульфита как и синдиката до ебени матери
+2018/12/20 10:05:50 582391543 a24 [INFO Client 5896] @To МишаБольшеНеТрап: его много
+2018/12/20 10:05:59 582401200 a24 [INFO Client 5896] @From МишаБольшеНеТрап: СПАСИБО ЧУВАК
+2018/12/20 10:06:00 582402011 a24 [INFO Client 5896] #alduer: капец босс 2 акта скучный сейчас((
+2018/12/20 10:06:04 582406161 a24 [INFO Client 5896] #magma_dogma: 10к сульфита на т 16 карте за раз
+2018/12/20 10:06:06 582407939 a24 [INFO Client 5896] #<////> Нихил: _ ОПАЧА
+2018/12/20 10:06:07 582409296 a24 [INFO Client 5896] #<////> Нихил: ЧЕ ЭТА
+2018/12/20 10:06:11 582413383 a24 [INFO Client 5896] #NoDima: сульфита много, но только по 30 дает
+2018/12/20 10:06:13 582415302 a24 [INFO Client 5896] #MostosImba: куплю алхимки
+2018/12/20 10:06:14 582415942 a24 [INFO Client 5896] #<////> Нихил: _ А ЭТА БАБКИ?
+2018/12/20 10:06:15 582416488 a24 [INFO Client 5896] #<~ROFL> Anime_Pavuk: ред?
+2018/12/20 10:06:15 582417190 a24 [INFO Client 5896] #<dNÖ> NeonPheonix: Дабл химеру?
+2018/12/20 10:06:17 582418703 a24 [INFO Client 5896] #FrEeInQ_CS: _
+2018/12/20 10:06:35 582436908 a24 [INFO Client 5896] #<fan> _Rendy_: _ лол эйнар дал
+2018/12/20 10:06:37 582438546 a24 [INFO Client 5896] #<dNÖ> NeonPheonix: Еба, чот подорожали они, я их по 2.6 продавал
+2018/12/20 10:06:39 582440699 a24 [INFO Client 5896] #Gremlan: _ ПАРНИ ЧТО ПО ЦЕНЕ? БОЛЬШЕ 15Х?
+2018/12/20 10:06:39 582441120 a24 [INFO Client 5896] #<~ROFL> Anime_Pavuk: 15к за т16 с скарабеем
+2018/12/20 10:06:42 582443679 a24 [INFO Client 5896] #Two_handed_Dick: Нихир, гц)
+2018/12/20 10:07:53 582515034 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:07:53 582515096 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:07:53 582515096 dc [INFO Client 5896] Connecting to instance server at 109.95.210.207:6112
+2018/12/20 10:07:53 582515127 164 [DEBUG Client 5896] Connect time to instance server was 16ms
+2018/12/20 10:08:02 582523926 a24 [INFO Client 5896] : You have entered Azurite Mine.
+2018/12/20 10:08:50 582571522 142 [INFO Client 5896] Attempted to remove an effect pack from an object that's not there. Effect pack = Metadata/Effects/Spells/monsters_effects/League_Delve/general/mine_mutation/player_debuff/mine_mutation_x1.epk, animated object = Metadata/Characters/Int/Int.ao
+2018/12/20 10:09:25 582607449 a24 [INFO Client 5896] $ВагинАНАЛьныйПУК: Куплю(WTB) сферы Соединения(FUS) 3:1с, Алхимии(ALC) 3:1с, Ваал(VAAL) 2:1с ,Божественные(DIVINE) 1:6с,Раскаяния(REGRET)3:1c
+2018/12/20 10:09:47 582628556 a24 [INFO Client 5896] $<ÁRC> Naolla:  Куплю скарабеи на сульфит 10/15/20 хаос
+2018/12/20 10:11:49 582750985 a24 [INFO Client 5896] $<lKM> octaviusss: _1.3
+2018/12/20 10:12:06 582767568 a24 [INFO Client 5896] : This chest is locked.
+2018/12/20 10:12:21 582782544 a24 [INFO Client 5896] $ВагинАНАЛьныйПУК: Куплю(WTB) сферы Соединения(FUS) 3:1с, Алхимии(ALC) 3:1с, Ваал(VAAL) 2:1с ,Божественные(DIVINE) 1:6с,Раскаяния(REGRET)3:1c
+2018/12/20 10:15:42 582983941 a24 [INFO Client 5896] : Milly_one has been slain.
+2018/12/20 10:16:08 583009931 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:16:08 583009962 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:16:08 583009962 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:16:08 583010009 164 [DEBUG Client 5896] Connect time to instance server was 16ms
+2018/12/20 10:16:09 583011008 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:16:48 583049789 a24 [INFO Client 5896] : Trade cancelled.
+2018/12/20 10:17:02 583063939 a24 [INFO Client 5896] : Trade accepted.
+2018/12/20 10:17:34 583096106 a24 [INFO Client 5896] $unclelom: 8 раскаяний за 5 хаос куплю
+2018/12/20 10:17:35 583097011 a24 [INFO Client 5896] $KInGV_ARC: куплю 40 алхимок за 20_
+2018/12/20 10:17:52 583113500 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:17:52 583113594 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:17:52 583113594 dc [INFO Client 5896] Connecting to instance server at 23.105.235.4:6112
+2018/12/20 10:17:52 583113625 164 [DEBUG Client 5896] Connect time to instance server was 15ms
+2018/12/20 10:17:55 583117026 a24 [INFO Client 5896] : You have entered Underground River.
+2018/12/20 10:17:58 583120052 a24 [INFO Client 5896] The Shaper: Life, like still water, becomes trapped. Stagnant. Foul.
+2018/12/20 10:18:53 583174918 a24 [INFO Client 5896] Korell Goya, Son of Stone: Only a fool braves a Redblade's encampment!
+2018/12/20 10:19:04 583185635 a24 [INFO Client 5896] Hillock, the Blacksmith: I'll help you bash.
+2018/12/20 10:19:04 583185666 a24 [INFO Client 5896] Tora, the Culler: This den is ours, exile.
+2018/12/20 10:19:38 583220470 a24 [INFO Client 5896] Hillock, the Blacksmith: No... don't want to die... again..
+2018/12/20 10:19:46 583228083 a24 [INFO Client 5896] : Milly_one has been slain.
+2018/12/20 10:19:46 583228114 a24 [INFO Client 5896] Hillock, the Blacksmith: And stay out!
+2018/12/20 10:19:47 583229066 a24 [INFO Client 5896] $<MEkA> AKYHAMATATA_BV: Продам уник кольца кому надо в лс
+2018/12/20 10:19:50 583231843 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:19:50 583231874 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:19:50 583231874 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:19:50 583231889 164 [DEBUG Client 5896] Connect time to instance server was 15ms
+2018/12/20 10:19:51 583232888 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:20:04 583245508 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:20:04 583245508 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:20:04 583245508 dc [INFO Client 5896] Connecting to instance server at 23.105.235.4:6112
+2018/12/20 10:20:04 583245540 164 [DEBUG Client 5896] Connect time to instance server was 32ms
+2018/12/20 10:20:04 583246320 a24 [INFO Client 5896] : You have entered Underground River.
+2018/12/20 10:20:25 583267286 a24 [INFO Client 5896] Korell Goya, Son of Stone: Extinguish me again... and I will still burn...
+2018/12/20 10:20:26 583267504 a24 [INFO Client 5896] : Milly_one has been slain.
+2018/12/20 10:20:26 583267536 a24 [INFO Client 5896] Tora, the Culler: The weak perish. Such is life.
+2018/12/20 10:20:31 583272918 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:20:31 583272918 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:20:31 583272918 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:20:31 583272964 164 [DEBUG Client 5896] Connect time to instance server was 31ms
+2018/12/20 10:20:32 583273885 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:20:45 583286708 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:20:45 583286708 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:20:45 583286708 dc [INFO Client 5896] Connecting to instance server at 23.105.235.4:6112
+2018/12/20 10:20:45 583286724 164 [DEBUG Client 5896] Connect time to instance server was 16ms
+2018/12/20 10:20:46 583287660 a24 [INFO Client 5896] : You have entered Underground River.
+2018/12/20 10:21:32 583334476 a24 [INFO Client 5896] Hillock, the Blacksmith: Hate the dark!
+2018/12/20 10:21:40 583341621 a24 [INFO Client 5896] Korell Goya, Son of Stone: I won't tell you a single word!
+2018/12/20 10:22:36 583398483 a24 [INFO Client 5896] $ПредательствоНоги: куплю уник кольца любые по 2х
+2018/12/20 10:25:15 583556918 a24 [INFO Client 5896] $<ÏÐÐQÐ+> _IDooMI_:  Куплю карту Некрополь или поменяюсь на т13 !!!
+2018/12/20 10:26:04 583606370 a24 [INFO Client 5896] $<ÏÐÐQÐ+> _IDooMI_:  Куплю карту Некрополь или поменяюсь на т13 !!!
+2018/12/20 10:26:45 583646680 a24 [INFO Client 5896] : Milly_one has been slain.
+2018/12/20 10:26:49 583650815 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:26:49 583650815 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:26:49 583650815 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:26:49 583650861 164 [DEBUG Client 5896] Connect time to instance server was 31ms
+2018/12/20 10:26:50 583651735 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:27:03 583664605 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:27:03 583664605 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:27:03 583664605 dc [INFO Client 5896] Connecting to instance server at 23.105.235.4:6112
+2018/12/20 10:27:03 583664621 164 [DEBUG Client 5896] Connect time to instance server was 16ms
+2018/12/20 10:27:03 583665338 a24 [INFO Client 5896] : You have entered Underground River.
+2018/12/20 10:27:12 583674246 a24 [INFO Client 5896] The Shaper: These worlds are not yours.
+2018/12/20 10:27:51 583713231 a24 [INFO Client 5896] $Zombileta: _____ по алхимки
+2018/12/20 10:28:15 583736646 a24 [INFO Client 5896] $unclelom: куплю 8 сфер раскаяния за 5 хаосов
+2018/12/20 10:28:36 583758050 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:28:36 583758050 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:28:36 583758050 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:28:36 583758096 164 [DEBUG Client 5896] Connect time to instance server was 31ms
+2018/12/20 10:28:37 583758939 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:28:53 583774929 a24 [INFO Client 5896] : Trade cancelled.
+2018/12/20 10:30:09 583851026 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:30:09 583851042 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:30:09 583851042 dc [INFO Client 5896] Connecting to instance server at 109.95.211.43:6112
+2018/12/20 10:30:09 583851073 164 [DEBUG Client 5896] Connect time to instance server was 15ms
+2018/12/20 10:30:13 583854599 a24 [INFO Client 5896] : You have entered Excavation.
+2018/12/20 10:30:16 583857859 a24 [INFO Client 5896] The Shaper: Two unexplored frontiers remain: The skies and the soil.
+2018/12/20 10:31:23 583925111 a24 [INFO Client 5896] $ПредательствоНоги: куплю уник кольца любые по 2х
+2018/12/20 10:32:47 584008837 a24 [INFO Client 5896] Tora, the Culler: Don't expect our previous dealings to save you now.
+2018/12/20 10:33:13 584035263 a24 [INFO Client 5896] Tora, the Culler: We're not beasts... we can settle this other ways, like before.
+2018/12/20 10:33:43 584064623 a24 [INFO Client 5896] Jun, Veiled Master: I'm glad we could come to an understanding.
+2018/12/20 10:37:31 584292571 a24 [INFO Client 5896] $MichelangeloBuonarroti: Кому-нибудь нужно испытание калечащей печалью?
+2018/12/20 10:39:58 584440336 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:39:58 584440367 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:39:58 584440367 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:39:58 584440398 164 [DEBUG Client 5896] Connect time to instance server was 15ms
+2018/12/20 10:39:59 584441381 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:40:01 584442488 a24 [INFO Client 5896] $Mittzi: куплю соединения 3к1
+2018/12/20 10:40:07 584448619 a24 [INFO Client 5896] : Failed to apply item: Item is currently equipped.
+2018/12/20 10:40:34 584475873 a24 [INFO Client 5896] : Trade accepted.
+2018/12/20 10:40:42 584484297 a24 [INFO Client 5896] : Trade accepted.
+2018/12/20 10:41:30 584532314 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:41:30 584532329 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:41:30 584532329 dc [INFO Client 5896] Connecting to instance server at 23.105.235.4:6112
+2018/12/20 10:41:30 584532361 164 [DEBUG Client 5896] Connect time to instance server was 16ms
+2018/12/20 10:41:34 584536354 a24 [INFO Client 5896] : You have entered Relic Chambers.
+2018/12/20 10:42:40 584601812 a24 [INFO Client 5896] Tora, the Culler: The hunt is on!
+2018/12/20 10:42:49 584610798 a24 [INFO Client 5896] Cameria the Coldblooded: It's my turn to rip the exile limb from limb!
+2018/12/20 10:42:55 584617397 a24 [INFO Client 5896] $ToTeMiG: _ за сколько можно их продать?
+2018/12/20 10:43:05 584626679 a24 [INFO Client 5896] Cameria the Coldblooded: But I had the upper hand!
+2018/12/20 10:43:08 584630080 a24 [INFO Client 5896] Tora, the Culler: We're not beasts... we can settle this other ways, like before.
+2018/12/20 10:43:31 584652825 a24 [INFO Client 5896] Tora, the Culler: Violence is part of the natural order.
+2018/12/20 10:43:40 584661592 a24 [INFO Client 5896] Tora, the Culler: Adapt or die, exile. Adapt or die.
+2018/12/20 10:44:36 584717986 a24 [INFO Client 5896] $Dreonor: _ продам 1х
+2018/12/20 10:49:08 584989677 a24 [INFO Client 5896] The Shaper: Cast yourself into oblivion.
+2018/12/20 10:50:12 585053856 a24 [INFO Client 5896] $<|HARD|> Twoiqplayer: куплю сульфит на картах
+2018/12/20 10:51:20 585121966 a24 [INFO Client 5896] $<|HARD|> Twoiqplayer: куплю сульфит на картах, куплю резцы картографа 3к1х
+2018/12/20 10:52:58 585219592 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:52:58 585219623 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:52:58 585219623 dc [INFO Client 5896] Connecting to instance server at 109.95.212.24:6112
+2018/12/20 10:52:58 585219670 164 [DEBUG Client 5896] Connect time to instance server was 31ms
+2018/12/20 10:52:59 585220824 a24 [INFO Client 5896] : You have entered Stately Hideout.
+2018/12/20 10:53:11 585233179 a24 [INFO Client 5896] $Mittzi: куплю соединения 2.5 к 1
+2018/12/20 10:53:11 585233289 a24 [INFO Client 5896] : Trade accepted.
+2018/12/20 10:54:00 585281696 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:54:00 585281696 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:54:00 585281696 dc [INFO Client 5896] Connecting to instance server at 23.105.235.4:6112
+2018/12/20 10:54:00 585281711 164 [DEBUG Client 5896] Connect time to instance server was 15ms
+2018/12/20 10:54:01 585282835 a24 [INFO Client 5896] : You have entered Relic Chambers.
+2018/12/20 10:54:16 585297951 78f [INFO Client 5896] Abnormal disconnect: An unexpected disconnection occurred.
+2018/12/20 10:55:16 585358417 ac [INFO Client 5896] Async connecting to mos01.login.pathofexile.com:20481
+2018/12/20 10:55:17 585359337 d3 [INFO Client 5896] Connected to mos01.login.pathofexile.com in 0ms.
+2018/12/20 10:55:38 585379664 ce6 [DEBUG Client 5896] Got Instance Details from login server
+2018/12/20 10:55:38 585379680 d03 [INFO Client 5896] Just before calling client instance session
+2018/12/20 10:55:38 585379680 dc [INFO Client 5896] Connecting to instance server at 109.95.211.42:6112
+2018/12/20 10:55:38 585380179 164 [DEBUG Client 5896] Connect time to instance server was 31ms
+2018/12/20 10:56:03 585405358 a24 [INFO Client 5896] : You have entered Highgate.
+2018/12/20 10:56:03 585405358 a24 [INFO Client 5896] #Arcyboiiiiii: btw
+2018/12/20 10:56:25 585426730 a24 [INFO Client 5896] #Arcyboiiiiii: you can corrupt
+2018/12/20 10:56:27 585428508 a24 [INFO Client 5896] $Zizara: WTS _1exalted orb(ex) / _1ex / _1ex / _1ex / _1exalted orb(ex) / _1ex / _1ex / _1ex / _1ex / _1exalted orb(ex) (all.item's.TOP/MAX. roll's)
+2018/12/20 10:56:27 585428508 a24 [INFO Client 5896] #Arcyboiiiiii: a lvl 100 neck
+2018/12/20 10:56:27 585428508 a24 [INFO Client 5896] $largehotballs: WTB >> grelwood shank pm me
+2018/12/20 10:56:31 585432611 a24 [INFO Client 5896] $Zizara: WTS _3exalted orbs(ex) / _1ex / _1ex / _1ex / _1exalted orb(ex) / _1ex / _1ex / _1ex / _1ex / _1exalted orb(ex) (all.item's.TOP/MAX. roll's)
+2018/12/20 10:56:31 585432642 a24 [INFO Client 5896] : You have joined global chat channel 1 Русский.
+2018/12/20 10:56:31 585432642 a24 [INFO Client 5896] : You have joined trade chat channel 3 Русский.
+2018/12/20 10:58:08 585529909 a24 [INFO Client 5896] $SHPAGOGLOT: _ 4с
+2018/12/20 10:58:20 585541921 a24 [INFO Client 5896] $<|<Œ~|> Amfor: куплю выху
+2018/12/20 11:01:04 585705597 a24 [INFO Client 5896] : Trade accepted.
+2018/12/20 11:02:01 585763442 a24 [INFO Client 5896] $ВагинАНАЛьныйПУК: Куплю(WTB) сферы Соединения(FUS) 3:1с, Алхимии(ALC) 3:1с, Ваал(VAAL) 2:1с ,Божественные(DIVINE) 1:6с,Раскаяния(REGRET)3:1c
+2018/12/21 16:00:54 ***** LOG FILE OPENING *****
+2018/12/21 16:00:55 690035525 1c4 [INFO Client 7256] Send patching protocol version 5
+2018/12/21 16:00:55 690035587 237 [INFO Client 7256] Web root: http://patchcdn.pathofexile.com/3.5.1.1/
+2018/12/21 16:00:55 690035587 238 [INFO Client 7256] Backup Web root: http://patchcdn2.pathofexile.com/patch/3.5.1.1/
+2018/12/21 16:00:55 690035587 243 [INFO Client 7256] Requesting root contents 1
+2018/12/21 16:00:55 690035634 26d [INFO Client 7256] Got file list for "" 0
+2018/12/21 16:00:55 690035774 2b3 [INFO Client 7256] Queue file to download: PathOfExile_x64.exe
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder Art 1
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder ShaderCacheD3D11.packed 2
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder ShaderCache.packed 3
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder minimap 4
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder ShaderCacheD3D11_GI.packed 5
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder Data 6
+2018/12/21 16:00:55 690035774 2b3 [INFO Client 7256] Queue file to download: PackCheck.exe
+2018/12/21 16:00:55 690035774 2b3 [INFO Client 7256] Queue file to download: PathOfExile.exe
+2018/12/21 16:00:55 690035774 2b3 [INFO Client 7256] Queue file to download: Client.exe
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder Metadata 7
+2018/12/21 16:00:55 690035774 2a5 [INFO Client 7256] Requesting folder FMOD 8
+2018/12/21 16:00:55 690035821 26d [INFO Client 7256] Got file list for "Art" 8
+2018/12/21 16:00:56 690035977 2a5 [INFO Client 7256] Requesting folder Art/particles 9
+2018/12/21 16:00:56 690035977 2a5 [INFO Client 7256] Requesting folder Art/Microtransactions 10
+2018/12/21 16:00:56 690035977 2a5 [INFO Client 7256] Requesting folder Art/Models 11
+2018/12/21 16:00:56 690035977 2a5 [INFO Client 7256] Requesting folder Art/Textures 12
+2018/12/21 16:00:56 690035977 2b3 [INFO Client 7256] Queue file to download: Art/UIImages1.txt
+2018/12/21 16:00:56 690035977 2a5 [INFO Client 7256] Requesting folder Art/2DItems 13
+2018/12/21 16:00:56 690035977 2b3 [INFO Client 7256] Queue file to download: Art/UIShopImages.txt
+2018/12/21 16:00:56 690035993 26d [INFO Client 7256] Got file list for "ShaderCacheD3D11.packed" 12
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/7.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/2.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/0.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/6.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/1.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/5.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/index.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/4.dat
+2018/12/21 16:00:56 690036102 2b3 [INFO Client 7256] Queue file to download: ShaderCacheD3D11.packed/3.dat
+2018/12/21 16:00:56 690036102 26d [INFO Client 7256] Got file list for "ShaderCache.packed" 11
+2018/12/21 16:00:56 690036211 2b3 [INFO Client 7256] Queue file to download: ShaderCache.packed/2.dat
+2018/12/21 16:00:56 690036211 2b3 [INFO Client 7256] Queue file to download: ShaderCache.packed/0.dat
+2018/12/21 16:00:56 690036211 2b3 [INFO Client 7256] Queue file to download: ShaderCache.packed/1.dat
+2018/12/21 16:00:56 690036211 2b3 [INFO Client 7256] Queue file to download: ShaderCache.packed/5.dat
+2018/12/21 16:00:56 690036211 2b3 [INFO Client 7256] Queue file to download: ShaderCache.packed/index.dat
+2018/12/21 16:00:56 690036227 2b3 [INFO Client 7256] Queue file to download: ShaderCache.packed/4.dat
+2018/12/21 16:00:56 690036227 2b3 [INFO Client 7256] Queue file to download: ShaderCache.packed/3.dat
+2018/12/21 16:00:56 690036227 26d [INFO Client 7256] Got file list for "minimap" 10
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_ChitusReef.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Bestiary_CreatureBosses_ScorpionSpider_Tiles.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_LowRiver.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Rail.dds
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_MushroomCaves_Abyss.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_Features.dds
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LargeBuildingsHighWater.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_Ledge_v2.dds
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Arena_Pit_HideoutArchaeological.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Arena_Colosseum_Feature.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_ChitusReef.dds
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_HalfLedge.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Stairs.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Town_v2.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_BoilingLake.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Delve_Tiles.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Rails.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Ledge_WalkableEdgeToWater_Scan.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_DoubleLedge.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Ossuary_BonePile.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_LowerWall.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_Slope_Connections.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Belly_Abyss.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_ThickForestToDune.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Infestation.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Church_Hidden.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapFactory_Tiles_Ledge.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_Thinwall.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_DungeonWeb_Features_SpiderWater.dds
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Transitions_ShipgraveyardPassageway.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_OuterWall.dds
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapMesa_Tiles_DoubleOuterLedge.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_BurningEdge_BurningRoad.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_Lobby.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_FungalCavern_Stairs.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_Stairs.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SandDunes.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Ledge_Delve.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Belly_MixedWalls.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Special.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_ThickWall.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Grove_Features_Petrified.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_RoadNoSnow.mtp
+2018/12/21 16:01:02 690042498 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_BuildingMarket.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SwampStream.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapAtlasShaper_Tiles.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Iceberg_Features.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Stairs.dds
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Features.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_Abyss.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Quarry_Feature.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_DriedLake_SandDunes.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_Arch.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_Dunes_Tidal.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_CoralDunes.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_Ledge.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapPillarsOfVastiri_Tiles.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Ossuary_Feature.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_Stairs.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Abyss_Tiles_Feature.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_Burning.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Quarry_SpikeLedge.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapAcidLakes_CustomTiles.dds
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Church_Dig.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Beacon_SmallCliffWater_Height2.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Lava.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Belly_MaligaroWalls.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Feature.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Features_Coral.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Beacon_SandDunes_Height2.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_LargeCliffToForest.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_DungeonWeb_Features_SpiderWater.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapRamparts_CustomTiles.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Pools.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_Feature.dds
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act4_Area7_Cliff.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_AbyssLake.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_IvoryTemple_LunarisWater.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Innocence_Stairs.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapRacecourse_CustomTiles.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Abyss_Tiles_Walls.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Canal.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_CausewayUnwalkable.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapHighGardens_CustomTiles.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Features.dds
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_ThinWall_Looted.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Ledge_LargeCliffsToStormyOcean.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Grove_Features.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LargeBuildingsWarehouseWater.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act4_Area7_Features.dds
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Library_Features.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Church_Traps.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Cave_Walls.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_Bloodpool.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Cave_Corridor.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffs_Test2.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Ledge_AreaTransition_Scan.dds
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_LakeWall.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_UpperCanalEdge.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Iceberg_Walls.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Stairs_Delve.dds
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_Dunes.mtp
+2018/12/21 16:01:02 690042514 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Features_Trees.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Ossuary_Stairs.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Bridge.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Arena_Pit_EndGameOnly.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Innocence_Stairs_Sanctuary.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapMesa_Tiles_LargeOuterCliff.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Missions_Tiles.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Features.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_ThickWall_Feature.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_Fill.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsToSandDunes.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_BurningEdge_BurningWallImpassable.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Iceberg_ShallowLedge.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_BloodAqueduct.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Transitions_TidalIsland.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Arena_Pit_Features.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Quarry_QuarryCliff.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Rail.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Walls.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_GardenThinWall.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapEstuary_Tiles.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Stairs.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Stream.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SmallCliffsToWater_v2.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Waterfalls.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_DungeonWeb_Ledge.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_TemplarCourt_Ledge.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_DeepPools.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Belly_Lake.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Features_VillageRuins.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sceptre_Abyss.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Walls_Delve.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_GardenWildGrowth.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsGarden.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Special_Tower.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Innocence_ThickWall.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Dam.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_CoralSmallCliffs.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Betrayal_Tiles_SafeHouse.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Wall.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LargeBuildingsSlumHood.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_Walls.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Special_Bridge.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Features_Coral.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Road.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapAtlasPhoenix_Tiles.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_Walkway.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Bestiary_CreatureBosses_Crab_Tiles.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_GrainGate.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Special.dds
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ProtoVaal_Features.mtp
+2018/12/21 16:01:02 690042529 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Transitions_TidalIsland.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Stream.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeToSmallCliffs.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_LakeWalkway.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Ledge.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_LunarisWater.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_LargeCliffToRiver.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Ledge_LargeCliffsToWater_Scan.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_DungeonWeb_Walkway_SpiderWater.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Cave_Ledge.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Abyss.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_SpiderGrove_Walls.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Belly_Feature.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Transitions_DockTransition.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Tools_TestingArea_Tiles.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_DockLedgeMosiac.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_River.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_Stairs.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Quest Locations.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_SmallCliffsToDune.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_AreaTransitions_Part2.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Belly_ShavronneWalls.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_GardenThinWall_ThinWallUnwalkable.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Road.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Refinery.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_DungeonWeb_Walls.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sewers.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Azurite.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_ThickWall_Connections.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SwampStream_Test.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Prison_Walls.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_RoughWall_ThinWall.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_Dunes_Tidal.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Grass.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Ossuary_Abyss.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sceptre_Features.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_Abyss_Looted.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_SlaveDens_Lowerwall.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Betrayal_Tiles_Fortress.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Iceberg_Delve.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Floor.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_DriedLake_AqueductNarrow.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapCelestialSchism_Tiles.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_Ledge.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sceptre.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_LargeCliffToForest_Scan_forestcliff.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Foothills.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Marble.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_BurningEdge_BurningCliff.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Transitions_MerveilExit.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_Unique.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Church_Walkway.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act4_Area7_Features.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffs_Test2.dds
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SmallCliffsGarden.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_TemplarCourt_Feature_Burned.mtp
+2018/12/21 16:01:02 690042545 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Special_Town.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsToOcean.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_BloodAqueduct.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_TerraceBlocks.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_DungeonWeb_Abyss_SpiderWater.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_Dunes.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Grove_Walls_Petrified.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapPillarsOfVastiri_Tiles_Statues.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ProtoVaal_Abyss.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapFactory_Tiles_LedgeWildCardUp.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Features_Ships.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_Features_Carvings.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Walls_Delve.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_DriedLake_AqueductNarrow.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Wall_OneSidedWall.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SwampStream_Test.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sewers_Toxic.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Iceberg_ShallowLedge.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Missions_Hideouts_Battleground_Tiles.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Road.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsToStormyOcean.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_Walkway.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_CoralSmallCliffs.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Cave_Features.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Features_Tents.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Pools_FlowingWater.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Feature.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Rosettes.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_Floor.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Ledge_LargeCliffsToStormyOcean.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_DungeonWeb_Walkway_SpiderWater.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_RampartsRiver.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedTempleForest_Walkway.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsToShore_Test2.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_RampartDocks.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Features_WallGates.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Beacon.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Features_Trees.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Special_Town_act9.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_LunarisWater.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Abyss_Delve.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_RampartDocks.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsToThickForest.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedTempleForest_Submerged.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act4_Area7_Ravine.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedTempleForest_Ledge.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Innocence_Floor.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_FungalCavern_Ledge.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_ThickForestToSpider.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SandDunes_v2.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LibraryLargeWall.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Feature.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_Walkway.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_LargeCliffToForest_Scan_beachcliff.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sewers_Abyss.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_Water.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SwampDeepPools.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Special_Sarn2.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Missions_Hideouts_ArenaKaom_Tiles.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Wall.mtp
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Missions_Hideouts_ArenaSolarisLunaris_Tiles.dds
+2018/12/21 16:01:02 690042560 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_Feature.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_DriedLake_AqueductCliff.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_MarketArcade.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_DriedLake_Features.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_SideAreas.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_CoralDeepOcean.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_Feature.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Ledge_WalkableEdgeToWater_Scan.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_CoralDeepOcean.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_BuildingWarehouse.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Arches.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sewers_Wall.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_CausewayWaterAbyssEdge.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LargeWall.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Quarry_Slums.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Prison_Lava.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act9_Area6_Tiles.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_DriedLake_AqueductCliff.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Arches.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SmallCliffsToWater_v2_TidalCliff.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapArmory_Tiles.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_SlaveDens_Stairs.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Rubble.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Transitions.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ProtoVaal_Stairs.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Prison_Ledge.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Church_Abyss.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Innocence_ThinWall_Sanctuary.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_Laboratory.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_Features.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedTempleForest_Stairs.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_Scaffold.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act4_Area7_Ledge.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_BanditTraps.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_ChurchWall.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Pillar.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Foothills.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Quarry_Feature.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_TidalCliff_Ledge_v2.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Quarry_SpikeLedge.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_RoughWall_Features.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Ledge.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_Features.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_SlumHood.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Prison_Hidden.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_Feature.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_Ledge_v2.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_ThickWall_Looted.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Iceberg_Delve.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_SlumArch.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sceptre_Ledge.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Ossuary_ThickWall.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Arena_Pit_Walls.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Canal.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_LargeCliffToForest_Scan_forestcliff.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_TerraceBlocks_v2.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_Bloodpool.dds
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_GreyBox_Feature.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_FungalCavern_Features.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_ChurchWall_OneSidedChurchWall.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Features_Delve.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_MushroomCaves_Curves.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Special.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_ThickWall.mtp
+2018/12/21 16:01:02 690042576 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_UpperEdge.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SmallCliffsToWater.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapMountainCity_Tiles.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_CathedralRoof_ThinWall.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_Lobby_Looted.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_TemplarCourt_Feature.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_Features_Town.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Pillar_Delve.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_HalfLedge_Connections.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_Features.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_OriathSquare_Rosettes_Shadowed.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised_Ledge.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_DeepRiver.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_Water.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_TemplarCourt_Stairs.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_DriedLake_Transitions.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Dungeon_CausewayCliffs.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sewers_Walkway.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_TemplarCourt_Floor_Burned.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Abyss_Delve.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_LavaChamber.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_Lake.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_Thinwall.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_KaomBeach.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Church_Walls.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_Corridor.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsToShore_Test2.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LargeWallDocks.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_Stream.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Aqueduct_LowerWall.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LedgeMosaicGardens.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LargeBuildingsLedge.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapFactory_Tiles.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_Ledge.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Plateau_LargeCliff.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapArmory_Tiles.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Betrayal_Tiles_MastermindFight.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_SpiderGrove_Features.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Leagues_Abyss_Tiles_Doors.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Abyss.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Special_Town.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SmallCliffsToWater_v2_TidalCliff.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Sceptre_Stairs.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_ThickForest.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ProtoVaal_BoulderTrack.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Cave_River.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_ElegantHouse_Water.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Missions_Hideouts_ArenaSolarisLunaris_Tiles.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act6_Area7Level2_Tiles.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Temple_Abyss.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_Hollows.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_LargeCliffsRaised.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_EndGame_MapGrandmasters_Tiles.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Missions_Hideouts_ArenaDominus_Tiles.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Walkway_Delve.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Library_Abyss.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_ForestCave_MushroomCaves_Stairs.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Beach_SmallCliffs_v2.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Theopolis_Reliquary_ThinWall.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_DocksLedgeWalkable.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_Quay_Fill.dds
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_GardenWalkway.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Arena_Pit_Menagerie.mtp
+2018/12/21 16:01:02 690042592 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Forest_BurningEdge_BurningLowRiver.mtp
+2018/12/21 16:01:02 690042607 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Mountain_Mines_Walls.mtp
+2018/12/21 16:01:02 690042607 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_RuinedCity_LargeBuildingsWater.mtp
+2018/12/21 16:01:02 690042607 2b3 [INFO Client 7256] Queue file to download: minimap/Metadata_Terrain_Act4_Area7_Ledge.mtp
+2018/12/21 16:01:02 690042607 2b3 [INFO Client 7256] Qu

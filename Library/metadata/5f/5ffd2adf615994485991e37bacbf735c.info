@@ -1,0 +1,18 @@
+  operation.OnOperationError += OnAddOperationError;
+            operation.OnOperationSuccess += OnAddOperationSuccess;
+        }
+
+        private void OnAddOperationError(Error error)
+        {
+            if (package != null && package.AddSignal.Operation != null)
+            {
+                package.AddSignal.Operation.OnOperationSuccess -= OnAddOperationSuccess;
+                package.AddSignal.Operation.OnOperationError -= OnAddOperationError;
+                package.AddSignal.Operation = null;
+            }
+
+            PackageCollection.Instance.AddPackageError(package, error);
+
+            SetError(error);
+            if (package != null)
+                ResetVersionItems(package.VersionToDi

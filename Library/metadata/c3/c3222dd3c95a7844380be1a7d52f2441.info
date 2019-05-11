@@ -1,0 +1,36 @@
+ "NEW",
+		effects: 
+		{
+			passion: "1",
+		},
+		availableWithoutEndingMatch: "false",
+		label: "Priest",
+		startdescription: "--",
+		id: "priest",
+		fromEnding: "_despairending",
+		description: "--",
+		image: "moth",
+	},
+	{
+		comment: "NEW",
+		effects: 
+		{
+			introjob: "1",
+		},
+		availableWithoutEndingMatch: "false",
+		label: "Medium",
+		startdescription: "--",
+		id: "medium",
+		fromEnding: "_visionsending",
+		description: "--",
+		image: "moth",
+	},
+	{
+		comment: "NEW",
+		effects: 
+		{
+			introjob: "1",
+		},
+		availableWithoutEndingMatch: "false",
+		label: "Survivor",
+		startd

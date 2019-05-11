@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <JumpToLocation>Arată locația!</JumpToLocation>
+
+  <FirstSummerWarning>Vara a început!\n\nTrebuie să te pregătești pentru iarnă deoarece culturile nu vor crește în frigul iernii. Strânge suficiente alimente pentru a supraviețui iernii.\n\nConstruiește o cameră frigorifică pentru a prezerva mâncarea.\n\nȘi obține câteva haine, fie că le furi sau faci, altminteri coloniștii vor îngheța de frig.</FirstSummerWarning>
+  
+  <RelationsBrokenDown>Relațiile cu {0} au decăzut. Sunt acum ostili față de colonia ta.</RelationsBrokenDown>
+  <RelationsWarmed>Relațiile cu {0} s-au îmbunătățit. Nu mai s

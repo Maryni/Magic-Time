@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Arresting worsens faction relations -->
+  <ArrestingCreatesEnemies.label>Арест ухудшает отношения с фракциями</ArrestingCreatesEnemies.label>
+  <!-- EN: Warning: The person you are trying to arrest may not go quietly.\n\nIf you arrest a non-colonist, their entire faction will become your enemy. -->
+  <ArrestingCreatesEnemies.helpText>Внимание: Человек, которого вы попытаетесь арестовать, может начать сопротивляться.\n\nЕсли вы арестуете представителя другой фракции, вся эта фракция станет вашим врагом.</ArrestingCreatesEnemies.helpText>
+  
+  <!-- EN: Maximum number of player colonies -->
+  <MaxNumberOfPlayerSettlements.label>Максимальное число поселений</M

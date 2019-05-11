@@ -1,0 +1,336 @@
+, Scorching Ray, Vaal Breach).
+Unknown mods and special essence mods now display that they are unknown or from essences instead of leaving a blank line. (by 4GForce)
+Fixed a bug that sometimes caused pseudo mods from an earlier item to show up if the current item had none. (thanks to 4GForce)
+Fixed a bug with data fetching for uniques. The last release was missing data for a few body armours and many jewels.
+Fixed several errors in the data for maps about vendoring and atlas connections.
+Updated Maps, Divination Cards and Uniques with the current wiki info.
+
+2.5.03
+================================
+from aRTy, Eruyome
+Included an update notifier for the script (by Eruyome).
+Updated Maps, Divination Cards and Uniques with the current wiki info.
+Included the name change of "Armory Map" to "Armoury Map" (again), because it got partially reverted with v2.5.02.
+
+2.5.02
+================================
+from aRTy
+Fixed a bug with added elemental damage for bows that got introduced in 2.5.01.
+Moved the pause function key binding to the "AdditionalMacros" file so that people can change the key more easily.
+
+2.5.01
+================================
+from aRTy
+Updated maps and divination cards with wiki info.
+Added gem quality info to cast while channeling.
+Fixed a bug that sometimes caused item types of rares to be mismatched if their randomly assigned name contained a keyword
+	for that item type.
+Corrected the data for the unique "Prismatic Eclipse" that was missing two mods in the last release.
+
+2.5.00
+================================
+from aRTy, Eruyome
+Updated Uniques for PoE v2.5.
+Uniques now only show those values on the right side that actually have a range to roll. This should simplify comparing your rolls.
+The method of pulling the unique data was changed, so a few errors might have slipped in. Please report any errors you find.
+Items now show pseudo mods below the affix details (by Eruyome). Update autohotkey if you get an error about a nonexisting function StrReplace (in that case your AHK installation is more than 1.5 years old).
+Included the name change of the "Armory Map" to "Armoury Map".
+Fixed a bug that caused item flavour text or usage hints to appear at the bottom line in some cases.
+
+2.4.05
+================================
+from aRTy, Eruyome, Arkaf
+Changed Direct3DWindowClass to POEWindowClass and the relevant .exe names, so that the script works again.
+	It should support both standalone and steam version and both 32 and 64 bit.
+Currency stacks of 1000+ in the currency tab should now read correctly for the currency conversion function.
+	(thanks to Arkaf and iulianov who commented on this)
+
+2.4.04
+================================
+from aRTy
+Minor fix for map matching (Ivory Temple Map and Vaal Temple Map were detected as Temple Map)
+
+2.4.03
+================================
+from aRTy and Eruyome
+Updated Maps. Added shaped maps and included information from the wiki where possible.
+Corrected the data for the "Cast Speed" affix, which is higher for staves since PoE v2.4
+Fixed item type detection for magic items (by Eruyome)
+Added or changed several functions and data storing methods so that the "PoE-TradeMacro" can build
+	on top of this script (by Eruyome)
+
+2.4.02
+================================
+from aRTy
+Updated Uniques.
+Maps have updated Boss descriptions, general notes and ratings for difficulty (1-5) and layout (A-C).
+
+2.4.01
+================================
+from aRTy
+Compiled new map info from various sources, see the forum thread for details.
+Updated Divinations cards with wiki information.
+Uniques not updated yet, because there are lots of things to fix and holding back
+	the map update until everything is done seemed stupid.
+
+2.4.00
+================================
+from aRTy
+Basic support for the new value range format ("#-#" was changed to "# to #"). The script will continue to display its results as before.
+Map and Divination card information was not updated yet. This will follow in a few days once there is enough on the wiki.
+Fixed how the "AdditionalMacros" file was included to support shortcuts to the script from the start menu and task bar.
+
+2.3.07
+================================
+from aRTy
+New feature: Gem quality info. Full 20% quality effect and effect per quality point get displayed.
+Completely restructured jewels: Separated both the affix parsing code and the data files.
+	This change should have no visible impact ingame. Please report bugs if you notice any.
+Corrected a few value ranges and detection errors for jewels. Legacy Crit Multiplier for jewels in standard did not get a special
+	detection though, you will get something like "n/a (0) <new value range> T0" there.
+Added Tora crafts "increased Trap and Mine damage" and "increased Trap Throwing and Mine Laying Speed"
+Updated Divination Cards with wiki infos
+
+2.3.06
+================================
+from aRTy
+The new label "Map Drop" introduced in PoE v2.3.2 is now accounted for and thus no longer breaks parsing items.
+Added new file "AdditionalMacros.txt" in the main folder. The user macros that used to be at the very end of the ahk-file
+	are now located here, for easier access. Added detection for the Steam version exe-file. The user macros are disabled
+	by default, if you want to learn more about them, check the opening post in the forum thread.
+Removed script function "Valuable Evaluation", meaning uniques and gems are no longer tagged as "Valuable" in the
+	last line, which was controlled via txt files. Lootfilters fulfill this role nowadays.
+	Similarly, drop only gems are no longer tagged, also because lootfilters and since there are almost none since
+	gems became available from vendors. If you miss one of these functions, please give feedback in the forum thread.
+DPS display: Fixed how additional ele/chaos damage was detected. It used to break for certain mods, which made the section display blanks.
+Fixed Divination Card detection that got broken with PoE v2.3.2 (the game now labels them with "Rarity: Divination Card"
+	instead of "Rarity: Normal")
+Fixed "Stun Recovery" that got renamed to "Stun and Block Recovery" with PoE v2.3.2.
+Updated Uniques, Maps, Divination Cards with wiki infos
+
+2.3.04
+================================
+from Underbent, magus424
+Major update to the maps data file, thanks to yet another data script from Underbent
+	This should fix incorrect map vendoring information and give more divination card drop infos.
+Added Shavronne's Gambit to uniques, which was still missing (pointed out by magus424)
+
+2.3.03
+================================
+from aRTy
+Uniques: Included more of the new 2.3 uniques. Updated implicits for Sceptres and Wands.
+	Manually adjusted the display for a few more uniques (notable: Ventor's Gamble and several Jewels)
+Updated Divination Cards
+Updated Maps
+
+2.3.02
+================================
+from underbent, vdorie, aRTy
+Improved data thanks to underbent's additions to the data fetch script: https://github.com/underbent/scrape_poe_info
+	This means divination cards are now updated to today's wiki infos
+	and uniques with decimal point values (like 0.2% leech) no longer truncate the displayed value to 0
+Manually cleaned up the display for uniques with style variants (Doryani's Invitation, Atziri's Splendour, Vessel of Vinktar)
+The modifier/text column for uniques is now 10 characters wider than for other items (if truncation is used, which is the default),
+	as uniques don't need the space for displaying mod tiers but tend to have longer or more complicated wording.
+Included a fix from vdorie to how the base level of blue items was determined
+Included a fix from underbent so that the warning info of equipped items that you no longer meet the requirements for is not
+	displayed in the info script window anymore
+
+2.3.01
+================================
+from aRTy
+Added "Has Fated Variant" line to info for respective uniques
+"Max Sockets" should no longer show up on non armour/weapon items
+Fixed Drillneck data that got lost due to an odd wiki entry
+
+2.3
+================================
+from /u/trecko1234 and /u/netarc: https://www.reddit.com/r/pathofexile/comments/4nd1mj/updated_bahnzos_item_info_script_for_23/
+Merged with the latest version from Bahnzo by aRTy
+
+2.11
+================================
+from aRTy
+Armour matching with RegEx. MaxLife fix & cleanup
+
+2.1
+=================================
+from underbent/master
+Two bugfixes and support for master signature mods
+from R3ality
+Added the Unique version of maps to the base map info. Mainly for making use of Chance Orbs
+Added the name of each Unique Map as a comment line before its definition to simplify readability for future changes
+Fixed Olmec's Sanctum Unique Map base type (was changed to Catacomb Map in v2.0.0)
+Added Caer Blaidd, Wolfpack's Den
+Added The Perandus Manor. Could use more detais, wiki article was rather short
+
+2.0.12
+=================================
+Uniques.txt updated
+Added ability to "Pause" the script. 
+This allows users of other scripts
+that look for the clipboard change to 
+operate. Simply press the "Pause" key
+to pause, and then "Pause" again to 
+re-enable the script. Key can be
+remapped to whatever key the user
+may like in the section at the very
+end of the script. 
+
+2.0.11
+=================================
+Uniques.txt updated
+Fixed issue with maps showing affixes
+
+2.0.10
+=================================
+Fixes for items with Prices/Notes
+
+2.0.9
+=================================
+Added last max life tier. by Jeykey1990
+Changed name of Mine map to Abandoned Cavern
+Added Chateau Map
+Updated crit multiplier values on jewels
+Added "increased Sttack Speed with Daggers" mod on jewels
+
+2.0.8
+=================================
+Updated Uniques.txt
+Rewrote the web scraper used for getting
+the Uniques.txt
+Available at: https://github.com/Bahnzo
+
+2.0.7
+=================================
+Fixed issue with CritStrikeChance for spells
+reported by grinvader
+
+2.0.6
+=================================
+Addition of Divination cards by Sieberkev
+A couple map updates
+
+2.0.5 by XiMMiX
+=================================
+Fix regular amulets with "Talisman" in their name (bug reported by Bahnzo).
+Fixes "Increased Physical Camage with Claws" (bug reported by vicrv)
+Fixes "increased Critical Strike Chance with Two Handed Melee Weapons" (bug reported by vicrv)
+Fixes "increased Physical Damage" on jewels (bug reported by vicrv)
+Updated Uniques.txt
+
+2.0.4 by XiMMiX
+=================================
+Added "increased Totem Damage" affix (bug reported by vicrv)
+Fixed Global Crit Multi on Jewels (bug reported by vicrv)
+Updated uniques.txt
+
+2.0.3 by XiMMiX
+=================================
+Added handling of "increased Maximum Energy Shield" affix on Jewels
+
+2.0.2 Bug Fix and Unique update by XiMMiX
+=================================
+Fixed itemlevel requirement for Glyphic affix on 1-handers (bug reported by Patwor)
+Updated Uniques.txt
+
+2.0.1 Bug Fixes by XiMMiX
+=================================
+Fixed typo in FlaskChargesUsed
+Fixed buugs reported by FleshRocket
+
+2.0 Jewel Support by XiMMiX
+=================================
+I've added support for jewels to the script.
+
+There is a known problem with the suffix count in those cases where we don't know if the item has 1 or 2 suffixes. At the moment the output says the item has 2 suffixes but it should be "1 or 2". But otherwise the code should work.
+
+The second problem is that I haven't yet been able to test very much, especially the complex affixes. I'm planning to test all edge cases with complex affixes, but would appreciate any help with testing the simple affixes.
+
+1.9.8a from XiMMiX
+=================================
+Cleaning up indents on max life detection to make things readable again
+Bugfix for max life detection on bodyarmours missing the new T1 roll (bug reported by didii)
+Show tiers on magic items (bug reported by didii)
+Added detection of flat chaos damage on weapons, rings and amulets.
+
+1.9.8
+=================================
+Final (?) darkshrine updates
+Uniques updated &
+Talisman Support, by XiMMiX
+
+1.9.7a
+=================================
+Darkshrine Updates by XiMMiX
+
+1.9.7
+=================================
+Updates to show correct life tiers for Gloves/Boots/Rings
+and correct physical damage for Gloves.
+Various Map corrections
+
+1.9.6d
+=================================
+More Darkshrine Updates +
+Uniques updated by XiMMiX
+
+1.9.6c
+=================================
+Darkshrine Updates by XiMMiX
+
+1.9.6b
+=================================
+More Darkshrine updates by XiMMiX
+
+1.9.6.a
+=================================
+Further Darkshrine updates by XiMMiX
+
+1.9.6
+=================================
+Darkshrine affixes added by XiMMiX
+Added current info to the "About" screen. 
+
+1.9.5
+=================================
+Updated info screen
+Maps updated with new vendor info &
+Divination Cards which can be found 
+within map. 
+
+1.9.4
+=================================
+Fixes for base item level: sirmanky
+Added code at very end of script giving examples of quick key 
+combinations to add some easy macros.
+
+1.9.3
+=================================
+Updated Uniques list: Hixxie
+Sockets corrected: Portent
+Various fixes to tiers: Slinkston
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        MZ       ÿÿ  ¸       @                                   è   º ´	Í!¸LÍ!This program cannot be run in DOS mode.
+$       ²¿òKÓÑ¡KÓÑ¡KÓÑ¡$¥O¡HÓÑ¡$¥z¡IÓÑ¡$¥M¡MÓÑ¡KÓĞ¡êÓÑ¡B«B¡BÓÑ¡$¥{¡UÓÑ¡$¥J¡JÓÑ¡$¥K¡JÓÑ¡$¥L¡JÓÑ¡RichKÓÑ¡        PE  L *¸?W        à !
+  V   Z      9_      p    ìo                   ğ     šb  @                   ğŠ  Æ+  L|       Ğ             °  @   à  t  Àr                             {  @            p                             .text   TT      V                    `.rdata  ¶F   p   H   Z              @  @.data   (   À      ¢              @  À.rsrc      Ğ      ¤              @  @.reloc  Ì   à      ¨              @  B                                                                                                                                                                                                                                                                                                                                                        V‹t$‹WhŒsìoVÿP‹ø…ÿ„   ‹WVÿPT£$Àìo…ÀuPVèJ  é   ‹hpsìohhsìoWVÿ„   £(Àìo…Àtd‹hHsìoVÿP‹ø…ÿtS‹h,sìoh$sìoWVÿx  £,Àìo…Àt6‹hsìohôrìoWVÿx  £ Àìo…Àt‹hğrìohÜrìoWVÿx  £0Àìo_^Â U¬$Hÿÿÿì4  ¡Àìo3Å‰…´   V‹5ôqìoW‹½È   3ÉU„RQQ‰M„‰MˆM”GQPÆE“ ÇEŒ   ‰}˜ÇE”   ÿÖ…À~`S‹ğqìoEŒP…˜   PjjE’PWÿÓƒøÿu=ÿPrìo=F'  u0EŒP…˜   Pj jE’PWÿÓE„Pj j E”PGPÆE“ÿÖ…À¨[‹´   ŠE“_3Í^èI  Å¸   ÉÃU‹ìƒì(¡Àìo3Å‰Eü‹ESV‹uWPVè*  j‹Ø3ÿEàWPèóH  ƒÄjEàPSÿüqìoƒøÿuÿPrìoPVèd"  YYë WWEØPWWjEÜPh  ˜S‰}Ü‰}Øÿøqìo‹Mü_^3Í[èH  ÉÂ U‹ìƒì4¡Àìo3Å‰Eü‹E‹MS‹]V‹uW‹}PV‰}Ø‰MĞè”  YY‰EÜÇEĞ   EĞPEàPj ÿuSÿuÜÿğqìo‰EÔƒøÿuFÿPrìo=8'  t3=F'  …  ÿuÜWVè)şÿÿƒÄ€}  t¶j h¨sìoVè”G  jûXéÌ   ‹E‰EÔÿ5 Àìo‹WVÿ|  ‹Ø…Ût4SEàPVèG  …Àt%ÿ50Àìo‹WVÿ  ‹øEàPèjG  ;øt3Û…ÛuyEÜPEàPVèLG  ‹ø…ÿt”ÿuÜ‹Wÿ5(Àìoÿ5$ÀìoVÿPp‹ØƒÄ…Û„qÿÿÿ‹Wÿ5 ÀìoÿuØVÿ   ‹>EàPèG  Pÿ50ÀìoÿuØVÿ—´  ‹Sÿ5,ÀìoÿuØVÿ   ‹EÔ‹Mü_^3Í[èG  ÉÂ =3'  ujşéÿÿÿPVè£   YYëÖU‹ìƒì,¡Àìo3Å‰Eü‹E‹MS‹]V‹uW‹}$PV‰MØè  YYÿu‰EØEÜPEàPÿu(WVè€F  …ÀtjûXë9ÿuÜEàPj ÿu SÿuØÿ rìoƒøÿu‹=Prìoÿ×=3'  ujşëÏÿ×PVè   YY‹Mü_^3Í[ègF  ÉÂ$ U‹ìƒìSVWÿu‹}3öW‰uü‰uøè}  Y‹Ø‹EY‰Eô‹EVV‰EğEøPEüPjEğPSÿrìoƒøÿuCÿPrìo=3'  ujşXë?=F'  uSÿuWèüÿÿƒÄVh¨sìoWè‚E  jûëÙhÌsìoWèyE  ëïjÿuüWèŞ  ƒÄ_^[ÉÂ U‹ìQQSVWÿu3Ûÿu‰]ü‰]øèŞ  ‹}‰E‹ÇÁàPÿÔqìoƒÄ3É‹ğ;û~‹]‹ÖC+Ó‹Xü‰‹‰ÎAƒÀ;Ï|í3ÛSSEøPEüPWVÿuÿrìoV‹øÿØqìoY;ûtNÿPrìo=3'  ujşXƒÊÿëJ=F'  u#ÿuÿuÿuè7ûÿÿƒÄSh¨sìoÿuè§D  jûëĞhÌsìoÿuèœD  ëíjSÿuüÿuè%  ƒÄ_^[ÉÂ U‹ìƒìSVWÿu‹}3öW‰uüèÿ  YY‹Ø‹EV‰Eø‹EVV‰EôEüPjEôPSÿrìoƒøÿuCÿPrìo=3'  ujşXë>=F'  uSÿuWè•úÿÿƒÄVh¨sìoWèD  jûëÙhÌsìoWèşC  ëïVÿuüWèd  ƒÄ_^[ÉÂ U‹ìQSVWÿu3Ûÿu‰]üèh  ‹}‰E‹ÇÁàPÿÔqìoƒÄ3É‹ğ;û~‹]‹ÖC+Ó‹Xü‰‹‰ÎAƒÀ;Ï|í3ÛSSSEüPWVÿuÿrìoV‹øÿØqìoY;ûtNÿPrìo=3'  ujşXƒÊÿëI=F'  u#ÿuÿuÿuèÄùÿÿƒÄSh¨sìoÿuè4C  jûëĞhÌsìoÿuè)C  ëíSSÿuüÿuè³
+  ƒÄ_^[ÉÂ U‹ìƒì$VEÜPÿ|qìo‹E‹‹uøhàsìohÜsìoÿuPÿ‘x  £4Àìo‹Æ™^ÉÂ U‹ìS‹]V‹uW‹}ÿ54Àìo‹ÆÿuÁø}Su ‹ÆÁø‹ÿ|  PSèM  ƒ} YYjZÇE   ‹Êu	ÇE   ëƒ}uj‰Uë9Uu
+jÇE   Yj WVQj PÿŒqìo‹ğ…öuhüsìoSèFB  jûXƒÊÿëCÿuÿuÿuÿuVÿˆqìo‹øÿ„qìoV‰Eÿ€qìo…ÀtÄ…ÿuƒ}hüsìoSuºèôA  ë¸‹Ç™_^[]Â ÿt$ÿpqìo…Àuhtìoÿt$èØA  jûXë3ÀÂ U‹ìQVÿu3öÿu‰uüèh
+  YY‹M;Î|9us	jMüQVë‹Ñ‰MüVMüQÿuÁúPÿlqìo‹ğƒşÿuÿ„qìo…ÀthtìoÿuèkA  jûXÖë‹Eü™‹Ğ3É3ÀÎĞ‹Á^ÉÂ ÿt$ÿt$èñ	  YYƒøÿtPÿ€qìo…Àyh$tìoÿt$è"A  Â U‹ìV‹uWÿuVè½	  ÿu$‰EVè™	  ƒÄƒ}  ‰E$|¸ÿÿÿ9Ev‹øë‹}ÿuÿuÿuÿuVèÿÿÿƒøûuƒúÿujûXƒÊÿëRj j j h   Wÿuÿu$è²J  …Àu3ÿPrìo=&'  uƒ}  |ƒ} rjúëÀ=6'  tõh4tìoVès@  ëª‹Ç3Ò_^]Â  U‹ìQƒeü Vÿu‹uVè	  YYƒøÿuhPtìoVè@@  jûXëGj MüQÿuÿuPÿhqìo…Àu"ÿ„qìoƒømuƒÈÿë =è   ujşëËhDtìoë¼jÿuüVèi  ƒÄ^ÉÂ U‹ìƒìSÿu3Ûÿu‰]ü‰]ô‰]øè  YY‰EƒøÿuhPtìoÿuè»?  jûXƒÊÿëw9]~;V‹uW‹|Ş‹Şj MüQWPÿuÿhqìo‹Mü…ÉtMôƒUø ;ÏrC;]|Ğ_^…Àu$ÿ„qìoƒømuƒÊÿ‹Âë%=è   ujşëhDtìoëŒjÿuøÿuôÿuèØ  ƒÄ[ÉÂ U‹ìƒìSWÿu3ÿÿu‰}øèÎ  ‹ØYY‰}ü‰}ƒûÿuhPtìoÿuè?  jûXé½   V‹5lqìojEüPWSÿÖ‰Eôƒøÿu
+ÿ„qìo…Àuw‹E$‹ÈW‰EEPÿu ÁùSÿÖƒøÿu
+ÿ„qìo…ÀuRWEøPÿuÿuSÿhqìo…Àu"ÿ„qìoƒømuƒÈÿëN=è   ujşë0hDtìoëWEüPÿuôSÿÖƒøÿuÿ„qìo…ÀthtìoÿuèT>  jûXëjÿuøÿuè´  ƒÄ^_[ÉÂ  U‹ìƒìÿuƒeü ÿuèÒ  YYƒøÿt/€} uƒMğÿƒMôÿƒeø Mèë3ÉQMüQÿuÿuPÿdqìo…ÀuhÌsìoÿuèà=  j ÿuüÿuèE  ƒÄÉÂ U‹ìƒì Sÿu3Ûÿu‰]üèd  YY‰E‰]ô‰]øƒøÿt_€} uƒMèÿƒMìÿEà‰]ğ‰E ë‰] 9]~>V‹uWÿu ‹|Ş‹ŞMüQWPÿuÿdqìo‹Mü…ÉtMôƒUø ;ÏrC;]|Ï_3Û^…ÀuhÌsìoÿuè9=  SÿuøÿuôÿuèÃ  ƒÄ[ÉÂ U‹ìƒìSVWÿu3ÿÿu‰}øè¸  ‹5lqìoYY‹ØjEüPWS‰}ü‰}ÿÖ‰Eôƒøÿuÿ„qìo…Àthtìoëp‹E$‹ÈW‰EEPÿu ÁùSÿÖƒøÿu
+ÿ„qìo…ÀuÔWEøPÿuÿuSÿdqìoƒûÿt/;Çt+WEüPÿuôSÿÖƒøÿu
+ÿ„qìo…ÀuŸWÿuøÿuèâ  ƒÄëhÌsìoÿuè^<  jûX_^[ÉÂ  ÿt$ÿt$èö  YYƒøÿtPÿ`qìo…Àuÿ„qìoƒøu3Àëh`tìoÿt$è<  jûXÂ U‹ìQƒeü Vÿuÿuè­  YY‹ğ‹E‹Èj ‰EüEüPÿuÁùVÿlqìoƒøÿuÿ„qìo…ÀthptìoÿuèÃ;  jûXëVÿ\qìo…Àtã3À^ÉÂ U‹ìQƒeü VÿuÿuèG  YYMüQPÿXqìo‹ğƒşÿuÿ„qìo…Àth„tìoÿuèm;  jûXÖë‹Uü3À3ÉÆÑ^ÉÂ U‹ìƒìSVWÿuÿuèñ  YY‹M$‹Ñ‹ñ‹M‰Mô‹MÁú3Ò‹ù3ÛÁÿ‰Uü‰Mø8UuC8U(uƒËMìQVÿu RSPÿTqìo…Àu$ÿ„qìoƒø!thtìoÿuèã:  ƒÈÿë	öÃtéëô3À_^[ÉÂ$ U‹ìƒìÿuÿuèl  ƒeü YY‹M‰Mô‹M‹Ñ‰MøMìQ‹M QÿuÁúj ‹ÑPÁúÿPqìo…Àuÿ„qìo=   thœtìoÿuèo:  ÉÂ ƒ|$ÿtÿt$ÿ€qìo…Àyh$tìoÿt$èH:  Ãÿt$ÿt$èé  RPÿt$èÄÿÿÿƒÄÂ ÿt$ÿt$ÿt$è­ÿÿÿƒÄÂ U‹ìQÿHqìojj j MüQPÿuPÿLqìo…Àuh¬tìoÿuèâ9  ‹Eü™ÉÂ V‹t$‹W¿ütìoWhätìoÿt$Vÿx  £@Àìo…Àt4‹WhÔtìoÿt$Vÿx  £8Àìo…Àt‹WhÄtìoÿt$Vÿx  £<Àìo_^Â U‹ìƒì8¡Àìo3Å‰Eü‹EV‹uW‹}PVè  YYMÈQPÿDqìo…ÀtA‹j ÿuäÿ5@ÀìoWVÿ¸  ‹j ÿuôÿ58ÀìoWVÿ¸  ‹j ÿuøÿ5<ÀìoWVÿ¸  ëh uìoVèû8  ‹Mü_3Í^èO9  ÉÂ V‹t$‹Wh,uìoVÿP‹ø…ÿt6‹hğrìohÜsìoWVÿx  £HÀìo…Àt‹hütìoh$uìoWVÿx  £DÀìo_^Â éš8  jXÂ ‹D$…Àu3À8D$”ÀHÃhDuìoÿt$èk8  jûXÃ‹T$‹D$…Ò|-…Àu)Âu8D$tƒÊÿ‹ÂÃ3À3ÒÃhDuìoÿt$è28  jûXƒÊÿÃÿt$‹D$ÿ5HÀìo‹ÿt$Pÿ‘´  Â Ul$”ì   ¡Àìo3Å‰Eh‹E|SV‹utW3ÿP‰uÜ‰}à‰}äÿĞqìo‹ØYƒûÿuhDtìoVèÊ7  2ÀëI‹5hqìoW¿€   ë‹Eà…Àt,Eäj EàPWEèPSÿÖ…Àuäÿ„qìo=è   t
+hXuìoÿuÜë¶3À9EäŸÀ‹Mh_^3Í[èĞ7  ƒÅlÉÂ ÿ5HÀìo‹D$ÿt$‹Pÿ‘  Ãÿ5DÀìo‹D$ÿt$‹Pÿ‘”  Ãÿt$ÿt$èÃÿÿÿYYÂ U‹ìVÿuÿuè¯ÿÿÿ‹ğ3ÀYY8Eu	ÇE   ëPPV‰EÿrìoEPh~f€Vÿrìo^ƒøÿuÿPrìoPÿuèÖ  YY]Â SV‹t$‹h˜uìoVÿP‹Ø…Ûtk‹W¿ğrìoWhuìoSVÿx  £PÀìo…ÀtK‹Wh|uìoSVÿx  £TÀìo…Àt2‹WhluìoSVÿx  £XÀìo…Àt‹hütìoh`uìoSVÿx  £LÀìo_^[Â U‹ìì    ¡Àìo3Å‰Eü…`ÿÿÿPÇ…`ÿÿÿœ   ÿ@qìo‹…pÿÿÿ‹Müƒè÷ØÀ÷Ğ#…dÿÿÿ3Íè]6  ÉÂ U‹ìVÿu$ÿu ÿuÿuÿ<qìo‹ğ…öuh¼uìoÿuèĞ5  ‹Æ™^]Â  U‹ìQQjÿEPEøPEüPÿuÿ8qìo…Àu9EuhÜuìoÿuè–5  ëaÿ„qìoë3ÀV‹u‹W‹}Pÿ5PÀìoWVÿ‘´  ÿuü‹ÿ5TÀìoWVÿ´  ÿuø‹ÿ5XÀìoWVÿ´  ‹E‹™RPÿ5LÀìoWVÿ‘¸  _^ÉÂ j ÿt$j ÿt$ÿ4qìo…Àuh vìoÿt$è5  Â U‹ìì  ¡Àìo3Å‰EüV‹u3ÀPhÿ   üıÿÿQPÿuPh   ÿ0qìo…Àt!W‹>…üıÿÿPÿÌqìoYP…üıÿÿPVÿ—Œ  _‹Mü3Í^è5  ÉÂ 2ÀÂ Â S‹„qìoVW3ÿÿt$$ÿt$ ÿ,qìo‹t$…ÀuÿÓƒø!uYGƒÿ|İëQ¡\Àìo…Àu(‹h,uìoVÿP…ÀtD‹hütìoh$uìoPVÿ‘x  £\Àìo‹Pÿt$Vÿ‘”  Pÿ`qìo…ÀuÿÓƒøthvìoVè
+4  _^[Â U‹ìQ3ÀPPMüQPPj‰EüEPh  ˜ÿuÿøqìoÉÃÂ U‹ìì˜   ¡Àìo3Å‰Eü…hÿÿÿPÇ…hÿÿÿ”   ÿ@qìoƒ½xÿÿÿuƒ½lÿÿÿrèÉ3  …Àt°ë2À‹Mü3Íèå3  ÉÂ U‹ìì˜   ¡Àìo3Å‰Eü…hÿÿÿPÇ…hÿÿÿ”   ÿ@qìo‹…lÿÿÿkÀ
+…pÿÿÿ3Éƒø<Á‹Á‹Mü3Íè”3  ÉÂ 2ÀÂ U‹ìS3À3Û8]V”ÀWSpÿƒæ3ÀƒÆ8]”À@PVÿrìo‹øƒÿÿt3SjWÿ(qìoƒşujEPjj)W‰]ÿrìo8]u$SWèÆşÿÿYYëTh<vìoÿPrìoPÿuèî2  8]t;8]t69 Àìot.WèĞ2  ;Ãt$=='  t=&'  th,vìoPÿuè¶2  ë‰ Àìo‹Ç_^[]Â U‹ìƒì$¡Àìo3Å‰Eü‹EV‹uWÿu‹}MÜQMàQÿu PVèc2  …Àu0ÿuEàÿuÜPWVè»úÿÿYYPè^2  ƒøÿuhDvìoÿPrìoPVèA2  ‹Mü_3Í^èY2  ÉÂ ÿt$ÿt$ÿt$è{úÿÿYYPÿrìoƒøÿuhLvìoÿPrìoPÿt$èı1  Â U‹ìƒì,¡Àìo3Å‰Eü‹ESV‹uW‹}PVè2úÿÿYYÿu‹ØEØPEàPÿuWVè¬1  …ÀtjûXësÿuØEàPSÿüqìo…Àt&ÿPrìo=4'  t=3'  thTvìoPVèƒ1  ëÇjşëÅƒeÜ EÔPEÜPh  hÿÿ  SÇEÔ   ÿ rìo…Àuƒ}Üu
+jSèıÿÿYY3À@‹Mü_^3Í[èY1  ÉÂ U‹ìƒì$¡Àìo3Å‰Eü‹EV‹uMÜQMàQPVÇEÜ   è_ùÿÿYYPÿ$rìo…Ày"ÿPrìo=&'  u3Àëh\vìoPVèÚ0  jûXë	EàPè®0  ‹Mü3Í^èå0  ÉÂ U‹ìƒì(¡Àìo3Å‰Eü‹EV‹uMÜQMàQPVÇEÜ   èëøÿÿYYPÿ$rìo…Àyh\vìoÿPrìoPVèq0  3ÀëEØPEàPVè;0  ‹Mü3Í^èx0  ÉÂ U‹ìƒì$¡Àìo3Å‰Eü‹EV‹uMÜQMàQPVÇEÜ   è~øÿÿYYPÿ(rìo…Ày"ÿPrìo=&'  u3Àëh\vìoPVèù/  jûXë	EàPèÍ/  ‹Mü3Í^è0  ÉÂ U‹ìƒì(¡Àìo3Å‰Eü‹EV‹uMÜQMàQPVÇEÜ   è
+øÿÿYYPÿ(rìo…Àyh\vìoÿPrìoPVè/  3ÀëEØPEàPVèZ/  ‹Mü3Í^è—/  ÉÂ U‹ìQƒeü SV‹u»ÿÿ  W‹};óuÿ€   uEÇE   ë!EüÇE   …öuƒÿt
+ƒş)u	ƒÿ'uÆE€} MQPWVÿuÿutèc÷ÿÿYYPè/  ëèT÷ÿÿYYPÿ rìo…ÀyÿPrìoPÿuè¤  YYjûXë!;óuÿ€   ufƒ} t·EëƒÈÿë‹Eü_^[ÉÂ U‹ì‹MV‹uùÿÿ  u-ş€   u%‹U E…ÒxW3ÿGf‰}f‰U_ë3Òf‰Uf‰UëE ƒù)uƒş't;jPVQÿuÿuè­öÿÿ€} YYPtèV.  ëÿrìo…ÀyÿPrìoPÿuèğ  YY^]Â  U‹ìƒì¡Àìo3Å‰EüS‹]V‹5,rìoWÿu‹}ÿÖƒ}  uÿu‰EèÿÖ3É8M‰Eì”ÁEèjƒÁë#ÿu ‰EğÿÖÿu‰EôÿÖ3É8M‰Eø”ÁEğjƒÁZRPQj WSèöÿÿYYPÿrìo…Ày%€} ‹5PrìotÿÖ=:'  ujşXëÿÖPSèB  YY3À‹Mü_^3Í[è-  ÉÂ U‹ìƒì¡Àìo3Å‰EüS‹]V‹5,rìoWÿu‹}ÿÖÿu ‰EğÿÖÿu‰EôÿÖ‰EøjEğP3À8E”ÀƒÀPj WSèoõÿÿYYPÿrìo…Ày%€} ‹5PrìotÿÖ=:'  ujşXëÿÖPSè«  YY3À‹Mü_^3Í[è÷,  ÉÂ U‹ìì  ¡Àìo3Å‰Eü‹Ej‰ôşÿÿY•ÿÿÿRjj Pf‰üşÿÿ‹Vÿ‘   jXM„Qjj Sf‰…|ÿÿÿ‹Vÿ   h  …ôşÿÿPÿuj)WVè»ôÿÿYYPÿrìo‹Mü3Íèq,  ÉÃU‹ìƒì¡Àìo3Å‰Eü‹ES‹] V‹uW‹}…Ûu=‹UèRjSPVÿ‘   ‹E‰EøjEèP3À8E”ÀƒÀPj)WVèQôÿÿYYPÿrìoë‹MP3À8E”ÀƒÀ-PèÿÿÿYY…ÀyÿÈqìoÿ0Vè‰  YY‹Mü_^3Í3À[èÕ+  ÉÂ U‹ì‹M3À8ES‹] ”ÀV‹uWÿu‹}ƒÀ+Pè¸şÿÿYY…ÀyÿÈqìoÿ0Vè:  YY_^3À[]Â U‹ìÿuÿ,rìoj‰EEPj	j ÿuÿuèŸóÿÿYYPÿrìo…ÀyÿPrìoPÿuèï  YY]Â U‹ìQEüPEPj	j ÿuÇEü   ÿuè[óÿÿYYPÿ rìo…ÀyÿPrìoPÿuè«  YYjûXë	ÿuÿ0rìoÉÂ jD$Pj	j)ÿt$ÿt$èóÿÿYYPÿrìo…ÀyÿÈqìoÿ0ÿt$èa  YYÂ U‹ìQEüPEPj	j)ÿuÇEü   ÿuèÎòÿÿYYPÿ rìo…ÀyÿÈqìoÿ0ÿuè  YYƒÈÿë‹EÉÂ U‹ì‹E3Éƒø•ÁA÷ØÀ#ÁPÿuÿuè‚òÿÿYYPÿ4rìoƒøÿuhhvìoÿPrìoPÿuè*  ]Â U¬$`ıÿÿì   ¡Àìo3Å‰…œ  ‹…°  SVW‹½¨  PWè+òÿÿYYj hè  ÿµ¼  ‹ğÿµ¸  èô)  iÉè  ƒ¥˜   ƒ¥”    ‰E€‰]Œ3À»   @‰UŒ‰M„…´  t‰µœ  ‰…˜  ö…´  u÷…´      t‰µ˜   ‰…”   ‰EE€PEP…”   P…˜  PFP‰u”ÿôqìo‰EŒƒøÿuj Wèè  YYjûXëF…Àx?ƒeŒ …˜  PVè·(  …Àt‰]Œ…”   PVè£(  …ÀtƒMŒEPVè‘(  …ÀtƒMŒ‹EŒ‹œ  _^3Í[èè(  Å   ÉÂ ¸   Â 3À@Â jXÂ jXÂ ¸    Â U¬$lÿÿÿì  ¡Àìo3Å‰…   ‹¨   ‹…¤   SV‹µœ   ‰M„‹°   W‹½¬   ‰M„MŒQh  3ÛSPh   €ÿhpìo…ÀuLEˆPEPE„PSWÿuŒÇEˆÿ   ÿlpìo…Àu!ƒ}„uEPÿÌqìoY‹PEPVÿ‘Œ  ‹ØÿuŒÿppìo‹   _^‹Ã3Í[è (  Å”   ÉÂ V‹t$‹h,uìoVÿP…Àtb‹hğrìohÜsìoPVÿ‘x  £dÀìo…ÀtE‹WhŒsìoVÿP‹ø…ÿt2‹WVÿPT£`Àìo…Àu	PVè0'  ë‹hpsìohhsìoWVÿ„   £hÀìo_^Â U‹ìƒì,¡Àìo3Å‰Eü‹E‹MSV‹uWÿ5dÀìo‹}P‰MØ‹Vÿ‘  j‹ØXP‰EÔEàj PèF'  ƒÄEÔPEàPSÿHrìo‹Øƒûÿu!ÿPrìo=3'  ujşXëlhtvìoVè &  jûëîj jSÿ(qìo‹Sÿ5dÀìoWVÿ´  EÜPEàPVèŠ&  …ÀtÎÿuÜ‹Pÿ5hÀìoÿ5`ÀìoVÿQpƒÄ…Àt±‹Pj ÿuØVÿ‘¸  3À@‹Mü_^3Í[è’&  ÉÂ V‹t$‹hŒvìoVÿP…Àt‹hğrìoh„vìoPVÿ‘x  £lÀìo^Â j ÿt$ÿt$è*&  jûXÃU¬$Tşÿÿì,  ¡Àìo3Å‰…¨  ‹…¼  ‹´  SŠÀ  VWP3ÿQ‰Mœ‰}˜‰}ÇEˆ   è8îÿÿ‹ğY¶ÃY‰}€‰}„G÷ØÀ÷ĞM€#ÁP…¤   PE Pj FP‰u¤‰} ‰µ¨   ‰½¤   ÿôqìo‰E”ƒøÿu	ÿPrìo‰E„Ût*ƒeŒ EŒPh~f€VÿrìoƒøÿuÿPrìoPÿuœè$ÿÿÿYYƒ}” u3À„Û•ÀHƒàşé   ƒ}”ÿuÿuÿuœèûşÿÿYYjûXëv…¤   PVèÒ$  …Àu‹Çëa3Û3ÿEˆPE˜Ph  hÿÿ  Vÿ rìoƒøÿt9]˜uSÿ$qìoGƒÿ|Ğ9]˜t&ÿu˜ëÿPrìo=4'  ujşë™h¤vìoPÿuœè»$  ë‡3À‹¨  _^3Í[èË$  Å¬  ÉÂ jjD$Pÿt$ÿt$èâìÿÿYYPÿDrìoƒøÿuÿPrìoPÿt$è0şÿÿYYjûXÂ U‹ìƒìÿuƒeü ÿuƒeø è£ìÿÿ‹UYY¹ÿÿ ;Ñ~‹Ñ‹Mj j ‰MôMøQMüQjMğQP‰Uğÿrìoƒøÿu#ÿPrìo=3'  ujşXë!hDtìoÿuè¶#  jûëìjÿuüÿuèëÿÿƒÄÉÂ U‹ìƒìSVWÿu3Ûÿu‰]ü‰]øèìÿÿ‹u‰Eô‹ÆÁàPÿÔqìo‹øƒÄÇEÿÿ ;ûuSÿuèK#  jûXƒÊÿé—   3Ò;ó~8‹M+ÏG‰Më‹M‹;M~‹M)M‹]‹Ó‰‰Hüt
+BƒÀ;Ö|Úër3ÛSSEøPEüPVWÿuôÿrìoW‹ğÿØqìoY;ót#ÿPrìo=3'  ujşëƒh°vìoÿuèË"  éoÿÿÿjSÿuüÿuèQêÿÿƒÄ_^[ÉÂ U‹ìƒìSVWÿu3Ûÿu‰]ø‰]üè)ëÿÿ‹}YY‰E¾ÿÿ ‹E+Eü;Æ~‹ÆSSS‰EğEøPjEğPÿu‰}ôÿrìoƒøÿt!‹EøEü‹Müø];M};Æt¼‹Eü_^[ÉÂ 9]üñÿPrìo=3'  ujşXëâhÌsìoÿuè"  jûëìU‹ìƒìSVÿu3Ûÿu‰]ô‰]øè‹êÿÿ‰Eğ‹EÁàPÿÔqìo‹ğƒÄ‰]è‰]ì;óuSÿuèÀ!  jûXƒÊÿéÊ   W3ÿ‰]ü9]~p3ÒÇEÿÿ ë89]~8‹M‹Dù+Eü‹ù‹]üË;E~
+‹EØ‰]üëGƒeü )E‰LÖ‰ÖB3Û;}|ÃSSSEøPRVÿuğÿrìo‰Eôƒøÿt‹EøEè]ì;}|VÿØqìoƒ}ôÿY_u.‹EèEìu&ÿPrìo=3'  ujşéQÿÿÿhÄvìoÿuè!  é=ÿÿÿSÿuìÿuèÿuè“èÿÿƒÄ^[ÉÂ U‹ìVÿuÿuèyéÿÿYY‹ğEPEPh€   hÿÿ  VÇE   ÿ rìo…Àuf9EuPVÿ@rìo^]Â ÿt$ÿt$è1éÿÿYYPÿ<rìoƒøÿuhØvìoÿt$è~   Â U‹ì‹E,‹M$ƒ` Pj ÿu ‰H‹M(ÿu‹ÑÿuÁú‰Hÿhqìo…Àu(ÿ„qìo=å  tƒø&uƒÈÿëhìvìoÿuè&   jûëjşX]Â, U‹ì‹E,‹M$ƒ` Pj ÿu ‰H‹M(ÿu‹ÑÿuÁú‰Hÿdqìo…Àuÿ„qìo=å  thüvìoÿuèĞ  jûëjşX]Â, U‹ì‹E,ƒ` ‹M‰H‹MP‰H‹E$Pÿu ‹Ñ‹ÈŠE(ÁúÁùşÈ¶À÷ØÀj ƒàPÿuÿTqìo…Àu#ÿ„qìo=å  ujşXëhüvìoÿuè_  jûëì3À]Â, ÿt$ÿ€qìoÂ U‹ìƒì¡Àìo3Å‰EüV‹uWj j¸¬Ë  jÇEìñ}6µf‰EğÇEòÏ•ÊÇEö €_HfÇEú¡’ÿrìo‹øƒÿÿuh wìoVèñ  ë7j j EèPjhpÀìojEìPh  ÈWÿøqìo…ÀthwìoVè¿  Wÿ<rìo‹Mü_3Í^è  ÉÂ U‹ìQƒeü jj ÿu è  ÿu EüPj,j,j ÿu(ÿuÿuÿpÀìoƒÄ,…Àu#ÿPrìo=å  ujşXëh0wìoÿuèR  jûëì3ÀÉÂ( U‹ì‹Ej‰EEPhp  hÿÿ  ÿuÿrìo]Â U‹ìƒì¡Àìo3Å‰EüV‹uWj j¸óİ  jÇEì¹¢%f‰EğÇEò`FéÇEövåŒtfÇEú>ÿrìo‹øƒÿÿuh wìoVèË  ë7j j EèPjhtÀìojEìPh  ÈWÿøqìo…ÀthwìoVè™  Wÿ<rìo‹Mü_3Í^èæ  ÉÂ U‹ìƒì(¡Àìo3Å‰Eü‹M(‹EV‹u$Wÿu‹}‰MÜMÜQMàQÿu PWèv  …ÀtjûXëHjj Vè©  ƒÄVj j j ÿuÜEàPÿuÿtÀìo…Àuÿ„qìo=å  ujşëÄhTwìoWèÿ  ëµ3À‹Mü_3Í^èO  ÉÂ$ j j hp  hÿÿ  ÿt$ÿrìoÂ ÿt$ÿt$ÿ4rìoƒøÿuhhwìoÿt$è¯  Â ÿt$ÿ<rìoƒøÿuh@wìoÿt$è  Â U‹ìQƒeü jj ÿu$èè  ƒÄj ÿu$EüPj ÿuÿuÿuÿrìoƒøÿu*ÿPrìo=å  t=J'  uƒÈÿëhxwìoÿuè0  jûëjşXÉÂ$ U‹ìjj ÿu$è†  ƒÄj ÿu$j j ÿuÿuÿuÿrìoƒøÿu*ÿPrìo=å  t=J'  uƒÈÿëhˆwìoÿuèĞ  jûëjşX]Â$ ÿt$h´wìoh˜wìoVè½  ƒÄ…Àt‹PVÿQ4ÃQUV‹t$‹h0zìoVÿP‹è…í„r  ‹hütìoh$uìoUVÿx  £„Àìo…À„Q  ‹S»zìoShzìoUVÿx  £ĞÀìo…À„-  ‹W¿ğrìoWhzìoUVÿx  £Àìo…À„	  ‹hØyìoVÿP‹è…í„ô  ‹hütìoh$uìoUVÿx  £¼Àìo…À„Ó  ‹ShzìoUVÿx  £ÌÀìo…À„¶  ‹h yìoVÿP‹è…í„¡  ‹ShyìoUVÿx  £œÀìo…À„„  ‹Sh„yìoUVÿx  £˜Àìo…À„g  ‹WhpyìoUVÿx  £ÄÀìo…À„J  ‹WhhyìoUVÿx  £|Àìo…À„-  ‹h4yìoVÿP‰D$…À„  ‹½ütìoUh yìoPVÿ‘x  £ŒÀìo…À„ô  ‹Uhyìoÿt$ Vÿx  £ÀÀìo…À„Ô  ‹Uhôxìoÿt$ Vÿx  £€Àìo…À„´  ‹hÈxìoVÿP‰D$…À„  ‹ShÀxìoPVÿ‘x  £°Àìo…À„€  ‹Shzìoÿt$ Vÿx  £¸Àìo…À„`  ‹Wh¼xìoÿt$ Vÿx  £¤Àìo…À„@  ‹hˆxìoVÿP…À„-  ‹Wh|xìoPVÿ‘x  £´Àìo…À„  ‹hHxìoVÿP‹Ø…Û„û   ‹WhuìoSVÿx  £ Àìo…À„Ş   ‹Wh|uìoSVÿx  £ÈÀìo…À„Á   ‹UhluìoSVÿx  £ØÀìo…À„¤   ‹hxìoVÿP‹Ø…Û„   ‹Wh|uìoSVÿx  £ˆÀìo…Àtv‹UhxìoSVÿx  £¬Àìo…Àt]D$Pÿ5tqìojÿxqìo…ÀtF‹5qìohüwìoÿt$ÿÖhìwìoÿt$£”ÀìoÿÖhØwìoÿt$£¨ÀìoÿÖh¼wìoÿt$£xÀìoÿÖ£ÔÀìo_[^]YÂ ¶D$Wj P¶D$Pj ÿ¬pìo‹ø…ÿuVÿ„qìo‹t$PèüÿÿY^‹Ç™_Â ÿt$ÿ¨pìoÂ U‹ì‹E ƒì…Àtƒeü ‰EøÇEô   EôWj ÿu,ÿu(Pÿuÿuÿuÿtqìo‹øƒÿÿuVÿ„qìo‹uPè·ûÿÿY^‹Ç™_ÉÂ( U‹ì3ÀPMQPPPPhÄ 	 ÿuÿ¤pìo…ÀuVÿ„qìo‹uPè}ûÿÿY^]Â U‹ì3ÀPM Qÿu ÿuPPh¨ 	 ÿuÿ¤pìo…ÀuVÿ„qìo‹uPèCûÿÿY^]Â ÿt$ÿ pìo…ÀuVÿ„qìo‹t$PèûÿÿY^Â U‹ì‹Eƒì…Àtƒeü ‰EøÇEô   EôPÿuÿœpìo…ÀuVÿ„qìo‹uPèİúÿÿY^ÉÂ ÿt$ÿ˜pìo…ÀuVÿ„qìo‹t$Pè¸úÿÿY^Â U‹ìì\  ¡Àìo3Å‰Eü‹M‹ESV‹uW‹}‰¨ıÿÿ¬ıÿÿQPÿ qìo‰…¨ıÿÿƒøÿtg‹…ØıÿÿPÿÌqìoYP…ØıÿÿPVÿ“Œ  ‹Ø…ÛtO‹…¨ıÿÿ‹™RPÿ5„ÀìoWVÿ‘¸  ‹Sÿ5ĞÀìoWVÿ   ÿµ¬ıÿÿ‹ÿ5ÀìoWVÿ´  ëÿ„qìoPèÿùÿÿY‹Mü_^3Í[è  ÉÂ Wÿt$ÿt$ÿ qìo‹øƒÿÿuVÿ„qìo‹t$PèÆùÿÿY^‹Ç™_Â VW‹|$Wÿt$ÿpìo…ÀtS‹\$‹3ƒÇ,WÿÌqìoYPWSÿ–Œ  [ë‹5„qìoÿÖƒøtÿÖ‹t$PèqùÿÿY3À_^Â U‹ììd  ¡Àìo3Å‰Eü‹E‹MS‹]‰… ıÿÿ¡”ÀìoV‹u…Àuh`zìoVè  é˜   Wj •¤ıÿÿRj QÿĞ‰… ıÿÿƒøÿtQ‹>…¬ıÿÿPÿÌqìoYP…¬ıÿÿPVÿ—Œ  ‹ø…ÿtX‹… ıÿÿ‹™RPÿ5¼ÀìoSVÿ‘¸  ‹Wÿ5ÌÀìoSVÿ   ë,‹=„qìoÿ×ƒø&u‹jÿjÿÿ5¼ÀìoSVÿ¸  ë	ÿ×Pè“øÿÿY_‹Mü^3Í[èª  ÉÂ U‹ììd  ¡Àìo3Å‰Eü‹E‹M‰… ıÿÿ¡¨ÀìoV‹u…Àuh`zìoVè!  3ÀëIW•¤ıÿÿRQÿĞ…Àt!‹>…¬ıÿÿPÿÌqìoYP…¬ıÿÿPVÿ—Œ  ë‹=„qìoÿ×ƒø&t	ÿ×PèøÿÿY3À_‹Mü3Í^è  ÉÂ ÿt$ÿŒpìo…ÀuVÿ„qìo‹t$PèÏ÷ÿÿY^Â ÿt$ÿt$ÿDqìo…ÀuVÿ„qìo‹t$Pè§÷ÿÿY^Â U‹ìÿu ÿu$j j ÿuÿuÿˆpìo…ÀuVÿ„qìo‹uPèu÷ÿÿY^]Â$ ÿt$ÿt$ÿt$ÿ„pìo…ÀuVÿ„qìo‹t$PèH÷ÿÿY^Â Wÿ€pìo‹ø…ÿuVÿ„qìo‹t$Pè%÷ÿÿY^‹Ç_Â Wÿt$ÿ|pìo‹øƒÿÿuVÿ„qìo‹t$PèúöÿÿY^‹Ç_Â ÿt$ÿt$ÿxpìo…ÀuVÿ„qìo‹t$PèÏöÿÿY^Â ÿt$j ÿt$ÿ”pìo…ÀuVÿ„qìo‹t$Pè¥öÿÿY^Â U‹ì‹E(#E,ƒøÿu3ÒëU(‹E #E$ƒøÿu3ÉëM ‹E#Eƒøÿu3ÀëERQPÿuÿ°pìo…ÀuVÿ„qìo‹uPèGöÿÿY^]Â( ÿt$ÿ\qìo…ÀuVÿ„qìo‹t$Pè"öÿÿY^Â U¬$Püÿÿì0  ¡Àìo3Å‰…¬  ‹…Ä  ‹À  V‹µ¸  ‰E„‹…È  ‰E¸  P•   RUŒRU„RUˆRPE”PQÿ´pìo…Àuÿ„qìoPè®õÿÿYé’   S‹W‹=Ìqìo…   Pÿ×YP…   PVÿ“Œ  …Àti‹Pÿ5œÀìoÿuVÿ‘   ‹E”Pÿ×YPE”PVÿ“Œ  …Àt=‹Pÿ5˜ÀìoÿuVÿ‘   ÿuˆ‹ÿ5ÄÀìoÿuVÿ´  ÿuŒ‹ÿ5|ÀìoÿuVÿ´  _[‹¬  3Í^è-  Å°  ÉÂ ÿt$ÿ¸pìoÂ U‹ìƒìVEğPEøPEPÿuÿ¼pìo…Àuÿ„qìo‹uPèÂôÿÿYëKÿu‹uÿu‹ÿ5ŒÀìoÿuVÿ¸  ÿuü‹ÿuøÿ5ÀÀìoÿuVÿ¸  ÿuô‹ÿuğÿ5€ÀìoÿuVÿ¸  ^ÉÂ U‹ìì  ¡Àìo3Å‰Eü‹M‹EV‹u‰ìıÿÿh  ğıÿÿQPÿÀpìo…Àuÿ„qìoPè)ôÿÿY3Àë!W‹>…ğıÿÿPÿÌqìoYP…ğıÿÿPVÿ—Œ  _‹Mü3Í^è  ÉÂ jÿt$ÿdpìo…ÀuVÿ„qìo‹t$PèÓóÿÿY^Â jÿt$ÿt$ÿ`pìo…ÀuVÿ„qìo‹t$Pè©óÿÿY^Â ÿt$ÿt$ÿt$ÿ\pìo…ÀuVÿ„qìo‹t$Pè}óÿÿY^Â U‹ìQƒeü VEüPÿu$ÿuÿuÿuÿXpìo…Àu"‹5„qìoÿÖƒøzu‹EüëÿÖ‹uPè8óÿÿY3Àë‹E$^ÉÂ  U‹ìQEüPEPÿuÿTpìo…ÀuVÿ„qìo‹uPèóÿÿY^‹E™ÉÂ j ÿt$ÿt$ÿPpìo…ÀuVÿ„qìo‹t$PèÓòÿÿY^Â U‹ìQQEøPEüPEPÿuÿLpìo…ÀuVÿ„qìo‹uPè òÿÿY3À3Ò^ë3Ò9Ut‹Eü™ë3ÀÉÂ j ÿt$jÿt$ÿHpìo…ÀuVÿ„qìo‹t$Pè^òÿÿY^Â U‹ìƒì¡Àìo3Å‰Eü‹M‹EV‹uW‹}j‰MøjMğQPÿDpìo…Àuÿ„qìoPèòÿÿYëÿuğ‹ÿ5´ÀìoWVÿ´  ‹Mü_3Í^è  ÉÂ U‹ìEPÿuÿuÿ@pìo…ÀuVÿ„qìo‹uPèÌñÿÿY3À3Ò^ë‹E™]Â U‹ìÿu ÿuÿujÿuÿ<pìo…ÀuVÿ„qìo‹uPè‘ñÿÿY^]Â  U‹ìÿu ÿuÿujÿuÿ8pìo…ÀuVÿ„qìo‹uPè`ñÿÿY^]Â  U¬$hüÿÿì  ¡Àìo3Å‰…”  ‹…¬  ‹¨  ‰E„‹…°  ‰EV‹µ   ¸ş  ‰Eˆ‰EŒE„PEˆP…”  PEŒPE”PQj ÿ4pìo…Àuÿ„qìoPèåğÿÿYë}S‹W‹=Ìqìo…”  Pÿ×YP…”  PVÿ“Œ  …ÀtT‹Pÿ5°ÀìoÿuVÿ‘   ‹E”Pÿ×YPE”PVÿ“Œ  …Àt(‹Pÿ5¸ÀìoÿuVÿ‘   ÿu„‹ÿ5¤ÀìoÿuVÿ´  _[‹”  3Í^è|  Å˜  ÉÂ U‹ìì  ¡Àìo3Å‰Eü‹M‹U‹EV‹u‰ôıÿÿ‹M‰•ôıÿÿ•ôıÿÿR•øıÿÿR•üıÿÿRU RQPj Ç…øıÿÿş  ÿ0pìo…ÀuW‹=„qìoÿ×ƒøzt	ÿ×Pè×ïÿÿY_‹Mü‹E 3Í^èì  ÉÂ ÿt$ÿ pìoÂ U‹ìVEPÿuè¿  …Àuÿ„qìo‹uPè“ïÿÿY3Àë)W‹}ÿu‹7ÿÌqìoYPÿuWÿ–Œ  ÿu‹ğÿ¨pìo‹Æ_^]Â U‹ìEPÿuèp  …ÀuVÿ„qìo‹uPè=ïÿÿY^‹E™]Â ÿHqìo™Â ÿÄpìo™Â U‹ìEPÿuÿuÿ$pìo…ÀuVÿ„qìo‹uPèøîÿÿY^‹E™]Â U‹ìVEP3À€}”ÀPÿuÿuÿ pìo…Àu!‹5„qìoÿÖ=ğ  u3À3ÒëÿÖ‹uPè¬îÿÿY‹E™^]Â ÌÌÌU‹ìEPjjj ÿuÿuÿpìo…ÀuVÿ„qìo‹uPèrîÿÿY^‹E™]Â ÿt$ÿt$ÿpìo…ÀuVÿ„qìo‹t$PèEîÿÿY^Â U‹ìVEPÿu$ÿuÿuÿuÿpìo…Àu"‹5„qìoÿÖƒøzu‹EëÿÖ‹uPèîÿÿY3Àë‹E$^]Â  U‹ìƒì¡Àìo3Å‰Eü‹E‹U‹MV‹uW‰Eø‹E‹8‹@‰Uø‰Eô‹E ‰Eø3ÀP3ÒPBR‰UìUìRPQ‰}ğÿpìo…Àuÿ„qìoPè™íÿÿY‹Mü_3Í^è±	  ÉÂ U‹ìƒì@¡Àìo3Å‰Eü‹E‰EÀ‹E‰EÌ‹E‰EÌ‹E ‰EĞ‹E$‰Eì‹E(‰Eğ‹E,‰Eô‹E0S‹]V‹uW‰Eø3À3É‰MØ}Ü««««EìPEĞPÇEÌ   ‰MÄ‰MÔÿpìoEÔPEÄPEÌPEØPEìPÿuĞVSÿpìo…Àuÿ„qìo‹uÀPèäìÿÿY‹Mü3À9EÔ_•À^3Í[èó  ÉÂ, Wjj ÿÈpìo‹ø…ÿuhtzìoÿt$è‚  ë$Wÿt$j ÿpìo…ÀuVÿ„qìo‹t$Pè‡ìÿÿY^‹Ç™_Â U‹ì¡xÀìo…Àuh`zìoÿuè<  ë!ÿu ÿuÿuÿĞ„ÀuVÿ„qìo‹uPèDìÿÿY^]Â j ÿt$ÿt$ÿÌpìo…ÀuVÿ„qìo‹t$PèìÿÿY^Â U¬$dşÿÿì  ¡Àìo3Å‰…˜  ‹°  ‹…¬  ƒeŒ SV‹µ¤  W‹=Ğpìoj ‰M„MQh  P‰E€ÿ×‹Ø…Ûtpû  s‹SMQVÿŒ  ‰EŒëbCPÿÔqìoY‰Eˆ…Àt5j PSÿu€ÿ×…Àt‹PÿuˆVÿ‘Œ  ‰EŒëh¼zìoVè?  ÿuˆÿØqìoëh˜zìoVè  ëÿ„qìoPèDëÿÿY‹˜  ‹EŒ_^3Í[èU  Åœ  ÉÂ U¬$hşÿÿì  ¡Àìo3Å‰…”  ‹…¬  ‹¨  ƒeˆ ‰E„¡ÔÀìoV‹µ   ‰M€…Àuh`zìoVè±  3Àé”   SWj »  SUŒRQÿĞ‹ø…ÿtk;ûs‹WMŒQVÿŒ  ‰EˆëaG?PÿÔqìo‹ØY…Ût5j WSÿu€ÿÔÀìo…Àt‹PSVÿ‘Œ  ‰EˆëhÔzìoVè>  SÿØqìoëh˜zìoVè  ëÿ„qìoPèEêÿÿY‹Eˆ_[‹”  3Í^èV  Å˜  ÉÂ Wj ÿt$$ÿt$ ÿt$ÿ<qìo‹ø…ÿuVÿ„qìo‹t$PèûéÿÿY^‹Ç™_Â  U‹ìQQVjÿEPEøPEüPÿuÿ8qìo…Àu9Euÿ„qìo‹uPè½éÿÿYëLÿ„qìoë3À‹u‹Pÿ5 ÀìoÿuVÿ‘´  ÿuü‹ÿ5ÈÀìoÿuVÿ´  ‹j ÿuøÿ5ØÀìoÿuVÿ¸  ^ÉÂ j ÿt$j ÿt$ÿ4qìo…ÀuVÿ„qìo‹t$PèBéÿÿY^Â ÿt$ÿÔpìo…ÀuVÿ„qìo‹t$PèéÿÿY^Â U‹ìQƒMüÿjEüPÿuÿuÿØpìo…ÀuVÿ„qìo‹uPèëèÿÿY^‹EüÉÂ U‹ìj ÿu43Àÿu,€}$ÿu(”ÀPÿu ÿuÿuÿÜpìo…ÀuVÿ„qìo‹uPè§èÿÿY^]Â4 U‹ì‹E(V‰E,E,P3À€}$j ”ÀPE$Pÿu ÿuÿuÿàpìo…Àuÿ„qìo‹uPèaèÿÿYë0ÿu$‹uÿ5ˆÀìo‹ÿu0Vÿ´  ‹E,‹™RPÿ5¬Àìoÿu0Vÿ‘¸  ^]Â, U‹ì‹E ‰E$E$PEPEP‹EPÿu‹ÈÿuÁùÿäpìo…ÀuVÿ„qìo‹uPèëçÿÿY^]Â  U¬$< ÿÿ¸D`  èô  ¡Àìo3Å‰…À_  ‹…Ø_  ‰E‹…à_  ‰E„‹…ä_  ‰E€‹…è_  S‰Eˆ‹…ì_  3Û…ğ_  V‹µÔ_  W‹½Ì_  ‰]œ‰]˜‰] u	ÇE”ÜÀìoëH9ğ_  |9ì_  s‰]”ë1Shè  ÿµğ_  EŒÿµì_  ‰E”è~  iÉè  ‰]‰U‰EŒ‰M3Û3À‰E¤9Ü_  ~V·LÆ÷Á   t‹Uœ‹ÆÿEœ‰L•¬·LÆ÷Á   t‹U˜‹ÆÿE˜‰Œ•°  ‹Æ‹M ÿE ‰„´  ‹E¤@‰E¤;…Ü_  |ª‹Eœÿu”‰E¨‹E˜‰…¬  ‹E ‰…°  …°  P…¬  PE¨PSÿôqìoƒøÿ…  ‰]¨‰¬  ‰°  ‰]¤9Ü_  ç   ‹E¤·TÆ‰¸?  ‰¼O  ÷Â   t‹Æ‰¼?  3ÉA‰¸?  ë3ÉA÷Â   t‹Æ‰•ÀO  ‰¼O  Æ‹‰…¸/  hÜÀìo…´/  P…¼O  P…¸?  Pj ‰´/  ÿôqìoƒøÿt<ƒ½¸?  u‹M¨‹‰D¬ÿE¨ƒ½¼O  u‹¬  ‹‰„°  ÿ…¬  ƒ½´/  u‹°  ‹‰„´  ÿ…°  ÿE¤‹E¤3Û;…Ü_  Œÿÿÿ‹M¨Q‹M¨AQSÿu„WÿL  ‹¬  Q‹¬  AQSÿu€WÿL  ‹°  Q‹°  AQSÿuˆWÿL  ‹À_  _^3Í3À[èI  ÅÄ_  ÉÂ( U‹ìQj jEÿPÿuÆEÿÿDrìoÉÂ U‹ìƒì¡Àìo3Å‰EüVEèPhf@ÿuÿrìo‹uè…öt9ƒş~#WVÿÔqìoYj V‹øWÿuÿ8rìoWÿØqìoY_ëj jEìPÿuÿ8rìo‹Mü3Í^è´   ÉÂ U‹ìƒì¡Àìo3Å‰EüS2ÛjjEôPÿuÿ8rìo…À~³ëç‹MüŠÃ3Í[èw   ÉÂ Ìÿ%Lrìoÿ%lrìoÿ%Xrìoÿ%\rìoÿ%`rìoÿ%drìoÿ%hrìoÿ%xrìoÿ%trìoÿ%˜rìoÿ%|rìoÿ%€rìoÿ%„rìoÿ%ˆrìoÿ%Œrìoÿ%rìoÿ%”rìoÿ%,pìoÿ%(pìo;ÀìouóÃé©  Ìÿ%ÜqìoÌÌÌÌÌÌWVU3ÿ3í‹D$À}GE‹T$÷Ø÷ÚƒØ ‰D$‰T$‹D$À}G‹T$÷Ø÷ÚƒØ ‰D$‰T$Àu(‹L$‹D$3Ò÷ñ‹Ø‹D$÷ñ‹ğ‹Ã÷d$‹È‹Æ÷d$ÑëG‹Ø‹L$‹T$‹D$ÑëÑÙÑêÑØÛuô÷ñ‹ğ÷d$‹È‹D$÷æÑr;T$wr;D$v	N+D$T$3Û+D$T$My÷Ú÷ØƒÚ ‹Ê‹Ó‹Ù‹È‹ÆOu÷Ú÷ØƒÚ ]^_Â ÌQL$+ÈÀ÷Ğ#È‹Ä% ğÿÿ;Èr
+‹ÁY”‹ ‰$Ã-   … ëé‹ÿVh€   ÿÄqìoY‹ğVÿèpìo£ Äìo£Äìo…öu3À@^Ãƒ& è(  hLaìoè  Ç$b`ìoèû  Y3À^Ã‹ÿU‹ìQQS3ÀVW9Eu29äÀìo~#d¡   ÿäÀìo‹Xƒeü ‹5ôpìo¿Äìoéê   3ÀéÀ  ƒ}…³  d‹   ‹Y‹5ôpìo‰EP¿Äìoë;Ãthè  ÿ$qìoj SWÿÖ…ÀuçëÇE   ¡Äìoj^…Àt	jè"  ë9h°rìoh¨rìoÇÄìo   è  YY…À…zÿÿÿh¤rìoh rìoèâ  Y‰5Äìo3ÛY9]uSWÿğpìo9$Äìoth$Äìoèı  Y…ÀtÿuVÿuÿ$ÄìoÿäÀìoéé   ;Ãthè  ÿ$qìoj SWÿÖ…ÀuçëÇEü   ¡Äìoƒøtjèu  Yé°   ÿ5 Äìo‹5ìpìoÿÖ‰E…À„ƒ   ÿ5ÄìoÿÖ‹Ø‹E‰E‰]ƒë;]rNƒ; tóÿÀqìo9téÿ3ÿÖ‰EøÿÀqìo‰ÿUøÿ5 ÄìoÿÖÿ5Äìo‰EøÿÖ‹Mø9Mu9Et·‰M‰M‰E‹ØëªÿuÿØqìoYÿÀqìo£Äìo£ Äìo3À£Äìo9EüuPWÿğpìo3À@_^[ÉÂ jhè{ìoèá  ‹ù‹ò‹]3À@‰Eä3É‰Mü‰5Àìo‰Eü;ñu9äÀìou‰Mäé·   ;ğtƒşu.¡øzìo;ÁtWVSÿĞ‰Eäƒ}ä „“   WVSèıÿÿ‰Eä…À„€   WVSèG  ‰Eäƒşu$…Àu WPSè3  Wj Sè_ıÿÿ¡øzìo…ÀtWj SÿĞ…ötƒşuCWVSè?ıÿÿ…Àu!Eäƒ}ä t.¡øzìo…Àt%WVSÿĞ‰Eäë‹Eì‹‹	‰MàPQèÓ  YYÃ‹eèƒeä ƒeü ÇEüşÿÿÿè	   ‹Eäè(  ÃÇÀìoÿÿÿÿÃ‹ÿU‹ìƒ}uèE  ÿu‹M‹UèÌşÿÿY]Â ‹ÿU‹ìì(  £ğÁìo‰ìÁìo‰èÁìo‰äÁìo‰5àÁìo‰=ÜÁìofŒÂìofŒüÁìofŒØÁìofŒÔÁìofŒ%ĞÁìofŒ-ÌÁìoœ Âìo‹E £ôÁìo‹E£øÁìoE£Âìo‹…àüÿÿÇ@Áìo  ¡øÁìo£ôÀìoÇèÀìo	 ÀÇìÀìo   ¡Àìo‰…Øüÿÿ¡Àìo‰…Üüÿÿÿqìo£8Áìojè  Yj ÿ qìohüzìoÿüpìoƒ=8Áìo ujèİ  Yh	 ÀÿHqìoPÿøpìoÉÃhÄìoèÄ  YÃjh|ìoè–  ÿ5 Äìo‹5ìpìoÿÖ‰Eäƒøÿuÿuÿ˜qìoYëdjèŸ  Yƒeü ÿ5 ÄìoÿÖ‰Eäÿ5ÄìoÿÖ‰EàEàPEäPÿu‹5èpìoÿÖPèe  ƒÄ‰EÜÿuäÿÖ£ ÄìoÿuàÿÖ£ÄìoÇEüşÿÿÿè	   ‹EÜèP  Ãjè)  YÃ‹ÿU‹ìÿuèRÿÿÿ÷ØÀ÷ØYH]Ã‹ÿV¸Ø{ìo¾Ø{ìoW‹ø;Æs‹…ÀtÿĞƒÇ;şrñ_^Ã‹ÿV¸à{ìo¾à{ìoW‹ø;Æs‹…ÀtÿĞƒÇ;şrñ_^ÃÌÌÌÌÌÌÌÌÌÌÌÌÌÌ‹ÿU‹ì‹M¸MZ  f9t3À]Ã‹A<Á8PE  uï3Ò¹  f9H”Â‹Â]ÃÌÌÌÌÌÌÌÌÌÌÌ‹ÿU‹ì‹E‹H<È·ASV·q3ÒWD…öt‹}‹H;ùr	‹XÙ;ûr
+BƒÀ(;Örè3À_^[]ÃÌÌÌÌÌÌÌÌÌÌÌÌ‹ÿU‹ìjşh0|ìohicìod¡    PƒìSVW¡Àìo1Eø3ÅPEğd£    ‰eèÇEü    h  ìoè*ÿÿÿƒÄ…ÀtT‹E-  ìoPh  ìoèPÿÿÿƒÄ…Àt:‹@$Áè÷ĞƒàÇEüşÿÿÿ‹Mğd‰    Y_^[‹å]Ã‹Eì‹3Ò9  À”Â‹ÂÃ‹eèÇEüşÿÿÿ3À‹Mğd‰    Y_^[‹å]Ãÿ%¼qìoÿ%¸qìoÿ%´qìoÿ%°qìo‹ÿU‹ìƒ}uƒ=øzìo u	ÿuÿqìo3À@]Â ÌÌÌÌÌÌÌÌhicìodÿ5    ‹D$‰l$l$+àSVW¡Àìo1Eü3ÅP‰eèÿuø‹EüÇEüşÿÿÿ‰EøEğd£    Ã‹Mğd‰    Y__^[‹å]QÃ‹ÿU‹ìÿuÿuÿuÿuh¤ZìohÀìoè¿   ƒÄ]Ã‹ÿU‹ìƒì¡Àìoƒeø ƒeü SW¿Næ@»»  ÿÿ;Çt…Ãt	÷Ğ£ÀìoëeVEøPÿqìo‹uü3uøÿqìo3ğÿqìo3ğÿqìo3ğEğPÿqìo‹Eô3Eğ3ğ;÷u¾Oæ@»ë…óu‹ÆG  Áàğ‰5Àìo÷Ö‰5Àìo^_[ÉÃÌÿ%¬qìoÿ%¨qìoÿ%¤qìoÿ% qìoÿ%œqìoÿ%àqìoÿ%èqìo                                                                                                                                                                                                                                                                                                                                                                                                                                            Fƒ  $„  „  „  ìƒ  Öƒ  Äƒ  °ƒ  ƒ  Šƒ  pƒ  Vƒ  0ƒ  ƒ  ƒ  ì‚  â‚  Î‚  ²‚  –‚  x‚  Z‚  F‚  2‚  "‚  ‚  ò  Ş  Ğ      fˆ  Pˆ  <ˆ  .ˆ   ˆ  ˆ  ˆ  |ˆ  Ş‡  Ê‡  ¼‡  ª‡  ‡  ‡  ”ˆ  ¢ˆ  ºˆ  Êˆ  àˆ  öˆ  
+‰  ‰  *‰  >‰  J‰  `‰  x‰  †‰  ”‰  ¤‰  ´‰  Ê‰  è‰  ü‰  Š  6Š  JŠ  fŠ  €Š  Š  ¦Š  ¼Š  ò‡  P‡  8‡  &‡  ‡  ö†  Ú†  À†  °†  ’†  ~†  l†  \†  N†  @†  0†  †  †  †  ò…  à…  €‡  j‡  Œ…  œ…  ª…  º…  Ê…  X‡      L…  D…  6…  ,…  …  ò„  à„  Ò„  Ä„  ¸„  ¨„  š„  ‚„  x„  f„  \„  T„  J„  V…      p…        €  €Œ    €  €˜  ¢  
+  €¬    €  €  €  €  €  €  €  €  €  €  €¾    €  €—  €o  €    ş  €  <€  „€  š€  Ş      à€  À€  "  B  V  v  Š  œ  ²  ş€                  Ë[ìo                    D®?W       ~   P{  Pe  cachedSenderPort    I   cachedSenderInetAddress Ljava/net/InetAddress;  sender  Ljava/net/SocketAddress;    sun/nio/ch/DatagramChannelImpl  <init>  (Ljava/net/InetAddress;I)V  java/net/InetSocketAddress  java/net/PortUnreachableException   Write failed    fd  Ljava/io/FileDescriptor;    Map failed  Unmap failed    Seek failed Close failed    transfer failed Read failed Invalid handle  Force failed    Truncation failed   Size failed Lock failed Release failed  DuplicateHandle failed  nFileIndexLow   nFileIndexHigh  dwVolumeSerialNumber    J   GetFileInformationByHandle failed   handle  java/io/FileDescriptor  Read/write failed   Drain   overlapped  completionKey   bytesTransferred    error   sun/nio/ch/Iocp$CompletionStatus    CreateIoCompletionPort failed   GetQueuedCompletionStatus failed    PostQueuedCompletionStatus  Flush failed    fastLoopback    socket  bind    listen  connect getsockname shutdown    Accept failed   address java/net/InetAddress    getsockopt  Vector read failed  Vector write failed Socket close failed ReadFile failed WriteFile failed    WSAIoctl failed socket failed   AcceptEx failed closesocket failed  ConnectEx failed    shutdown failed WSARecv failed  WSASend failed  sun/nio/fs/WindowsException (I)V    GetFinalPathNameByHandleW   CreateSymbolicLinkW FindNextStreamW FindFirstStreamW    context sun/nio/fs/WindowsNativeDispatcher$BackupResult sun/nio/fs/WindowsNativeDispatcher$CompletionStatus aceCount    sun/nio/fs/WindowsNativeDispatcher$AclInformation   use domain  sun/nio/fs/WindowsNativeDispatcher$Account  totalNumberOfFreeBytes  totalNumberOfBytes  freeBytesAvailable  sun/nio/fs/WindowsNativeDispatcher$DiskFreeSpace    flags   volumeSerialNumber  volumeName  fileSystemName  sun/nio/fs/WindowsNativeDispatcher$VolumeInformation    sun/nio/fs/WindowsNativeDispatcher$FirstStream  attributes  name    Ljava/lang/String;  sun/nio/fs/WindowsNativeDispatcher$FirstFile    Should not get here Unable to allocate LUID structure   native memory allocation failure    GetFullPathNameW failed GetFinalPathNameByHandleW failed        èÀìo@Áìo    H                                                           ÀìoĞ{ìo   RSDS6ıB[e@½DìÿŒ¸   c:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u91\7017\build\windows-i586\jdk\objs\libnio\nio.pdb   ic                      şÿÿÿ    Ğÿÿÿ    şÿÿÿ    ._ìo    ú^ìo_ìoşÿÿÿ    Ìÿÿÿ    şÿÿÿ    aìo    şÿÿÿ    Øÿÿÿ    şÿÿÿ›bìo®bìoÜ~          Ò  ğq  D          ¶€  Xr  `          È  tr  ì|          <„   p  „~          Œ„  ˜q  Ô~          €…  èq  d}          ÖŠ  xp                      Fƒ  $„  „  „  ìƒ  Öƒ  Äƒ  °ƒ  ƒ  Šƒ  pƒ  Vƒ  0ƒ  ƒ  ƒ  ì‚  â‚  Î‚  ²‚  –‚  x‚  Z‚  F‚  2‚  "‚  ‚  ò  Ş  Ğ      fˆ  Pˆ  <ˆ  .ˆ   ˆ  ˆ  ˆ  |ˆ  Ş‡  Ê‡  ¼‡  ª‡  ‡  ‡  ”ˆ  ¢ˆ  ºˆ  Êˆ  àˆ  öˆ  
+‰  ‰  *‰  >‰  J‰  `‰  x‰  †‰  ”‰  ¤‰  ´‰  Ê‰  è‰  ü‰  Š  6Š  JŠ  fŠ  €Š  Š  ¦Š  ¼Š  ò‡  P‡  8‡  &‡  ‡  ö†  Ú†  À†  °†  ’†  ~†  l†  \†  N†  @†  0†  †  †  †  ò…  à…  €‡  j‡  Œ…  œ…  ª…  º…  Ê…  X‡      L…  D…  6…  ,…  …  ò„  à„  Ò„  Ä„  ¸„  ¨„  š„  ‚„  x„  f„  \„  T„  J„  V…      p…        €  €Œ    €  €˜  ¢  
+  €¬    €  €  €  €  €  €  €  €  €  €  €¾    €  €—  €o  €    ş  €  <€  „€  š€  Ş      à€  À€  "  B  V  v  Š  œ  ²  ş€      6 WSAIoctl  D WSARecv I WSASend * WSAEventSelect  J WSASendDisconnect WS2_32.dll  1 _JNU_ThrowOutOfMemoryError@8  ! _JNU_ThrowByName@12 % _JNU_ThrowIOExceptionWithLastError@8  _Java_sun_security_provider_NativeSeedGenerator_nativeGenerateSeed@12  JNU_NewObjectByName * _JNU_ThrowInternalError@8 java.dll  } _NET_SockaddrToInetAddress@12 v _NET_GetPortFromSockaddr@4  | _NET_SockaddrEqualsInetAddress@12 x _NET_InetAddressToSockaddr@24 ƒ _ipv6_available@0 u _NET_EnableFastTcpLoopback@4   _NET_ThrowNew@12  ‚ _NET_WinBind@16 w _NET_GetSockOpt@20  { _NET_SetSockOpt@20  net.dll 0RegCloseKey nRegQueryValueExW  aRegOpenKeyExW wInitializeSecurityDescriptor  vInitializeAcl ªSetFileSecurityW  0GetFileSecurityW  KGetSecurityDescriptorOwner  ¸SetSecurityDescriptorOwner  HGetSecurityDescriptorDacl ¶SetSecurityDescriptorDacl $GetAclInformation #GetAce   AddAccessAllowedAceEx  AddAccessDeniedAceEx  ‘LookupAccountSidW LookupAccountNameW  6GetLengthSid  l ConvertSidToStringSidW  t ConvertStringSidToSidW  ÷OpenProcessToken  üOpenThreadToken ß DuplicateTokenEx  ÁSetThreadToken  ZGetTokenInformation  AdjustTokenPrivileges  AccessCheck ãMapGenericMask  —LookupPrivilegeValueW ADVAPI32.dll  Ómemset  ‹free  Ämalloc  |_get_osfhandle  7wcslen  _errno  MSVCR100.dll  4_malloc_crt _encoded_null °_initterm ±_initterm_e Å_amsg_exit  1__CppXcptFilter û_crt_debugger_hook  S__clean_type_info_names_internal  _unlock [__dllonexit #_lock É_onexit !_except_handler4_common  TransmitFile  MSWSOCK.dll sGetSystemInfo R CloseHandle GetLastError  WMapViewOfFile ‰ CreateFileMappingA  ÖUnmapViewOfFile fSetFilePointer  ÀReadFile  %WriteFile WFlushFileBuffers  SSetEndOfFile  ğGetFileSize SLockFileEx  ÕUnlockFileEx  è DuplicateHandle ÀGetCurrentProcess ìGetFileInformationByHandle  £GetVersionExA ” CreateIoCompletionPort  ^GetQueuedCompletionStatus PostQueuedCompletionStatus  ^FormatMessageW  ZFlushViewOfFile pSetHandleInformation  ²Sleep EGetProcAddress  GetModuleHandleExW   CreateFileW … CreateEventW  HLocalFree İ DeviceIoControl Ö DeleteFileW  CreateDirectoryW  RemoveDirectoryW  9FindFirstFileW  EFindNextFileW .FindClose r CopyFileExW `MoveFileExW 	GetLogicalDrives  êGetFileAttributesW  aSetFileAttributesW  çGetFileAttributesExW  jSetFileTime §GetVolumeInformationW ÓGetDriveTypeW ÎGetDiskFreeSpaceExW «GetVolumePathNameW  ÄGetCurrentThread  DLocalAlloc  “ CreateHardLinkW ûGetFullPathNameW  B CancelIo  8GetOverlappedResult ¿ReadDirectoryChangesW  BackupRead   BackupSeek  ê EncodePointer Ê DecodePointer ìInterlockedExchange éInterlockedCompareExchange  ÀTerminateProcess  ÓUnhandledExceptionFilter  ¥SetUnhandledExceptionFilter  IsDebuggerPresent Ş DisableThreadLibraryCalls §QueryPerformanceCounter “GetTickCount  ÅGetCurrentThreadId  ÁGetCurrentProcessId yGetSystemTimeAsFileTime KERNEL32.dll                  D®?W    ’     ³   ³   ‹  ä  °  ®%  ¦%  «%  ‘       ¨  A  â  Â  \  õ  4  n  v  %  P  ı     2   ğ  î    "  İ  U  v  ˜  2    x  Ê   j   #  7"  #  Y!  °!  «!  "  ï:  K$  <%  |$  w#  ş#  %  Û'  -  Ó.  '  '  †(  +  ^/  ë/  g&  Ã&  j&  ^,  5.  O(  Ã)  O)  0  à1  Î1  Ô1  Æ1  Ú1  °!  ¤*  0*  Ò+  /  °/  80  '  (3  ®2  O(  Z4  4  ã5  9  S9  6  ¦6  –7  58  ï:  :  É9  ):  œ;  ˜=  ü:  ü;  ˜=  Â<  "<  ¸=  t=  Y=  >  šV  ôY  ‚Y  eY  è1  ÷P  ÃL  ôL  ‡P  ŞU  VV  BU  ï:  ÉN  O  İF  fC  6B  zB  AR  XT  R  BC  C  ÒB  àO  ‘F  ÌC  ’D  E  ÂD  şE  <%  ŒL  &L  LO  VO  I  I  bG  µG  µF  K  YS  kR  ¼N  <G  fU  T  ±K  TK  ?P  bH  J  ±J  ‹J  mB  2N  %M  µQ  G  `O  ‘O  U  U  ¨C  >H  G  ÛJ  ßG  úK  ‡K  P  ¢>  ’  H’  u’  ’  Ò’  “  2“  `“  “  »“  é“  ”  C”  n”  —”  Å”  õ”   •  N•  ƒ•  º•  è•  –  C–  r–  Ÿ–  Í–  ı–  *—  [—  ‰—  ¸—  Ù—  ü—  )˜  J˜  k˜  ˜  ®˜  Õ˜  ù˜  ™  I™  r™  ¥™  Å™  ì™   š  >š  fš  š  Áš  ïš  ›  6›  \›  ‚›  ¡›  Ñ›  ù›  œ  Aœ  `œ  ‰œ  «œ  Èœ  íœ    5  X  }  ¡  Ë  î    :  `    ¡  Õ  Ÿ  ;Ÿ  nŸ  ›Ÿ  ÓŸ  ÿŸ  .   Y   …   ± 

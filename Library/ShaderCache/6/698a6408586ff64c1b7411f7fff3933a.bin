@@ -1,0 +1,117 @@
+, 
+            "name": "model3d", 
+            "material": [
+                "Materials/Lapki.xml"
+            ], 
+            "tag": "Lapki_R", 
+            "position": [
+                0, 
+                -130, 
+                -100
+            ], 
+            "model": "Models/Lapki_R.mdl", 
+            "anchor": "face"
+        }, 
+        {
+            "scale": [
+                26, 
+                26, 
+                26
+            ], 
+            "rotation": [
+                0, 
+                90, 
+                0
+            ], 
+            "name": "model3d", 
+            "material": [
+                "Materials/Lapki.xml"
+            ], 
+            "tag": "Lapki_L", 
+            "position": [
+                0, 
+                -130, 
+                -100
+            ], 
+            "model": "Models/Lapki_L.mdl", 
+            "anchor": "face"
+        }, 
+        {
+            "eyes": true, 
+            "name": "patch", 
+            "texture": {
+                "color": [
+                    0.0, 
+                    0.0, 
+                    0.0, 
+                    0.2
+                ], 
+                "ps_shader_defs": "INTENSITY_VALUE", 
+                "shader": "ColorFilter", 
+                "texture": "lookup.png"
+            }, 
+            "visible": "always", 
+            "tag": "filter", 
+            "mouth": true, 
+            "anchor": "fullscreen"
+        }, 
+        {
+            "color": [
+                0.88, 
+                0.88, 
+                0.88
+            ], 
+            "type": "ambient", 
+            "name": "light"
+        }, 
+        {
+            "direction": [
+                1, 
+                0.2, 
+                1
+            ], 
+            "name": "light", 
+            "brightness": 0.25, 
+            "color": [
+                1, 
+                1, 
+                1
+            ], 
+            "specular_intensity": 3, 
+            "type": "direct"
+        }, 
+        {
+            "direction": [
+                -1, 
+                0.2, 
+                1
+            ], 
+            "name": "light", 
+            "brightness": 0.25, 
+            "color": [
+                1, 
+                1, 
+                1
+            ], 
+            "specular_intensity": 3, 
+            "type": "direct"
+        }, 
+        {
+            "direction": [
+                5, 
+                0.2, 
+                5
+            ], 
+            "brightness": 0.4, 
+            "color": [
+                1, 
+                1, 
+                1
+            ], 
+            "-name": "light", 
+            "specular_intensity": 5, 
+            "type": "direct"
+        }, 
+        {
+            "direction": [
+    

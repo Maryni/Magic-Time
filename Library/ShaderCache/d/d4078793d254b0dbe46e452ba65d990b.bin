@@ -1,0 +1,100 @@
+     0, 
+                37, 
+                -15
+            ], 
+            "model": "Models/Nosik_Fur.mdl", 
+            "anchor": "mouth"
+        }, 
+        {
+            "scale": [
+                23, 
+                23, 
+                23
+            ], 
+            "rotation": [
+                0, 
+                88, 
+                7
+            ], 
+            "name": "model3d", 
+            "material": [
+                "Materials/Nosik.xml"
+            ], 
+            "tag": "Nosik", 
+            "position": [
+                0, 
+                35, 
+                -20
+            ], 
+            "model": "Models/Nosik.mdl", 
+            "anchor": "mouth"
+        }, 
+        {
+            "scale": [
+                23, 
+                23, 
+                23
+            ], 
+            "name": "model3d", 
+            "material": [
+                "Materials/Skull_alpha2.xml", 
+                "Materials/Skull.xml", 
+                "Materials/Skull_alpha.xml"
+            ], 
+            "anchor": "forehead", 
+            "position": [
+                0, 
+                5, 
+                45
+            ], 
+            "model": "Models/Skull.mdl", 
+            "rotation": [
+                0, 
+                88, 
+                0
+            ]
+        }, 
+        {
+            "scale": [
+                23, 
+                23, 
+                23
+            ], 
+            "rotation": [
+                0, 
+                88, 
+                0
+            ], 
+            "name": "model3d", 
+            "material": [
+                "Materials/Yxo4.xml", 
+                "Materials/Yxo1_alpha.xml", 
+                "Materials/Yxo3_alpha.xml", 
+                "Materials/Yxo2_alpha.xml"
+            ], 
+            "tag": "Ear_R", 
+            "position": [
+                0, 
+                5, 
+                45
+            ], 
+            "model": "Models/Ear_R.mdl", 
+            "anchor": "forehead"
+        }, 
+        {
+            "scale": [
+                23, 
+                23, 
+                23
+            ], 
+            "rotation": [
+                0, 
+                88, 
+                0
+            ], 
+            "name": "model3d", 
+            "material": [
+                "Materials/Yxo4.xml", 
+                "Materials/Yxo1_alpha.xml", 
+                "Materials/Yxo3_alpha.xml", 
+            

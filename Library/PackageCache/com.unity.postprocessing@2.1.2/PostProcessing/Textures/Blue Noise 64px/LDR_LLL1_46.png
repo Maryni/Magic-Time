@@ -1,0 +1,196 @@
+ocked...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_poi_gate1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Nie, czekaj!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Oh no, wait!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Oh no, wait!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_poi_cliff</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Zegnaj, okrutna gro przygodowa![p=2] ...Taki zarcik.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goodbye cruel adventure game?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goodbye cruel adventure game?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_poi_hacked_log</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Oczyscili droge i zablokowali skrót?[p=1] Nie mogli polozyc go gdzies indziej?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">They cleared the road and blocked the shortcut?[p=1] Why didn't they put it somewhere else?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">They cleared the road and blocked the shortcut?[p=1] Why didn't they put it somewhere else?</Data>
+          </Cell>
+        </Row>
+      </Table>
+    </Worksheet>
+    <Worksheet ss:Name="UI">
+      <Table>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">ID</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">pol</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Comments</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Localized Text</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_WIZARDCASTLE</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Rozdzial 1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chapter 1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chapter 1</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_MOUNTAINDALE</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Rozdzial 2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chapter 2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chapter 2</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_RLYEH</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Rozdzial 3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chapter 3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chapter 3</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_WIZARDCASTLED</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Cien nad zamkiem Aldrheim</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A Shadow Over Aldrheim</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A Shadow Over Aldrheim</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_MOUNTAINDALED</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Przerazajacy las Fornskogur</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The Fornskogur Horror</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The Fornskogur Horror</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_RLYEHD</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Koszmarne miasto trupów R'lyeh</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The Nightmare Corpse-city of R'lyeh</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The Nightmare Corpse-city of R'lyeh</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_MENU_MYTHOS</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Gwiazdy tancza na niebie</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">it's a double or triple entendre, based on the idiomatic expression &quot;The Stars are Right&quot; (i.e., conditions are favorable, in a mystical sense). Left means opposite of right (in the direction of comedy and the odd), but there is also an idea towards &quot;left&quot; as in remaining. (The Stars are Remaining (but everything else is gone).)</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The Stars Are Left</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Tu_Text_hint_fairyT</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wrózka</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The Fairy</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The Fairy</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Tu_Text_hint_fairy</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wrózki to bardzo osobliwe stworzenia. Zamieszkuja okolice punktów kontrolnych i ciagna do samotnych dusz, pragnac „zaprzyjaznic” sie z tymi, którzy nikogo w tym swiecie nie maja.\nSa w stanie bezinteresownie sie poswiecic, by wskrzesic swych „przyjaciól” w razie ich smierci w bitwie.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The fairy is a strange being. It resides at checkpoints and is attracted to lonely souls, longing to be a &quot;friend&quot; to those who have none.\nIt will sacrifice itself to selflessly revive those &quot;friends&quot;, should they fall in battle.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The fairy is a strange being. It resides at checkpoints and is attracted to lonely souls, longing to be a &quot;friend&quot; to those who have none.\nIt will sacrifice itself to selflessly revive those &quot;friends&quot;, should they fall in battle.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#CHALLENGE_SHRINE</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Sanktuarium</Data>
+          </

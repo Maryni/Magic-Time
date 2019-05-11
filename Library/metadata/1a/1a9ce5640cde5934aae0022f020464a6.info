@@ -1,0 +1,214 @@
+GUIStyle with text and an image inside. If the image is too large to fit within the content area of the style it is scaled down.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="on"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Boolean)">
+      <summary>
+        <para>Draw the GUIStyle with text and an image inside. If the image is too large to fit within the content area of the style it is scaled down.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="on"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,UnityEngine.GUIContent,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Draw the GUIStyle with text and an image inside. If the image is too large to fit within the content area of the style it is scaled down.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="on"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.DrawCursor(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Int32)">
+      <summary>
+        <para>Draw this GUIStyle with selected content.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="Character"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.DrawWithTextSelection(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Draw this GUIStyle with selected content.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="firstSelectedCharacter"></param>
+      <param name="lastSelectedCharacter"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.GetCursorPixelPosition(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32)">
+      <summary>
+        <para>Get the pixel position of a given string index.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="cursorStringIndex"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.GetCursorStringIndex(UnityEngine.Rect,UnityEngine.GUIContent,UnityEngine.Vector2)">
+      <summary>
+        <para>Get the cursor position (indexing into contents.text) when the user clicked at cursorPixelPosition.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="cursorPixelPosition"></param>
+    </member>
+    <member name="?:UnityEngine.GUIStyle.implop_GUIStyle(string)(System.String)">
+      <summary>
+        <para>Get a named GUI style from the current skin.</para>
+      </summary>
+      <param name="str"></param>
+    </member>
+    <member name="T:UnityEngine.GUIStyleState">
+      <summary>
+        <para>Specialized values for the given states used by GUIStyle objects.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyleState.background">
+      <summary>
+        <para>The background image used by GUI elements in this given state.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyleState.textColor">
+      <summary>
+        <para>The text color used by GUI elements in this state.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GUITargetAttribute">
+      <summary>
+        <para>Allows to control for which display the OnGUI is called.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor(System.Int32)">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor(System.Int32,System.Int32,System.Int32[])">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="T:UnityEngine.GUIUtility">
+      <summary>
+        <para>Utility class for making new GUI controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.hasModalWindow">
+      <summary>
+        <para>A global property, which is true if a ModalWindow is being displayed, false otherwise.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.hotControl">
+      <summary>
+        <para>The controlID of the current hot control.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.keyboardControl">
+      <summary>
+        <para>The controlID of the control that has keyboard focus.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.systemCopyBuffer">
+      <summary>
+        <para>Get access to the system-wide pasteboard.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.FocusType)">
+      <summary>
+        <para>Get a unique ID for a control.</para>
+      </summary>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.FocusType,UnityEngine.Rect)">
+      <summary>
+        <para>Get a unique ID for a control.</para>
+      </summary>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(System.Int32,UnityEngine.FocusType)">
+      <summary>
+        <para>Get a unique ID for a control, using an integer as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="hint"></param>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(System.Int32,UnityEngine.FocusType,UnityEngine.Rect)">
+      <summary>
+        <para>Get a unique ID for a control, using an integer as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="hint"></param>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.GUIContent,UnityEngine.FocusType)">
+      <summary>
+        <para>Get a unique ID for a control, using a the label content as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="contents"></param>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.GUIContent,UnityEngine.FocusType,UnityEngine.Rect)">
+      <summary>
+        <para>Get a unique ID for a control, using a the label content as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="contents"></param>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetStateObject(System.Type,System.Int32)">
+      <summary>
+        <para>Get a state object from a controlID.</para>
+      </summary>
+      <param name="t"></param>
+      <param name="controlID"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GUIToScreenPoint(UnityEngine.Vector2)">
+      <summary>
+        <para>Convert a point from GUI position to screen space.</para>
+      </summary>
+      <param name="guiPoint"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.QueryStateObject(System.Type,System.Int32)">
+      <summary>
+      

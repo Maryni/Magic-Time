@@ -1,0 +1,30 @@
+llo there![P=1] I recognize your...[P=0.5] face?[P=1] I think we met before, a long time ago. [P=1]Where are you heading?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Hello there![P=1] I recognize your...[P=0.5] face?[P=1] I think we met before, a long time ago. [P=1]Where are you heading?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_guard1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Outsmouth?[P=1] Slyszalem ostatnio dosc dziwne rzeczy o tej wiosce.[P=1] Jakie rzeczy?[P=1] Zacznijmy od tego, ze przestali dostarczac ryby do Havindr![P=1] Plotki mówia, ze niby morze przestalo dawac owoce, ale to jedna wielka bujda![P=1] Wyruszylem na gleboka wode w mojej starej lajbie i zlapalem wiecej ryb niz kiedykolwiek w zyciu!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Outsmouth?[P=1] I've heard some crazy things about that village of late.[P=1] What things you ask?[P=1] Well, for starters they have stopped delivering fish to Hávindr![P=1] Rumor has it that the ocean has grown barren -- but that's bollocks![P=1] I went out by the coast in my trusty ol' boat, and I was able to catch more fish than ever!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Outsmouth?[P=1] I've heard some crazy things about that village of late.[P=1] What things you ask?[P=1] Well, for starters they have stopped delivering fish to Hávindr![P=1] Rumor has it that the ocean has grown barren -- but that's bollocks![P=1] I went out by the coast in my trusty ol' boat, and I was able to catch more fish than ever!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_guard2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Slyszalem, ze Jörgen wyruszyl do Outsmouth, by odwiedzic swa ciotke, ale jej nie znalazl.[P=1] Do jego uszu dotarly za to dosc niepokojace wiesci.[P=0.5] Podobno Outsmouthianie bardzo sie polubili ze swoimi rybkami i przestali je zabijac.[P=1] Jesli o mnie chodzi, to uwazam, ze to dosc dziwne, zeby dorosli ludzie mogli sie do tego stopnia zadurzyc w takich zalosnych paskudach...[P=1] Raju, alez ja nienawidze ryb!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I heard that Jörgen went to Outsmouth to visit his aunt, but she wasn't there.[P=2] He did hear some rather strange stories;[P=2] Apparently the Outsmouthians have taken quite a liking to their fish. And by that I mean to they don't kill them anymore.[P=1.5] I say it's strange that a grown man can become so obsessed and mesmerized by something as pathetic as those loathsome beings...[P=3.5] Oh, I do so hate fish!</Data>
+          

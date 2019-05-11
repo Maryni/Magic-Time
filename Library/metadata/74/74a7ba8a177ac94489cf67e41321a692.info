@@ -1,0 +1,21 @@
+ <variable value="light::color" type="listener" name="il_tint" object="ls_spot"/>
+        <diffuse_texture file="core/textures/hub_elements_df"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <self_illumination_texture file="core/textures/hub_elements_df"/>
+    </material>
+</materials><?xml version="1.0"?>
+<unit type="dev" slot="1">
+	<object file="units/dev_tools/level_tools/dev_nav_blocker/dev_nav_blocker_2x3m" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData">
+			<var name="only_exists_in_editor" value="true" />
+		</extension>
+	</extensions>
+</unit><?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="core/material_configs/hub_elements" orientation_object="rp_dev_nav_blocker_2x3m" />
+  <bodies>
+    <body name="static_body" enabled="true" template="editor">
+      <object name="g_dev_nav_blocker_2x3m" collision_type="box" />
+    </body>
+    <bod

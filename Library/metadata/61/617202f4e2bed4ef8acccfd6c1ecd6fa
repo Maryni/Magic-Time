@@ -1,0 +1,149 @@
+  var addOperationVersion = package.AddSignal.Operation.PackageInfo.Version;
+                    if (package.Current == null)
+                    {
+                        action = PackageAction.Add;
+                        inprogress = true;
+                    }
+                    else
+                    {
+                        action = addOperationVersion.CompareByPrecedence(package.Current.Version) >= 0
+                            ? PackageAction.Update : PackageAction.Downgrade;
+                        inprogress = true;
+                    }
+                
+                    enableButton = false;
+                    enableVersionButton = false;
+                }
+            } 
+            else 
+            {
+                if (package.Current != null)
+                {
+                    // Installed
+                    if (package.Current.IsVersionLocked)
+                    {
+                        if (package.Current.Origin == PackageSource.Embedded)
+                            action = PackageAction.Embedded;
+                        else if (package.Current.Origin == PackageSource.Git)
+                            action = PackageAction.Git;
+                        
+                        enableButton = false;
+                        enableVersionButton = false;
+                    }
+                    else
+                    {
+                        if (targetVersion.IsCurrent)
+                        {
+                            if (targetVersion == package.LatestUpdate)
+                                action = PackageAction.UpToDate;
+                            else
+                                action = PackageAction.Current;
+                            
+                            enableButton = false;
+                        }
+                        else
+                        {
+                            action = targetVersion.Version.CompareByPrecedence(package.Current.Version) >= 0
+                                ? PackageAction.Update : PackageAction.Downgrade;
+                        }
+                    }
+                }
+                else
+                {
+                    // Not Installed
+                    if (package.Versions.Any())
+                    {
+                        if (isBuiltIn)
+                            action = PackageAction.Enable;
+                        else
+                            action = PackageAction.Add;
+                    }
+                }
+            }
+
+            if (package.RemoveSignal.Operation != null)
+                enableButton = false;
+
+            if (EditorApplication.isCompiling)
+            {
+                enableButton = false;
+                enableVersionButton = false;
+
+                EditorApplication.update -= CheckCompilationStatus;
+                EditorApplication.update += CheckCompilationStatus;
+            }
+            
+            var button = isBuiltIn ? UpdateBuiltIn : UpdateButton;
+            button.SetEnabled(enableButton);
+            VersionPopup.SetEnabled(enableVersionButton);
+            button.text = GetButtonText(action, inprogress, version);
+
+            var visibleFlag = !(package.Current != null && package.Current.IsVersionLocked);
+            UIUtils.SetElementDisplay(UpdateBuiltIn, isBuiltIn && visibleFlag);
+            UIUtils.SetElementDisplay(UpdateCombo, !isBuiltIn && visibleFlag);
+            UIUtils.SetElementDisplay(UpdateButton, !isBuiltIn && visibleFlag);
+        }
+
+        private void RefreshRemoveButton()
+        {
+            var visibleFlag = false;
+
+            var current = package.Current;
+            
+            // Show only if there is a current package installed
+            if (current != null)
+            {
+                visibleFlag = current.CanBeRemoved && !package.IsPackageManagerUI;
+
+                var action = current.IsBuiltIn ? PackageAction.Disable : PackageAction.Remove;
+                var inprogress = package.RemoveSignal.Operation != null;
+
+                var enableButton = visibleFlag && !EditorApplication.isCompiling && !inprogress && !Package.AddRemoveOperationInProgress;
+
+                if (EditorApplication.isCompiling)
+                {
+                    EditorApplication.update -= CheckCompilationStatus;
+                    EditorApplication.update += CheckCompilationStatus;
+                }
+
+                RemoveButton.SetEnabled(enableButton);
+                RemoveButton.text = GetButtonText(action, inprogress);                   
+            }
+
+            UIUtils.SetElementDisplay(RemoveButton, visibleFlag);
+        }
+
+        private void CheckCompilationStatus()
+        {
+            if (EditorApplication.isCompiling)
+                return;
+
+            RefreshAddButton();
+            RefreshRemoveButton();
+            EditorApplication.update -= CheckCompilationStatus;
+        }
+
+        private static string GetButtonText(PackageAction action, bool inProgress = false, SemVersion version = null)
+        {
+            return version == null ?
+                string.Format("{0}", inProgress ? PackageActionInProgressVerbs[(int) action] : PackageActionVerbs[(int) action]) :
+                string.Format("{0} {1}", inProgress ? PackageActionInProgressVerbs[(int) action] : PackageActionVerbs[(int) action], version);
+        }
+
+        private void UpdateClick()
+        {
+            if (package.IsPackageManagerUI)
+            {
+                // Let's not allow updating of the UI if there are build errrors, as for now, that will prevent the UI from reloading properly.
+                if (EditorUtility.scriptCompilationFailed)
+                {
+                    EditorUtility.DisplayDialog("Unity Package Manager", "The Package Manager UI cannot be updated while there are script compilation errors in your project.  Please fix the errors and try again.", "Ok");
+                    return;
+                }
+
+                if (!EditorUtility.DisplayDialog("Unity Package Manager", "Updating this package will close the Package Manager window. You will have to re-open it after the update is done. Do you want to continue?", "Yes", "No"))
+                    return;
+
+                if (package.AddSignal.Operation != null)
+                {
+                    package.AddSignal.Ope

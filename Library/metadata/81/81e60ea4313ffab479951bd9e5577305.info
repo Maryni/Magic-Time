@@ -1,0 +1,19 @@
+ame, root.Namespace);
+					if (currentUse == SoapBindingUse.Encoded) 
+						xtw.WriteAttributeString ("type", XmlSchema.InstanceNamespace, GetQualifiedNameString (xtw, elem.SchemaTypeName));
+					xtw.WriteString (GetLiteral (FindBuiltInType (elem.SchemaTypeName)));
+					xtw.WriteEndElement ();
+				}
+			}
+			else if (elem.SchemaType == null)
+			{
+				xtw.WriteStartElement ("any");
+				xtw.WriteEndElement ();
+			}
+			else
+				WriteComplexTypeSample (xtw, (XmlSchemaComplexType) elem.SchemaType, root);
+		}
+		
+		void WriteTypeSample (XmlTextWriter xtw, XmlQualifiedName qname)
+		{
+			XmlSchemaComplexT

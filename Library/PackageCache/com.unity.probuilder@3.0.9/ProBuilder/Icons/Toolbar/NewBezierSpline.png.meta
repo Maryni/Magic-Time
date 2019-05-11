@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<Cobra.label>кобра</Cobra.label>
+	<Cobra.description>Велетенська гадюка. Кобри бувають дуже агресивними, якщо їх спровокувати. В цьому випадку, краще триматися від них подалі.</Cobra.description>
+	<Cobra_Leather.label>шкіра кобри</Cobra_Leather.label>
+	<Cobra_Leather.description>Шкіра, здерта з кобри.</Cobra_Leather.description>
+	<Cobra_Leather.stuffProps.stuffAdjective>шкіри кобри</Cobra_Leather.stuffProps.stuffAdjective>
+	<Cobra_Meat.label>м'ясо кобри</Cobra_Meat.label>
+	<Cobra_Meat.description>Сире м'ясо кобри.</Cobra_Meat.description>
+	<Cobra_Corpse.label>тушка кобри</Cobra_Corpse.label>
+	<Cobra_Corpse.description>Мертва кобра.</Cobra_Corpse.description>
+
+	<Monkey.label>мавпа</Monkey.label>
+	<Monkey.description>Ця мавпа використовує свій вигнутий хвіст, щоб триматися за гілки, залишаючи свої руки вільними для чого-небудь ще.</Monkey.description>
+	<Monkey_Leather.label>шкіра мавпи</Monkey_Leather.label>
+	<Monkey_Leather.description>Шкіра, здерта з мавпи.</Monkey_Leather.description>
+	<Monkey_Leather.stuffProps.stuffAdjective>шкіри мавпи</Monkey_Leather.stuffProps.stuffAdjective>
+	<Monkey_Meat.label>м'ясо мавпи</Monkey_Meat.label>
+	<Monkey_Meat.description>Сире м'ясо мавпи.</Monkey_Meat.description>
+	<Monkey_Corpse.label>тушка мавпи</Monkey_Corpse.label>
+	<Monkey_Corpse.description>Мертва мавпа.</Monkey_Corpse.description>
+
+	<Boomalope.label>вибухлопа</Boomalope.label>
+	<Boomalope.description>С�

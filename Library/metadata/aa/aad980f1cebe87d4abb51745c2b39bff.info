@@ -1,0 +1,9 @@
+<gui>
+	<preload texture="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/weapons/benelli"/>
+	<preload texture="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/weapons/ksg"/>
+	<preload texture="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/weapons/striker"/>
+	
+	<preload texture="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/melee_weapons/baton"/>
+	<preload texture="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/melee_weapons/becker"/>
+	<preload texture="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/melee_weapons/shovel"/>
+	<preload texture="guis

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: brambles -->
+  <Plant_Brambles.label>esbarzers</Plant_Brambles.label>
+  <!-- EN: Tangled, thorny, woody shoots covered with leaves. Brambles grow in clusters, and slow down anyone moving over them. -->
+  <Plant_Brambles.description>Matoll embullat i espinós, amb moltes fulles. Alenteix una mica els que proven de travessar-lo.</Plant_Brambles.description>
+  
+  <!-- EN: bush -->
+  <Plant_Bush.label>matoll</Plant_Bush.label>
+  <!-- EN: A short shrub. Does not typically talk. -->
+  <Plant_Bush.description>Un petit arbust.</Plant_Bush.description>
+  
+  <!-- EN: grass -->
+  <Plant_Grass.label>herba</Plant_Grass.label>
+  <!-- EN:

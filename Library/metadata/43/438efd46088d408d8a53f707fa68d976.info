@@ -1,0 +1,21 @@
+atic TMP_StyleSheet defaultStyleSheet
+        {
+            get { return instance.m_defaultStyleSheet; }
+        }
+        [SerializeField]
+        private TMP_StyleSheet m_defaultStyleSheet;
+
+        /// <summary>
+        /// Text file that contains the leading characters used for line breaking for Asian languages.
+        /// </summary>
+        public static TextAsset leadingCharacters
+        {
+            get { return instance.m_leadingCharacters; }
+        }
+        [SerializeField]
+        private TextAsset m_leadingCharacters;
+
+        /// <summary>
+        /// Text file that contains the following characters used for line breaking for Asian languages.
+        /// </summary>
+    

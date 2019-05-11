@@ -1,0 +1,131 @@
+rollPosition">The pixel distance that the view is scrolled in the X and Y directions.</param>
+      <param name="viewRect">The rectangle used inside the scrollview.</param>
+      <param name="alwaysShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when clientRect is wider than position.</param>
+      <param name="alwaysShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when clientRect is taller than position.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+    </member>
+    <member name="M:UnityEngine.GUI.SelectionGrid(UnityEngine.Rect,System.Int32,System.String[],System.Int32)">
+      <summary>
+        <para>Make a grid of buttons.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the grid.</param>
+      <param name="selected">The index of the selected grid button.</param>
+      <param name="texts">An array of strings to show on the grid buttons.</param>
+      <param name="images">An array of textures on the grid buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the grid button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The controls will be scaled to fit unless the style defines a fixedWidth to use.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.SelectionGrid(UnityEngine.Rect,System.Int32,UnityEngine.Texture[],System.Int32)">
+      <summary>
+        <para>Make a grid of buttons.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the grid.</param>
+      <param name="selected">The index of the selected grid button.</param>
+      <param name="texts">An array of strings to show on the grid buttons.</param>
+      <param name="images">An array of textures on the grid buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the grid button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The controls will be scaled to fit unless the style defines a fixedWidth to use.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.SelectionGrid(UnityEngine.Rect,System.Int32,UnityEngine.GUIContent[],System.Int32)">
+      <summary>
+        <para>Make a grid of buttons.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the grid.</param>
+      <param name="selected">The index of the selected grid button.</param>
+      <param name="texts">An array of strings to show on the grid buttons.</param>
+      <param name="images">An array of textures on the grid buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the grid button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The controls will be scaled to fit unless the style defines a fixedWidth to use.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.SelectionGrid(UnityEngine.Rect,System.Int32,System.String[],System.Int32,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make a grid of buttons.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the grid.</param>
+      <param name="selected">The index of the selected grid button.</param>
+      <param name="texts">An array of strings to show on the grid buttons.</param>
+      <param name="images">An array of textures on the grid buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the grid button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The controls will be scaled to fit unless the style defines a fixedWidth to use.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.SelectionGrid(UnityEngine.Rect,System.Int32,UnityEngine.Texture[],System.Int32,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make a grid of buttons.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the grid.</param>
+      <param name="selected">The index of the selected grid button.</param>
+      <param name="texts">An array of strings to show on the grid buttons.</param>
+      <param name="images">An array of textures on the grid buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the grid button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The controls will be scaled to fit unless the style defines a fixedWidth to use.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.SelectionGrid(UnityEngine.Rect,System.Int32,UnityEngine.GUIContent[],System.Int32,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make a grid of buttons.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the grid.</param>
+      <param name="selected">The index of the selected grid button.</param>
+      <param name="texts">An array of strings to show on the grid buttons.</param>
+      <param name="images">An array of textures on the grid buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the grid button.</param>
+      <param name="xCount">How many elements to fit in the horizontal direction. The controls will be scaled to fit unless the style defines a fixedWidth to use.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="content"></param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.SetNextControlName(System.String)">
+      <summary>
+        <para>Set the name of the next control.</para>
+      </summary>
+      <param name="name"></param>
+    </member>
+    <member name="M:UnityEngine.GUI.TextArea(UnityEngine.Rect,System.String)">
+      <summary>
+        <para>Make a Multi-line text area where the user can edit a string.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the text field.</param>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textArea style from the current GUISkin is used.</param>
+      <returns>
+        <para>The edited string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.TextArea(UnityEngine.Rect,System.String,System.Int32)">
+      <summary>
+        <para>Make a Multi-line text area where the user can edit a string.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the text field.</param>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textArea style from the current GUISkin is used.</param>
+      <returns>
+        <para>The edited string.<

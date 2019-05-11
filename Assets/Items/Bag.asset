@@ -1,0 +1,8 @@
+_barr_tyrewall_stripy_a_col_fl_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 -1.192093E-07 0 0 1.192093E-07 1 0 1.10891378 0.594369 0.4096045 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_tyrewall_stripy_a_damage_renderable" sid="core_barr_tyrewall_stripy_a_dam_fl" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_tyrewall_stripy_a_dam_bc_subent">
+				<TEMPLATERIGIDBODY id="core_barr_tyrewall_stripy_a_dam_bc_rigidbody" infMass="0" props="physparams.xml#rbDe

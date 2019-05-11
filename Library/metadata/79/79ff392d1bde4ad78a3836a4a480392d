@@ -1,0 +1,55 @@
+RTYPE id="cot_road_sign_e_damage_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_e_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_e_obj_03_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_road_sign_e_obj_02_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#NeonConstraint001_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#NeonConstraint002_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_road_sign_e_col_06_shape" width="0.8406648" height="1.774503" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_road_sign_e_col_05_shape" width="0.4206649" height="0.1501032" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_road_sign_e_col_07_shape" width="0.045" height="1.86088" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="cot_road_sign_e_damage_01_renderable" uri="objects.pssg#cot_road_sign_e_damage_01" />
+		<TEMPLATESHAPEBOX id="cot_road_sign_e_col_04_shape" width="0.045" height="0.6857117" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATEENTITY id="cot_bus_stop_sign.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="cot_bus_stop_sign_obj_001_subent">
+				<TEMPLATERIGIDBODY id="cot_bus_stop_sign_obj_001_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bus_stop_sign_col_001_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -5.96046448E-08 1.54951441 -0.00150471926 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_bus_stop_sign_col_001_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_bus_stop_sign_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bus_stop_sign_col_002_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -5.96046448E-08 2.75100231 -0.202344179 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_bus_stop_sign_col_002_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_bus_stop_sign_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bus_stop_sign_col_003_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -5.96046448E-08 1.81873345 0.000794768333 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_bus_stop_sign_col_003_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_bus_stop_sign_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_bus_stop_sign_default_01_renderable" sid="cot_bus_stop_sign_obj_001" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_bus_stop_sign_obj_002_subent">
+				<TEMPLATERIGIDBODY id="cot_bus_stop_sign_obj_002_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bus_stop_sign_col_004_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -5.96046448E-08 1.54951441 -0.00150471926 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bus_stop_sign_col_005_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -5.96046448E-08 1.81873345 0.000794768333 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bus_stop_sign_col_006_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -5.96046448E-08 2.75100231 -0.202344179 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_bus_stop_sign_damage_01_renderable" sid="cot_bus_stop_sign_obj_002" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!20" impulse="physparams.xml#bDefault" typeuri="#cot_bus_stop_sign_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="cot_bus_stop_sign_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_bus_stop_sign_obj_001_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_bus_stop_sign_obj_002_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPECYLINDER id="cot_bus_stop_sign_col_001_shape" height="3.085134" radius="0.04004004" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_bus_stop_sign_col_002_shape" width="0.08548128" height="0.4568217" length="0.6990294" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_bus_stop_sign_col_003_shape" width="0.3154813" height="0.8620782" length="0.08902941" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="cot_bus_stop_sign_default_01_renderable" uri="objects.pssg#cot_bus_stop_sign_default_01" />
+		<TE

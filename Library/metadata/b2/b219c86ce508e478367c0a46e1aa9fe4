@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!--=================== executions and prisoner deaths ===================-->
+  
+	<KnowGuestExecuted.stages.0.label>Хтось був піддваний евтаназії</KnowGuestExecuted.stages.0.label>
+	<KnowGuestExecuted.stages.0.description>Гостя або в'язня було піддано евтаназії.</KnowGuestExecuted.stages.0.description>
+	<KnowGuestExecuted.stages.1.label>Хтось був страчений</KnowGuestExecuted.stages.1.label>
+	<KnowGuestExecuted.stages.1.description>Гість або в'язень був страчений. Як на мене, ця колонія повна зла.</KnowGuestExecuted.stages.1.description>
+	<KnowGuestExecuted.stages.2.label>Хтось помер від операції</KnowGuestExecuted.stages.2.label>
+	<KnowGuestExecuted.stages.2.description>Гість чи в'язень помер, оскільки у нього вирізали орган. Це так жахливо.</KnowGuestExecuted.stages.2.description>
+
+	<KnowColonistExecuted.stages.0.label>Колоніст був підданий евтаназії</KnowColonistExecuted.stages.0.label>
+	<KnowColonistExecuted.stages.0.description>Колоніста було піддано евтаназії.</KnowColonistExecuted.stages.0.description>
+	<KnowColonistExecuted.stages.1.label>Колоніст був страчений</KnowColonistExecuted.stages.1.label>
+	<KnowColonistExecuted.stages.1.description>Колоніст був страчений. Як на мене, ця колонія повна зла.</KnowColonistExecuted.stages.1.description>
+	<KnowColonistExecuted.stages.2.label>Колоніст помер від операції</KnowColonistExecuted.stages.2.label>
+	<KnowColonistExecuted.stages.2.description>Колоніст помер, оскільки у нього вирізали орган. Це так жахливо.</KnowColonistExecuted.stages.2.description>
+  
+	<KnowPrisonerDiedInnocent.stages.0.label>Невинний в'язень помер</KnowPrisonerDiedInnocent.stages.0.label>
+	<KnowPrisonerDiedInnocent.stages.0.description>Один із наших в'язнів помер, не зважаючи на те, що він не чинив шкоди. Ми маємо бути здатними піклуватися про своїх ув'язнених. Якби ми хотіли бачити їх мертвими, то стратили б їх, а не дозволяли б варварам убивати їх.</KnowPrisonerDiedInnocent.stages.0.description>
+  
+	<KnowColonistDied.stages.0.label>Колоніст загинув</KnowColonistDied.stages.0.label>
+	<KnowColonistDied.stages.0.description>Один із наших загинув. Ми повинні піклуватися про кожного з нас.</KnowColonistDied.stages.0.description>
+  
+  
+  <!--===================== bonded animal died =====================-->
+
+	<BondedAnimalDied.stages.0.label>моя тварина загинула</BondedAnimalDied.stages.0.label>
+	<BondedAnimalDied.stages.0.description>Така ласкава, незвичайна тварина. Всесвіт жорстокий!</BondedAnimalDied.stages.0.description>
+  
+  
+  <!--===================== friend/rival died =====================-->
+
+	<PawnWithGoodOpinionDied.stages.0.label>мій друг загинув</PawnWithGoodOpinionDied.stages.0.label>
+	<PawnWithGoodOpinionDied.stages.0.description>Що за неймовірна людина. Світ темнішає з кожним днем.</PawnWithGoodOpinionDied.stages.0.description>
+
+	<PawnWithBadOpinionDied.stages.0.label>мій ворог загинув</PawnWithBadOpinionDied.stages.0.label>
+	<PawnWithBadOpinionDied.stages.0.description>Так йому(їй) і потрібно. Справи йдуть вгору.</PawnWithBadOpinionDied.stages.0.description>
+  
+  
+  <!--===================== Family member died thoughts =====================-->
+
+	<MySonDied.stages.0.label>мій син загинув</MySonDied.stages.0.label>
+	<MySonDied.stages.0.description>Мій син мертвий. Моя плоть і кров...</MySonDied.stages.0.description>
+
+	<MyDaughterDied.stages.0.label>моя до

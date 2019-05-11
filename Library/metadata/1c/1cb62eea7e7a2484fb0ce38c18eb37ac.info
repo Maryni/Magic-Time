@@ -1,0 +1,17 @@
+ <member name="M:UnityEngine.AnimationState.RemoveMixingTransform(UnityEngine.Transform)">
+      <summary>
+        <para>Removes a transform which should be animated.</para>
+      </summary>
+      <param name="mix"></param>
+    </member>
+    <member name="T:UnityEngine.Animator">
+      <summary>
+        <para>Interface to control the Mecanim animation system.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animator.angularVelocity">
+      <summary>
+        <para>Gets the avatar angular velocity for the last evaluated frame.</para>
+      </summary>
+    </member>
+    <member 

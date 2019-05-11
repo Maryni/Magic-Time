@@ -1,0 +1,290 @@
+re sorry for any inconvenience.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Exit_Warning</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Czy na pewno chcesz opuscic gre? Wszelkie niezapisane dane zostana utracone.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Are you sure you wish to quit? Any unsaved data will be lost.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Are you sure you wish to quit? Any unsaved data will be lost.</Data>
+          </Cell>
+        </Row>
+      </Table>
+    </Worksheet>
+    <Worksheet ss:Name="Vlad">
+      <Table>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">ID</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">pol</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Comments</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Localized Text</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_intro0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Witaj, mój bracie czlowieku! Widze, ze starasz sie rozkoszowac ciezkim zywotem emeryta.[P=1] Cóz...[P=1] Przychodze ze wspaniala wiadomoscia! Mam dla ciebie zadanie.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad is overly enthusiastic</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Greetings fellow humans! I see you're attempting to enjoy a tiresome life of retirement.[P=1] Well...[P=1] good news! I have a task for you.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_intro1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Na pewno slyszales o niewielkim rybackim miasteczku na pólnocny wschód stad. Nosi wdzieczna nazwe Outsmouth. Nie slyszales? W takim razie wkrótce uslyszysz o nim wszystko, co bedziesz chcial wiedziec... I nie tylko!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Still enthusiastic</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I'm sure you've heard of the little fishing town of Outsmouth, just northeast of here? No? Well soon enough you shall know all you could possibly want to know about it -- and more!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_intro2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ludzie donosza ostatnio o podejrzanych zaginieciach, o dziwnych postaciach snujacych sie w okolicach raf oraz o wzroscie statystycznej ekscentrycznosci wsród mieszkanców miasteczka.[P=1] Jakby tego bylo malo, drastycznie zmniejszyla sie ilosc ryb dostarczanych do pobliskich wiosek.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">More mysterious as if he knows something</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Lately, people have been reporting strange dissapearances, bizarre figures moving about the reefs off the coast, and a worrying statistical increase in the town's eccentricity.[P=1] And if that wasn't bad enough, the fish they usually supply to nearby villages has declined alarmingly. </Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_intro3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Sugeruje... [P=1]A przez „sugeruje” mam na mysli „blagam”...[P=1] A przez „blagam” mam na mysli...[P=1] Juz ty wiesz, co mam na mysli... Ruszaj czym predzej do Outsmouth i zbadaj sprawe. Na ostatniej misji pod moja komenda poszlo ci calkiem niezle, wiec na pewno i teraz jakos sobie poradzisz.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Goes from mysterious to commanding and very demanding -- in the way only Vlad can be.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I suggest... [P=1]And by suggest I mean implore...[P=2] And by implore I mean...[P=2] Well you know what I mean. Make haste to Outsmouth and investigate what is going on. I did manage to command you quite well on your last quest, so I'm sure you'll manage this one just fine.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_intro4</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Co to za bzdury? Ze niby robi sie pózno?[P=0.5] Wyruszyc jutro?![P=1] Nie...[P=0.5] Nie ma szans. Musisz ruszac natychmiast![P=1] Bleee!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad becomes irritated with the wizards' laziness.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">What do you mean it's already getting late? [P=0.5]Leave tomorrow?![P=1] No...[P=0.5] That won't do. I need you to go now![P=2] Bleigh!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_intro5</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ach...[P=1] Bylbym zapomnial - pamietaj o naszej malej tajemnicy. Jest to informacja tak tajna, ze caly swiat móglby lec w gruzach, gdyby ktos sie o tym dowiedzial...[P=1] Wiesz, o czym mówie.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad refers to the fact that the wizards know he's actually a vampire, unlike the rest of the world.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Oh...[P=2] Before I forget -- remember our little secret, the one that's so secret that the whole world might cease to be if it is spoken of...[P=1] You know the secret I mean.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_intro6</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Byloby naprawde nieprzyjemnie, gdybys sie wygadal...[P=1] Bardzo nieprzyjemnie...[P=1] Och, alez by bylo nieprzyjemnie...[P=1] Gdybys sie wygadal...[P=1] Naprawde bardzo, bardzo nieprzyjemnie...[P=1] ...[P=1] ...[P=1]Dla ciebie...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">threatening tone</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">It would be a terrible pity if you didn't keep it to yourself, you know...[P=2] A great pity indeed...[P=2.5] Oh what a pity it would be...[P=2] If you didn't keep it to yourself...[P=2] It would be such a pity...[P=1.3]...[P=1.3]...[P=1.3] For you...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_log0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Witaj ponownie,[P=0.5] bracie czlowieku!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Hello again[P=0.5] -- fellow humans!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Hello again[P=0.5] -- fellow humans!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_log1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wyglada na to, ze kolejne wielkie drzewo przewrócilo sie w poprzek twej drogi. Nie masz wyjscia - musisz pójsc tym skrótem.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">It looks like another giant tree has fallen in your path. You have no choice but to take this shortcut instead. </Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">It looks like another giant tree has fallen in your path. You have no choice but to take this shortcut instead. </Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_log2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Przy okazji mozesz zajac sie pewnym „niewielkim”... [P=1] „problemem”, który napotkasz na drodze.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">And along the way, you might as well take care of the &quot;minor&quot;... [P=1] &quot;problem&quot; up ahead.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">And along the way, you might as well take care of the &quot;minor&quot;... [P=1] &quot;problem&quot; up ahead.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TWC_vlad_log3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Powodzenia!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Good &quot;luck&quot;!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Good &quot;luck&quot;!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_vlad_outsmouth1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Wioska jest opuszczona, wiec na pewno mozesz sie bezpiecznie rozejrzec i sprawdzic, co sie w niej stalo.[p=0.5] Ja tu poczekam i dopilnuje, by nikt tedy nie przeszedl.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Still careles, and finishes off with a lie (as vlad disappears right after you leave)</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Since the village is empty, I'm sure it's safe to look around and see what's gone wrong.[p=0.5] I'll keep lookout from here, and make sure nobody gets past me.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_vlad_outsmouth2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A wiec... [P=1]Ruuuuuszaj!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Standard positive, encouraging &quot;Go!&quot;</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">So then... [P=1]Goooooo!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_vlad_outsmouth3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">No dalej. Co mogloby pójsc nie tak?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Reassurance to the previous statement</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Go on then, what could possibly go wrong?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_intro0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ludzie![P=1]\nWyglada na to, ze „przypadkiem” obudziliscie R'lyeh, zaginione miasto trupów.[P=0.5] Musicie natychmiast cos na tym zarobic.[P=0.75] To znaczy... Cos z tym zrobic.[P=1] Pan tego miejsca nie jest zbyt przychylnie nastawiony do naszego swiata...[P=0.5] Ani zadnego innego swiata, prawde mówiac...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad confuses left with right. There is a language-specific joke here, &quot;set this right&quot; meaning fix things so everything is good. He accidentally says &quot;set things left&quot;, sort-of echoing the joke from the game's title.\nAlso, he is angry and disappointed.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Humans![P=2]\nIt seems that you have &quot;accidently&quot; awoken the lost corpse-city of R'lyeh.[P=3] You must promptly set this left-[P=2] … I mean right.[P=1.5] The lord of this place is none too fond of our world,[P=1] or any world for that matter...</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_intro1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Co wiecej, móglby z latwoscia zniszczyc caly Midgard.[P=0.5] Zgaduje,[P=0.25] i oczywiscie mam racje, [P=0.25] ze aby wydostac sie z tego koszmaru, musisz:\n1. Wydluzyc most\n2. Otworzyc te wrota\n3. Pozbyc sie tych macek</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Angry and disappointed still. And also firm when he lists the problems that the wizards face</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Also, that same lord would easily be able to destroy all of Midgård.[P=2] My guess,[P=2] which is correct, [P=2]is that you will find a way to stop this lurking horror by: [P=1]\n1. Extending that bridge [P=1]\n2. Opening that door [P=1]\n3. Removing those tentacles.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_intro2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Mam dzis cos bardzo waznego do zalatwienia,[P=1] tak waznego, ze nie pojalby tego zaden smiertel...[P=1] Znaczy sie...[P=1]... Zegnaj!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Lies to avoid work.\nHe's reluctant to say that he has things to do that mortals can't understand, because he's a vampire (not a mortal) himself, a fact that he's in the habit of denying. He catches himself accidentally admitting it, and then changes the subject.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Now, I have some rather important things to do today[P=2], so important that they are far beyond the understanding of mere morta-[P=3] ...I mean... [P=1.5]Goodbye!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TR_Vlad_lair0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Tutaj!\nDzieki tej kuli na pewno pozbedziesz sie macek! W koncu jestesmy w lezu potwora!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Vlad is on the other side of a huge room, yelling.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Over here![P=1.5] \nThis globe will probably remove the tentacles. This is, after all, a monster's lair!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Da

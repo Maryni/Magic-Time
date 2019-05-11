@@ -1,0 +1,136 @@
+     this.rectTransform.pivot = m_TextComponent.rectTransform.pivot;
+        }
+
+
+        /// <summary>
+        /// Override to Cull function of MaskableGraphic to prevent Culling.
+        /// </summary>
+        /// <param name="clipRect"></param>
+        /// <param name="validRect"></param>
+        public override void Cull(Rect clipRect, bool validRect)
+        {
+            if (m_TextComponent.ignoreRectMaskCulling) return;
+
+            base.Cull(clipRect, validRect);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void UpdateGeometry()
+        {
+            // Need to override to prevent Unity from changing the geometry of the object.
+            Debug.Log("UpdateGeometry()");
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="update"></param>
+        public override void Rebuild(CanvasUpdate update)
+        {
+            if (update == CanvasUpdate.PreRender)
+            {
+                if (!m_materialDirty) return;
+
+                UpdateMaterial();
+                m_materialDirty = false;
+            }
+        }
+
+
+        /// <summary>
+        /// Function to update the material from the parent text object.
+        /// </summary>
+        public void RefreshMaterial()
+        {
+            UpdateMaterial();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void UpdateMaterial()
+        {
+            //Debug.Log("*** STO-UI - UpdateMaterial() *** FRAME (" + Time.frameCount + ")");
+
+            //if (!this.IsActive())
+            //    return;
+
+            if (m_canvasRenderer == null) m_canvasRenderer = this.canvasRenderer;
+
+            m_canvasRenderer.materialCount = 1;
+            m_canvasRenderer.SetMaterial(materialForRendering, 0);
+            m_canvasRenderer.SetTexture(mainTexture);
+
+            #if UNITY_EDITOR
+            if (m_sharedMaterial != null && gameObject.name != "TMP SubMeshUI [" + m_sharedMaterial.name + "]")
+                gameObject.name = "TMP SubMeshUI [" + m_sharedMaterial.name + "]";
+            #endif
+        }
+
+
+        // IClippable implementation
+        /// <summary>
+        /// Method called when the state of a parent changes.
+        /// </summary>
+        public override void RecalculateClipping()
+        {
+            //Debug.Log("*** RecalculateClipping() ***");
+            base.RecalculateClipping();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void RecalculateMasking()
+        {
+            //Debug.Log("RecalculateMasking()");
+
+            this.m_ShouldRecalculateStencil = true;
+            SetMaterialDirty();
+        }
+
+
+
+        /// <summary>
+        /// Method which returns an instance of the shared material
+        /// </summary>
+        /// <returns></returns>
+        Material GetMaterial()
+        {
+            // Make sure we have a valid reference to the renderer.
+            //if (m_renderer == null) m_renderer = GetComponent<Renderer>();
+
+            //if (m_material == null || m_isNewSharedMaterial)
+            //{
+            //    m_renderer.material = m_sharedMaterial;
+            //    m_material = m_renderer.material;
+            //    m_sharedMaterial = m_material;
+            //    m_padding = ShaderUtilities.GetPadding(m_sharedMaterial, m_TextMeshPro.extraPadding, false);
+            //    m_isNewSharedMaterial = false;
+            //}
+
+            return m_sharedMaterial;
+        }
+
+
+        // Function called internally when a new material is assigned via the fontMaterial property.
+        Material GetMaterial(Material mat)
+        {
+            // Check in case Object is disabled. If so, we don't have a valid reference to the Renderer.
+            // This can occur when the Duplicate Material Context menu is used on an inactive object.
+            //if (m_renderer == null)
+            //    m_renderer = GetComponent<Renderer>();
+
+            // Create Instance Material only if the new material is not the same instance previously used.
+            if (m_material == null || m_material.GetInstanceID() != mat.GetInstanceID())
+                m_material = CreateMaterialInstance(mat);
+
+            m_sharedMaterial = m_material;
+
+            // Compute and Set new paddi

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="providers" type="DbMetal.Configuration.ProvidersSection, sqlmetal" />
+  </configSections>
+  <connectionStrings>
+    <add name="DbMetal.Properties.Settings.TempOneConnectionString"
+      connectionString="Data Source=.\sqlexpress;Initial Catalog=TempOne;Integrated Security=True"
+      providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <appSettings>
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <providers>
+    <providers>
+      <provider name="MySQL" dbLinqSchemaLoader="DbLinq.MySql.MySqlSchemaLoader, System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" databaseConnection="ByteFX.Data.MySqlClient.MySqlConnection, ByteFX.Data" />
+      <provider name="Oracle" dbLinqSchemaLoader="DbLinq.Oracle.OracleSchemaLoader, System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" databaseConnection="System.Data.OracleClient.OracleConnection, System.Data.OracleClient" />
+      <provider name="OracleODP" dbLinqSchemaLoader="DbLinq.Oracle.OracleSchemaLoader, System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" databaseConnection="Oracle.DataAccess.Client.OracleConnection, Oracle.DataAccess" />
+      <provider name="PostgreSQL" dbLinqSchemaLoader="DbLinq.PostgreSql.PgsqlSchemaLoader, System.Data.Linq, Version=3.5.0.0

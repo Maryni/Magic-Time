@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: d -->
+  <LetterDay>d</LetterDay>
+  <!-- EN: h -->
+  <LetterHour>u</LetterHour>
+  <!-- EN: m -->
+  <LetterMinute>m</LetterMinute>
+  <!-- EN: s -->
+  <LetterSecond>s</LetterSecond>
+  
+  <!-- EN: days -->
+  <DaysLower>dagen</DaysLower>
+  <!-- EN: seconds -->
+  <SecondsLower>seconden</SecondsLower>
+
+  <!-- EN: spring -->
+  <SeasonSpring>Lente</SeasonSpring>
+  <!-- EN: summer -->
+  <SeasonSummer>Zomer</SeasonSummer>
+  <!-- EN: fall -->
+  <SeasonFall>Herfst</SeasonFall>
+  <!-- EN: winter -->
+  <SeasonWinter>Winter</SeasonWinter>
+  <!-- EN: permanent summer -->
+  <SeasonPermanentSummer>permanente zomer</SeasonPermanentSu

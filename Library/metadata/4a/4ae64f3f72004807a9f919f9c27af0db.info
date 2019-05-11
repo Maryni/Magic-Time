@@ -1,0 +1,25 @@
+;
+
+            return packageItem;
+        }
+
+        private PackageGroup GetOrCreateGroup(string groupName)
+        {
+            foreach (var g in Groups)
+            {
+                if (g.name == groupName)
+                    return g;
+            }
+
+            var group = new PackageGroup(groupName);
+            var latestGroup = Groups.LastOrDefault();
+            Groups.Add(group);
+            List.Add(group);
+
+            group.previousGroup = null;
+            if (latestGroup != null)
+            {
+                latestGroup.nextGroup = group;
+                group.previousGroup = latestGroup;
+                group.nextGroup = null;
+          

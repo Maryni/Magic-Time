@@ -1,0 +1,367 @@
+0 530701813 65 [INFO Client 6564] Building Uncached Shader dbcada715702f529e1d175307fbc12cede1127ccc0ffaab34df1eeee78740031 Resampler_OutDepth_Upsample_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701829 65 [INFO Client 6564] Building Uncached Shader 0312b6b27f1fd9c876167e04aa92a8ba02dd1ca5f2c4b6e279f09dfc0581eb36 Resampler_OutColor_Upsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701844 65 [INFO Client 6564] Building Uncached Shader 2c9f830cf9573bcad567a75dd48d4def09178fb66ec145ee91c224abe9c0a6c2 Resampler_OutDepth_Upsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701860 65 [INFO Client 6564] Building Uncached Shader 951d2878fcb3465adc2b21cab4849f2893dd67279f3184d5ecab12b26b801d5b Resampler_OutColor_Upsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701876 65 [INFO Client 6564] Building Uncached Shader bf618d29fb3df4b0efc66c35cc37198e7db843ff97f4c81442c9cf613274851f Resampler_OutDepth_Upsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701876 65 [INFO Client 6564] Building Uncached Shader 330e8393ac5c1a156fb5bbb2b6faccb1028cdc989ab196da205313a60d392cc9 Resampler_OutColor_Upsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701907 65 [INFO Client 6564] Building Uncached Shader f3c9b7d7893b6fb43020b2b0fcabb48ddd7f0284f17b1b01767ce3484ad11952 Resampler_OutDepth_Upsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701938 65 [INFO Client 6564] Building Uncached Shader b792e30120ecb57a9f777ba36dee8886bfb07d9cc2dd2fe5c609d3cca1848f97 Resampler_OutColor_Downsample_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530701985 65 [INFO Client 6564] Building Uncached Shader 6885d2eac04126000d8687d6308b67c376861f32fa572e5da9dd62bf9aa066f4 Resampler_OutDepth_Downsample_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702156 65 [INFO Client 6564] Building Uncached Shader cf7c5c6875fe677567d00ae192cc3de50d0cd2c89cac0dbc4719833411650dd6 Resampler_OutColor_Downsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702203 65 [INFO Client 6564] Building Uncached Shader 20dc4694605ae0c37b2581ac501119fb2a79ffad1d8b947db160c9f73dd34588 Resampler_OutDepth_Downsample_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702234 65 [INFO Client 6564] Building Uncached Shader 26dc7464b5193879ba6fe864976e97f32f69387c98e0dea4bba65b0c82d946ad Resampler_OutColor_Downsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702234 65 [INFO Client 6564] Building Uncached Shader 962bb4f2765b09635e3ea2c7c38fc8503d74a31f0078eca3e1412b5d92c0f73f Resampler_OutDepth_Downsample_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702234 65 [INFO Client 6564] Building Uncached Shader 6d56f15df6fd96fb8ecd544ee55a27c3f4bec1b932db2616b491131e58411afb Resampler_OutColor_Downsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702312 65 [INFO Client 6564] Building Uncached Shader 265f2a297238e0e0c54cb27ceb752aeb36024090d4924331a6b6fc6a4372067d Resampler_OutDepth_Downsample_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702359 65 [INFO Client 6564] Building Uncached Shader f8c5303a6850c95fb983fce1178660976a2b436208a6c4eb1741256f0a52c375 Resampler_OutColor_Copy_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702390 65 [INFO Client 6564] Building Uncached Shader 78028077bcfb7c9867813c40cf121e12cd6dbfcf453f86c1498d18f63ca6fa6f Resampler_OutDepth_Copy_Avg_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702422 65 [INFO Client 6564] Building Uncached Shader 024204e0e0ee16e3e65f7076672087fa4c147e094eca3607b21aec0f34fdd367 Resampler_OutColor_Copy_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702437 65 [INFO Client 6564] Building Uncached Shader 4128c5e5dd836370b87cbefa1b364ab8ca47c54a6c9c6548897b96eab6fc8186 Resampler_OutDepth_Copy_Max_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702453 65 [INFO Client 6564] Building Uncached Shader ab1f7970787bef1dcd28227c4d727afc0af9fe5f5b2b028aeac1a64118286a48 Resampler_OutColor_Copy_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702468 65 [INFO Client 6564] Building Uncached Shader ee35f0ee815d7940747fca9d8a497cb1ae4bfae4682ce85ce18baad8e78b189d Resampler_OutDepth_Copy_Nearest_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:20 530702468 65 [INFO Client 6564] Building Uncached Shader 3b5c4801db86809c26a4f1fb828119ac78f7f8c2a7ccaee02e2dc09c97ceaf56 Resampler_OutColor_Copy_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:21 530702546 65 [INFO Client 6564] Building Uncached Shader a3bd71cd54955eb6eefe258b89b7e4b55dedce9aedbfa3aa3cf47943ee031ef6 Resampler_OutDepth_Copy_Mixed_Ms_16x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=16
+2018/12/19 19:44:39 530720518 ac [INFO Client 6564] Async connecting to mos01.login.pathofexile.com:20481
+2018/12/19 19:44:39 530720611 d3 [INFO Client 6564] Connected to mos01.login.pathofexile.com in 0ms.
+2018/12/19 19:44:49 530731110 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 19:44:50 530731609 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 19:44:50 530731609 dc [INFO Client 6564] Connecting to instance server at 185.125.231.40:6112
+2018/12/19 19:44:50 530731656 164 [DEBUG Client 6564] Connect time to instance server was 32ms
+2018/12/19 19:45:01 530742763 a24 [INFO Client 6564] : You have entered Lioneye's Watch.
+2018/12/19 19:45:19 530761312 a24 [INFO Client 6564] #YaniShadow: 9? i have a hard time running 3 lol
+2018/12/19 19:45:19 530761312 a24 [INFO Client 6564] #DanglyMangly: can you reserve that much mana?
+2018/12/19 19:45:19 530761312 a24 [INFO Client 6564] : You have joined trade chat channel 7 Русский.
+2018/12/19 19:45:19 530761312 a24 [INFO Client 6564] : You have joined global chat channel 1 Русский.
+2018/12/19 19:45:19 530761312 a24 [INFO Client 6564] #Rubyssan: Ебаать такое говно выпало
+2018/12/19 19:45:19 530761312 a24 [INFO Client 6564] #ПредательАлешка:  что делать если гвард древнего не дает лут и не ищезает с аталаса (остается на одной карте)
+2018/12/19 19:45:19 530761312 a24 [INFO Client 6564] #Rubyssan: Лол
+2018/12/19 19:45:24 530766054 a24 [INFO Client 6564] $_Spektr_: продам__________
+2018/12/19 19:45:32 530773636 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 19:45:32 530774026 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 19:45:32 530774026 dc [INFO Client 6564] Connecting to instance server at 185.225.209.57:6112
+2018/12/19 19:45:32 530774073 164 [DEBUG Client 6564] Connect time to instance server was 31ms
+2018/12/19 19:45:36 530778363 a24 [INFO Client 6564] : You have entered Luxurious Hideout.
+2018/12/19 19:46:07 530809407 a24 [INFO Client 6564] : Trade cancelled.
+2018/12/19 19:46:22 530824290 a24 [INFO Client 6564] : Trade cancelled.
+2018/12/19 19:46:25 530826895 a24 [INFO Client 6564] @To KBgrandma: Hi, I would like to buy your Shavronne's Wrappings Occultist's Vestment listed for 90 chaos in Betrayal (stash tab "Shop"; position: left 2, top 3)
+2018/12/19 19:46:44 530845786 a24 [INFO Client 6564] : Trade cancelled.
+2018/12/19 19:47:03 530865302 a24 [INFO Client 6564] : Trade cancelled.
+2018/12/19 19:47:18 530879545 a24 [INFO Client 6564] : Trade accepted.
+2018/12/19 19:47:22 530884100 a24 [INFO Client 6564] @To KBgrandma: sold?
+2018/12/19 19:47:42 530903725 a24 [INFO Client 6564] @To KBgrandma: or after map?
+2018/12/19 19:48:07 530928919 a24 [INFO Client 6564] $ASHOTCAMSHOT: нужны 6е- 7е мапы
+2018/12/19 19:48:08 530929746 a24 [INFO Client 6564] $_Spektr_: продам__________
+2018/12/19 19:49:15 530996811 a24 [INFO Client 6564] : NikaArcLight has left the area.
+2018/12/19 19:50:23 531064874 a24 [INFO Client 6564] %NikaArcLight: _
+2018/12/19 19:51:15 531117072 a24 [INFO Client 6564] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 2х
+2018/12/19 19:51:57 531158693 a24 [INFO Client 6564] @To GidroMolten: 2 rjkmwf
+2018/12/19 19:51:59 531160893 a24 [INFO Client 6564] @To GidroMolten: кольца
+2018/12/19 19:52:02 531163607 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 19:52:02 531163607 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 19:52:02 531163607 dc [INFO Client 6564] Connecting to instance server at 109.95.212.184:6112
+2018/12/19 19:52:02 531163623 164 [DEBUG Client 6564] Connect time to instance server was 16ms
+2018/12/19 19:52:04 531165885 a24 [INFO Client 6564] : You have entered Stately Hideout.
+2018/12/19 19:52:07 531168568 a24 [INFO Client 6564] $ВинченцоСанторини: ищу сульфит предлы в пм
+2018/12/19 19:52:17 531179441 a24 [INFO Client 6564] : Trade accepted.
+2018/12/19 19:52:20 531182203 a24 [INFO Client 6564] @To GidroMolten: ен
+2018/12/19 19:52:23 531184574 a24 [INFO Client 6564] @To GidroMolten: ty gl
+2018/12/19 19:52:34 531195822 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 19:52:34 531195822 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 19:52:34 531195822 dc [INFO Client 6564] Connecting to instance server at 109.95.212.21:6112
+2018/12/19 19:52:34 531195853 164 [DEBUG Client 6564] Connect time to instance server was 16ms
+2018/12/19 19:52:35 531197070 a24 [INFO Client 6564] : You have entered Stately Hideout.
+2018/12/19 19:52:42 531204152 a24 [INFO Client 6564] : You have been ignored by the target player.
+2018/12/19 19:53:08 531230298 a24 [INFO Client 6564] @To KBgrandma: Hi, I would like to buy your Shavronne's Wrappings Occultist's Vestment listed for 90 chaos in Betrayal (stash tab "Shop"; position: left 2, top 3)
+2018/12/19 19:53:25 531247395 a24 [INFO Client 6564] @To KBgrandma: sold?
+2018/12/19 19:53:54 531276458 a24 [INFO Client 6564] @To KBgrandma:  -_- wtf?
+2018/12/19 19:54:46 531327861 a24 [INFO Client 6564] $uberlabfarmerdelve: куплю сферы златокузнеца 11штук к 1 хаосу пм
+2018/12/19 19:54:55 531337283 a24 [INFO Client 6564] $_Spektr_: продам_=_=_=_=_=_=_=_=_=_
+2018/12/19 19:55:38 531380184 a24 [INFO Client 6564] $<†DooM†> BlooD_Nik: Покупаю уник. кольца по 2 хаоса.
+2018/12/19 19:56:57 531459463 a24 [INFO Client 6564] @To Vermor_Toxin: Hi I would to buy Shavronne's Wrapping for 59 chaos
+2018/12/19 19:57:16 531478449 a24 [INFO Client 6564] @To Vermor_Toxin: pls man
+2018/12/19 19:57:21 531482848 a24 [INFO Client 6564] : This operation requires the account to be logged in.
+2018/12/19 19:57:34 531495577 a24 [INFO Client 6564] @From Vermorek:  its sold sory poe trade lag
+2018/12/19 19:57:38 531499618 a24 [INFO Client 6564] @To Vermor_Toxin: kk
+2018/12/19 19:58:15 531537370 a24 [INFO Client 6564] $ВинченцоСанторини: ищу сульфит предлы в пм
+2018/12/19 19:58:34 531555778 a24 [INFO Client 6564] #Ариэль_: Cпасиба
+2018/12/19 19:58:35 531556901 a24 [INFO Client 6564] #MARAZZMO: 90
+2018/12/19 19:58:42 531564405 a24 [INFO Client 6564] #Bogdanchikoff: АЛО ЗА ЧТО У МЕНЯ КИТАВИУС 30 РЕЗИСТАВ ЗАБРАЛ!!!!
+2018/12/19 19:58:45 531567213 a24 [INFO Client 6564] #Milly_one: сколько там сейчас выха? 100?
+2018/12/19 19:58:48 531569818 a24 [INFO Client 6564] #babaKalla: ищу право центр!!!
+2018/12/19 19:58:48 531570115 a24 [INFO Client 6564] #Roryes: _ парни,на пиво хватит?
+2018/12/19 19:58:53 531574888 a24 [INFO Client 6564] #HeraldOfJustice: 120 выха
+2018/12/19 19:58:56 531577728 a24 [INFO Client 6564] #MARAZZMO: 90
+2018/12/19 19:58:57 531579163 a24 [INFO Client 6564] : PredateliSosat has joined the area.
+2018/12/19 19:58:57 531579397 a24 [INFO Client 6564] #<[SF]> kyau_: АХАААХАХААХАА
+2018/12/19 19:58:59 531581269 a24 [INFO Client 6564] #OmaeWaMops: ты плохо себя вёл в это году
+2018/12/19 19:59:00 531582158 a24 [INFO Client 6564] #<[SF]> kyau_: _
+2018/12/19 19:59:02 531583734 a24 [INFO Client 6564] #<[SF]> kyau_: ЧЕКАЙТЕ
+2018/12/19 19:59:03 531585450 a24 [INFO Client 6564] #<§‡‡‡‡§> SlowWave: 119
+2018/12/19 19:59:05 531586932 a24 [INFO Client 6564] #Ариэль_: 124 выха седне 2 продал
+2018/12/19 19:59:05 531586932 a24 [INFO Client 6564] #попка_дурак: \
+2018/12/19 19:59:08 531590067 a24 [INFO Client 6564] #<[SF]> kyau_: НАЙС ДРОП С СИНДИКАТА
+2018/12/19 19:59:10 531591908 a24 [INFO Client 6564] #<RÁID€R> Сексуальный_Атлант: к кому можно прицепится парозовом на прокачку?
+2018/12/19 19:59:11 531592501 a24 [INFO Client 6564] @From PredateliSosat: Спасибо
+2018/12/19 19:59:11 531592766 a24 [INFO Client 6564] #<[SF]> kyau_: С УБЕЖКИ
+2018/12/19 19:59:14 531596026 a24 [INFO Client 6564] @From PredateliSosat: В чужой локе застрял )
+2018/12/19 19:59:15 531596822 a24 [INFO Client 6564] #<[SF]> kyau_: __
+2018/12/19 19:59:17 531598694 a24 [INFO Client 6564] @To PredateliSosat: я просто спрашивал, я не продаю выхи
+2018/12/19 19:59:18 531599521 a24 [INFO Client 6564] #Гришанчик: пацаны я знаю где можно рыбачить нормально
+2018/12/19 19:59:21 531602610 a24 [INFO Client 6564] : PredateliSosat has left the area.
+2018/12/19 19:59:22 531604170 a24 [INFO Client 6564] @To PredateliSosat: а, оки)
+2018/12/19 19:59:22 531604404 a24 [INFO Client 6564] #Гришанчик: но вам не скажу
+2018/12/19 19:59:28 531609505 a24 [INFO Client 6564] @From PredateliSosat: Я не покупать )
+2018/12/19 19:59:36 531617851 a24 [INFO Client 6564] #Ариэль_: Гриши иди знаеш куда
+2018/12/19 19:59:48 531629926 a24 [INFO Client 6564] #<SIMIX> Перальта: radio check
+2018/12/19 20:00:53 531695368 a24 [INFO Client 6564] $ВинченцоСанторини: ищу сульфит предлы в пм 1 куча или сундук 1 хаос
+2018/12/19 20:01:30 531732309 a24 [INFO Client 6564] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 2х
+2018/12/19 20:02:59 531821011 a24 [INFO Client 6564] $_rich_witch_bitch_: _ поменяю на карту трясины(bog)
+2018/12/19 20:05:40 531982004 a24 [INFO Client 6564] $ВинченцоСанторини: куплю сульфит 1 куча или сундук 1 хаос
+2018/12/19 20:06:39 532040895 a24 [INFO Client 6564] @To bigHOLLOWknight: Would u sell me Shavronne's Wrapping for 90 chaos?
+2018/12/19 20:06:44 532045777 a24 [INFO Client 6564] @To bigHOLLOWknight: pleeease
+2018/12/19 20:06:47 532048710 a24 [INFO Client 6564] $_Spektr_: продам__________
+2018/12/19 20:07:04 532065714 a24 [INFO Client 6564] @To bigHOLLOWknight: I didn't have so much currency
+2018/12/19 20:07:44 532105651 a24 [INFO Client 6564] @From bigHOLLOWknight: sorry im broke too i need the monie!
+2018/12/19 20:07:47 532109426 a24 [INFO Client 6564] $DefNemesis: куплю карты 11-15 тира в лс
+2018/12/19 20:09:34 532216224 a24 [INFO Client 6564] @To bigHOLLOWknight: u're price is little high for other
+2018/12/19 20:10:08 532250419 a24 [INFO Client 6564] @To bigHOLLOWknight: and I poprose u 90 chaos for him
+2018/12/19 20:10:25 532267408 a24 [INFO Client 6564] @To bigHOLLOWknight: not a 1 exalt, because I didn't have him :)
+2018/12/19 20:10:54 532296362 a24 [INFO Client 6564] @To BlackHoleForExalts: Hi
+2018/12/19 20:10:58 532299825 a24 [INFO Client 6564] @To BlackHoleForExalts: I would to buy
+2018/12/19 20:11:07 532309466 a24 [INFO Client 6564] @To BlackHoleForExalts: Shavronne's Wrapping for 90 chaos
+2018/12/19 20:11:09 532311478 a24 [INFO Client 6564] @To BlackHoleForExalts: pls man
+2018/12/19 20:11:17 532318779 a24 [INFO Client 6564] @From BlackHoleForExalts: sold
+2018/12/19 20:11:23 532324567 a24 [INFO Client 6564] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 2х
+2018/12/19 20:11:24 532325581 a24 [INFO Client 6564] @To BlackHoleForExalts: fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+2018/12/19 20:11:39 532341368 a24 [INFO Client 6564] @To BlackHoleForExalts: *broke mu fuck**g wall*
+2018/12/19 20:11:46 532347873 a24 [INFO Client 6564] $Кикдат: _
+2018/12/19 20:12:27 532389058 a24 [INFO Client 6564] $ВинченцоСанторини: куплю сульфит 1 куча или сундук 1 хаос
+2018/12/19 20:12:34 532396374 a24 [INFO Client 6564] @From bigHOLLOWknight: my price............is nice!
+2018/12/19 20:12:58 532420383 a24 [INFO Client 6564] @To bigHOLLOWknight: no, his a little big
+2018/12/19 20:13:03 532424938 a24 [INFO Client 6564] @To bigHOLLOWknight: :(
+2018/12/19 20:13:11 532433315 a24 [INFO Client 6564] @From bigHOLLOWknight: there is nothing else listed for less than 1 ex, this is the lowest price you will find
+2018/12/19 20:13:20 532441880 a24 [INFO Client 6564] @To bigHOLLOWknight: maybe pls ?)
+2018/12/19 20:13:34 532455576 a24 [INFO Client 6564] @To bigHOLLOWknight: his really prive is not so high, u now )
+2018/12/19 20:13:38 532459773 a24 [INFO Client 6564] @To bigHOLLOWknight: *price
+2018/12/19 20:13:43 532464546 a24 [INFO Client 6564] @From bigHOLLOWknight: i said good day sir.
+2018/12/19 20:13:48 532469866 a24 [INFO Client 6564] @To bigHOLLOWknight: ohh
+2018/12/19 20:13:54 532475576 a24 [INFO Client 6564] $хаосбиба: куплю личинку сущности древнего
+2018/12/19 20:13:57 532479367 a24 [INFO Client 6564] @To bigHOLLOWknight: good day sir)
+2018/12/19 20:14:07 532489085 a24 [INFO Client 6564] @To bigHOLLOWknight: gl
+2018/12/19 20:15:07 532549286 a24 [INFO Client 6564] @To Blue_KeyKey: Hi man, can u sold me Shavronne's Wrapping for 90 chaos, please?
+2018/12/19 20:15:46 532587990 a24 [INFO Client 6564] $хаосбиба: куплю личинку сущности древнего
+2018/12/19 20:15:46 532588099 a24 [INFO Client 6564] @To Blue_KeyKey: pls, I didn't have exalt :(
+2018/12/19 20:17:02 532664446 a24 [INFO Client 6564] $DoZaaa: Куплю части доспехов
+2018/12/19 20:19:29 532810728 a24 [INFO Client 6564] @To HamBoyAdvance: Hi man
+2018/12/19 20:19:34 532815767 a24 [INFO Client 6564] @To HamBoyAdvance: Sell me pls
+2018/12/19 20:19:45 532826562 a24 [INFO Client 6564] @To HamBoyAdvance: Shavronne's Wrapping for 90 chaos
+2018/12/19 20:19:51 532832584 a24 [INFO Client 6564] $DoZaaa:  Куплю части доспехов
+2018/12/19 20:19:56 532837545 a24 [INFO Client 6564] @To HamBoyAdvance: please, man :)
+2018/12/19 20:20:10 532852193 a24 [INFO Client 6564] $DefNemesis: куплю резцы 20к6 хаосам много в лс
+2018/12/19 20:20:18 532859572 a24 [INFO Client 6564] $uberlabfarmerdelve: куплю сферы златокузнеца 11 к 1хаосу
+2018/12/19 20:21:51 532952986 a24 [INFO Client 6564] $DoZaaa: Куплю части доспехов
+2018/12/19 20:24:29 533111061 a24 [INFO Client 6564] @To NeiNCorclesOfHell: Hi
+2018/12/19 20:24:29 533111373 a24 [INFO Client 6564] : The specified character does not exist.
+2018/12/19 20:24:43 533125101 a24 [INFO Client 6564] @To NeiNCorclesOfHell: I would to buy Shavrpnne's Wrapping
+2018/12/19 20:24:44 533125491 a24 [INFO Client 6564] : The specified character does not exist.
+2018/12/19 20:24:54 533136022 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping
+2018/12/19 20:24:55 533136599 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:24:56 533137862 a24 [INFO Client 6564] $DefNemesis: куплю резцы 20к6 хаосам много в лс
+2018/12/19 20:25:09 533150795 a24 [INFO Client 6564] $<†DooM†> BlooD_Nik: Покупаю уник. кольца по 2 хаоса.
+2018/12/19 20:25:18 533159843 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:18 533160420 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:23 533165475 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:24 533166192 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:31 533172744 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:31 533173462 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:39 533180622 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:39 533181293 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:42 533183898 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:43 533184741 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:46 533187814 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:46 533188297 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:48 533189889 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:49 533190575 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:53 533194756 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:53 533195302 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:25:56 533197689 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:25:56 533198360 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:01 533203289 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavrpnne's Wrapping for 75 chaos
+2018/12/19 20:26:02 533204132 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:10 533212306 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:11 533212805 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:15 533216580 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:15 533217064 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:18 533220262 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:19 533221105 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:25 533227095 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:26 533227766 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:30 533232352 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:31 533233054 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:34 533236143 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:35 533236985 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:38 533240293 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:39 533241119 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:26:40 533242430 8c [INFO Client 6564] Enumerated adapter: NVIDIA GeForce GT 1030
+2018/12/19 20:26:41 533242648 24d [INFO Client 6564] Enumerated device for adapter: NVIDIA GeForce GT 1030. Selected feature level: 45056. Max feature level: 45056
+2018/12/19 20:26:41 533242648 144 [INFO Client 6564] Enumerated output for adapter NVIDIA GeForce GT 1030 of \\.\DISPLAY1
+2018/12/19 20:26:51 533252492 22b [DEBUG Client 6564] CreateSwapChain: SetFullScreenState 1
+2018/12/19 20:26:52 533254177 8c [INFO Client 6564] Enumerated adapter: NVIDIA GeForce GT 1030
+2018/12/19 20:26:52 533254208 24d [INFO Client 6564] Enumerated device for adapter: NVIDIA GeForce GT 1030. Selected feature level: 45056. Max feature level: 45056
+2018/12/19 20:26:52 533254224 144 [INFO Client 6564] Enumerated output for adapter NVIDIA GeForce GT 1030 of \\.\DISPLAY1
+2018/12/19 20:26:54 533255581 22b [DEBUG Client 6564] CreateSwapChain: SetFullScreenState 0
+2018/12/19 20:26:57 533259434 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:26:57 533259434 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:27:00 533262273 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:27:01 533262913 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:27:09 533270900 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:27:10 533271664 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:27:17 533278591 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:27:17 533279262 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:27:21 533283458 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:27:22 533284191 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:27:29 533291180 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:27:30 533292007 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:27:39 533301258 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:27:40 533301913 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:27:57 533319229 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:27:58 533320040 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:28:14 533335921 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:28:14 533336405 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:28:45 533366794 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:28:46 533367496 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:28:56 533377776 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:28:56 533378416 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:05 533387339 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:29:06 533387916 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:14 533395545 a24 [INFO Client 6564] $хаосбиба: куплю личинку сущности древнего\
+2018/12/19 20:29:19 533400693 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:29:19 533401239 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:32 533413625 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:29:32 533414343 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:43 533425419 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:29:44 533426012 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:49 533431222 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:29:50 533431971 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:55 533436916 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:29:56 533437509 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:57 533439475 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:29:58 533440255 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:29:59 533441097 8c [INFO Client 6564] Enumerated adapter: NVIDIA GeForce GT 1030
+2018/12/19 20:29:59 533441128 24d [INFO Client 6564] Enumerated device for adapter: NVIDIA GeForce GT 1030. Selected feature level: 45056. Max feature level: 45056
+2018/12/19 20:29:59 533441144 144 [INFO Client 6564] Enumerated output for adapter NVIDIA GeForce GT 1030 of \\.\DISPLAY1
+2018/12/19 20:30:01 533442548 22b [DEBUG Client 6564] CreateSwapChain: SetFullScreenState 1
+2018/12/19 20:30:02 533443968 8c [INFO Client 6564] Enumerated adapter: NVIDIA GeForce GT 1030
+2018/12/19 20:30:02 533443999 24d [INFO Client 6564] Enumerated device for adapter: NVIDIA GeForce GT 1030. Selected feature level: 45056. Max feature level: 45056
+2018/12/19 20:30:02 533444014 144 [INFO Client 6564] Enumerated output for adapter NVIDIA GeForce GT 1030 of \\.\DISPLAY1
+2018/12/19 20:30:03 533444888 22b [DEBUG Client 6564] CreateSwapChain: SetFullScreenState 0
+2018/12/19 20:30:07 533448913 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos
+2018/12/19 20:30:08 533449708 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:30:17 533459334 a24 [INFO Client 6564] @To NeiNCirclesOfHell: I would to buy Shavronne's Wrapping for 75 chaos , pls man ;)
+2018/12/19 20:30:18 533460004 a24 [INFO Client 6564] @From NeiNCirclesOfHell: This player has DND mode enabled.
+2018/12/19 20:30:31 533473202 a24 [INFO Client 6564] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 2х
+2018/12/19 20:30:41 533482656 a24 [INFO Client 6564] @To Solooniiik: I would to buy Shavronne's Wrapping for 95 chaos , pls man ;)
+2018/12/19 20:30:50 533491875 a24 [INFO Client 6564] @To Solooniiik: plssss
+2018/12/19 20:31:10 533511937 a24 [INFO Client 6564] @To Solooniiik: take at me)
+2018/12/19 20:31:20 533521859 a24 [INFO Client 6564] $ASHOTCAMSHOT: Куплю карты тир 6-7
+2018/12/19 20:31:22 533524402 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 20:31:22 533524417 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 20:31:22 533524417 dc [INFO Client 6564] Connecting to instance server at 185.225.209.43:6112
+2018/12/19 20:31:22 533524448 164 [DEBUG Client 6564] Connect time to instance server was 31ms
+2018/12/19 20:31:24 533526305 a24 [INFO Client 6564] : You have entered Luxurious Hideout.
+2018/12/19 20:31:26 533527896 a24 [INFO Client 6564] $ASHOTCAMSHOT: куплю карты тир 6-7
+2018/12/19 20:31:36 533537615 a24 [INFO Client 6564] : Trade accepted.
+2018/12/19 20:31:38 533540345 a24 [INFO Client 6564] @From <ChiII> Solooniiik: tyty
+2018/12/19 20:31:39 533540704 a24 [INFO Client 6564] @To Solooniiik: ty gl
+2018/12/19 20:31:45 533547131 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 20:31:45 533547131 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 20:31:45 533547131 dc [INFO Client 6564] Connecting to instance server at 109.95.212.21:6112
+2018/12/19 20:31:45 533547178 164 [DEBUG Client 6564] Connect time to instance server was 15ms
+2018/12/19 20:31:46 533548207 a24 [INFO Client 6564] : You have entered Stately Hideout.
+2018/12/19 20:32:00 533561951 a24 [INFO Client 6564] $ASHOTCAMSHOT: КУПЛЮ КАРТЫ ТИР 6-7
+2018/12/19 20:32:36 533597816 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 20:32:36 533597816 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 20:32:36 533597816 dc [INFO Client 6564] Connecting to instance server at 109.95.210.125:6112
+2018/12/19 20:32:36 533597925 164 [DEBUG Client 6564] Connect time to instance server was 15ms
+2018/12/19 20:32:44 533605663 a24 [INFO Client 6564] : You have entered Lioneye's Watch.
+2018/12/19 20:33:09 533630701 a24 [INFO Client 6564] $<+X3> tobe_Picda: _ 2 алх
+2018/12/19 20:33:27 533649078 a24 [INFO Client 6564] : Item on cursor destroyed.
+2018/12/19 20:33:55 533677158 a24 [INFO Client 6564] $<+X3> tobe_Picda: нужна карта дом с приведениями
+2018/12/19 20:33:57 533678546 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 20:33:57 533678640 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 20:33:57 533678640 dc [INFO Client 6564] Connecting to instance server at 109.95.211.180:6112
+2018/12/19 20:33:57 533678687 164 [DEBUG Client 6564] Connect time to instance server was 16ms
+2018/12/19 20:34:01 533682602 a24 [INFO Client 6564] : You have entered Highgate.
+2018/12/19 20:34:07 533688702 a24 [INFO Client 6564] $<+X3> tobe_Picda: обменяю на нужную вам
+2018/12/19 20:36:06 533808417 a24 [INFO Client 6564] $uberlabfarmerdelve: куплю сферы златокузнеца 11 к 1хаосу в пм
+2018/12/19 20:36:33 533834516 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 20:36:33 533834516 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 20:36:33 533834516 dc [INFO Client 6564] Connecting to instance server at 213.196.52.156:6112
+2018/12/19 20:36:33 533834563 164 [DEBUG Client 6564] Connect time to instance server was 16ms
+2018/12/19 20:36:33 533835468 a24 [INFO Client 6564] : You have entered Stately Hideout.
+2018/12/19 20:38:47 533968958 a24 [INFO Client 6564] $JeCoOl: _ 1алхимка
+2018/12/19 20:39:01 533982701 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 20:39:01 533982795 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 20:39:01 533982795 dc [INFO Client 6564] Connecting to instance server at 109.95.212.74:6112
+2018/12/19 20:39:01 533982842 164 [DEBUG Client 6564] Connect time to instance server was 31ms
+2018/12/19 20:39:07 533989160 a24 [INFO Client 6564] : You have entered Armoury.
+2018/12/19 20:39:21 534002904 a24 [INFO Client 6564] $_Spektr_: продам__________
+2018/12/19 20:39:52 534033917 a24 [INFO Client 6564] $Alcmaeonka: Продам экзали за деревянные орбы, по более выгодному чем на сайтах ратио. в наличии 50+
+2018/12/19 20:40:21 534062496 a24 [INFO Client 6564] $_Дуэлянт: _55
+2018/12/19 20:40:30 534072199 a24 [INFO Client 6564] $XT_MoonLight: продам Т2-Т5 карты Оптом
+2018/12/19 20:40:50 534092183 a24 [INFO Client 6564] Jun, Veiled Master: Brinerot! Dead ahead!
+2018/12/19 20:41:11 534112494 a24 [INFO Client 6564] Elreon, Light's Judge: A holy crusade is still a war, and war comes with necessary evils.
+2018/12/19 20:41:16 534118391 a24 [INFO Client 6564] Jun, Veiled Master: Villainous scoundrel. Slink back to the seas, Brinerot.
+2018/12/19 20:41:22 534123820 a24 [INFO Client 6564] Elreon, Light's Judge: We should solve this with words.
+2018/12/19 20:41:23 534124631 a24 [INFO Client 6564] Guff "Tiny" Grenn: Acch, ya got me in the lung...
+2018/12/19 20:42:04 534166439 a24 [INFO Client 6564] Guff "Tiny" Grenn: Wait, wait, what happened to our dealing? We -- we were gettin' on fine!
+2018/12/19 20:42:21 534183287 a24 [INFO Client 6564] Elreon, Light's Judge: The ranks of the faithful swell!
+2018/12/19 20:43:37 534259369 a24 [INFO Client 6564] $Trap_maybe: WTS _5ex (15%)
+2018/12/19 20:43:42 534264470 a24 [INFO Client 6564] $SuperGoodBuild: куплю 2 экза / buy 2 ex
+2018/12/19 20:45:05 534347416 a24 [INFO Client 6564] $<+X3> tobe_Picda: куплю карту дом с привидениями
+2018/12/19 20:45:41 534382657 a24 [INFO Client 6564] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 2х
+2018/12/19 20:45:49 534391081 a24 [INFO Client 6564] Zana, Master Cartographer: Still sane, exile?
+2018/12/19 20:45:56 534397524 a24 [INFO Client 6564] $JeCoOl: выменяю карту загона, в лс
+2018/12/19 20:46:14 534416103 a24 [INFO Client 6564] $Trap_maybe: WTS _5ex (15%)
+2018/12/19 20:47:30 534492403 a24 [INFO Client 6564] $Alcmaeonka: Продам экзали за деревянные орбы, по более выгодному чем на сайтах ратио. в наличии 50+
+2018/12/19 20:48:11 534533213 a24 [INFO Client 6564] $Стекломой: На дошики не хватает?
+2018/12/19 20:48:20 534542074 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 20:48:20 534542137 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 20:48:20 534542137 dc [INFO Client 6564] Connecting to instance server at 213.196.52.156:6112
+2018/12/19 20:48:20 534542339 164 [DEBUG Client 6564] Connect time to instance server was 187ms
+2018/12/19 20:48:22 534544414 a24 [INFO Client 6564] : You have entered Stately Hideout.
+2018/12/19 20:48:51 534573259 a24 [INFO Client 6564] $Trap_maybe: WTS _5ex (15%)
+2018/12/19 20:51:28 534730009 a24 [INFO Client 6564] $Trap_maybe: WTS _5ex (15%)
+2018/12/19 20:51:48 534749930 a24 [INFO Client 6564] $Alcmaeonka: Продам экзали за деревянные орбы, по более выгодному чем на сайтах ратио. в наличии 50+
+2018/12/19 20:54:05 534886914 a24 [INFO Client 6564] $Trap_maybe: WTS _5ex (15%)
+2018/12/19 20:54:08 534890362 a24 [INFO Client 6564] $<|HARD|> Twoiqplayer: куплю сферы соединения 3к1х, сульфит на картах добавляйте во френды для продажи
+2018/12/19 20:55:30 534972247 a24 [INFO Client 6564] $ASHOTCAMSHOT: КУПЛЮ МАПЫ 6Й-7Й ТИР
+2018/12/19 20:56:07 535008720 a24 [INFO Client 6564] $DralTatiaH: лево верх кому надо
+2018/12/19 20:58:31 535152568 a24 [INFO Client 6564] $_Spektr_: продам__________
+2018/12/19 21:01:55 535357101 a24 [INFO Client 6564] $<BRU†AL> Салют_я_Ден: _ цены в ЛС
+2018/12/19 21:03:25 535446786 a24 [INFO Client 6564] : AFK mode is now ON. Autoreply "This player is AFK."
+2018/12/19 21:03:40 535461669 a24 [INFO Client 6564] $<+X3> tobe_Picda: _ 10х
+2018/12/19 21:05:36 535578358 a24 [INFO Client 6564] $DeadDFire: _ продам
+2018/12/19 21:08:35 535757431 a24 [INFO Client 6564] : AFK mode is now OFF.
+2018/12/19 21:10:34 535875836 a24 [INFO Client 6564] $ВинченцоСанторини: куплю сульфит
+2018/12/19 21:10:53 535894618 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 21:10:53 535894759 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 21:10:53 535894759 dc [INFO Client 6564] Connecting to instance server at 213.196.53.196:6112
+2018/12/19 21:10:53 535894790 164 [DEBUG Client 6564] Connect time to instance server was 31ms
+2018/12/19 21:11:07 535908612 a24 [INFO Client 6564] : You have entered Azurite Mine.
+2018/12/19 21:11:28 535929734 a24 [INFO Client 6564] $_Spektr_: продам__________
+2018/12/19 21:11:47 535949047 a24 [INFO Client 6564] $Xren_Return_to_GG: право низ кто хотел
+2018/12/19 21:11:54 535955693 a24 [INFO Client 6564] $<Ler-> Flayed_Twins: КУПЛЮ МНОГО ЖЕРТВ ЗА ХАОСЫ 2 ЖЕРТВЫ 1 ХАОС
+2018/12/19 21:12:10 535971979 a24 [INFO Client 6564] $Xren_Return_to_GG: право низ фастом вместе с проходкой 1х
+2018/12/19 21:12:31 535992525 a24 [INFO Client 6564] $<BRU†AL> Салют_я_Ден: _ цены в лс
+2018/12/19 21:13:39 536060900 a24 [INFO Client 6564] $uberlabfarmerdelve: куплю сферы златокузнеца 11к 1 хаосу в пм
+2018/12/19 21:14:27 536109432 a24 [INFO Client 6564] $<Ler-> Flayed_Twins: КУПЛЮ МНОГО ЖЕРТВ ЗА ХАОСЫ 2 ЖЕРТВЫ 1 ХАОС
+2018/12/19 21:15:23 536165343 a24 [INFO Client 6564] $<EIders> ANTIVOIN:  ПРОДАЮ ЖЕРТВЫ ПО 2 ХАОСА
+2018/12/19 21:15:45 536187370 a24 [INFO Client 6564] $female_proctologist: Куплю карты "подземного моря"
+2018/12/19 21:15:54 536196075 a24 [INFO Client 6564] $<Ler-> Flayed_Twins: КУПЛЮ МНОГО ЖЕРТВ ЗА ХАОСЫ 2 ЖЕРТВЫ 1 ХАОС
+2018/12/19 21:16:36 536238445 ce6 [DEBUG Client 6564] Got Instance Details from login server
+2018/12/19 21:16:36 536238476 d03 [INFO Client 6564] Just before calling client instance session
+2018/12/19 21:16:36 536238476 dc [INFO Client 6564] Connecting to instance server at 109.95.211.195:6112
+2018/12/19 21:16:37 536238523 164 [DEBUG Client 6564] Connect time to instance server was 16ms
+2018/12/19 21:16:42 536243515 a24 [INFO Client 6564] : You have entered Azurite Mine.
+2018/12/19 21:17:33 536295089 142 [INFO Client 6564] Attempted to remove an effect pack from an object tha

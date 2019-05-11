@@ -1,0 +1,168 @@
+ just added that last bit for dramatic effect.[P=0.5].[P=0.5].[P=0.5].</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Anyway, if you really want to go to Outsmouth,[P=1.5] just take the old road past #ViMN6;'s cabin.[P=4] Watch out for the forest though. At night it becomes...[P=2] Alive![P=2] WoOEoeoooeoeoOOo![P=2.5] ... I just added that last bit for dramatic effect.[P=0.5].[P=0.5].[P=0.5].</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_guard4</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Opowiedzialem ci juz wszystkie zagadkowe plotki, jakie znam. Jeszcze ci malo?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I've already told you all the mysterious rumors I know of, ok? Wasn't that exciting enough for you?</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I've already told you all the mysterious rumors I know of, ok? Wasn't that exciting enough for you?</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_annoyed0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ta...[P=0.5] Naprawde przestan juz zawracac mi glowe...</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ok.[P=0.5] You should really stop bothering me now.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ok.[P=0.5] You should really stop bothering me now.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_annoyed1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">No daj spokój...[P=1] Dobra...[P=0.5] Mam dla ciebie jeszcze jedna plote:[P=1] Podobno czarodzieje nie umieja sie zachowac wsród ludzi.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">C'mon...[P=1] Well...[P=0.5] alright here's another rumor:[P=1] I heard that Wizards lack social skills.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">C'mon...[P=1] Well...[P=0.5] alright here's another rumor:[P=1] I heard that Wizards lack social skills.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_annoyed2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">To najwyrazniej prawda.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">And from what I've seen, it seems to be true!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">And from what I've seen, it seems to be true!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_annoyed3</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">[P=0.5].[P=0.5].[P=0.5].</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">[P=0.5].[P=0.5].[P=0.5].</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">[P=0.5].[P=0.5].[P=0.5].</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_annoyed4</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Daj se luz!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Stop it!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Stop it!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_annoyed5</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Niech ci bedzie. Wpadla mi w rece pewna ksiega. Odczepisz sie, jak ci ja dam?[P=1] Idz do kramu z róznosciami. Znajdziesz tam kobiete, której musisz powiedziec, ze pozwolilem ci wziac te stara ksiege, która znalazlem... Tylko daj mi juz spokój.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Fine. If I give you an old tome I found lying around, will you stop bothering me?[P=1] Just go to the curiosity shoppe and tell the old lady that I said you could have that old book I found the other day -- as long as you stop bothering me.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Fine. If I give you an old tome I found lying around, will you stop bothering me?[P=1] Just go to the curiosity shoppe and tell the old lady that I said you could have that old book I found the other day -- as long as you stop bothering me.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_annoyed6</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Jeszcze raz...[P=0.5]i NAPRAWDE zmienie zdanie!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">If you bother me again,[P=0.5] I WILL change my mind!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">If you bother me again,[P=0.5] I WILL change my mind!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_angry0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Dobra, dosc tego![P=1] Nie dostaniesz ksiegi!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ok, that's it![P=1] Now you can't have the book!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ok, that's it![P=1] Now you can't have the book!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_angry1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Poddaje sie! Nic nie kumasz, stary![P=0.5] Przeklety, smierdzacy czarodziej!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I give up -- you just don't get it![P=0.5] Damn dirty Wizard!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I give up -- you just don't get it![P=0.5] Damn dirty Wizard!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_magick0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Powiedziano mi, ze pilnie potrzebujesz tej ksiegi.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I was  told you were in need of this old book.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">I was  told you were in need of this old book.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TMD_magick1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">No to koniec interesów na dzisiaj.[P=1] Dobranoc!</Data>
+          </Cell>
+          <Cell>

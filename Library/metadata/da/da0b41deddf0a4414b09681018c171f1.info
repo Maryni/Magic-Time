@@ -1,0 +1,24 @@
+#include "il2cpp-config.h"
+#include "MarshalAlloc.h"
+#include "os/MarshalAlloc.h"
+#include "os/ThreadLocalValue.h"
+#include "vm/Exception.h"
+#include <deque>
+
+namespace il2cpp
+{
+namespace vm
+{
+#if _DEBUG
+    static os::ThreadLocalValue s_Allocations;
+
+    static os::FastMutex s_AllocationStorageMutex;
+    static std::deque<std::vector<std::map<void*, size_t> > > s_AllocationStorage;
+
+    static std::vector<std::map<void*, size_t> >& GetAllocationsForCurrentThread()
+    {
+        std::vector<std::map<void*, size_t> >* ptr = NULL;
+        s_Allocations.GetValue(reinterpret_cast<void**>(&ptr));
+        if (ptr == NULL)
+        {
+        

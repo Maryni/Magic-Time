@@ -1,0 +1,60 @@
+ before name in <!NOTATION declaration
+
+#
+P-006 = Name tokens must not start with "{0}" characters
+P-007 = Value must be quoted
+#
+P-008 = Next character must be "{0}" {1} {2}
+
+    #
+    F-020 = terminating reference to entity
+    #
+    F-021 = terminating reference to parameter entity
+    #
+    F-022 = terminating comment
+    #
+    F-023 = in XML Declaration
+    #
+    F-024 = terminating internal DTD subset
+    #
+    F-025 = terminating <!DOCTYPE ...> declaration
+    #
+    F-026 = after attribute name
+    #
+    F-027 = terminating element
+    #
+    F-028 = starting content model for element
+    #
+    F-029 = starting list of attribute NOTATIONS
+    #
+    F-030 = beginning condition DTD subset
+    #
+    F-031 = terminating <!ENTITY ...> declaration
+    #
+    F-032 = terminating <!NOTATION ...> declaration
+
+P-009 = Illegal character or entity reference syntax
+
+P-010 = Only external parameter entities may use "%{0};" in entity values
+P-011 = Illegal parameter entity reference syntax
+P-012 = Use "&lt;" for "<" in attribute values
+P-013 = Illegal reference to external entity "&{0};" in attribute
+P-014 = Reference to undefined entity "&{0};"
+#
+P-015 = Expecting quoted value for {0}
+
+    #
+    F-033 = PUBLIC identifier
+    #
+    F-034 = SYSTEM identifier
+    #
+    F-035 = attribute value {0}
+
+P-016 = Illegal character in PUBLIC identifier:  "{0}"
+P-017 = End of entity while processing comment
+P-018 = Processing instruction target is missing
+P-019 = XML declaration may only begin entities
+
+P-020 = Illegal processing instruction target:  "{0}"
+P-021 = End of input inside processing instruction
+P-022 = Illegal processing instruction name, or missing wh

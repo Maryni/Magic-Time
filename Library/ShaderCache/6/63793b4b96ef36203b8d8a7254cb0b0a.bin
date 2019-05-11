@@ -1,0 +1,33 @@
+summary>
+        <para>Returns true if the animation contains curve that drives a humanoid rig.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AnimationClip.legacy">
+      <summary>
+        <para>Set to true if the AnimationClip will be used with the Legacy Animation component ( instead of the Animator ).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AnimationClip.length">
+      <summary>
+        <para>Animation length in seconds. (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AnimationClip.localBounds">
+      <summary>
+        <para>AABB of this Animation Clip in local space of Animation component that it is attached too.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AnimationClip.wrapMode">
+      <summary>
+        <para>Sets the default wrap mode used in the animation state.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.AnimationClip.AddEvent(UnityEngine.AnimationEvent)">
+      <summary>
+        <para>Adds an animation event to the clip.</para>
+      </summary>
+      <param name="evt">AnimationEvent to add.</param>
+    </member>
+    <member name="M:UnityEngine.AnimationClip.ClearCurves">
+      <summary>
+        <para>Clears all curves

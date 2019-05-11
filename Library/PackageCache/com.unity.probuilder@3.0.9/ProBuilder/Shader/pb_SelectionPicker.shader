@@ -1,0 +1,3 @@
+3, midnight design)	9	9	1	x				20	1	2	2	2	1		1								x	x	x	x		x	x	x		1		1												x	x		x	x	x	x	x	x	avg			x	x	x	x	x	x	x	x	x	3500	5500	5	1000	2000	5	320	1000	3	1	2	110000			1	2	2	2																																																																																																		
+			2	x				20	1	2	2	2	2		1								x	x	x	x		x	x	x		1		1												x	x		x	x	x	x	x	x	avg			x	x	x	x	x	x	x	x	x	3500	5500	5	1000	2000	5	320	1000	3	1	3	4500			1	2	2	2																																																																																																		
+			3			x		6	1	2	2	2						1									x						1

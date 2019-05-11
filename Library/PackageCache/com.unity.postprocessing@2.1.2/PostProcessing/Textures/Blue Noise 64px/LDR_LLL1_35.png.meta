@@ -1,0 +1,58 @@
+_buf[];
+};
+ struct g_SourceSkin_type {
+	uint[8] value;
+};
+
+layout(std430, binding = 2) readonly buffer g_SourceSkin {
+	g_SourceSkin_type g_SourceSkin_buf[];
+};
+ struct g_mBones_type {
+	uint[16] value;
+};
+
+layout(std430, binding = 3) readonly buffer g_mBones {
+	g_mBones_type g_mBones_buf[];
+};
+ struct g_MeshVertsOut_type {
+	uint[10] value;
+};
+
+layout(std430, binding = 0) buffer g_MeshVertsOut {
+	g_MeshVertsOut_type g_MeshVertsOut_buf[];
+};
+vec4 u_xlat0;
+bool u_xlatb0;
+vec4 u_xlat1;
+vec4 u_xlat2;
+vec4 u_xlat3;
+vec4 u_xlat4;
+ivec4 u_xlati4;
+vec3 u_xlat5;
+vec3 u_xlat6;
+vec3 u_xlat7;
+vec4 u_xlat8;
+vec4 u_xlat9;
+vec4 u_xlat10;
+vec4 u_xlat11;
+vec4 u_xlat12;
+vec4 u_xlat13;
+vec4 u_xlat14;
+vec4 u_xlat15;
+vec4 u_xlat16;
+vec4 u_xlat17;
+vec4 u_xlat18;
+vec4 u_xlat19;
+vec3 u_xlat20;
+vec4 u_xlat21;
+layout(local_size_x = 64, local_size_y = 1, local_size_z = 1) in;
+void main()
+{
+    u_xlatb0 = gl_GlobalInvocationID.x>=g_VertCount;
+    if(u_xlatb0){
+        return;
+    //ENDIF
+    }
+    u_xlat0 = vec4(uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 3]), uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 0]), uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 1]), uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 2]));
+    u_xlat1 = vec4(uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 0]), uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 1]), uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 2]), uintBitsToFloat(g_SourceVBO_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 3]));
+    u_xlat2.xw 

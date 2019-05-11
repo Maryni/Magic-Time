@@ -1,0 +1,628 @@
+rm.position, new Vector3(1000, 1000, 0));
+            }
+
+            // Load TMP Settings for new text object instances.
+            LoadDefaultSettings();
+
+            // Load the font asset and assign material to renderer.
+            LoadFontAsset();
+
+            // Load Default TMP StyleSheet
+            TMP_StyleSheet.LoadDefaultStyleSheet();
+
+            // Allocate our initial buffers.
+            if (m_char_buffer == null)
+                m_char_buffer = new int[m_max_characters];
+
+            m_cached_TextElement = new TMP_Glyph();
+            m_isFirstAllocation = true;
+
+            if (m_textInfo == null)
+                m_textInfo = new TMP_TextInfo(this);
+
+            // Check if we have a font asset assigned. Return if we don't because no one likes to see purple squares on screen.
+            if (m_fontAsset == null)
+            {
+                Debug.LogWarning("Please assign a Font Asset to this " + transform.name + " gameobject.", this);
+                return;
+            }
+
+            // Check to make sure Sub Text Objects are tracked correctly in the event a Prefab is used.
+            TMP_SubMeshUI[] subTextObjects = GetComponentsInChildren<TMP_SubMeshUI>();
+            if (subTextObjects.Length > 0)
+            {
+                for (int i = 0; i < subTextObjects.Length; i++)
+                    m_subTextObjects[i + 1] = subTextObjects[i];
+            }
+
+            // Set flags to ensure our text is parsed and redrawn.
+            m_isInputParsingRequired = true;
+            m_havePropertiesChanged = true;
+            m_isCalculateSizeRequired = true;
+
+            m_isAwake = true;
+        }
+
+
+        protected override void OnEnable()
+        {
+            //Debug.Log("*** OnEnable() ***", this);
+
+            // Return if Awake() has not been called on the text object.
+            if (m_isAwake == false)
+                return;
+
+            if (!m_isRegisteredForEvents)
+            {
+                //Debug.Log("Registering for Events.");
+                
+                #if UNITY_EDITOR
+                // Register Callbacks for various events.
+                TMPro_EventManager.MATERIAL_PROPERTY_EVENT.Add(ON_MATERIAL_PROPERTY_CHANGED);
+                TMPro_EventManager.FONT_PROPERTY_EVENT.Add(ON_FONT_PROPERTY_CHANGED);
+                TMPro_EventManager.TEXTMESHPRO_UGUI_PROPERTY_EVENT.Add(ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED);
+                TMPro_EventManager.DRAG_AND_DROP_MATERIAL_EVENT.Add(ON_DRAG_AND_DROP_MATERIAL);
+                TMPro_EventManager.TEXT_STYLE_PROPERTY_EVENT.Add(ON_TEXT_STYLE_CHANGED);
+                TMPro_EventManager.COLOR_GRADIENT_PROPERTY_EVENT.Add(ON_COLOR_GRADIENT_CHANGED);
+                TMPro_EventManager.TMP_SETTINGS_PROPERTY_EVENT.Add(ON_TMP_SETTINGS_CHANGED);
+                #endif
+                m_isRegisteredForEvents = true;
+            }
+
+            // Cache Reference to the Canvas
+            m_canvas = GetCanvas();
+
+            SetActiveSubMeshes(true);
+
+            // Register Graphic Component to receive event triggers
+            GraphicRegistry.RegisterGraphicForCanvas(m_canvas, this);
+
+            ComputeMarginSize();
+
+            m_verticesAlreadyDirty = false;
+            m_layoutAlreadyDirty = false;
+            m_ShouldRecalculateStencil = true;
+            m_isInputParsingRequired = true;
+            SetAllDirty();
+
+            RecalculateClipping();
+        }
+
+
+        protected override void OnDisable()
+        {
+            //base.OnDisable();
+            //Debug.Log("***** OnDisable() *****"); //for " + this.name + " with ID: " + this.GetInstanceID() + " has been called.");
+
+            // Return if Awake() has not been called on the text object.
+            if (m_isAwake == false)
+                return;
+
+            if (m_MaskMaterial != null)
+            { 
+                TMP_MaterialManager.ReleaseStencilMaterial(m_MaskMaterial);
+                m_MaskMaterial = null;
+            }
+
+            // UnRegister Graphic Component
+            GraphicRegistry.UnregisterGraphicForCanvas(m_canvas, this);
+            CanvasUpdateRegistry.UnRegisterCanvasElementForRebuild((ICanvasElement)this);
+
+            if (m_canvasRenderer != null)
+                m_canvasRenderer.Clear();
+
+            SetActiveSubMeshes(false);
+
+            LayoutRebuilder.MarkLayoutForRebuild(m_rectTransform);
+            RecalculateClipping();
+        }
+
+
+        protected override void OnDestroy()
+        {
+            //base.OnDestroy();
+            //Debug.Log("***** OnDestroy() *****");
+
+            // UnRegister Graphic Component
+            GraphicRegistry.UnregisterGraphicForCanvas(m_canvas, this);
+
+            // Clean up remaining mesh
+            if (m_mesh != null)
+                DestroyImmediate(m_mesh);
+
+            // Clean up mask material
+            if (m_MaskMaterial != null)
+            {
+                TMP_MaterialManager.ReleaseStencilMaterial(m_MaskMaterial);
+                m_MaskMaterial = null;
+            }
+
+            #if UNITY_EDITOR
+            // Unregister the event this object was listening to
+            TMPro_EventManager.MATERIAL_PROPERTY_EVENT.Remove(ON_MATERIAL_PROPERTY_CHANGED);
+            TMPro_EventManager.FONT_PROPERTY_EVENT.Remove(ON_FONT_PROPERTY_CHANGED);
+            TMPro_EventManager.TEXTMESHPRO_UGUI_PROPERTY_EVENT.Remove(ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED);
+            TMPro_EventManager.DRAG_AND_DROP_MATERIAL_EVENT.Remove(ON_DRAG_AND_DROP_MATERIAL);
+            TMPro_EventManager.TEXT_STYLE_PROPERTY_EVENT.Remove(ON_TEXT_STYLE_CHANGED);
+            TMPro_EventManager.COLOR_GRADIENT_PROPERTY_EVENT.Remove(ON_COLOR_GRADIENT_CHANGED);
+            TMPro_EventManager.TMP_SETTINGS_PROPERTY_EVENT.Remove(ON_TMP_SETTINGS_CHANGED);
+            TMPro_EventManager.RESOURCE_LOAD_EVENT.Remove(ON_RESOURCES_LOADED);
+            #endif
+            m_isRegisteredForEvents = false;
+        }
+
+
+        #if UNITY_EDITOR
+        protected override void Reset()
+        {
+            //Debug.Log("***** Reset() *****"); //has been called.");
+
+            // Return if Awake() has not been called on the text object.
+            if (m_isAwake == false)
+                return;
+
+            LoadDefaultSettings();
+            LoadFontAsset();
+
+            m_isInputParsingRequired = true;
+            m_havePropertiesChanged = true;
+        }
+
+
+        protected override void OnValidate()
+        {
+            //Debug.Log("***** OnValidate() ***** Frame:" + Time.frameCount); // ID " + GetInstanceID()); // New Material [" + m_sharedMaterial.name + "] with ID " + m_sharedMaterial.GetInstanceID() + ". Base Material is [" + m_baseMaterial.name + "] with ID " + m_baseMaterial.GetInstanceID() + ". Previous Base Material is [" + (m_lastBaseMaterial == null ? "Null" : m_lastBaseMaterial.name) + "].");
+
+            // Return if Awake() has not been called on the text object.
+            if (m_isAwake == false)
+                return;
+
+            // Handle Font Asset changes in the inspector.
+            if (m_fontAsset == null || m_hasFontAssetChanged)
+            {
+                LoadFontAsset();
+                m_isCalculateSizeRequired = true;
+                m_hasFontAssetChanged = false;
+            }
+
+
+            if (m_canvasRenderer == null || m_canvasRenderer.GetMaterial() == null || m_canvasRenderer.GetMaterial().GetTexture(ShaderUtilities.ID_MainTex) == null || m_fontAsset == null || m_fontAsset.atlas.GetInstanceID() != m_canvasRenderer.GetMaterial().GetTexture(ShaderUtilities.ID_MainTex).GetInstanceID())
+            {
+                LoadFontAsset();
+                m_isCalculateSizeRequired = true;
+                m_hasFontAssetChanged = false;
+            }
+
+            m_padding = GetPaddingForMaterial();
+            //ComputeMarginSize();
+
+            m_isInputParsingRequired = true;
+            m_inputSource = TextInputSources.Text;
+            m_havePropertiesChanged = true;
+            m_isCalculateSizeRequired = true;
+            m_isPreferredWidthDirty = true;
+            m_isPreferredHeightDirty = true;
+
+            SetAllDirty();
+        }
+
+
+        // Event received when TMP resources have been loaded.
+        void ON_RESOURCES_LOADED()
+        {
+            TMPro_EventManager.RESOURCE_LOAD_EVENT.Remove(ON_RESOURCES_LOADED);
+
+            Awake();
+            OnEnable();
+        }
+
+
+        // Event received when custom material editor properties are changed.
+        void ON_MATERIAL_PROPERTY_CHANGED(bool isChanged, Material mat)
+        {
+            //Debug.Log("ON_MATERIAL_PROPERTY_CHANGED event received."); // Targeted Material is: " + mat.name + "  m_sharedMaterial: " + m_sharedMaterial.name + " with ID:" + m_sharedMaterial.GetInstanceID() + "  m_renderer.sharedMaterial: " + m_canvasRenderer.GetMaterial() + "  Masking Material:" + m_MaskMaterial.GetInstanceID());
+
+            ShaderUtilities.GetShaderPropertyIDs(); // Initialize ShaderUtilities and get shader property IDs.
+
+            int materialID = mat.GetInstanceID();
+            int sharedMaterialID = m_sharedMaterial.GetInstanceID();
+            int maskingMaterialID = m_MaskMaterial == null ? 0 : m_MaskMaterial.GetInstanceID();
+
+            if (m_canvasRenderer == null || m_canvasRenderer.GetMaterial() == null)
+            {
+                if (m_canvasRenderer == null) return;
+
+                if (m_fontAsset != null)
+                {
+                    m_canvasRenderer.SetMaterial(m_fontAsset.material, m_sharedMaterial.GetTexture(ShaderUtilities.ID_MainTex));
+                    //Debug.LogWarning("No Material was assigned to " + name + ". " + m_fontAsset.material.name + " was assigned.");
+                }
+                else
+                    Debug.LogWarning("No Font Asset assigned to " + name + ". Please assign a Font Asset.", this);
+            }
+
+
+            if (m_canvasRenderer.GetMaterial() != m_sharedMaterial && m_fontAsset == null) //    || m_renderer.sharedMaterials.Contains(mat))
+            {
+                //Debug.Log("ON_MATERIAL_PROPERTY_CHANGED Called on Target ID: " + GetInstanceID() + ". Previous Material:" + m_sharedMaterial + "  New Material:" + m_uiRenderer.GetMaterial()); // on Object ID:" + GetInstanceID() + ". m_sharedMaterial: " + m_sharedMaterial.name + "  m_renderer.sharedMaterial: " + m_renderer.sharedMaterial.name);         
+                m_sharedMaterial = m_canvasRenderer.GetMaterial();
+            }
+
+
+            // Make sure material properties are synchronized between the assigned material and masking material.
+            if (m_MaskMaterial != null)
+            {
+                UnityEditor.Undo.RecordObject(m_MaskMaterial, "Material Property Changes");
+                UnityEditor.Undo.RecordObject(m_sharedMaterial, "Material Property Changes");
+
+                if (materialID == sharedMaterialID)
+                {
+                    //Debug.Log("Copy base material properties to masking material if not null.");
+                    float stencilID = m_MaskMaterial.GetFloat(ShaderUtilities.ID_StencilID);
+                    float stencilComp = m_MaskMaterial.GetFloat(ShaderUtilities.ID_StencilComp);
+                    //float stencilOp = m_MaskMaterial.GetFloat(ShaderUtilities.ID_StencilOp);
+                    //float stencilRead = m_MaskMaterial.GetFloat(ShaderUtilities.ID_StencilReadMask);
+                    //float stencilWrite = m_MaskMaterial.GetFloat(ShaderUtilities.ID_StencilWriteMask);
+
+                    m_MaskMaterial.CopyPropertiesFromMaterial(mat);
+                    m_MaskMaterial.shaderKeywords = mat.shaderKeywords;
+
+                    m_MaskMaterial.SetFloat(ShaderUtilities.ID_StencilID, stencilID);
+                    m_MaskMaterial.SetFloat(ShaderUtilities.ID_StencilComp, stencilComp);
+                    //m_MaskMaterial.SetFloat(ShaderUtilities.ID_StencilOp, stencilOp);
+                    //m_MaskMaterial.SetFloat(ShaderUtilities.ID_StencilReadMask, stencilID);
+                    //m_MaskMaterial.SetFloat(ShaderUtilities.ID_StencilWriteMask, 0);
+                }
+                else if (materialID == maskingMaterialID)
+                {
+                    // Update the padding 
+                    GetPaddingForMaterial(mat);
+
+                    m_sharedMaterial.CopyPropertiesFromMaterial(mat);
+                    m_sharedMaterial.shaderKeywords = mat.shaderKeywords;
+                    m_sharedMaterial.SetFloat(ShaderUtilities.ID_StencilID, 0);
+                    m_sharedMaterial.SetFloat(ShaderUtilities.ID_StencilComp, 8);
+                    //m_sharedMaterial.SetFloat(ShaderUtilities.ID_StencilOp, 0);
+                    //m_sharedMaterial.SetFloat(ShaderUtilities.ID_StencilReadMask, 255);
+                    //m_sharedMaterial.SetFloat(ShaderUtilities.ID_StencilWriteMask, 255);
+                }
+
+            }
+
+            m_padding = GetPaddingForMaterial();
+            m_havePropertiesChanged = true;
+            SetVerticesDirty();
+            //SetMaterialDirty();
+        }
+
+
+        // Event received when font asset properties are changed in Font Inspector
+        void ON_FONT_PROPERTY_CHANGED(bool isChanged, TMP_FontAsset font)
+        {
+            if (MaterialReference.Contains(m_materialReferences, font))
+            {
+                //Debug.Log("ON_FONT_PROPERTY_CHANGED event received.");
+                m_isInputParsingRequired = true;
+                m_havePropertiesChanged = true;
+
+                SetLayoutDirty();
+                SetVerticesDirty();
+            }
+        }
+
+
+        // Event received when UNDO / REDO Event alters the properties of the object.
+        void ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED(bool isChanged, TextMeshProUGUI obj)
+        {
+            //Debug.Log("Event Received by " + obj);
+            
+            if (obj == this)
+            {
+                //Debug.Log("Undo / Redo Event Received by Object ID:" + GetInstanceID());
+                m_havePropertiesChanged = true;
+                m_isInputParsingRequired = true;
+
+                ComputeMarginSize();
+                SetVerticesDirty();
+            }
+        }
+
+
+        // Event to Track Material Changed resulting from Drag-n-drop.
+        void ON_DRAG_AND_DROP_MATERIAL(GameObject obj, Material currentMaterial, Material newMaterial)
+        {
+            //Debug.Log("Drag-n-Drop Event - Receiving Object ID " + GetInstanceID() + ". Sender ID " + obj.GetInstanceID()); // +  ". Prefab Parent is " + UnityEditor.PrefabUtility.GetPrefabParent(gameObject).GetInstanceID()); // + ". New Material is " + newMaterial.name + " with ID " + newMaterial.GetInstanceID() + ". Base Material is " + m_baseMaterial.name + " with ID " + m_baseMaterial.GetInstanceID());
+
+            // Check if event applies to this current object
+            #if UNITY_2018_2_OR_NEWER
+            if (obj == gameObject || UnityEditor.PrefabUtility.GetCorrespondingObjectFromSource(gameObject) == obj)
+            #else
+            if (obj == gameObject || UnityEditor.PrefabUtility.GetPrefabParent(gameObject) == obj)
+            #endif
+            {
+                UnityEditor.Undo.RecordObject(this, "Material Assignment");
+                UnityEditor.Undo.RecordObject(m_canvasRenderer, "Material Assignment");
+
+                m_sharedMaterial = newMaterial;
+
+                m_padding = GetPaddingForMaterial();
+
+                m_havePropertiesChanged = true;
+                SetVerticesDirty();
+                SetMaterialDirty();
+            }
+        }
+
+
+        // Event received when Text Styles are changed.
+        void ON_TEXT_STYLE_CHANGED(bool isChanged)
+        {
+            m_havePropertiesChanged = true;
+            m_isInputParsingRequired = true;
+            SetVerticesDirty();
+        }
+
+
+        /// <summary>
+        /// Event received when a Color Gradient Preset is modified.
+        /// </summary>
+        /// <param name="textObject"></param>
+        void ON_COLOR_GRADIENT_CHANGED(TMP_ColorGradient gradient)
+        {
+            if (m_fontColorGradientPreset != null && gradient.GetInstanceID() == m_fontColorGradientPreset.GetInstanceID())
+            {
+                m_havePropertiesChanged = true;
+                SetVerticesDirty();
+            }
+        }
+
+
+        /// <summary>
+        /// Event received when the TMP Settings are changed.
+        /// </summary>
+        void ON_TMP_SETTINGS_CHANGED()
+        {
+            m_defaultSpriteAsset = null;
+            m_havePropertiesChanged = true;
+            m_isInputParsingRequired = true;
+            SetAllDirty();
+        }
+        #endif
+
+
+        // Function which loads either the default font or a newly assigned font asset. This function also assigned the appropriate material to the renderer.
+        protected override void LoadFontAsset()
+        {
+            //Debug.Log("***** LoadFontAsset() *****"); //TextMeshPro LoadFontAsset() has been called."); // Current Font Asset is " + (font != null ? font.name: "Null") );
+            
+            ShaderUtilities.GetShaderPropertyIDs(); // Initialize & Get shader property IDs.
+
+            if (m_fontAsset == null)
+            {
+                if (TMP_Settings.defaultFontAsset != null)
+                    m_fontAsset = TMP_Settings.defaultFontAsset;
+                else
+                    m_fontAsset = Resources.Load<TMP_FontAsset>("Fonts & Materials/LiberationSans SDF");
+
+                if (m_fontAsset == null)
+                {
+                    Debug.LogWarning("The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to " + gameObject.name + ".", this);
+                    return;
+                }
+
+                if (m_fontAsset.characterDictionary == null)
+                {
+                    Debug.Log("Dictionary is Null!");
+                }
+
+                m_sharedMaterial = m_fontAsset.material;
+            }
+            else
+            {
+                // Read font definition if needed.
+                if (m_fontAsset.characterDictionary == null)
+                    m_fontAsset.ReadFontDefinition();
+
+                // Added for compatibility with previous releases.
+                if (m_sharedMaterial == null && m_baseMaterial != null)
+                {
+                    m_sharedMaterial = m_baseMaterial;
+                    m_baseMaterial = null;
+                }
+
+                // If font atlas texture doesn't match the assigned material font atlas, switch back to default material specified in the Font Asset.
+                if (m_sharedMaterial == null || m_sharedMaterial.GetTexture(ShaderUtilities.ID_MainTex) == null || m_fontAsset.atlas.GetInstanceID() != m_sharedMaterial.GetTexture(ShaderUtilities.ID_MainTex).GetInstanceID())
+                {
+                    if (m_fontAsset.material == null)
+                        Debug.LogWarning("The Font Atlas Texture of the Font Asset " + m_fontAsset.name + " assigned to " + gameObject.name + " is missing.", this);
+                    else
+                        m_sharedMaterial = m_fontAsset.material;
+                }
+            }
+
+
+            // Find and cache Underline & Ellipsis characters.
+            GetSpecialCharacters(m_fontAsset);
+
+            m_padding = GetPaddingForMaterial();
+
+            SetMaterialDirty();
+        }
+
+
+        /// <summary>
+        /// Method to retrieve the parent Canvas.
+        /// </summary>
+        private Canvas GetCanvas()
+        {
+            Canvas canvas = null;
+            var list = TMP_ListPool<Canvas>.Get();
+
+            gameObject.GetComponentsInParent(false, list);
+            if (list.Count > 0)
+            {
+                // Find the first active and enabled canvas.
+                for (int i = 0; i < list.Count; ++i)
+                {
+                    if (list[i].isActiveAndEnabled)
+                    {
+                        canvas = list[i];
+                        break;
+                    }
+                }
+            }
+
+            TMP_ListPool<Canvas>.Release(list);
+
+            return canvas;
+        }
+
+
+        /// <summary>
+        /// Method used when animating the Env Map on the material.
+        /// </summary>
+        void UpdateEnvMapMatrix()
+        {
+            if (!m_sharedMaterial.HasProperty(ShaderUtilities.ID_EnvMap) || m_sharedMaterial.GetTexture(ShaderUtilities.ID_EnvMap) == null)
+                return;
+
+            //Debug.Log("Updating Env Matrix...");
+            Vector3 rotation = m_sharedMaterial.GetVector(ShaderUtilities.ID_EnvMatrixRotation);
+            m_EnvMapMatrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(rotation), Vector3.one);
+
+            m_sharedMaterial.SetMatrix(ShaderUtilities.ID_EnvMatrix, m_EnvMapMatrix);
+        }
+
+
+        // Enable Masking in the Shader
+        void EnableMasking()
+        {
+            if (m_fontMaterial == null)
+            {
+                m_fontMaterial = CreateMaterialInstance(m_sharedMaterial);
+                m_canvasRenderer.SetMaterial(m_fontMaterial, m_sharedMaterial.GetTexture(ShaderUtilities.ID_MainTex));
+            }
+
+            m_sharedMaterial = m_fontMaterial;
+            if (m_sharedMaterial.HasProperty(ShaderUtilities.ID_ClipRect))
+            {
+                m_sharedMaterial.EnableKeyword(ShaderUtilities.Keyword_MASK_SOFT);
+                m_sharedMaterial.DisableKeyword(ShaderUtilities.Keyword_MASK_HARD);
+                m_sharedMaterial.DisableKeyword(ShaderUtilities.Keyword_MASK_TEX);
+
+                UpdateMask(); // Update Masking Coordinates
+            }
+
+            m_isMaskingEnabled = true;
+
+            //m_uiRenderer.SetMaterial(m_sharedMaterial, null);
+
+            //m_padding = ShaderUtilities.GetPadding(m_sharedMaterial, m_enableExtraPadding, m_isUsingBold);
+            //m_alignmentPadding = ShaderUtilities.GetFontExtent(m_sharedMaterial);
+
+            /*
+            Material mat = m_uiRenderer.GetMaterial();
+            if (mat.HasProperty(ShaderUtilities.ID_MaskCoord))
+            {
+                mat.EnableKeyword("MASK_SOFT");
+                mat.DisableKeyword("MASK_HARD");
+                mat.DisableKeyword("MASK_OFF");
+
+                m_isMaskingEnabled = true;
+                UpdateMask();
+            }
+            */
+        }
+
+
+        // Enable Masking in the Shader
+        void DisableMasking()
+        {
+            if (m_fontMaterial != null)
+            {
+                if (m_stencilID > 0)
+                    m_sharedMaterial = m_MaskMaterial;
+                //else
+                //    m_sharedMaterial = m_baseMaterial;
+                           
+                m_canvasRenderer.SetMaterial(m_sharedMaterial, m_sharedMaterial.GetTexture(ShaderUtilities.ID_MainTex));
+
+                DestroyImmediate(m_fontMaterial);
+            }
+              
+            m_isMaskingEnabled = false;
+            
+            /*
+            if (m_maskingMaterial != null && m_stencilID == 0)
+            {
+                m_sharedMaterial = m_baseMaterial;
+                m_uiRenderer.SetMaterial(m_sharedMaterial, null);
+            }
+            else if (m_stencilID > 0)
+            {
+                m_sharedMaterial.EnableKeyword("MASK_OFF");
+                m_sharedMaterial.DisableKeyword("MASK_HARD");
+                m_sharedMaterial.DisableKeyword("MASK_SOFT");
+            }
+            */
+             
+          
+            /*
+            Material mat = m_uiRenderer.GetMaterial();
+            if (mat.HasProperty(ShaderUtilities.ID_MaskCoord))
+            {
+                mat.EnableKeyword("MASK_OFF");
+                mat.DisableKeyword("MASK_HARD");
+                mat.DisableKeyword("MASK_SOFT");
+
+                m_isMaskingEnabled = false;
+                UpdateMask();
+            }
+            */
+        }
+
+
+        // Update & recompute Mask offset
+        void UpdateMask()
+        {
+            //Debug.Log("Updating Mask...");
+
+            if (m_rectTransform != null)
+            {
+                //Material mat = m_uiRenderer.GetMaterial();
+                //if (mat == null || (m_overflowMode == TextOverflowModes.ScrollRect && m_isScrollRegionSet))
+                //    return;
+
+                if (!ShaderUtilities.isInitialized)
+                    ShaderUtilities.GetShaderPropertyIDs();
+                
+                //Debug.Log("Setting Mask for the first time.");
+
+                m_isScrollRegionSet = true;
+
+                float softnessX = Mathf.Min(Mathf.Min(m_margin.x, m_margin.z), m_sharedMaterial.GetFloat(ShaderUtilities.ID_MaskSoftnessX));
+                float softnessY = Mathf.Min(Mathf.Min(m_margin.y, m_margin.w), m_sharedMaterial.GetFloat(ShaderUtilities.ID_MaskSoftnessY));
+
+                softnessX = softnessX > 0 ? softnessX : 0;
+                softnessY = softnessY > 0 ? softnessY : 0;
+
+                float width = (m_rectTransform.rect.width - Mathf.Max(m_margin.x, 0) - Mathf.Max(m_margin.z, 0)) / 2 + softnessX;
+                float height = (m_rectTransform.rect.height - Mathf.Max(m_margin.y, 0) - Mathf.Max(m_margin.w, 0)) / 2 + softnessY;
+
+                
+                Vector2 center = m_rectTransform.localPosition + new Vector3((0.5f - m_rectTransform.pivot.x) * m_rectTransform.rect.width + (Mathf.Max(m_margin.x, 0) - Mathf.Max(m_margin.z, 0)) / 2, (0.5f - m_rectTransform.pivot.y) * m_rectTransform.rect.height + (-Mathf.Max(m_margin.y, 0) + Mathf.Max(m_margin.w, 0)) / 2);
+        
+                //Vector2 center = m_rectTransform.localPosition + new Vector3((0.5f - m_rectTransform.pivot.x) * m_rectTransform.rect.width + (margin.x - margin.z) / 2, (0.5f - m_rectTransform.pivot.y) * m_rectTransform.rect.height + (-margin.y + margin.w) / 2);
+                Vector4 mask = new Vector4(center.x, center.y, width, height);
+                //Debug.Log(mask);
+
+
+
+                //Rect rect = new Rect(0, 0, m_rectTransform.rect.width + margin.x + margin.z, m_rectTransform.rect.height + margin.y + margin.w);
+                //int softness = (int)m_sharedMaterial.GetFloat(ShaderUtilities.ID_MaskSoftnessX) / 2;
+                m_sharedMaterial.SetVector(ShaderUtilities.ID_ClipRect, mask);
+            }
+        }
+
+
+        // Function called internally when a new material is assigned via th

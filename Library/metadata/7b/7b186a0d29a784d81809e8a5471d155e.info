@@ -1,0 +1,9 @@
+uri="#core_barr_armco_e_right_default_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_armco_e_right_damage_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_e_right_dam_link1_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_post_base_subent!1" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_e_right_def_obj01_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPECYLINDER id="core_barr_armco_e_right_dam_link1_col_shape" height="0.6529999" radius="0.04658444" shell="0.02" props="physparams.xml#sArmco" />
+		<TEMPLATESHAPEBOX id="core_barr_armco_e_right_col_01_shape" width=

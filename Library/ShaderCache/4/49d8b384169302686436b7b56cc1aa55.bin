@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<Firefighter.labelShort>Tuletõrju</Firefighter.labelShort>
+	<Firefighter.pawnLabel>Tuletõrjuja</Firefighter.pawnLabel>
+	
+	<PatientEmergency.labelShort>Patsient</PatientEmergency.labelShort>
+	<PatientEmergency.pawnLabel>Patsient</PatientEmergency.pawnLabel>
+	
+	<Doctor.labelShort>Ravi</Doctor.labelShort>
+	<Doctor.pawnLabel>Arst</Doctor.pawnLabel>
+	
+	<PatientBedRest.labelShort>Puhka</PatientBedRest.labelShort>
+	<PatientBedRest.pawnLabel>Puhkaja</PatientBedRest.pawnLabel>
+	
+	<Flicker.labelShort>Lülita</Flicker.labelShort>
+	<Flicker.pawnLabel>Lülitaja</Flicker.pawnLabel>
+	
+	<Warden.labelShort>Esinda</Warden.labelShort>
+	<Warden.pawnLabel>Esindaja</Warden.pawnLabel>
+	
+	<Handling.labelShort>Dresseeri</Handling.labelShort>
+	<Handling.pawnLabel>Dresseerija</Handling.pawnLabel>
+	
+	<Cooking.labelShort>Kokk</Cooking.labelShort>
+	<Cooking.pawnLabel>Kokk</Cooking.pawnLabel>
+	
+	<Hunting.labelShort>Jahi</Hunting.labelShort>
+	<Hunting.pawnLabel>Jahtija</Hunting.pawnLabel>
+	
+	<Constr

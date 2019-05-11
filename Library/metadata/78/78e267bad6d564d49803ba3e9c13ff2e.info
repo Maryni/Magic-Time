@@ -1,0 +1,10 @@
+3882837 0.028061036 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_road_sign_e_col_02_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_road_sign_e_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_road_sign_e_col_03_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0 1.59772217 0.0270454884 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_road_sign_e_col_03_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_road_sign_e_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_road_sign_e_default_01_renderable" sid="cot_road_sign_e_obj_01" />
+			</TEM

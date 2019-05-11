@@ -1,0 +1,24 @@
+}
+
+        private void OnCollabRevisionUpdated(CollabInfo state)
+        {
+            OnUpdatePage(m_CurrentPage);
+        }
+
+        private void OnCollabJobsCompleted(CollabInfo state)
+        {
+            m_ProgressRevision = null;
+        }
+
+        private void OnCollabError()
+        {
+            m_IsCollabError = true;
+            m_Window.UpdateState(RecalculateState(), false);
+        }
+
+        private void OnCollabErrorCleared()
+        {
+            m_IsCollabError = false;
+            m_FetchInProgress = true;
+            m_Service.GetRevisions(m_CurrentPage * ItemsPerPage, ItemsPerPage);
+            m_Window.UpdateState(Recal

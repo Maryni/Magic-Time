@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ancients -->
+  <Ancients.label>древние</Ancients.label>
+  <!-- EN: Ancients -->
+  <Ancients.fixedName>Древние</Ancients.fixedName>
+  <!-- EN: ancient -->
+  <Ancients.pawnSingular>древний</Ancients.pawnSingular>
+  <!-- EN: ancients -->
+  <Ancients.pawnsPlural>древние</Ancients.pawnsPlural>
+  
+  <!-- EN: ancients -->
+  <AncientsHostile.label>древние</AncientsHostile.label>
+  <!-- EN: Ancients -->
+  <AncientsHostile.fixedName>Древние</AncientsHostile.fixedName>
+  <!-- EN: ancient -->
+  <AncientsHostile.pawnSingular>древний</AncientsHostile.pawnSingular>
+  <!-

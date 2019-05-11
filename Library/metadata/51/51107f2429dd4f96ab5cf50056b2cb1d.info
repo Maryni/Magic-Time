@@ -1,0 +1,15 @@
+itcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UnityIAPHandlingPurchaseFailures.html">English</a></li>
+<li><a href="/ja/current/Manual/UnityIAPHandlingPurchaseFailures.html">日本語</a></li>
+<li><a href="/es/current/Manual/UnityIAPHandlingPurchaseFailures.html">Español</a></li>
+<li><a href="/kr/current/Manual/UnityIAPHandlingPurchaseFailures.html">한국어</a></li>
+<li><a href="/ru/current/Manual/UnityIAPHandlingPurchaseFailures.html">Русский</a></li>
+</ul></div>
+</div>
+<

@@ -1,0 +1,3804 @@
+am>
+      <param name="depthStoreAction">Store action for the depth/stencil buffer.</param>
+      <param name="colorRenderTarget"></param>
+      <param name="depthRenderTarget"></param>
+      <param name="colorRenderTargets"></param>
+      <param name="colorLoadActions"></param>
+      <param name="colorStoreActions"></param>
+      <param name="setup"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.RenderTargetBinding.#ctor(UnityEngine.Rendering.RenderTargetIdentifier[],UnityEngine.Rendering.RenderBufferLoadAction[],UnityEngine.Rendering.RenderBufferStoreAction[],UnityEngine.Rendering.RenderTargetIdentifier,UnityEngine.Rendering.RenderBufferLoadAction,UnityEngine.Rendering.RenderBufferStoreAction)">
+      <summary>
+        <para>Constructs RenderTargetBinding.</para>
+      </summary>
+      <param name="color">Color buffers to use as render targets.</param>
+      <param name="depth">Depth buffer to use as render target.</param>
+      <param name="colorLoadAction">Load actions for color buffers.</param>
+      <param name="colorStoreAction">Store actions for color buffers.</param>
+      <param name="depthLoadAction">Load action for the depth/stencil buffer.</param>
+      <param name="depthStoreAction">Store action for the depth/stencil buffer.</param>
+      <param name="colorRenderTarget"></param>
+      <param name="depthRenderTarget"></param>
+      <param name="colorRenderTargets"></param>
+      <param name="colorLoadActions"></param>
+      <param name="colorStoreActions"></param>
+      <param name="setup"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.RenderTargetBinding.#ctor(UnityEngine.RenderTargetSetup)">
+      <summary>
+        <para>Constructs RenderTargetBinding.</para>
+      </summary>
+      <param name="color">Color buffers to use as render targets.</param>
+      <param name="depth">Depth buffer to use as render target.</param>
+      <param name="colorLoadAction">Load actions for color buffers.</param>
+      <param name="colorStoreAction">Store actions for color buffers.</param>
+      <param name="depthLoadAction">Load action for the depth/stencil buffer.</param>
+      <param name="depthStoreAction">Store action for the depth/stencil buffer.</param>
+      <param name="colorRenderTarget"></param>
+      <param name="depthRenderTarget"></param>
+      <param name="colorRenderTargets"></param>
+      <param name="colorLoadActions"></param>
+      <param name="colorStoreActions"></param>
+      <param name="setup"></param>
+    </member>
+    <member name="T:UnityEngine.Rendering.RenderTargetIdentifier">
+      <summary>
+        <para>Identifies a RenderTexture for a Rendering.CommandBuffer.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.RenderTargetIdentifier.#ctor(UnityEngine.Rendering.BuiltinRenderTextureType)">
+      <summary>
+        <para>Creates a render target identifier.</para>
+      </summary>
+      <param name="type">Built-in temporary render texture type.</param>
+      <param name="name">Temporary render texture name.</param>
+      <param name="nameID">Temporary render texture name (as integer, see Shader.PropertyToID).</param>
+      <param name="tex">RenderTexture or Texture object to use.</param>
+      <param name="mipLevel">MipLevel of the RenderTexture to use.</param>
+      <param name="cubemapFace">Cubemap face of the Cubemap RenderTexture to use.</param>
+      <param name="depthSlice">Depth slice of the Array RenderTexture to use.</param>
+      <param name="renderTargetIdentifier">An existing render target identifier.</param>
+      <param name="cubeFace"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.RenderTargetIdentifier.#ctor(System.String)">
+      <summary>
+        <para>Creates a render target identifier.</para>
+      </summary>
+      <param name="type">Built-in temporary render texture type.</param>
+      <param name="name">Temporary render texture name.</param>
+      <param name="nameID">Temporary render texture name (as integer, see Shader.PropertyToID).</param>
+      <param name="tex">RenderTexture or Texture object to use.</param>
+      <param name="mipLevel">MipLevel of the RenderTexture to use.</param>
+      <param name="cubemapFace">Cubemap face of the Cubemap RenderTexture to use.</param>
+      <param name="depthSlice">Depth slice of the Array RenderTexture to use.</param>
+      <param name="renderTargetIdentifier">An existing render target identifier.</param>
+      <param name="cubeFace"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.RenderTargetIdentifier.#ctor(System.Int32)">
+      <summary>
+        <para>Creates a render target identifier.</para>
+      </summary>
+      <param name="type">Built-in temporary render texture type.</param>
+      <param name="name">Temporary render texture name.</param>
+      <param name="nameID">Temporary render texture name (as integer, see Shader.PropertyToID).</param>
+      <param name="tex">RenderTexture or Texture object to use.</param>
+      <param name="mipLevel">MipLevel of the RenderTexture to use.</param>
+      <param name="cubemapFace">Cubemap face of the Cubemap RenderTexture to use.</param>
+      <param name="depthSlice">Depth slice of the Array RenderTexture to use.</param>
+      <param name="renderTargetIdentifier">An existing render target identifier.</param>
+      <param name="cubeFace"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.RenderTargetIdentifier.#ctor(UnityEngine.Texture)">
+      <summary>
+        <para>Creates a render target identifier.</para>
+      </summary>
+      <param name="type">Built-in temporary render texture type.</param>
+      <param name="name">Temporary render texture name.</param>
+      <param name="nameID">Temporary render texture name (as integer, see Shader.PropertyToID).</param>
+      <param name="tex">RenderTexture or Texture object to use.</param>
+      <param name="mipLevel">MipLevel of the RenderTexture to use.</param>
+      <param name="cubemapFace">Cubemap face of the Cubemap RenderTexture to use.</param>
+      <param name="depthSlice">Depth slice of the Array RenderTexture to use.</param>
+      <param name="renderTargetIdentifier">An existing render target identifier.</param>
+      <param name="cubeFace"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.RenderTargetIdentifier.#ctor(UnityEngine.Rendering.RenderTargetIdentifier,System.Int32,UnityEngine.CubemapFace,System.Int32)">
+      <summary>
+        <para>Creates a render target identifier.</para>
+      </summary>
+      <param name="type">Built-in temporary render texture type.</param>
+      <param name="name">Temporary render texture name.</param>
+      <param name="nameID">Temporary render texture name (as integer, see Shader.PropertyToID).</param>
+      <param name="tex">RenderTexture or Texture object to use.</param>
+      <param name="mipLevel">MipLevel of the RenderTexture to use.</param>
+      <param name="cubemapFace">Cubemap face of the Cubemap RenderTexture to use.</param>
+      <param name="depthSlice">Depth slice of the Array RenderTexture to use.</param>
+      <param name="renderTargetIdentifier">An existing render target identifier.</param>
+      <param name="cubeFace"></param>
+    </member>
+    <member name="T:UnityEngine.Rendering.ShaderKeyword">
+      <summary>
+        <para>Identifier of a specific code path in a shader.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.ShaderKeyword.#ctor(System.String)">
+      <summary>
+        <para>Initializes a new instance of the ShaderKeyword class from a shader keyword name.</para>
+      </summary>
+      <param name="keywordName"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.ShaderKeyword.GetName">
+      <summary>
+        <para>Returns the string name of the keyword.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.ShaderKeyword.IsValid">
+      <summary>
+        <para>Returns true if the keyword has been imported by Unity.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.ShaderKeywordSet">
+      <summary>
+        <para>A collection of Rendering.ShaderKeyword that represents a specific shader variant.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.ShaderKeywordSet.Disable(UnityEngine.Rendering.ShaderKeyword)">
+      <summary>
+        <para>Disable a specific shader keyword.</para>
+      </summary>
+      <param name="keyword"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.ShaderKeywordSet.Enable(UnityEngine.Rendering.ShaderKeyword)">
+      <summary>
+        <para>Enable a specific shader keyword.</para>
+      </summary>
+      <param name="keyword"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.ShaderKeywordSet.GetShaderKeywords">
+      <summary>
+        <para>Return an array with all the enabled keywords in the ShaderKeywordSet.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.ShaderKeywordSet.IsEnabled(UnityEngine.Rendering.ShaderKeyword)">
+      <summary>
+        <para>Check whether a specific shader keyword is enabled.</para>
+      </summary>
+      <param name="keyword"></param>
+    </member>
+    <member name="T:UnityEngine.Rendering.ShadowCastingMode">
+      <summary>
+        <para>How shadows are cast from this object.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowCastingMode.Off">
+      <summary>
+        <para>No shadows are cast from this object.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowCastingMode.On">
+      <summary>
+        <para>Shadows are cast from this object.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly">
+      <summary>
+        <para>Object casts shadows, but is otherwise invisible in the scene.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowCastingMode.TwoSided">
+      <summary>
+        <para>Shadows are cast from this object, treating it as two-sided.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.ShadowMapPass">
+      <summary>
+        <para>Allows precise control over which shadow map passes to execute Rendering.CommandBuffer objects attached using Light.AddCommandBuffer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.All">
+      <summary>
+        <para>All shadow map passes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.Directional">
+      <summary>
+        <para>All directional shadow map passes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.DirectionalCascade0">
+      <summary>
+        <para>First directional shadow map cascade.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.DirectionalCascade1">
+      <summary>
+        <para>Second directional shadow map cascade.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.DirectionalCascade2">
+      <summary>
+        <para>Third directional shadow map cascade.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.DirectionalCascade3">
+      <summary>
+        <para>Fourth directional shadow map cascade.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.Pointlight">
+      <summary>
+        <para>All point light shadow passes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.PointlightNegativeX">
+      <summary>
+        <para>-X point light shadow cubemap face.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.PointlightNegativeY">
+      <summary>
+        <para>-Y point light shadow cubemap face.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.PointlightNegativeZ">
+      <summary>
+        <para>-Z point light shadow cubemap face.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.PointlightPositiveX">
+      <summary>
+        <para>+X point light shadow cubemap face.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.PointlightPositiveY">
+      <summary>
+        <para>+Y point light shadow cubemap face.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.PointlightPositiveZ">
+      <summary>
+        <para>+Z point light shadow cubemap face.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowMapPass.Spotlight">
+      <summary>
+        <para>Spotlight shadow pass.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.ShadowSamplingMode">
+      <summary>
+        <para>Used by CommandBuffer.SetShadowSamplingMode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowSamplingMode.CompareDepths">
+      <summary>
+        <para>Default shadow sampling mode: sampling with a comparison filter.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowSamplingMode.None">
+      <summary>
+        <para>In ShadowSamplingMode.None, depths are not compared. Use this value if a Texture is not a shadowmap.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShadowSamplingMode.RawDepth">
+      <summary>
+        <para>Shadow sampling mode for sampling the depth value.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.SortingGroup">
+      <summary>
+        <para>Adding a SortingGroup component to a GameObject will ensure that all Renderers within the GameObject's descendants will be sorted and rendered together.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rendering.SortingGroup.sortingLayerID">
+      <summary>
+        <para>Unique ID of the Renderer's sorting layer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rendering.SortingGroup.sortingLayerName">
+      <summary>
+        <para>Name of the Renderer's sorting layer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rendering.SortingGroup.sortingOrder">
+      <summary>
+        <para>Renderer's order within a sorting layer.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.SphericalHarmonicsL2">
+      <summary>
+        <para>Spherical harmonics up to the second order (3 bands, 9 coefficients).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.SphericalHarmonicsL2.AddAmbientLight(UnityEngine.Color)">
+      <summary>
+        <para>Add ambient lighting to probe data.</para>
+      </summary>
+      <param name="color"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.SphericalHarmonicsL2.AddDirectionalLight(UnityEngine.Vector3,UnityEngine.Color,System.Single)">
+      <summary>
+        <para>Add directional light to probe data.</para>
+      </summary>
+      <param name="direction"></param>
+      <param name="color"></param>
+      <param name="intensity"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.SphericalHarmonicsL2.Clear">
+      <summary>
+        <para>Clears SH probe to zero.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.SphericalHarmonicsL2.Evaluate(UnityEngine.Vector3[],UnityEngine.Color[])">
+      <summary>
+        <para>Evaluates the Spherical Harmonics for each of the given directions. The result from the first direction is written into the first element of results, the result from the second direction is written into the second element of results, and so on. The array size of directions and results must match and directions must be normalized.</para>
+      </summary>
+      <param name="directions">Normalized directions for which the spherical harmonics are to be evaluated.</param>
+      <param name="results">Output array for the evaluated values of the corresponding directions.</param>
+    </member>
+    <member name="?:UnityEngine.Rendering.SphericalHarmonicsL2.op_Equal(UnityEngine.Rendering.SphericalHarmonicsL2,UnityEngine.Rendering.SphericalHarmonicsL2)">
+      <summary>
+        <para>Returns true if SH probes are equal.</para>
+      </summary>
+      <param name="lhs"></param>
+      <param name="rhs"></param>
+    </member>
+    <member name="?:UnityEngine.Rendering.SphericalHarmonicsL2.op_Multiply(UnityEngine.Rendering.SphericalHarmonicsL2,System.Single)">
+      <summary>
+        <para>Scales SH by a given factor.</para>
+      </summary>
+      <param name="lhs"></param>
+      <param name="rhs"></param>
+    </member>
+    <member name="?:UnityEngine.Rendering.SphericalHarmonicsL2.op_Multiply(System.Single,UnityEngine.Rendering.SphericalHarmonicsL2)">
+      <summary>
+        <para>Scales SH by a given factor.</para>
+      </summary>
+      <param name="lhs"></param>
+      <param name="rhs"></param>
+    </member>
+    <member name="?:UnityEngine.Rendering.SphericalHarmonicsL2.op_NotEqual(UnityEngine.Rendering.SphericalHarmonicsL2,UnityEngine.Rendering.SphericalHarmonicsL2)">
+      <summary>
+        <para>Returns true if SH probes are different.</para>
+      </summary>
+      <param name="lhs"></param>
+      <param name="rhs"></param>
+    </member>
+    <member name="?:UnityEngine.Rendering.SphericalHarmonicsL2.op_Plus(UnityEngine.Rendering.SphericalHarmonicsL2,UnityEngine.Rendering.SphericalHarmonicsL2)">
+      <summary>
+        <para>Adds two SH probes.</para>
+      </summary>
+      <param name="lhs"></param>
+      <param name="rhs"></param>
+    </member>
+    <member name="P:UnityEngine.Rendering.SphericalHarmonicsL2.this">
+      <summary>
+        <para>Access individual SH coefficients.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.SplashScreen">
+      <summary>
+        <para>Provides an interface to the Unity splash screen.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Rendering.SplashScreen.isFinished">
+      <summary>
+        <para>Returns true once the splash screen as finished. This is once all logos have been shown for their specified duration.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.SplashScreen.Begin">
+      <summary>
+        <para>Initializes the splash screen so it is ready to begin drawing. Call this before you start calling Rendering.SplashScreen.Draw. Internally this function resets the timer and prepares the logos for drawing.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.SplashScreen.Draw">
+      <summary>
+        <para>Immediately draws the splash screen. Ensure you have called Rendering.SplashScreen.Begin before you start calling this.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.StencilOp">
+      <summary>
+        <para>Specifies the operation that's performed on the stencil buffer when rendering.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.DecrementSaturate">
+      <summary>
+        <para>Decrements the current stencil buffer value. Clamps to 0.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.DecrementWrap">
+      <summary>
+        <para>Decrements the current stencil buffer value. Wraps stencil buffer value to the maximum representable unsigned value when decrementing a stencil buffer value of zero.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.IncrementSaturate">
+      <summary>
+        <para>Increments the current stencil buffer value. Clamps to the maximum representable unsigned value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.IncrementWrap">
+      <summary>
+        <para>Increments the current stencil buffer value. Wraps stencil buffer value to zero when incrementing the maximum representable unsigned value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.Invert">
+      <summary>
+        <para>Bitwise inverts the current stencil buffer value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.Keep">
+      <summary>
+        <para>Keeps the current stencil value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.Replace">
+      <summary>
+        <para>Replace the stencil buffer value with reference value (specified in the shader).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.StencilOp.Zero">
+      <summary>
+        <para>Sets the stencil buffer value to zero.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.SynchronisationStage">
+      <summary>
+        <para>Broadly describes the stages of processing a draw call on the GPU.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.SynchronisationStage.PixelProcessing">
+      <summary>
+        <para>The process of creating and shading the fragments.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.SynchronisationStage.VertexProcessing">
+      <summary>
+        <para>All aspects of vertex processing.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Rendering.TextureDimension">
+      <summary>
+        <para>Texture "dimension" (type).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.Any">
+      <summary>
+        <para>Any texture type.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.Cube">
+      <summary>
+        <para>Cubemap texture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.CubeArray">
+      <summary>
+        <para>Cubemap array texture (CubemapArray).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.None">
+      <summary>
+        <para>No texture is assigned.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.Tex2D">
+      <summary>
+        <para>2D texture (Texture2D).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.Tex2DArray">
+      <summary>
+        <para>2D array texture (Texture2DArray).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.Tex3D">
+      <summary>
+        <para>3D volume texture (Texture3D).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.TextureDimension.Unknown">
+      <summary>
+        <para>Texture type is not initialized or unknown.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RenderingPath">
+      <summary>
+        <para>Rendering path of a Camera.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderingPath.DeferredLighting">
+      <summary>
+        <para>Deferred Lighting (Legacy).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderingPath.DeferredShading">
+      <summary>
+        <para>Deferred Shading.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderingPath.Forward">
+      <summary>
+        <para>Forward Rendering.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderingPath.UsePlayerSettings">
+      <summary>
+        <para>Use Player Settings.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderingPath.VertexLit">
+      <summary>
+        <para>Vertex Lit.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RenderSettings">
+      <summary>
+        <para>The Render Settings contain values for a range of visual elements in your scene, like fog and ambient light.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.ambientEquatorColor">
+      <summary>
+        <para>Ambient lighting coming from the sides.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.ambientGroundColor">
+      <summary>
+        <para>Ambient lighting coming from below.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.ambientIntensity">
+      <summary>
+        <para>How much the light from the Ambient Source affects the scene.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.ambientLight">
+      <summary>
+        <para>Flat ambient lighting color.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.ambientMode">
+      <summary>
+        <para>Ambient lighting mode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.ambientProbe">
+      <summary>
+        <para>Custom or skybox ambient lighting data.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.ambientSkyColor">
+      <summary>
+        <para>Ambient lighting coming from above.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.customReflection">
+      <summary>
+        <para>Custom specular reflection cubemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.defaultReflectionMode">
+      <summary>
+        <para>Default reflection mode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.defaultReflectionResolution">
+      <summary>
+        <para>Cubemap resolution for default reflection.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.flareFadeSpeed">
+      <summary>
+        <para>The fade speed of all flares in the scene.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.flareStrength">
+      <summary>
+        <para>The intensity of all flares in the scene.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.fog">
+      <summary>
+        <para>Is fog enabled?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.fogColor">
+      <summary>
+        <para>The color of the fog.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.fogDensity">
+      <summary>
+        <para>The density of the exponential fog.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.fogEndDistance">
+      <summary>
+        <para>The ending distance of linear fog.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.fogMode">
+      <summary>
+        <para>Fog mode to use.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.fogStartDistance">
+      <summary>
+        <para>The starting distance of linear fog.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.haloStrength">
+      <summary>
+        <para>Size of the Light halos.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.reflectionBounces">
+      <summary>
+        <para>The number of times a reflection includes other reflections.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.reflectionIntensity">
+      <summary>
+        <para>How much the skybox / custom cubemap reflection affects the scene.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.skybox">
+      <summary>
+        <para>The global skybox to use.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.subtractiveShadowColor">
+      <summary>
+        <para>The color used for the sun shadows in the Subtractive lightmode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderSettings.sun">
+      <summary>
+        <para>The light used by the procedural skybox.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RenderTargetSetup">
+      <summary>
+        <para>Fully describes setup of RenderTarget.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.color">
+      <summary>
+        <para>Color Buffers to set.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.colorLoad">
+      <summary>
+        <para>Load Actions for Color Buffers. It will override any actions set on RenderBuffers themselves.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.colorStore">
+      <summary>
+        <para>Store Actions for Color Buffers. It will override any actions set on RenderBuffers themselves.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.cubemapFace">
+      <summary>
+        <para>Cubemap face to render to.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.depth">
+      <summary>
+        <para>Depth Buffer to set.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.depthLoad">
+      <summary>
+        <para>Load Action for Depth Buffer. It will override any actions set on RenderBuffer itself.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.depthSlice">
+      <summary>
+        <para>Slice of a Texture3D or Texture2DArray to set as a render target.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.depthStore">
+      <summary>
+        <para>Store Actions for Depth Buffer. It will override any actions set on RenderBuffer itself.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTargetSetup.mipLevel">
+      <summary>
+        <para>Mip Level to render to.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer,UnityEngine.RenderBuffer)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>
+      <param name="depth">Depth Buffer to set.</param>
+      <param name="mipLevel">Mip Level to render to.</param>
+      <param name="face">Cubemap face to render to.</param>
+      <param name="mip"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer,UnityEngine.RenderBuffer,System.Int32)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>
+      <param name="depth">Depth Buffer to set.</param>
+      <param name="mipLevel">Mip Level to render to.</param>
+      <param name="face">Cubemap face to render to.</param>
+      <param name="mip"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer,UnityEngine.RenderBuffer,System.Int32,UnityEngine.CubemapFace)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>
+      <param name="depth">Depth Buffer to set.</param>
+      <param name="mipLevel">Mip Level to render to.</param>
+      <param name="face">Cubemap face to render to.</param>
+      <param name="mip"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer[],UnityEngine.RenderBuffer)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>
+      <param name="depth">Depth Buffer to set.</param>
+      <param name="mipLevel">Mip Level to render to.</param>
+      <param name="face">Cubemap face to render to.</param>
+      <param name="mip"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer[],UnityEngine.RenderBuffer,System.Int32)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>
+      <param name="depth">Depth Buffer to set.</param>
+      <param name="mipLevel">Mip Level to render to.</param>
+      <param name="face">Cubemap face to render to.</param>
+      <param name="mip"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer[],UnityEngine.RenderBuffer,System.Int32,UnityEngine.CubemapFace)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>
+      <param name="depth">Depth Buffer to set.</param>
+      <param name="mipLevel">Mip Level to render to.</param>
+      <param name="face">Cubemap face to render to.</param>
+      <param name="mip"></param>
+    </member>
+    <member name="T:UnityEngine.RenderTexture">
+      <summary>
+        <para>Render textures are textures that can be rendered to.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.active">
+      <summary>
+        <para>Currently active render texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.antiAliasing">
+      <summary>
+        <para>The antialiasing level for the RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.autoGenerateMips">
+      <summary>
+        <para>Mipmap levels are generated automatically when this flag is set.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.bindTextureMS">
+      <summary>
+        <para>If true and antiAliasing is greater than 1, the render texture will not be resolved by default.  Use this if the render texture needs to be bound as a multisampled texture in a shader.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.colorBuffer">
+      <summary>
+        <para>Color buffer of the render texture (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.depth">
+      <summary>
+        <para>The precision of the render texture's depth buffer in bits (0, 16, 24/32 are supported).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.depthBuffer">
+      <summary>
+        <para>Depth/stencil buffer of the render texture (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.descriptor">
+      <summary>
+        <para>This struct contains all the information required to create a RenderTexture. It can be copied, cached, and reused to easily create RenderTextures that all share the same properties.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.dimension">
+      <summary>
+        <para>Dimensionality (type) of the render texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.enableRandomWrite">
+      <summary>
+        <para>Enable random access write into this render texture on Shader Model 5.0 level shaders.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.format">
+      <summary>
+        <para>The color format of the render texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.height">
+      <summary>
+        <para>The height of the render texture in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.isVolume">
+      <summary>
+        <para>If enabled, this Render Texture will be used as a Texture3D.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.memorylessMode">
+      <summary>
+        <para>The render texture memoryless mode property.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.sRGB">
+      <summary>
+        <para>Does this render texture use sRGB read/write conversions (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.useDynamicScale">
+      <summary>
+        <para>Is the render texture marked to be scaled by the Dynamic Resolution system.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.useMipMap">
+      <summary>
+        <para>Render texture has mipmaps when this flag is set.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.volumeDepth">
+      <summary>
+        <para>Volume extent of a 3D render texture or number of slices of array texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.vrUsage">
+      <summary>
+        <para>If this RenderTexture is a VR eye texture used in stereoscopic rendering, this property decides what special rendering occurs, if any.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.width">
+      <summary>
+        <para>The width of the render texture in pixels.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.ConvertToEquirect(UnityEngine.RenderTexture,UnityEngine.Camera/MonoOrStereoscopicEye)">
+      <summary>
+        <para>Converts the render texture to equirectangular format (both stereoscopic or monoscopic equirect).
+The left eye will occupy the top half and the right eye will occupy the bottom. The monoscopic version will occupy the whole texture.
+Texture dimension must be of type TextureDimension.Cube.</para>
+      </summary>
+      <param name="equirect">RenderTexture to render the equirect format to.</param>
+      <param name="eye">A Camera eye corresponding to the left or right eye for stereoscopic rendering, or neither for monoscopic rendering.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.Create">
+      <summary>
+        <para>Actually creates the RenderTexture.</para>
+      </summary>
+      <returns>
+        <para>True if the texture is created, else false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(System.Int32,System.Int32,System.Int32,UnityEngine.RenderTextureFormat,UnityEngine.RenderTextureReadWrite)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(UnityEngine.RenderTexture)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(UnityEngine.RenderTextureDescriptor)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.DiscardContents">
+      <summary>
+        <para>Hint the GPU driver that the contents of the RenderTexture will not be used.</para>
+      </summary>
+      <param name="discardColor">Should the colour buffer be discarded?</param>
+      <param name="discardDepth">Should the depth buffer be discarded?</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.DiscardContents(System.Boolean,System.Boolean)">
+      <summary>
+        <para>Hint the GPU driver that the contents of the RenderTexture will not be used.</para>
+      </summary>
+      <param name="discardColor">Should the colour buffer be discarded?</param>
+      <param name="discardDepth">Should the depth buffer be discarded?</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GenerateMips">
+      <summary>
+        <para>Generate mipmap levels of a render texture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GetNativeDepthBufferPtr">
+      <summary>
+        <para>Retrieve a native (underlying graphics API) pointer to the depth buffer resource.</para>
+      </summary>
+      <returns>
+        <para>Pointer to an underlying graphics API depth buffer resource.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GetTemporary(UnityEngine.RenderTextureDescriptor)">
+      <summary>
+        <para>Allocate a temporary render texture.</para>
+      </summary>
+      <param name="width">Width in pixels.</param>
+      <param name="height">Height in pixels.</param>
+      <param name="depthBuffer">Depth buffer bits (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Render texture format.</param>
+      <param name="readWrite">Color space conversion mode.</param>
+      <param name="antiAliasing">Number of antialiasing samples to store in the texture. Valid values are 1, 2, 4, and 8. Throws an exception if any other value is passed.</param>
+      <param name="memorylessMode">Render texture memoryless mode.</param>
+      <param name="desc">Use this RenderTextureDesc for the settings when creating the temporary RenderTexture.</param>
+      <param name="vrUsage"></param>
+      <param name="useDynamicScale"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GetTemporary(System.Int32,System.Int32,System.Int32,UnityEngine.RenderTextureFormat,UnityEngine.RenderTextureReadWrite,System.Int32,UnityEngine.RenderTextureMemoryless,UnityEngine.VRTextureUsage,System.Boolean)">
+      <summary>
+        <para>Allocate a temporary render texture.</para>
+      </summary>
+      <param name="width">Width in pixels.</param>
+      <param name="height">Height in pixels.</param>
+      <param name="depthBuffer">Depth buffer bits (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Render texture format.</param>
+      <param name="readWrite">Color space conversion mode.</param>
+      <param name="antiAliasing">Number of antialiasing samples to store in the texture. Valid values are 1, 2, 4, and 8. Throws an exception if any other value is passed.</param>
+      <param name="memorylessMode">Render texture memoryless mode.</param>
+      <param name="desc">Use this RenderTextureDesc for the settings when creating the temporary RenderTexture.</param>
+      <param name="vrUsage"></param>
+      <param name="useDynamicScale"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.IsCreated">
+      <summary>
+        <para>Is the render texture actually created?</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.MarkRestoreExpected">
+      <summary>
+        <para>Indicate that there's a RenderTexture restore operation expected.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.Release">
+      <summary>
+        <para>Releases the RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.ReleaseTemporary(UnityEngine.RenderTexture)">
+      <summary>
+        <para>Release a temporary texture allocated with GetTemporary.</para>
+      </summary>
+      <param name="temp"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.ResolveAntiAliasedSurface">
+      <summary>
+        <para>Force an antialiased render texture to be resolved.</para>
+      </summary>
+      <param name="target">The render texture to resolve into.  If set, the target render texture must have the same dimensions and format as the source.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.ResolveAntiAliasedSurface(UnityEngine.RenderTexture)">
+      <summary>
+        <para>Force an antialiased render texture to be resolved.</para>
+      </summary>
+      <param name="target">The render texture to resolve into.  If set, the target render texture must have the same dimensions and format as the source.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.SetGlobalShaderProperty(System.String)">
+      <summary>
+        <para>Assigns this RenderTexture as a global shader property named propertyName.</para>
+      </summary>
+      <param name="propertyName"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.SupportsStencil(UnityEngine.RenderTexture)">
+      <summary>
+        <para>Does a RenderTexture have stencil buffer?</para>
+      </summary>
+      <param name="rt">Render texture, or null for main screen.</param>
+    </member>
+    <member name="T:UnityEngine.RenderTextureCreationFlags">
+      <summary>
+        <para>Set of flags that control the state of a newly-created RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.AllowVerticalFlip">
+      <summary>
+        <para>Clear this flag when a RenderTexture is a VR eye texture and the device does not automatically flip the texture when being displayed. This is platform specific and
+It is set by default. This flag is only cleared when part of a RenderTextureDesc that is returned from GetDefaultVREyeTextureDesc or other VR functions that return a RenderTextureDesc. Currently, only Hololens eye textures need to clear this flag.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.AutoGenerateMips">
+      <summary>
+        <para>Determines whether or not mipmaps are automatically generated when the RenderTexture is modified.
+This flag is set by default, and has no effect if the RenderTextureCreationFlags.MipMap flag is not also set.
+See RenderTexture.autoGenerateMips for more details.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.BindMS">
+      <summary>
+        <para>Setting this flag causes the RenderTexture to be bound as a multisampled texture in a shader. The flag prevents the RenderTexture from being resolved by default when RenderTexture.antiAliasing is greater than 1.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.CreatedFromScript">
+      <summary>
+        <para>This flag is always set internally when a RenderTexture is created from script. It has no effect when set manually from script code.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.DynamicallyScalable">
+      <summary>
+        <para>Set this flag to mark this RenderTexture for Dynamic Resolution should the target platform/graphics API support Dynamic Resolution. See ScalabeBufferManager for more details.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.EnableRandomWrite">
+      <summary>
+        <para>Set this flag to enable random access writes to the RenderTexture from shaders.
+Normally, pixel shaders only operate on pixels they are given. Compute shaders cannot write to textures without this flag. Random write enables shaders to write to arbitrary locations on a RenderTexture.  See RenderTexture.enableRandomWrite for more details, including supported platforms.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.EyeTexture">
+      <summary>
+        <para>Set this flag when the Texture is to be used as a VR eye texture. This flag is cleared by default. This flag is set on a RenderTextureDesc when it is returned from GetDefaultVREyeTextureDesc or other VR functions returning a RenderTextureDesc.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.MipMap">
+      <summary>
+        <para>Set this flag to allocate mipmaps in the RenderTexture. See RenderTexture.useMipMap for more details.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.NoResolvedColorSurface">
+      <summary>
+        <para>When this flag is set, the engine will not automatically resolve the color surface.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureCreationFlags.SRGB">
+      <summary>
+        <para>When this flag is set, reads and writes to this texture are converted to SRGB color space. See RenderTexture.sRGB for more details.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RenderTextureDescriptor">
+      <summary>
+        <para>This struct contains all the information required to create a RenderTexture. It can be copied, cached, and reused to easily create RenderTextures that all share the same properties.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.autoGenerateMips">
+      <summary>
+        <para>Mipmap levels are generated automatically when this flag is set.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.bindMS">
+      <summary>
+        <para>If true and msaaSamples is greater than 1, the render texture will not be resolved by default.  Use this if the render texture needs to be bound as a multisampled texture in a shader.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.colorFormat">
+      <summary>
+        <para>The color format for the RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.depthBufferBits">
+      <summary>
+        <para>The precision of the render texture's depth buffer in bits (0, 16, 24/32 are supported).
+
+See RenderTexture.depth.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.dimension">
+      <summary>
+        <para>Dimensionality (type) of the render texture.
+
+See RenderTexture.dimension.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.enableRandomWrite">
+      <summary>
+        <para>Enable random access write into this render texture on Shader Model 5.0 level shaders.
+
+See RenderTexture.enableRandomWrite.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.flags">
+      <summary>
+        <para>A set of RenderTextureCreationFlags that control how the texture is created.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.height">
+      <summary>
+        <para>The height of the render texture in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.memoryless">
+      <summary>
+        <para>The render texture memoryless mode property.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.msaaSamples">
+      <summary>
+        <para>The multisample antialiasing level for the RenderTexture.
+
+See RenderTexture.antiAliasing.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.shadowSamplingMode">
+      <summary>
+        <para>Determines how the RenderTexture is sampled if it is used as a shadow map.
+
+See ShadowSamplingMode for more details.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.sRGB">
+      <summary>
+        <para>This flag causes the render texture uses sRGB read/write conversions.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.useMipMap">
+      <summary>
+        <para>Render texture has mipmaps when this flag is set.
+
+See RenderTexture.useMipMap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.volumeDepth">
+      <summary>
+        <para>Volume extent of a 3D render texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.vrUsage">
+      <summary>
+        <para>If this RenderTexture is a VR eye texture used in stereoscopic rendering, this property decides what special rendering occurs, if any. Instead of setting this manually, use the value returned by XR.XRSettings.eyeTextureDesc|eyeTextureDesc or other VR functions returning a RenderTextureDescriptor.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTextureDescriptor.width">
+      <summary>
+        <para>The width of the render texture in pixels.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTextureDescriptor.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <para>Create a RenderTextureDescriptor with default values, or a certain width, height, and format.</para>
+      </summary>
+      <param name="width">Width of the RenderTexture in pixels.</param>
+      <param name="height">Height of the RenderTexture in pixels.</param>
+      <param name="colorFormat">The color format for the RenderTexture.</param>
+      <param name="depthBufferBits">The number of bits to use for the depth buffer.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTextureDescriptor.#ctor(System.Int32,System.Int32,UnityEngine.RenderTextureFormat)">
+      <summary>
+        <para>Create a RenderTextureDescriptor with default values, or a certain width, height, and format.</para>
+      </summary>
+      <param name="width">Width of the RenderTexture in pixels.</param>
+      <param name="height">Height of the RenderTexture in pixels.</param>
+      <param name="colorFormat">The color format for the RenderTexture.</param>
+      <param name="depthBufferBits">The number of bits to use for the depth buffer.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTextureDescriptor.#ctor(System.Int32,System.Int32,UnityEngine.RenderTextureFormat,System.Int32)">
+      <summary>
+        <para>Create a RenderTextureDescriptor with default values, or a certain width, height, and format.</para>
+      </summary>
+      <param name="width">Width of the RenderTexture in pixels.</param>
+      <param name="height">Height of the RenderTexture in pixels.</param>
+      <param name="colorFormat">The color format for the RenderTexture.</param>
+      <param name="depthBufferBits">The number of bits to use for the depth buffer.</param>
+    </member>
+    <member name="T:UnityEngine.RenderTextureFormat">
+      <summary>
+        <para>Format of a RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGB1555">
+      <summary>
+        <para>Color render texture format, 1 bit for Alpha channel, 5 bits for Red, Green and Blue channels.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGB2101010">
+      <summary>
+        <para>Color render texture format. 10 bits for colors, 2 bits for alpha.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGB32">
+      <summary>
+        <para>Color render texture format, 8 bits per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGB4444">
+      <summary>
+        <para>Color render texture format, 4 bit per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGB64">
+      <summary>
+        <para>Four color render texture format, 16 bits per channel, fixed point, unsigned normalized.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGBFloat">
+      <summary>
+        <para>Color render texture format, 32 bit floating point per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGBHalf">
+      <summary>
+        <para>Color render texture format, 16 bit floating point per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.ARGBInt">
+      <summary>
+        <para>Four channel (ARGB) render texture format, 32 bit signed integer per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.BGR101010_XR">
+      <summary>
+        <para>Color render texture format, 10 bit per channel, extended range.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.BGRA10101010_XR">
+      <summary>
+        <para>Color render texture format, 10 bit per channel, extended range.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.BGRA32">
+      <summary>
+        <para>Color render texture format, 8 bits per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.Default">
+      <summary>
+        <para>Default color render texture format: will be chosen accordingly to Frame Buffer format and Platform.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.DefaultHDR">
+      <summary>
+        <para>Default HDR color render texture format: will be chosen accordingly to Frame Buffer format and Platform.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.Depth">
+      <summary>
+        <para>A depth render texture format.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.R8">
+      <summary>
+        <para>Scalar (R) render texture format, 8 bit fixed point.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RFloat">
+      <summary>
+        <para>Scalar (R) render texture format, 32 bit floating point.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RG16">
+      <summary>
+        <para>Two channel (RG) render texture format, 8 bits per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RG32">
+      <summary>
+        <para>Two color (RG) render texture format, 16 bits per channel, fixed point, unsigned normalized.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RGB111110Float">
+      <summary>
+        <para>Color render texture format. R and G channels are 11 bit floating point, B channel is 10 bit floating point.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RGB565">
+      <summary>
+        <para>Color render texture format.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RGBAUShort">
+      <summary>
+        <para>Four channel (RGBA) render texture format, 16 bit unsigned integer per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RGFloat">
+      <summary>
+        <para>Two color (RG) render texture format, 32 bit floating point per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RGHalf">
+      <summary>
+        <para>Two color (RG) render texture format, 16 bit floating point per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RGInt">
+      <summary>
+        <para>Two channel (RG) render texture format, 32 bit signed integer per channel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RHalf">
+      <summary>
+        <para>Scalar (R) render texture format, 16 bit floating point.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.RInt">
+      <summary>
+        <para>Scalar (R) render texture format, 32 bit signed integer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureFormat.Shadowmap">
+      <summary>
+        <para>A native shadowmap render texture format.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RenderTextureMemoryless">
+      <summary>
+        <para>Flags enumeration of the render texture memoryless modes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureMemoryless.Color">
+      <summary>
+        <para>Render texture color pixels are memoryless when RenderTexture.antiAliasing is set to 1.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureMemoryless.Depth">
+      <summary>
+        <para>Render texture depth pixels are memoryless.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureMemoryless.MSAA">
+      <summary>
+        <para>Render texture color pixels are memoryless when RenderTexture.antiAliasing is set to 2, 4 or 8.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureMemoryless.None">
+      <summary>
+        <para>The render texture is not memoryless.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RenderTextureReadWrite">
+      <summary>
+        <para>Color space conversion mode of a RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureReadWrite.sRGB">
+      <summary>
+        <para>Render texture contains sRGB (color) data, perform Linear&lt;-&gt;sRGB conversions on it.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureReadWrite.Default">
+      <summary>
+        <para>Default color space conversion based on project settings.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RenderTextureReadWrite.Linear">
+      <summary>
+        <para>Render texture contains linear (non-color) data; don't perform color conversions on it.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RequireComponent">
+      <summary>
+        <para>The RequireComponent attribute automatically adds required components as dependencies.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RequireComponent.#ctor(System.Type)">
+      <summary>
+        <para>Require a single component.</para>
+      </summary>
+      <param name="requiredComponent"></param>
+    </member>
+    <member name="M:UnityEngine.RequireComponent.#ctor(System.Type,System.Type)">
+      <summary>
+        <para>Require two components.</para>
+      </summary>
+      <param name="requiredComponent"></param>
+      <param name="requiredComponent2"></param>
+    </member>
+    <member name="M:UnityEngine.RequireComponent.#ctor(System.Type,System.Type,System.Type)">
+      <summary>
+        <para>Require three components.</para>
+      </summary>
+      <param name="requiredComponent"></param>
+      <param name="requiredComponent2"></param>
+      <param name="requiredComponent3"></param>
+    </member>
+    <member name="T:UnityEngine.Resolution">
+      <summary>
+        <para>Represents a display resolution.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Resolution.height">
+      <summary>
+        <para>Resolution height in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Resolution.refreshRate">
+      <summary>
+        <para>Resolution's vertical refresh rate in Hz.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Resolution.width">
+      <summary>
+        <para>Resolution width in pixels.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Resolution.ToString">
+      <summary>
+        <para>Returns a nicely formatted string of the resolution.</para>
+      </summary>
+      <returns>
+        <para>A string with the format "width x height @ refreshRateHz".</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.ResourceRequest">
+      <summary>
+        <para>Asynchronous load request from the Resources bundle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ResourceRequest.asset">
+      <summary>
+        <para>Asset object being loaded (Read Only).</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Resources">
+      <summary>
+        <para>The Resources class allows you to find and access Objects including assets.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Resources.FindObjectsOfTypeAll(System.Type)">
+      <summary>
+        <para>Returns a list of all objects of Type type.</para>
+      </summary>
+      <param name="type">Type of the class to match while searching.</param>
+      <returns>
+        <para>An array of objects whose class is type or is derived from type.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Resources.FindObjectsOfTypeAll">
+      <summary>
+        <para>Returns a list of all objects of Type T.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Resources.Load(System.String)">
+      <summary>
+        <para>Loads an asset stored at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+    </member>
+    <member name="M:UnityEngine.Resources.Load(System.String)">
+      <summary>
+        <para>Loads an asset stored at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+      <param name="systemTypeInstance">Type filter for objects returned.</param>
+    </member>
+    <member name="M:UnityEngine.Resources.Load(System.String,System.Type)">
+      <summary>
+        <para>Loads an asset stored at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+      <param name="systemTypeInstance">Type filter for objects returned.</param>
+    </member>
+    <member name="M:UnityEngine.Resources.LoadAll(System.String)">
+      <summary>
+        <para>Loads all assets in a folder or file at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+      <param name="systemTypeInstance">Type filter for objects returned.</param>
+    </member>
+    <member name="M:UnityEngine.Resources.LoadAll(System.String,System.Type)">
+      <summary>
+        <para>Loads all assets in a folder or file at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+      <param name="systemTypeInstance">Type filter for objects returned.</param>
+    </member>
+    <member name="M:UnityEngine.Resources.LoadAll(System.String)">
+      <summary>
+        <para>Loads all assets in a folder or file at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+    </member>
+    <member name="M:UnityEngine.Resources.LoadAsync(System.String)">
+      <summary>
+        <para>Asynchronously loads an asset stored at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+      <param name="systemTypeInstance">Type filter for objects returned.</param>
+      <param name="type"></param>
+    </member>
+    <member name="M:UnityEngine.Resources.LoadAsync(System.String,System.Type)">
+      <summary>
+        <para>Asynchronously loads an asset stored at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+      <param name="systemTypeInstance">Type filter for objects returned.</param>
+      <param name="type"></param>
+    </member>
+    <member name="M:UnityEngine.Resources.LoadAsync(System.String)">
+      <summary>
+        <para>Asynchronously loads an asset stored at path in a Resources folder.</para>
+      </summary>
+      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+    </member>
+    <member name="M:UnityEngine.Resources.UnloadAsset(UnityEngine.Object)">
+      <summary>
+        <para>Unloads assetToUnload from memory.</para>
+      </summary>
+      <param name="assetToUnload"></param>
+    </member>
+    <member name="M:UnityEngine.Resources.UnloadUnusedAssets">
+      <summary>
+        <para>Unloads assets that are not used.</para>
+      </summary>
+      <returns>
+        <para>Object on which you can yield to wait until the operation completes.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.RuntimeInitializeLoadType">
+      <summary>
+        <para>Set RuntimeInitializeOnLoadMethod type.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimeInitializeLoadType.AfterSceneLoad">
+      <summary>
+        <para>After scene is loaded.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimeInitializeLoadType.BeforeSceneLoad">
+      <summary>
+        <para>Before scene is loaded.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.RuntimeInitializeOnLoadMethodAttribute">
+      <summary>
+        <para>Allow a runtime class method to be initialized when a game is loaded at runtime
+      without action from the user.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RuntimeInitializeOnLoadMethodAttribute.loadType">
+      <summary>
+        <para>Set RuntimeInitializeOnLoadMethod type.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RuntimeInitializeOnLoadMethodAttribute.#ctor">
+      <summary>
+        <para>Creation of the runtime class used when scenes are loaded.</para>
+      </summary>
+      <param name="loadType">Determine whether methods are called before or after the
+        scene is loaded.</param>
+    </member>
+    <member name="M:UnityEngine.RuntimeInitializeOnLoadMethodAttribute.#ctor(UnityEngine.RuntimeInitializeLoadType)">
+      <summary>
+        <para>Creation of the runtime class used when scenes are loaded.</para>
+      </summary>
+      <param name="loadType">Determine whether methods are called before or after the
+        scene is loaded.</param>
+    </member>
+    <member name="T:UnityEngine.RuntimePlatform">
+      <summary>
+        <para>The platform application is running. Returned by Application.platform.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.tvOS">
+      <summary>
+        <para>In the player on the Apple's tvOS.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.Android">
+      <summary>
+        <para>In the player on Android devices.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.IPhonePlayer">
+      <summary>
+        <para>In the player on the iPhone.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.LinuxEditor">
+      <summary>
+        <para>In the Unity editor on Linux.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.LinuxPlayer">
+      <summary>
+        <para>In the player on Linux.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.OSXDashboardPlayer">
+      <summary>
+        <para>In the Dashboard widget on macOS.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.OSXEditor">
+      <summary>
+        <para>In the Unity editor on macOS.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.OSXPlayer">
+      <summary>
+        <para>In the player on macOS.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.OSXWebPlayer">
+      <summary>
+        <para>In the web player on macOS.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.PS4">
+      <summary>
+        <para>In the player on the Playstation 4.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.PSP2">
+      <summary>
+        <para>In the player on the PS Vita.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.Switch">
+      <summary>
+        <para>In the player on Nintendo Switch.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.WebGLPlayer">
+      <summary>
+        <para>In the player on WebGL</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.WindowsEditor">
+      <summary>
+        <para>In the Unity editor on Windows.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.WindowsPlayer">
+      <summary>
+        <para>In the player on Windows.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.WindowsWebPlayer">
+      <summary>
+        <para>In the web player on Windows.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.WSAPlayerARM">
+      <summary>
+        <para>In the player on Windows Store Apps when CPU architecture is ARM.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.WSAPlayerX64">
+      <summary>
+        <para>In the player on Windows Store Apps when CPU architecture is X64.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.WSAPlayerX86">
+      <summary>
+        <para>In the player on Windows Store Apps when CPU architecture is X86.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.RuntimePlatform.XboxOne">
+      <summary>
+        <para>In the player on Xbox One.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ScalableBufferManager">
+      <summary>
+        <para>Scales render textures to support dynamic resolution if the target platform/graphics API supports it.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ScalableBufferManager.heightScaleFactor">
+      <summary>
+        <para>Height scale factor to control dynamic resolution.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ScalableBufferManager.widthScaleFactor">
+      <summary>
+        <para>Width scale factor to control dynamic resolution.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ScalableBufferManager.ResizeBuffers(System.Single,System.Single)">
+      <summary>
+        <para>Function to resize all buffers marked as DynamicallyScalable.</para>
+      </summary>
+      <param name="widthScale">New scale factor for the width the ScalableBufferManager will use to resize all render textures the user marked as DynamicallyScalable, has to be some value greater than 0.0 and less than or equal to 1.0.</param>
+      <param name="heightScale">New scale factor for the height the ScalableBufferManager will use to resize all render textures the user marked as DynamicallyScalable, has to be some value greater than 0.0 and less than or equal to 1.0.</param>
+    </member>
+    <member name="T:UnityEngine.SceneManagement.LoadSceneMode">
+      <summary>
+        <para>Used when loading a scene in a player.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SceneManagement.LoadSceneMode.Additive">
+      <summary>
+        <para>Adds the scene to the current loaded scenes.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SceneManagement.LoadSceneMode.Single">
+      <summary>
+        <para>Closes all current loaded scenes and loads a scene.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SceneManagement.Scene">
+      <summary>
+        <para>Run-time data structure for *.unity file.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.Scene.buildIndex">
+      <summary>
+        <para>Returns the index of the scene in the Build Settings. Always returns -1 if the scene was loaded through an AssetBundle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.Scene.isDirty">
+      <summary>
+        <para>Returns true if the scene is modifed.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.Scene.isLoaded">
+      <summary>
+        <para>Returns true if the scene is loaded.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.Scene.name">
+      <summary>
+        <para>Returns the name of the scene.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.Scene.path">
+      <summary>
+        <para>Returns the relative path of the scene. Like: "AssetsMyScenesMyScene.unity".</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.Scene.rootCount">
+      <summary>
+        <para>The number of root transforms of this scene.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.Scene.GetRootGameObjects">
+      <summary>
+        <para>Returns all the root game objects in the scene.</para>
+      </summary>
+      <returns>
+        <para>An array of game objects.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.Scene.GetRootGameObjects(System.Collections.Generic.List`1&lt;UnityEngine.GameObject&gt;)">
+      <summary>
+        <para>Returns all the root game objects in the scene.</para>
+      </summary>
+      <param name="rootGameObjects">A list which is used to return the root game objects.</param>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.Scene.IsValid">
+      <summary>
+        <para>Whether this is a valid scene.
+A scene may be invalid if, for example, you tried to open a scene that does not exist. In this case, the scene returned from EditorSceneManager.OpenScene would return False for IsValid.</para>
+      </summary>
+      <returns>
+        <para>Whether this is a valid scene.</para>
+      </returns>
+    </member>
+    <member name="?:UnityEngine.SceneManagement.Scene.op_Equal(UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Returns true if the Scenes are equal.</para>
+      </summary>
+      <param name="lhs"></param>
+      <param name="rhs"></param>
+    </member>
+    <member name="?:UnityEngine.SceneManagement.Scene.op_NotEqual(UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Returns true if the Scenes are different.</para>
+      </summary>
+      <param name="lhs"></param>
+      <param name="rhs"></param>
+    </member>
+    <member name="T:UnityEngine.SceneManagement.SceneManager">
+      <summary>
+        <para>Scene management at run-time.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.SceneManagement.SceneManager.activeSceneChanged(UnityEngine.Events.UnityAction`2&lt;UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene&gt;)">
+      <summary>
+        <para>Subscribe to this event to get notified when the active Scene has changed.</para>
+      </summary>
+      <param name="value">Previous active scene and the new active scene.</param>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.SceneManager.sceneCount">
+      <summary>
+        <para>The total number of currently loaded Scenes.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings">
+      <summary>
+        <para>Number of Scenes in Build Settings.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.SceneManagement.SceneManager.sceneLoaded(UnityEngine.Events.UnityAction`2&lt;UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode&gt;)">
+      <summary>
+        <para>Add a delegate to this to get notifications when a Scene has loaded.</para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="?:UnityEngine.SceneManagement.SceneManager.sceneUnloaded(UnityEngine.Events.UnityAction`1&lt;UnityEngine.SceneManagement.Scene&gt;)">
+      <summary>
+        <para>Add a delegate to this to get notifications when a Scene has unloaded</para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.CreateScene(System.String)">
+      <summary>
+        <para>Create an empty new Scene at runtime with the given name.</para>
+      </summary>
+      <param name="sceneName">The name of the new Scene. It cannot be empty or null, or same as the name of the existing Scenes.</param>
+      <returns>
+        <para>A reference to the new Scene that was created, or an invalid Scene if creation failed.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.GetActiveScene">
+      <summary>
+        <para>Gets the currently active Scene.</para>
+      </summary>
+      <returns>
+        <para>The active Scene.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.GetAllScenes">
+      <summary>
+        <para>Returns an array of all the Scenes currently open in the hierarchy.</para>
+      </summary>
+      <returns>
+        <para>Array of Scenes in the Hierarchy.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneAt(System.Int32)">
+      <summary>
+        <para>Get the Scene at index in the SceneManager's list of loaded Scenes.</para>
+      </summary>
+      <param name="index">Index of the Scene to get. Index must be greater than or equal to 0 and less than SceneManager.sceneCount.</param>
+      <returns>
+        <para>A reference to the Scene at the index specified.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex(System.Int32)">
+      <summary>
+        <para>Get a Scene struct from a build index.</para>
+      </summary>
+      <param name="buildIndex">Build index as shown in the Build Settings window.</param>
+      <returns>
+        <para>A reference to the Scene, if valid. If not, an invalid Scene is returned.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneByName(System.String)">
+      <summary>
+        <para>Searches through the Scenes loaded for a Scene with the given name.</para>
+      </summary>
+      <param name="name">Name of Scene to find.</param>
+      <returns>
+        <para>A reference to the Scene, if valid. If not, an invalid Scene is returned.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneByPath(System.String)">
+      <summary>
+        <para>Searches all Scenes loaded for a Scene that has the given asset path.</para>
+      </summary>
+      <param name="scenePath">Path of the Scene. Should be relative to the project folder. Like: "AssetsMyScenesMyScene.unity".</param>
+      <returns>
+        <para>A reference to the Scene, if valid. If not, an invalid Scene is returned.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.LoadScene(System.Int32,UnityEngine.SceneManagement.LoadSceneMode)">
+      <summary>
+        <para>Loads the Scene by its name or index in Build Settings.</para>
+      </summary>
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">Allows you to specify whether or not to load the Scene additively.
+        See SceneManagement.LoadSceneMode for more information about the options.</param>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.LoadScene(System.String,UnityEngine.SceneManagement.LoadSceneMode)">
+      <summary>
+        <para>Loads the Scene by its name or index in Build Settings.</para>
+      </summary>
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">Allows you to specify whether or not to load the Scene additively.
+        See SceneManagement.LoadSceneMode for more information about the options.</param>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(System.String,UnityEngine.SceneManagement.LoadSceneMode)">
+      <summary>
+        <para>Loads the Scene asynchronously in the background.</para>
+      </summary>
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">If LoadSceneMode.Single then all current Scenes will be unloaded before loading.</param>
+      <returns>
+        <para>Use the AsyncOperation to determine if the operation has completed.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(System.Int32,UnityEngine.SceneManagement.LoadSceneMode)">
+      <summary>
+        <para>Loads the Scene asynchronously in the background.</para>
+      </summary>
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">If LoadSceneMode.Single then all current Scenes will be unloaded before loading.</param>
+      <returns>
+        <para>Use the AsyncOperation to determine if the operation has completed.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.MergeScenes(UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>This will merge the source Scene into the destinationScene.</para>
+      </summary>
+      <param name="sourceScene">The Scene that will be merged into the destination Scene.</param>
+      <param name="destinationScene">Existing Scene to merge the source Scene into.</param>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(UnityEngine.GameObject,UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Move a GameObject from its current Scene to a new Scene.</para>
+      </summary>
+      <param name="go">GameObject to move.</param>
+      <param name="scene">Scene to move into.</param>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Set the Scene to be active.</para>
+      </summary>
+      <param name="scene">The Scene to be set.</param>
+      <returns>
+        <para>Returns false if the Scene is not loaded yet.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadScene(System.Int32)">
+      <summary>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
+      </summary>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to unload.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
+      <param name="scene">Scene to unload.</param>
+      <returns>
+        <para>Returns true if the Scene is unloaded.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadScene(System.String)">
+      <summary>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
+      </summary>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to unload.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
+      <param name="scene">Scene to unload.</param>
+      <returns>
+        <para>Returns true if the Scene is unloaded.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadScene(UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
+      </summary>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to unload.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
+      <param name="scene">Scene to unload.</param>
+      <returns>
+        <para>Returns true if the Scene is unloaded.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(System.Int32)">
+      <summary>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
+      </summary>
+      <param name="sceneBuildIndex">Index of the Scene in BuildSettings.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
+      <param name="scene">Scene to unload.</param>
+      <returns>
+        <para>Use the AsyncOperation to determine if the operation has completed.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(System.String)">
+      <summary>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
+      </summary>
+      <param name="sceneBuildIndex">Index of the Scene in BuildSettings.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
+      <param name="scene">Scene to unload.</param>
+      <returns>
+        <para>Use the AsyncOperation to determine if the operation has completed.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
+      </summary>
+      <param name="sceneBuildIndex">Index of the Scene in BuildSettings.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
+      <param name="scene">Scene to unload.</param>
+      <returns>
+        <para>Use the AsyncOperation to determine if the operation has completed.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.SceneManagement.SceneUtility">
+      <summary>
+        <para>Scene and Build Settings related utilities.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneUtility.GetBuildIndexByScenePath(System.String)">
+      <summary>
+        <para>Get the build index from a scene path.</para>
+      </summary>
+      <param name="scenePath">Scene path (e.g: "AssetsScenesScene1.unity").</param>
+      <returns>
+        <para>Build index.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(System.Int32)">
+      <summary>
+        <para>Get the scene path from a build index.</para>
+      </summary>
+      <param name="buildIndex"></param>
+      <returns>
+        <para>Scene path (e.g "AssetsScenesScene1.unity").</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Screen">
+      <summary>
+        <para>Access to display information.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.autorotateToLandscapeLeft">
+      <summary>
+        <para>Allow auto-rotation to landscape left?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.autorotateToLandscapeRight">
+      <summary>
+        <para>Allow auto-rotation to landscape right?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.autorotateToPortrait">
+      <summary>
+        <para>Allow auto-rotation to portrait?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.autorotateToPortraitUpsideDown">
+      <summary>
+        <para>Allow auto-rotation to portrait, upside down?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.currentResolution">
+      <summary>
+        <para>The current screen resolution (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.dpi">
+      <summary>
+        <para>The current DPI of the screen / device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.fullScreen">
+      <summary>
+        <para>Is the game running fullscreen?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.fullScreenMode">
+      <summary>
+        <para>Set this property to one of the values in FullScreenMode to change the display mode of your application.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.height">
+      <summary>
+        <para>The current height of the screen window in pixels (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.lockCursor">
+      <summary>
+        <para>Should the cursor be locked?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.orientation">
+      <summary>
+        <para>Specifies logical orientation of the screen.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.resolutions">
+      <summary>
+        <para>All fullscreen resolutions supported by the monitor (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.safeArea">
+      <summary>
+        <para>Returns the safe area of the screen in pixels (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.sleepTimeout">
+      <summary>
+        <para>A power saving setting, allowing the screen to dim some time after the last active user interaction.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.width">
+      <summary>
+        <para>The current width of the screen window in pixels (Read Only).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Screen.SetResolution(System.Int32,System.Int32,System.Boolean)">
+      <summary>
+        <para>Switches the screen resolution.</para>
+      </summary>
+      <param name="width"></param>
+      <param name="height"></param>
+      <param name="fullscreen"></param>
+      <param name="preferredRefreshRate"></param>
+      <param name="fullscreenMode"></param>
+    </member>
+    <member name="M:UnityEngine.Screen.SetResolution(System.Int32,System.Int32,System.Boolean,System.Int32)">
+      <summary>
+        <para>Switches the screen resolution.</para>
+      </summary>
+      <param name="width"></param>
+      <param name="height"></param>
+      <param name="fullscreen"></param>
+      <param name="preferredRefreshRate"></param>
+      <param name="fullscreenMode"></param>
+    </member>
+    <member name="M:UnityEngine.Screen.SetResolution(System.Int32,System.Int32,UnityEngine.FullScreenMode,System.Int32)">
+      <summary>
+        <para>Switches the screen resolution.</para>
+      </summary>
+      <param name="width"></param>
+      <param name="height"></param>
+      <param name="fullscreen"></param>
+      <param name="preferredRefreshRate"></param>
+      <param name="fullscreenMode"></param>
+    </member>
+    <member name="T:UnityEngine.ScreenOrientation">
+      <summary>
+        <para>Describes screen orientation.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenOrientation.AutoRotation">
+      <summary>
+        <para>Auto-rotates the screen as necessary toward any of the enabled orientations.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenOrientation.LandscapeLeft">
+      <summary>
+        <para>Landscape orientation, counter-clockwise from the portrait orientation.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenOrientation.LandscapeRight">
+      <summary>
+        <para>Landscape orientation, clockwise from the portrait orientation.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenOrientation.Portrait">
+      <summary>
+        <para>Portrait orientation.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScreenOrientation.PortraitUpsideDown">
+      <summary>
+        <para>Portrait orientation, upside down.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ScriptableObject">
+      <summary>
+        <para>A class you can derive from if you want to create objects that don't need to be attached to game objects.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ScriptableObject.CreateInstance(System.String)">
+      <summary>
+        <para>Creates an instance of a scriptable object.</para>
+      </summary>
+      <param name="className">The type of the ScriptableObject to create, as the name of the type.</param>
+      <param name="type">The type of the ScriptableObject to create, as a System.Type instance.</param>
+      <returns>
+        <para>The created ScriptableObject.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ScriptableObject.CreateInstance(System.Type)">
+      <summary>
+        <para>Creates an instance of a scriptable object.</para>
+      </summary>
+      <param name="className">The type of the ScriptableObject to create, as the name of the type.</param>
+      <param name="type">The type of the ScriptableObject to create, as a System.Type instance.</param>
+      <returns>
+        <para>The created ScriptableObject.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ScriptableObject.CreateInstance">
+      <summary>
+        <para>Creates an instance of a scriptable object.</para>
+      </summary>
+      <returns>
+        <para>The created ScriptableObject.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Scripting.PreserveAttribute">
+      <summary>
+        <para>PreserveAttribute prevents byte code stripping from removing a class, method, field, or property.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Security">
+      <summary>
+        <para>Webplayer security related class. Not supported from 5.4.0 onwards.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Security.LoadAndVerifyAssembly(System.Byte[],System.String)">
+      <summary>
+        <para>Loads an assembly and checks that it is allowed to be used in the webplayer. (Web Player is no Longer Supported).</para>
+      </summary>
+      <param name="assemblyData">Assembly to verify.</param>
+      <param name="authorizationKey">Public key used to verify assembly.</param>
+      <returns>
+        <para>Loaded, verified, assembly, or null if the assembly cannot be verfied.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Security.LoadAndVerifyAssembly(System.Byte[])">
+      <summary>
+        <para>Loads an assembly and checks that it is allowed to be used in the webplayer. (Web Player is no Longer Supported).</para>
+      </summary>
+      <param name="assemblyData">Assembly to verify.</param>
+      <param name="authorizationKey">Public key used to verify assembly.</param>
+      <returns>
+        <para>Loaded, verified, assembly, or null if the assembly cannot be verfied.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Security.PrefetchSocketPolicy(System.String,System.Int32)">
+      <summary>
+        <para>Prefetch the webplayer socket security policy from a non-default port number.</para>
+      </summary>
+      <param name="ip">IP address of server.</param>
+      <param name="atPort">Port from where socket policy is read.</param>
+      <param name="timeout">Time to wait for response.</param>
+    </member>
+    <member name="M:UnityEngine.Security.PrefetchSocketPolicy(System.String,System.Int32,System.Int32)">
+      <summary>
+        <para>Prefetch the webplayer socket security policy from a non-default port number.</para>
+      </summary>
+      <param name="ip">IP address of server.</param>
+      <param name="atPort">Port from where socket policy is read.</param>
+      <param name="timeout">Time to wait for response.</param>
+    </member>
+    <member name="T:UnityEngine.SelectionBaseAttribute">
+      <summary>
+        <para>Add this attribute to a script class to mark its GameObject as a selection base object for Scene View picking.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SendMessageOptions">
+      <summary>
+        <para>Options for how to send a message.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SendMessageOptions.DontRequireReceiver">
+      <summary>
+        <para>No receiver is required for SendMessage.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SendMessageOptions.RequireReceiver">
+      <summary>
+        <para>A receiver is required for SendMessage.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Serialization.FormerlySerializedAsAttribute">
+      <summary>
+        <para>Use this attribute to rename a field without losing its serialized value.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Serialization.FormerlySerializedAsAttribute.oldName">
+      <summary>
+        <para>The name of the field before the rename.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Serialization.FormerlySerializedAsAttribute.#ctor(System.String)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="oldName">The name of the field before renaming.</param>
+    </member>
+    <member name="T:UnityEngine.SerializeField">
+      <summary>
+        <para>Force Unity to serialize a private field.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Shader">
+      <summary>
+        <para>Shader scripts used for all rendering.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Shader.globalMaximumLOD">
+      <summary>
+        <para>Shader LOD level for all shaders.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Shader.globalRenderPipeline">
+      <summary>
+        <para>Render pipeline currently in use.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Shader.globalShaderHardwareTier">
+      <summary>
+        <para>Shader hardware tier classification for current device.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Shader.isSupported">
+      <summary>
+        <para>Can this shader run on the end-users graphics card? (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Shader.maximumLOD">
+      <summary>
+        <para>Shader LOD level for this shader.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Shader.renderQueue">
+      <summary>
+        <para>Render queue of this shader. (Read Only)</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Shader.DisableKeyword(System.String)">
+      <summary>
+        <para>Unset a global shader keyword.</para>
+      </summary>
+      <param name="keyword"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.EnableKeyword(System.String)">
+      <summary>
+        <para>Set a global shader keyword.</para>
+      </summary>
+      <param name="keyword"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.Find(System.String)">
+      <summary>
+        <para>Finds a shader with the given name.</para>
+      </summary>
+      <param name="name"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalColor(System.String)">
+      <summary>
+        <para>Gets a global color property for all shaders previously set using SetGlobalColor.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalColor(System.Int32)">
+      <summary>
+        <para>Gets a global color property for all shaders previously set using SetGlobalColor.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalFloat(System.String)">
+      <summary>
+        <para>Gets a global float property for all shaders previously set using SetGlobalFloat.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalFloat(System.Int32)">
+      <summary>
+        <para>Gets a global float property for all shaders previously set using SetGlobalFloat.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalFloatArray(System.String)">
+      <summary>
+        <para>Gets a global float array for all shaders previously set using SetGlobalFloatArray.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalFloatArray(System.Int32)">
+      <summary>
+        <para>Gets a global float array for all shaders previously set using SetGlobalFloatArray.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalFloatArray(System.String,System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Fetches a global float array into a list.</para>
+      </summary>
+      <param name="values">The list to hold the returned array.</param>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalFloatArray(System.Int32,System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Fetches a global float array into a list.</para>
+      </summary>
+      <param name="values">The list to hold the returned array.</param>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalInt(System.String)">
+      <summary>
+        <para>Gets a global int property for all shaders previously set using SetGlobalInt.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalInt(System.Int32)">
+      <summary>
+        <para>Gets a global int property for all shaders previously set using SetGlobalInt.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalMatrix(System.String)">
+      <summary>
+        <para>Gets a global matrix property for all shaders previously set using SetGlobalMatrix.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalMatrix(System.Int32)">
+      <summary>
+        <para>Gets a global matrix property for all shaders previously set using SetGlobalMatrix.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalMatrixArray(System.String)">
+      <summary>
+        <para>Gets a global matrix array for all shaders previously set using SetGlobalMatrixArray.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalMatrixArray(System.Int32)">
+      <summary>
+        <para>Gets a global matrix array for all shaders previously set using SetGlobalMatrixArray.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalMatrixArray(System.String,System.Collections.Generic.List`1&lt;UnityEngine.Matrix4x4&gt;)">
+      <summary>
+        <para>Fetches a global matrix array into a list.</para>
+      </summary>
+      <param name="values">The list to hold the returned array.</param>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalMatrixArray(System.Int32,System.Collections.Generic.List`1&lt;UnityEngine.Matrix4x4&gt;)">
+      <summary>
+        <para>Fetches a global matrix array into a list.</para>
+      </summary>
+      <param name="values">The list to hold the returned array.</param>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalTexture(System.String)">
+      <summary>
+        <para>Gets a global texture property for all shaders previously set using SetGlobalTexture.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalTexture(System.Int32)">
+      <summary>
+        <para>Gets a global texture property for all shaders previously set using SetGlobalTexture.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalVector(System.String)">
+      <summary>
+        <para>Gets a global vector property for all shaders previously set using SetGlobalVector.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalVector(System.Int32)">
+      <summary>
+        <para>Gets a global vector property for all shaders previously set using SetGlobalVector.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalVectorArray(System.String)">
+      <summary>
+        <para>Gets a global vector array for all shaders previously set using SetGlobalVectorArray.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalVectorArray(System.Int32)">
+      <summary>
+        <para>Gets a global vector array for all shaders previously set using SetGlobalVectorArray.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalVectorArray(System.String,System.Collections.Generic.List`1&lt;UnityEngine.Vector4&gt;)">
+      <summary>
+        <para>Fetches a global vector array into a list.</para>
+      </summary>
+      <param name="values">The list to hold the returned array.</param>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.GetGlobalVectorArray(System.Int32,System.Collections.Generic.List`1&lt;UnityEngine.Vector4&gt;)">
+      <summary>
+        <para>Fetches a global vector array into a list.</para>
+      </summary>
+      <param name="values">The list to hold the returned array.</param>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="M:UnityEngine.Shader.IsKeywordEnabled(System.String)">
+      <summary>
+        <para>Is global shader keyword enabled?</para>
+      </summary>
+      <param name="keyword"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.PropertyToID(System.String)">
+      <summary>
+        <para>Gets unique identifier for a shader property name.</para>
+      </summary>
+      <param name="name">Shader property name.</param>
+      <returns>
+        <para>Unique integer for the name.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalBuffer(System.String,UnityEngine.ComputeBuffer)">
+      <summary>
+        <para>Sets a global compute buffer property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalBuffer(System.Int32,UnityEngine.ComputeBuffer)">
+      <summary>
+        <para>Sets a global compute buffer property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalColor(System.String,UnityEngine.Color)">
+      <summary>
+        <para>Sets a global color property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalColor(System.Int32,UnityEngine.Color)">
+      <summary>
+        <para>Sets a global color property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalFloat(System.String,System.Single)">
+      <summary>
+        <para>Sets a global float property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalFloat(System.Int32,System.Single)">
+      <summary>
+        <para>Sets a global float property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalFloatArray(System.String,System.Single[])">
+      <summary>
+        <para>Sets a global float array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalFloatArray(System.Int32,System.Single[])">
+      <summary>
+        <para>Sets a global float array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalFloatArray(System.String,System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Sets a global float array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalFloatArray(System.Int32,System.Collections.Generic.List`1&lt;System.Single&gt;)">
+      <summary>
+        <para>Sets a global float array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalInt(System.String,System.Int32)">
+      <summary>
+        <para>Sets a global int property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalInt(System.Int32,System.Int32)">
+      <summary>
+        <para>Sets a global int property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalMatrix(System.String,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Sets a global matrix property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalMatrix(System.Int32,UnityEngine.Matrix4x4)">
+      <summary>
+        <para>Sets a global matrix property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalMatrixArray(System.String,UnityEngine.Matrix4x4[])">
+      <summary>
+        <para>Sets a global matrix array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalMatrixArray(System.Int32,UnityEngine.Matrix4x4[])">
+      <summary>
+        <para>Sets a global matrix array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalMatrixArray(System.String,System.Collections.Generic.List`1&lt;UnityEngine.Matrix4x4&gt;)">
+      <summary>
+        <para>Sets a global matrix array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalMatrixArray(System.Int32,System.Collections.Generic.List`1&lt;UnityEngine.Matrix4x4&gt;)">
+      <summary>
+        <para>Sets a global matrix array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalTexture(System.String,UnityEngine.Texture)">
+      <summary>
+        <para>Sets a global texture property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalTexture(System.Int32,UnityEngine.Texture)">
+      <summary>
+        <para>Sets a global texture property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalVector(System.String,UnityEngine.Vector4)">
+      <summary>
+        <para>Sets a global vector property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalVector(System.Int32,UnityEngine.Vector4)">
+      <summary>
+        <para>Sets a global vector property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="value"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalVectorArray(System.String,UnityEngine.Vector4[])">
+      <summary>
+        <para>Sets a global vector array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalVectorArray(System.Int32,UnityEngine.Vector4[])">
+      <summary>
+        <para>Sets a global vector array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalVectorArray(System.String,System.Collections.Generic.List`1&lt;UnityEngine.Vector4&gt;)">
+      <summary>
+        <para>Sets a global vector array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.SetGlobalVectorArray(System.Int32,System.Collections.Generic.List`1&lt;UnityEngine.Vector4&gt;)">
+      <summary>
+        <para>Sets a global vector array property for all shaders.</para>
+      </summary>
+      <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
+      <param name="name">The name of the property.</param>
+      <param name="values"></param>
+    </member>
+    <member name="M:UnityEngine.Shader.WarmupAllShaders">
+      <summary>
+        <para>Fully load all shaders to prevent future performance hiccups.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ShaderVariantCollection">
+      <summary>
+        <para>ShaderVariantCollection records which shader variants are actually used in each shader.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ShaderVariantCollection.isWarmedUp">
+      <summary>
+        <para>Is this ShaderVariantCollection already warmed up? (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ShaderVariantCollection.shaderCount">
+      <summary>
+        <para>Number of shaders in this collection (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ShaderVariantCollection.variantCount">
+      <summary>
+        <para>Number of total varians in this collection (Read Only).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ShaderVariantCollection.Add(UnityEngine.ShaderVariantCollection/ShaderVariant)">
+      <summary>
+        <para>Adds a new shader variant to the collection.</para>
+      </summary>
+      <param name="variant">Shader variant to add.</param>
+      <returns>
+        <para>False if already in the collection.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ShaderVariantCollection.Clear">
+      <summary>
+        <para>Remove all shader variants from the collection.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ShaderVariantCollection.Contains(UnityEngine.ShaderVariantCollection/ShaderVariant)">
+      <summary>
+        <para>Checks if a shader variant is in the collection.</para>
+      </summary>
+      <param name="variant">Shader variant to check.</param>
+      <returns>
+        <para>True if the variant is in the collection.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ShaderVariantCollection.#ctor">
+      <summary>
+        <para>Create a new empty shader variant collection.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ShaderVariantCollection.Remove(UnityEngine.ShaderVariantCollection/ShaderVariant)">
+      <summary>
+        <para>Adds shader variant from the collection.</para>
+      </summary>
+      <param name="variant">Shader variant to add.</param>
+      <returns>
+        <para>False if was not in the collection.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.ShaderVariantCollection.ShaderVariant">
+      <summary>
+        <para>Identifies a specific variant of a shader.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShaderVariantCollection.ShaderVariant.keywords">
+      <summary>
+        <para>Array of shader keywords to use in this variant.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShaderVariantCollection.ShaderVariant.passType">
+      <summary>
+        <para>Pass type to use in this variant.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShaderVariantCollection.ShaderVariant.shader">
+      <summary>
+        <para>Shader to use in this variant.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ShaderVariantCollection.ShaderVariant.#ctor(UnityEngine.Shader,UnityEngine.Rendering.PassType,System.String[])">
+      <summary>
+        <para>Creates a ShaderVariant structure.</para>
+      </summary>
+      <param name="shader"></param>
+      <param name="passType"></param>
+      <param name="keywords"></param>
+    </member>
+    <member name="M:UnityEngine.ShaderVariantCollection.WarmUp">
+      <summary>
+        <para>Fully load shaders in ShaderVariantCollection.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ShadowmaskMode">
+      <summary>
+        <para>The rendering mode of Shadowmask.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowmaskMode.DistanceShadowmask">
+      <summary>
+        <para>Static shadow casters will be rendered into realtime shadow maps. Shadowmasks and occlusion from Light Probes will only be used past the realtime shadow distance.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowmaskMode.Shadowmask">
+      <summary>
+        <para>Static shadow casters won't be rendered into realtime shadow maps. All shadows from static casters are handled via Shadowmasks and occlusion from Light Probes.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ShadowProjection">
+      <summary>
+        <para>Shadow projection type for.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowProjection.CloseFit">
+      <summary>
+        <para>Close fit shadow maps with linear fadeout.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowProjection.StableFit">
+      <summary>
+        <para>Stable shadow maps with spherical fadeout.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ShadowQuality">
+      <summary>
+        <para>Determines which type of shadows should be used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowQuality.All">
+      <summary>
+        <para>Hard and Soft Shadows.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowQuality.Disable">
+      <summary>
+        <para>Disable Shadows.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowQuality.HardOnly">
+      <summary>
+        <para>Hard Shadows Only.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ShadowResolution">
+      <summary>
+        <para>Default shadow resolution.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowResolution.High">
+      <summary>
+        <para>High shadow map resolution.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowResolution.Low">
+      <summary>
+        <para>Low shadow map resolution.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowResolution.Medium">
+      <summary>
+        <para>Medium shadow map resolution.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ShadowResolution.VeryHigh">
+      <summary>
+        <para>Very high shadow map resolution.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SkinnedMeshRenderer">
+      <summary>
+        <para>The Skinned Mesh filter.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SkinnedMeshRenderer.bones">
+      <summary>
+        <para>The bones used to skin the mesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SkinnedMeshRenderer.localBounds">
+      <summary>
+        <para>AABB of this Skinned Mesh in its local space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SkinnedMeshRenderer.quality">
+      <summary>
+        <para>The maximum number of bones affecting a single vertex.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SkinnedMeshRenderer.sharedMesh">
+      <summary>
+        <para>The mesh used for skinning.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SkinnedMeshRenderer.skinnedMotionVectors">
+      <summary>
+        <para>Specifies whether skinned motion vectors should be used for this renderer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SkinnedMeshRenderer.updateWhenOffscreen">
+      <summary>
+        <para>If enabled, the Skinned Mesh will be updated when offscreen. If disabled, this also disables updating animations.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SkinnedMeshRenderer.BakeMesh(UnityEngine.Mesh)">
+      <summary>
+        <para>Creates a snapshot of SkinnedMeshRenderer and stores it in mesh.</para>
+      </summary>
+      <param name="mesh">A static mesh that will receive the snapshot of the skinned mesh.</param>
+    </member>
+    <member name="M:UnityEngine.SkinnedMeshRenderer.GetBlendShapeWeight(System.Int32)">
+      <summary>
+        <para>Returns weight of BlendShape on this renderer.</para>
+      </summary>
+      <param name="index"></param>
+    </member>
+    <member name="M:UnityEngine.SkinnedMeshRenderer.SetBlendShapeWeight(System.Int32,System.Single)">
+      <summary>
+        <para>Sets the weight in percent of a BlendShape on this Renderer.</para>
+      </summary>
+      <param name="index">The index of the BlendShape to modify.</param>
+      <param name="value">The weight in percent for this BlendShape.</param>
+    </member>
+    <member name="T:UnityEngine.SkinQuality">
+      <summary>
+        <para>The maximum number of bones affecting a single vertex.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SkinQuality.Auto">
+      <summary>
+        <para>Chooses the number of bones from the number current QualitySettings. (Default)</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SkinQuality.Bone1">
+      <summary>
+        <para>Use only 1 bone to deform a single vertex. (The most important bone will be used).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SkinQuality.Bone2">
+      <summary>
+        <para>Use 2 bones to deform a single vertex. (The most important bones will be used).</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SkinQuality.Bone4">
+      <summary>
+        <para>Use 4 bones to deform a single vertex.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Skybox">
+      <summary>
+        <para>A script interface for the.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Skybox.material">
+      <summary>
+        <para>The material used by the skybox.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SleepTimeout">
+      <summary>
+        <para>Constants for special values of Screen.sleepTimeout.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SleepTimeout.NeverSleep">
+      <summary>
+        <para>Prevent screen dimming.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SleepTimeout.SystemSetting">
+      <summary>
+        <para>Set the sleep timeout to whatever the user has specified in the system settings.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SortingLayer">
+      <summary>
+        <para>SortingLayer allows you to set the render order of multiple sprites easily. There is always a default SortingLayer named "Default" which all sprites are added to initially. Added more SortingLayers to easily control the order of rendering of groups of sprites. Layers can be ordered before or after the default layer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SortingLayer.id">
+      <summary>
+        <para>This is the unique id assigned to the layer. It is not an ordered running value and it should not be used to compare with other layers to determine the sorting order.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SortingLayer.layers">
+      <summary>
+        <para>Returns all the layers defined in this project.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SortingLayer.name">
+      <summary>
+        <para>Returns the name of the layer as defined in the TagManager.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SortingLayer.value">
+      <summary>
+        <para>This is the relative value that indicates the sort order of this layer relative to the other layers.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SortingLayer.GetLayerValueFromID(System.Int32)">
+      <summary>
+        <para>Returns the final sorting layer value. To determine the sorting order between the various sorting layers, use this method to retrieve the final sorting value and use CompareTo to determine the order.</para>
+      </summary>
+      <param name="id">The unique value of the sorting layer as returned by any renderer's sortingLayerID property.</param>
+      <returns>
+        <para>The final sorting value of the layer relative to other layers.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SortingLayer.GetLayerValueFromName(System.String)">
+      <summary>
+        <para>Returns the final sorting layer value. See Also: GetLayerValueFromID.</para>
+      </summary>
+      <param name="name">The unique value of the sorting layer as returned by any renderer's sortingLayerID property.</param>
+      <returns>
+        <para>The final sorting value of the layer relative to other layers.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SortingLayer.IDToName(System.Int32)">
+      <summary>
+        <para>Returns the unique id of the layer. Will return "&lt;unknown layer&gt;" if an invalid id is given.</para>
+      </summary>
+      <param name="id">The unique id of the layer.</param>
+      <returns>
+        <para>The name of the layer with id or "&lt;unknown layer&gt;" for invalid id.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SortingLayer.IsValid(System.Int32)">
+      <summary>
+        <para>Returns true if the id provided is a valid layer id.</para>
+      </summary>
+      <param name="id">The unique id of a layer.</param>
+      <returns>
+        <para>True if the id provided is valid and assigned to a layer.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.SortingLayer.NameToID(System.String)">
+      <summary>
+        <para>Returns the id given the name. Will return 0 if an invalid name was given.</para>
+      </summary>
+      <param name="name">The name of the layer.</param>
+      <returns>
+        <para>The unique id of the layer with name.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Space">
+      <summary>
+        <para>The coordinate space in which to operate.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Space.Self">
+      <summary>
+        <para>Applies transformation relative to the local coordinate system.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Space.World">
+      <summary>
+        <para>Applies transformation relative to the world coordinate system.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpaceAttribute">
+      <summary>
+        <para>Use this PropertyAttribute to add some spacing in the Inspector.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpaceAttribute.height">
+      <summary>
+        <para>The spacing in pixels.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SpaceAttribute.#ctor(System.Single)">
+      <summary>
+        <para>Use this DecoratorDrawer to add some spacing in the Inspector.</para>
+      </summary>
+      <param name="height">The spacing in pixels.</param>
+    </member>
+    <member name="T:UnityEngine.SparseTexture">
+      <summary>
+        <para>Class for handling Sparse Textures.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SparseTexture.isCreated">
+      <summary>
+        <para>Is the sparse texture actually created? (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SparseTexture.tileHeight">
+      <summary>
+        <para>Get sparse texture tile height (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SparseTexture.tileWidth">
+      <summary>
+        <para>Get sparse texture tile width (Read Only).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.SparseTexture.#ctor(System.Int32,System.Int32,UnityEngine.TextureFormat,System.Int32)">
+      <summary>
+        <para>Create a sparse texture.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="format">Texture format.</param>
+      <param name="mipCount">Mipmap count. Pass -1 to create full mipmap chain.</param>
+      <param name="linear">Whether texture data will be in linear or sRGB color space (default is sRGB).</param>
+    </member>
+    <member name="M:UnityEngine.SparseTexture.#ctor(System.Int32,System.Int32,UnityEngine.TextureFormat,System.Int32,System.Boolean)">
+      <summary>
+        <para>Create a sparse texture.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="format">Texture format.</param>
+      <param name="mipCount">Mipmap count. Pass -1 to create full mipmap chain.</param>
+      <param name="linear">Whether texture data will be in linear or sRGB color space (default is sRGB).</param>
+    </member>
+    <member name="M:UnityEngine.SparseTexture.UnloadTile(System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Unload sparse texture tile.</para>
+      </summary>
+      <param name="tileX">Tile X coordinate.</param>
+      <param name="tileY">Tile Y coordinate.</param>
+      <param name="miplevel">Mipmap level of the texture.</param>
+    </member>
+    <member name="M:UnityEngine.SparseTexture.UpdateTile(System.Int32,System.Int32,System.Int32,UnityEngine.Color32[])">
+      <summary>
+        <para>Update sparse texture tile with color values.</para>
+      </summary>
+      <param name="tileX">Tile X coordinate.</param>
+      <param name="tileY">Tile Y coordinate.</param>
+      <param name="miplevel">Mipmap level of the texture.</param>
+      <param name="data">Tile color data.</param>
+    </member>
+    <member name="M:UnityEngine.SparseTexture.UpdateTileRaw(System.Int32,System.Int32,System.Int32,System.Byte[])">
+      <summary>
+        <para>Update sparse texture tile with raw pixel values.</para>
+      </summary>
+      <param name="tileX">Tile X coordinate.</param>
+      <param name="tileY">Tile Y coordinate.</param>
+      <param name="miplevel">Mipmap level of the texture.</param>
+      <param name="data">Tile raw pixel data.</param>
+    </member>
+    <member name="T:UnityEngine.Sprite">
+      <summary>
+        <para>Represents a Sprite object for use in 2D gameplay.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.associatedAlphaSplitTexture">
+      <summary>
+        <para>Returns the texture that contains the alpha channel from the source texture. Unity generates this texture under the hood for sprites that have alpha in the source, and need to be compressed using techniques like ETC1.
+
+Returns NULL if there is no associated alpha texture for the source sprite. This is the case if the sprite has not been setup to use ETC1 compression.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.border">
+      <summary>
+        <para>Returns the border sizes of the sprite.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.bounds">
+      <summary>
+        <para>Bounds of the Sprite, specified by its center and extents in world space units.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.packed">
+      <summary>
+        <para>Returns true if this Sprite is packed in an atlas.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.packingMode">
+      <summary>
+        <para>If Sprite is packed (see Sprite.packed), returns its SpritePackingMode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.packingRotation">
+      <summary>
+        <para>If Sprite is packed (see Sprite.packed), returns its SpritePackingRotation.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.pivot">
+      <summary>
+        <para>Location of the Sprite's center point in the Rect on the original Texture, specified in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.pixelsPerUnit">
+      <summary>
+        <para>The number of pixels in the sprite that correspond to one unit in world space. (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.rect">
+      <summary>
+        <para>Location of the Sprite on the original Texture, specified in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.texture">
+      <summary>
+        <para>Get the reference to the used texture. If packed this will point to the atlas, if not packed will point to the source sprite.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.textureRect">
+      <summary>
+        <para>Get the rectangle this sprite uses on its texture. Raises an exception if this sprite is tightly packed in an atlas.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.textureRectOffset">
+      <summary>
+        <para>Gets the offset of the rectangle this sprite uses on its texture to the original sprite bounds. If sprite mesh type is FullRect, offset is zero.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.triangles">
+      <summary>
+        <para>Returns a copy of the array containing sprite mesh triangles.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.uv">
+      <summary>
+        <para>The base texture coordinates of the sprite mesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Sprite.vertices">
+      <summary>
+        <para>Returns a copy of the array containing sprite mesh vertex positions.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Sprite.Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single,System.UInt32)">
+      <summary>
+        <para>Create a new Sprite object.</para>
+      </summary>
+      <param name="texture">Texture from which to obtain the sprite graphic.</param>
+      <param name="rect">Rectangular section of the texture to use for the sprite.</param>
+      <param name="pivot">Sprite's pivot point relative to its graphic rectangle.</param>
+      <param name="pixelsPerUnit">The number of pixels in the sprite that correspond to one unit in world space.</param>
+      <param name="extrude">Amount by which the sprite mesh should be expanded outwards.</param>
+      <param name="meshType">Controls the type of mesh generated for the sprite.</param>
+      <param name="border">The border sizes of the sprite (X=left, Y=bottom, Z=right, W=top).</param>
+      <param name="generateFallbackPhysicsShape">Generates a default physics shape for the sprite.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single,System.UInt32,UnityEngine.SpriteMeshType)">
+      <summary>
+        <para>Create a new Sprite object.</para>
+      </summary>
+      <param name="texture">Texture from which to obtain the sprite graphic.</param>
+      <param name="rect">Rectangular section of the texture to use for the sprite.</param>
+      <param name="pivot">Sprite's pivot point relative to its graphic rectangle.</param>
+      <param name="pixelsPerUnit">The number of pixels in the sprite that correspond to one unit in world space.</param>
+      <param name="extrude">Amount by which the sprite mesh should be expanded outwards.</param>
+      <param name="meshType">Controls the type of mesh generated for the sprite.</param>
+      <param name="border">The border sizes of the sprite (X=left, Y=bottom, Z=right, W=top).</param>
+      <param name="generateFallbackPhysicsShape">Generates a default physics shape for the sprite.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single,System.UInt32,UnityEngine.SpriteMeshType,UnityEngine.Vector4,System.Boolean)">
+      <summary>
+        <para>Create a new Sprite object.</para>
+      </summary>
+      <param name="texture">Texture from which to obtain the sprite graphic.</param>
+      <param name="rect">Rectangular section of the texture to use for the sprite.</param>
+      <param name="pivot">Sprite's pivot point relative to its graphic rectangle.</param>
+      <param name="pixelsPerUnit">The number of pixels in the sprite that correspond to one unit in world space.</param>
+      <param name="extrude">Amount by which the sprite mesh should be expanded outwards.</param>
+      <param name="meshType">Controls the type of mesh generated for the sprite.</param>
+      <param name="border">The border sizes of the sprite (X=left, Y=bottom, Z=right, W=top).</param>
+      <param name="generateFallbackPhysicsShape">Generates a default physics shape for the sprite.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single,System.UInt32,UnityEngine.SpriteMeshType,UnityEngine.Vector4)">
+      <summary>
+        <para>Create a new Sprite object.</para>
+      </summary>
+      <param name="texture">Texture from which to obtain the sprite graphic.</param>
+      <param name="rect">Rectangular section of the texture to use for the sprite.</param>
+      <param name="pivot">Sprite's pivot point relative to its graphic rectangle.</param>
+      <param name="pixelsPerUnit">The number of pixels in the sprite that correspond to one unit in world space.</param>
+      <param name="extrude">Amount by which the sprite mesh should be expanded outwards.</param>
+      <param name="meshType">Controls the type of mesh generated for the sprite.</param>
+      <param name="border">The border sizes of the sprite (X=left, Y=bottom, Z=right, W=top).</param>
+      <param name="generateFallbackPhysicsShape">Generates a default physics shape for the sprite.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2)">
+      <summary>
+        <para>Create a new Sprite object.</para>
+      </summary>
+      <param name="texture">Texture from which to obtain the sprite graphic.</param>
+      <param name="rect">Rectangular section of the texture to use for the sprite.</param>
+      <param name="pivot">Sprite's pivot point relative to its graphic rectangle.</param>
+      <param name="pixelsPerUnit">The number of pixels in the sprite that correspond to one unit in world space.</param>
+      <param name="extrude">Amount by which the sprite mesh should be expanded outwards.</param>
+      <param name="meshType">Controls the type of mesh generated for the sprite.</param>
+      <param name="border">The border sizes of the sprite (X=left, Y=bottom, Z=right, W=top).</param>
+      <param name="generateFallbackPhysicsShape">Generates a default physics shape for the sprite.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.Create(UnityEngine.Texture2D,UnityEngine.Rect,UnityEngine.Vector2,System.Single)">
+      <summary>
+        <para>Create a new Sprite object.</para>
+      </summary>
+      <param name="texture">Texture from which to obtain the sprite graphic.</param>
+      <param name="rect">Rectangular section of the texture to use for the sprite.</param>
+      <param name="pivot">Sprite's pivot point relative to its graphic rectangle.</param>
+      <param name="pixelsPerUnit">The number of pixels in the sprite that correspond to one unit in world space.</param>
+      <param name="extrude">Amount by which the sprite mesh should be expanded outwards.</param>
+      <param name="meshType">Controls the type of mesh generated for the sprite.</param>
+      <param name="border">The border sizes of the sprite (X=left, Y=bottom, Z=right, W=top).</param>
+      <param name="generateFallbackPhysicsShape">Generates a default physics shape for the sprite.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.GetPhysicsShape(System.Int32,System.Collections.Generic.List`1&lt;UnityEngine.Vector2&gt;)">
+      <summary>
+        <para>Gets a physics shape from the Sprite by its index.</para>
+      </summary>
+      <param name="shapeIdx">The index of the physics shape to retrieve.</param>
+      <param name="physicsShape">An ordered list of the points in the selected physics shape to store points in.</param>
+      <returns>
+        <para>The number of points stored in the given list.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Sprite.GetPhysicsShapeCount">
+      <summary>
+        <para>The number of physics shapes for the Sprite.</para>
+      </summary>
+      <returns>
+        <para>The number of physics shapes for the Sprite.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Sprite.GetPhysicsShapePointCount(System.Int32)">
+      <summary>
+        <para>The number of points in the selected physics shape for the Sprite.</para>
+      </summary>
+      <param name="shapeIdx">The index of the physics shape to retrieve the number of points from.</param>
+      <returns>
+        <para>The number of points in the selected physics shape for the Sprite.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Sprite.OverrideGeometry(UnityEngine.Vector2[],System.UInt16[])">
+      <summary>
+        <para>Sets up new Sprite geometry.</para>
+      </summary>
+      <param name="vertices">Array of vertex positions in Sprite Rect space.</param>
+      <param name="triangles">Array of sprite mesh triangle indices.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.OverridePhysicsShape(System.Collections.Generic.IList`1&lt;UnityEngine.Vector2[]&gt;)">
+      <summary>
+        <para>Sets up a new Sprite physics shape.</para>
+      </summary>
+      <param name="physicsShapes">A multidimensional list of points in Sprite.rect space denoting the physics shape outlines.</param>
+    </member>
+    <member name="T:UnityEngine.SpriteAlignment">
+      <summary>
+        <para>How a Sprite's graphic rectangle is aligned with its pivot point.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.BottomCenter">
+      <summary>
+        <para>Pivot is at the center of the bottom edge of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.BottomLeft">
+      <summary>
+        <para>Pivot is at the bottom left corner of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.BottomRight">
+      <summary>
+        <para>Pivot is at the bottom right corner of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.Center">
+      <summary>
+        <para>Pivot is at the center of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.Custom">
+      <summary>
+        <para>Pivot is at a custom position within the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.LeftCenter">
+      <summary>
+        <para>Pivot is at the center of the left edge of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.RightCenter">
+      <summary>
+        <para>Pivot is at the center of the right edge of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.TopCenter">
+      <summary>
+        <para>Pivot is at the center of the top edge of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.TopLeft">
+      <summary>
+        <para>Pivot is at the top left corner of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteAlignment.TopRight">
+      <summary>
+        <para>Pivot is at the top right corner of the graphic rectangle.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpriteDrawMode">
+      <summary>
+        <para>SpriteRenderer draw mode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteDrawMode.Simple">
+      <summary>
+        <para>Displays the full sprite.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteDrawMode.Sliced">
+      <summary>
+        <para>The SpriteRenderer will render the sprite as a 9-slice image where the corners will remain constant and the other sections will scale.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteDrawMode.Tiled">
+      <summary>
+        <para>The SpriteRenderer will render the sprite as a 9-slice image where the corners will remain constant and the other sections will tile.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpriteMaskInteraction">
+      <summary>
+        <para>This enum controls the mode under which the sprite will interact with the masking system.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteMaskInteraction.None">
+      <summary>
+        <para>The sprite will not interact with the masking system.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteMaskInteraction.VisibleInsideMask">
+      <summary>
+        <para>The sprite will be visible only in areas where a mask is present.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteMaskInteraction.VisibleOutsideMask">
+      <summary>
+        <para>The sprite will be visible only in areas where no mask is present.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpriteMeshType">
+      <summary>
+        <para>Defines the type of mesh generated for a sprite.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteMeshType.FullRect">
+      <summary>
+        <para>Rectangle mesh equal to the user specified sprite size.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteMeshType.Tight">
+      <summary>
+        <para>Tight mesh based on pixel alpha values. As many excess pixels are cropped as possible.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpritePackingMode">
+      <summary>
+        <para>Sprite packing modes for the Sprite Packer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpritePackingMode.Rectangle">
+      <summary>
+        <para>Alpha-cropped ractangle packing.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpritePackingMode.Tight">
+      <summary>
+        <para>Tight mesh based packing.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpritePackingRotation">
+      <summary>
+        <para>Sprite rotation modes for the Sprite Packer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpritePackingRotation.Any">
+      <summary>
+        <para>Any rotation.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpritePackingRotation.FlipHorizontal">
+      <summary>
+        <para>Sprite is flipped horizontally when packed.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpritePackingRotation.FlipVertical">
+      <summary>
+        <para>Sprite is flipped vertically when packed.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpritePackingRotation.None">
+      <summary>
+        <para>No rotation.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpritePackingRotation.Rotate180">
+      <summary>
+        <para>Sprite is rotated 180 degree when packed.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpriteRenderer">
+      <summary>
+        <para>Renders a Sprite for 2D graphics.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.adaptiveModeThreshold">
+      <summary>
+        <para>The current threshold for Sprite Renderer tiling.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.color">
+      <summary>
+        <para>Rendering color for the Sprite graphic.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.drawMode">
+      <summary>
+        <para>The current draw mode of the Sprite Renderer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.flipX">
+      <summary>
+        <para>Flips the sprite on the X axis.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.flipY">
+      <summary>
+        <para>Flips the sprite on the Y axis.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.maskInteraction">
+      <summary>
+        <para>Specifies how the sprite interacts with the masks.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.size">
+      <summary>
+        <para>Property to set/get the size to render when the SpriteRenderer.drawMode is set to SpriteDrawMode.NineSlice.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.sprite">
+      <summary>
+        <para>The Sprite to render.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.spriteSortPoint">
+      <summary>
+        <para>Determines the position of the Sprite used for sorting the SpriteRenderer.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SpriteRenderer.tileMode">
+      <summary>
+        <para>The current tile mode of the Sprite Renderer.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Sprites.DataUtility">
+      <summary>
+        <para>Helper utilities for accessing Sprite data.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Sprites.DataUtility.GetInnerUV(UnityEngine.Sprite)">
+      <summary>
+        <para>Inner UV's of the Sprite.</para>
+      </summary>
+      <param name="sprite"></param>
+    </member>
+    <member name="M:UnityEngine.Sprites.DataUtility.GetMinSize(UnityEngine.Sprite)">
+      <summary>
+        <para>Minimum width and height of the Sprite.</para>
+      </summary>
+      <param name="sprite"></param>
+    </member>
+    <member name="M:UnityEngine.Sprites.DataUtility.GetOuterUV(UnityEngine.Sprite)">
+      <summary>
+        <para>Outer UV's of the Sprite.</para>
+      </summary>
+      <param name="sprite"></param>
+    </member>
+    <member name="M:UnityEngine.Sprites.DataUtility.GetPadding(UnityEngine.Sprite)">
+      <summary>
+        <para>Return the padding on the sprite.</para>
+      </summary>
+      <param name="sprite"></param>
+    </member>
+    <member name="T:UnityEngine.SpriteSortPoint">
+      <summary>
+        <para>Determines the position of the Sprite used for sorting the Renderer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteSortPoint.Center">
+      <summary>
+        <para>The center of the Sprite is used as the point for sorting the Renderer.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteSortPoint.Pivot">
+      <summary>
+        <para>The pivot of the Sprite is used as the point for sorting the Renderer.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SpriteTileMode">
+      <summary>
+        <para>Tiling mode for SpriteRenderer.tileMode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteTileMode.Adaptive">
+      <summary>
+        <para>Sprite Renderer tiles the sprite once the Sprite Renderer size is above SpriteRenderer.adaptiveModeThreshold.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.SpriteTileMode.Continuous">
+      <summary>
+        <para>Sprite Renderer tiles the sprite continuously when is set to SpriteRenderer.tileMode.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.StackTraceLogType">
+      <summary>
+        <para>Stack trace logging options.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.StackTraceLogType.Full">
+      <summary>
+        <para>Native and managed stack trace will be logged.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.StackTraceLogType.None">
+      <summary>
+        <para>No stack trace will be outputed to log.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.StackTraceLogType.ScriptOnly">
+      <summary>
+        <para>Only managed stack trace will be outputed.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.StaticBatchingUtility">
+      <summary>
+        <para>StaticBatchingUtility can prepare your objects to take advantage of Unity's static batching.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.StaticBatchingUtility.Combine(UnityEngine.GameObject)">
+      <summary>
+        <para>StaticBatchingUtility.Combine prepares all children of the staticBatchRoot for static batching.</para>
+      </summary>
+      <param name="staticBatchRoot"></param>
+    </member>
+    <member name="M:UnityEngine.StaticBatchingUtility.Combine(UnityEngine.GameObject[],UnityEngine.GameObject)">
+      <summary>
+        <para>StaticBatchingUtility.Combine prepares all gos for static batching. staticBatchRoot is treated as their parent.</para>
+      </summary>
+      <param name="gos"></param>
+      <param name="staticBatchRoot"></param>
+    </member>
+    <member name="T:UnityEngine.StereoTargetEyeMask">
+      <summary>
+        <para>Enum values for the Camera's targetEye property.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.StereoTargetEyeMask.Both">
+      <summary>
+        <para>Render both eyes to the HMD.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.StereoTargetEyeMask.Left">
+      <summary>
+        <para>Render only the Left eye to the HMD.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.StereoTargetEyeMask.None">
+      <summary>
+        <para>Do not render either eye to the HMD.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.StereoTargetEyeMask.Right">
+      <summary>
+        <para>Render only the right eye to the HMD.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.SystemInfo">
+      <summary>
+        <para>Access system and hardware information.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.batteryLevel">
+      <summary>
+        <para>The current battery level (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.batteryStatus">
+      <summary>
+        <para>Returns the current status of the device's battery (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.copyTextureSupport">
+      <summary>
+        <para>Support for various Graphics.CopyTexture cases (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.deviceModel">
+      <summary>
+        <para>The model of the device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.deviceName">
+      <summary>
+        <para>The user defined name of the device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.deviceType">
+      <summary>
+        <para>Returns the kind of device the application is running on (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.deviceUniqueIdentifier">
+      <summary>
+        <para>A unique device identifier. It is guaranteed to be unique for every device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.graphicsDeviceID">
+      <summary>
+        <para>The identifier code of the graphics device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.graphicsDeviceName">
+      <summary>
+        <para>The name of the graphics device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.graphicsDeviceType">
+      <summary>
+        <para>The graphics API type used by the graphics device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.graphicsDeviceVendor">
+      <summary>
+        <para>The vendor of the graphics device (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.graphicsDeviceVendorID">
+      <summary>
+        <para>The identifier code of the graphics device vendor (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityE

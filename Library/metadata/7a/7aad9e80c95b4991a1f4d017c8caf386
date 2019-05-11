@@ -1,0 +1,67 @@
+iveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!23">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!23" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#collision_cylinder_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0 0.6193907 0 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!23" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!31" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!23" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!23">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!23" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPECYLINDER id="collision_cylinder_01_shape" height="1.218781" radius="0.05999999" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!23" uri="objects.pssg#default!0" />
+		<TEMPLATEENTITY id="par_fence_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!24">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!24" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#par_fence_a_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.00000072 0.49999994 5.57228923E-05 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!24" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!32" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!24" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!24">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!24" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="par_fence_a_col_01_shape" width="2.312005" height="0.9600001" length="0.02011144" shell="0.02" props="physparams.xml#sHollowMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!24" uri="objects.pssg#default!1" />
+		<TEMPLATEENTITY id="core_barr_armco_e_main.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="core_barr_armco_e_main_dam_link1_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_main_dam_link1_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_main_dam_link1_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.0482224561 0.336479634 -0.0015752929 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_main_damage_renderable" sid="core_barr_armco_e_main_dam_link1" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_main_dam_obj01_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_main_dam_obj01_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_main_dam_obj01_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.6 0.336479664 0.0572223738 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_main_damage_renderable" sid="core_barr_armco_e_main_dam_obj01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_main_dam_obj02_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_main_dam_obj02_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_main_dam_obj02_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.51999974 0.336479664 0.0572223738 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_main_damage_renderable" sid="core_barr_armco_e_main_dam_obj02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_main_dam_obj03_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_main_dam_obj03_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_main_dam_obj03_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 2.44999981 0.336479664 0.0572223738 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_main_damage_renderable" sid="core_barr_armco_e_main_dam_obj03" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_main_dam_obj04_subent">
+				<TEMPLATERIGIDBODY

@@ -1,0 +1,11 @@
+ender / scaleFactor;
+            face.CenterLine = ftFace.centerLine / scaleFactor;
+            face.Underline = ftFace.underline / scaleFactor;
+            face.UnderlineThickness = ftFace.underlineThickness == 0 ? 5 : ftFace.underlineThickness / scaleFactor; // Set Thickness to 5 if TTF value is Zero.
+            face.strikethrough = (face.Ascender + face.Descender) / 2.75f;
+            face.strikethroughThickness = face.UnderlineThickness;
+            face.SuperscriptOffset = face.Ascender;
+            face.SubscriptOffset = face.Underline;
+            face.SubSize = 0.5f;
+            //face.CharacterCount = ft_face.characterCount;
+            face.AtlasWidth = ftFace.

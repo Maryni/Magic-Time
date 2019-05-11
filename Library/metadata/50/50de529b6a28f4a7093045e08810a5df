@@ -1,0 +1,241 @@
+)
+                        m_subTextObjects[i].rectTransform.pivot = m_rectTransform.pivot;
+
+                    // Check if the material has changed.
+                    if (m_subTextObjects[i].sharedMaterial == null || m_subTextObjects[i].sharedMaterial.GetInstanceID() != m_materialReferences[i].material.GetInstanceID())
+                    {
+                        bool isDefaultMaterial = m_materialReferences[i].isDefaultMaterial;
+
+                        m_subTextObjects[i].isDefaultMaterial = isDefaultMaterial;
+
+                        // Assign new material if we are not using the default material or if the font asset has changed.
+                        if (!isDefaultMaterial || m_subTextObjects[i].sharedMaterial == null || m_subTextObjects[i].sharedMaterial.GetTexture(ShaderUtilities.ID_MainTex).GetInstanceID() != m_materialReferences[i].material.GetTexture(ShaderUtilities.ID_MainTex).GetInstanceID())
+                        {
+                            m_subTextObjects[i].sharedMaterial = m_materialReferences[i].material;
+                            m_subTextObjects[i].fontAsset = m_materialReferences[i].fontAsset;
+                            m_subTextObjects[i].spriteAsset = m_materialReferences[i].spriteAsset;
+                        }
+                    }
+
+                    // Check if we need to use a Fallback Material
+                    if (m_materialReferences[i].isFallbackMaterial)
+                    {
+                        m_subTextObjects[i].fallbackMaterial = m_materialReferences[i].material;
+                        m_subTextObjects[i].fallbackSourceMaterial = m_materialReferences[i].fallbackMaterial;
+                    }
+
+                }
+
+                int referenceCount = m_materialReferences[i].referenceCount;
+
+                // Check to make sure our buffers allocations can accommodate the required text elements.
+                if (m_textInfo.meshInfo[i].vertices == null || m_textInfo.meshInfo[i].vertices.Length < referenceCount * 4)
+                {
+                    if (m_textInfo.meshInfo[i].vertices == null)
+                    {
+                        if (i == 0)
+                            m_textInfo.meshInfo[i] = new TMP_MeshInfo(m_mesh, referenceCount + 1);
+                        else
+                            m_textInfo.meshInfo[i] = new TMP_MeshInfo(m_subTextObjects[i].mesh, referenceCount + 1);
+                    }
+                    else
+                        m_textInfo.meshInfo[i].ResizeMeshInfo(referenceCount > 1024 ? referenceCount + 256 : Mathf.NextPowerOfTwo(referenceCount));
+                }
+                else if (m_textInfo.meshInfo[i].vertices.Length - referenceCount * 4 > 1024)
+                {
+                    // Resize vertex buffers if allocations are excessive.
+                    //Debug.Log("Reducing the size of the vertex buffers.");
+                    m_textInfo.meshInfo[i].ResizeMeshInfo(referenceCount > 1024 ? referenceCount + 256 : Mathf.Max(Mathf.NextPowerOfTwo(referenceCount), 256));
+                }
+            }
+
+            //TMP_MaterialManager.CleanupFallbackMaterials();
+
+            // Clean up unused SubMeshes
+            for (int i = materialCount; i < m_subTextObjects.Length && m_subTextObjects[i] != null; i++)
+            {
+                if (i < m_textInfo.meshInfo.Length)
+                {
+                    m_subTextObjects[i].canvasRenderer.SetMesh(null);
+
+                    // TODO: Figure out a way to handle this without running into Unity's Rebuild loop issue.
+                    //m_subTextObjects[i].gameObject.SetActive(false);
+                }
+            }
+
+            #if TMP_PROFILE_ON
+            Profiler.EndSample();
+            #endif
+
+            return m_totalCharacterCount;
+        }
+
+
+        // Added to sort handle the potential issue with OnWillRenderObject() not getting called when objects are not visible by camera.
+        //void OnBecameInvisible()
+        //{
+        //    if (m_mesh != null)
+        //        m_mesh.bounds = new Bounds(transform.position, new Vector3(1000, 1000, 0));
+        //}
+
+
+        /// <summary>
+        /// Update the margin width and height
+        /// </summary>
+        public override void ComputeMarginSize()
+        {
+            if (this.rectTransform != null)
+            {
+                //Debug.Log("*** ComputeMarginSize() *** Current RectTransform's Width is " + m_rectTransform.rect.width + " and Height is " + m_rectTransform.rect.height); // + " and size delta is "  + m_rectTransform.sizeDelta);
+
+                m_marginWidth = m_rectTransform.rect.width - m_margin.x - m_margin.z;
+                m_marginHeight = m_rectTransform.rect.height - m_margin.y - m_margin.w;
+
+                // Update the corners of the RectTransform
+                m_RectTransformCorners = GetTextContainerLocalCorners();
+            }
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void OnDidApplyAnimationProperties()
+        {
+            m_havePropertiesChanged = true;
+            SetVerticesDirty();
+            SetLayoutDirty();
+            //Debug.Log("Animation Properties have changed.");
+        }
+
+
+        protected override void OnCanvasHierarchyChanged()
+        {
+            base.OnCanvasHierarchyChanged();
+            m_canvas = this.canvas;
+        }
+
+
+        protected override void OnTransformParentChanged()
+        {
+            //Debug.Log("***** OnTransformParentChanged *****");
+
+            base.OnTransformParentChanged();
+
+            m_canvas = this.canvas;
+
+            ComputeMarginSize();
+            m_havePropertiesChanged = true;
+        }
+
+
+        protected override void OnRectTransformDimensionsChange()
+        {
+            //Debug.Log("*** OnRectTransformDimensionsChange() *** ActiveInHierarchy: " + this.gameObject.activeInHierarchy + "  Frame: " + Time.frameCount); 
+
+            // Make sure object is active in Hierarchy
+            if (!this.gameObject.activeInHierarchy)
+                return;
+
+            ComputeMarginSize();
+
+            UpdateSubObjectPivot();
+
+            SetVerticesDirty();
+            SetLayoutDirty();
+        }
+
+
+        /// <summary>
+        /// Unity standard function used to check if the transform or scale of the text object has changed.
+        /// </summary>
+        void LateUpdate()
+        {
+            if (m_rectTransform.hasChanged)
+            {
+                // We need to update the SDF scale or possibly regenerate the text object if lossy scale has changed.
+                float lossyScaleY = m_rectTransform.lossyScale.y;
+                if (!m_havePropertiesChanged && lossyScaleY != m_previousLossyScaleY && m_text != string.Empty && m_text != null)
+                {
+                    UpdateSDFScale(lossyScaleY);
+
+                    m_previousLossyScaleY = lossyScaleY;
+                }
+                m_rectTransform.hasChanged = false;
+            }
+
+            // Added to handle legacy animation mode.
+            if (m_isUsingLegacyAnimationComponent)
+            {
+                //if (m_havePropertiesChanged)
+                m_havePropertiesChanged = true;
+                OnPreRenderCanvas();
+            }
+        }
+
+
+
+        // Called just before the Canvas is rendered.
+        void OnPreRenderCanvas()
+        {
+            //Debug.Log("*** OnPreRenderCanvas() *** Frame: " + Time.frameCount); 
+
+            // Make sure object is active and that we have a valid Canvas.
+            if (!m_isAwake || (this.IsActive() == false && m_ignoreActiveState == false)) return;
+
+            if (m_canvas == null) { m_canvas = this.canvas; if (m_canvas == null) return; }
+
+
+            // Debug Variables
+            loopCountA = 0;
+            //loopCountB = 0;
+            //loopCountC = 0;
+            //loopCountD = 0;
+            //loopCountE = 0;
+
+            // Update Margins
+            //ComputeMarginSize();
+
+            // Update Mask
+            //    if (m_isMaskingEnabled)
+            //    {
+            //        UpdateMask();
+            //    }
+
+
+            if (m_havePropertiesChanged || m_isLayoutDirty)
+            {
+                //Debug.Log("Properties have changed!"); // Assigned Material is:" + m_sharedMaterial); // New Text is: " + m_text + ".");
+
+                // Update mesh padding if necessary.
+                if (checkPaddingRequired)
+                    UpdateMeshPadding();
+
+                // Reparse the text if the input has changed or text was truncated.
+                if (m_isInputParsingRequired || m_isTextTruncated)
+                    ParseInputText();
+
+                // Reset Font min / max used with Auto-sizing
+                if (m_enableAutoSizing)
+                    m_fontSize = Mathf.Clamp(m_fontSizeBase, m_fontSizeMin, m_fontSizeMax);
+
+                m_maxFontSize = m_fontSizeMax;
+                m_minFontSize = m_fontSizeMin;
+                m_lineSpacingDelta = 0;
+                m_charWidthAdjDelta = 0;
+                //m_recursiveCount = 0;
+
+                m_isCharacterWrappingEnabled = false;
+                m_isTextTruncated = false;
+
+                m_havePropertiesChanged = false;
+                m_isLayoutDirty = false;
+                m_ignoreActiveState = false;
+
+                GenerateTextMesh();
+            }
+        }
+
+
+
+        ///

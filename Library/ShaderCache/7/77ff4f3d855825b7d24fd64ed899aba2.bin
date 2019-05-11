@@ -1,0 +1,19 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf13:version{10b35a8e-b1ee-4f14-87a6-a7b6aae37699} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_hFallback = resource:"particles/units/heroes/hero_spectre/spectre_shadow_path_owner_fallback_mid.vpcf"
+	m_nFallbackMaxCount = 2
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_spectre/spectre_shadow_path.vpcf"
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetParentControlPointsToChildCP"
+			m_nChildControlPoint = 3
+			m_bSetOrientation = tr

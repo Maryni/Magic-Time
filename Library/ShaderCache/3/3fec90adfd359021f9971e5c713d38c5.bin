@@ -1,0 +1,18 @@
+ot and restart the game.}
+Ошибка звука. Перезагрузите систему и запустите игру заново.
+
+[ERR_AUD_SOUND_2]
+{Audio error. Please reboot and restart the game.}
+Ошибка звука. Перезагрузите систему и запустите игру заново.
+
+[ERR_DEFAULT]
+{Fatal error. Please reboot, verify the game data, or reinstall the game. For more information, please visit: http://rsg.ms/verify}
+Критическая ошибка. Пожалуйста, перезагрузите систему, проверьте игровые данные или переустановите игру. Для более подробной информации посетите http://rsg.ms/verify
+
+[ERR_FIL_COMMON]
+{Game error. Please reboot and restart the game.}
+Ошибка игры. Перезагрузите систему и запустите игру заново.
+
+[ERR_FIL_DISK]
+{Game error. Please reboot and restart the game.}
+Ошиб�

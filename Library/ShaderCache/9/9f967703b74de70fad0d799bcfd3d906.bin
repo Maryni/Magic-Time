@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- ITab titles -->
+  <TabBills>Sarcini</TabBills>
+  <TabGrowing>Creștere</TabGrowing>
+  <TabCharacter>Caracter</TabCharacter>
+  <TabPrisoner>Prizonier</TabPrisoner>
+  <TabGear>Inventar</TabGear>
+  <TabThoughts>Psihic</TabThoughts>
+  <TabStorage>Depozit</TabStorage>
+  <TabHealth>Sănătate</TabHealth>
+  <TabRace>Rasă</TabRace>
+  <TabBasics>Elementar</TabBasics>
+  <TabStats>Date</TabStats>
+
+  
+  <!-- Bills tab  -->
+  <AddBill>Adaugă sarcină</AddBill>
+  <RecipeRequiresSkills>Sarcina {0} necesită abilitățile de mai jos. Nici unul din coloniștii tăi nu dețin aceste abilități, deci sarcina este imposibil de realizat.</RecipeRequiresSkills>
+  <BillConfig>Setări</BillConfig>
+  <SuspendedCaps>SUSPENDAT</SuspendedCaps>
+  <PlantVerb>Plantare</PlantVerb>
+
+
+  <!-- Prisoner tab -->
+  <RecruitmentDifficulty>Dificultate de recrutare</RecruitmentDifficulty>

@@ -1,0 +1,57 @@
+id="rigidbody_subent!10">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!10" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_game_brake_02_left_200m_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.48879425E-10 1.361 -0.007981431 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_game_brake_02_left_200m_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.80925715 2.99949884 0.00256916485 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!10" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!14" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!10" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!10">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!10" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_game_brake_02_left_200m_01_shape" width="0.08584129" height="3.482" length="0.03290892" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="core_game_brake_02_left_200m_02_shape" width="3.713993" height="0.7960812" length="0.03290892" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!10" uri="route_objects.pssg#default!10" />
+		<TEMPLATEENTITY id="core_game_brake_02_left_100m.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!11">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!11" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_game_brake_02_left_100m_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.48879425E-10 1.361 -0.007981431 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_game_brake_02_left_100m_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.80925715 2.99949884 0.00256916485 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!11" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!15" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!11" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!11">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!11" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_game_brake_02_left_100m_01_shape" width="0.08584129" height="3.482" length="0.03290892" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="core_game_brake_02_left_100m_02_shape" width="3.713993" height="0.7960812" length="0.03290892" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!11" uri="route_objects.pssg#default!11" />
+		<TEMPLATEENTITY id="core_barr_safetyaccess_set_r.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!12">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!12" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_safetyaccess_set_r_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.111324191 0.5 0.0649318248 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!12" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!16" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!12" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!12">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!12" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_safetyaccess_set_r_col_01_shape" width="4.845" height="0.96" length="0.08" shell="0.02" props="physparams.xml#sRubber" />
+		<TEMPLATERENDERABLE id="default_renderable!12" uri="route_objects.pssg#default!13" />
+		<TEMPLATEENTITY id="core_barr_armco_b_left~0.max" PredictiveWakeUp="unknown">
+			<TEMPLATECONSTRAINT id="constrain_post_subent!0" body1uri="#core_barr_armco_b_left_01_rigidbody" body2uri="#core_barr_armco_b_left_post_link1_rigi

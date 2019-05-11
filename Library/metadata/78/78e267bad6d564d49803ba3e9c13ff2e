@@ -1,0 +1,308 @@
+ />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!6" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!6" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!6">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!6" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPECYLINDER id="cot_euro_tree_01_b_col_shape" height="4.994004" radius="0.228108" shell="0.02" props="physparams.xml#sSolidTreeWood" />
+		<TEMPLATERENDERABLE id="default_renderable!6" uri="trees.pssg#default!7" />
+		<TEMPLATEENTITY id="cot_bush_rock_01_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!7">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!7" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_bush_rock_01_a_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.6936629 2.4871273 -0.06717491 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!7" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!7" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!7" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!7">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!7" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPESPHERE id="cot_bush_rock_01_a_col_01_shape" radius="1.267783" shell="0.02" props="physparams.xml#sMediumSoftVegetation" />
+		<TEMPLATERENDERABLE id="default_renderable!7" uri="trees.pssg#default!4" />
+		<TEMPLATEENTITY id="cot_sign_chevron_c.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="cot_sign_chevron_c_obj_01_subent">
+				<TEMPLATERIGIDBODY id="cot_sign_chevron_c_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_sign_chevron_c_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.000219598413 1.17822039 -0.158860162 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_sign_chevron_c_col_01_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_sign_chevron_c_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_sign_chevron_c_col_02_shape">
+						<TEMPLATETRANSFORM>0.7071068 0 -0.707106769 0 0 1 0 0 0.707106769 0 0.7071068 0 0.32082057 2.00454736 0.08675364 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_sign_chevron_c_col_02_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_sign_chevron_c_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_sign_chevron_c_col_03_shape">
+						<TEMPLATETRANSFORM>0.7071068 0 0.707106769 0 0 1 0 0 -0.707106769 0 0.7071068 0 -0.2955005 2.00454736 0.08621889 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_sign_chevron_c_col_03_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_sign_chevron_c_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_sign_chevron_c_default_01_renderable" sid="cot_sign_chevron_c_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_sign_chevron_c_obj_03_subent">
+				<TEMPLATERIGIDBODY id="cot_sign_chevron_c_obj_03_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_sign_chevron_c_col_04_shape">
+						<TEMPLATETRANSFORM>0.7071068 0 -0.707106769 0 0 1 0 0 0.707106769 0 0.7071068 0 0.319322824 2.00383 0.0867615044 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_sign_chevron_c_col_05_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -5.192682E-05 1.468113 -0.159584522 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_sign_chevron_c_col_06_shape">
+						<TEMPLATETRANSFORM>0.7071068 0 0.707106769 0 0 1 0 0 -0.707106769 0 0.7071068 0 -0.2962411 2.00383 0.0860393047 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_sign_chevron_c_damage_01_renderable" sid="cot_sign_chevron_c_obj_03" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_sign_chevron_c_obj_02_subent">
+				<TEMPLATERIGIDBODY id="cot_sign_chevron_c_obj_02_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_sign_chevron_c_col_03_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 6.33299351E-08 0.243801773 -0.159583181 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_sign_chevron_c_damage_01_renderable" sid="cot_sign_chevron_c_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!8" impulse="physparams.xml#bDefault" typeuri="#cot_sign_chevron_c_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="cot_sign_chevron_c_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_sign_chevron_c_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_sign_chevron_c_obj_03_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_sign_chevron_c_obj_02_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_sign_chevron_c_col_01_shape" width="0.054" height="2.487592" length="0.054" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_sign_chevron_c_col_02_shape" width="0.8008276" height="0.9399865" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_sign_chevron_c_col_03_shape" width="0.8008276" height="0.9399865" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="cot_sign_chevron_c_default_01_renderable" uri="objects.pssg#cot_sign_chevron_c_default_01" />
+		<TEMPLATEBEHAVIOURTYPE id="cot_sign_chevron_c_damage_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_sign_chevron_c_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_sign_chevron_c_obj_03_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_sign_chevron_c_obj_02_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_sign_chevron_c_col_04_shape" width="0.8008276" height="0.9350107" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_sign_chevron_c_col_05_shape" width="0.054" height="1.930431" length="0.054" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_sign_chevron_c_col_06_shape" width="0.8008276" height="0.9350107" length="0.02" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="cot_sign_chevron_c_damage_01_renderable" uri="objects.pssg#cot_sign_chevron_c_damage_01" />
+		<TEMPLATESHAPEBOX id="cot_sign_chevron_c_col_03_shape!0" width="0.054" height="0.618754" length="0.054" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATEENTITY id="core_barr_blockplastic_b~1.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_b_obj_01_subent">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_b_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_b_col_02_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_b_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_b_col_01_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_b_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_b_default_01_renderable" sid="core_barr_blockplastic_b_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_b_obj_02_subent">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_b_obj_02_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_03_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_04_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_b_damage_01_renderable" sid="core_barr_blockplastic_b_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!9" impulse="physparams.xml#bDefault" typeuri="#core_barr_blockplastic_b_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_02_shape" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_01_shape" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_default_01_renderable" uri="objects.pssg#core_barr_blockplastic_b_default_01" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_damage_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_03_shape" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_04_shape" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_damage_01_renderable" uri="objects.pssg#core_barr_blockplastic_b_damage_01" />
+		<TEMPLATEENTITY id="core_barr_blockplastic_b~0.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_b_obj_01_subent!0">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_b_obj_01_rigidbody!0" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_02_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_b_col_02_shape_behaviour!0" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_b_damage_01_behaviour!0" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_01_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_b_col_01_shape_behaviour!0" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_b_damage_01_behaviour!0" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_b_default_01_renderable!0" sid="core_barr_blockplastic_b_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_b_obj_02_subent!0">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_b_obj_02_rigidbody!0" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_03_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_04_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_b_damage_01_renderable!0" sid="core_barr_blockplastic_b_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!10" impulse="physparams.xml#bDefault" typeuri="#core_barr_blockplastic_b_default_01_behaviour!0" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_default_01_behaviour!0">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent!0" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent!0" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_02_shape!0" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_01_shape!0" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_default_01_renderable!0" uri="objects.pssg#core_barr_blockplastic_b_default_01!0" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_damage_01_behaviour!0">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent!0" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent!0" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_03_shape!0" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_04_shape!0" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_damage_01_renderable!0" uri="objects.pssg#core_barr_blockplastic_b_damage_01!0" />
+		<TEMPLATEENTITY id="cot_pillar_b.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!8">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!8" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_pillar_b_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0 1.04925609 0 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!8" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!11" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!8" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!8">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!8" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_pillar_b_col_01_shape" width="0.3467675" height="2.058512" length="0.3467678" shell="0.02" props="physparams.xml#sStone" />
+		<TEMPLATERENDERABLE id="default_renderable!8" uri="objects.pssg#default!5" />
+		<TEMPLATEENTITY id="cot_fence_b.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!9">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!9" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_fence_b_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0 0.249909222 3.7252903E-09 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!9" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!12" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!9" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!9">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!9" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_fence_b_col_01_shape" width="3.960205" height="1.059818" length="0.02885186" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!9" uri="objects.pssg#default!7" />
+		<TEMPLATEENTITY id="cot_planter_b.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!10">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!10" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_planter_b_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 6.598234E-05 0.30725956 -0.001806587 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!10" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!13" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!10" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!10">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!10" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_planter_b_col_01_shape" width="1.525615" height="0.5745191" length="0.4904399" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!10" uri="objects.pssg#default" />
+		<TEMPLATEENTITY id="cot_pillar_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!11">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!11" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_pillar_a_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0 1.243184 0 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!11" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!14" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!11" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!11">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!11" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_pillar_a_col_01_shape" width="0.4067677" height="2.446368" length="0.4067678" shell="0.02" props="physparams.xml#sStone" />
+		<TEMPLATERENDERABLE id="default_renderable!11" uri="objects.pssg#default!10" />
+		<TEMPLATEENTITY id="cot_fence_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!12">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!12" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_fence_a_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0 0.600782 0 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!12" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!15" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!12" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!12">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!12" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_fence_a_col_01_shape" width="3.962582" height="1.761564" length="0.02370549" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!12" uri="objects.pssg#default!13" />
+		<TEMPLATEENTITY id="cot_gate_b.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!13">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!13" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_gate_b_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.9961825 1.01530814 -0.000188715756 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_gate_b_col_02_shape">
+						<TEMPLATETRANSFORM>0.9986295 0 0.05233596 0 0 1 0 0 -0.05233596 0 0.9986295 0 0.523607731 1.01530814 0.0251380652 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_gate_b_col_03_shape">
+						<TEMPLATETRANSFORM>0.992546141 0 -0.121869341 0 0 1 0 0 0.121869341 0 0.992546141 0 1.53648019 1.01530814 -0.01338293 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!13" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!16" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!13" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!13">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!13" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_gate_b_col_01_shape" width="2.013409" height="2.028369" length="0.0248569" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_gate_b_col_02_shape" width="0.9462105" height="2.028369" length="0.0248569" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_gate_b_col_03_shape" width="1.017537" height="2.028369" length="0.0248569" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!13" uri="objects.pssg#default!14" />
+		<TEMPLATEENTITY id="cot_gate_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!14">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!14" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_gate_a_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 6.20367438E-11 1.004447 0.008167457 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!14" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!17" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!14" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!14">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!14" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_gate_a_col_01_shape" width="3.802384" height="1.986938" length="0.03999999" shell="0.02" props="physparams.xml#sWood" />
+		<TEMPLATERENDERABLE id="default_renderable!14" uri="objects.pssg#default!4" />
+		<TEMPLATEENTITY id="cot_fence_a_start.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!15">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!15" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_fence_a_start_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.20404664E-07 0.3179611 -0.6407207 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!15" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!18" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!15" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!15">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!15" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_fence_a_start_col_01_shape" width="0.02" height="2.231183" length="1.316748" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!15" uri="objects.pssg#default!35" />
+		<TEMPLATEENTITY id="cot_road_sign_e.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="cot_road_sign_e_obj_01_subent">
+				<TEMPLATERIGIDBODY id="cot_road_sign_e_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBO

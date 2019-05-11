@@ -1,0 +1,38 @@
+Shader "Hidden/Shader Forge/SFN_ChannelBlend" {
+    Properties {
+        _OutputMask ("Output Mask", Vector) = (1,1,1,1)
+        _Type ("Type", Float) = 0 // 0 = Summed, 1 = Layered
+        _M ("Mask", 2D) = "black" {}
+        _R ("Rcol", 2D) = "black" {}
+        _G ("Gcol", 2D) = "black" {}
+        _B ("Bcol", 2D) = "black" {}
+        _A ("Acol", 2D) = "black" {}
+        _BTM ("Btm", 2D) = "black" {}
+    }
+    SubShader {
+        Tags {
+            "RenderType"="Opaque"
+        }
+        Pass {
+        CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #define UNITY_PASS_FORWARDBASE
+            #include "UnityCG.cginc"
+            #pragma target 3.0
+            uniform float4 _OutputMask;
+            uniform sampler2D _M;
+            uniform sampler2D _R;
+            uniform sampler2D _G;
+            uniform sampler2D _B;
+            uniform sampler2D _A;
+            uniform sampler2D _BTM;
+
+            uniform float _Type;
+
+            struct VertexInput {
+                float4 vertex : POSITION;
+                float2 texcoord0 : TEXCOORD0;
+            };
+            struct VertexOutput {
+ 

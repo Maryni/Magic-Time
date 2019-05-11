@@ -1,0 +1,622 @@
+ogin server
+2018/12/21 18:30:02 698982775 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:30:02 698982775 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 18:30:03 698983196 164 [DEBUG Client 7784] Connect time to instance server was 390ms
+2018/12/21 18:30:05 698985193 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 18:30:15 698995707 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:30:15 698995707 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:30:15 698995707 dc [INFO Client 7784] Connecting to instance server at 185.225.208.120:6112
+2018/12/21 18:30:15 698995754 164 [DEBUG Client 7784] Connect time to instance server was 32ms
+2018/12/21 18:30:19 698999576 a24 [INFO Client 7784] : You have entered Luxurious Hideout.
+2018/12/21 18:30:42 699021947 a24 [INFO Client 7784] : Trade cancelled.
+2018/12/21 18:30:46 699026143 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:30:46 699026143 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:30:46 699026143 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 18:30:46 699026174 164 [DEBUG Client 7784] Connect time to instance server was 31ms
+2018/12/21 18:30:47 699027563 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 18:32:47 699147559 a24 [INFO Client 7784] : NikaArcLight has joined the area.
+2018/12/21 18:32:56 699156482 a24 [INFO Client 7784] %Milly_one: _ not bad
+2018/12/21 18:33:01 699161739 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 18:33:08 699168556 a24 [INFO Client 7784] $<ÄVÜ> Soyuq: ПРОДАЮ - 6 линк _ /// _
+2018/12/21 18:33:16 699176637 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 18:33:46 699205934 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 18:34:12 699232049 a24 [INFO Client 7784] : Failed to apply item: Item cannot increase in Rarity.
+2018/12/21 18:34:34 699254794 a24 [INFO Client 7784] %Milly_one: _
+2018/12/21 18:34:37 699257711 a24 [INFO Client 7784] $MamkinMalchik: Куплю сферу возвышения за 120х
+2018/12/21 18:35:18 699297928 a24 [INFO Client 7784] %NikaArcLight: _
+2018/12/21 18:35:36 699316539 a24 [INFO Client 7784] $_GRecK_: продам__________
+2018/12/21 18:35:50 699330439 a24 [INFO Client 7784] $GolemsStillOverPowered: _ за сколько можно продать?
+2018/12/21 18:35:58 699338691 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:35:58 699338707 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:35:58 699338707 dc [INFO Client 7784] Connecting to instance server at 109.95.210.225:6112
+2018/12/21 18:35:58 699338800 164 [DEBUG Client 7784] Connect time to instance server was 16ms
+2018/12/21 18:36:06 699346148 a24 [INFO Client 7784] : You have entered Arsenal.
+2018/12/21 18:36:12 699352248 a24 [INFO Client 7784] $MFLikerCliker: _ 2d 
+2018/12/21 18:36:12 699352248 a24 [INFO Client 7784] $MFLikerCliker: _ 2в 
+2018/12/21 18:36:16 699356288 a24 [INFO Client 7784] : NikaArcLight has joined the area.
+2018/12/21 18:36:31 699371327 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:36:31 699371358 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 34586
+object_id: 1768
+target_id: 1748
+flags: 129
+2018/12/21 18:36:36 699376303 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:36:36 699376303 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 34600
+object_id: 1768
+target_id: 1727
+flags: 129
+2018/12/21 18:36:39 699379470 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:36:39 699379470 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 34610
+object_id: 1768
+target_id: 2109
+flags: 129
+2018/12/21 18:36:39 699379673 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:36:39 699379673 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 34612
+object_id: 1768
+target_id: 2107
+flags: 129
+2018/12/21 18:36:39 699379891 a24 [INFO Client 7784] $GolemsStillOverPowered: _ за сколько можно продать?
+2018/12/21 18:36:46 699386287 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:36:46 699386287 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 42753
+action_id: 34645
+object_id: 1768
+target_id: 887
+flags: 129
+2018/12/21 18:37:06 699406333 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:06 699406333 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 42753
+action_id: 34752
+object_id: 1768
+target_id: 1376
+flags: 129
+2018/12/21 18:37:11 699411278 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:11 699411278 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 34773
+object_id: 1768
+target_id: 1115
+flags: 129
+2018/12/21 18:37:21 699421840 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:21 699421840 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 34888
+object_id: 1768
+target_id: 1411
+flags: 129
+2018/12/21 18:37:21 699421840 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:21 699421840 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 34889
+object_id: 1768
+target_id: 1411
+flags: 129
+2018/12/21 18:37:26 699426333 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:26 699426333 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 34909
+object_id: 1768
+target_id: 1291
+flags: 129
+2018/12/21 18:37:31 699431278 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:31 699431278 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 34941
+object_id: 1768
+target_id: 1410
+flags: 129
+2018/12/21 18:37:36 699436317 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:36 699436317 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 42753
+action_id: 34973
+object_id: 1768
+target_id: 939
+flags: 129
+2018/12/21 18:37:36 699436535 a24 [INFO Client 7784] $resola: продам УНИК КОЛЬЦА
+2018/12/21 18:37:37 699437315 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:37 699437315 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 34976
+object_id: 1768
+target_id: 1336
+flags: 129
+2018/12/21 18:37:46 699446301 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:46 699446301 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35041
+object_id: 1768
+target_id: 1404
+flags: 129
+2018/12/21 18:37:51 699451277 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:37:51 699451277 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35068
+object_id: 1768
+target_id: 1556
+flags: 129
+2018/12/21 18:38:01 699461246 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:38:01 699461246 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35119
+object_id: 1768
+target_id: 1557
+flags: 129
+2018/12/21 18:38:03 699463554 a24 [INFO Client 7784] $GolemsStillOverPowered:     Oblivion Torc, Fangjaw Talisman продам за 1в
+2018/12/21 18:38:04 699464646 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:38:04 699464646 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35137
+object_id: 1768
+target_id: 3847
+flags: 129
+2018/12/21 18:38:04 699464646 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:38:04 699464646 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35138
+object_id: 1768
+target_id: 3847
+flags: 129
+2018/12/21 18:38:06 699466284 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:38:06 699466284 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 42753
+action_id: 35145
+object_id: 1768
+target_id: 3850
+flags: 129
+2018/12/21 18:38:11 699471261 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:38:11 699471261 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 35172
+object_id: 1768
+target_id: 1937
+flags: 129
+2018/12/21 18:38:16 699476268 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:38:16 699476268 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35192
+object_id: 1768
+target_id: 3937
+flags: 129
+2018/12/21 18:38:55 699515206 a24 [INFO Client 7784] $resola: __ продам
+2018/12/21 18:39:31 699551274 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:39:31 699551274 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 35656
+object_id: 1768
+target_id: 1055
+flags: 129
+2018/12/21 18:41:21 699661223 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:41:21 699661223 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 36185
+object_id: 1768
+target_id: 1127
+flags: 129
+2018/12/21 18:41:26 699666215 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 18:41:26 699666215 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 42753
+action_id: 36223
+object_id: 1768
+target_id: 1395
+flags: 129
+2018/12/21 18:42:02 699702470 a24 [INFO Client 7784] : NikaArcLight has left the area.
+2018/12/21 18:42:03 699703437 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:42:03 699703499 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:42:03 699703499 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 18:42:03 699703515 164 [DEBUG Client 7784] Connect time to instance server was 16ms
+2018/12/21 18:42:04 699704638 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 18:43:10 699770440 a24 [INFO Client 7784] %NikaArcLight: _
+2018/12/21 18:43:22 699782093 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:43:22 699782186 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:43:22 699782186 dc [INFO Client 7784] Connecting to instance server at 109.95.211.203:6112
+2018/12/21 18:43:22 699782218 164 [DEBUG Client 7784] Connect time to instance server was 32ms
+2018/12/21 18:43:24 699784573 a24 [INFO Client 7784] : You have entered Aspirants' Plaza.
+2018/12/21 18:43:31 699791172 a24 [INFO Client 7784] %NikaArcLight: _
+2018/12/21 18:43:36 699796086 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:43:36 699796117 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:43:36 699796117 dc [INFO Client 7784] Connecting to instance server at 109.95.211.159:6112
+2018/12/21 18:43:36 699796164 164 [DEBUG Client 7784] Connect time to instance server was 15ms
+2018/12/21 18:43:38 699798098 a24 [INFO Client 7784] : You have entered The Menagerie.
+2018/12/21 18:44:23 699843370 a24 [INFO Client 7784] Einhar, Beastmaster: Prove to the First Ones you are worthy, Exile!
+2018/12/21 18:44:40 699860015 a24 [INFO Client 7784] Einhar, Beastmaster: You are truly a survivor!
+2018/12/21 18:44:47 699867098 a24 [INFO Client 7784] %NikaArcLight: __
+2018/12/21 18:44:48 699868783 a24 [INFO Client 7784] %Milly_one: _
+2018/12/21 18:45:12 699892729 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:45:12 699892776 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:45:12 699892776 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 18:45:12 699892822 164 [DEBUG Client 7784] Connect time to instance server was 31ms
+2018/12/21 18:45:14 699894117 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 18:46:15 699955301 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:46:15 699955301 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:46:15 699955301 dc [INFO Client 7784] Connecting to instance server at 109.95.212.184:6112
+2018/12/21 18:46:15 699955379 164 [DEBUG Client 7784] Connect time to instance server was 31ms
+2018/12/21 18:46:21 699961806 a24 [INFO Client 7784] : You have entered Shrine.
+2018/12/21 18:46:35 699975253 a24 [INFO Client 7784] $<STNS> buy_or_die: _______ все по 15х. много резистов
+2018/12/21 18:47:23 700023614 a24 [INFO Client 7784] $pepl: _ 80
+2018/12/21 18:47:28 700028668 a24 [INFO Client 7784] $DoZaaa: купл сферы соединения
+2018/12/21 18:49:29 700149210 a24 [INFO Client 7784] $MFLikerCliker: _ 47% от огня 2с 
+2018/12/21 18:50:34 700214262 a24 [INFO Client 7784] $<SoLo> _RollingRollingRolling_: Куплю ресурсы за Сферы хаоса: Божественная сфера 1:8х; Сфера алхимии 2:1х; Сфера перемен 13:1х; Сфера соединения 5:2х; Призма камнереза 5:4х; Цветная сфера 14:1х; Сфера златокузнеца 10:1х; Резец картографа 3:1х; Свиток портала 50:1х; Сфера Ваал 4:3х.
+2018/12/21 18:51:41 700281343 a24 [INFO Client 7784] $Trap_maybe: КУПЛЮ ваши _ по 120 _
+2018/12/21 18:54:18 700438108 a24 [INFO Client 7784] $Trap_maybe: КУПЛЮ ваши _ по 120 _
+2018/12/21 18:54:19 700439403 a24 [INFO Client 7784] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 1х
+2018/12/21 18:55:58 700538214 a24 [INFO Client 7784] $Trap_maybe: КУПЛЮ ваши _ по 120 _
+2018/12/21 18:56:34 700573985 a24 [INFO Client 7784] $MamkinMalchik: Куплю сферу возвышения за 125х
+2018/12/21 18:56:56 700595997 a24 [INFO Client 7784] $Equalizer_Betrayal: _ 6 ex?
+2018/12/21 18:57:00 700600739 a24 [INFO Client 7784] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 1х
+2018/12/21 18:57:14 700614811 a24 [INFO Client 7784] Riker Maloney, Midnight Tinkerer: More meddling in my marvelous machinations?
+2018/12/21 18:57:25 700625497 a24 [INFO Client 7784] : Milly_one has been slain.
+2018/12/21 18:57:25 700625590 a24 [INFO Client 7784] Riker Maloney, Midnight Tinkerer: This house of splattered corpses masks the true terror of the Syndicate.
+2018/12/21 18:57:59 700659489 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:57:59 700659723 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:57:59 700659723 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 18:58:00 700660503 164 [DEBUG Client 7784] Connect time to instance server was 359ms
+2018/12/21 18:58:08 700668303 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 18:58:13 700673701 a24 [INFO Client 7784] $Equalizer_Betrayal: _ 6 ex ? норм цена?
+2018/12/21 18:58:31 700691781 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 18:58:31 700691797 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 18:58:31 700691797 dc [INFO Client 7784] Connecting to instance server at 109.95.212.184:6112
+2018/12/21 18:58:31 700691813 164 [DEBUG Client 7784] Connect time to instance server was 16ms
+2018/12/21 18:58:33 700693107 a24 [INFO Client 7784] : You have entered Shrine.
+2018/12/21 19:00:03 700783292 a24 [INFO Client 7784] $_GRecK_: продам__________
+2018/12/21 19:00:13 700793010 a24 [INFO Client 7784] : Failed to use item: Portals are disabled here.
+2018/12/21 19:00:27 700807519 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 19:00:27 700807519 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 19:00:27 700807519 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 19:00:27 700807565 164 [DEBUG Client 7784] Connect time to instance server was 16ms
+2018/12/21 19:00:29 700809188 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 19:00:33 700813790 a24 [INFO Client 7784] %NikaArcLight: _
+2018/12/21 19:00:38 700818080 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 19:00:59 700839436 a24 [INFO Client 7784] $_GRecK_: продам_________
+2018/12/21 19:01:40 700880901 a24 [INFO Client 7784] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 1х
+2018/12/21 19:02:15 700914956 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 19:02:15 700914956 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 19:02:15 700914956 dc [INFO Client 7784] Connecting to instance server at 109.95.210.79:6112
+2018/12/21 19:02:15 700915003 164 [DEBUG Client 7784] Connect time to instance server was 16ms
+2018/12/21 19:02:23 700923006 a24 [INFO Client 7784] : You have entered Overgrown Shrine.
+2018/12/21 19:03:00 700960025 a24 [INFO Client 7784] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 1х
+2018/12/21 19:03:38 700998901 a24 [INFO Client 7784] %Milly_one: _
+2018/12/21 19:06:35 701175525 a24 [INFO Client 7784] $<R•I•P> Дедулька_КасперсКий: WTS Full Gear Storm Brand..Clear All content..22EX
+2018/12/21 19:08:22 701282011 a24 [INFO Client 7784] $CradleofDeathArc:  25 х _
+2018/12/21 19:08:32 701292058 a24 [INFO Client 7784] %Milly_one: _
+2018/12/21 19:08:39 701299015 a24 [INFO Client 7784] $<BRU†AL> Салют_я_Ден: _ продам!!!
+2018/12/21 19:09:09 701329514 a24 [INFO Client 7784] $СпинаВНоже:  линкани прежде чем продать
+2018/12/21 19:09:49 701369528 a24 [INFO Client 7784] The Shaper: You reek of imperfection.
+2018/12/21 19:10:09 701389683 a24 [INFO Client 7784] $D_Pigeon: куплю ваши _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 10 к 1х ) _ ( 2.5 к 1х ) _ ( 3 к 1х ) _ ( 4 к 1х )
+2018/12/21 19:10:37 701416968 a24 [INFO Client 7784] $D_Pigeon: куплю ваши _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 10 к 1х ) _ ( 2.5 к 1х ) _ ( 3 к 1х ) _ ( 4 к 1х )
+2018/12/21 19:11:09 701449743 a24 [INFO Client 7784] %NikaArcLight: _
+2018/12/21 19:11:11 701451163 a24 [INFO Client 7784] %Milly_one: __
+2018/12/21 19:11:30 701470694 a24 [INFO Client 7784] $Бруч: ___
+2018/12/21 19:11:58 701498587 a24 [INFO Client 7784] $D_Pigeon: куплю ваши _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 10 к 1х ) _ ( 2.5 к 1х ) _ ( 3 к 1х ) _ ( 4 к 1х )
+2018/12/21 19:12:08 701508259 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 19:12:08 701508322 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 19:12:08 701508322 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 19:12:08 701508384 164 [DEBUG Client 7784] Connect time to instance server was 47ms
+2018/12/21 19:12:09 701509882 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 19:12:21 701521223 a24 [INFO Client 7784] $Trap_maybe: WTB _=120 _
+2018/12/21 19:12:29 701529226 a24 [INFO Client 7784] $<T2D> North_Sorceress: куплю много желтых карт
+2018/12/21 19:12:31 701530989 a24 [INFO Client 7784] $D_Pigeon: куплю ваши _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 15 к 1х ) _ ( 10 к 1х ) _ ( 2.5 к 1х ) _ ( 3 к 1х ) _ ( 4 к 1х )
+2018/12/21 19:13:29 701589848 a24 [INFO Client 7784] $СпинаВНоже: нет
+2018/12/21 19:13:38 701598366 a24 [INFO Client 7784] : Trade cancelled.
+2018/12/21 19:13:41 701601517 a24 [INFO Client 7784] : Item on cursor destroyed.
+2018/12/21 19:13:53 701613779 a24 [INFO Client 7784] $<EC?> GidroMolten: Куплю соединения 4 к 1х, алхимии 3 к 1х,резцы 4 к 1х, ваал 2 к 1х, златокузнеца 16 к 1х, раскаяния 2 к 1х, цари 2 к 1х, очищения 5 к 1х, камнерезы 2 к 1х, перемены 20 к 1х, уникальные кольца 1 к 1х
+2018/12/21 19:13:54 701614824 a24 [INFO Client 7784] %NikaArcLight: _
+2018/12/21 19:13:59 701619239 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 19:14:09 701629301 a24 [INFO Client 7784] $<BRU†AL> Салют_я_Ден: _ 6.5 ех
+2018/12/21 19:14:27 701647069 a24 [INFO Client 7784] : NikaArcLight has joined the area.
+2018/12/21 19:14:35 701655743 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 19:15:08 701688565 a24 [INFO Client 7784] $<*FOX*+> Пылисос: куплю уник кольца
+2018/12/21 19:16:03 701743525 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 19:16:20 701760061 a24 [INFO Client 7784] : Trade accepted.
+2018/12/21 19:16:24 701764912 a24 [INFO Client 7784] $starikimore: Продам __________
+2018/12/21 19:16:40 701780310 a24 [INFO Client 7784] : NikaArcLight has left the area.
+2018/12/21 19:17:59 701859433 a24 [INFO Client 7784] $gunnslingers: куплю выху 130х
+2018/12/21 19:18:13 701872959 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 19:18:13 701873005 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 19:18:13 701873005 dc [INFO Client 7784] Connecting to instance server at 109.95.212.67:6112
+2018/12/21 19:18:13 701873083 164 [DEBUG Client 7784] Connect time to instance server was 16ms
+2018/12/21 19:18:21 701881492 a24 [INFO Client 7784] : You have entered Reef.
+2018/12/21 19:18:21 701881507 a24 [INFO Client 7784] $Разносчик_Экзов: WTS _ 4ex // _ 1ex
+2018/12/21 19:18:44 701904767 a24 [INFO Client 7784] $Разносчик_Экзов: WTS _ 4ex // _ 1ex
+2018/12/21 19:18:56 701916264 a24 [INFO Client 7784] $DoZaaa: Куплю сферы кузнеца,соединения за хаосы!
+2018/12/21 19:19:42 701962706 a24 [INFO Client 7784] $pepl: __
+2018/12/21 19:20:47 702027275 a24 [INFO Client 7784] $SenatorMerlin: _ что за такой выпросить можно? средняя цена
+2018/12/21 19:21:13 702053077 a24 [INFO Client 7784] $Trap_maybe: WTB _=120 _
+2018/12/21 19:21:47 702087632 a24 [INFO Client 7784] $Tranquillity___: _ 6 ex
+2018/12/21 19:21:54 702094823 a24 [INFO Client 7784] $mdayjetrishlyhi: _ Стоит что нибудь?
+2018/12/21 19:23:55 702215256 a24 [INFO Client 7784] $bazaza: _ ебучий синдикат уже третья лучше бы выху дал
+2018/12/21 19:23:58 702218750 a24 [INFO Client 7784] $Trap_maybe: WTS _1ex_5c_10c_12c
+2018/12/21 19:24:04 702224897 a24 [INFO Client 7784] $<*FOX*+> Пылисос: куплю уник кольца
+2018/12/21 19:24:07 702227518 a24 [INFO Client 7784] $Trap_maybe: WTS _1ex_5c_10c_12c
+2018/12/21 19:24:31 702251074 a24 [INFO Client 7784] $bazaza: _
+2018/12/21 19:24:55 702275020 a24 [INFO Client 7784] $One_Love_One_Life: Куплю 100 _ за 65 _
+2018/12/21 19:25:27 702307562 a24 [INFO Client 7784] Korell Goya, Son of Stone: You'll not make me betray my fellows this time!
+2018/12/21 19:25:52 702332912 a24 [INFO Client 7784] : Milly_one has been slain.
+2018/12/21 19:25:53 702333411 a24 [INFO Client 7784] Korell Goya, Son of Stone: Like I said, only a fool braves a Redblade's encampment.
+2018/12/21 19:26:09 702349448 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 19:26:09 702349464 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 19:26:09 702349464 dc [INFO Client 7784] Connecting to instance server at 109.95.212.58:6112
+2018/12/21 19:26:09 702349542 164 [DEBUG Client 7784] Connect time to instance server was 46ms
+2018/12/21 19:26:13 702353551 a24 [INFO Client 7784] : You have entered Stately Hideout.
+2018/12/21 19:26:31 702371241 a24 [INFO Client 7784] $<T2D> North_Sorceress: куплю много желтых карт
+2018/12/21 19:26:48 702388464 a24 [INFO Client 7784] %NikaArcLight: _
+2018/12/21 19:28:29 702489163 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 19:28:29 702489178 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 19:28:29 702489178 dc [INFO Client 7784] Connecting to instance server at 185.225.208.206:6112
+2018/12/21 19:28:29 702489241 164 [DEBUG Client 7784] Connect time to instance server was 47ms
+2018/12/21 19:28:33 702493141 a24 [INFO Client 7784] : You have entered Luxurious Hideout.
+2018/12/21 19:29:03 702523592 ce6 [DEBUG Client 7784] Got Instance Details from login server
+2018/12/21 19:29:03 702523623 d03 [INFO Client 7784] Just before calling client instance session
+2018/12/21 19:29:03 702523623 dc [INFO Client 7784] Connecting to instance server at 185.225.209.76:6112
+2018/12/21 19:29:03 702523670 164 [DEBUG Client 7784] Connect time to instance server was 31ms
+2018/12/21 19:29:20 702540019 a24 [INFO Client 7784] : You have entered Dark Forest.
+2018/12/21 19:29:32 702552156 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:32 702552171 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35463
+object_id: 2061
+target_id: 985
+flags: 129
+2018/12/21 19:29:33 702553248 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:33 702553248 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 35481
+object_id: 2061
+target_id: 988
+flags: 129
+2018/12/21 19:29:41 702561765 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:41 702561765 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35524
+object_id: 2061
+target_id: 957
+flags: 129
+2018/12/21 19:29:45 702565307 139 [WARN Client 7784] Matching object found for InstanceClientActionUpdate, but no matching action was found on object to update.
+2018/12/21 19:29:45 702565307 139 [WARN Client 7784] Matching object found for InstanceClientActionUpdate, but no matching action was found on object to update.
+2018/12/21 19:29:49 702569706 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:49 702569706 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35563
+object_id: 2061
+target_id: 1174
+flags: 129
+2018/12/21 19:29:49 702569721 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:49 702569721 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35578
+object_id: 2061
+target_id: 844
+flags: 129
+2018/12/21 19:29:49 702569737 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:49 702569737 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35579
+object_id: 2061
+target_id: 844
+flags: 129
+2018/12/21 19:29:52 702572732 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:52 702572732 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35607
+object_id: 2061
+target_id: 1320
+flags: 129
+2018/12/21 19:29:52 702572732 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:52 702572732 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35608
+object_id: 2061
+target_id: 1320
+flags: 129
+2018/12/21 19:29:52 702572810 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:52 702572810 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35611
+object_id: 2061
+target_id: 1316
+flags: 129
+2018/12/21 19:29:52 702572810 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:53 702573044 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 35612
+object_id: 2061
+target_id: 1316
+flags: 129
+2018/12/21 19:29:54 702574074 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:54 702574074 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35637
+object_id: 2061
+target_id: 1221
+flags: 129
+2018/12/21 19:29:54 702574074 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:54 702574074 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35638
+object_id: 2061
+target_id: 1221
+flags: 129
+2018/12/21 19:29:54 702574355 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:54 702574355 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35643
+object_id: 2061
+target_id: 1218
+flags: 129
+2018/12/21 19:29:54 702574729 139 [WARN Client 7784] Matching object found for InstanceClientActionUpdate, but no matching action was found on object to update.
+2018/12/21 19:29:55 702575041 139 [WARN Client 7784] Matching object found for InstanceClientActionUpdate, but no matching action was found on object to update.
+2018/12/21 19:29:56 702576866 a24 [INFO Client 7784] $bazaza: _ чеза гавно че за алтарь
+2018/12/21 19:29:57 702577366 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:57 702577366 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35655
+object_id: 2061
+target_id: 1293
+flags: 129
+2018/12/21 19:29:59 702579440 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:29:59 702579440 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35663
+object_id: 2061
+target_id: 1034
+flags: 129
+2018/12/21 19:30:01 702581702 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:01 702581702 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 35675
+object_id: 2061
+target_id: 1112
+flags: 129
+2018/12/21 19:30:01 702581890 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:01 702581890 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35677
+object_id: 2061
+target_id: 930
+flags: 129
+2018/12/21 19:30:02 702582529 a24 [INFO Client 7784] $<*FOX*+> Пылисос: куплю уник кольца
+2018/12/21 19:30:07 702587693 a24 [INFO Client 7784] Alva, Master Explorer: Just in time.
+2018/12/21 19:30:12 702592778 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:12 702592778 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35732
+object_id: 2061
+target_id: 912
+flags: 129
+2018/12/21 19:30:12 702592778 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:12 702592778 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35733
+object_id: 2061
+target_id: 912
+flags: 129
+2018/12/21 19:30:15 702595852 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:15 702595852 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32771
+action_id: 35753
+object_id: 2061
+target_id: 1331
+flags: 129
+2018/12/21 19:30:15 702595852 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:15 702595852 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35754
+object_id: 2061
+target_id: 1331
+flags: 129
+2018/12/21 19:30:16 702596928 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:16 702596928 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 35758
+object_id: 2061
+target_id: 1335
+flags: 129
+2018/12/21 19:30:21 702601733 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:21 702601733 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 42753
+action_id: 35779
+object_id: 2061
+target_id: 975
+flags: 129
+2018/12/21 19:30:24 702604010 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:24 702604010 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 32772
+action_id: 35788
+object_id: 2061
+target_id: 897
+flags: 129
+2018/12/21 19:30:31 702611701 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:31 702611701 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 43777
+action_id: 35827
+object_id: 2061
+target_id: 3833
+flags: 129
+2018/12/21 19:30:36 702616709 232 [WARN Client 7784] Client couldn't execute an instant/triggered action from the server
+2018/12/21 19:30:36 702616709 1bc [WARN Client 7784] Instant/Triggered actionwas serialized to the client, but the client failed to execute the action.
+skill_instance_id: 41729
+action_id: 35840
+object_id: 2061
+target_id: 1290
+flags: 129
+2018/12/21 19:30:43 702623121 a24 [INFO Client 7784] $KInGV_ARC: куплю 50 _ за 25 _
+2018/12/21 19:30:56 702636069 a24 [INFO Client 7784] $_GRecK_: продам__________
+2018/12/21 19:31:12 702652355 78f [INFO Client 7784] Abnormal disconnect: An unexpected disconnection occurred.
+2018/12/22 13:22:02 ***** LOG FILE OPENING *****
+2018/12/22 13:22:02 766902319 1c4 [INFO Client 7468] Send patching protocol version 5
+2018/12/22 13:22:02 766902397 237 [INFO Client 7468] Web root: http://patchcdn.pathofexile.com/3.5.1.1/
+2018/12/22 13:22:02 766902397 238 [INFO Client 7468] Backup Web root: http://patchcdn2.pathofexile.com/patch/3.5.1.1/
+2018/12/22 13:22:02 766902397 243 [INFO Client 7468] Requesting root contents 1
+2018/12/22 13:22:02 766902428 26d [INFO Client 7468] Got file list for "" 0
+2018/12/22 13:22:02 766902599 2cb [INFO Client 7468] Finished checking files
+2018/12/22 13:22:04 ***** LOG FILE OPENING *****
+2018/12/22 13:22:04 766904456 8c [INFO Client 9392] Enumerated adapter: NVIDIA GeForce GT 1030
+2018/12/22 13:22:04 766904534 24d [INFO Client 9392] Enumerated device for adapter: NVIDIA GeForce GT 1030. Selected feature level: 45056. Max feature level: 45056
+2018/12/22 13:22:04 766904534 144 [INFO Client 9392] Enumerated output for adapter NVIDIA GeForce GT 1030 of \\.\DISPLAY1
+2018/12/22 13:22:04 766904659 22b [DEBUG Client 9392] CreateSwapChain: SetFullScreenState 0
+2018/12/22 13:22:04 766904674 2c6 [INFO Client 9392] [DirectX] Runtime version = 11.1
+2018/12/22 13:22:04 766904690 2c7 [INFO Client 9392] [DirectX] Feature Level = 11.0
+2018/12/22 13:22:04 766904690 2c8 [INFO Client 9392] [DirectX] Driver Command Lists = YES
+2018/12/22 13:22:04 766904690 2c9 [INFO Client 9392] [DirectX] Driver Concurrent Creates = YES
+2018/12/22 13:22:04 766904690 2ca [INFO Client 9392] [DirectX] Driver Constant Buffer Offsetting = NO
+2018/12/22 13:22:04 766904737 65 [INFO Client 9392] Building Uncached Shader 4ae0807715403e61dc7ecef53655c523aa93fa4e3880070a610599327a7506a7 Resampler_OutColor_Upsample_Avg_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904752 65 [INFO Client 9392] Building Uncached Shader 5e2b3b96ca069d2352d25a4a2d54a4408b345fba90beb8e17fc75ab149e0be77 Resampler_OutDepth_Upsample_Avg_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904768 65 [INFO Client 9392] Building Uncached Shader d908c7c0ba6c1be5fdb5ccd1de2a49716ab326e55949cee3e004d305c1c3f189 Resampler_OutColor_Upsample_Max_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904768 65 [INFO Client 9392] Building Uncached Shader 525889e5b4075068676d09085ea476e213e2ccd388c95d8740a5ec50a67dc024 Resampler_OutDepth_Upsample_Max_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904783 65 [INFO Client 9392] Building Uncached Shader 329bd5821b50a4176fc01994ea4cdc83f5653ba4fbe64598d1a20b635da3f15a Resampler_OutColor_Upsample_Nearest_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904783 65 [INFO Client 9392] Building Uncached Shader 335c269e4b5df946f86d7e186223653fc3a11f9bb5d4d68824ca4e0d33b251a1 Resampler_OutDepth_Upsample_Nearest_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904799 65 [INFO Client 9392] Building Uncached Shader f6f7d09fa1c1b7dc62c3760a839e5484ffe59792bcb8b86de8d28742517796e1 Resampler_OutColor_Upsample_Mixed_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904815 65 [INFO Client 9392] Building Uncached Shader 1fa23cc9a7794e3da6f2aa000f44aca16dfb9a40f32237c521ee8b9c7081026f Resampler_OutDepth_Upsample_Mixed_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904830 65 [INFO Client 9392] Building Uncached Shader 118a455a559eb50be93bc4c7a6abb4bf969b418adaf4c8dbf6d7e2d8c25f5953 Resampler_OutColor_Downsample_Avg_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904846 65 [INFO Client 9392] Building Uncached Shader 0b47ca61a08d91f2c2ed6740a12618aa423d21457c45c3347e294cfa9fe8a7d6 Resampler_OutDepth_Downsample_Avg_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904877 65 [INFO Client 9392] Building Uncached Shader 0c3906f4e59c7ef7707a232cc3cccbfcc9568762c255ac1b22b22acc7754d209 Resampler_OutColor_Downsample_Max_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904893 65 [INFO Client 9392] Building Uncached Shader 7dafd1af6e210906018a1e520a694c76ee0a0e765d8b554728b76b5bd701f9e8 Resampler_OutDepth_Downsample_Max_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904908 65 [INFO Client 9392] Building Uncached Shader 862726d8815ddadeb16e46a181683063b57b413cbedfd9fa02dffed96054103f Resampler_OutColor_Downsample_Nearest_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904908 65 [INFO Client 9392] Building Uncached Shader 2a2efac00ea4818bb7ec6118de8cccd42c307218f8543fcc22d6cd330280c0c6 Resampler_OutDepth_Downsample_Nearest_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:04 766904924 65 [INFO Client 9392] Building Uncached Shader 77632a37f327a32085b68373956f0a70daef1edfe025d1ea9fa229b00019bcb5 Resampler_OutColor_Downsample_Mixed_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766904939 65 [INFO Client 9392] Building Uncached Shader d3f6b080e3c92f337700efad125681d1692f7d8f82cb58291bf1eb61468b5f88 Resampler_OutDepth_Downsample_Mixed_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766904971 65 [INFO Client 9392] Building Uncached Shader a80343bc0e5cd3a7e466c9a503701f887157a4f110f8ba16e1d6b26129e02858 Resampler_OutColor_Copy_Avg_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766904971 65 [INFO Client 9392] Building Uncached Shader 19e7d392dea9770f20571843a985aebc3275c37872219743d4b329168def161f Resampler_OutDepth_Copy_Avg_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766904986 65 [INFO Client 9392] Building Uncached Shader 95f4909f5637f3282ca0c68f7c24195810e7b9ed93898989f4b8883710e7d967 Resampler_OutColor_Copy_Max_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766904986 65 [INFO Client 9392] Building Uncached Shader 050fd3557702ab353d1fce9e4b90345dfb576acd47c7966f04a17e3a549acdbb Resampler_OutDepth_Copy_Max_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766905002 65 [INFO Client 9392] Building Uncached Shader df32e661e425056a37ce077f3f70d3026739817eb675b4ebe3aaffb468b223cc Resampler_OutColor_Copy_Nearest_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766905002 65 [INFO Client 9392] Building Uncached Shader 42b36d2ebc7c3f1f147a1b42861c15e74b537910cc133d4d44c5ffe5932b265d Resampler_OutDepth_Copy_Nearest_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766905017 65 [INFO Client 9392] Building Uncached Shader a9730cb8eeda6dcecc70e2dc79f2681d13cb7a6c73c68387a33c474639702805 Resampler_OutColor_Copy_Mixed_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766905017 65 [INFO Client 9392] Building Uncached Shader 2b71c36248e4f04b3f7e76663a202547b64e45fbe3fb8ff3965686b20d9bd6e0 Resampler_OutDepth_Copy_Mixed_Ms_2x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=2
+2018/12/22 13:22:05 766905033 65 [INFO Client 9392] Building Uncached Shader f9ecd0c6ef848de60dca32c12b45d15e0efa72d421b39d0ab7127aacfb76e9ee Resampler_OutColor_Upsample_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905049 65 [INFO Client 9392] Building Uncached Shader abd4c15fd5b9b51679eb66fe5360d9d77bf89e36dd39752dbdf56872236bd0b4 Resampler_OutDepth_Upsample_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905064 65 [INFO Client 9392] Building Uncached Shader c0af1fe9e0b7b73713e624a88edc6298308022ff8c8241d38f4dfffba3221da5 Resampler_OutColor_Upsample_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905064 65 [INFO Client 9392] Building Uncached Shader 295c9563c43a50868bd655032f181654041af9e5b6a8a50214882d0add53ca03 Resampler_OutDepth_Upsample_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905080 65 [INFO Client 9392] Building Uncached Shader 3afb345ec0565493441f7fd279cb2669647a22eeddff2ac4e4f6bac0e4ebe0e0 Resampler_OutColor_Upsample_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905095 65 [INFO Client 9392] Building Uncached Shader 20688892e1a496abbe90b8f5c7ede46d48fbc6111d2408decc9490e037768ea3 Resampler_OutDepth_Upsample_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905095 65 [INFO Client 9392] Building Uncached Shader 40109b7dd41550c5721e7690851e186c369b69a3b7e3de18fdfb42f52edfbf35 Resampler_OutColor_Upsample_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905111 65 [INFO Client 9392] Building Uncached Shader 52fa23c9e99bf9ab5f32248bd301a3099ba3028c365289a5e303e57e817679e9 Resampler_OutDepth_Upsample_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905127 65 [INFO Client 9392] Building Uncached Shader 5b676b7bf744f7df90bb9db3e85807ca2e14c289d4ed116bc862c0db3a109596 Resampler_OutColor_Downsample_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905158 65 [INFO Client 9392] Building Uncached Shader e621bfac24103da39aa1289e92c7477a138e841172c67c51e64d8d61f133bccf Resampler_OutDepth_Downsample_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905173 65 [INFO Client 9392] Building Uncached Shader 43be2135806de4cc68ac229212011da2aa419538a1eba0f5efbdbde85c77cbd2 Resampler_OutColor_Downsample_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905205 65 [INFO Client 9392] Building Uncached Shader 08b3b31b757d370dd423ac0aadc11ff6392a5f2ccfe7bc468cb46aa17ce26e42 Resampler_OutDepth_Downsample_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905220 65 [INFO Client 9392] Building Uncached Shader 2ef59fe3036e585b4fef859c0cc793fadd00d06789830f0ba4780f6161fbd04f Resampler_OutColor_Downsample_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905220 65 [INFO Client 9392] Building Uncached Shader 66e3d7061fe3d46a6393b090817efafb89c3d1e472d320941eeca3c07cc56dc1 Resampler_OutDepth_Downsample_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905236 65 [INFO Client 9392] Building Uncached Shader 943e9070d38c79a6d7bd222ea9fd05dd3a3bcf32b9af1b9118519cfd7a8607c9 Resampler_OutColor_Downsample_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905251 65 [INFO Client 9392] Building Uncached Shader 56dee8bb160772298554749d5eb794ac9d1fcbbb882ddc6383845cc9fb6900d5 Resampler_OutDepth_Downsample_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 DOWNSAMPLE=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905283 65 [INFO Client 9392] Building Uncached Shader 821af3bd8affb61185aa60423693a88cd02280012e128d015c6a37056368af0c Resampler_OutColor_Copy_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905298 65 [INFO Client 9392] Building Uncached Shader 6ebb2dd9a5fe2a91523a92f97bd780d9d9bd160634b08353780f55370f346e78 Resampler_OutDepth_Copy_Avg_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905298 65 [INFO Client 9392] Building Uncached Shader a8376c94f6ed08bdcbefaf54b474c3ee4848f10f8355b295c9ffa0b54cd0032d Resampler_OutColor_Copy_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905314 65 [INFO Client 9392] Building Uncached Shader ed10314b5a33c1b1c22dd579b7dccfd5b56ce5ba942b323aed0290587271e0ed Resampler_OutDepth_Copy_Max_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905329 65 [INFO Client 9392] Building Uncached Shader f6cbd70af8ef52d2df3374b35a2e3637677a1a1b9682fb19f70ece0a998632aa Resampler_OutColor_Copy_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905329 65 [INFO Client 9392] Building Uncached Shader 1c524a46f0c1139fad8a1ba0a0fdf26e5648f556142710ebd25456db77217556 Resampler_OutDepth_Copy_Nearest_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905329 65 [INFO Client 9392] Building Uncached Shader 67d113deb08617843420289de403c97da91184b8b02da8126b4a11a6494b0a62 Resampler_OutColor_Copy_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905345 65 [INFO Client 9392] Building Uncached Shader fae08cf3067425a19b1c580a1d987cd2334e9924e8463ddc8a60720e5d7985c5 Resampler_OutDepth_Copy_Mixed_Ms_4x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 COPY=1 MIXED_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=4
+2018/12/22 13:22:05 766905361 65 [INFO Client 9392] Building Uncached Shader 94df0c1996902c44ddde4e02c0d2526ac032b6124a78f3fa9dd82f8d31b2f2af Resampler_OutColor_Upsample_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/22 13:22:05 766905376 65 [INFO Client 9392] Building Uncached Shader d9053b30387a7c3a3f464341a8ade59ef58402012c6ad66e0ad8ec68332883aa Resampler_OutDepth_Upsample_Avg_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 AVG_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/22 13:22:05 766905392 65 [INFO Client 9392] Building Uncached Shader 641c73b58492c926db2b17a43f52b638fce16c20089c7f0c0257e3e4f452f2d3 Resampler_OutColor_Upsample_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/22 13:22:05 766905407 65 [INFO Client 9392] Building Uncached Shader 75722442949409ac93ec279ecc7ecd812b940bdffd3525fcf0c02e6797e196db Resampler_OutDepth_Upsample_Max_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 MAX_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/22 13:22:05 766905423 65 [INFO Client 9392] Building Uncached Shader db50b5d33a498caa29c9e7d4d693f9eeb8c581a7b493267fdcc6d1e94bc11b78 Resampler_OutColor_Upsample_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_COLOR=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/22 13:22:05 766905423 65 [INFO Client 9392] Building Uncached Shader 6790701d7a83d19ffcbbf38c1feb049c8daa3d679e2c0146adc7d31d427ea7ca Resampler_OutDepth_Upsample_Nearest_Ms_8x. Profile ps_4_0 and entrypoint Resample with macros:  OUT_DEPTH=1 UPSAMPLE=1 NEAREST_FILTER=1 MULTISAMPLING=1 SAMPLE_COUNT=8
+2018/12/22 13:

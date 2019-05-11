@@ -1,0 +1,17 @@
+# ----------------------------------------------------------------------
+#           Template for jmxremote.password
+#
+# o Copy this template to jmxremote.password
+# o Set the user/password entries in jmxremote.password
+# o Change the permission of jmxremote.password to read-only
+#   by the owner.
+#
+# See below for the location of jmxremote.password file.
+# ----------------------------------------------------------------------
+
+##############################################################
+#        Password File for Remote JMX Monitoring
+##############################################################
+#
+# Password file for Remote JMX API access to monitoring.  This
+# file de

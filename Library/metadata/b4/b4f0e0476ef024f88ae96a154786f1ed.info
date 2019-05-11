@@ -1,0 +1,139 @@
+KeyToken=b03f5f7f11d50a3a" />
+			<section name="trust" type="System.Web.Configuration.TrustSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" allowDefinition="MachineToApplication" />
+			<section name="urlMappings" type="System.Web.Configuration.UrlMappingsSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" allowDefinition="MachineToApplication"/>
+			<section name="webControls" type="System.Web.Configuration.WebControlsSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+			<section name="webParts" type="System.Web.Configuration.WebPartsSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+			<section name="webServices" type="System.Web.Services.Configuration.WebServicesSection, System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+			<section name="xhtmlConformance" type="System.Web.Configuration.XhtmlConformanceSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+			<sectionGroup name="caching" type="System.Web.Configuration.SystemWebCachingSectionGroup, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+				<section name="cache" type="System.Web.Configuration.CacheSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" allowDefinition="MachineToApplication"/>
+				<section name="outputCache" type="System.Web.Configuration.OutputCacheSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" allowDefinition="MachineToApplication"/>
+				<section name="outputCacheSettings" type="System.Web.Configuration.OutputCacheSettingsSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" allowDefinition="MachineToApplication"/>
+				<section name="sqlCacheDependency" type="System.Web.Configuration.OutputCacheSettingsSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" allowDefinition="MachineToApplication"/>
+			</sectionGroup>
+			<section name="monoSettings" type="System.Web.Configuration.MonoSettingsSection, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+		</sectionGroup>
+		<sectionGroup name="system.net" type="System.Net.Configuration.NetSectionGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+			<section name="authenticationModules" type="System.Net.Configuration.AuthenticationModulesSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="connectionManagement" type="System.Net.Configuration.ConnectionManagementSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="defaultProxy" type="System.Net.Configuration.DefaultProxySection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<sectionGroup name="mailSettings" type="System.Net.Configuration.MailSettingsSectionGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+				<section name="smtp" type="System.Net.Configuration.SmtpSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			</sectionGroup>
+			<section name="requestCaching" type="System.Net.Configuration.RequestCachingSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="settings" type="System.Net.Configuration.SettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="webRequestModules" type="System.Net.Configuration.WebRequestModulesSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		</sectionGroup>
+		<section name="system.drawing" type="System.Configuration.NameValueSectionHandler, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		<sectionGroup name="system.serviceModel" type="System.ServiceModel.Configuration.ServiceModelSectionGroup, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+			<section name="behaviors" type="System.ServiceModel.Configuration.BehaviorsSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="bindings" type="System.ServiceModel.Configuration.BindingsSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="client" type="System.ServiceModel.Configuration.ClientSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="commonBehaviors" type="System.ServiceModel.Configuration.CommonBehaviorsSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="diagnostics" type="System.ServiceModel.Configuration.DiagnosticSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="extensions" type="System.ServiceModel.Configuration.ExtensionsSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="serviceHostingEnvironment" type="System.ServiceModel.Configuration.ServiceHostingEnvironmentSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<section name="services" type="System.ServiceModel.Configuration.ServicesSection, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		</sectionGroup>
+		<sectionGroup name="system.transactions" type="System.Transactions.Configuration.TransactionsSectionGroup, System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, Custom=null">
+			<section name="defaultSettings" type="System.Transactions.Configuration.DefaultSettingsSection, System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, Custom=null"/>
+			<section name="machineSettings" type="System.Transactions.Configuration.MachineSettingsSection, System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, Custom=null" allowDefinition="MachineOnly" allowExeDefinition="MachineOnly"/>
+		</sectionGroup>
+		<section name="system.webServer" type="System.Configuration.IgnoreSection, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+		<section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	</configSections>
+
+	<connectionStrings>
+		<add name="LocalSqlServer" connectionString="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true" providerName="System.Data.SqlClient"/>
+		<add name="LocalSqliteServer" connectionString="Data Source=|DataDirectory|/aspnetdb.sqlite;version=3" providerName="Mono.Data.Sqlite"/>
+	</connectionStrings>
+	
+	<configProtectedData defaultProvider="RsaProtectedConfigurationProvider">
+		<providers>
+			<add name="RsaProtectedConfigurationProvider" type="System.Configuration.RsaProtectedConfigurationProvider, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                             description="" keyContainerName="MonoFrameworkConfigurationKey" cspProviderName="" useMachineContainer="true" useOAEP="false" />
+			<add name="DataProtectionConfigurationProvider" type="System.Configuration.DpapiProtectedConfigurationProvider, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                             description="" useMachineProtection="true" keyEntropy="" />
+		</providers>
+	</configProtectedData>
+
+	<system.net>
+		<authenticationModules>
+			<add type="System.Net.BasicClient, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<add type="System.Net.DigestClient, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<add type="System.Net.NtlmClient, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		</authenticationModules>
+		<webRequestModules>
+			<add prefix="http" type="System.Net.HttpRequestCreator, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<add prefix="https" type="System.Net.HttpRequestCreator, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<add prefix="file" type="System.Net.FileWebRequestCreator, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<add prefix="ftp" type="System.Net.FtpRequestCreator, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		</webRequestModules>
+		<settings>
+			<ipv6 enabled="true"/>
+		</settings>
+	</system.net>
+	
+	<system.runtime.remoting>
+		<application>
+			<channels>
+				<channel ref="http client" displayName="http client (delay loaded)" delayLoadAsClientChannel="true" />
+				<channel ref="tcp client" displayName="tcp client (delay loaded)" delayLoadAsClientChannel="true" />
+				<channel ref="ipc client" displayName="ipc client (delay loaded)" delayLoadAsClientChannel="true" />
+			</channels>
+		</application>
+		<channels>
+			<channel id="http" type="System.Runtime.Remoting.Channels.Http.HttpChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="http client" type="System.Runtime.Remoting.Channels.Http.HttpClientChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="http server" type="System.Runtime.Remoting.Channels.Http.HttpServerChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="tcp" type="System.Runtime.Remoting.Channels.Tcp.TcpChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="tcp client" type="System.Runtime.Remoting.Channels.Tcp.TcpClientChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="tcp server" type="System.Runtime.Remoting.Channels.Tcp.TcpServerChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="ipc" type="System.Runtime.Remoting.Channels.Ipc.IpcChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="ipc client" type="System.Runtime.Remoting.Channels.Ipc.IpcClientChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			<channel id="ipc server" type="System.Runtime.Remoting.Channels.Ipc.IpcServerChannel, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		</channels>
+			<channelSinkProviders>
+				<clientProviders>
+					<formatter id="soap" type="System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+					<formatter id="binary" type="System.Runtime.Remoting.Channels.BinaryClientFormatterSinkProvider, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				</clientProviders>
+				<serverProviders>
+					<formatter id="soap" type="System.Runtime.Remoting.Channels.SoapServerFormatterSinkProvider, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+					<formatter id="binary" type="System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+					<provider id="wsdl" type="System.Runtime.Remoting.MetadataServices.SdlChannelSinkProvider, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				</serverProviders>
+			</channelSinkProviders>
+	</system.runtime.remoting>
+	
+	<appSettings>
+	<!--<add key="yourkey" value="your value" /> -->
+	<!--<remove key="a key defined higher in the hierarchy" /> -->
+	<!--<clear/> Removes all defined settings -->
+	</appSettings>
+	<system.diagnostics>
+		<trace autoflush="false" indentsize="4" />
+	</system.diagnostics>
+        <system.drawing>
+        </system.drawing>
+
+	<system.data>
+	  <DbProviderFactories>
+	    <add name="Mono Sqlite Data Provider"  invariant="Mono.Data.SqliteClient" 
+		 description="Mono Framework Data Provider for SQLite (old version)" 
+		 type="Mono.Data.SqliteClient.SqliteFactory, Mono.Data.SqliteClient, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756"/>
+	    <add name="Mono Sqlite Provider"  invariant="Mono.Data.Sqlite" 
+		 description="Mono Framework Data Provider for SQLite (new version)"
+		 type="Mono.Data.Sqlite.SqliteFactory, Mono.Data.Sqlite, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756"/>
+	    <add name="Odbc Data Provider"         invariant="System.Data.Odbc"         
+		 description=".Net Framework Data Provider for Odbc"      
+		 type="System.Data.Odbc.OdbcFactory, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+            <add name="OleDb Data Provider"        invariant="System.Data.OleDb"        
+		 description=".Net Framework Data Provider for OleDb"     
+		 type="System.Data.OleDb.OleDbFactory, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+            <add name="OracleClient Data Provider" invariant="System.Data.OracleClient" 
+		 description=".Net Framework Data Provider for Oracle"    
+		 type="System.Data.OracleClient.OracleClientFactory, System.Data.OracleClient, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+            <add name="SqlClient Data Provider"    invariant="System.Data.SqlClient"    
+		 description=".Net Framework Data Provider for SqlServer" 
+		 type="System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.0.0, Culture=neutral, Publi

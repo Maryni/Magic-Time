@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    
+    <Firefighter.labelShort>Apagar</Firefighter.labelShort>
+    <Firefighter.description>Apagar incêncios na colônia.</Firefighter.description>
+    <Firefighter.pawnLabel>Bombeiro</Firefighter.pawnLabel>
+    <Firefighter.gerundLabel>Apagando</Firefighter.gerundLabel>
+    <Firefighter.verb>Apagar</Firefighter.verb>
+    
+    <PatientEmergency.labelShort>Paciente</PatientEmergency.labelShort>
+    <PatientEmergency.description>Ir para a cama médica para tratamento, se você tem uma condição de saúde com risco de vida.</PatientEmergency.description>
+    <PatientEmergency.pawnLabel>Paciente</PatientEmergency.pawnLabel>
+    <PatientEmergency.gerundLabel>Sendo tratado</PatientEmergency.gerundLabel>
+    <PatientEmergency.verb>Ser paciente</PatientEmergency.verb>
+    
+    <Doctor.labelShort>Medicar</Doctor.labelShort>
+    <Doctor.description>Tratar os doentes, levar comida, animá-los e realizar cirurgias. Os médicos vão cuidar dos colonos e prisioneiros.</Doctor.description>
+    <Doctor.pawnLabel>Médico</Doctor.pawnLabel>
+    <Doctor.gerundLabel>Medicando</Doctor.gerundLabel>
+    <Doctor.verb>Medicar</Doctor.verb>
+    
+    <PatientBedRest.labelShort>Repousar</PatientBedRest.labelShort>
+    <PatientBedRest.description>Repouso na cama para se recuperar de problemas médicos sem risco de vida.</PatientBedRest.description>
+    <PatientBedRest.pawnLabel>Repouso</PatientBedRest.pawnLabel>
+    <PatientBedRest.gerundLabel>Repousando</PatientBedRest.gerundLabel>
+    <PatientBedRest.verb>Repousar</PatientBedRest.verb>
+    
+    <Flicker.labelShort>Clicar</Flicker.labelShort>
+    <Flicker.description>Clique em interruptores. Por exemplo, quando você alterna a energia em uma torre, um colono deve apertar manualmente para alternar a energia.</Flicker.description>
+    <Flicker.pawnLabel>Cliquer</Flicker.pawnLabel>
+    <Flicker.gerundLabel>Clicando</Flicker.gerundLabel>
+    <Flicker.verb>Clicar</Flicker.verb>
+    
+    <Warden.labelShort>Proteger</Warden.labelShort>
+    <Warden.description>Gerir, alimentar, conversar e recrutar prisioneiros.</Warden.description>
+    <Warden.pawnLabel>Guarda</Warden.pawnLabel>
+    <Warden.gerundLabel>Protegendo</Warden.gerundLabel>
+    <Warden.verb>Proteger</Warden.verb>
+    
+    <Handling.labelShort>Coletar</Handling.labelShort>
+    <Handling.description>Pegar coisas e pedaços de animais para abate.</Handling.description>
+    <Handling.pawnLabel>Coletor</Handling.pawnLabel>
+    <Handling.gerundLabel>Coletando</Handling.gerundLabel>
+    <Handling.verb>Coletar</Handling.verb>
+    
+    <Cooking.labelShort>Cozinhar</Cooking.labelShort>
+    <Cooking.description>Preparar refeições e tratar carnes.</Cooking.description>
+    <Cooking.pawnLabel>Cozinheiro</Cooking.pawnLabel>
+    <Cooking.gerundLabel>Cozinhando</Cooking.gerundLabel>
+    <Cooking.verb>Cozinhar</Cooking.verb>
+    
+    <Hunting.labelShort>Caçar</Hunting.labelShort>
+    <Hunting.description>Matar os animais que são designados para serem caçados.</Hunting.description>
+    <Hunting.pawnLabel>Caçador</Hunting.pawnLabel>
+    <Hunting.gerundLabel>Caçando</Hunting.gerundLabel>
+    <Hunting.verb>Caçar</Hunting.verb>
+    
+    <Construction.labelShort>Construir</Construction.labelShort>
+    <Construction.description>Construir coisas que foram designadas.</Construction.description>
+    <Construction.pawnLabel>Construtor</Construction.pawnLabel>
+    <Construction.gerundLabel>Construindo</Construction.gerundLabel>
+    <Construction.verb>Construir</Construction.verb>
+    
+    <Repair.labelShort>Reparar</Repair.labelShort>
+    <Repair.description>Reparar edifícios danificados e avariados.</Repair.description>
+    <Repair.pawnLabel>Reparador</Repair.pawnLabel>
+    <Repair.gerundLabel>Reparando</Repair.gerundLabel>
+    <Repair.verb>Reparar</Repair.verb>
+    
+    <Growing.labelShort>Cultivar</Growing.labelShort>
+    <Growing.description>Plantar sementes e colher frutos e plantações.</Growing.description>
+    <Growing.pawnLabel>Produtor</Growing.pawnLabel>
+    <Growing.gerundLabel>Cultivando</Growing.gerundLabel>
+    <Growing.verb>Cultivar</Growing.verb>
+    
+    <

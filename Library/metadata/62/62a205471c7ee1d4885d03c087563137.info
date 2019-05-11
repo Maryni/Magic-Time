@@ -1,0 +1,156 @@
+field.</param>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <returns>
+        <para>The edited string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.TextField(UnityEngine.Rect,System.String,System.Int32,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make a single-line text field where the user can edit a string.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the text field.</param>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <returns>
+        <para>The edited string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toggle(UnityEngine.Rect,System.Boolean,System.String)">
+      <summary>
+        <para>Make an on/off toggle button.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the button.</param>
+      <param name="value">Is this button on or off?</param>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the toggle style from the current GUISkin is used.</param>
+      <returns>
+        <para>The new value of the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toggle(UnityEngine.Rect,System.Boolean,UnityEngine.Texture)">
+      <summary>
+        <para>Make an on/off toggle button.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the button.</param>
+      <param name="value">Is this button on or off?</param>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the toggle style from the current GUISkin is used.</param>
+      <returns>
+        <para>The new value of the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toggle(UnityEngine.Rect,System.Boolean,UnityEngine.GUIContent)">
+      <summary>
+        <para>Make an on/off toggle button.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the button.</param>
+      <param name="value">Is this button on or off?</param>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the toggle style from the current GUISkin is used.</param>
+      <returns>
+        <para>The new value of the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toggle(UnityEngine.Rect,System.Boolean,System.String,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make an on/off toggle button.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the button.</param>
+      <param name="value">Is this button on or off?</param>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the toggle style from the current GUISkin is used.</param>
+      <returns>
+        <para>The new value of the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toggle(UnityEngine.Rect,System.Boolean,UnityEngine.Texture,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make an on/off toggle button.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the button.</param>
+      <param name="value">Is this button on or off?</param>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the toggle style from the current GUISkin is used.</param>
+      <returns>
+        <para>The new value of the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toggle(UnityEngine.Rect,System.Boolean,UnityEngine.GUIContent,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make an on/off toggle button.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the button.</param>
+      <param name="value">Is this button on or off?</param>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the toggle style from the current GUISkin is used.</param>
+      <returns>
+        <para>The new value of the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toolbar(UnityEngine.Rect,System.Int32,System.String[])">
+      <summary>
+        <para>Make a toolbar.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the toolbar.</param>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the toolbar buttons.</param>
+      <param name="images">An array of textures on the toolbar buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the toolbar buttons.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="buttonSize">Determines how toolbar button size is calculated.</param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toolbar(UnityEngine.Rect,System.Int32,UnityEngine.Texture[])">
+      <summary>
+        <para>Make a toolbar.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the toolbar.</param>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the toolbar buttons.</param>
+      <param name="images">An array of textures on the toolbar buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the toolbar buttons.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="buttonSize">Determines how toolbar button size is calculated.</param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toolbar(UnityEngine.Rect,System.Int32,UnityEngine.GUIContent[])">
+      <summary>
+        <para>Make a toolbar.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the toolbar.</param>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the toolbar buttons.</param>
+      <param name="images">An array of textures on the toolbar buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the toolbar buttons.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="buttonSize">Determines how toolbar button size is calculated.</param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUI.Toolbar(UnityEngine.Rect,System.Int32,System.String[],UnityEngine.GUIStyle)">
+      <summary>
+        <para>Make a toolbar.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the toolbar.</param>
+      <param name="selected">The index of the selected button.</param>
+      <para

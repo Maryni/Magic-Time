@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: alocasia -->
+  <Plant_Alocasia.label>alocàsia</Plant_Alocasia.label>
+  <!-- EN: A tropical plant. Its extremely broad leaves are a commonly-recognized signifier of tropical forests. -->
+  <Plant_Alocasia.description>Una planta tropical de fulla ampla molt comuna.</Plant_Alocasia.description>
+  
+  <!-- EN: clivia -->
+  <Plant_Clivia.label>clívia</Plant_Clivia.label>
+  <!-- EN: An unusual plant with tall, pretty flowers. Some call it the 'bush lily'. -->
+  <Plant_Clivia.description>Una planta poc habitual amb unes flors altes i precioses. L’anomenen «arbust-lliri».</Plant_Clivia.description>
+  
+  <!-- EN: giant rafflesia -->
+  <Plant_Rafflesia.label>rafflesia gegant</Plant_Rafflesia.label>
+  <!-- EN: A rare, giant flower which can be found deep in steaming jungles. You would think a giant flower would be beautiful, but this one looks and smel

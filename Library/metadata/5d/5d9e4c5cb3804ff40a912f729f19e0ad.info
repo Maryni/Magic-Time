@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: amniotic fluid -->
+  <Filth_AmnioticFluid.label>líquid amniòtic</Filth_AmnioticFluid.label>
+  
+  <!-- EN: animal filth -->
+  <Filth_AnimalFilth.label>brutícia animal</Filth_AnimalFilth.label>
+  
+  <!-- EN: ash -->
+  <Filth_Ash.label>cendra</Filth_Ash.label>
+  
+  <!-- EN: blood -->
+  <Filth_Blood.label>sang</Filth_Blood.label>
+  
+  <!-- EN: bugblood -->
+  <Filth_BloodInsect.label>sang d'insecte</Filth_BloodInsect.label>
+  
+  <!-- EN: corpse bile -->
+  <Filth_CorpseBile.label>sucs de cadàver</Filth_CorpseBile.label>
+  
+  <!-- EN: dirt -->
+  <Filth_Dirt.label>brutícia</Filth_Dirt.label>

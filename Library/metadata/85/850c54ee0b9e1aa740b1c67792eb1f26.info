@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Added body parts -->
+
+    <PegLeg.label>木製義足(杖)</PegLeg.label>
+    <PegLeg.labelNoun>木製義足(杖)</PegLeg.labelNoun>
+
+    <WoodenFoot.label>木製義足(足形)</WoodenFoot.label>
+    <WoodenFoot.labelNoun>木製義足(足形)</WoodenFoot.labelNoun>
+
+    <Denture.label>入れ歯</Denture.label>
+    <Denture.labelNoun>入れ歯</Denture.labelNoun>
+
+    <SimpleProstheticLeg.label>人造下肢</SimpleProstheticLeg.label>
+    <SimpleProstheticLeg.labelNoun>人造下肢</SimpleProstheticLeg.labelNoun>
+
+    <

@@ -1,0 +1,978 @@
+ <summary>
+        <para>Utility functions for implementing and extending the GUILayout class.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single)">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetLastRect">
+      <summary>
+        <para>Get the rectangle last used by GUILayout for a control.</para>
+      </summary>
+      <returns>
+        <para>The last used rectangle.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(UnityEngine.GUIContent,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Reserve layout space for a rectangle for displaying some contents with a specific style.</para>
+      </summary>
+      <param name="content">The content to make room for displaying.</param>
+      <param name="style">The GUIStyle to layout for.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle that is large enough to contain content when rendered in style.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle for displaying some contents with a specific style.</para>
+      </summary>
+      <param name="content">The content to make room for displaying.</param>
+      <param name="style">The GUIStyle to layout for.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle that is large enough to contain content when rendered in style.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single)">
+      <summary>
+        <para>Reserve layout space for a rectangle with a fixed content area.</para>
+      </summary>
+      <param name="width">The width of the area you want.</param>
+      <param name="height">The height of the area you want.</param>
+      <param name="style">An optional GUIStyle to layout for. If specified, the style's padding value will be added to your sizes &amp; its margin value will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectanlge to put your control in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Reserve layout space for a rectangle with a fixed content area.</para>
+      </summary>
+      <param name="width">The width of the area you want.</param>
+      <param name="height">The height of the area you want.</param>
+      <param name="style">An optional GUIStyle to layout for. If specified, the style's padding value will be added to your sizes &amp; its margin value will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectanlge to put your control in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle with a fixed content area.</para>
+      </summary>
+      <param name="width">The width of the area you want.</param>
+      <param name="height">The height of the area you want.</param>
+      <param name="style">An optional GUIStyle to layout for. If specified, the style's padding value will be added to your sizes &amp; its margin value will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectanlge to put your control in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle with a fixed content area.</para>
+      </summary>
+      <param name="width">The width of the area you want.</param>
+      <param name="height">The height of the area you want.</param>
+      <param name="style">An optional GUIStyle to layout for. If specified, the style's padding value will be added to your sizes &amp; its margin value will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectanlge to put your control in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a flexible rect.</para>
+      </summary>
+      <param name="minWidth">The minimum width of the area passed back.</param>
+      <param name="maxWidth">The maximum width of the area passed back.</param>
+      <param name="minHeight">The minimum width of the area passed back.</param>
+      <param name="maxHeight">The maximum width of the area passed back.</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes requested &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle with size between minWidth &amp; maxWidth on both axes.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.GUISettings">
+      <summary>
+        <para>General settings for how the GUI behaves.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.cursorColor">
+      <summary>
+        <para>The color of the cursor in text fields.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.cursorFlashSpeed">
+      <summary>
+        <para>The speed of text field cursor flashes.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.doubleClickSelectsWord">
+      <summary>
+        <para>Should double-clicking select words in text fields.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.selectionColor">
+      <summary>
+        <para>The color of the selection rect in text fields.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISettings.tripleClickSelectsLine">
+      <summary>
+        <para>Should triple-clicking select whole text in text fields.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GUISkin">
+      <summary>
+        <para>Defines how GUI looks and behaves.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.box">
+      <summary>
+        <para>Style used by default for GUI.Box controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.button">
+      <summary>
+        <para>Style used by default for GUI.Button controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.customStyles">
+      <summary>
+        <para>Array of GUI styles for specific needs.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.font">
+      <summary>
+        <para>The default font to use for all styles.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbar">
+      <summary>
+        <para>Style used by default for the background part of GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbarLeftButton">
+      <summary>
+        <para>Style used by default for the left button on GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbarRightButton">
+      <summary>
+        <para>Style used by default for the right button on GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalScrollbarThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.HorizontalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalSlider">
+      <summary>
+        <para>Style used by default for the background part of GUI.HorizontalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.horizontalSliderThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.HorizontalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.label">
+      <summary>
+        <para>Style used by default for GUI.Label controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.scrollView">
+      <summary>
+        <para>Style used by default for the background of ScrollView controls (see GUI.BeginScrollView).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.settings">
+      <summary>
+        <para>Generic settings for how controls should behave with this skin.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.textArea">
+      <summary>
+        <para>Style used by default for GUI.TextArea controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.textField">
+      <summary>
+        <para>Style used by default for GUI.TextField controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.toggle">
+      <summary>
+        <para>Style used by default for GUI.Toggle controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbar">
+      <summary>
+        <para>Style used by default for the background part of GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbarDownButton">
+      <summary>
+        <para>Style used by default for the down button on GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbarThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalScrollbarUpButton">
+      <summary>
+        <para>Style used by default for the up button on GUI.VerticalScrollbar controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalSlider">
+      <summary>
+        <para>Style used by default for the background part of GUI.VerticalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.verticalSliderThumb">
+      <summary>
+        <para>Style used by default for the thumb that is dragged in GUI.VerticalSlider controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUISkin.window">
+      <summary>
+        <para>Style used by default for Window controls (SA GUI.Window).</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUISkin.FindStyle(System.String)">
+      <summary>
+        <para>Try to search for a GUIStyle. This functions returns NULL and does not give an error.</para>
+      </summary>
+      <param name="styleName"></param>
+    </member>
+    <member name="M:UnityEngine.GUISkin.GetStyle(System.String)">
+      <summary>
+        <para>Get a named GUIStyle.</para>
+      </summary>
+      <param name="styleName"></param>
+    </member>
+    <member name="T:UnityEngine.GUIStyle">
+      <summary>
+        <para>Styling information for GUI elements.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.active">
+      <summary>
+        <para>Rendering settings for when the control is pressed down.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.alignment">
+      <summary>
+        <para>Text alignment.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.border">
+      <summary>
+        <para>The borders of all background images.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.clipping">
+      <summary>
+        <para>What to do when the contents to be rendered is too large to fit within the area given.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.contentOffset">
+      <summary>
+        <para>Pixel offset to apply to the content of this GUIstyle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fixedHeight">
+      <summary>
+        <para>If non-0, any GUI elements rendered with this style will have the height specified here.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fixedWidth">
+      <summary>
+        <para>If non-0, any GUI elements rendered with this style will have the width specified here.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.focused">
+      <summary>
+        <para>Rendering settings for when the element has keyboard focus.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.font">
+      <summary>
+        <para>The font to use for rendering. If null, the default font for the current GUISkin is used instead.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fontSize">
+      <summary>
+        <para>The font size to use (for dynamic fonts).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.fontStyle">
+      <summary>
+        <para>The font style to use (for dynamic fonts).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.hover">
+      <summary>
+        <para>Rendering settings for when the mouse is hovering over the control.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.imagePosition">
+      <summary>
+        <para>How image and text of the GUIContent is combined.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.lineHeight">
+      <summary>
+        <para>The height of one line of text with this style, measured in pixels. (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.margin">
+      <summary>
+        <para>The margins between elements rendered in this style and any other GUI elements.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.name">
+      <summary>
+        <para>The name of this GUIStyle. Used for getting them based on name.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.none">
+      <summary>
+        <para>Shortcut for an empty GUIStyle.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.normal">
+      <summary>
+        <para>Rendering settings for when the component is displayed normally.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onActive">
+      <summary>
+        <para>Rendering settings for when the element is turned on and pressed down.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onFocused">
+      <summary>
+        <para>Rendering settings for when the element has keyboard and is turned on.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onHover">
+      <summary>
+        <para>Rendering settings for when the control is turned on and the mouse is hovering it.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.onNormal">
+      <summary>
+        <para>Rendering settings for when the control is turned on.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.overflow">
+      <summary>
+        <para>Extra space to be added to the background image.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.padding">
+      <summary>
+        <para>Space from the edge of GUIStyle to the start of the contents.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.richText">
+      <summary>
+        <para>Enable HTML-style tags for Text Formatting Markup.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.stretchHeight">
+      <summary>
+        <para>Can GUI elements of this style be stretched vertically for better layout?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.stretchWidth">
+      <summary>
+        <para>Can GUI elements of this style be stretched horizontally for better layouting?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyle.wordWrap">
+      <summary>
+        <para>Should the text be wordwrapped?</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.CalcHeight(UnityEngine.GUIContent,System.Single)">
+      <summary>
+        <para>How tall this element will be when rendered with content and a specific width.</para>
+      </summary>
+      <param name="content"></param>
+      <param name="width"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.CalcMinMaxWidth(UnityEngine.GUIContent,System.Single&amp;,System.Single&amp;)">
+      <summary>
+        <para>Calculate the minimum and maximum widths for this style rendered with content.</para>
+      </summary>
+      <param name="content"></param>
+      <param name="minWidth"></param>
+      <param name="maxWidth"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.CalcScreenSize(UnityEngine.Vector2)">
+      <summary>
+        <para>Calculate the size of an element formatted with this style, and a given space to content.</para>
+      </summary>
+      <param name="contentSize"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.CalcSize(UnityEngine.GUIContent)">
+      <summary>
+        <para>Calculate the size of some content if it is rendered with this style.</para>
+      </summary>
+      <param name="content"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.#ctor">
+      <summary>
+        <para>Constructor for empty GUIStyle.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.#ctor(UnityEngine.GUIStyle)">
+      <summary>
+        <para>Constructs GUIStyle identical to given other GUIStyle.</para>
+      </summary>
+      <param name="other"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Draw this GUIStyle on to the screen, internal version.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="on"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Draw the GUIStyle with a text string inside.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="text"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="on"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,UnityEngine.Texture,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Draw the GUIStyle with an image inside. If the image is too large to fit within the content area of the style it is scaled down.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="image"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="on"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32)">
+      <summary>
+        <para>Draw the GUIStyle with text and an image inside. If the image is too large to fit within the content area of the style it is scaled down.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="on"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Boolean)">
+      <summary>
+        <para>Draw the GUIStyle with text and an image inside. If the image is too large to fit within the content area of the style it is scaled down.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="on"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.Draw(UnityEngine.Rect,UnityEngine.GUIContent,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Draw the GUIStyle with text and an image inside. If the image is too large to fit within the content area of the style it is scaled down.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="on"></param>
+      <param name="isHover"></param>
+      <param name="isActive"></param>
+      <param name="hasKeyboardFocus"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.DrawCursor(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Int32)">
+      <summary>
+        <para>Draw this GUIStyle with selected content.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="character"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.DrawWithTextSelection(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Draw this GUIStyle with selected content.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="controlID"></param>
+      <param name="firstSelectedCharacter"></param>
+      <param name="lastSelectedCharacter"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.GetCursorPixelPosition(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32)">
+      <summary>
+        <para>Get the pixel position of a given string index.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="cursorStringIndex"></param>
+    </member>
+    <member name="M:UnityEngine.GUIStyle.GetCursorStringIndex(UnityEngine.Rect,UnityEngine.GUIContent,UnityEngine.Vector2)">
+      <summary>
+        <para>Get the cursor position (indexing into contents.text) when the user clicked at cursorPixelPosition.</para>
+      </summary>
+      <param name="position"></param>
+      <param name="content"></param>
+      <param name="cursorPixelPosition"></param>
+    </member>
+    <member name="?:UnityEngine.GUIStyle.implop_GUIStyle(string)(System.String)">
+      <summary>
+        <para>Get a named GUI style from the current skin.</para>
+      </summary>
+      <param name="str"></param>
+    </member>
+    <member name="T:UnityEngine.GUIStyleState">
+      <summary>
+        <para>Specialized values for the given states used by GUIStyle objects.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyleState.background">
+      <summary>
+        <para>The background image used by GUI elements in this given state.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIStyleState.textColor">
+      <summary>
+        <para>The text color used by GUI elements in this state.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GUITargetAttribute">
+      <summary>
+        <para>Allows to control for which display the OnGUI is called.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor(System.Int32)">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="M:UnityEngine.GUITargetAttribute.#ctor(System.Int32,System.Int32,System.Int32[])">
+      <summary>
+        <para>Default constructor initializes the attribute for OnGUI to be called for all available displays.</para>
+      </summary>
+      <param name="displayIndex">Display index.</param>
+      <param name="displayIndex1">Display index.</param>
+      <param name="displayIndexList">Display index list.</param>
+    </member>
+    <member name="T:UnityEngine.GUIUtility">
+      <summary>
+        <para>Utility class for making new GUI controls.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.hasModalWindow">
+      <summary>
+        <para>A global property, which is true if a ModalWindow is being displayed, false otherwise.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.hotControl">
+      <summary>
+        <para>The controlID of the current hot control.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.keyboardControl">
+      <summary>
+        <para>The controlID of the control that has keyboard focus.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIUtility.systemCopyBuffer">
+      <summary>
+        <para>Get access to the system-wide clipboard.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.AlignRectToDevice(UnityEngine.Rect)">
+      <summary>
+        <para>Align a local space rectangle to the pixel grid.</para>
+      </summary>
+      <param name="local">The local space rectangle that needs to be processed.</param>
+      <param name="widthInPixels">Width, in pixel units, of the axis-aligned bounding box that encompasses the aligned points.</param>
+      <param name="heightInPixels">Height, in pixel units, of the axis-aligned bounding box that encompasses the aligned points.</param>
+      <param name="rect"></param>
+      <returns>
+        <para>The aligned rectangle in local space.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.AlignRectToDevice(UnityEngine.Rect,System.Int32&amp;,System.Int32&amp;)">
+      <summary>
+        <para>Align a local space rectangle to the pixel grid.</para>
+      </summary>
+      <param name="local">The local space rectangle that needs to be processed.</param>
+      <param name="widthInPixels">Width, in pixel units, of the axis-aligned bounding box that encompasses the aligned points.</param>
+      <param name="heightInPixels">Height, in pixel units, of the axis-aligned bounding box that encompasses the aligned points.</param>
+      <param name="rect"></param>
+      <returns>
+        <para>The aligned rectangle in local space.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.ExitGUI">
+      <summary>
+        <para>Puts the GUI in a state that will prevent all subsequent immediate mode GUI functions from evaluating for the remainder of the GUI loop by throwing an ExitGUIException.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.FocusType)">
+      <summary>
+        <para>Get a unique ID for a control.</para>
+      </summary>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.FocusType,UnityEngine.Rect)">
+      <summary>
+        <para>Get a unique ID for a control.</para>
+      </summary>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(System.Int32,UnityEngine.FocusType)">
+      <summary>
+        <para>Get a unique ID for a control, using an integer as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="hint"></param>
+      <param name="focus"></param>
+      <param name="focusType"></param>
+      <param name="rect"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(System.Int32,UnityEngine.FocusType,UnityEngine.Rect)">
+      <summary>
+        <para>Get a unique ID for a control, using an integer as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="hint"></param>
+      <param name="focus"></param>
+      <param name="focusType"></param>
+      <param name="rect"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.GUIContent,UnityEngine.FocusType)">
+      <summary>
+        <para>Get a unique ID for a control, using a the label content as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="contents"></param>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetControlID(UnityEngine.GUIContent,UnityEngine.FocusType,UnityEngine.Rect)">
+      <summary>
+        <para>Get a unique ID for a control, using a the label content as a hint to help ensure correct matching of IDs to controls.</para>
+      </summary>
+      <param name="contents"></param>
+      <param name="focus"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GetStateObject(System.Type,System.Int32)">
+      <summary>
+        <para>Get a state object from a controlID.</para>
+      </summary>
+      <param name="t"></param>
+      <param name="controlID"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.GUIToScreenPoint(UnityEngine.Vector2)">
+      <summary>
+        <para>Convert a point from GUI position to screen space.</para>
+      </summary>
+      <param name="guiPoint"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.QueryStateObject(System.Type,System.Int32)">
+      <summary>
+        <para>Get an existing state object from a controlID.</para>
+      </summary>
+      <param name="t"></param>
+      <param name="controlID"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.RotateAroundPivot(System.Single,UnityEngine.Vector2)">
+      <summary>
+        <para>Helper function to rotate the GUI around a point.</para>
+      </summary>
+      <param name="angle"></param>
+      <param name="pivotPoint"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.ScaleAroundPivot(UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary>
+        <para>Helper function to scale the GUI around a point.</para>
+      </summary>
+      <param name="scale"></param>
+      <param name="pivotPoint"></param>
+    </member>
+    <member name="M:UnityEngine.GUIUtility.ScreenToGUIPoint(UnityEngine.Vector2)">
+      <summary>
+        <para>Convert a point from screen space to GUI position.</para>
+      </summary>
+      <param name="screenPoint"></param>
+    </member>
+    <member name="T:UnityEngine.ImagePosition">
+      <summary>
+        <para>How image and text is placed inside GUIStyle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ImagePosition.ImageAbove">
+      <summary>
+        <para>Image is above the text.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ImagePosition.ImageLeft">
+      <summary>
+        <para>Image is to the left of the text.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ImagePosition.ImageOnly">
+      <summary>
+        <para>Only the image is displayed.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ImagePosition.TextOnly">
+      <summary>
+        <para>Only the text is displayed.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.ScaleMode">
+      <summary>
+        <para>Scaling mode to draw textures with.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScaleMode.ScaleAndCrop">
+      <summary>
+        <para>Scales the texture, maintaining aspect ratio, so it completely covers the position rectangle passed to GUI.DrawTexture. If the texture is being draw to a rectangle with a different aspect ratio than the original, the image is cropped.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScaleMode.ScaleToFit">
+      <summary>
+        <para>Scales the texture, maintaining aspect ratio, so it completely fits withing the position rectangle passed to GUI.DrawTexture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ScaleMode.StretchToFill">
+      <summary>
+        <para>Stretches the texture to fill the complete rectangle passed in to GUI.DrawTexture.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TextClipping">
+      <summary>
+        <para>Different methods for how the GUI system handles text being too large to fit the rectangle allocated.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextClipping.Clip">
+      <summary>
+        <para>Text gets clipped to be inside the element.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TextClipping.Overflow">
+      <summary>
+        <para>Text flows freely outside the element.</para>
+      </summary>
+    </member>
+    <member name="A:UnityEngine.IMGUIModule">
+      <summary>
+        <para>The IMGUI module provides Unity's immediate mode GUI solution for creating in-game and editor user interfaces.</para>
+      </summary>
+    </member>
+  </members>
+</doc>
+                                                                                                                                                                                                                                                                                                                                                                                                                         M  ø∞     p    2017.4.24f1     "       ˇˇ£rdh4ºØ&Í±“)„ïS    ˇˇv®xIB∫‹7¯´4U    ˇˇñ‚}÷4!RV®v6    ˇˇ—ú[”◊˛l€∫k(Úk≈ÙA    ˇˇCûf®úﬁˆí|íV¿w:h    ˇˇ ≠ó*õç·∫ÍÀb‚óÀπhù    ˇˇ5W	ºï5_WFi¨Ör     ◊˘°Üb¶»P3"‹bünYWØfë¬¶7är     ⁄3ı¸x≥åùy=°œù‰îµÃæœ?ÿÿ-LZ⁄† Er     y∑¯R,ãÁc}?‹êÂ ⁄Uw¿àCrïéµ|Ò¿ár      øï√ô)*Ì„$»*£/¨Gòêâ˚Çæ≤∂xª–r     ∑Ò≤`"®æø,
+t¯ËªÛ±…¸9Øà∏rÁµVQ<or     Ó¸Ω·πSc!˝V%b')VªËöeø∂ólè,	ùP‹r     M˘üF'ñaÏÔâﬂÓÖ*‘3¥ªT>X‚{ºı≈;ªìr    
+ È:Ä0øﬁ†le!ˇª|)ê@¿ylhûÔ´JÒ$F@r     |#Ã†˛»¸ÓøΩ€ﬁ'öûÃb ıï2˚·™ñ˛íÀıVzr     vËÓ~íYˆSÏõP^§¥é/2Zíhíf¡õ\π#∂√r     ¨Êsgû∏öGìºª≠ê[1Ô•‹ª¢ñlΩÄæ{r     ß√ö¨`EÎΩLDd®®ƒQ˙Ç¯ÒPéöNôœöö£mr     8.^s‚Ö\Œ∑¢™è_§∑$∏g≤GËîÎç˝˜ôr     <fîÇZTÔ–› 9ù¸ªıH“V”Ó)ÏÙ§ar     lQ/1œ†-S∞†»;–¢ÿ êèe&†ïÄ ¨I ≈r     oÇ∞ôÒÿH™ÁØ¸°Á•‡æ∏e$ª.¢ÅbP˘éä}Êﬂr     Zïfzƒp9pTÊ ùÖgR˚Õˇ¬◊6Lµcí/8Çr     º˝À:X‹ãb?›Ø©Wfo·Dãﬂæ–jÏeƒ“†r     G’iXÈàVè–a¯∞mÌ¢§m‘_¢`_‡?b™Á·´A4r     ¶ÊöÚ¿o†˝jzk∆-ı$"^˜–ÊªÙÄ%ïÂ?Âàr     l ≈≠vaZ¿q≥Wr√*¸_Ã)˛æâßFlu¿ãr     ‹≤ﬂÇ1	=åÍ=ÏÃ((v‡qßöí”«Èqv€@xUr     l˙
+R!ˆx˘ﬂ∆Î%.≈°…f¯”(µFÕ	Ω…Í[Ar     AÑb˙ÖBHMﬂÛ·Á‘‚RKèeû{˛WV—3_Ï$∫r     O8Óè∂ê8(·`ûr¬4ë€L¯ñguÿDsãßVÜ˙r    	 ªù∫~‹nõæYT)“B¸’£sàÈ4DµºèÌôRzÌr     bJ¡»uÁ,Åê◊3£ºÙ`ØiåiUœ¬À˜)†—b9              ;              @   7              x   +              ®                 »   7                 +              0  /              `  /       	       ê  3       
+       »  3                 ?              @  7              x  3              ∞  '              ÿ  3                3              H  ;              à  k              ¯  3              0  3              h  3              †  #              »  #                +                 /              P  ?              ê  7              »  3                 á              à  C              –  '               ¯  C       !       @  3       "       x  3       #       ∞  '       $       ÿ  3       %         3       &       H  ?       '       à  3       (       ¿  ?       )        	  +       *       0	  #       +       X	  ?       ,       ò	  3       -       –	  O       .        
+  /       /       P
+  3       0       à
+  3       1       ¿
+  ;       2          3       3       8  G       4       Ä  3       5       ∏  +       6       Ë  3       7          +       8       P  ?       9       ê  /       :       ¿  7       ;       ¯  3       <       0  3       =       h         >       à  3       ?       ¿  +       @         #       A         3       B       P  K       C       †  +       D       –  7       E         3       F       @  +       G       p  3       H       ®  3       I       ‡  K       J       0  ;       K       p  #       L       ò  7       M       –  /       N          3       O       8  +       P       h  /       Q       ò  ;       R       ÿ  ;       S         3       T       P  3       U       à  3       V       ¿  7       W       ¯  3       X       0  3       Y       h  /       Z       ò  3       [       –  ?       \         3       ]       H  3       ^       Ä  K       _       –  ?       `         7       a       H  3       b       Ä  3       c       ∏  D      d          D      e       H  Ä      f       »  \      g       (  \      h       à  D      i       –  \      j       0  D      k       x  D      l       ¿  D      m         D      n       P  §      o       ¯  D      p       @  P      q       ê  D      r       ÿ  \      s       8  ò      t       –  D      u         D      v       `  t      w       ÿ  D      x          D      y       h  D      z       ∞  h      {         P      |       h  P      }       ∏  D      ~          D             H  D      Ä       ê  D      Å       ÿ  Ä      Ç       X   D      É       †   h      Ñ       !  D      Ö       P!  D      Ü       ò!  ò      á       0"  t      à       ®"  D      â       "  D      ä       8#  D      ã       Ä#  D      å       »#  D      ç       $  \      é       p$  P      è       ¿$  D      ê       %  D      ë       P%  Ä      í       –%  D      ì       &  D      î       `&  t      ï       ÿ&  D      ñ        '  D      ó       h'  D      ò       ∞'  D      ô       ¯'  D      ö       @(  D      õ       à(  D      ú       –(  D      ù       )  D      û       `)  D      ü       ®)  D      †       )  Ä      °       p*  D      ¢       ∏*  D      £        +  º      §       ¿+  D      •       ,  D      ¶       P,  D      ß       ò,  D      ®       ‡,  D      ©       (-  D      ™       p-  D      ´       ∏-  D      ¨        .  \      ≠       `.  D      Æ       ®.  h      Ø       /  t      ∞       à/  D      ±       –/  D      ≤       0  D      ≥       `0  D      ¥       ®0  D      µ       0  D      ∂       81  D      ∑       Ä1  D      ∏       »1  D      π       2  D      ∫       X2  D      ª       †2  D      º       Ë2  D      Ω       03  D      æ       x3  D      ø       ¿3  D      ¿       4  h      ¡       p4  D      ¬       ∏4  P      √       5  D      ƒ       P5  D      ≈       ò5  x      ∆       6  $      «       86  4      »       p6  4      …       ®6  4              ‡6  4      À       7  L     Ã       h8  A      Õ       ∞8  \      Œ       9  ®      œ       ∏9  p   	   –       (:  p   	   —       ò:  p   	   “       ;  p   	   ”       x;  p   	   ‘       Ë;  p   	   ’       X<  p   	   ÷       »<  p   	   ◊       8=  p   	   ÿ       ®=  P  
+   Ÿ       ¯>  §     ⁄       †@  ò      €       8A  \     ‹       òB  §      ›       @C  P  
+   ﬁ       êD  L  
+   ﬂ       ‡E  Ñ     ‡       hG  †     ·       I  †     ‚       ®J  Ä      „       (K  †     ‰       »L  †     Â       hN  |      Ê       ËN  ∏      Á       †O  P      Ë       O  H  
+   È       8Q  <  
+   Í       xR  P  
+   Î       »S  <  
+   Ï       U  P  
+   Ì       XV  §     Ó        X  D      Ô       HX  <  
+          àY  Ä      Ò       Z  h      Ú       pZ  Ñ      Û       ¯Z  T      Ù       P[  T      ı       ®[  T      ˆ        \  T      ˜       X\  8      ¯       ê\  †     ˘       0^  8      ˙       h^  †     ˚       `  D  
+   ¸       Pa  Ä      ˝       –a  <  
+   ˛       c  H  
+   ˇ       Xd  8             êd  †           0f  |           ∞g  4            Ëg  †           ài  H            –i  †           pk  <  
+         ∞l  ∏            hm  \      	      »m  P  
+   
+      o  H  
+         `p  P            ∞p  ∏            hq  P  
+         ∏r  4            r  ∏            ®s  4  
+         ‡t  L  
+         0v  4  
+         hw  <            ®w  §           Py  @  
+         êz  Ä            {  P  
+         `|  †            ~  <  
+         @  †           ‡Ä  ,            Å  Ù            Ç  H  
+         PÉ  Ù            HÑ  ∞            ¯Ö  ú     !      òá         "      ∏á  ∏      #      pà  H  
+   $      ∏â  ∏      %      pä  Ä      &      ä  H  
+   '      8å  †     (      ÿç  Ä      )      Xé  <  
+   *      òè  <  
+   +      ÿê  <  
+   ,      í  L  
+   -      hì  H  
+   .      ∞î  L  
+   /       ñ  8      0      8ñ  †     1      ÿó  <  
+   2      ô  H      3      `ô  †     4       õ  \      5      `õ  H  
+   6      ®ú  x     7       û  l       8      êû  ÿ   !   9      hü  ÿ   !                  k         É         ã         ò         ı         R         ‹         *         g                   !         8         O                  †         E         `         ∆                  o         ¡         ƒ         ·         Ò                  J                              globalgamemanagers.assets                     library/unity default resources                      resources.assets                      sharedassets0.assets                        c           ÿ             OverAllBackground                 d           Ÿ             LabelCharname             f             Button_Normal                 g             Icon          h           €             AvatarTexture             i           ‹              Root              j           ›             Pusher            k           ﬁ             FrameTop          l           ﬂ          
+   OuterFrame                m           ‡          
+   LabelRange                o           ≈           Œ          
+   2DUICamera            p           œ             CenteredAnchor            q           ·             LabelFaction              r             Button_Hover           s           ‚             RanksModule               t           „          	   LabelName                 u           ‰             LabelStandingName                 v           Á           Ê           8          «           Â             FactionPointsPanel                 w           Ë             ShadowRight               x           È          	   IconHover                  y           Í          	   Highlight                 z             Strip                 {             Template               |           Î             Base              }           Ï             Shadow            ~           Ì           Ó          
+   LabelBonus                       –             TopLeftAnchor             Ä           Ô             IconDisabled        	       Å           »           ˆ           ı           Ù           Û           Ú           Ò                        ButtonClose           Ç           ¯           ˜             LabelStanding                 É             CompleteView           Ñ           ˙           ˘             LabelStanding                 Ö           ˚             SpriteToken               Ü           ¸             StatsModule               á             ProgressView          à           ˝          
+   IconShadow                â           ˛          
+   ShadowLeft                ä                      ˇ          
+   LabelTitle            ã                    	   FrameFade                 å                                 LabelValues           ç             WindowsFolder                 é             Template               è                              
+   LabelTitle            ê                    
+   PaperColor                e           ⁄                       ProgressBarFactionStanding            ë                       Entry             í           	         
+   Backgr

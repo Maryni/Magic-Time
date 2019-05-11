@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Level -->
+  <Level>Уровень</Level>
+  <!-- EN: Progress to next level -->
+  <ProgressToNextLevel>Прогресс до след. уровня</ProgressToNextLevel>
+  <!-- EN: Experience -->
+  <Experience>Опыт</Experience>
+  <!-- EN: Passion -->
+  <Passion>Интерес</Passion>
+  <!-- EN: None\n   -Learns {0} -->
+  <PassionNone>отсутствует\n    -скорость обучения — {0}</PassionNone>
+  <!-- EN: Interested\n   -Learns {0} -->
+  <PassionMinor>средний\n    -скорость обучения — {0}</PassionMinor>
+  <!-- EN: Burning\n   -Learns {0} -->
+  <PassionMajor>горячий\n    -скорость обучения — {0}</PassionMajor>
+  <!-- EN: Learned max today ({0}/{1}, further learning multiplied by {2}) -->
+  <LearnedMaxToday>Достигнут предел на сегодня ({0}/{1}, дальнейшая скорость обучения — {2})</LearnedMaxToday>
+  <!-- EN: Effects at level {0} -->
+  <EffectsAtLevel>Параметры на уровне {0}</EffectsAtLevel>
+  <!-- EN: MAX -->
+  <SkillMax>Максимум

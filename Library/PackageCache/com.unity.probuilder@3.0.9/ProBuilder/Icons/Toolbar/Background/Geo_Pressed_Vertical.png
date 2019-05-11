@@ -1,0 +1,45 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "minimatch@^3.0.2",
+        "scope": null,
+        "escapedName": "minimatch",
+        "name": "minimatch",
+        "rawSpec": "^3.0.2",
+        "spec": ">=3.0.2 <4.0.0",
+        "type": "range"
+      },
+      "C:\\Users\\luc\\work\\unity\\External\\nodejs\\builds\\win64\\node_modules\\npm\\node_modules\\glob"
+    ]
+  ],
+  "_from": "minimatch@>=3.0.2 <4.0.0",
+  "_id": "minimatch@3.0.3",
+  "_inCache": true,
+  "_location": "/minimatch",
+  "_nodeVersion": "4.4.4",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/minimatch-3.0.3.tgz_1470678322731_0.1892083385027945"
+  },
+  "_npmUser": {
+    "name": "isaacs",
+    "email": "i@izs.me"
+  },
+  "_npmVersion": "3.10.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "minimatch@^3.0.2",
+    "scope": null,
+    "escapedName": "minimatch",
+    "name": "minimatch",
+    "rawSpec": "^3.0.2",
+    "spec": ">=3.0.2 <4.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/fstream-ignore",
+    "/glob",
+    "/node-gyp"
+  ],
+  "_

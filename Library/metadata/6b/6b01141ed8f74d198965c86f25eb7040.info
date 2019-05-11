@@ -1,0 +1,10 @@
+ with the RectTransform.
+        /// </summary>
+        /// <param name="rectTransform">A reference to the RectTranform of the text object.</param>
+        /// <param name="position">Position to check for intersection.</param>
+        /// <param name="camera">The scene camera which may be assigned to a Canvas using ScreenSpace Camera or WorldSpace render mode. Set to null is using ScreenSpace Overlay.</param>
+        /// <returns></returns>
+        public static bool IsIntersectingRectTransform(RectTransform rectTransform, Vector3 position, Camera camera)
+        {
+            // Convert position into Worldspace coordinates
+            ScreenPointToWorldPointInRectangle(rectTransform, position, 

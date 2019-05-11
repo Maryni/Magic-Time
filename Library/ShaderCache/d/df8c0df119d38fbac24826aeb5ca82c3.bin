@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: cassowary -->
+  <Cassowary.label>casuari</Cassowary.label>
+  <!-- EN: A large flightless bird with brightly-colored feathers. While it looks beautiful, its kick is vicious. It's known for being quick to aggression when harmed by violence or confronted by incompetent animal tamers. -->
+  <Cassowary.description>Un gran ocell incapaç de volar amb plomes de colors llampants. Tot i que és preciós, la seva puntada és perillosa.</Cassowary.description>
+  <!-- EN: bird meat -->
+  <Cassowary.race.meatLabel>carn d’ocell</Cassowary.race.meatLabel>
+  <!-- EN: claws -->
+  <Cassowary.tools.claws.label>urpes</Cassowary.tools.claws.label>
+  <!-- EN: beak -->

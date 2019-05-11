@@ -1,0 +1,842 @@
+r_tyrestacksngl_d_obj_21_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_tyrestacksngl_d_col_21_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.008202001 0.7214079 -0.008418467 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_tyrestacksngl_d_damage_01_renderable" sid="core_barr_tyrestacksngl_d_obj_21" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_tyrestacksngl_d_obj_05_subent">
+				<TEMPLATERIGIDBODY id="core_barr_tyrestacksngl_d_obj_05_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_tyrestacksngl_d_col_04_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.00972569 0.494894624 -0.0132945478 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_tyrestacksngl_d_col_04_shape_behaviour" impulse="physparams.xml#bRubber" typeuri="#core_barr_tyrestacksngl_d_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_tyrestacksngl_d_default_01_renderable" sid="core_barr_tyrestacksngl_d_obj_05" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!34" impulse="physparams.xml#bDefault" typeuri="#core_barr_tyrestacksngl_d_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_tyrestacksngl_d_damage_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_02_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_03_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_21_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_05_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPECYLINDER id="core_barr_tyrestacksngl_d_col_01_shape" height="0.4662427" radius="0.3" shell="0.02" props="physparams.xml#sRubber" />
+		<TEMPLATERENDERABLE id="core_barr_tyrestacksngl_d_damage_01_renderable" uri="route_objects.pssg#core_barr_tyrestacksngl_d_damage_01" />
+		<TEMPLATESHAPECYLINDER id="core_barr_tyrestacksngl_d_col_02_shape" height="0.141" radius="0.3" shell="0.02" props="physparams.xml#sRubber" />
+		<TEMPLATESHAPECYLINDER id="core_barr_tyrestacksngl_d_col_03_shape" height="0.1369088" radius="0.3" shell="0.02" props="physparams.xml#sRubber" />
+		<TEMPLATESHAPECYLINDER id="core_barr_tyrestacksngl_d_col_21_shape" height="0.141" radius="0.3" shell="0.02" props="physparams.xml#sRubber" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_tyrestacksngl_d_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_02_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_03_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_21_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrestacksngl_d_obj_05_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPECYLINDER id="core_barr_tyrestacksngl_d_col_04_shape" height="0.9697893" radius="0.3012924" shell="0.02" props="physparams.xml#sRubber" />
+		<TEMPLATERENDERABLE id="core_barr_tyrestacksngl_d_default_01_renderable" uri="route_objects.pssg#core_barr_tyrestacksngl_d_default_01" />
+		<TEMPLATEENTITY id="dub_concrete_wall_03_e.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!20">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!20" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#dub_concrete_wall_03_e_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.03485823 0.5088917 -0.000108974054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!20" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!35" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!20" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!20">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!20" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="dub_concrete_wall_03_e_col_01_shape" width="6.02" height="1.014537" length="0.3571522" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!20" uri="route_objects.pssg#default!82" />
+		<TEMPLATEENTITY id="dub_concrete_wall_03_j.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!21">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!21" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#dub_concrete_wall_03_j_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.04131627 0.636075139 -0.000108974054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!21" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!36" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!21" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!21">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!21" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="dub_concrete_wall_03_j_col_01_shape" width="5.98855" height="1.268904" length="0.2471522" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!21" uri="route_objects.pssg#default!83" />
+		<TEMPLATEENTITY id="dub_concrete_wall_03_h.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!22">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!22" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#dub_concrete_wall_03_h_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.03485823 0.5088917 -0.000108974054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!22" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!37" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!22" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!22">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!22" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="dub_concrete_wall_03_h_col_01_shape" width="6.02" height="1.014537" length="0.3571522" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!22" uri="route_objects.pssg#default!84" />
+		<TEMPLATEENTITY id="core_barr_armco_b_right.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="core_barr_armco_b_right_obj_01_subent!0">
+				<TEMPLATERIGIDBODY id="core_barr_armco_b_right_obj_01_rigidbody!0" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_b_right_col_02_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.287071228 0.499864161 -0.000638254 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_armco_b_right_col_02_shape_behaviour!0" impulse="physparams.xml#bArmco" typeuri="#core_barr_armco_b_right_damage_behaviour!0" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_b_right_default_01_renderable!0" sid="core_barr_armco_b_right_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_b_right_post_link1_subent!0">
+				<TEMPLATERIGIDBODY id="core_barr_armco_b_right_post_link1_rigidbody!0" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_b_right_link1_col_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 -1.1920929E-07 0 0 1.1920929E-07 1 0 0.04796362 0.496640772 -0.001924492 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_b_right_col_01_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 -1.1920929E-07 0 0 1.1920929E-07 1 0 0.287071228 0.499864131 -0.000638276339 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_b_right_damage_renderable!0" sid="core_barr_armco_b_right_post_link1" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATECONSTRAINT id="constrain_post_base_subent!5" body1uri="#core_barr_armco_b_right_post_link1_rigidbody!0" body2uri="world" props="physparams.xml#cArmcoPost">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -1.62920685E-07 -1 0 0 1 -1.62920685E-07 0 0.04796362 -3.22958466E-11 -0.00192443328 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATEBEHAVIOUR id="initial!38" impulse="physparams.xml#bDefault" typeuri="#core_barr_armco_b_right_default_01_behaviour!0" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_armco_b_right_default_01_behaviour!0">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_b_right_obj_01_subent!0" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_b_right_post_link1_subent!0" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_post_base_subent!5" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_armco_b_right_col_02_shape!0" width="0.5341424" height="0.9597576" length="0.1244875" shell="0.02" props="physparams.xml#sArmco" />
+		<TEMPLATERENDERABLE id="core_barr_armco_b_right_default_01_renderable!0" uri="route_objects.pssg#core_barr_armco_b_right_default_01" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_armco_b_right_damage_behaviour!0">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_b_right_obj_01_subent!0" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_b_right_post_link1_subent!0" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_post_base_subent!5" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPECYLINDER id="core_barr_armco_b_right_link1_col_shape!0" height="0.9730315" radius="0.04658456" shell="0.02" props="physparams.xml#sArmco" />
+		<TEMPLATESHAPEBOX id="core_barr_armco_b_right_col_01_shape!0" width="0.5341424" height="0.9597576" length="0.1244875" shell="0.02" props="physparams.xml#sArmco" />
+		<TEMPLATERENDERABLE id="core_barr_armco_b_right_damage_renderable!0" uri="route_objects.pssg#core_barr_armco_b_right_damage" />
+		<TEMPLATEENTITY id="core_barr_safetyaccess_set_l.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!23">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!23" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_safetyaccess_set_l_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.110194921 0.5 0.0649318248 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!23" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!39" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!23" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!23">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!23" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_safetyaccess_set_l_col_01_shape" width="4.845" height="0.96" length="0.08" shell="0.02" props="physparams.xml#sRubber" />
+		<TEMPLATERENDERABLE id="default_renderable!23" uri="route_objects.pssg#default!85" />
+		<TEMPLATEENTITY id="core_barr_blockconcrete_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!24">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!24" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockconcrete_a_col_01_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 2.00028872 0.5 -1.49011612E-08 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!24" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!40" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!24" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!24">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!24" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockconcrete_a_col_01_shape!0" width="3.960622" height="0.96" length="0.3779516" shell="0.02" props="physparams.xml#sStone" />
+		<TEMPLATERENDERABLE id="default_renderable!24" uri="route_objects.pssg#default!86" />
+		<TEMPLATEENTITY id="dub_concrete_wall_03_f.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!25">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!25" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#dub_concrete_wall_03_f_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.404456854 0.9981382 0.0159230232 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!25" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!41" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!25" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!25">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!25" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="dub_concrete_wall_03_f_col_01_shape" width="0.7699999" height="1.99303" length="0.7971522" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!25" uri="route_objects.pssg#default!87" />
+		<TEMPLATEENTITY id="dub_concrete_wall_03_g.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!26">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!26" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#dub_concrete_wall_03_g_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.71792912 0.392347276 -0.00085328985 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!26" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!42" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!26" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!26">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!26" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="dub_concrete_wall_03_g_col_01_shape" width="3.372992" height="0.7814482" length="0.2371522" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!26" uri="route_objects.pssg#default!81" />
+		<TEMPLATEENTITY id="dub_concrete_wall_03_d.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!27">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!27" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#dub_concrete_wall_03_d_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.04131627 0.636075139 -0.000108974054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!27" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!43" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!27" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!27">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!27" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="dub_concrete_wall_03_d_col_01_shape" width="5.98855" height="1.268904" length="0.2471522" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!27" uri="route_objects.pssg#default!88" />
+	</PSSGDATABASE>
+</PSSGFILE>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ¦A                       DIRECTIONAL    LIGHTPROBE_SH   f      DXBC¤ĞPçà6ºØG›ûcÿ$   `     ,   ¸      ISGN„         h                    q                   x                   x                  POSITION NORMAL TEXCOORD «««OSGNà         È                    Ô                    Ô                   Ô                   Ô                   Ô                   Ô                   Ô                   SV_POSITION TEXCOORD «««SHDR¸  @  n  Y  F      
+   Y  F        Y  F     .   Y  F        Y  F        _  ò     _  r    _  2    _  2    g  ò         e  ò     e  ò     e  ò     e  ò     e  ò     e  ò     e  ò     h     8  ò      V     F        2  
+ò      F              F     2  
+ò      F        ¦     F        ò      F     F        8  ò     V     F        2  
+ò     F              F    2  
+ò     F        ¦
+     F    2  
+ò      F        ö     F            :€      	   @      7  	2            F    F    2  Â          „         ¦         2  2     F    F€         æŠ         6  ‚     @      8  r      V     F‚        2  
+r      F‚              F     2  
+r      F‚        ¦     F     2  
+r      F‚        ö     F        	r     F     F‚ €A         6  ‚      @      6  ò     ö     6  ò     ö     6  ‚     *              F    F‚          "      F    F‚          B      F    F‚          ‚      F     F     D  ‚      :      8  r      ö     F     6  r     F     8  ‚                  2  
+‚      
+      
+      : €A       8  ò     –     F
+             F     *   F      "      F     +   F      B      F     ,   F    2  
+r     F‚     -   ö     F     6  ‚     @      6  ò     @                  >    3                                                      $Globals°         _MainTex_ST                   `      _DetailAlbedoMap_ST                   p      _UVSec                    œ          UnityPerCamera           _WorldSpaceCameraPos                  @          UnityLighting         
+   unity_SHBr                       
+   unity_SHBg                    °  
+   unity_SHBb                    À  	   unity_SHC                     Ğ         UnityPerDraw          unity_ObjectToWorld                         unity_WorldToObject                  @          UnityPerFrame   p        unity_MatrixVP                               $Globals              UnityPerCamera               UnityLighting                UnityPerDraw             UnityPerFrame                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ó
+ÔóûYc           @   sÅ  d  Z  d d l Z d d d d d d d	 d
+ g Z d d d d d d d d d d d d d d d d d g Z d d d d d d d d d d d d d d d d d d d d d d  d! g Z d d" d d d d d d d d# d$ d d d d% g Z d d" d& d' d d d d d# d$ g
+ Z d d d d d d d d d d# d$ d g Z d d" d d d' d d d d d d d d g Z d( Z	 d) Z
+ i  Z d* „  Z d+ e f d, „  ƒ  YZ d d- l m Z d. e d. d/ ƒ e f d0 „  ƒ  YZ d1 e d1 d2 ƒ e f d3 „  ƒ  YZ d e d4 „ Z d5 „  Z d6 d7 „ Z d e d8 „ Z d9 „  Z d: „  Z e d; „ Z d< „  Z y e Wn e k
+ red= „  Z n
+ Xd> „  Z d? Z e  d@ „  e Dƒ ƒ Z! e j" dA ƒ Z# dB „  Z$ d6 d6 dC „ Z% d6 d6 dD „ Z& d S(E   sc  Parse (absolute and relative) URLs.
+
+urlparse module is based upon the following RFC specifications.
+
+RFC 3986 (STD66): "Uniform Resource Identifiers" by T. Berners-Lee, R. Fielding
+and L.  Masinter, January 2005.
+
+RFC 2732 : "Format for Literal IPv6 Addresses in URL's by R.Hinden, B.Carpenter
+and L.Masinter, December 1999.
+
+RFC 2396:  "Uniform Resource Identifiers (URI)": Generic Syntax by T.
+Berners-Lee, R. Fielding, and L. Masinter, August 1998.
+
+RFC 2368: "The mailto URL scheme", by P.Hoffman , L Masinter, J. Zwinski, July 1998.
+
+RFC 1808: "Relative Uniform Resource Locators", by R. Fielding, UC Irvine, June
+1995.
+
+RFC 1738: "Uniform Resource Locators (URL)" by T. Berners-Lee, L. Masinter, M.
+McCahill, December 1994
+
+RFC 3986 is considered the current standard and any future changes to
+urlparse module should conform with it.  The urlparse module is
+currently not entirely compliant with this RFC due to defacto
+scenarios for parsing, and for backward compatibility purposes, some
+parsing quirks from older RFCs are retained. The testcases in
+test_urlparse.py provides a good indicator of parsing behavior.
+
+iÿÿÿÿNt   urlparset
+   urlunparset   urljoint	   urldefragt   urlsplitt
+   urlunsplitt   parse_qst	   parse_qslt   ftpt   httpt   gophert   nntpt   imapt   waist   filet   httpst   shttpt   mmst   prosperot   rtspt   rtsput    t   sftpt   svns   svn+ssht   telnett   snewst   rsynct   nfst   gits   git+ssht   hdlt   sipt   sipst   telt   mailtot   newssA   abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-.i   c           C   s   t  j ƒ  d S(   s   Clear the parse cache.N(   t   _parse_cachet   clear(    (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   clear_cacheD   s    t   ResultMixinc           B   sJ   e  Z d  Z e d „  ƒ Z e d „  ƒ Z e d „  ƒ Z e d „  ƒ Z RS(   s-   Shared methods for the parsed result objects.c         C   sX   |  j  } d | k rT | j d d ƒ d } d | k rP | j d d ƒ d } n  | Sd  S(   Nt   @i   i    t   :(   t   netloct   rsplitt   splitt   None(   t   selfR)   t   userinfo(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   usernameL   s    	c         C   sR   |  j  } d | k rN | j d d ƒ d } d | k rN | j d d ƒ d Sn  d  S(   NR'   i   i    R(   (   R)   R*   R+   R,   (   R-   R)   R.   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   passwordV   s    	c         C   sŠ   |  j  j d ƒ d } d | k rI d | k rI | j d ƒ d d j ƒ  Sd | k rl | j d ƒ d j ƒ  S| d k r| d  S| j ƒ  Sd  S(	   NR'   iÿÿÿÿt   [t   ]i    i   R(   R   (   R)   R+   t   lowerR,   (   R-   R)   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   hostname_   s    c         C   s   |  j  j d ƒ d j d ƒ d } d | k r} | j d ƒ d } | r} t | d ƒ } d | k on d k n rz | Sq} n  d  S(	   NR'   iÿÿÿÿR2   R(   i   i
+   i    iÿÿ  (   R)   R+   t   intR,   (   R-   R)   t   port(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR6   k   s    #
+(   t   __name__t
+   __module__t   __doc__t   propertyR/   R0   R4   R6   (    (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR&   I   s
+   
+	(   t
+   namedtuplet   SplitResults!   scheme netloc path query fragmentc           B   s   e  Z d Z d  „  Z RS(   c         C   s
+   t  |  ƒ S(   N(   R   (   R-   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   geturl}   s    (    (   R7   R8   t	   __slots__R=   (    (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR<   y   s   t   ParseResults(   scheme netloc path params query fragmentc           B   s   e  Z d Z d  „  Z RS(   c         C   s
+   t  |  ƒ S(   N(   R   (   R-   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR=   …   s    (    (   R7   R8   R>   R=   (    (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR?      s   c         C   ss   t  |  | | ƒ } | \ } } }  } } | t k rT d |  k rT t |  ƒ \ }  } n d } t | | |  | | | ƒ S(   s#  Parse a URL into 6 components:
+    <scheme>://<netloc>/<path>;<params>?<query>#<fragment>
+    Return a 6-tuple: (scheme, netloc, path, params, query, fragment).
+    Note that we don't break the components up in smaller bits
+    (e.g. netloc is a single string) and we don't expand % escapes.t   ;R   (   R   t   uses_paramst   _splitparamsR?   (   t   urlt   schemet   allow_fragmentst   tupleR)   t   queryt   fragmentt   params(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR    ‰   s    c         C   se   d |  k r@ |  j  d |  j d ƒ ƒ } | d k  rO |  d f Sn |  j  d ƒ } |  |  |  | d f S(   Nt   /R@   i    R   i   (   t   findt   rfind(   RC   t   i(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyRB   —   s    i    c         C   sb   t  |  ƒ } x> d D]6 } |  j | | ƒ } | d k r t | | ƒ } q q W|  | | !|  | f S(   Ns   /?#i    (   t   lenRK   t   min(   RC   t   startt   delimt   ct   wdelim(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   _splitnetloc    s    c         C   së  t  | ƒ } |  | | t |  ƒ t | ƒ f } t j | d ƒ } | rI | St t ƒ t k re t ƒ  n  d } } } |  j d ƒ } | d k r
+|  |  d k r|  |  j	 ƒ  } |  | d }  |  d  d k r#t
+ |  d ƒ \ } }  d | k rù d	 | k sd	 | k r#d | k r#t d
+ ƒ ‚ q#n  | rPd |  k rP|  j d d ƒ \ }  } n  d |  k rw|  j d d ƒ \ }  } n  t | | |  | | ƒ }	 |	 t | <|	 Sxj |  |  D] }
+ |
+ t k r¨Pq¨q¨W|  | d } | sít d „  | Dƒ ƒ r
+|  |  j	 ƒ  | } }  q
+n  |  d  d k rqt
+ |  d ƒ \ } }  d | k rGd	 | k s_d	 | k rqd | k rqt d
+ ƒ ‚ qqn  | rd |  k r|  j d d ƒ \ }  } n  d |  k rÅ|  j d d ƒ \ }  } n  t | | |  | | ƒ }	 |	 t | <|	 S(   s  Parse a URL into 5 components:
+    <scheme>://<netloc>/<path>?<query>#<fragment>
+    Return a 5-tuple: (scheme, netloc, path, query, fragment).
+    Note that we don't break the components up in smaller bits
+    (e.g. netloc is a single string) and we don't expand % escapes.R   R(   i    R	   i   i   s   //R1   R2   s   Invalid IPv6 URLt   #t   ?c         s   s   |  ] } | d  k Vq d S(   t
+   0123456789N(    (   t   .0RR   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pys	   <genexpr>Î   s    N(   t   boolt   typeR#   t   getR,   RN   t   MAX_CACHE_SIZER%   RK   R3   RT   t
+   ValueErrorR+   R<   t   scheme_charst   any(   RC   RD   RE   t   keyt   cachedR)   RG   RH   RM   t   vRR   t   rest(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR   ¨   sV    !
+
+
+c         C   sJ   |  \ } } } } } } | r1 d | | f } n  t  | | | | | f ƒ S(   sú   Put a parsed URL back together again.  This may result in a
+    slightly different, but equivalent URL, if the URL that was parsed
+    originally had redundant delimiters, e.g. a ? with an empty query
+    (the draft states that these are equivalent).s   %s;%s(   R   (   t   dataRD   R)   RC   RI   RG   RH   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR   ß   s    c         C   sÀ   |  \ } } } } } | s= | rw | t  k rw | d  d k rw | r` | d  d k r` d | } n  d | pl d | } n  | r | d | } n  | r¥ | d | } n  | r¼ | d | } n  | S(	   sk  Combine the elements of a tuple as returned by urlsplit() into a
+    complete URL as a string. The data argument can be any five-item iterable.
+    This may result in a slightly different, but equivalent URL, if the URL that
+    was parsed originally had unnecessary delimiters (for example, a ? with an
+    empty query; the RFC states that these are equivalent).i   s   //i   RJ   R   R(   RV   RU   (   t   uses_netloc(   Rd   RD   R)   RC   RG   RH   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR   é   s    ( c         C   sh  |  s
+ | S| s |  St  |  d | ƒ \ } } } } } } t  | | | ƒ \ }	 }
+ } } } } |	 | k st |	 t k rx | S|	 t k r¯ |
+ r¦ t |	 |
+ | | | | f ƒ S| }
+ n  | d  d k rÛ t |	 |
+ | | | | f ƒ S| r | r | } | } | s| } n  t |	 |
+ | | | | f ƒ S| j d ƒ d  | j d ƒ } | d d k r]d | d <n  x d | k r|| j d ƒ q`Wxr d } t | ƒ d } xU | | k  rì| | d k rß| | d d	 k rß| | d | d 5Pn  | d } q™WPq€W| d d g k rd | d <n2 t | ƒ d k rC| d d k rCd g | d )n  t |	 |
+ d j | ƒ | | | f ƒ S(
+   sa   Join a base URL and a possibly relative URL to form an absolute
+    interpretation of the latter.R   i   RJ   iÿÿÿÿt   .s   ..i   işÿÿÿ(   R   s   ..(   R    t   uses_relativeRe   R   R+   t   removeRN   t   join(   t   baseRC   RE   t   bschemet   bnetloct   bpatht   bparamst   bqueryt	   bfragmentRD   R)   t   pathRI   RG   RH   t   segmentsRM   t   n(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR   û   sX    $$		 "c         C   s`   d |  k rR t  |  ƒ \ } } } } } } t | | | | | d f ƒ } | | f S|  d f Sd S(   s¿   Removes any existing fragment from URL.
+
+    Returns a tuple of the defragmented URL and the fragment.  If
+    the URL contained no fragments, the second element is the
+    empty string.
+    RU   R   N(   R    R   (   RC   t   sRs   t   pt   at   qt   fragt   defrag(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR   /  s
+    
+c         C   s   d S(   Ni    (    (   t   x(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   _is_unicode@  s    c         C   s   t  |  t ƒ S(   N(   t
+   isinstancet   unicode(   Rz   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR{   C  s    t   0123456789ABCDEFabcdefc         c   s?   |  ]5 } t  D]( } | | t t | | d  ƒ ƒ f Vq q d S(   i   N(   t   _hexdigt   chrR5   (   RX   Rv   t   b(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pys	   <genexpr>L  s   s   ([ -]+)c         C   sO  t  |  ƒ r¦ d |  k r |  St j |  ƒ } | d g } | j } xU t d t | ƒ d ƒ D]; } | t t | | ƒ ƒ j d ƒ ƒ | | | d ƒ qZ Wd j	 | ƒ S|  j d ƒ } t | ƒ d k rË |  S| d g } | j } x^ | d D]R } y$ | t
+ | d  ƒ | | d ƒ Wqì t k
+ r=| d ƒ | | ƒ qì Xqì Wd j	 | ƒ S(   s"   unquote('abc%20def') -> 'abc def'.t   %i    i   i   t   latin1R   (   R{   t   _asciireR+   t   appendt   rangeRN   t   unquotet   strt   decodeRi   t	   _hextochrt   KeyError(   Rt   t   bitst   resR…   RM   t   item(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR‡   P  s.    	#	
+c         C   sZ   i  } xM t  |  | | ƒ D]9 \ } } | | k rE | | j | ƒ q | g | | <q W| S(   s²  Parse a query given as a string argument.
+
+        Arguments:
+
+        qs: percent-encoded query string to be parsed
+
+        keep_blank_values: flag indicating whether blank values in
+            percent-encoded queries should be treated as blank strings.
+            A true value indicates that blanks should be retained as
+            blank strings.  The default false value indicates that
+            blank values are to be ignored and treated as if they were
+            not included.
+
+        strict_parsing: flag indicating what to do with parsing errors.
+            If false (the default), errors are silently ignored.
+            If true, errors raise a ValueError exception.
+    (   R   R…   (   t   qst   keep_blank_valuest   strict_parsingt   dictt   namet   value(    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR   l  s    c         C   s$  g  |  j  d ƒ D]" } | j  d ƒ D] } | ^ q# q } g  } xß | D]× } | r_ | r_ qE n  | j  d d ƒ } t | ƒ d k r¸ | rœ t d | f ‚ n  | rE | j d ƒ q¸ qE n  t | d ƒ sÎ | rE t | d j d	 d
+ ƒ ƒ }	 t | d j d	 d
+ ƒ ƒ }
+ | j |	 |
+ f ƒ qE qE W| S(   s¦  Parse a query given as a string argument.
+
+    Arguments:
+
+    qs: percent-encoded query string to be parsed
+
+    keep_blank_values: flag indicating whether blank values in
+        percent-encoded queries should be treated as blank strings.  A
+        true value indicates that blanks should be retained as blank
+        strings.  The default false value indicates that blank values
+        are to be ignored and treated as if they were  not included.
+
+    strict_parsing: flag indicating what to do with parsing errors. If
+        false (the default), errors are silently ignored. If true,
+        errors raise a ValueError exception.
+
+    Returns a list, as G-d intended.
+    t   &R@   t   =i   i   s   bad query field: %rR   i    t   +t    (   R+   RN   R]   R…   R‡   t   replace(   R   R   R‘   t   s1t   s2t   pairst   rt
+   name_valuet   nvR“   R”   (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyR   †  s"    8('   R9   t   ret   __all__Rg   Re   RA   t   non_hierarchicalt
+   uses_queryt   uses_fragmentR^   R\   R#   R%   t   objectR&   t   collectionsR;   R<   R?   t   TrueR    RB   RT   R   R   R   R   R   R}   t	   NameErrorR{   R   R’   RŠ   t   compileR„   R‡   R   R   (    (    (    s<   /home/tom/ab/x64lucid-deps/install/lib/python2.7/urlparse.pyt   <module>   sb   	.""		7	
+	4				                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   MZ       ÿÿ  ¸       @                                   €   º ´	Í!¸LÍ!This program cannot be run in DOS mode.
+$       PE  L Ìºÿ[        à !  N        Nm      €   @                       À         @…                           ôl W    € @                        ll                                                              H           .text   TM      N                   `.rsrc   @   €     P             @  @.reloc            T             @  B                0m     H     , @i                                                     6{  
+o  
+*.~  
+s  
+z.~  
+s  
+z.~  
+s  
+z6{  
+o  
+*Z{  
+o  
+s  
+s   
+*Z{  
+o  
+s!  
+s"  
+*2{  
+o#  
+*
+*r($  
+-r  ps%  
+z}  
+**s&  
+zs&  
+z.~  
+s  
+z.~  
+s  
+z.~  
+s  
+z.~  
+s  
+z6{  
+o'  
+*:{  
+o(  
+*2{  
+o  
+*2{  
+o  
+*.r  p€  
+*"()  
+*"(*  
+*{  *{  *{  *($  
+**  0 "     s2  
+o  +}  o5  o6  *($  
+*6{˜  o,  
+*0 P     s o-  
+
+	s.  
+}˜  +-	ş s/  
+o  +X2á	{˜  s }  *($  
+*N{™  o›  o1  
+*0 O     s o-  
+
+	s2  
+}™  +-	ş s3  
+o  +X2á	{™  s }  * 0 Ê     
+8   {  o4  
+o5  
++`o6  
+o7  
+o8  
+o9  
+-o6  
+o7  
+o8  
+o:  
+o6  
+o7  
+o;  
+o<  
+-o6  
+o7  
+o;  
+o=  
+Xo6  
+o>  
+2’o?  
+o@  
+oA  
+o@  
+X
+{  o4  
+oB  
+?Lÿÿÿ}  }  *  0        (7  Ş(C  
+Ü*          b{  (E  
+t
+  }  *b{  (F  
+t
+  }  *b{  (E  
+t
+  }  *b{  (F  
+t
+  }  *{  *{  *{  *{  *"}  *{#  *{!  *{  *â}  {  "    4"    }  {  (G  
+,rI  psH  
+z*{  *‚{  "    4"    }  }  *{)  *"})  *{  *"}  *{  *"}  *{  *"}  *{  *"}  *{'  *{(  *{  *{  *{  *"}  *{  *}  {  ,{  oI  
+{  o *   0 Ÿ       ($  
+P  }  P  }  "    }  "  €?}  "  €?}  }  "  €?}  }  }  }  }  "    }   "    }!  "    }#  }'  }(  * 0 \       }  }'  }(  })  }  {  -"    }  +oœ  }  {  oI  
+{  o *Ê}  }  })  {  oœ  4}'  }(  *6(e  *   0 …       }(  }  {  ,/}  }"  {#  {!  {#  Y"   ?ZX}!  *}  }!  "    }#  }$  }%  }&  }  }'  *"}(  *  0 J     {  ,7{  {  ZZ
+{(  ,(k  {  ,(j  ,(l  ,(n  *  0 =     {  ,4{  {  ZZ
+{(  ,(k  {  ,(j  (l  *"}  *  0 ¾       %{#  X}#  {#  {!  6u}  "    }   "    }!  "    }#  {  ,{  o=  {  {  (b  {  ,L{  {"  {  (d  }  *{!  "   6{#  {!  [}   *"  €?}   *  0 C      {  -%{  X}  +%{  Y}  {  "    2{  {  oœ  Cù   {)  9§   {  {  oœ  6B{  ,%{  o=  +%{  {  oœ  Y}  {  {  oœ  0Õ+:{  ,%{  o=  +%{  {  oœ  X}  {  "    2Û{  oI  
+{  o *{  {  oœ  6{  oœ  }  +"    }  {  -}(  }'  * 0 (    8  {  oI  
+o {  o  	 oJ  
+,J{  o˜  XoK  
+]-{)  -{  {    (m  +"{    {  oI  
+{–    {  ,p{  o  	 oJ  
+,"    (m  +{  oI  
+{–  {    {   {$  {%  {&  {    (  X{  oL  
+?àşÿÿ*0 ³     {  {  `{  `,3oM  
+{I    *oM  
+
+oM  
+-{  oœ  {H  Y+{H  {H  Y"    66{H  Y	[|I  |I  {  {  {  (  *{I    * 0 Ë     {     (~   {    (N  
++M{     (~  {  oI  
+o o
+  {    {    (N  
+X{  oL  
+2¥+2{  	oI  
+|—  {  	  {  	  (N  
+	X	{  oL  
+2À* 0 Î   	  0r…  prÑ  psO  
+z{     (~  {  oI  
+o o
+ {    q  {  oI  
+|—  (P  
+(N  
+ {    (N  
+{  oI  
+o (p  {  oI  
+|—  {    {    (N  
+*  0 ¡   
+  8   oI  
+o
+ {  	   (~  o o
+  {    {  	  (N  
+o (p  {  	oI  
+|—  {  	  {  	  (N  
+XoL  
+?gÿÿÿ*~5  *º5  (S  
+}3  5  (T  
+}2  5  (T  
+}4  * 0 ñ       |3  (U  
+{2  (V  
+%{W  
+|4  {X  
+Z}W  
+%{Y  
+|4  {X  
+Z}Y  
+%{Z  
+|4  {X  
+Z}Z  
+%{[  
+|4  {\  
+Z}[  
+%{]  
+|4  {\  
+Z}]  
+%{^  
+|4  {\  
+Z}^  
+%{_  
+|4  {`  
+Z}_  
+%{a  
+|4  {`  
+Z}a  
+%{b  
+|4  {`  
+Z}b  
+*   0 G    "    "  €?(c  
+
+E         ,   +E{2  }2  +A|2  |2  |2  (d  
++&|2  |2  |2  (e  
++rç  psf  
+zE         G   ,   +E{3  }3  +A|3  |3  |3  (g  
++&|3  |3  |3  (h  
++rE psf  
+zE         *   +B{4  }4  *|4  |4  |4  (d  
+*|4  |4  |4  (e  
+*r£ psf  
+zÚ|2  ş  oi  
+|3  ş  oi  
+X|4  ş  oi  
+X*  0 V     (j  
+
+rõ p  |2  ş  ok  
+¢|3  ş  ok  
+¢|4  ş  ok  
+¢(l  
+*ö{2  {2  (m  
+,'{3  {3  (n  
+,{4  {4  (m  
+**0      
+u  ,¥  (‚  
+*   0 @        {2  {2  (m  
+,) {3  {3  (n  
+, {4  {4  (m  
+**0 @        {2  {2  (o  
+-) {3  {3  (p  
+- {4  {4  (o  
+**0 Ù       o }6  oç  }7  oÓ  }8  oé  }9  oÕ  }:  oÏ  };  oË  }<  oß  }=  oÑ  }>  o¿  }?  o½  }@  oÃ  }A  oÇ  }B  o¯  }C  oÁ  }D  oã  }E  oá  }F  o±  }G  *Æ{;  oĞ  {<  oÌ  {=  oà  {>  oÒ  * 0 Í       {7  oè  {8  oÔ  {9  oê  {:  oÖ  {;  oĞ  {<  oÌ  {=  oà  {>  oÒ  {?  oÀ  {@  o¾  {A  oÄ  {B  oÈ  {C  o°  {D  oÂ  {E  oä  {F  oâ  {G  o²  *( *(q  
+*V($  
+}H  }I  *{K  *{L  *"}L  *ª($  
+}J  or  
+  }K  "  €?}L  *¢{K  {J  os  
+o
+   q    *{K  {J  os  
+o
+     *(Ÿ  *(t  
+*"(u  
+*   0 Z     
+(K  
+Y+.X[
+(M  
+{H  4X+(M  
+{H  6Y/Î1(M  
+{H  6Y
+*  0      (˜  
+(M  
+*0 X     o-  
+
+s—  +@ov  
+ow  
+}2  ox  
+}3  ow  
+}4  	s‹  oy  
+X2¼*{M  *{N  *{O  *r($  
+}M  }N  }O  *   0 S     oz  
+
+ov  
+s{  
+o-  
++ oz  
+(š  o|  
+X	2Ûs  s  *( *(}  
+* 	ÿş”+            ,                                LightPosition ï?      h                                LightAmbientColor …      ¨                                LightDiffuseColor …      è                                LightSpecularColor       (                               DiffuseColor          d                            
+   TintColor ¨       ”                       EmissiveAmount À       È                       SpecularAmount         ü                       SpecularBias           0                       SpecularPower          d                       Alpha                            €?   NormalPower0           Ä                  €?   OverlayAlpha           ø                   @	   RimLight           (                   A   RimLightPower à?       \                       damage         ˆ                       bloat         À                                   overlayColor  à?                                       	   colorize           0                       diffuseMap0Enabled        h                       diffuseMap1Enabled                                 specularMapEnabled        Ø                       normalMapEnabled M…                              overlayMapEnabled ƒ       H                       overlayNormalMapEnabled        „                       damageMap0Enabled …       ¼                       damageMap1Enabled …       ô                       shadowMapEnabled K…       ,                       diffuseIsHDR           `                       useSoftLightBlend …       ˜                       ShadowMapScale                                                                                           View          p                                                                                   Projection        Ü                                                                                   ViewProjection        L                                                                                   LightViewProjection       ¤                                                       CubeMapRotation       Ô      P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         	   matBones 5J                                     CameraPosition        8                diffuseMap0       x                                                                                                                                                                         ¤      `  \  ©      x  t  ª      ˜  ”  «      ¸  ´  ¥      Ø  Ô  ¦      ø  ô     diffuseMap0Sampler       ¨                diffuseMap1       è                                                                                                                                                                         ¤      Ğ  Ì  ©      è  ä  ª          «      (  $  ¥      H  D  ¦      h  d     diffuseMap1Sampler                       normalMap0        X                                                                                                                                                                         ¤      @  <  ©      X  T  ª      x  t  «      ˜  ”  ¥      ¸  ´  ¦      Ø  Ô     normalMapSampler J…      ˆ                specularMap0          Ì                                                                                                                                                                         ¤      ´  °  ©      Ì  È  ª      ì  è  «          ¥      ,  (  ¦      L  H     specularMapSampler       ü          	      damageMap0 «      <          
+                                                                                                                                                               ¤      $     ©      <  8  ª      \  X  «      |  x  ¥      œ  ˜  ¦      ¼  ¸     damageMap0Sampler …      l                damageMap1        ¬                                                                                                                                                                          ¤      ”    ©      ¬  ¨  ª      Ì  È  «      ì  è  ¥            ¦      ,   (      damageMap1Sampler …      Ü                 overlayMap        "                                                                                                                                                                         ¤      !   !  ©      !  !  ª      <!  8!  «      \!  X!  ¥      |!  x!  ¦      œ!  ˜!     overlayMapSampler …      L"                overlayNormalMap I…      ”#                                                                                                                                                                         ¤      |"  x"  ©      ”"  "  ª      ´"  °"  «      Ô"  Ğ"  ¥      ô"  ğ"  ¦      #  #     overlayNormalMapSampler       È#             
+   shadowMap         %                                                                                                                                                                         ¤      ğ#  ì#  ©      $  $  ª      ($  $$  «      H$  D$  ¥      h$  d$  ¦      ˆ$  „$     shadowMapSampler G…         8%             vertexShaderProfile          h%             pixelShaderProfile                                              p0 e   AnimatedModel rk         ä%             vertexShaderProfile          &             pixelShaderProfile                                                                                                                                                                                                                                              p0                                                                                                                                                            p1     AnimatedModelAlpha          ,(             vertexShaderProfile          \(             pixelShaderProfile                                               p0     AnimatedModelAdditive   !         à(             vertexShaderProfile "         )             pixelShaderProfile #                     $                        p0     AnimatedModelDepth %         )             vertexShaderProfile &         À)             pixelShaderProfile '                     (                        p0     AnimatedModelShadow )         @*             vertexShaderProfile *         p*             pixelShaderProfile +                     ,                        p0     AnimatedModelOccluded ÿÿ-         ô*             vertexShaderProfile .         $+             pixelShaderProfile /                     0                        p0     AnimatedModelNonDeffered    8      !   1                  @   \           €   œ           À   Ü                        <  X          t            ¨  Ä          Ü  ø            ,          D  `          p  Œ          ¤  À          Ø  ô            $          <  X          h  „          ”  °          Ô  ğ            ,          H  d          €  œ          ¸  Ô          ğ            (  D          d  €          œ  ¸          Ô  ğ            (          @  \          x  ”          ¬  È           0         €  œ         ğ            d  €         ¸  Ô          ä               4          H              ¤          ¸  „                       (  ô          p  „          œ  h          ä  ø            Ø          T  h          |  H           Ä   Ø           ì   ¸!          4"  H"          d"  0#          °#  Ä#          Ø#  ¤$          ¸%        $%   %  T%  P%  °%         ’       „%  €%  “       œ%  ˜%  ü'        Ğ%  Ì%   &  ü%  <'      	          0&  ,&  c       P&  L&         p&  l&         &  Œ&  I       °&  ¬&  ]       Ğ&  Ì&  ^       ğ&  ì&  ’       '  '  “       ('  $'  ô'                H'  D'  I       h'  d'  ]       ˆ'  „'  ^       ¨'  ¤'  ’       È'  Ä'  “       à'  Ü'  ¬(        (  (  H(  D(  ¤(         ’       x(  t(  “       (  Œ(  `)        Ì(  È(  ü(  ø(  X)         ’       ,)  ()  “       D)  @)  *        |)  x)  ¬)  ¨)  *         ’       Ü)  Ø)  “       ô)  ğ)  À*        ,*  (*  \*  X*  ¸*         ’       Œ*  ˆ*  “       ¤*   *  t+        à*  Ü*  +  +  l+         ’       @+  <+  “       X+  T+                                    	                                   .      ps_3_0 €-      vs_3_0  *      ps_3_0 )      vs_3_0  &      ps_3_0 ÿ%      vs_3_0 ÿ"      ps_3_0 ÿ!      vs_3_0 ÿ      ps_3_0 ÿ      vs_3_0       ps_3_0 ÿ      vs_3_0 ÿ      ps_3_0 ÿ      vs_3_0 ÿ       ÿÿÿÿ       ğ   ÿÿşÿŸDBUG(   D         €   Æ   „   %   `  t  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿà    ÿÿø    ÿÿ    ÿÿ(    ÿÿ4    ÿÿ@    ÿÿL    ÿÿX    ÿÿd    ÿÿp    ÿÿ|    ÿÿˆ    ÿÿ”  ê     ë  ¬  î  ¸  ï  À  ï  Ğ  î  Ü  ñ  à  ó  è  ô  ø  õ     ³     ³     ³   0  ³   @  ´   T  ´   `  ´   p  ´   |  ´   ˆ  ´   ”  ´   ¤  õ  ´  ô  À  ñ  Ä  ñ  Ğ  ñ  Ü  ñ  è  ñ  ì  ñ  ø  ñ    ø    ú    ş     ş  0     <     L     \     l    x    ˆ    ˜    ¤    ´    À    Ì    Ü    ì    ü      ú    ú     ú  ,    0    <    D    T    `    l    |    ˆ    ”    ¤    ´    À  Ó  Ì  Ó  Ø  Ó  ä  Ó  ô  Ó    Ô    Ô    Ö  ,  Ö  8  Î  D  Î  P  Î  `  Î  p  Î  €  Î    Î  œ  Î  ¬  Ù  À  Ù  Ğ  Î  à  Î  ì  Î  ü  Î    Î    Î  ,  Î  <  Ù  P  Ù  `  Ù  p  Î  €  Î    Î     Î  °  Î  À  Î  Ğ  Ù  ä  Ù  ô  Ù    Î    Î  $  Î  4  Î  D  Î  T  Î  d  Ù  x  Ù  ˆ  Ù  ˜  Û  ¨  Ü  ¸  İ  È  İ  Ø  Ş  è  Ş  ø  Ş    Ş    Ş  (  Ş  4  Ş  D  Ş  T  Ş  d  Ş  t  Ş  ˆ  Ş  ˜    ¬    ¸    ¼    Ì    Ø    è    ô                 ,    8    D    P    `    p    |    Œ    ˜    ¨    ¸    Ä    Ô     ä     ğ  !     !    !     !  4  !  D  "  X  "  h  "  x  #  ˆ  #  ˜  #  ¨  #  ´  #  Ä  #  Ğ  #  à  #  ì  #  ü  #    #    #  (  %  8  %  H  %  X  %  h  %  x  '  „  ¯     ¯      ¯   ¬  ¯   ¸  ¯   Ä  ¯   Ğ  '  à  DiffuseColor «««           £       ÿÿScaleDown ««Ä       ÿÿScaleUp !       ÿÿShadowMapLookup             ]   ÿÿÿÿ  ÿÿf   ÿÿÿÿÿÿ  o   ÿÿÿÿÿÿ  x   ÿÿÿÿÿÿ  ShadowPCF4 «‹   ÿÿÿÿÿÿ  AnimatedModelNonDefferedPS ambience ¤       ÿÿattenuation œ   ÿÿÿÿÿÿ  dNL ©   ÿÿÿÿÿÿ  diffuse ¬       ÿÿdist «««•   ÿÿÿÿÿÿ  inBiNormal «       ÿÿinLightSpacePos                    inNormal «««       ÿÿ1      ÿÿÿÿ2      ÿÿÿÿ8   ÿÿÿÿÿÿ =       ÿÿ?       ÿÿ       ÿÿinTangent ««       ÿÿinUV0 ««                 ÿÿÿÿinWorldPos «       ÿÿlightDepth «E   ÿÿÿÿÿÿ  materialTexture        ÿÿ       ÿÿnrmMap «.      ÿÿÿÿoColor «¼       ÿÿ½   ÿÿÿÿÿÿ Å       ÿÿpointToLight «««’       ÿÿ™       ÿÿreflection «¢       ÿÿshadow «A   ÿÿÿÿÿÿ  Œ   ÿÿÿÿÿÿ  shadowPos ««J      ÿÿÿÿspecular «««¸       ÿÿtextureDiffuse «                "       ÿÿ$       ÿÿ%   ÿÿÿÿÿÿ &   ÿÿÿÿÿÿ (       ÿÿ)   ÿÿÿÿÿÿ +       ÿÿsource «¾       ÿÿ       ÿÿ       ÿÿiDepth «T   ÿÿÿÿÿÿ  iOffset `       ÿÿÿÿiPos «««U      ÿÿÿÿK   ÿÿÿÿÿÿ  L      ÿÿÿÿ|      ÿÿÿÿ}      ÿÿÿÿinvWeight ««S      ÿÿÿÿl ««   ÿÿÿÿÿÿ  output «{   ÿÿÿÿÿÿ  weight «Q      ÿÿÿÿ    ´  Ä     Ô      à  Ä     ì      ø  Ä                   ,      \       h  t    Ä     ˜  t  ¤       °  t  ¼       À  t  Ì  Ä     Ô  t  à       è  t  ô  Ä        t         ,  t  8  Ä     D  t  ˜  Ä     ¤  t  °  ¸     È  t  Ô       à  t  ì       ø  t  	  Ä     	  t  ,	  ¸     4	  t  @	       H	  t  l	  Ä     |	  t  ”	  Ä      	  t  ¬	       ´	  t  Ì	  ¸     Ø	  t  ä	  Ä     ğ	  t  ü	    	   
+  à  x
+  Ä     €
+  ø  x
+  Ä     Œ
+    ¤
+       ¬
+    ¸
+  ¸     À
+    Ì
+  ¸     Ô
+  \  ¤
+       à
+  \  Ì
+  ¸     ì
+  \    ¸       \  (       ,  \  8       @  \  L  ¸     T  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿÖ CTAB   !   ÿÿ           „       ”  ¤  ´       ”  ¤  Æ       ”  ¤  Ø        ”  ¤  æ       ”  ¤  ù           (         ¤  7         ¤  F         ¤  T    	    d  t  x         d  t  ‹               °        d  t  Á              Ò        d  t  ã              ô        d  t                DiffuseColor «««                           LightAmbientColor LightDiffuseColor LightPosition LightSpecularColor NormalPower0 ««              €?            ShadowMapScale SpecularAmount SpecularPower diffuseIsHDR «««                diffuseMap0Enabled diffuseMap0Sampler ««           normalMapEnabled normalMapSampler shadowMapEnabled shadowMapSampler specularMapEnabled specularMapSampler ps_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «Q  	    €?   € €¿ €?Q  
+  r1?;ª¸¿   @   ?Q       ?   ¿Âu=
+×#<    €     €    €    €    €    €                             €	      '€	   (  äàB   €  ää    € ä€+   (   äàB   €  ä ä (  	äà   € ä€   € ä€	 U X   € ä€ ä€	 U    € ä€	 ª X   € ä€	 ÿ  ä€   € ä  
+ € ä€	     	 €
+  €  	 €
+ U€  	 €
+ ª€   €	 ä€
+      € ä€
+ U    € ä€+      € ä€   € ÿ€   € ÿ€*      € ä€   € ÿ€+      € ä€ ä (  äàB   €  ää    € ä€   € ä€
+ ª    € ä€	  ¡   € ä€      € ä€   € ä€ ä€  	 €  € U€  	 €	 ÿ   €	 ÿ€	      € ÿ€   € ÿ€   €  € ä   € U€ ä   € ä€ ä€   € ÿ€ ä   € ä€ ä€*      € ä+      (€	   (  äà   € ä ä   € ÿ€   € ÿ€   € ä ä   
+ € ÿ  
+ € ÿ  	 € ä€
+ ä€   €	 ä€
+ ÿ    € ÿ€   € ä€   €      €      € ä€ ä€   € ä€
+ ÿ    € ä€    € ä  	 €  ä€	      € ÿ€   € ä€   €
+ ÿ    € ÿ      € ä€ ä€B   € ä€ä     €  € ª    € ÿ   €  ÿ€ ÿ€X   € ª€	   	 U    €	  € ª€  	 €	 U€ ÿ€   € ä    € ä€      € ä€ ä€B   € ä€ä    €  € ª    € ÿ€ ÿ€X  
+ € ÿ€	   	 U    €  €
+ ÿ€   €	 U€ ÿ€    €	 ÿ€ ÿ€  
+ € á€      € ä€
+ ä€B   € ä€ä    €  € ª    € ÿ€ ÿ€X   € ÿ€	   	 U    €	  € ÿ€   € U€ ÿ€   €  ÿ€ ÿ€   € ÿ€      € ä€ ä€B    € ä€ä    €   € ª    € ÿ€ ÿ€X   € ÿ€	   	 U   
+ €  € ÿ€   € U€
+ ÿ€   € ÿ€ ÿ€    € ä€
+ ÿ¡   €  ä€
+ ª    € ä€ ä€  	 €  € U€   €	 ÿ€	      €	 ÿ€	 ÿ€   € ÿ€ ÿ€    € ÿ€ ÿ€   € ÿ   € ÿ€	      €  ÿ€ ÿ€   € ÿ€ ÿ€   € ÿ€	 U X   € ÿ€ ÿ€	 U   
+ € ÿ€	  ¡X   €
+ ÿ€	    ÿ€   € ÿ€+      € ä€ ä€  	 € ÿ€   € ä€	 ÿ€    € ä‘   €  ä€  ä    € ä€ ä€   € ÿ€   € ÿ€   € ÿ€   € ÿ€   € ÿ€  
+ € ä€ ä€   € ÿ€ ÿ€   € ÿ€   € ÿ€	      €
+ ä    € ä€ ä€   €  ÿ€  ÿ€   € ÿ   € ä€ ÿ€   € ä€ ä€   € ä    € ä€ ä    €
+ ä€ ä€   € ÿ€	 U X   € ÿ€ ÿ€	 U    € ÿ€	  ¡X   € ÿ€	    ÿ€  	 € ÿ€ ä    € ÿ€	 ä€   € ä€ ä    € ÿ€     
+ € ä€ ä€   €
+ ÿ€  	 € ÿ€      €	 ÿ€   € ÿ€ ÿ€   € ÿ€    € ÿ€ ÿ    €  ÿ€   € ÿ€ ÿ€   € ÿ€ ä    € ä€ ä€    € ä€ ä€   € ä€  ä€   € ä€ ä€   € ÿ€ ä€   € ÿ€   € ä€   € ä€	  ¡  
+ €  €  
+ € U€  
+ € ª€  
+ €
+ ä  	 €
+ ä€	      €	 ä€ÿÿ         ÿÿÿÿ        D   şÿşÿ;DBUG(   ´         €   c   „      L  œ  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿp    ÿÿˆ    ÿÿ”    ÿÿ     ÿÿ¬    ÿÿ¸    ÿÿÄ    ÿÿĞ    ÿÿÜ    ÿÿè    ÿÿô    ÿÿ     ÿÿ    ÿÿ    ÿÿ$    0    <    H    T    d    t    €    ”    ¨    ¼    Ì    Ü     ì     ø                     0     <     P     d     x     ˆ     ˜  !  ¨  !  ´  !  À  !  Ì  !  Ü  !  ì  !  ø  !    !     !  4  !  D  !  T  "  d  "  p  "  |  "  ˆ  "  ˜  "  ¨  "  ´  "  È  "  Ü  "  ğ  "     "    ,     ,  0  ,  @  ,  P  ,  `  2  p  2  €  2    2     2  °  2  À  2  Ğ  2  à  2  ğ  3     4    5    7  $  7  4  7  D  9  P  :  \  :  h  :  x  :  ˆ  :  ˜  ;  ¨  ;  ¸  ;  È  ;  Ø  =  è  =  ø  =    =    @  (  @  4  AnimatedModelNonDeferredVS SSPos «««           U     ÿÿÿÿÿÿV   ÿÿ ÿÿÿÿW   ÿÿÿÿ ÿÿX   ÿÿÿÿÿÿ inBiNormal «                  ÿÿinBoneIndex         inBoneWeight «««        inNormal «««       ÿÿinPosition «       ÿÿinTangent ««       ÿÿinUV0 ««                 ÿÿÿÿmatSmoothSkin ««                  	       
+        $       	 %      
+ &       0       	 1      
+ 2       <       	 =      
+ >       outBiNormal N       ÿÿoutLightSpacePos «««]     ÿÿÿÿÿÿ^   ÿÿ ÿÿÿÿ_   ÿÿÿÿ ÿÿ`   ÿÿÿÿÿÿ outNormal ««O       ÿÿb       ÿÿoutPosition Y     ÿÿÿÿÿÿZ   ÿÿ ÿÿÿÿ[   ÿÿÿÿ ÿÿ\   ÿÿÿÿÿÿ outTangent «M       ÿÿoutUV0 «a      ÿÿÿÿoutWorldPos S       ÿÿposition «««A     ÿÿÿÿÿÿB   ÿÿ ÿÿÿÿC   ÿÿÿÿ ÿÿQ       ÿÿR       ÿÿtangentToWorld «           D     ÿÿÿÿÿÿE   ÿÿ ÿÿÿÿF   ÿÿÿÿ ÿÿG    ÿÿÿÿÿÿH   ÿÿ ÿÿÿÿI   ÿÿÿÿ ÿÿJ    ÿÿÿÿÿÿK   ÿÿ ÿÿÿÿL   ÿÿÿÿ ÿÿœ  ·  À     Ğ  œ            œ  (  À     4  œ  @  À     P  œ  \       h  œ  t       €  œ  Œ       ˜  œ  ¤  ¬     ¼  œ  È  Ø     è  œ  x       „  œ    À     ¤  œ  Ô       à  œ  ø  À       œ  4       @  œ  L  ¬     T  œ  `       l  œ  x  À     „  œ  À  Ğ  	   à  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿCTAB   ?   şÿ         8  €    ø    ”   ¤   ä    ô    ”   ¤   ï    ğ    ”   ¤   ô    ü    ü          ğ   (  8  LightViewProjection                                                                            Projection View bloat ««                            matBones «««    P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       vs_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q  ı    @@      €?         €      €     €     €     €     €     €      €  à    € à   € à   € à   € à   € à   € à   €      € ÿ€    €  ÿ   € ÿ€  ÿ€   € ÿ€ı   .    ° ÿ€   €  ä   ÿ°     € ä   ÿ°    
+ € ä   ÿ°     € ä€ı U    € ä€ı U    €
+ ä€ı U    € U   € ÿ€   € ÿ   € ÿ€ ÿ€  
+ € ÿ€ı   .    °
+ ÿ€  	 €  ä   ÿ° U   € ä   ÿ° U   € ä   ÿ° U   € ä€	 ä€    € ä€ ä€   € ä€ ä€  	 € ª   €	 ÿ€   € ÿ   €	 ÿ€ ÿ€   € ÿ€ı   .    ° ÿ€   €  ä   ÿ° ª   € ä   ÿ° ª   € ä   ÿ° ª   € ä€ ä€  
+ €  ä€ ä€   € ä€ ä€   € ÿ   € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ı   .    ° ÿ€   €  ä   ÿ° ÿ   € ä   ÿ° ÿ  	 € ä   ÿ° ÿ   € ä€ ä€   €
+ ä€ ä€   € ä€	 ä€   €ı j   $   € ä€ı • 	   € ä€ ä€	   € ä€ ä€	   € ä€ ä€   € ä ä€   € ä ä€   € ä ä€    € ä ä€    € ä ä€    € ä ä€   € ä ä€   € ä ä€   € ä ä€   à ä€   à  ä€   € ä€   € ä€ü       € ä€ ä€   €  ä€   à ä€    €ı ª 	   €  ä€ğ ä 	   €  ä€ñ ä 	   €  ä€ò ä 	   €  ä€ó ä 	    à ä€ô ä 	    à ä€õ ä 	    à ä€ö ä 	    à ä€÷ ä 	   à  ä€ø ä 	   à  ä€ù ä 	   à  ä€ú ä 	   à  ä€û ä    à ä   à ä€ÿÿ         ÿÿÿÿ          ÿÿşÿT DBUG(                    (      È   P     ÿÿ¸    ÿÿĞ    ÿÿÜ    ÿÿè    ÿÿô  AnimatedModelOccludedPS oColor «                   oDummy0         oDummy1         oDummy2         P   h   p      €   P   Œ   p      ”   P       p      ¨   P   ´   p      ¼   Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿ CTAB   #    ÿÿ              ps_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q           €?           €      €      €      €  U ÿÿ         ÿÿÿÿ        p   şÿşÿÀDBUG(   È         €   V   „      ì  4  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿ\    ÿÿt    ÿÿ€    ÿÿŒ    ÿÿ˜    ÿÿ¤    ÿÿ°    ÿÿ¼    ÿÿÈ    ÿÿÔ    ÿÿà  Ç   ì  Ç   ø  Ç     Ç     Ç      Ç   0  Ç   <  Ç   P  Ç   d  Ç   x  Ç   ˆ  Ç   ˜  È   ¨  È   ´  È   À  È   Ì  È   Ü  È   ì  È   ø  È     È      È   4  È   D  È   T  É   d  É   p  É   |  É   ˆ  É   ˜  É   ¨  É   ´  É   È  É   Ü  É   ğ  É      É     Ê      Ê   ,  Ê   8  Ê   D  Ê   T  Ê   d  Ê   p  Ê   „  Ê   ˜  Ê   ¬  Ê   ¼  Ê   Ì  Ô   Ü  Ô   ì  Ô   ü  Ô     Ô     ×   ,  ×   <  ×   L  Ù   \  Ù   l  Ù   |  Û   ˆ  Û   ”  Û   ¤  Û   ´  Û   Ä  Û   Ô  Ü   à  İ   ì  İ   ü  İ     İ     ß   ,  ß   8  â   H  â   T  â   `  AnimatedModelVS inBoneIndex                    inBoneWeight «««        inNormal «««                  ÿÿinPosition «       ÿÿinUV0 ««                 ÿÿÿÿmatSmoothSkin ««                  	       
+                	 !      
+ "       ,       	 -      
+ .       8       	 9      
+ :       outDepth «««            L     ÿÿÿÿÿÿoutNormal ««@     ÿÿÿÿÿÿA   ÿÿ ÿÿÿÿB   ÿÿÿÿ ÿÿT       ÿÿoutPosition G     ÿÿÿÿÿÿH   ÿÿ ÿÿÿÿI   ÿÿÿÿ ÿÿJ   ÿÿÿÿÿÿ K   ÿÿÿÿÿÿ M     ÿÿÿÿÿÿN   ÿÿ ÿÿÿÿO   ÿÿÿÿ ÿÿP   ÿÿÿÿÿÿ outUV0 «S      ÿÿÿÿoutWorldPos =     ÿÿÿÿÿÿ>   ÿÿ ÿÿÿÿ?   ÿÿÿÿ ÿÿD       ÿÿE       ÿÿR   ÿÿÿÿÿÿ U       ÿÿ4  D  P     `  4  l  P     |  4  ˆ  ”     ¤  4  °  ”     ¼  4  È  Ğ     à  4  ì  ü       4  œ  ¨     ¸  4  Ä  ”     Ğ  4     P  	     4  x  Ğ     €  4  Œ  P     ˜  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿCTAB      şÿ           l    ô    x   ˆ   È    ğ    x   ˆ   Í    ø    Ô   ä   ô      ğ        Projection «                                                                           View bloat «                            matBones «««    P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       vs_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q  ù    @@      €?         €      €     €     €     €      €  à    € à   € à   € à   € à   €      € ÿ€    €  ÿ   € ÿ€  ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ°     € ä   ÿ°     € ä   ÿ°    	 € ä€ù U    € ä€ù U    € ä€ù U    € U   € ÿ€   € ÿ   € ÿ€ ÿ€  
+ € ÿ€ù   .    °
+ ÿ€  
+ €  ä   ÿ° U   € ä   ÿ° U   € ä   ÿ° U   €	 ä€
+ ä€   € ä€ ä€   € ä€ ä€  	 € ª   €	 ÿ€   € ÿ   €	 ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ª   € ä   ÿ° ª    € ä   ÿ° ª   € ä€ ä€   € ä€ ä€  	 € ä€  ä€   € ÿ   € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ÿ   € ä   ÿ° ÿ  
+ € ä   ÿ° ÿ   € ä€ ä€   € ä€ ä€   €	 ä€
+ ä€   €ù j   $   € ä€ù • 	   € ä€ ä€	   € ä€ ä€	   € ä€ ä€   € ä ä€   € ä ä€   € ä ä€    € ä€ø      € ä€  ä€    € ä€   €ù ª 	   € ä€ğ ä 	   € ä€ñ ä 	   € ä€ò ä 	   € ä€ó ä    € ª€   à ÿ	    à ä€ô ä 	    à ä€õ ä 	    à ä€ö ä 	    à ä€÷ ä    € ÿ¡   à  U€ ÿ€   à ä   à ä€   à  ä€ÿÿ         ÿÿÿÿ          ÿÿşÿ¬ DBUG(   x         €      „      (  T  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿØ    ÿÿğ    ÿÿü    ÿÿ    ÿÿ  Z     [  ,  \  4  \  D  [  P  ]  T  ^  \  ^  l  ^  x  ^  ˆ  ^  ˜  ]  ¨  ]  ¬  ]  ¸  `  ¼  `  Ì  `  Ø  `  ä  `  ğ  `  ü  `    AnimatedModelShadowPS alpha                ÿÿÿÿÿÿ     ÿÿÿÿÿÿ     ÿÿÿÿÿÿ     ÿÿÿÿÿÿ  inSSPos                   ÿÿinUV0 ««                 ÿÿÿÿoutDepth «««     ÿÿÿÿÿÿ   ÿÿÿÿÿÿ    ÿÿ  ÿÿT  j  p     €  T  °  ¸     È  T  Ô  Ü     ì  T  ø  ¸       Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿG CTAB   å    ÿÿ         Ş   l          €      ”         ¨       ¸         €      Ë        ¨       diffuseMap0Enabled «                diffuseMap0Sampler «           diffuseMap1Enabled diffuseMap1Sampler ps_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «Q       €?                €     €                 (€    (   äàB   €  ä ä    € ÿ€+   (  äàB    €  ää    € ÿ   € ÿ€       €  ÿ€ ÿ€   € ÿ€ ÿ€*      € ÿ€+      € ä ä   € ÿ€   € ÿ€   € ÿ€   € ÿ   € ÿ€ ÿ€   €  U ÿÿ         ÿÿÿÿ           şÿşÿ`DBUG(   H         €   C   „   	   ”  œ  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿŒ    ÿÿ¤    ÿÿ°    ÿÿ¼    ÿÿÈ    ÿÿÔ    ÿÿà    ÿÿì  u  ø  u    u    u    u  ,  u  <  u  H  u  \  u  p  u  „  u  ”  u  ¤  v  ´  v  À  v  Ì  v  Ø  v  è  v  ø  v    v    v  ,  v  @  v  P  v  `  w  p  w  |  w  ˆ  w  ”  w  ¤  w  ´  w  À  w  Ô  w  è  w  ü  w    w    x  ,  x  8  x  D  x  P  x  `  x  p  x  |  x    x  ¤  x  ¸  x  È  x  Ø  ƒ  è  ƒ  ø  ƒ    ƒ    „  (  „  8  „  H  „  X  …  h  ˆ  t  ˆ  €  AnimatedModelShadowVS inBoneIndex ««                   inBoneWeight «««        inPosition «        inUV0 ««                 ÿÿÿÿmatSmoothSkin ««                  	       
+               	       
+        )       	 *      
+ +       5       	 6      
+ 7       outPosition @        outSSPos «««<     ÿÿÿÿÿÿ=   ÿÿ ÿÿÿÿ>   ÿÿÿÿ ÿÿ?   ÿÿÿÿÿÿ B        outUV0 «A      ÿÿÿÿposition «««8     ÿÿÿÿÿÿ9   ÿÿ ÿÿÿÿ:   ÿÿÿÿ ÿÿ;   ÿÿÿÿÿÿ œ  ²  À     Ğ  œ  Ü  À     ì  œ  ø  À       œ         (  œ  4  D     T  œ  ä  À     ğ  œ  ü  À       œ  D       L  œ  X  À     d  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿ CTAB   Ç   şÿ         À  D    ğ    T   d   ¤      ğ   °   À   ViewProjection «                                                                           matBones «««    P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       vs_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q  ô    @@      €?         €      €     €     €      €  à    € à   € à  	 €     €	 ÿ€   € ÿ   €	 ÿ€ ÿ€   € ÿ€ô   .    ° ÿ€  	 €  ä   ÿ°     € ä   ÿ°     € ä   ÿ°     €	 ä€ô U    € ä€ô U    € ä€ô U    € U   € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ô   .    ° ÿ€   €  ä   ÿ° U   € ä   ÿ° U   € ä   ÿ° U   € ä€ ä€   € ä€ ä€   € ä€ ä€   € ª   € ÿ€   € ÿ    € ÿ€ ÿ€   €  ÿ€ô   .    ° ÿ€    €  ä   ÿ° ª   € ä   ÿ° ª   € ä   ÿ° ª  	 € ä€  ä€   € ä€ ä€   € ä€ ä€   € ÿ   € ÿ€   € ÿ   € ÿ€ ÿ€  
+ € ÿ€ô   .    °
+ ÿ€  
+ €  ä   ÿ° ÿ   € ä   ÿ° ÿ   € ä   ÿ° ÿ   €	 ä€
+ ä€   € ä€ ä€   € ä€ ä€	   €  ä ä€	   €  ä ä€	   €  ä ä€	   €  äô • 	    € ä€ğ ä 	    € ä€ñ ä 	    € ä€ò ä 	    € ä€ó ä     à  ä€   à ä   à  ä€ÿÿ         ÿÿÿÿ           ÿÿşÿ¬ DBUG(   x         €      „        D  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿØ    ÿÿğ    ÿÿü    ÿÿ    ÿÿ  ş     ÿ  ,     4     D  ÿ  P    T    \    l    x    „    ”    ¤    ´    ¸    Ä    È    Ø    è  
+  ğ  AnimatedModelDepthPS alpha «               ÿÿÿÿÿÿ     ÿÿÿÿÿÿ     ÿÿÿÿÿÿ     ÿÿÿÿÿÿ  alpha1 «   ÿÿÿÿÿÿ  inDepth      ÿÿÿÿÿÿinUV0 ««                 ÿÿÿÿoutDepth «««                   D  Y  `     p  D     `     ¨  D  ´  `     ¼  D  È  Ğ     à  D  ì  ø       Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿG CTAB   å    ÿÿ         Ş   l          €      ”         ¨       ¸         €      Ë        ¨       diffuseMap0Enabled «                diffuseMap0Sampler «           diffuseMap1Enabled diffuseMap1Sampler ps_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «Q       €?   ¿            €     €                 (€    (   äàB   €  ä ä    € ÿ€+   (  äàB   €  ää    € ÿ€   € ÿ   € ÿ€       € ÿ€ ÿ€   € ÿ€ ÿ€*      € ÿ€+      € ÿ€  U     € ÿ€    A    €   €  ÿÿ         ÿÿÿÿ        ”   şÿşÿŸDBUG(   D         €   O   „   
+   |  ü  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿØ    ÿÿğ    ÿÿü    ÿÿ    ÿÿ    ÿÿ     ÿÿ,    ÿÿ8    ÿÿD  ğ   P  ğ   \  ğ   h  ğ   t  ğ   „  ğ   ”  ğ      ğ   ´  ğ   È  ğ   Ü  ğ   ì  ğ   ü  ñ     ñ     ñ   $  ñ   0  ñ   @  ñ   P  ñ   \  ñ   p  ñ   „  ñ   ˜  ñ   ¨  ñ   ¸  ò   È  ò   Ô  ò   à  ò   ì  ò   ü  ò     ò     ò   ,  ò   @  ò   T  ò   d  ò   t  ó   „  ó     ó   œ  ó   ¨  ó   ¸  ó   È  ó   Ô  ó   è  ó   ü  ó     ó      ó   0  ı   @  ı   P  ı   `  ı   p  ı   €                °    À    Ğ    à    ì    ü            ,    8    D    T    d    t  	  „  AnimatedModelDepthVS inBoneIndex «««                   inBoneWeight «««        inNormal «««                  ÿÿinPosition «       ÿÿinUV0 ««                 ÿÿÿÿmatSmoothSkin ««                  	       
+               	       
+         *       	 +      
+ ,       6       	 7      
+ 8       normal «>     ÿÿÿÿÿÿ?   ÿÿ ÿÿÿÿ@   ÿÿÿÿ ÿÿoutDepth «««            I     ÿÿÿÿÿÿoutPosition ;     ÿÿÿÿÿÿ<   ÿÿ ÿÿÿÿ=   ÿÿÿÿ ÿÿB       ÿÿD     ÿÿÿÿÿÿE   ÿÿ ÿÿÿÿF   ÿÿÿÿ ÿÿG   ÿÿÿÿÿÿ H   ÿÿÿÿÿÿ J     ÿÿÿÿÿÿK   ÿÿ ÿÿÿÿL   ÿÿÿÿ ÿÿM   ÿÿÿÿÿÿ outUV0 «N      ÿÿÿÿü          0  ü  <        L  ü  X  d     t  ü  €  d     Œ  ü  ˜        °  ü  ¼  Ì     Ü  ü  l  d     t  ü  ˜  ¤     ´  ü  À        Ì  ü  h        p  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿCTAB      şÿ           l    ô    x   ˆ   È    ğ    x   ˆ   Í    ø    Ô   ä   ô      ğ        Projection «                                                                           View bloat «                            matBones «««    P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       vs_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q  ù    @@      €?         €      €     €     €     €      €  à    € à   € à   €     € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ°     € ä   ÿ°    
+ € ä   ÿ°     € ä€ù U    € ä€ù U    €
+ ä€ù U    € U   € ÿ€   € ÿ  
+ € ÿ€ ÿ€  	 €
+ ÿ€ù   .    °	 ÿ€  	 €  ä   ÿ° U   € ä   ÿ° U   € ä   ÿ° U   € ä€	 ä€    € ä€ ä€   € ä€ ä€   € ª   € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ª   € ä   ÿ° ª   € ä   ÿ° ª   € ä€ ä€  
+ €  ä€ ä€   € ä€ ä€   € ÿ   € ÿ€   € ÿ   € ÿ€ ÿ€    € ÿ€ù   .    °  ÿ€   €  ä   ÿ° ÿ   € ä   ÿ° ÿ  	 € ä   ÿ° ÿ   € ä€ ä€   €
+ ä€ ä€   € ä€	 ä€   €ù j   $   € ä€ù • 	   € ä€ ä€	   € ä€ ä€	   € ä€ ä€   € ä ä€   € ä ä€   € ä ä€   € ä€ø      € ä€ ä€   €ù ª 	    € ä€ğ ä 	    € ä€ñ ä 	    € ä€ò ä 	    € ä€ó ä    €  ª€   à ÿ	    à  ä€ô ä 	    à  ä€õ ä 	    à  ä€ö ä 	    à  ä€÷ ä    à äÿÿ         ÿÿÿÿ          ÿÿşÿ/DBUG(   „         €       „      ¨  „  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿ$    ÿÿ<    ÿÿH    ÿÿT    ÿÿ`    ÿÿl    ÿÿx    ÿÿ„        œ    ¤    ´    ¼     Ì     Ø     è     ô       !    !  $  !  4  !  D  !  T    d    h    t    €    Œ        œ    ¨  %  ¬  '  ¼  )  Ä  +  Ô  -  Ü  .  ì  .  ø  .    .    .  $  /  8  /  D  /  T  /  d  /  t  +  „  2  ˆ  4    4  œ  4  ¬  4  À  4  Ğ  4  à  4  ğ  4     4    4    4  ,  4  <  4  H  4  T  4  d  4  t  4  €  4    4     4  °  4  ¼  4  È  4  Ø  4  ì  4  ø  4    4    4  (  5  <  5  L  5  `  5  p  5  €  5    5     5  ¬  5  ¼  5  Ì  5  Ü  5  è  5  ô  5    5    5     5  0  5  @  5  P  5  \  5  h  5  x  5  Œ  5  ˜  5  ¨  5  ¼  5  È  6  Ü  6  ì  6     6    6     6  0  6  @  6  L  6  \  6  l  6  |  6  ˆ  6  ”  6  ¤  6  ´  6  À  6  Ğ  6  à  6  ğ  6  ü  6    6    6  ,  6  8  6  H  6  \  6  h  2  |  9  €  2    ;  ”  =  ¤  =  ´  =  À  =  Ğ  =  à  >  ğ  >     '    '    '     '  ,  A  0  C  8  C  H  C  X  C  h  C  x  D  ˆ  F  ˜  F  ¤  F  ´  F  Ä  F  Ô  A  ä  R  è  S  ø  AnimatedModelAdditivePS cubeSample «           –       ÿÿdiff1 ««           !        -       ÿÿK     ÿÿÿÿÿÿf   ÿÿ ÿÿÿÿ   ÿÿÿÿ ÿÿƒ       ÿÿ…   ÿÿÿÿÿÿ dmg         #        inNormal «««       ÿÿinUV0 ««                 ÿÿÿÿoutColor «««       ÿÿŸ   ÿÿÿÿÿÿ overlay —        textureDiffuse «        
+               ÿÿ       ÿÿ   ÿÿÿÿÿÿ    ÿÿÿÿÿÿ        ÿÿ   ÿÿÿÿÿÿ        ÿÿŠ       ÿÿŒ   ÿÿÿÿÿÿ        ÿÿ   ÿÿÿÿÿÿ œ       ÿÿuseDmg «               ÿÿÿÿÿÿ  (   ÿÿÿÿÿÿ  „  œ  ¨     ¸  „  Ä  Ì     Ü  „  0  Ì     4  „  0  Ì     @  „  L  ¨     X  „  d  l     |  „  ˆ  Ì     ”  „  ¬  Ì     ´  „  À  Ì     Ğ  „  x  €       „  x  €     œ  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿ× CTAB   %   ÿÿ           \        l  |  ¬       ¼  Ì  Ü       ì  ü         ¼  Ì         ì  Ì          0  @  D       X      h        0  @  z       X      Œ         0  @  Ÿ        X      ²        0  @  Å       X      Ø        0  @  ê       ü          
+    0  @  CubeMapRotation                                                            DiffuseColor «««                           OverlayAlpha «««              €?            TintColor damage damageMap0Enabled «                damageMap0Sampler ««           damageMap1Enabled damageMap1Sampler diffuseMap0Enabled diffuseMap0Sampler diffuseMap1Enabled diffuseMap1Sampler overlayMapEnabled overlayMapSampler            useSoftLightBlend ps_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «Q      €?       ¿   @    €     €                               ˜    €   (   äàB   €  ä ä (  äàB   €  ää    € ÿ    € ÿ€       €  ÿ   €  ÿ€   X   € ÿ€    U    € ÿ   € ÿ€     	 € ä€ ÿ€   € ä€ ÿ€   €	 ä€ ä€+      € ä€   € ÿ€   € ÿ€*      € ä€   € ÿ€+      € ä€ ä (  äàB   €  ää (  äàB   €  ää    € ÿ   € ÿ€      € ÿ   € ÿ€   X   € ÿ€    U    € ÿ   € ÿ€      € ä€ ª€   € ä€ ÿ€   € ä€ ä€+   (  
+äà  
+ € ä    €
+ ª€   X   € ÿ€ U       €  € ÿ    € ÿ€     	 €  €  €   €
+ ÿ€     
+ € ÿ   €
+ U€      €	 ÿ€ ª€    € ÿ€ ÿ€    €  €   €  ª€   € ÿ€  ¡   € ÿ€ ÿ€   €  ¡   € ÿ€      € ÿ€ ÿ€   € ÿ€ ª€  
+ € ÿ   €
+ U  	 € ÿ€ ÿ€X   €	 ÿ€ ÿ€
+ U€   € ÿ   € ÿ€ ÿ€X   € ÿ€ U       €  X   €  € ÿ€  ÿ€   €
+ ª€ U X   € ÿ€ U       € U€ ÿ    € ÿ€ U    € U€ U€   €
+ ÿ€ U    € ÿ   € ÿ€      € ÿ€ ª€   € ª€ ÿ€   € U€   € ª€  
+ € ÿ€  ¡   € ÿ€
+ U€  	 € U¡   €	 ÿ€       € ÿ€ ÿ€   € ÿ€  ÿ€   € ÿ   € ÿ   € ÿ€ ÿ€X   € ÿ€ ÿ€ ÿ€   € ÿ   € ÿ€ ÿ€X   € ª€ U       € UX   € U€ ÿ€ ÿ€  
+ €
+ ª€ ª X  	 €
+ ª€ U       € ª€ ÿ     € ª€ ª    € ª€ ª€   €
+ ÿ€ ª    € ÿ  	 € ÿ€      € ÿ€	 ª€   €  ÿ€ ÿ€   € ª€   € ª€   € ÿ€  ¡   € ÿ€ ÿ€   € ª¡   € ÿ€      € ª€ ÿ€   € ÿ€ ÿ€   €	 ÿ  
+ € ÿ   €	 ÿ€
+ ÿ€X   € ÿ€	 ÿ€ ÿ€   € ÿ   € ÿ€ ÿ€X    € ª€ U        €  ÿX   €  ÿ€ ÿ€ ÿ€*      € ä€ ä +      € ÿ€       € ä€ ÿ€   € ÿ   € ÿ€      € ä€ ÿ€   €  ä€ ä€   € ÿ€ ÿ€   € ÿ€ ÿ€*      € ä€   € ÿ€+   (  äà   €    ä    € U ä    € ä€ ä€   € ª ä    € ä€ ä€B    € ä€ä    €  ÿ   € ÿ€     	 € ä€ ÿ€  
+ €  ÿ€  ä€   €	 ä€
+ ä€+      € ä€ ä    € ÿ€ÿÿ         ÿÿÿÿ        h   şÿşÿ—DBUG(   $         €   N   „   
+   \  ô  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿ¸    ÿÿĞ    ÿÿÜ    ÿÿè    ÿÿô    ÿÿ     ÿÿ    ÿÿ    ÿÿ$  P  0  P  <  P  H  P  T  P  d  P  t  P  €  P  ”  P  ¨  P  ¼  P  Ì  P  Ü  Q  ì  Q  ø  Q    Q    Q     Q  0  Q  <  Q  P  Q  d  Q  x  Q  ˆ  Q  ˜  R  ¨  R  ´  R  À  R  Ì  R  Ü  R  ì  R  ø  R    R     R  4  R  D  R  T  S  d  S  p  S  |  S  ˆ  S  ˜  S  ¨  S  ´  S  È  S  Ü  S  ğ  S     S    ]     ]  0  ]  @  ]  P  ]  `  _  p  _  €  _    `     `  °  b  À  b  Ì  b  Ü  b  ì  b  ü  c    c    c  ,  c  <  f  L  f  X  AnimatedModelAdditiveVS inBoneIndex                    inBoneWeight «««        inNormal «««                  ÿÿinPosition «       ÿÿinUV0 ««                 ÿÿÿÿmatSmoothSkin ««                  	       
+               	       
+         *       	 +      
+ ,       6       	 7      
+ 8       outNormal ««>     ÿÿÿÿÿÿ?   ÿÿ ÿÿÿÿ@   ÿÿÿÿ ÿÿM       ÿÿoutPosition H     ÿÿÿÿÿÿI   ÿÿ ÿÿÿÿJ   ÿÿÿÿ ÿÿK   ÿÿÿÿÿÿ outUV0 «L      ÿÿÿÿposition «««;     ÿÿÿÿÿÿ<   ÿÿ ÿÿÿÿ=   ÿÿÿÿ ÿÿB       ÿÿD     ÿÿÿÿÿÿE   ÿÿ ÿÿÿÿF   ÿÿÿÿ ÿÿG   ÿÿÿÿÿÿ ô         (  ô  4       D  ô  P  \     l  ô  x  \     „  ô    ˜     ¨  ô  ´  Ä     Ô  ô  d  \     p  ô          ¬  ô  Ü  ˜     ä  ô  ğ       ü  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿCTAB      şÿ           l    ô    x   ˆ   È    ğ    x   ˆ   Í    ø    Ô   ä   ô      ğ        Projection «                                                                           View bloat «                            matBones «««    P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       vs_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q  ù    @@      €?         €      €     €     €     €      €  à    € à   € à   €     € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ°    
+ € ä   ÿ°    	 € ä   ÿ°     € ä€ù U    €
+ ä€ù U    €	 ä€ù U    € U  
+ € ÿ€  
+ €
+ ÿ  	 € ÿ€
+ ÿ€   €	 ÿ€ù   .    ° ÿ€   €  ä   ÿ° U   € ä   ÿ° U   € ä   ÿ° U   € ä€ ä€   € ä€ ä€   € ä€ ä€   € ª   € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ª    € ä   ÿ° ª   € ä   ÿ° ª   € ä€ ä€  	 € ä€  ä€   € ä€ ä€   € ÿ   € ÿ€   € ÿ    € ÿ€ ÿ€   €  ÿ€ù   .    ° ÿ€   €  ä   ÿ° ÿ  
+ € ä   ÿ° ÿ   € ä   ÿ° ÿ   € ä€ ä€   €	 ä€
+ ä€   € ä€ ä€   €ù j   $   € ä€ù • 	   € ä€ ä€	   € ä€ ä€	   € ä€ ä€   € ä ä€   € ä ä€   € ä ä€   € ä€ø      € ä€ ä€   €ù ª 	    € ä€ğ ä 	    € ä€ñ ä 	    € ä€ò ä 	    € ä€ó ä 	    à  ä€ô ä 	    à  ä€õ ä 	    à  ä€ö ä 	    à  ä€÷ ä    à ä   à ä€ÿÿ        ÿÿÿÿ       ˜"   ÿÿşÿ¼DBUG(   ¸         €      „      °  Ô  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿd    ÿÿ|    ÿÿ”    ÿÿ¬    ÿÿ¸    ÿÿÄ    ÿÿĞ    ÿÿÜ    ÿÿè    ÿÿô    ÿÿ     ÿÿ    ÿÿ    ÿÿ$  ™  0  š  <  ›  D  ›  T  š  `  š  l  š  x  š  „  š    š  œ  š  ¨  š  ¬  š  ¸  š  Ä  š  Ğ  š  Ü    à  Ÿ  ì  ¡  ô  £    ¥    ¦    ¦  (  ¦  8  ¦  D  ¦  T  §  h  §  t  §  „  §  ”  §  ¤  £  ´  Ÿ  ¸  Ÿ  Ä  Ÿ  Ğ  Ÿ  Ô  Ÿ  à  Ÿ  ì  Ÿ  ø  «  ü  ­    ¯    ±  $  ³  ,  ´  <  ´  H  ´  X  ´  d  ´  t  µ  ˆ  µ  ”  µ  ¤  µ  ´  µ  Ä  ±  Ô  ¸  Ø  º  à  º  ì  º  ü  º    º     º  0  º  @  º  P  º  \  º  l  º  |  º  Œ  º  ˜  º  ¤  º  ´  º  Ä  º  Ğ  º  à  º  ğ  º     º    º    º  (  º  <  º  H  º  X  º  l  º  x  »  Œ  »  œ  »  °  »  À  »  Ğ  »  à  »  ğ  »  ü  »    »    »  ,  »  8  »  D  »  T  »  d  »  p  »  €  »    »     »  ¬  »  ¸  »  È  »  Ü  »  è  »  ø  »    »    ¼  ,  ¼  <  ¼  P  ¼  `  ¼  p  ¼  €  ¼    ¼  œ  ¼  ¬  ¼  ¼  ¼  Ì  ¼  Ø  ¼  ä  ¼  ô  ¼    ¼    ¼     ¼  0  ¼  @  ¼  L  ¼  X  ¼  h  ¼  |  ¼  ˆ  ¼  ˜  ¼  ¬  ¼  ¸  ¸  Ì  ¿  Ğ  ¸  à  Á  ä  Ã  ô  Ã    Ã    Ã     Ã  0  Ä  @  Ä  P  ­  `  ­  d  ­  p  ­  |  Ç  €  Ç    Ç     É  ¨  Ë  ´  Í  ¼  Í  Ì  Í  Ü  Í  ì  Í  ü  Î    Î    Ï  ,  Ï  8  Ï  H  Ï  X  Ï  h  Ë  x  Ò  |  Ó  Œ  Ø  œ  Ø  ¨  Ø  ¸  Ø  È  Ø  Ø  Ú  è  Ú  ô  Û    Û    Û     Û  0  Û  <  Ü  L  Ü  \  Ü  h  Ü  x  Ü  ˆ  Ü  œ  Ü  ¬  Ü  À  Ü  Ì  Ü  Ü  Ü  è  Ü  ø  Ü     Ü     Ü  ,   Ü  @   Ü  P   İ  `   ß  p   á  x   á  ˆ   á  ˜   á  ¨   á  ¸   â  È   â  Ø   ã  ä   ã  ğ   ã   !  ã  !  ã   !  ã  0!  ã  @!  ß  P!  ß  T!  ß  `!  æ  d!  æ  t!  æ  €!  è  !  ê   !  ê  °!  ¯   ¼!  ¯   Ì!  ¯   Ø!  ¯   ä!  ¯   ğ!  ¯   ü!  ê  "  ê  "  ê  ("  ê  8"  ì  H"  ì  X"  ï  h"  ï  x"  ñ  ˆ"  CameraPosition «           À       ÿÿÁ       ÿÿScaleDown ««ö       ÿÿAnimatedModelPS camDir «Æ       ÿÿcubeSample «°       ÿÿŞ       ÿÿdiff1 ««           7        C       ÿÿa     ÿÿÿÿÿÿ|   ÿÿ ÿÿÿÿ—   ÿÿÿÿ ÿÿ™       ÿÿ›   ÿÿÿÿÿÿ dmg "        9        glow «««            î         ÿÿinDepth      ÿÿÿÿÿÿinNormal «««       ÿÿç       ÿÿé       ÿÿí       ÿÿinPos ««        inUV0 ««                 ÿÿÿÿlumi «««¹   ÿÿÿÿÿÿ  materialTexture       ÿÿ        ÿÿ     ÿÿÿÿÿÿ   ÿÿ ÿÿÿÿ   ÿÿÿÿ ÿÿ   ÿÿÿÿÿÿ     ÿÿÿÿÿÿ    ÿÿÿÿÿÿ    ÿÿÿÿÿÿ     ÿÿÿÿÿÿ    ÿÿÿÿÿÿ    ÿÿÿÿÿÿ outDepth «««ÿ        outDiffuse «ª       ÿÿ·       ÿÿ¿       ÿÿØ       ÿÿş   ÿÿÿÿÿÿ outNormal ««ú       ÿÿü   ÿÿÿÿÿÿ overlay ²        à       ÿÿrim ×   ÿÿÿÿÿÿ  textureDiffuse «                 ,       ÿÿ.       ÿÿ/   ÿÿÿÿÿÿ 1       ÿÿ2   ÿÿÿÿÿÿ 3   ÿÿÿÿÿÿ 5       ÿÿ        ÿÿ¢   ÿÿÿÿÿÿ ¤       ÿÿ¥   ÿÿÿÿÿÿ tintedColor º       ÿÿuseDmg «'   ÿÿÿÿÿÿ  >   ÿÿÿÿÿÿ  source «ğ       ÿÿ    „  ”     ¤      ¼  ”     È  Ô  ä  ”     ì  Ô  ø  ”     	  Ô  ø  ”     	  Ô  	  $	     4	  Ô  ˆ	  $	     Œ	  Ô  ˆ	  $	     ˜	  Ô  ¤	  ¬	     ¼	  Ô  È	  ¬	     Ğ	  Ô  Ü	  ”     è	  Ô  
+  $	      
+  Ô  ,
+  4
+     D
+  Ô  P
+  ¬	     X
+  Ô  d
+  ”     t
+  Ô    $	       Ô    $	     (  Ô  d  $	     p  Ô  ˆ  $	       Ô  ˆ  ”     œ  Ô  ¨  ¬	     ¬  Ô  ¸  $	     È  Ô  d  ”     p  Ô  |  ¬	     „  Ô  |  ¬	       ¼  œ  ”     ¤  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿZCTAB   /   ÿÿ         (  `       p  €             °  à       p  €  í       ü  €     	    ü    ,   
+    ü  8  H       ü  X  h       ü  €  w       ü  €  „       ü  €  ’       p  €  œ       ¨  €  ¸       ü  €  ¿        Ô  ä  è       ü              Ô  ä         ü      0         Ô  ä  C        ü      V        Ô  ä  i       ü      |       ¨  €  ‰        Ô  ä  ›       °      À        Ô  ä  Ø       °      ğ        Ô  ä         ü          
+    Ô  ä  CameraPosition «                           CubeMapRotation                                                            DiffuseColor EmissiveAmount             OverlayAlpha «««  €?            RimLight «««   @            RimLightPower ««   A            SpecularAmount SpecularBias SpecularPower TintColor colorize «««           damage damageMap0Enabled «««                damageMap0Sampler ««           damageMap1Enabled damageMap1Sampler diffuseMap0Enabled diffuseMap0Sampler diffuseMap1Enabled diffuseMap1Sampler overlayColor overlayMapEnabled overlayMapSampler «««           overlayNormalMapEnabled overlayNormalMapSampler specularMapEnabled specularMapSampler useSoftLightBlend ps_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q      €?       ¿   @Q    Ò >£?ï§=€€;Q      HB  HÂ            €     €    €    €                                     ˜      ˜   
+ €   (  äàB   €  ää    € ä€   €  €   € U€   € ª€   €  €   € U€   € ª€*      €
+  €   €
+ U€  
+ €
+ ÿ€   €
+ ÿ€+     	 €   (   äàB   €  ä ä (  äàB  
+ €  ää   
+ €
+ ÿ   €
+ ÿ€      € ÿ    € ÿ€   X   €  ÿ€    U    € ÿ   € ª€      € ä€ ª€   €
+ ä€ ÿ€   € ä€ ä€+     	 € ä€   € ÿ€*     	 €	 ä€   €	 ÿ€   € ÿ€+      €	 ä€ ä (  äàB   €  ää (  äàB   €  ää    € ÿ   € ÿ€      € ª   € ª€   X   € ª€    U    € ÿ  
+ € ÿ€      € ä€
+ ÿ€   € ä€ ÿ€   € ä€ ä€+   (  
+äà   € ä    € ª€   X   € ÿ€ U       €  € ÿ    € ª€      €  €  €    € ÿ€      €  ª  	 € ª€      € ÿ€	 ÿ€    € ÿ€ ÿ€   €  €   €  €   €  ª€  ¡  
+ € ª€ ª€   €  ¡   € ÿ€      € ª€ ª€   €
+ ÿ€ ÿ€   € ÿ   € ÿ  	 € ÿ€ U€X   €	 ÿ€ ÿ€ ÿ€   € ÿ   € ÿ€ ÿ€X   € ÿ€ U       € ÿX   € ÿ€  €  ÿ€   € ª€ U X   € ª€ U       € U€ ÿ    € ÿ€ U    € U€ U€   € ÿ€ U    € U   € U€      € ª€ ÿ€   € ÿ€ ª€  
+ € U€   €
+ ÿ€   € U€  ¡   € ÿ€ ÿ€  	 € U¡   €	 ÿ€       € ÿ€ ÿ€   € U€  ÿ€   € ª   € ª   € ª€ ÿ€X   € ÿ€ ª€ ª€   € ª   € ª€ ª€X  
+ € ª€ U      
+ €
+ ÿX   €
+ ÿ€ U€ ÿ€   € ª€ ª X   € ÿ€ U       € ª€ ÿ     € ª€ ª    € ª€ ª€   € ÿ€ ª    € ÿ  	 € ª€      € ÿ€	 ÿ€   €  ÿ€ ÿ€   € ª€   € ª€   € ÿ€  ¡   € ª€ ª€   € ª¡   € ÿ€      € ª€ ª€   € ÿ€ ÿ€   € ÿ  
+ € ÿ  	 € ÿ€
+ ÿ€X   €	 ÿ€ ÿ€ ÿ€   € ÿ   € ÿ€ ÿ€X    € ÿ€ U        €  ÿX   €  ÿ€ ÿ€ U€*      € ä€ ä +      € ÿ€	      € ä€ ÿ€   € ÿ   € ª€       € ä€ ª€   € ä€  ä€   € ÿ€ ª€   € ÿ€ ª€*      € ä€   € ÿ€+      € ÿ€ ª    € ÿ€   A   €   € ä€(  äà   €    ä    € U ä    € ä€ ä€   € ª ä   
+ € ä€ ä€B   €
+ ä€ä    € ä€ ä    € ÿ  
+ € ÿ€     	 € ä€
+ ÿ€   € ÿ€ ä€   €	 ä€ ä€+      € ä€ ä    € ÿ€ ä    € ÿ¡   € ÿ€      € ä€ ÿ€   € ä€ ÿ    € ä€ ä€   € ä    € ä€ ä    € ä‘    € ä€ ä€  	 €  ä€  ä€   €	 ÿ€   €  ä€ ÿ€   € ä€ ä   € ÿ   € ÿ€      € ÿ€ U X    € ÿ€ ÿ€ U    €  ÿ€  ¡X   € ª€     ÿ€   € ª€   € ÿ€      € ª€   € ÿ€
+      € ÿ U X  
+ € ÿ€ ÿ U    €
+ ÿ€  ¡X   € ÿ€   
+ ÿ€  	 € ÿ€ ÿ€   €	 ÿ€      € ä€ ÿ€(  äà   €    ä    € U ä   
+ € ä€ ä€   € ª ä    €
+ ä€ ä€B    € ä€ä     €  ä€   € ÿ¡   € ÿ€      € ÿ€ ä  	 €  ä€ ÿ    €	 ä€  ¡   € ä€ ÿ    € ä€ ä€*      € ä+      € ä€ ä€    € ÿ€   € ä€  ÿ€   € ÿ€      € ä€ ª¡   € ä€   € ä€  ¡    €  €    € U€    € ª€    €  ä   €  ä€      € ä   € ä€      € ä€ ä€  € ä€ ª¡   € ÿ€     € ÿ€ ÿ    € ÿ€      € ÿ€     €  ÿÿ        ÿÿÿÿ       p   şÿşÿÀDBUG(   È         €   V   „      ì  4  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿ\    ÿÿt    ÿÿ€    ÿÿŒ    ÿÿ˜    ÿÿ¤    ÿÿ°    ÿÿ¼    ÿÿÈ    ÿÿÔ    ÿÿà  Ç   ì  Ç   ø  Ç     Ç     Ç      Ç   0  Ç   <  Ç   P  Ç   d  Ç   x  Ç   ˆ  Ç   ˜  È   ¨  È   ´  È   À  È   Ì  È   Ü  È   ì  È   ø  È     È      È   4  È   D  È   T  É   d  É   p  É   |  É   ˆ  É   ˜  É   ¨  É   ´  É   È  É   Ü  É   ğ  É      É     Ê      Ê   ,  Ê   8  Ê   D  Ê   T  Ê   d  Ê   p  Ê   „  Ê   ˜  Ê   ¬  Ê   ¼  Ê   Ì  Ô   Ü  Ô   ì  Ô   ü  Ô     Ô     ×   ,  ×   <  ×   L  Ù   \  Ù   l  Ù   |  Û   ˆ  Û   ”  Û   ¤  Û   ´  Û   Ä  Û   Ô  Ü   à  İ   ì  İ   ü  İ     İ     ß   ,  ß   8  â   H  â   T  â   `  AnimatedModelVS inBoneIndex                    inBoneWeight «««        inNormal «««                  ÿÿinPosition «       ÿÿinUV0 ««                 ÿÿÿÿmatSmoothSkin ««                  	       
+                	 !      
+ "       ,       	 -      
+ .       8       	 9      
+ :       outDepth «««            L     ÿÿÿÿÿÿoutNormal ««@     ÿÿÿÿÿÿA   ÿÿ ÿÿÿÿB   ÿÿÿÿ ÿÿT       ÿÿoutPosition G     ÿÿÿÿÿÿH   ÿÿ ÿÿÿÿI   ÿÿÿÿ ÿÿJ   ÿÿÿÿÿÿ K   ÿÿÿÿÿÿ M     ÿÿÿÿÿÿN   ÿÿ ÿÿÿÿO   ÿÿÿÿ ÿÿP   ÿÿÿÿÿÿ outUV0 «S      ÿÿÿÿoutWorldPos =     ÿÿÿÿÿÿ>   ÿÿ ÿÿÿÿ?   ÿÿÿÿ ÿÿD       ÿÿE       ÿÿR   ÿÿÿÿÿÿ U       ÿÿ4  D  P     `  4  l  P     |  4  ˆ  ”     ¤  4  °  ”     ¼  4  È  Ğ     à  4  ì  ü       4  œ  ¨     ¸  4  Ä  ”     Ğ  4     P  	     4  x  Ğ     €  4  Œ  P     ˜  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿCTAB      şÿ           l    ô    x   ˆ   È    ğ    x   ˆ   Í    ø    Ô   ä   ô      ğ        Projection «                                                                           View bloat «                            matBones «««    P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       vs_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q  ù    @@      €?         €      €     €     €     €      €  à    € à   € à   € à   € à   €      € ÿ€    €  ÿ   € ÿ€  ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ°     € ä   ÿ°     € ä   ÿ°    	 € ä€ù U    € ä€ù U    € ä€ù U    € U   € ÿ€   € ÿ   € ÿ€ ÿ€  
+ € ÿ€ù   .    °
+ ÿ€  
+ €  ä   ÿ° U   € ä   ÿ° U   € ä   ÿ° U   €	 ä€
+ ä€   € ä€ ä€   € ä€ ä€  	 € ª   €	 ÿ€   € ÿ   €	 ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ª   € ä   ÿ° ª    € ä   ÿ° ª   € ä€ ä€   € ä€ ä€  	 € ä€  ä€   € ÿ   € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ÿ   € ä   ÿ° ÿ  
+ € ä   ÿ° ÿ   € ä€ ä€   € ä€ ä€   €	 ä€
+ ä€   €ù j   $   € ä€ù • 	   € ä€ ä€	   € ä€ ä€	   € ä€ ä€   € ä ä€   € ä ä€   € ä ä€    € ä€ø      € ä€  ä€    € ä€   €ù ª 	   € ä€ğ ä 	   € ä€ñ ä 	   € ä€ò ä 	   € ä€ó ä    € ª€   à ÿ	    à ä€ô ä 	    à ä€õ ä 	    à ä€ö ä 	    à ä€÷ ä    € ÿ¡   à  U€ ÿ€   à ä   à ä€   à  ä€ÿÿ         ÿÿÿÿ       ˜"   ÿÿşÿ¼DBUG(   ¸         €      „      °  Ô  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿd    ÿÿ|    ÿÿ”    ÿÿ¬    ÿÿ¸    ÿÿÄ    ÿÿĞ    ÿÿÜ    ÿÿè    ÿÿô    ÿÿ     ÿÿ    ÿÿ    ÿÿ$  ™  0  š  <  ›  D  ›  T  š  `  š  l  š  x  š  „  š    š  œ  š  ¨  š  ¬  š  ¸  š  Ä  š  Ğ  š  Ü    à  Ÿ  ì  ¡  ô  £    ¥    ¦    ¦  (  ¦  8  ¦  D  ¦  T  §  h  §  t  §  „  §  ”  §  ¤  £  ´  Ÿ  ¸  Ÿ  Ä  Ÿ  Ğ  Ÿ  Ô  Ÿ  à  Ÿ  ì  Ÿ  ø  «  ü  ­    ¯    ±  $  ³  ,  ´  <  ´  H  ´  X  ´  d  ´  t  µ  ˆ  µ  ”  µ  ¤  µ  ´  µ  Ä  ±  Ô  ¸  Ø  º  à  º  ì  º  ü  º    º     º  0  º  @  º  P  º  \  º  l  º  |  º  Œ  º  ˜  º  ¤  º  ´  º  Ä  º  Ğ  º  à  º  ğ  º     º    º    º  (  º  <  º  H  º  X  º  l  º  x  »  Œ  »  œ  »  °  »  À  »  Ğ  »  à  »  ğ  »  ü  »    »    »  ,  »  8  »  D  »  T  »  d  »  p  »  €  »    »     »  ¬  »  ¸  »  È  »  Ü  »  è  »  ø  »    »    ¼  ,  ¼  <  ¼  P  ¼  `  ¼  p  ¼  €  ¼    ¼  œ  ¼  ¬  ¼  ¼  ¼  Ì  ¼  Ø  ¼  ä  ¼  ô  ¼    ¼    ¼     ¼  0  ¼  @  ¼  L  ¼  X  ¼  h  ¼  |  ¼  ˆ  ¼  ˜  ¼  ¬  ¼  ¸  ¸  Ì  ¿  Ğ  ¸  à  Á  ä  Ã  ô  Ã    Ã    Ã     Ã  0  Ä  @  Ä  P  ­  `  ­  d  ­  p  ­  |  Ç  €  Ç    Ç     É  ¨  Ë  ´  Í  ¼  Í  Ì  Í  Ü  Í  ì  Í  ü  Î    Î    Ï  ,  Ï  8  Ï  H  Ï  X  Ï  h  Ë  x  Ò  |  Ó  Œ  Ø  œ  Ø  ¨  Ø  ¸  Ø  È  Ø  Ø  Ú  è  Ú  ô  Û    Û    Û     Û  0  Û  <  Ü  L  Ü  \  Ü  h  Ü  x  Ü  ˆ  Ü  œ  Ü  ¬  Ü  À  Ü  Ì  Ü  Ü  Ü  è  Ü  ø  Ü     Ü     Ü  ,   Ü  @   Ü  P   İ  `   ß  p   á  x   á  ˆ   á  ˜   á  ¨   á  ¸   â  È   â  Ø   ã  ä   ã  ğ   ã   !  ã  !  ã   !  ã  0!  ã  @!  ß  P!  ß  T!  ß  `!  æ  d!  æ  t!  æ  €!  è  !  ê   !  ê  °!  ¯   ¼!  ¯   Ì!  ¯   Ø!  ¯   ä!  ¯   ğ!  ¯   ü!  ê  "  ê  "  ê  ("  ê  8"  ì  H"  ì  X"  ï  h"  ï  x"  ñ  ˆ"  CameraPosition «           À       ÿÿÁ       ÿÿScaleDown ««ö       ÿÿAnimatedModelPS camDir «Æ       ÿÿcubeSample «°       ÿÿŞ       ÿÿdiff1 ««           7        C       ÿÿa     ÿÿÿÿÿÿ|   ÿÿ ÿÿÿÿ—   ÿÿÿÿ ÿÿ™       ÿÿ›   ÿÿÿÿÿÿ dmg "        9        glow «««            î         ÿÿinDepth      ÿÿÿÿÿÿinNormal «««       ÿÿç       ÿÿé       ÿÿí       ÿÿinPos ««        inUV0 ««                 ÿÿÿÿlumi «««¹   ÿÿÿÿÿÿ  materialTexture       ÿÿ        ÿÿ     ÿÿÿÿÿÿ   ÿÿ ÿÿÿÿ   ÿÿÿÿ ÿÿ   ÿÿÿÿÿÿ     ÿÿÿÿÿÿ    ÿÿÿÿÿÿ    ÿÿÿÿÿÿ     ÿÿÿÿÿÿ    ÿÿÿÿÿÿ    ÿÿÿÿÿÿ outDepth «««ÿ        outDiffuse «ª       ÿÿ·       ÿÿ¿       ÿÿØ       ÿÿş   ÿÿÿÿÿÿ outNormal ««ú       ÿÿü   ÿÿÿÿÿÿ overlay ²        à       ÿÿrim ×   ÿÿÿÿÿÿ  textureDiffuse «                 ,       ÿÿ.       ÿÿ/   ÿÿÿÿÿÿ 1       ÿÿ2   ÿÿÿÿÿÿ 3   ÿÿÿÿÿÿ 5       ÿÿ        ÿÿ¢   ÿÿÿÿÿÿ ¤       ÿÿ¥   ÿÿÿÿÿÿ tintedColor º       ÿÿuseDmg «'   ÿÿÿÿÿÿ  >   ÿÿÿÿÿÿ  source «ğ       ÿÿ    „  ”     ¤      ¼  ”     È  Ô  ä  ”     ì  Ô  ø  ”     	  Ô  ø  ”     	  Ô  	  $	     4	  Ô  ˆ	  $	     Œ	  Ô  ˆ	  $	     ˜	  Ô  ¤	  ¬	     ¼	  Ô  È	  ¬	     Ğ	  Ô  Ü	  ”     è	  Ô  
+  $	      
+  Ô  ,
+  4
+     D
+  Ô  P
+  ¬	     X
+  Ô  d
+  ”     t
+  Ô    $	       Ô    $	     (  Ô  d  $	     p  Ô  ˆ  $	       Ô  ˆ  ”     œ  Ô  ¨  ¬	     ¬  Ô  ¸  $	     È  Ô  d  ”     p  Ô  |  ¬	     „  Ô  |  ¬	       ¼  œ  ”     ¤  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿZCTAB   /   ÿÿ         (  `       p  €             °  à       p  €  í       ü  €     	    ü    ,   
+    ü  8  H       ü  X  h       ü  €  w       ü  €  „       ü  €  ’       p  €  œ       ¨  €  ¸       ü  €  ¿        Ô  ä  è       ü              Ô  ä         ü      0         Ô  ä  C        ü      V        Ô  ä  i       ü      |       ¨  €  ‰        Ô  ä  ›       °      À        Ô  ä  Ø       °      ğ        Ô  ä         ü          
+    Ô  ä  CameraPosition «                           CubeMapRotation                                                            DiffuseColor EmissiveAmount             OverlayAlpha «««  €?            RimLight «««   @            RimLightPower ««   A            SpecularAmount SpecularBias SpecularPower TintColor colorize «««           damage damageMap0Enabled «««                damageMap0Sampler ««           damageMap1Enabled damageMap1Sampler diffuseMap0Enabled diffuseMap0Sampler diffuseMap1Enabled diffuseMap1Sampler overlayColor overlayMapEnabled overlayMapSampler «««           overlayNormalMapEnabled overlayNormalMapSampler specularMapEnabled specularMapSampler useSoftLightBlend ps_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q      €?       ¿   @Q    Ò >£?ï§=€€;Q      HB  HÂ            €     €    €    €                                     ˜      ˜   
+ €   (  äàB   €  ää    € ä€   €  €   € U€   € ª€   €  €   € U€   € ª€*      €
+  €   €
+ U€  
+ €
+ ÿ€   €
+ ÿ€+     	 €   (   äàB   €  ä ä (  äàB  
+ €  ää   
+ €
+ ÿ   €
+ ÿ€      € ÿ    € ÿ€   X   €  ÿ€    U    € ÿ   € ª€      € ä€ ª€   €
+ ä€ ÿ€   € ä€ ä€+     	 € ä€   € ÿ€*     	 €	 ä€   €	 ÿ€   € ÿ€+      €	 ä€ ä (  äàB   €  ää (  äàB   €  ää    € ÿ   € ÿ€      € ª   € ª€   X   € ª€    U    € ÿ  
+ € ÿ€      € ä€
+ ÿ€   € ä€ ÿ€   € ä€ ä€+   (  
+äà   € ä    € ª€   X   € ÿ€ U       €  € ÿ    € ª€      €  €  €    € ÿ€      €  ª  	 € ª€      € ÿ€	 ÿ€    € ÿ€ ÿ€   €  €   €  €   €  ª€  ¡  
+ € ª€ ª€   €  ¡   € ÿ€      € ª€ ª€   €
+ ÿ€ ÿ€   € ÿ   € ÿ  	 € ÿ€ U€X   €	 ÿ€ ÿ€ ÿ€   € ÿ   € ÿ€ ÿ€X   € ÿ€ U       € ÿX   € ÿ€  €  ÿ€   € ª€ U X   € ª€ U       € U€ ÿ    € ÿ€ U    € U€ U€   € ÿ€ U    € U   € U€      € ª€ ÿ€   € ÿ€ ª€  
+ € U€   €
+ ÿ€   € U€  ¡   € ÿ€ ÿ€  	 € U¡   €	 ÿ€       € ÿ€ ÿ€   € U€  ÿ€   € ª   € ª   € ª€ ÿ€X   € ÿ€ ª€ ª€   € ª   € ª€ ª€X  
+ € ª€ U      
+ €
+ ÿX   €
+ ÿ€ U€ ÿ€   € ª€ ª X   € ÿ€ U       € ª€ ÿ     € ª€ ª    € ª€ ª€   € ÿ€ ª    € ÿ  	 € ª€      € ÿ€	 ÿ€   €  ÿ€ ÿ€   € ª€   € ª€   € ÿ€  ¡   € ª€ ª€   € ª¡   € ÿ€      € ª€ ª€   € ÿ€ ÿ€   € ÿ  
+ € ÿ  	 € ÿ€
+ ÿ€X   €	 ÿ€ ÿ€ ÿ€   € ÿ   € ÿ€ ÿ€X    € ÿ€ U        €  ÿX   €  ÿ€ ÿ€ U€*      € ä€ ä +      € ÿ€	      € ä€ ÿ€   € ÿ   € ª€       € ä€ ª€   € ä€  ä€   € ÿ€ ª€   € ÿ€ ª€*      € ä€   € ÿ€+      € ÿ€ ª    € ÿ€   A   €   € ä€(  äà   €    ä    € U ä    € ä€ ä€   € ª ä   
+ € ä€ ä€B   €
+ ä€ä    € ä€ ä    € ÿ  
+ € ÿ€     	 € ä€
+ ÿ€   € ÿ€ ä€   €	 ä€ ä€+      € ä€ ä    € ÿ€ ä    € ÿ¡   € ÿ€      € ä€ ÿ€   € ä€ ÿ    € ä€ ä€   € ä    € ä€ ä    € ä‘    € ä€ ä€  	 €  ä€  ä€   €	 ÿ€   €  ä€ ÿ€   € ä€ ä   € ÿ   € ÿ€      € ÿ€ U X    € ÿ€ ÿ€ U    €  ÿ€  ¡X   € ª€     ÿ€   € ª€   € ÿ€      € ª€   € ÿ€
+      € ÿ U X  
+ € ÿ€ ÿ U    €
+ ÿ€  ¡X   € ÿ€   
+ ÿ€  	 € ÿ€ ÿ€   €	 ÿ€      € ä€ ÿ€(  äà   €    ä    € U ä   
+ € ä€ ä€   € ª ä    €
+ ä€ ä€B    € ä€ä     €  ä€   € ÿ¡   € ÿ€      € ÿ€ ä  	 €  ä€ ÿ    €	 ä€  ¡   € ä€ ÿ    € ä€ ä€*      € ä+      € ä€ ä€    € ÿ€   € ä€  ÿ€   € ÿ€      € ä€ ª¡   € ä€   € ä€  ¡    €  €    € U€    € ª€    €  ä   €  ä€      € ä   € ä€      € ä€ ä€  € ä€ ª¡   € ÿ€     € ÿ€ ÿ    € ÿ€      € ÿ€     €  ÿÿ         ÿÿÿÿ       p   şÿşÿÀDBUG(   È         €   V   „      ì  4  E:\Work\Workspace\Paradox\Magicka\code\XNAnimation\Content\SkinnedModelBasicEffect.fx ««(     ÿÿ\    ÿÿt    ÿÿ€    ÿÿŒ    ÿÿ˜    ÿÿ¤    ÿÿ°    ÿÿ¼    ÿÿÈ    ÿÿÔ    ÿÿà  Ç   ì  Ç   ø  Ç     Ç     Ç      Ç   0  Ç   <  Ç   P  Ç   d  Ç   x  Ç   ˆ  Ç   ˜  È   ¨  È   ´  È   À  È   Ì  È   Ü  È   ì  È   ø  È     È      È   4  È   D  È   T  É   d  É   p  É   |  É   ˆ  É   ˜  É   ¨  É   ´  É   È  É   Ü  É   ğ  É      É     Ê      Ê   ,  Ê   8  Ê   D  Ê   T  Ê   d  Ê   p  Ê   „  Ê   ˜  Ê   ¬  Ê   ¼  Ê   Ì  Ô   Ü  Ô   ì  Ô   ü  Ô     Ô     ×   ,  ×   <  ×   L  Ù   \  Ù   l  Ù   |  Û   ˆ  Û   ”  Û   ¤  Û   ´  Û   Ä  Û   Ô  Ü   à  İ   ì  İ   ü  İ     İ     ß   ,  ß   8  â   H  â   T  â   `  AnimatedModelVS inBoneIndex                    inBoneWeight «««        inNormal «««                  ÿÿinPosition «       ÿÿinUV0 ««                 ÿÿÿÿmatSmoothSkin ««                  	       
+                	 !      
+ "       ,       	 -      
+ .       8       	 9      
+ :       outDepth «««            L     ÿÿÿÿÿÿoutNormal ««@     ÿÿÿÿÿÿA   ÿÿ ÿÿÿÿB   ÿÿÿÿ ÿÿT       ÿÿoutPosition G     ÿÿÿÿÿÿH   ÿÿ ÿÿÿÿI   ÿÿÿÿ ÿÿJ   ÿÿÿÿÿÿ K   ÿÿÿÿÿÿ M     ÿÿÿÿÿÿN   ÿÿ ÿÿÿÿO   ÿÿÿÿ ÿÿP   ÿÿÿÿÿÿ outUV0 «S      ÿÿÿÿoutWorldPos =     ÿÿÿÿÿÿ>   ÿÿ ÿÿÿÿ?   ÿÿÿÿ ÿÿD       ÿÿE       ÿÿR   ÿÿÿÿÿÿ U       ÿÿ4  D  P     `  4  l  P     |  4  ˆ  ”     ¤  4  °  ”     ¼  4  È  Ğ     à  4  ì  ü       4  œ  ¨     ¸  4  Ä  ”     Ğ  4     P  	     4  x  Ğ     €  4  Œ  P     ˜  Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 ««şÿCTAB      şÿ           l    ô    x   ˆ   È    ğ    x   ˆ   Í    ø    Ô   ä   ô      ğ        Projection «                                                                           View bloat «                            matBones «««    P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       vs_3_0 Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000 «««Q  ù    @@      €?         €      €     €     €     €      €  à    € à   € à   € à   € à   €      € ÿ€    €  ÿ   € ÿ€  ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ°     € ä   ÿ°     € ä   ÿ°    	 € ä€ù U    € ä€ù U    € ä€ù U    € U   € ÿ€   € ÿ   € ÿ€ ÿ€  
+ € ÿ€ù   .    °
+ ÿ€  
+ €  ä   ÿ° U   € ä   ÿ° U   € ä   ÿ° U   €	 ä€
+ ä€   € ä€ ä€   € ä€ ä€  	 € ª   €	 ÿ€   € ÿ   €	 ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ª   € ä   ÿ° ª    € ä   ÿ° ª   € ä€ ä€   € ä€ ä€  	 € ä€  ä€   € ÿ   € ÿ€   € ÿ   € ÿ€ ÿ€   € ÿ€ù   .    ° ÿ€   €  ä   ÿ° ÿ   € ä   ÿ° ÿ  
+ € ä   ÿ° ÿ   € ä€ ä€   € ä€ ä€   €	 ä€
+ ä€   €ù j   $   € ä€ù • 	   € ä€ ä€	   € ä€ ä€	   € ä€ ä€   € ä ä€   € ä ä€   € ä ä€    € ä€ø      € ä€  ä€    € ä€   €ù ª 	   € ä€ğ ä 	   € ä€ñ ä 	   € ä€ò ä 	   € ä€ó ä    € ª€   à ÿ	    à ä€ô ä 	    à ä€õ ä 	    à ä€ö ä 	    à ä€÷ ä    € ÿ¡   à  U€ ÿ€   à ä   à ä€   à  ä€ÿÿ          ÿÿÿÿ       ˜"   ÿÿşÿ¼DBUG(   ¸  

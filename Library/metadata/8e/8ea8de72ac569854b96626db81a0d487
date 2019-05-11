@@ -1,0 +1,108 @@
+                                m_isTextTruncated = true;
+
+                                if (m_characterCount < 1)
+                                {
+                                    m_textInfo.characterInfo[m_characterCount].isVisible = false;
+                                    //m_visibleCharacterCount = 0;
+                                    break;
+                                }
+
+                                m_char_buffer[i - 1] = 8230;
+                                m_char_buffer[i] = (char)0;
+
+                                if (m_cached_Ellipsis_GlyphInfo != null)
+                                {
+                                    m_textInfo.characterInfo[ellipsisIndex].character = (char)8230;
+                                    m_textInfo.characterInfo[ellipsisIndex].textElement = m_cached_Ellipsis_GlyphInfo;
+                                    m_textInfo.characterInfo[ellipsisIndex].fontAsset = m_materialReferences[0].fontAsset;
+                                    m_textInfo.characterInfo[ellipsisIndex].material = m_materialReferences[0].material;
+                                    m_textInfo.characterInfo[ellipsisIndex].materialReferenceIndex = 0;
+                                }
+                                else
+                                {
+                                    Debug.LogWarning("Unable to use Ellipsis character since it wasn't found in the current Font Asset [" + m_fontAsset.name + "]. Consider regenerating this font asset to include the Ellipsis character (u+2026).\nNote: Warnings can be disabled in the TMP Settings file.", this);
+                                }
+
+                                m_totalCharacterCount = ellipsisIndex + 1;
+
+                                GenerateTextMesh();
+                                return;
+                            case TextOverflowModes.Masking:
+                                if (!m_isMaskingEnabled)
+                                    EnableMasking();
+                                break;
+                            case TextOverflowModes.ScrollRect:
+                                if (!m_isMaskingEnabled)
+                                    EnableMasking();
+                                break;
+                            case TextOverflowModes.Truncate:
+                                if (m_isMaskingEnabled)
+                                    DisableMasking();
+
+                                m_textInfo.characterInfo[m_characterCount].isVisible = false;
+                                break;
+                            case TextOverflowModes.Linked:
+                                //m_textInfo.characterInfo[m_characterCount].isVisible = false;
+
+                                //if (m_linkedTextComponent != null)
+                                //{
+                                //    m_linkedTextComponent.text = text;
+                                //    m_linkedTextComponent.firstVisibleCharacter = m_characterCount;
+                                //    m_linkedTextComponent.ForceMeshUpdate();
+                                //}
+                                break;
+                        }
+                        #endregion End Text Overflow
+
+                    }
+                    #endregion End Check for Characters Exceeding Width of Text Container
+
+
+                    // Special handling of characters that are not ignored at the end of a line.
+                    if (charCode == 9 || charCode == 0xA0 || charCode == 0x2007)
+                    {
+                        m_textInfo.characterInfo[m_characterCount].isVisible = false;
+                        m_lastVisibleCharacterOfLine = m_characterCount;
+                        m_textInfo.lineInfo[m_lineNumber].spaceCount += 1;
+                        m_textInfo.spaceCount += 1;
+
+                        if (charCode == 0xA0)
+                            m_textInfo.lineInfo[m_lineNumber].controlCharacterCount += 1;
+                    }
+                    else
+                    {
+                        // Determine Vertex Color
+                        if (m_overrideHtmlColors)
+                            vertexColor = m_fontColor32;
+                        else
+                            vertexColor = m_htmlColor;
+
+                        // Store Character & Sprite Vertex Information
+                        if (m_textElementType == TMP_TextElementType.Character)
+                        {
+                            // Save Character Vertex Data
+                            SaveGlyphVertexInfo(padding, style_padding, vertexColor);
+                        }
+                        else if (m_textElementType == TMP_TextElementType.Sprite)
+                        {
+                            SaveSpriteVertexInfo(vertexColor);
+                        }
+                    }
+
+
+                    // Increase visible count for Characters.
+                    if (m_textInfo.characterInfo[m_characterCount].isVisible && charCode != 0xAD)
+                    {
+                        if (isStartOfNewLine) { isStartOfNewLine = false; m_firstVisibleCharacterOfLine = m_characterCount; }
+
+                        m_lineVisibleCharacterCount += 1;
+                        m_lastVisibleCharacterOfLine = m_characterCount;
+                    }
+                }
+                else
+                {   // This is a Space, Tab, LineFeed or Carriage Return
+
+                    // Track # of spaces per line which is used for line justification.
+                    if ((charCode == 10 || char.IsSeparator((char)charCode)) && charCode != 0xAD && charCode != 0x200B && charCode != 0x2060)
+                    {
+                        m_textInfo.lineInfo[m_lineNumber].space

@@ -1,0 +1,181 @@
+l value)
+        {
+            if (UpdateContainer != null)
+                UIUtils.SetElementDisplay(UpdateContainer, value);
+        }
+
+        internal void SetDisplayPackage(PackageInfo packageInfo)
+        {
+            DisplayPackage = packageInfo;
+            
+            var detailVisible = true;
+            Error error = null;
+
+            if (package == null || DisplayPackage == null)
+            {
+                detailVisible = false;
+                UIUtils.SetElementDisplay(DocumentationContainer, false);
+                UIUtils.SetElementDisplay(CustomContainer, false);
+                UIUtils.SetElementDisplay(UpdateBuiltIn, false);
+
+                foreach (var extension in PackageManagerExtensions.Extensions)
+                    extension.OnPackageSelectionChange(null);
+            }
+            else
+            {
+                SetUpdateVisibility(true);
+                UIUtils.SetElementDisplay(ViewDocButton, true);
+                RemoveButton.visible = true;
+
+                if (string.IsNullOrEmpty(DisplayPackage.Description))
+                {
+                    DetailDesc.text = "There is no description for this package.";
+                    DetailDesc.AddToClassList(emptyDescriptionClass);
+                }
+                else
+                {
+                    DetailDesc.text = DisplayPackage.Description;
+                    DetailDesc.RemoveFromClassList(emptyDescriptionClass);
+                }
+
+                root.Q<Label>("detailTitle").text = DisplayPackage.DisplayName;
+                DetailVersion.text = "Version " + DisplayPackage.VersionWithoutTag;
+
+                if (DisplayPackage.IsInDevelopment || DisplayPackage.HasVersionTag(PackageTag.preview))
+                    UIUtils.SetElementDisplay(GetTag(PackageTag.verified), false);
+                else
+                {
+                    var unityVersionParts = Application.unityVersion.Split('.');
+                    var unityVersion = string.Format("{0}.{1}", unityVersionParts[0], unityVersionParts[1]);
+                    VerifyLabel.text = unityVersion + " verified";
+                    UIUtils.SetElementDisplay(GetTag(PackageTag.verified), DisplayPackage.IsVerified);
+                }
+
+                UIUtils.SetElementDisplay(GetTag(PackageTag.inDevelopment), DisplayPackage.IsInDevelopment);
+                UIUtils.SetElementDisplay(GetTag(PackageTag.local), DisplayPackage.IsLocal);
+                UIUtils.SetElementDisplay(GetTag(PackageTag.preview), DisplayPackage.IsPreview);
+
+                UIUtils.SetElementDisplay(DocumentationContainer, DisplayPackage.Origin != PackageSource.BuiltIn);
+                UIUtils.SetElementDisplay(ChangelogContainer, DisplayPackage.HasChangelog(DisplayPackage));
+
+                root.Q<Label>("detailName").text = DisplayPackage.Name;
+                root.Q<ScrollView>("detailView").scrollOffset = new Vector2(0, 0);
+
+                DetailModuleReference.text = "";
+                var isBuiltIn = DisplayPackage.IsBuiltIn;
+                if (isBuiltIn)
+                    DetailModuleReference.text = DisplayPackage.BuiltInDescription;
+
+                DetailAuthor.text = "";
+                if (!string.IsNullOrEmpty(DisplayPackage.Author))
+                    DetailAuthor.text = string.Format("Author: {0}", DisplayPackage.Author);
+
+                UIUtils.SetElementDisplay(DetailDesc, !isBuiltIn);
+                UIUtils.SetElementDisplay(DetailVersion, !isBuiltIn);
+                UIUtils.SetElementDisplayNonEmpty(DetailModuleReference);
+                UIUtils.SetElementDisplayNonEmpty(DetailAuthor);
+
+                if (DisplayPackage.Errors.Count > 0)
+                    error = DisplayPackage.Errors.First();
+
+                RefreshAddButton();
+                RefreshRemoveButton();
+                UIUtils.SetElementDisplay(CustomContainer, true);
+
+                package.AddSignal.OnOperation += OnAddOperation;
+                package.RemoveSignal.OnOperation += OnRemoveOperation;
+                foreach (var extension in PackageManagerExtensions.Extensions)
+                    extension.OnPackageSelectionChange(DisplayPackage.Info);
+            }
+
+            // Set visibility
+            root.Q<VisualElement>("detail").visible = detailVisible;
+
+            if (null == error)
+                error = PackageCollection.Instance.GetPackageError(package);
+
+            if (error != null)
+                SetError(error);
+            else
+                DetailError.ClearError();            
+        }
+
+        private void ResetVersionItems(PackageInfo displayPackage)
+        {
+            VersionItems.Clear();            
+            VersionPopup.SetEnabled(true);
+
+            if (displayPackage == null)
+                return;
+            
+            //
+            // Get key versions -- Latest, Verified, LatestPatch, Current.
+            var keyVersions = new List<PackageInfo>();
+            if (package.LatestRelease != null) keyVersions.Add(package.LatestRelease);
+            if (package.Current != null) keyVersions.Add(package.Current);
+            if (package.Verified != null && package.Verified != package.Current) keyVersions.Add(package.Verified);
+            if (package.LatestPatch != null && package.IsAfterCurrentVersion(package.LatestPatch)) keyVersions.Add(package.LatestPatch);
+            if (package.Current == null && package.LatestRelease == null && package.Latest != null) keyVersions.Add(package.Latest);
+            if (Package.ShouldProposeLatestVersions && package.Latest != package.LatestRelease && package.Latest != null) keyVersions.Add(package.Latest);
+            keyVersions.Add(package.LatestUpdate);        // Make sure LatestUpdate is always in the list.
+
+            foreach (var version in keyVersions.OrderBy(package => package.Version).Reverse())
+            {
+                var item = new VersionItem {Version = version};
+                VersionItems.Add(item);
+                
+                if (version == package.LatestUpdate)
+                    VersionPopup.value = item;
+            }
+
+            //
+            // Add all versions
+            foreach (var version in package.Versions.Reverse())
+            {
+                var item = new VersionItem {Version = version};
+                item.MenuName = "All Versions/";
+                VersionItems.Add(item);
+            }
+            
+            if (VersionItems.Count == 0)
+            {
+                VersionItems.Add(EmptyVersion);
+                VersionPopup.value = EmptyVersion;
+                VersionPopup.SetEnabled(false);
+            }
+        }
+        
+        public void SetPackage(Package package)
+        {
+            if (this.package != null)
+            {
+                if (this.package.AddSignal.Operation != null)
+                {
+                    this.package.AddSignal.Operation.OnOperationError -= OnAddOperationError;
+                    this.package.AddSignal.Operation.OnOperationSuccess -= OnAddOperationSuccess;
+                }
+                this.package.AddSignal.ResetEvents();
+
+                if (this.package.RemoveSignal.Operation != null)
+                {
+                    this.package.RemoveSignal.Operation.OnOperationSuccess -= OnRemoveOperationSuccess;
+                    this.package.RemoveSignal.Operation.OnOperationError -= OnRemoveOperationError;
+                }
+                this.package.RemoveSignal.ResetEvents();
+            }
+
+            UIUtils.SetElementDisplay(this, true);
+
+            this.package = package;
+            var displayPackage = package != null ? package.VersionToDisplay : null;
+            ResetVersionItems(displayPackage);
+            SetDisplayPackage(displayPackage);
+        }
+
+        private void SetError(Error error)
+        {
+            DetailError.AdjustSize(DetailView.verticalScroller.visible);
+            DetailError.SetError(error);
+            DetailError.OnCloseError = () =>
+            {
+          

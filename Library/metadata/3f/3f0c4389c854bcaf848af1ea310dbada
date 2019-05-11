@@ -1,0 +1,93 @@
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+#include "il2cpp-blob.h"
+#include "il2cpp-class-internals.h"
+#include "metadata/Il2CppTypeVector.h"
+#include "utils/dynamic_array.h"
+#include "il2cpp-class-internals.h"
+#include "il2cpp-object-internals.h"
+#include "Exception.h"
+#include "Type.h"
+
+#if NET_4_0
+#include "vm/MetadataCache.h"
+#include "il2cpp-tabledefs.h"
+#endif
+
+
+struct Il2CppClass;
+struct EventInfo;
+struct FieldInfo;
+struct PropertyInfo;
+struct MethodInfo;
+
+struct Il2CppImage;
+struct Il2CppReflectionType;
+struct Il2CppType;
+struct Il2CppGenericContainer;
+struct Il2CppGenericContext;
+struct Il2CppGenericParameter;
+
+namespace il2cpp
+{
+namespace vm
+{
+    class TypeNameParseInfo;
+
+    enum TypeSearchFlags
+    {
+        kTypeSearchFlagNone = 0x0,
+        kTypeSearchFlagIgnoreCase = 0x1,
+        kTypeSearchFlagThrowOnError = 0x2,
+        kTypeSearchFlagDontUseExecutingImage = 0x4
+    };
+
+    class LIBIL2CPP_CODEGEN_API Class
+    {
+    public:
+        static Il2CppClass* FromIl2CppType(const Il2CppType* type);
+        static Il2CppClass* FromName(const Il2CppImage* image, const char* namespaze, const char *name);
+        static Il2CppClass* FromSystemType(Il2CppReflectionType *type);
+        static Il2CppClass* FromGenericParameter(const Il2CppGenericParameter *param);
+        static Il2CppClass* GetElementClass(Il2CppClass *klass);
+        static const Il2CppType* GetEnumBaseType(Il2CppClass *klass);
+        static const EventInfo* GetEvents(Il2CppClass *klass, void* *iter);
+        static FieldInfo* GetFields(Il2CppClass *klass, void* *iter);
+        static FieldInfo* GetFieldFromName(Il2CppClass *klass, const char* name);
+        static const MethodInfo* GetFinalizer(Il2CppClass *klass);
+        static int32_t GetInstanceSize(const Il2CppClass *klass);
+        static Il2CppClass* GetInterfaces(Il2CppClass *klass, void* *iter);
+        static const MethodInfo* GetMethods(Il2CppClass *klass, void* *iter);
+        static const MethodInfo* GetMethodFromName(Il2CppClass *klass, const char* name, int argsCount);
+        static const MethodInfo* GetMethodFromNameFlags(Il2CppClass *klass, const char* name, int argsCount, int32_t flags);
+        static const char* GetName(Il2CppClass *klass);
+        static const char* GetNamespace(Il2CppClass *klass);
+        static Il2CppClass* GetNestedTypes(Il2CppClass *klass, void* *iter);
+        static size_t GetNumMethods(const Il2CppClass* klass);
+        static size_t GetNumProperties(const Il2CppClass* klass);
+        static size_t GetNumFields(const Il2CppClass* klass);
+        static Il2CppClass* GetParent(Il2CppClass *klass);
+        static const PropertyInfo* GetProperties(Il2CppClass *klass, void* *iter);
+        static const PropertyInfo* GetPropertyFromName(Il2CppClass *klass, const char* name);
+        static int32_t GetValueSize(Il2CppClass *klass, uint32_t *align);
+        static bool HasParent(Il2CppClass *klass, Il2CppClass *parent);
+        // we assume that the Il2CppClass's have already been initialized in this case, like in code generation
+        static bool HasParentUnsafe(const Il2CppClass* klass, const Il2CppClass* parent) { return klass->typeHierarchyDepth >= parent->typeHierarchyDepth && klass->typeHierarchy[parent->typeHierarchyDepth - 1] == parent; }
+        static bool IsAssignableFrom(Il2CppClass *klass, Il2CppClass *oklass);
+        static bool IsGeneric(const Il2CppClass *klass);
+        static bool IsInflated(const Il2CppClass *klass);
+        static bool IsSubclassOf(Il2CppClass *klass, Il2CppClass *klassc, bool check_interfaces);
+        static bool IsValuetype(const Il2CppClass *klass);
+        static bool IsBlittable(const Il2CppClass *klass);
+        static bool HasDefaultConstructor(Il2CppClass* klass);
+        static int GetFlags(const Il2CppClass *klass);
+        static bool IsAbstract(const Il2CppClass *klass);
+        static bool IsInterface(const Il2CppClass *klass);
+        static bool IsNullable(const Il2CppClass *klass);
+        static Il2CppClass* GetNullableArgument(const Il2CppClass* klass);
+        static int GetArrayElementSize(const Il2CppClass *klass);
+        static const Il2CppType* GetType(Il2CppClass *klass);
+        static const Il2CppType* GetType(Il2CppClass *klass, const TypeNameParseInfo &info);
+        stat

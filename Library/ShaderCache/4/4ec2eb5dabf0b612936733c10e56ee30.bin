@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: chemfuel -->
+  <Chemfuel.label>quimifuel</Chemfuel.label>
+  <!-- EN: A volatile liquid chemical. Used to fuel engines and rockets, or to transmute into propellant for projectiles, or as an incendiary weapon. -->
+  <Chemfuel.description>compost químic volàtil líquid. Es fa servir per alimentar coets i altres màquines.</Chemfuel.description>
+  
+  <!-- EN: component -->
+  <ComponentIndustrial.label>component</ComponentIndustrial.label>
+  <!-- EN: Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics. -->
+  <ComponentIndustrial.description>barreja de rodes dentades, condensadors, plaques de circuits, tubs, rodes, sensors, xips, processadors i altres coses electròniques i industrials. Serveixen per muntar m�

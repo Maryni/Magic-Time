@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.AnimationModule</name>
+    </assembly>
+    <member name="T:UnityEngine.Animation">
+      <summary>
+        <para>The animation component is used to play back animations.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.animateOnlyIfVisible">
+      <summary>
+        <para>When turned on, Unity might stop animating if it thinks that the results of the animation won't be visible to the user.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.animatePhysics">
+      <summary>
+        <para>When turned on, animations will be executed in the physics loop. This is only useful in conjunction with kinematic rigidbodies.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.clip">
+      <summary>
+        <para>The default animation.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.cullingType">
+      <summary>
+        <para>Controls culling of this Animation component.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.isPlaying">
+      <summary>
+        <para>Are we playing any animations?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.localBounds">
+      <summary>
+        <para>AABB of this Animation animation component in local space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.playAutomatically">
+      <summary>
+        <para>Should the default animation clip (the Animation.clip property) automatically start playing on startup?</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Animation.wrapMode">
+      <summary>
+        <para>How should time beyond the playback range of the clip be treated?</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Animation.AddClip(UnityEngine.AnimationClip,System.String)">
+      <summary>
+        <para>Adds a clip to the animation with name newName.</para>
+      </summary>
+      <param name="clip"></param>
+      <param name="newName"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.AddClip(UnityEngine.AnimationClip,System.String,System.Int32,System.Int32)">
+      <summary>
+        <para>Adds clip to the only play between firstFrame and lastFrame. The new clip will also be added to the animation with name newName.</para>
+      </summary>
+      <param name="addLoopFrame">Should an extra frame be inserted at the end that matches the first frame? Turn this on if you are making a looping animation.</param>
+      <param name="clip"></param>
+      <param name="newName"></param>
+      <param name="firstFrame"></param>
+      <param name="lastFrame"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.AddClip(UnityEngine.AnimationClip,System.String,System.Int32,System.Int32,System.Boolean)">
+      <summary>
+        <para>Adds clip to the only play between firstFrame and lastFrame. The new clip will also be added to the animation with name newName.</para>
+      </summary>
+      <param name="addLoopFrame">Should an extra frame be inserted at the end that matches the first frame? Turn this on if you are making a looping animation.</param>
+      <param name="clip"></param>
+      <param name="newName"></param>
+      <param name="firstFrame"></param>
+      <param name="lastFrame"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Blend(System.String)">
+      <summary>
+        <para>Blends the animation named animation towards targetWeight over the next time seconds.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="targetWeight"></param>
+      <param name="fadeLength"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Blend(System.String,System.Single)">
+      <summary>
+        <para>Blends the animation named animation towards targetWeight over the next time seconds.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="targetWeight"></param>
+      <param name="fadeLength"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Blend(System.String,System.Single,System.Single)">
+      <summary>
+        <para>Blends the animation named animation towards targetWeight over the next time seconds.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="targetWeight"></param>
+      <param name="fadeLength"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.CrossFade(System.String)">
+      <summary>
+        <para>Fades the animation with name animation in over a period of time seconds and fades other animations out.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="fadeLength"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.CrossFade(System.String,System.Single)">
+      <summary>
+        <para>Fades the animation with name animation in over a period of time seconds and fades other animations out.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="fadeLength"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.CrossFade(System.String,System.Single,UnityEngine.PlayMode)">
+      <summary>
+        <para>Fades the animation with name animation in over a period of time seconds and fades other animations out.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="fadeLength"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.CrossFadeQueued(System.String)">
+      <summary>
+        <para>Cross fades an animation after previous animations has finished playing.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="fadeLength"></param>
+      <param name="queue"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.CrossFadeQueued(System.String,System.Single)">
+      <summary>
+        <para>Cross fades an animation after previous animations has finished playing.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="fadeLength"></param>
+      <param name="queue"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.CrossFadeQueued(System.String,System.Single,UnityEngine.QueueMode)">
+      <summary>
+        <para>Cross fades an animation after previous animations has finished playing.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="fadeLength"></param>
+      <param name="queue"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.CrossFadeQueued(System.String,System.Single,UnityEngine.QueueMode,UnityEngine.PlayMode)">
+      <summary>
+        <para>Cross fades an animation after previous animations has finished playing.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="fadeLength"></param>
+      <param name="queue"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.GetClipCount">
+      <summary>
+        <para>Get the number of clips currently assigned to this animation.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Animation.IsPlaying(System.String)">
+      <summary>
+        <para>Is the animation named name playing?</para>
+      </summary>
+      <param name="name"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Play()">
+      <summary>
+        <para>Plays an animation without any blending.</para>
+      </summary>
+      <param name="mode"></param>
+      <param name="animation"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Play(System.String)">
+      <summary>
+        <para>Plays an animation without any blending.</para>
+      </summary>
+      <param name="mode"></param>
+      <param name="animation"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Play(UnityEngine.PlayMode)">
+      <summary>
+        <para>Plays an animation without any blending.</para>
+      </summary>
+      <param name="mode"></param>
+      <param name="animation"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Play(System.String,UnityEngine.PlayMode)">
+      <summary>
+        <para>Plays an animation without any blending.</para>
+      </summary>
+      <param name="mode"></param>
+      <param name="animation"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.PlayQueued(System.String)">
+      <summary>
+        <para>Plays an animation after previous animations has finished playing.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="queue"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.PlayQueued(System.String,UnityEngine.QueueMode)">
+      <summary>
+        <para>Plays an animation after previous animations has finished playing.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="queue"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.PlayQueued(System.String,UnityEngine.QueueMode,UnityEngine.PlayMode)">
+      <summary>
+        <para>Plays an animation after previous animations has finished playing.</para>
+      </summary>
+      <param name="animation"></param>
+      <param name="queue"></param>
+      <param name="mode"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.RemoveClip(UnityEngine.AnimationClip)">
+      <summary>
+        <para>Remove clip from the animation list.</para>
+      </summary>
+      <param name="clip"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.RemoveClip(System.String)">
+      <summary>
+        <para>Remove clip from the animation list.</para>
+      </summary>
+      <param name="clipName"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Rewind(System.String)">
+      <summary>
+        <para>Rewinds the animation named name.</para>
+      </summary>
+      <param name="name"></param>
+    </member>
+    <member name="M:UnityEngine.Animation.Rewind">
+      <summary>
+        <para>Rewinds all animations.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Animation.Sample">
+      <summary>
+        <para>Samples animations at the current state.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Animation.Stop">
+      <summary>
+        <para>Stops all playing animations that were started with this Animation.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Animation.Stop(System.String)">
+      <summary>
+        <para>Stops an animation named name.</para>
+      </summary>
+      <param name="name"></param>
+    </member>
+    <member name="P:UnityEngine.Animation.this">
+      <summary>
+        <para>Returns the animation state named name.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AnimationBlendMode">
+      <summary>
+        <para>Used by Animation.Play function.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AnimationBlendMode.Additive">
+      <summary>
+        <para>Animations will be added.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.AnimationBlendMode.Blend">
+      <summary>
+        <para>Animations will be blended.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.AnimationClip">
+      <summary>
+        <para>Stores keyframe based animations.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.AnimationClip.empty">
+      <summary>
+        <para>Returns true if the animation clip has no curves and no events.</para>
+      </summary>
+    </member>
+    <member name=

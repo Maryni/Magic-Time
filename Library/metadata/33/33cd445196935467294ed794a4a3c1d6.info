@@ -1,0 +1,486 @@
+ ( fBlueShiftCoefficient ) ; 
+        
+#line 524
+        float3 vRodColor = hdrLuminance ( vColor ) * BLUE_SHIFT_VECTOR ; 
+        vColor . rgb = lerp ( vColor , vRodColor , fBlueShiftCoefficient ) ; 
+    } 
+    
+    vColor . rgb *= middleGray / ( average + 0.001f ) ; 
+    vColor . rgb *= ( 1.0f + vColor / LUM_WHITE ) ; 
+    vColor . rgb /= ( 1.0f + vColor ) ; 
+    
+    return vColor ; 
+} 
+
+#line 539
+void fizzle ( float2 vpos , float visibility ) 
+{ 
+    
+#line 553
+    float2x2 m = { vpos . x , 0.916 , vpos . y , 0.350 } ; 
+    clip ( visibility - frac ( determinant ( m ) ) ) ; 
+} 
+
+#line 559
+bool getFlag ( float flags , int num ) 
+{ 
+    int process = round ( flags * 255 ) ; 
+    int squareNum = pow ( 2 , num ) ; 
+    return ( fmod ( process , pow ( 2 , squareNum ) ) >= squareNum ) ; 
+} 
+
+#line 567
+uint packR5G6B5 ( float3 color ) 
+{ 
+    float3 c = saturate ( color ) ; 
+    uint red = color . r * 31.0 ; 
+    uint green = color . g * 63.0 ; 
+    uint blue = color . b * 31.0 ; 
+    uint zero = 0 ; 
+    
+    return ( red << 11 ) | ( green << 5 ) | blue | zero ; 
+} 
+
+float3 unpackR5G6B5 ( uint bits ) 
+{ 
+    float red = ( bits >> 11 ) & 31 ; 
+    float green = ( bits >> 5 ) & 63 ; 
+    float blue = bits & 31 ; 
+    
+    return float3 ( red / 31.0 , green / 63.0 , blue / 31.0 ) ; 
+} 
+
+float2 packNormalRG ( float3 normal ) 
+{ 
+    float s = normal . z < 0.0 ? 1.0 : 0.0 ; 
+    float3 n = normal * 0.5 + 0.5 ; 
+    return float2 ( n . x + s , n . y ) ; 
+} 
+
+float3 unpackNormalRG ( float2 packedNormal ) 
+{ 
+    float s = packedNormal . x > 1.0 ? - 1.0 : 1.0 ; 
+    float x = ( frac ( packedNormal . x ) - 0.5 ) * 2.0 ; 
+    float y = ( packedNormal . x - 0.5 ) * 2.0 ; 
+    float z = sqrt ( 1.0 - x * x - y * y ) * s ; 
+    return float3 ( x , y , z ) ; 
+} 
+
+struct GBuffer 
+{ 
+    float4 color0 : SV_Target0 ; 
+    
+    
+    float4 color1 : SV_Target1 ; 
+    
+    float4 color2 : SV_Target2 ; 
+    
+    
+    
+} ; 
+
+void writeToGBuffer ( out GBuffer output , float3 albedo , float3 normal , float3 specularOrEmission , float rim , float emissionScale , float ao ) 
+{ 
+    output . color0 . rgb = normal . xyz ; 
+    output . color0 . a = ao ; 
+    
+    
+    output . color1 . rgb = albedo . rgb ; 
+    output . color1 . a = emissionScale ; 
+    
+    output . color2 . rgb = specularOrEmission ; 
+    output . color2 . a = rim ; 
+    
+    
+} 
+
+#line 632
+
+
+
+#line 9 "G:\\SteamLibrary\\steamapps\\common\\Life is Feudal MMO\\game\\eu\\shaders\\common\\material\\UberShader.hlsl"
+
+float2 parallaxOffset2 ( in Texture2D texObj , float2 texCoord , float3 view , float depthScale ) 
+{ 
+    const float bias = - 0.5 ; 
+    
+    float2 offset ; 
+    float depth = texObj . SampleLevel ( samplerDefault , texCoord , 0 ) . a ; 
+    offset = view . xy * ( depth * depthScale ) ; 
+    
+    for ( int i = 0 ; i < 4 ; i ++ ) 
+    { 
+        depth = ( depth + texObj . SampleLevel ( samplerDefault , texCoord , 0 ) . a + bias ) * 0.5 ; 
+        offset = view . xy * ( depth * depthScale ) ; 
+    } 
+    texCoord += offset ; 
+    
+#line 52
+    
+    
+    return texCoord ; 
+} 
+
+#line 60
+
+
+#line 64
+
+
+#line 70
+
+
+struct VS_INPUT 
+{ 
+    float3 position : POSITION ; 
+    float3 normal : NORMAL ; 
+    
+    
+    float3 tangent : TANGENT ; 
+    float3 binormal : BINORMAL ; 
+    float2 texCoord : TEXCOORD0 ; 
+    
+    
+#line 89
+    
+    
+    
+    float4 bonesIndices : TEXCOORD1 ; 
+    float4 bonesWeights : TEXCOORD2 ; 
+    
+#line 98
+    
+    
+#line 103
+    
+} ; 
+
+struct VS_OUTPUT 
+{ 
+    float4 hpos : SV_Position ; 
+    float2 uv : TEXCOORD0 ; 
+    float3 normal : TEXCOORD1 ; 
+    float3 tangent : TEXCOORD2 ; 
+    float3 eye : TEXCOORD3 ; 
+    float4 wpos : TEXCOORD4 ; 
+    float3 binormal : TEXCOORD5 ; 
+    
+#line 119
+    
+    
+#line 126
+    
+} ; 
+
+#line 130
+struct VS_OUTPUT_HS_INPUT 
+{ 
+    float4 hpos : Position ; 
+    float2 uv : TEXCOORD0 ; 
+    float4 wpos : TEXCOORD1 ; 
+} ; 
+
+struct HS_OUTPUT 
+{ 
+    float Edges [ 3 ] : SV_TessFactor ; 
+    float Inside : SV_InsideTessFactor ; 
+} ; 
+
+struct HS_CONTROL_POINT_OUTPUT 
+{ 
+    float3 vWorldPos : WORLDPOS ; 
+    float2 uv : TEXCOORD0 ; 
+} ; 
+
+struct DS_OUTPUT_PS_INPUT 
+{ 
+    float4 hpos : SV_Position ; 
+    float2 uv : TEXCOORD0 ; 
+} ; 
+
+#line 157
+cbuffer Default : register ( b0 ) 
+{ 
+    float4x4 worldToObj ; 
+    float4x4 worldViewOnly ; 
+    float4x4 matProj ; 
+    float4x4 worldToCamera ; 
+    float4x4 objTrans ; 
+    float4x4 objToWorld ; 
+    
+    float3 eyePosWorld ; 
+    float rimIntensity ; 
+    float2 PerspectiveValues ; 
+    float3 rimColor ; 
+    float chrome ; 
+    float timeOfDayQ ; 
+    float alphaTestValue ; 
+    float4 highlight ; 
+    float emissionIntensity ; 
+    float emissionScale = 0.0 ; 
+    float4 specularColor ; 
+    float specularScale = 1.0 ; 
+    
+#line 180
+    
+    
+#line 183
+    float3 lightDirection ; 
+    float4 lightColor ; 
+    float lightBrightness ; 
+    float4 lightAmbient ; 
+    
+#line 190
+    
+    
+    
+    float4 customColor ; 
+    
+    
+#line 213
+    
+    
+#line 219
+    
+    
+    float4 upAmbient ; 
+    float4 middleAmbient ; 
+    float4 downAmbient ; 
+    
+} ; 
+
+#line 229
+
+
+
+
+cbuffer Skinning : register ( b3 ) 
+{ 
+    float4x4 skinmat [ 128 ] ; 
+} ; 
+
+#line 239
+float3 calcNormal ( float3 inNorm , float4 weights , float4 indices ) 
+{ 
+    float3 result = float3 ( 0 , 0 , 0 ) ; 
+    float3 n = inNorm ; 
+    
+#line 246
+    
+    
+    [ unroll ] 
+    for ( uint i = 0 ; i < 4 ; i ++ ) 
+    { 
+        result += mul ( n . xyz , ( float3x3 ) skinmat [ indices [ i ] ] ) * weights [ i ] ; 
+        
+    } 
+    return result . xyz ; 
+} 
+
+float3 calcSkinPos ( float3 inPos , float4 weights , float4 indices ) 
+{ 
+    float4 result = float4 ( 0 , 0 , 0 , 0 ) ; 
+    
+    [ unroll ] 
+    for ( uint i = 0 ; i < 4 ; i ++ ) 
+    { 
+        uint index = indices [ i ] ; 
+        result += mul ( float4 ( inPos . xyz , 1 ) , skinmat [ indices [ i ] ] ) * weights [ i ] ; 
+        
+    } 
+    return result . xyz ; 
+} 
+
+
+
+#line 480
+
+
+#line 525
+
+
+#line 560
+
+
+#line 564
+void applyHighlight ( inout float4 color , in float3 highlight , in VS_OUTPUT IN ) 
+{ 
+    
+#line 568
+    
+    color . rgb += highlight . rgb ; 
+    
+} 
+
+float3 getAmbient ( float3 N ) 
+{ 
+    
+    const float angle = dot ( N , float3 ( 0.0 , 1.0 , 0.0 ) ) ; 
+    return angle > 0.0 ? lerp ( middleAmbient . rgb , upAmbient . rgb , angle ) : lerp ( middleAmbient . rgb , downAmbient . rgb , - angle ) ; 
+    
+#line 580
+    
+} 
+
+
+
+#line 597
+
+
+Texture2D diffuseMap : register ( t0 ) ; 
+Texture2D normalMap : register ( t1 ) ; 
+Texture2D specularMap : register ( t2 ) ; 
+
+#line 606
+
+TextureCube txSkyCube : register ( t6 ) ; 
+
+#line 612
+
+
+#line 617
+
+Texture2D emissionMap : register ( t12 ) ; 
+Texture2D heightMap : register ( t13 ) ; 
+
+GBuffer ps_main ( VS_OUTPUT IN ) 
+{ 
+    
+    GBuffer OUT ; 
+    
+    float distToEye = length ( IN . eye ) ; 
+    float3 eyeDir = IN . eye / distToEye ; 
+    
+    float ao = 1.0 ; 
+    
+#line 643
+    
+    float3 inNormal = normalize ( IN . normal ) ; 
+    float2 inUV = IN . uv ; 
+    float3 inTangent = normalize ( IN . tangent ) ; 
+    float3 inBinormal = normalize ( IN . binormal ) ; 
+    
+    float3x3 TBN = float3x3 ( inTangent , inBinormal , inNormal ) ; 
+    
+#line 660
+    
+    
+    float4 colorSample = diffuseMap . Sample ( samplerDefault , inUV ) ; 
+    float4 normalSample = normalMap . Sample ( samplerDefault , inUV ) ; 
+    float4 specularSample = specularMap . Sample ( samplerDefault , inUV ) ; 
+    specularSample . rgb *= specularScale ; 
+    
+#line 671
+    
+    
+#line 677
+    
+    
+    
+    
+#line 683
+    
+    
+    
+#line 688
+    
+    
+    
+    colorSample . rgb *= customColor . rgb ; 
+    
+    
+#line 696
+    float lightQ = ( normalize ( lightDirection . xzy ) . y + 0.1 ) * 4.3 ; 
+    lightQ = 1 - saturate ( lightQ ) ; 
+    
+#line 701
+    float3 localNormal = fetchNormal ( normalSample . rgb ) ; 
+    float3 wnormal = getNormal ( localNormal , TBN ) ; 
+    float3 normal = wnormal . xzy ; 
+    
+#line 706
+    
+    float Rim = 
+    rimIntensity > 0 ? 
+    saturate ( pow ( 1 - saturate ( dot ( normal . xyz , eyeDir . xzy ) ) , rimIntensity ) ) : 
+    0 ; 
+    Rim *= saturate ( lightQ + 0.1 ) ; 
+    
+#line 714
+    
+    
+#line 754
+    
+    
+#line 787
+    
+    
+#line 803
+    writeToGBuffer ( OUT , colorSample . rgb , normal . xyz , specularSample . rgb , Rim , emissionScale , ao ) ; 
+    
+#line 817
+    
+    
+    
+    
+#line 824
+    
+    
+#line 830
+    
+    
+#line 834
+    
+    
+#line 844
+    
+    
+#line 854
+    applyHighlight ( OUT . color1 , highlight . rgb , IN ) ; 
+    
+    
+    
+#line 860
+    
+    
+#line 876
+    
+    
+#line 900
+    
+    
+#line 912
+    
+    
+#line 918
+    
+    return OUT ; 
+} 
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     PreviewAssetData    BaseName:
+  mainRepresentation:
+    serializedVersion: 3
+    name: IDialogSystem
+    thumbnail:
+      m_Format: 0
+      m_Width: 0
+      m_Height: 0
+      m_RowBytes: 0
+      image data: 0
+      _typelessdata: 
+    guid: 1b937a3b28292a846a7a858addbe732a
+    path: Assets/Scripts/Dialog/IDialogSystem.cs
+    localIdentifier: 11500000
+    thumbnailClassID: 115
+    flags: 0
+    scriptClassName: IDialogSystem
+  representations: []
+  labels:
+    m_Labels: []
+  assetImporterClassID: 1035
+  assetBundleFullName:
+    m_AssetBundleName: 
+    m_AssetBundleVariant: 
+  externalReferencesForValidation: []
+AssetInfo_______U                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ

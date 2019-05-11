@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <MessageRaidersLeaving>{0} z {1} odchádzajú.</MessageRaidersLeaving>
+  <MessageRaidersGivenUpLeaving>{0} z {1} to vzdali a odchádzajú.</MessageRaidersGivenUpLeaving>
+
+  <MessageFightersFleeing>{0} z {1} utekajú.</MessageFightersFleeing>
+  <MessageFriendlyFightersLeaving>Spriatelení {0} z {1} odchádzajú.</MessageFriendlyFightersLeaving>
+
+  <MessageRaidersBeginningAssault>{0} z {1} začínajú útok.</MessageRaidersBeginningAssault>
+  <MessageRaidersDetectedEarlyAssault>{0} z {1} vás objavili a začínajú svoj útok predčasne.</MessageRaidersDetectedEarlyAssault>
+  
+  
+  <MessageShipHasLeftCommsRange>{0} je mimo komunikačný dosah.</MessageShipHasLeftCommsRange>
+	
+  <MessageNeedBeaconToTradeWithShip>Pre obchodovanie s loďou potrebujete orbitálny obchodný maják.</MessageNeedBeaconToTradeWithShip>
+  
+  <MessageBillComplete>Úloha ukončená: {0}.</MessageBillComplete>
+  
+  <MessageFullyHealed>{0} je plne uzdravený/á.</MessageFullyHealed>
+
+  <MessagePrisonerIsEscaping>Väzeň {0} uteká.</MessagePrisonerIsEscaping>
+
+  <Mes

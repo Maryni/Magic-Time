@@ -1,0 +1,31 @@
+#!/usr/bin/python
+
+# Copyright (c) 2009 Google Inc. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import os.path
+import shutil
+import sys
+
+
+gyps = [
+    'app/app.gyp',
+    'base/base.gyp',
+    'build/temp_gyp/googleurl.gyp',
+    'build/all.gyp',
+    'build/common.gypi',
+    'build/external_code.gypi',
+    'chrome/test/security_tests/security_tests.gyp',
+    'chrome/third_party/hunspell/hunspell.gyp',
+    'chrome/chrome.gyp',
+    'media/media.gyp',
+    'net/net.gyp',
+    'printing/printing.gyp',
+    'sdch/sdch.gyp',
+    'skia/skia.gyp',
+    'testing/gmock.gyp',
+    'testing/gtest.gyp',
+    'third_party/bzip2/bzip2.gyp',
+    'third_party/icu38/icu38.gyp',
+    'third_party

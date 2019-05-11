@@ -1,0 +1,20 @@
+l">
+      <summary>
+        <para>Mip Level to render to.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer,UnityEngine.RenderBuffer)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>
+      <param name="depth">Depth Buffer to set.</param>
+      <param name="mipLevel">Mip Level to render to.</param>
+      <param name="face">Cubemap face to render to.</param>
+      <param name="mip"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTargetSetup.#ctor(UnityEngine.RenderBuffer,UnityEngine.RenderBuffer,System.Int32)">
+      <summary>
+        <para>Constructs RenderTargetSetup.</para>
+      </summary>
+      <param name="color">Color Buffer(s) to set.</param>

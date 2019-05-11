@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Level -->
+  <Level>Niveau</Level>
+  <!-- EN: Progress to next level -->
+  <ProgressToNextLevel>Voortgang naar volgende niveau</ProgressToNextLevel>
+  <!-- EN: Experience -->
+  <Experience>Ervaring</Experience>
+  <!-- EN: Passion -->
+  <Passion>Passie</Passion>
+  <!-- EN: None\n   -Learns {0} -->
+  <PassionNone>Geen\n   -leert {0}</PassionNone>
+  <!-- EN: Interested\n   -Learns {0} -->
+  <PassionMinor>Geïnteresseerd\n   -leert {0}</PassionMinor>
+  <!-- EN: Burning\n   -Learns {0} -->
+  <PassionMajor>Zeer geïnteresseerd\n   -leert {0}</PassionMajor>
+  <!-- EN: Learned max today ({0}/{1}, further learning multiplied by {2}) -->
+  <LearnedMaxToday>Maximaal geleerd vandaag ({0}/{1}, verder leren met factor {2})</LearnedMaxToday>
+  <!-- EN: Effects at level {0} -->
+  <EffectsAtLevel>Effectief van

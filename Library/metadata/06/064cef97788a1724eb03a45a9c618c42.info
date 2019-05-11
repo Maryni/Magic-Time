@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- WITab titles -->
+  <!-- EN: Terrain -->
+  <TabTerrain>Terrein</TabTerrain>
+  <!-- EN: Planet -->
+  <TabPlanet>Planeet</TabPlanet>
+  <!-- EN: Social -->
+  <TabCaravanSocial>Sociaal</TabCaravanSocial>
+  <!-- EN: Health -->
+  <TabCaravanHealth>Welzijn</TabCaravanHealth>
+  <!-- EN: Needs -->
+  <TabCaravanNeeds>Behoeften</TabCaravanNeeds>
+  <!-- EN: Gear -->
+  <TabCaravanGear>Uitrusing</TabCaravanGear>
+  <!-- EN: Items -->
+  <TabCaravanItems>Voorwerpen</TabCaravanItems>
+  
+  <!-- Misc -->
+  <!-- EN: Abandon {{0}}x {1_labelShort} -->
+  <AbandonSliderText>Laat {{0}}x {1_labelShort} achter</AbandonSliderText>
+  <!-- EN

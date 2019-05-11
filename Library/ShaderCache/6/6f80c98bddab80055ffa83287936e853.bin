@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+	<Root.label>Hlavné</Root.label>
+	<Resources.label>Zdroje</Resources.label>
+	<Foods.label>Potrava</Foods.label>
+	<FoodMeals.label>Jedlá</FoodMeals.label>
+	<FoodRaw.label>Surové jedlá</FoodRaw.label>
+	<MeatRaw.label>Mäso</MeatRaw.label>
+	<PlantFoodRaw.label>Rastlinné</PlantFoodRaw.label>
+	<Manufactured.label>Výrobky</Manufactured.label>
+	<Fabric.label>Látka</Fabric.label>
+	<ResourcesRaw.label>Nerastné suroviny</ResourcesRaw.label>
+	<Items.label>Predmety</Items.label>
+	<Weapons.label>Zbrane</Weapons.label>
+	<Apparel.label>Oblečenie</Apparel.label

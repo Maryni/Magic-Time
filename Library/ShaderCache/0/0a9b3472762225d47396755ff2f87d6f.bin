@@ -1,0 +1,32 @@
+rationMax": "6.563802"
+     },
+     {
+      "Id": "3595350452",
+      "Name": "Play_VX_M05S13_INT_Irene_Intro_109",
+      "ObjectPath": "\\Events\\Cya Work Unit\\VX\\Play_VX_M05S13_INT_Irene_Intro_109",
+      "GUID": "{D39D4E03-3A1D-469C-AEF8-480DCCD49CDE}",
+      "DurationType": "OneShot",
+      "DurationMin": "5.857438",
+      "DurationMax": "5.857438"
+     },
+     {
+      "Id": "2189751390",
+      "Name": "Play_VX_M05S13_INT_Irene_Intro_11",
+      "ObjectPath": "\\Events\\Cya Work Unit\\VX\\Play_VX_M05S13_INT_Irene_Intro_11",
+      "GUID": "{F71498A0-095F-42C6-8EDF-3006D6F278CA}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.749312",
+      "DurationMax": "2.749312"
+     },
+     {
+      "Id": "3578572746",
+      "Name": "Play_VX_M05S13_INT_Irene_Intro_110",
+      "ObjectPath": "\\Events\\Cya Work Unit\\VX\\Play_VX_M05S13_INT_Irene_Intro_110",
+      "GUID": "{999D45F0-EE57-4291-99EE-EFCC4191AD47}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.280823",
+      "DurationMax": "3.280823"
+     },
+     {
+      "Id": "3578572747",
+      "Name": "Play_VX_M05S13_INT_Irene_Intro_111",

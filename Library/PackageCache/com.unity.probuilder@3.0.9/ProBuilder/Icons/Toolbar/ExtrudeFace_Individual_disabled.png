@@ -1,0 +1,30 @@
+
+/**
+ * Module dependencies.
+ */
+
+var inherits = require('util').inherits;
+var delimiter = require('path').delimiter || ':';
+var ArrayIndex = require('array-index');
+
+/**
+ * Module exports.
+ */
+
+module.exports = PathArray;
+
+/**
+ * `PathArray` constructor. Treat your `$PATH` like a mutable JavaScript Array!
+ *
+ * @param {Env} env - `process.env` object to use.
+ * @param {String} [property] - optional property name to use (`PATH` by default).
+ * @public
+ */
+
+function PathArray (env, property) {
+  if (!(this instanceof PathArray)) return new PathArray(env);
+  ArrayIndex.call(this);
+
+  this.property = property || 'PATH';
+
+  // overwrite only the `get` operator of the "

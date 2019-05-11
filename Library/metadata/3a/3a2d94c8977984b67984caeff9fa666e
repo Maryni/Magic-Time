@@ -1,0 +1,139 @@
+va:39) [ShapedRecipeHandler$CachedShapedRecipe.class:?]
+	at codechicken.nei.recipe.ShapedRecipeHandler.loadUsageRecipes(ShapedRecipeHandler.java:135) [ShapedRecipeHandler.class:?]
+	at codechicken.nei.recipe.TemplateRecipeHandler.loadUsageRecipes(TemplateRecipeHandler.java:350) [TemplateRecipeHandler.class:?]
+	at codechicken.nei.recipe.TemplateRecipeHandler.getUsageHandler(TemplateRecipeHandler.java:472) [TemplateRecipeHandler.class:?]
+	at codechicken.nei.recipe.GuiUsageRecipe.openRecipeGui(GuiUsageRecipe.java:20) [GuiUsageRecipe.class:?]
+	at codechicken.nei.recipe.RecipeItemInputHandler.lastKeyTyped(RecipeItemInputHandler.java:20) [RecipeItemInputHandler.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.lastKeyTyped(GuiContainerManager.java:307) [GuiContainerManager.class:?]
+	at net.minecraft.client.gui.inventory.GuiContainer.func_73869_a(GuiContainer.java) [bex.class:?]
+	at net.minecraft.client.gui.inventory.GuiContainer.public_func_73869_a(GuiContainer.java) [bex.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.callKeyTyped(GuiContainerManager.java) [GuiContainerManager.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.keyTyped(GuiContainerManager.java:475) [GuiContainerManager.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.handleKeyboardInput(GuiContainerManager.java:465) [GuiContainerManager.class:?]
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146282_l(GuiContainer.java) [bex.class:?]
+	at net.minecraft.client.gui.GuiScreen.func_146269_k(GuiScreen.java:276) [bdw.class:?]
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1639) [bao.class:?]
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:972) [bao.class:?]
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:898) [bao.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:148) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_25]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:136) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:29) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_25]
+	at ru.kaboom2.caunt.Minecraft.run(Minecraft.java:117) [rsrc:./:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_25]
+[11:51:10] [Client thread/WARN]: Detected invalid armor damage application:
+java.lang.Throwable
+	at ic2.core.item.armor.ItemArmorElectric.setDamage(ItemArmorElectric.java:154) [ItemArmorElectric.class:?]
+	at net.minecraft.item.ItemStack.func_77964_b(ItemStack.java:222) [add.class:?]
+	at codechicken.nei.PositionedStack.setPermutationToRender(PositionedStack.java:99) [PositionedStack.class:?]
+	at codechicken.nei.PositionedStack.<init>(PositionedStack.java:34) [PositionedStack.class:?]
+	at codechicken.nei.recipe.ShapedRecipeHandler$CachedShapedRecipe.setIngredients(ShapedRecipeHandler.java:53) [ShapedRecipeHandler$CachedShapedRecipe.class:?]
+	at codechicken.nei.recipe.ShapedRecipeHandler$CachedShapedRecipe.<init>(ShapedRecipeHandler.java:35) [ShapedRecipeHandler$CachedShapedRecipe.class:?]
+	at codechicken.nei.recipe.ShapedRecipeHandler$CachedShapedRecipe.<init>(ShapedRecipeHandler.java:39) [ShapedRecipeHandler$CachedShapedRecipe.class:?]
+	at codechicken.nei.recipe.ShapedRecipeHandler.loadUsageRecipes(ShapedRecipeHandler.java:135) [ShapedRecipeHandler.class:?]
+	at codechicken.nei.recipe.TemplateRecipeHandler.loadUsageRecipes(TemplateRecipeHandler.java:350) [TemplateRecipeHandler.class:?]
+	at codechicken.nei.recipe.TemplateRecipeHandler.getUsageHandler(TemplateRecipeHandler.java:472) [TemplateRecipeHandler.class:?]
+	at codechicken.nei.recipe.GuiUsageRecipe.openRecipeGui(GuiUsageRecipe.java:20) [GuiUsageRecipe.class:?]
+	at codechicken.nei.recipe.RecipeItemInputHandler.lastKeyTyped(RecipeItemInputHandler.java:20) [RecipeItemInputHandler.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.lastKeyTyped(GuiContainerManager.java:307) [GuiContainerManager.class:?]
+	at net.minecraft.client.gui.inventory.GuiContainer.func_73869_a(GuiContainer.java) [bex.class:?]
+	at net.minecraft.client.gui.inventory.GuiContainer.public_func_73869_a(GuiContainer.java) [bex.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.callKeyTyped(GuiContainerManager.java) [GuiContainerManager.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.keyTyped(GuiContainerManager.java:475) [GuiContainerManager.class:?]
+	at codechicken.nei.guihook.GuiContainerManager.handleKeyboardInput(GuiContainerManager.java:465) [GuiContainerManager.class:?]
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146282_l(GuiContainer.java) [bex.class:?]
+	at net.minecraft.client.gui.GuiScreen.func_146269_k(GuiScreen.java:276) [bdw.class:?]
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1639) [bao.class:?]
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:972) [bao.class:?]
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:898) [bao.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:148) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_25]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:136) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:29) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_25]
+	at ru.kaboom2.caunt.Minecraft.run(Minecraft.java:117) [rsrc:./:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_25]
+[11:51:23] [Client thread/ERROR]: Detected ongoing potential memory leak. 400 packets have leaked. Top offenders
+[11:51:23] [Client thread/ERROR]: 	 AdvSolarPanels : 400
+[11:51:29] [Client thread/INFO]: [CHAT] = = = = = = = = = Чат-игра  = = = = = = = = = 
+[11:51:29] [Client thread/INFO]: [CHAT] [Kaboom] Решите пример: 511 + 984
+[11:51:29] [Client thread/INFO]: [CHAT] [Kaboom] Кто первый решит пример, получает Алмаз в количестве 1шт.
+[11:51:35] [Client thread/INFO]: [CHAT] |Игрок| giden_borz покончил жизнь самоубийством.
+[11:51:35] [Client thread/INFO]: [CHAT] [Kaboom] Победил игрок Avada228K
+[11:52:03] [Client thread/INFO]: [CHAT]  >> Для телепортации в случайную точку мира используйте :/rtp
+[11:52:06] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> кто даст многа дерева
+[11:52:19] [Client thread/INFO]: [CHAT] [G]  |Игрок| giden_borz >> мой дом
+[11:52:29] [Client thread/INFO]: [CHAT] [G]  |Игрок| giden_borz >> я нашол его
+[11:52:33] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> харош
+[11:52:35] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты -3963 70 -860
+[11:52:35] [Client thread/WARN]: TileDrawStep.updateRegionTexture was slow: 54.304455 (Warning limit reached)
+[11:52:35] [Client thread/WARN]: TileDrawStep.updateRegionTexture: Avg:     0,01ms, Min:        0ms, Max:     117,27ms, Total:          4 sec, Count:   760102, Canceled:        0, Slow:       10
+[11:52:46] [Client thread/INFO]: [CHAT] [G]  |Игрок| giden_borz >>  а я плачу
+[11:52:47] [Client thread/INFO]: [CHAT] [G]  |Легенда| TroLLy18 >>  DASHA2049, с визера падали звёзды ада?
+[11:52:50] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> хах от счастья?
+[11:52:50] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты 3666 69 960
+[11:52:51] [Client thread/INFO]: [CHAT] [G]  |Игрок| giden_borz >> 10 с лишним метров
+[11:53:03] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты -3546 75 4615
+[11:53:06] [JM-task-26/INFO]: Custom biome color will be used with BlockMD [minecraft:redstone_wire:14] (CustomBiomeColor,Transparency)
+[11:53:06] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> да кого хера он не выпал чо за херня у меня бомбит
+[11:53:06] [Client thread/INFO]: [CHAT] [G]  |Игрок| giden_borz >> от счвстья
+[11:53:18] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты 2752 73 2128
+[11:53:19] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> тебя тролли спрашиает дура
+[11:53:28] [Client thread/INFO]: [CHAT]  >> Чтобы ваше сообщение увидели другие игроки, вы должны писать в глобальный чат, используя ! в начале сообщения
+[11:53:33] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты -3873 75 -987
+[11:53:33] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> звёзды выпадали?
+[11:53:48] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты 3490 63 1299
+[11:54:11] [Client thread/INFO]: [CHAT] [G]  |Принц| Santilo >> Кому там дерево ?
+[11:54:11] [Client thread/INFO]: [CHAT] Натуралист: Это как новая жизнь.
+[11:54:17] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> мнееее
+[11:54:17] [Client thread/INFO]: [CHAT] [G]  |Игрок| _PaZiTiVCHiK253_ >> кто выживать вместе с 0?
+[11:54:18] [Client thread/INFO]: prikolchik574 died at x:3430, y:67, z:1311. Deathpoint created: true
+[11:54:18] [Client thread/INFO]: Requesting World ID
+[11:54:21] [Client thread/INFO]: [CHAT] [G]  |Принц| Santilo >> Тёмный дуб
+[11:54:21] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты 3787 63 4908
+[11:54:27] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> куплю сигил
+[11:54:27] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> а не не над
+[11:54:28] [Client thread/INFO]: [CHAT] Hey! Sorry, but you can't use that here.
+[11:54:32] [Client thread/INFO]: [CHAT] [G]  |Легенда| TroLLy18 >>  DASHA2049, с визера падали звёзды ада?!?!
+[11:54:35] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> я просто дом строю
+[11:54:38] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> да
+[11:54:41] [Client thread/INFO]: [CHAT] [G]  |Принц| Santilo >> Продам сигил
+[11:54:45] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> и кокаета хрень
+[11:54:45] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты 2224 62 1368
+[11:54:48] [Client thread/INFO]: [CHAT]  >> Присоединяйтесь к нашей группе вконтакте: vk.com/kaboom2
+[11:54:51] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> какая
+[11:54:52] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты 4989 80 236
+[11:54:54] [Client thread/WARN]: Icon Set asset not found: /assets/journeymap/icon/entity/2D/nevermine/textures/mobs/stinger.png
+[11:54:56] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> может этло сигил
+[11:54:58] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> хд
+[11:55:03] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> из инерфик инжинерс
+[11:55:08] [Client thread/WARN]: Icon Set asset not found: /assets/journeymap/icon/entity/2D/nevermine/textures/mobs/bushbaby.png
+[11:55:09] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> ааа
+[11:55:11] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> имерсив
+[11:55:16] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> шейдер какойто?
+[11:55:20] [Client thread/INFO]: [CHAT] [G]  |Легенда| TroLLy18 >> ты сигил поищи
+[11:55:33] [Client thread/INFO]: [CHAT] [G]  |Легенда| TroLLy18 >> может в инвентаре спрятался
+[11:55:34] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> да ска нету я уже 6 визоров убила
+[11:55:43] [Client thread/INFO]: [CHAT] = = = = = = = = = Чат-игра  = = = = = = = = = 
+[11:55:43] [Client thread/INFO]: [CHAT] [Kaboom] Решите пример: 615 + 888
+[11:55:43] [Client thread/INFO]: [CHAT] [Kaboom] Кто первый решит пример, получает Алмаз в количестве 1шт.
+[11:55:49] [Client thread/INFO]: [CHAT] [Kaboom] Победил игрок darkking_lord
+[11:55:50] [Client thread/INFO]: [CHAT] [G]  |Принц| Santilo >> Продам сигил за 16 урана
+[11:55:51] [Client thread/INFO]: [CHAT] [G]  |Игрок| Avada228K >> у деффак не получица
+[11:55:56] [Client thread/INFO]: [CHAT] [G]  |Легенда| TroLLy18 >> когда ты успела столько голов набрать?
+[11:56:00] [Client thread/INFO]: [CHAT] Вы были телепортированы на координаты 3628 62 -576
+[11:56:06] [Client thread/INFO]: [CHAT] [G]  |Страж| DASHA2049 >> )
+[11:56:07] [Client thread/INFO]: [CHAT]  >> Подать жалобу на игрока или члена администрации вы можете на форуме: https://forum.kaboom2.ru/

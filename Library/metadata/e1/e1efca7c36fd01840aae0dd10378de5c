@@ -1,0 +1,220 @@
+ember>
+    <member name="F:UnityEngine.HumanBodyBones.RightThumbDistal">
+      <summary>
+        <para>This is the right thumb 3rd phalange.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBodyBones.RightThumbIntermediate">
+      <summary>
+        <para>This is the right thumb 2nd phalange.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBodyBones.RightThumbProximal">
+      <summary>
+        <para>This is the right thumb 1st phalange.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBodyBones.RightToes">
+      <summary>
+        <para>This is the Right Toes bone.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBodyBones.RightUpperArm">
+      <summary>
+        <para>This is the Right Upper Arm bone.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBodyBones.RightUpperLeg">
+      <summary>
+        <para>This is the Right Upper Leg bone.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBodyBones.Spine">
+      <summary>
+        <para>This is the first Spine bone.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBodyBones.UpperChest">
+      <summary>
+        <para>This is the Upper Chest bone.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.HumanBone">
+      <summary>
+        <para>The mapping between a bone in the model and the conceptual bone in the Mecanim human anatomy.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanBone.boneName">
+      <summary>
+        <para>The name of the bone to which the Mecanim human bone is mapped.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanBone.humanName">
+      <summary>
+        <para>The name of the Mecanim human bone to which the bone from the model is mapped.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanBone.limit">
+      <summary>
+        <para>The rotation limits that define the muscle for this bone.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.HumanDescription">
+      <summary>
+        <para>Class that holds humanoid avatar parameters to pass to the AvatarBuilder.BuildHumanAvatar function.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.armStretch">
+      <summary>
+        <para>Amount by which the arm's length is allowed to stretch when using IK.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.feetSpacing">
+      <summary>
+        <para>Modification to the minimum distance between the feet of a humanoid model.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.hasTranslationDoF">
+      <summary>
+        <para>True for any human that has a translation Degree of Freedom (DoF). It is set to false by default.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanDescription.human">
+      <summary>
+        <para>Mapping between Mecanim bone names and bone names in the rig.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.legStretch">
+      <summary>
+        <para>Amount by which the leg's length is allowed to stretch when using IK.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.lowerArmTwist">
+      <summary>
+        <para>Defines how the lower arm's roll/twisting is distributed between the elbow and wrist joints.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.lowerLegTwist">
+      <summary>
+        <para>Defines how the lower leg's roll/twisting is distributed between the knee and ankle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanDescription.skeleton">
+      <summary>
+        <para>List of bone Transforms to include in the model.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.upperArmTwist">
+      <summary>
+        <para>Defines how the lower arm's roll/twisting is distributed between the shoulder and elbow joints.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanDescription.upperLegTwist">
+      <summary>
+        <para>Defines how the upper leg's roll/twisting is distributed between the thigh and knee joints.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.HumanLimit">
+      <summary>
+        <para>This class stores the rotation limits that define the muscle for a single human bone.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanLimit.axisLength">
+      <summary>
+        <para>Length of the bone to which the limit is applied.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanLimit.center">
+      <summary>
+        <para>The default orientation of a bone when no muscle action is applied.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanLimit.max">
+      <summary>
+        <para>The maximum rotation away from the initial value that this muscle can apply.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanLimit.min">
+      <summary>
+        <para>The maximum negative rotation away from the initial value that this muscle can apply.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanLimit.useDefaultValues">
+      <summary>
+        <para>Should this limit use the default values?</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.HumanPose">
+      <summary>
+        <para>Retargetable humanoid pose.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanPose.bodyPosition">
+      <summary>
+        <para>The human body position for that pose.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanPose.bodyRotation">
+      <summary>
+        <para>The human body orientation for that pose.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.HumanPose.muscles">
+      <summary>
+        <para>The array of muscle values for that pose.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.HumanPoseHandler">
+      <summary>
+        <para>A handler that lets you read or write a HumanPose from or to a humanoid avatar skeleton hierarchy.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.HumanPoseHandler.#ctor(UnityEngine.Avatar,UnityEngine.Transform)">
+      <summary>
+        <para>Creates a human pose handler from an avatar and a root transform.</para>
+      </summary>
+      <param name="avatar">The avatar that defines the humanoid rig on skeleton hierarchy with root as the top most parent.</param>
+      <param name="root">The top most node of the skeleton hierarchy defined in humanoid avatar.</param>
+    </member>
+    <member name="M:UnityEngine.HumanPoseHandler.GetHumanPose(UnityEngine.HumanPose&amp;)">
+      <summary>
+        <para>Gets a human pose from the handled avatar skeleton.</para>
+      </summary>
+      <param name="humanPose">The output human pose.</param>
+    </member>
+    <member name="M:UnityEngine.HumanPoseHandler.SetHumanPose(UnityEngine.HumanPose&amp;)">
+      <summary>
+        <para>Sets a human pose on the handled avatar skeleton.</para>
+      </summary>
+      <param name="humanPose">The human pose to be set.</param>
+    </member>
+    <member name="T:UnityEngine.HumanTrait">
+      <summary>
+        <para>Details of all the human bone and muscle types defined by Mecanim.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.HumanTrait.BoneCount">
+      <summary>
+        <para>The number of human bone types defined by Mecanim.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.HumanTrait.BoneFromMuscle(System.Int32)">
+      <summary>
+        <para>Return the bone to which a particular muscle is connected.</para>
+      </summary>
+      <param name="i">Muscle index.</param>
+    </member>
+    <member name="P:UnityEngine.HumanTrait.BoneName">
+      <summary>
+        <para>Array of the names of all human bone types defined by Mecanim.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.HumanTrait.GetMuscleDefaultMax(System.Int32)">
+      <summary>
+        <para>Get the default maximum value of rotation for a muscle in degrees.</para>
+      </summary>
+      <param name="i">Muscle index.</param>
+    </member>
+    <member name="M:UnityEngine.HumanTrait.GetMuscleDefaultMin(System.Int32)">
+      <summary>
+        <para>Get the defau

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MemoryMap>
+  <!--
+  ***********************************************
+  * persistent banks go in here at initial load *
+  -->
+  <GameState name="Initial">
+    <Bank bankName="persistent" />
+  </GameState>
+
+  <!--
+  ***********************************************
+  * frontend banks go in here                   *
+  -->
+  <GameState name="FE">
+    <Bank bankName="fe_garage_common" />
+    <Bank bankName="speech_investor" />
+    <FilteredBankGroup track="frontend_garage_1" >
+    <Bank bankName="fe_frontend_garage_1" />
+    </FilteredBankGroup>
+    <FilteredBankGroup track="frontend_garage_2" >
+    <Bank bankName="fe_frontend_garage_2" />
+    </FilteredBankGroup>
+    <FilteredBankGroup track="frontend_garage_3" >
+    <Bank bankName="fe_frontend_garage_3" />
+    </FilteredBankGroup>
+    <FilteredBankGroup track="frontend_garage_mp" >
+    <Bank bankName="fe_frontend_garage_mp" />
+    </FilteredBankGroup>
+  </GameState>
+
+  <!--
+  ***********************************************
+  * Race banks go in here                       *
+  -->
+  <GameState name="Race">
+
+    <!-- banks without a filter will always be loaded for this game state -->
+    <Bank bankName="replay" />
+	<Bank bankName="race_common" />
+    <Bank bankName="mus_inrace" />
+    <Bank bankName="mus_world" />
+    <Bank bankName="speech_crowd_dynamic_events" />
+    <Bank bankName="speech_crowd_generic" />
+    <Bank bankName="speech_engineer" />
+    <Bank bankName="amb_fireworks" />
+
+    <!-- Filtered banks will only be loaded when the ALL given filters match. Upto 5 filters can be specified.
+    Supported filters are:
+    * location    (chicago, california, core_d_azur ... )
+    * route       (0, 1, 2, 3 ... )
+    * discipline  ()
+    * time        (day, night)
+    * tier        (League, Club)
+
+    -->
+    <FilteredBankGroup discipline="checkpoint" >
+      <Bank bankName="mode_checkpoint" />
+    </FilteredBankGroup>
+
+    <FilteredBankGroup discipline="eliminator" >
+      <Bank bankName="mode_eliminator" />
+    </FilteredBankGroup>
+
+	<FilteredBankGroup discipline="last_man_standing" >
+      <Bank bankName="mode_lastmanstanding" />
+    </FilteredBankGroup>
+
+	<FilteredBankGroup discipline="drift" >
+      <Bank bankName="mode_drift" />
+    </FilteredBankGroup>
+
+	<FilteredBankGroup discipline="overtake" >
+      <Bank bankName="mode_overtake" />
+    </FilteredBankGroup>
+
+	<FilteredBankGroup discipline="touge" >
+      <Bank bankName="mode_touge" />
+    </FilteredBankGroup>
+
+
+    <!-- Cities -->
+    <FilteredBankGroup track="barcelona" >
+      <Bank bankName="amb_barcelona" />
+      <Bank bankName="props_barcelona" />
+
+      <Bank bankName="sfc_rumblestrip" />
+      <Bank bankName="sfc_cobble" />
+      <Bank bankName="sfc_grass" />
+      <Bank bankName="sfc_gravel" />
+
+      <Bank bankName="crowd_group" />
+      <Bank bankName="crowd_small" />
+      <Bank bankName="crowd_large" />
+      <Bank bankName="speech_crowd_spanish" />
+      <Bank bankName="speech_tannoy_spanish" />
+
+      <Bank bankName="noisemakers_airhorns_group" />
+	  <Bank bankName="noisemakers_airhorns_single" />
+	  <Bank bankName="noisemakers_vuvuzelas_group" />
+	  <Bank bankName="noisemakers_vuvuzelas_single" />
+	  <Bank bankName="noisemakers_whistles" />
+
+    </FilteredBankGroup>
+
+    <FilteredBankGroup track="chicago">
+      <Bank bankName="amb_chicago" />
+      <Bank bankName="props_chicago" />
+
+      <Bank bankName="sfc_metal" />
+      <Bank bankName="sfc_rumblestrip" />
+      <Bank bankName="sfc_cobble" />
+
+      <Bank bankName="crowd_group" />
+      <Bank bankName="crowd_small" />
+      <Bank bankName="crowd_large" />
+      <Bank bankName="speech_crowd_american" />
+      <Bank bankName="speech_tannoy_american" />
+
+	  <Bank bankName="noisemakers_airhorns_group" />
+	  <Bank bankName="noisemakers_airhorns_single" />
+	  <Bank bankName="noisemakers_vuvuzelas_group" />
+	  <Bank bankName="noisemakers_vuvuzelas_single" />
+	  <Bank bankName="noisemakers_whistles" />
+    </FilteredBankGroup>
+
+    <FilteredBankGroup track="dubai" >
+      <Bank bankName="amb_dubai" />
+      <Bank bankName="props_dubai" />
+
+      <Bank bankName="sfc_rumblestrip" />
+      <Bank bankName="sfc_cobb

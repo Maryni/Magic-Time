@@ -1,0 +1,131 @@
+o display an image in the titlebar.</param>
+      <param name="content">Text, image and tooltip for this window.</param>
+      <param name="style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style or the screenRect you pass in.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectangle the window is at. This can be in a different position and have a different size than the one you passed in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a popup window that layouts its contents automatically.</para>
+      </summary>
+      <param name="id">A unique ID to use for each window. This is the ID you'll use to interface to it.</param>
+      <param name="screenRect">Rectangle on the screen to use for the window. The layouting system will attempt to fit the window inside it - if that cannot be done, it will adjust the rectangle to fit.</param>
+      <param name="func">The function that creates the GUI inside the window. This function must take one parameter - the id of the window it's currently making GUI for.</param>
+      <param name="text">Text to display as a title for the window.</param>
+      <param name="image">Texture to display an image in the titlebar.</param>
+      <param name="content">Text, image and tooltip for this window.</param>
+      <param name="style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style or the screenRect you pass in.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectangle the window is at. This can be in a different position and have a different size than the one you passed in.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.GUILayoutOption">
+      <summary>
+        <para>Class internally used to pass layout options into GUILayout functions. You don't use these directly, but construct them with the layouting functions in the GUILayout class.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GUILayoutUtility">
+      <summary>
+        <para>Utility functions for implementing and extending the GUILayout class.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single)">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetAspectRect(System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle with a specific aspect ratio.</para>
+      </summary>
+      <param name="aspect">The aspect ratio of the element (width / height).</param>
+      <param name="style">An optional style. If specified, the style's padding value will be added to the sizes of the returned rectangle &amp; the style's margin values will be used for spacing.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rect for the control.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetLastRect">
+      <summary>
+        <para>Get the rectangle last used by GUILayout for a control.</para>
+      </summary>
+      <returns>
+        <para>The last used rectangle.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(UnityEngine.GUIContent,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Reserve layout space for a rectangle for displaying some contents with a specific style.</para>
+      </summary>
+      <param name="content">The content to make room for displaying.</param>
+      <param name="style">The GUIStyle to layout for.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle that is large enough to contain content when rendered in style.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Reserve layout space for a rectangle for displaying some contents with a specific style.</para>
+      </summary>
+      <param name="content">The content to make room for displaying.</param>
+      <param name="style">The GUIStyle to layout for.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>A rectangle that is large enough to contain content when rendered in style.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayoutUtility.GetRect(System.Single,System.Single)">
+      <summary>
+        <para>Reserve layout space for a rectangle with a fixed content area.</para>
+      </summary>
+      <param name="width">The width of the area you want.</param>
+      <param name="height">The height of the area you want.</param>
+      <param name="style">An optional GUIStyle to layout for. If specified, the style's padding value will b

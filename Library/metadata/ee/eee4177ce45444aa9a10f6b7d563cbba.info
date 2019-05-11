@@ -1,0 +1,99 @@
+          <Cell>
+            <Data ss:Type="String">Shoggoth</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Flamer</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Rozumny plomien</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Conscious Blaze</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#NS_Guard</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Nocny straznik</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Night Shift Guard</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Drunk</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Stary pijaczyna</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Drunken Old Fool</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Shoppe_Lady</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Pani z kramu z róznosciami</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Shoppe = the faux-archaic form of &quot;Shop&quot;. As in &quot;Ye Olde Curiosity Shoppe&quot;</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Curiosity Shoppe Lady</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Orc_Lumberjack0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ork drwal</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Orc Lumberjack</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Orc_Lumberjack1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ork drwal</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Orc Lumberjack</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Orc_Foreman</Data>
+          </Cell>
+          <Cell>
+            <Da

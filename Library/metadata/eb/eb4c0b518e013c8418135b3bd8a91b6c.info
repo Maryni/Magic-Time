@@ -1,0 +1,18 @@
+# ----------------------------------------------------------------------
+#           Template for SNMP Access Control List File
+#
+# o Copy this template to snmp.acl
+# o Set access control for SNMP support
+# o Change the permission of snmp.acl to be read-only
+#   by the owner.
+#
+# See below for the location of snmp.acl file.
+# ----------------------------------------------------------------------
+
+############################################################
+#            SNMP Access Control List File  
+############################################################
+#
+# Default location of this file is $JRE/lib/management/snmp.acl.
+# You can specify an alternate location by specifying a property in 
+# the management config file

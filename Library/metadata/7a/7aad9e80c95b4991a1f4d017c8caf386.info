@@ -1,0 +1,8 @@
+/>
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_e_main_dam_obj01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_e_main_dam_obj02_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_e_main_dam_obj03_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_armco_e_main_dam_obj04_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_post_base_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_post_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_mid

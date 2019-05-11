@@ -1,0 +1,1108 @@
+eption ("Global element not found: " + elem.RefName);
+				root = elem.RefName;
+				elem = refElem;
+				sharedAnnType = true;
+			}
+			else
+				root = new XmlQualifiedName (elem.Name, ns);
+			
+			if (!elem.SchemaTypeName.IsEmpty)
+			{
+				XmlSchemaComplexType st = FindComplexTyype (elem.SchemaTypeName);
+				if (st != null) 
+					WriteComplexTypeSample (xtw, st, root);
+				else
+				{
+					xtw.WriteStartElement (root.Name, root.Namespace);
+					if (currentUse == SoapBindingUse.Encoded) 
+						xtw.WriteAttributeString ("type", XmlSchema.InstanceNamespace, GetQualifiedNameString (xtw, elem.SchemaTypeName));
+					xtw.WriteString (GetLiteral (FindBuiltInType (elem.SchemaTypeName)));
+					xtw.WriteEndElement ();
+				}
+			}
+			else if (elem.SchemaType == null)
+			{
+				xtw.WriteStartElement ("any");
+				xtw.WriteEndElement ();
+			}
+			else
+				WriteComplexTypeSample (xtw, (XmlSchemaComplexType) elem.SchemaType, root);
+		}
+		
+		void WriteTypeSample (XmlTextWriter xtw, XmlQualifiedName qname)
+		{
+			XmlSchemaComplexType ctype = FindComplexTyype (qname);
+			if (ctype != null) {
+				WriteComplexTypeSample (xtw, ctype, qname);
+				return;
+			}
+			
+			XmlSchemaSimpleType stype = (XmlSchemaSimpleType) schemas.Find (qname, typeof(XmlSchemaSimpleType));
+			if (stype != null) {
+				WriteSimpleTypeSample (xtw, stype);
+				return;
+			}
+			
+			xtw.WriteString (GetLiteral (FindBuiltInType (qname)));
+			throw new InvalidOperationException ("Type not found: " + qname);
+		}
+		
+		void WriteComplexTypeSample (XmlTextWriter xtw, XmlSchemaComplexType stype, XmlQualifiedName rootName)
+		{
+			WriteComplexTypeSample (xtw, stype, rootName, -1);
+		}
+		
+		void WriteComplexTypeSample (XmlTextWriter xtw, XmlSchemaComplexType stype, XmlQualifiedName rootName, int id)
+		{
+			string ns = rootName.Namespace;
+			
+			if (rootName.Name.IndexOf ("[]") != -1) rootName = arrayType;
+			
+			if (currentUse == SoapBindingUse.Encoded) {
+				string pref = xtw.LookupPrefix (rootName.Namespace);
+				if (pref == null) pref = "q1";
+				xtw.WriteStartElement (pref, rootName.Name, rootName.Namespace);
+				ns = "";
+			}
+			else
+				xtw.WriteStartElement (rootName.Name, rootName.Namespace);
+			
+			if (id != -1)
+			{
+				xtw.WriteAttributeString ("id", "id" + id);
+				if (rootName != arrayType)
+					xtw.WriteAttributeString ("type", XmlSchema.InstanceNamespace, GetQualifiedNameString (xtw, rootName));
+			}
+			
+			WriteComplexTypeAttributes (xtw, stype);
+			WriteComplexTypeElements (xtw, ns, stype);
+			
+			xtw.WriteEndElement ();
+		}
+		
+		void WriteComplexTypeAttributes (XmlTextWriter xtw, XmlSchemaComplexType stype)
+		{
+			WriteAttributes (xtw, stype.Attributes, stype.AnyAttribute);
+		}
+		
+		void WriteComplexTypeElements (XmlTextWriter xtw, string ns, XmlSchemaComplexType stype)
+		{
+			if (stype.Particle != null)
+				WriteParticleComplexContent (xtw, ns, stype.Particle);
+			else
+			{
+				if (stype.ContentModel is XmlSchemaSimpleContent)
+					WriteSimpleContent (xtw, (XmlSchemaSimpleContent)stype.ContentModel);
+				else if (stype.ContentModel is XmlSchemaComplexContent)
+					WriteComplexContent (xtw, ns, (XmlSchemaComplexContent)stype.ContentModel);
+			}
+		}
+
+		void WriteAttributes (XmlTextWriter xtw, XmlSchemaObjectCollection atts, XmlSchemaAnyAttribute anyat)
+		{
+			foreach (XmlSchemaObject at in atts)
+			{
+				if (at is XmlSchemaAttribute)
+				{
+					string ns;
+					XmlSchemaAttribute attr = (XmlSchemaAttribute)at;
+					XmlSchemaAttribute refAttr = attr;
+					
+					// refAttr.Form; TODO
+					
+					if (!attr.RefName.IsEmpty) {
+						refAttr = FindRefAttribute (attr.RefName);
+						if (refAttr == null) throw new InvalidOperationException ("Global attribute not found: " + attr.RefName);
+					}
+					
+					string val;
+					if (!refAttr.SchemaTypeName.IsEmpty) val = FindBuiltInType (refAttr.SchemaTypeName);
+					else val = FindBuiltInType ((XmlSchemaSimpleType) refAttr.SchemaType);
+					
+					xtw.WriteAttributeString (refAttr.Name, val);
+				}
+				else if (at is XmlSchemaAttributeGroupRef)
+				{
+					XmlSchemaAttributeGroupRef gref = (XmlSchemaAttributeGroupRef)at;
+					XmlSchemaAttributeGroup grp = (XmlSchemaAttributeGroup) schemas.Find (gref.RefName, typeof(XmlSchemaAttributeGroup));
+					WriteAttributes (xtw, grp.Attributes, grp.AnyAttribute);
+				}
+			}
+			
+			if (anyat != null)
+				xtw.WriteAttributeString ("custom-attribute","value");
+		}
+		
+		void WriteParticleComplexContent (XmlTextWriter xtw, string ns, XmlSchemaParticle particle)
+		{
+			WriteParticleContent (xtw, ns, particle, false);
+		}
+		
+		void WriteParticleContent (XmlTextWriter xtw, string ns, XmlSchemaParticle particle, bool multiValue)
+		{
+			if (particle is XmlSchemaGroupRef)
+				particle = GetRefGroupParticle ((XmlSchemaGroupRef)particle);
+
+			if (particle.MaxOccurs > 1) multiValue = true;
+			
+			if (particle is XmlSchemaSequence) {
+				WriteSequenceContent (xtw, ns, ((XmlSchemaSequence)particle).Items, multiValue);
+			}
+			else if (particle is XmlSchemaChoice) {
+				if (((XmlSchemaChoice)particle).Items.Count == 1)
+					WriteSequenceContent (xtw, ns, ((XmlSchemaChoice)particle).Items, multiValue);
+				else
+					WriteChoiceContent (xtw, ns, (XmlSchemaChoice)particle, multiValue);
+			}
+			else if (particle is XmlSchemaAll) {
+				WriteSequenceContent (xtw, ns, ((XmlSchemaAll)particle).Items, multiValue);
+			}
+		}
+
+		void WriteSequenceContent (XmlTextWriter xtw, string ns, XmlSchemaObjectCollection items, bool multiValue)
+		{
+			foreach (XmlSchemaObject item in items)
+				WriteContentItem (xtw, ns, item, multiValue);
+		}
+		
+		void WriteContentItem (XmlTextWriter xtw, string ns, XmlSchemaObject item, bool multiValue)
+		{
+			if (item is XmlSchemaGroupRef)
+				item = GetRefGroupParticle ((XmlSchemaGroupRef)item);
+					
+			if (item is XmlSchemaElement)
+			{
+				XmlSchemaElement elem = (XmlSchemaElement) item;
+				XmlSchemaElement refElem;
+				if (!elem.RefName.IsEmpty) refElem = FindRefElement (elem);
+				else refElem = elem;
+
+				int num = (elem.MaxOccurs == 1 && !multiValue) ? 1 : 2;
+				for (int n=0; n<num; n++)
+				{
+					if (currentUse == SoapBindingUse.Literal)
+						WriteElementSample (xtw, ns, refElem);
+					else
+						WriteRefTypeSample (xtw, ns, refElem);
+				}
+			}
+			else if (item is XmlSchemaAny)
+			{
+				xtw.WriteString (GetLiteral ("xml"));
+			}
+			else if (item is XmlSchemaParticle) {
+				WriteParticleContent (xtw, ns, (XmlSchemaParticle)item, multiValue);
+			}
+		}
+		
+		void WriteChoiceContent (XmlTextWriter xtw, string ns, XmlSchemaChoice choice, bool multiValue)
+		{
+			foreach (XmlSchemaObject item in choice.Items)
+				WriteContentItem (xtw, ns, item, multiValue);
+		}
+
+		void WriteSimpleContent (XmlTextWriter xtw, XmlSchemaSimpleContent content)
+		{
+			XmlSchemaSimpleContentExtension ext = content.Content as XmlSchemaSimpleContentExtension;
+			if (ext != null)
+				WriteAttributes (xtw, ext.Attributes, ext.AnyAttribute);
+				
+			XmlQualifiedName qname = GetContentBaseType (content.Content);
+			xtw.WriteString (GetLiteral (FindBuiltInType (qname)));
+		}
+
+		string FindBuiltInType (XmlQualifiedName qname)
+		{
+			if (qname.Namespace == XmlSchema.Namespace)
+				return qname.Name;
+
+			XmlSchemaComplexType ct = FindComplexTyype (qname);
+			if (ct != null)
+			{
+				XmlSchemaSimpleContent sc = ct.ContentModel as XmlSchemaSimpleContent;
+				if (sc == null) throw new InvalidOperationException ("Invalid schema");
+				return FindBuiltInType (GetContentBaseType (sc.Content));
+			}
+			
+			XmlSchemaSimpleType st = (XmlSchemaSimpleType) schemas.Find (qname, typeof(XmlSchemaSimpleType));
+			if (st != null)
+				return FindBuiltInType (st);
+
+			throw new InvalidOperationException ("Definition of type " + qname + " not found");
+		}
+
+		string FindBuiltInType (XmlSchemaSimpleType st)
+		{
+			if (st.Content is XmlSchemaSimpleTypeRestriction) {
+				return FindBuiltInType (GetContentBaseType (st.Content));
+			}
+			else if (st.Content is XmlSchemaSimpleTypeList) {
+				string s = FindBuiltInType (GetContentBaseType (st.Content));
+				return s + " " + s + " ...";
+			}
+			else if (st.Content is XmlSchemaSimpleTypeUnion)
+			{
+				//Check if all types of the union are equal. If not, then will use anyType.
+				XmlSchemaSimpleTypeUnion uni = (XmlSchemaSimpleTypeUnion) st.Content;
+				string utype = null;
+
+				// Anonymous types are unique
+				if (uni.BaseTypes.Count != 0 && uni.MemberTypes.Length != 0)
+					return "string";
+
+				foreach (XmlQualifiedName mt in uni.MemberTypes)
+				{
+					string qn = FindBuiltInType (mt);
+					if (utype != null && qn != utype) return "string";
+					else utype = qn;
+				}
+				return utype;
+			}
+			else
+				return "string";
+		}
+		
+
+		XmlQualifiedName GetContentBaseType (XmlSchemaObject ob)
+		{
+			if (ob is XmlSchemaSimpleContentExtension)
+				return ((XmlSchemaSimpleContentExtension)ob).BaseTypeName;
+			else if (ob is XmlSchemaSimpleContentRestriction)
+				return ((XmlSchemaSimpleContentRestriction)ob).BaseTypeName;
+			else if (ob is XmlSchemaSimpleTypeRestriction)
+				return ((XmlSchemaSimpleTypeRestriction)ob).BaseTypeName;
+			else if (ob is XmlSchemaSimpleTypeList)
+				return ((XmlSchemaSimpleTypeList)ob).ItemTypeName;
+			else
+				return null;
+		}
+
+		void WriteComplexContent (XmlTextWriter xtw, string ns, XmlSchemaComplexContent content)
+		{
+			XmlQualifiedName qname;
+
+			XmlSchemaComplexContentExtension ext = content.Content as XmlSchemaComplexContentExtension;
+			if (ext != null) qname = ext.BaseTypeName;
+			else {
+				XmlSchemaComplexContentRestriction rest = (XmlSchemaComplexContentRestriction)content.Content;
+				qname = rest.BaseTypeName;
+				if (qname == arrayType) {
+					ParseArrayType (rest, out qname);
+					XmlSchemaElement elem = new XmlSchemaElement ();
+					elem.Name = "Item";
+					elem.SchemaTypeName = qname;
+					
+					xtw.WriteAttributeString ("arrayType", SoapEncodingNamespace, qname.Name + "[2]");
+					WriteContentItem (xtw, ns, elem, true);
+					return;
+				}
+			}
+			
+			// Add base map members to this map
+			XmlSchemaComplexType ctype = FindComplexTyype (qname);
+			WriteComplexTypeAttributes (xtw, ctype);
+			
+			if (ext != null) {
+				// Add the members of this map
+				WriteAttributes (xtw, ext.Attributes, ext.AnyAttribute);
+				if (ext.Particle != null)
+					WriteParticleComplexContent (xtw, ns, ext.Particle);
+			}
+			
+			WriteComplexTypeElements (xtw, ns, ctype);
+		}
+		
+		void ParseArrayType (XmlSchemaComplexContentRestriction rest, out XmlQualifiedName qtype)
+		{
+			XmlSchemaAttribute arrayTypeAt = FindArrayAttribute (rest.Attributes);
+			XmlAttribute[] uatts = arrayTypeAt.UnhandledAttributes;
+			if (uatts == null || uatts.Length == 0) throw new InvalidOperationException ("arrayType attribute not specified in array declaration");
+			
+			XmlAttribute xat = null;
+			foreach (XmlAttribute at in uatts)
+				if (at.LocalName == "arrayType" && at.NamespaceURI == WsdlNamespace)
+					{ xat = at; break; }
+			
+			if (xat == null) 
+				throw new InvalidOperationException ("arrayType attribute not specified in array declaration");
+			
+			string arrayType = xat.Value;
+			string type, ns;
+			int i = arrayType.LastIndexOf (":");
+			if (i == -1) ns = "";
+			else ns = arrayType.Substring (0,i);
+			
+			int j = arrayType.IndexOf ("[", i+1);
+			if (j == -1) throw new InvalidOperationException ("Cannot parse WSDL array type: " + arrayType);
+			type = arrayType.Substring (i+1);
+			type = type.Substring (0, type.Length-2);
+			
+			qtype = new XmlQualifiedName (type, ns);
+		}
+		
+		XmlSchemaAttribute FindArrayAttribute (XmlSchemaObjectCollection atts)
+		{
+			foreach (object ob in atts)
+			{
+				XmlSchemaAttribute att = ob as XmlSchemaAttribute;
+				if (att != null && att.RefName == arrayTypeRefName) return att;
+				
+				XmlSchemaAttributeGroupRef gref = ob as XmlSchemaAttributeGroupRef;
+				if (gref != null)
+				{
+					XmlSchemaAttributeGroup grp = (XmlSchemaAttributeGroup) schemas.Find (gref.RefName, typeof(XmlSchemaAttributeGroup));
+					att = FindArrayAttribute (grp.Attributes);
+					if (att != null) return att;
+				}
+			}
+			return null;
+		}
+		
+		void WriteSimpleTypeSample (XmlTextWriter xtw, XmlSchemaSimpleType stype)
+		{
+			xtw.WriteString (GetLiteral (FindBuiltInType (stype)));
+		}
+		
+		XmlSchemaParticle GetRefGroupParticle (XmlSchemaGroupRef refGroup)
+		{
+			XmlSchemaGroup grp = (XmlSchemaGroup) schemas.Find (refGroup.RefName, typeof (XmlSchemaGroup));
+			return grp.Particle;
+		}
+
+		XmlSchemaElement FindRefElement (XmlSchemaElement elem)
+		{
+			if (elem.RefName.Namespace == XmlSchema.Namespace)
+			{
+				if (anyElement != null) return anyElement;
+				anyElement = new XmlSchemaElement ();
+				anyElement.Name = "any";
+				anyElement.SchemaTypeName = anyType;
+				return anyElement;
+			}
+			return (XmlSchemaElement) schemas.Find (elem.RefName, typeof(XmlSchemaElement));
+		}
+		
+		XmlSchemaAttribute FindRefAttribute (XmlQualifiedName refName)
+		{
+			if (refName.Namespace == XmlSchema.Namespace)
+			{
+				XmlSchemaAttribute at = new XmlSchemaAttribute ();
+				at.Name = refName.Name;
+				at.SchemaTypeName = new XmlQualifiedName ("string",XmlSchema.Namespace);
+				return at;
+			}
+			return (XmlSchemaAttribute) schemas.Find (refName, typeof(XmlSchemaAttribute));
+		}
+		
+		void WriteRefTypeSample (XmlTextWriter xtw, string ns, XmlSchemaElement elem)
+		{
+			if (elem.SchemaTypeName.Namespace == XmlSchema.Namespace || schemas.Find (elem.SchemaTypeName, typeof(XmlSchemaSimpleType)) != null)
+				WriteElementSample (xtw, ns, elem);
+			else
+			{
+				xtw.WriteStartElement (elem.Name, ns);
+				xtw.WriteAttributeString ("href", "#id" + (queue.Count+1));
+				xtw.WriteEndElement ();
+				queue.Add (new EncodedType (ns, elem));
+			}
+		}
+		
+		void WriteQueuedTypeSamples (XmlTextWriter xtw)
+		{
+			for (int n=0; n<queue.Count; n++)
+			{
+				EncodedType ec = (EncodedType) queue[n];
+				XmlSchemaComplexType st = FindComplexTyype (ec.Element.SchemaTypeName);
+				WriteComplexTypeSample (xtw, st, ec.Element.SchemaTypeName, n+1);
+			}
+		}
+		
+		XmlSchemaComplexType FindComplexTyype (XmlQualifiedName qname)
+		{
+			if (qname.Name.IndexOf ("[]") != -1)
+			{
+				XmlSchemaComplexType stype = new XmlSchemaComplexType ();
+				stype.ContentModel = new XmlSchemaComplexContent ();
+				
+				XmlSchemaComplexContentRestriction res = new XmlSchemaComplexContentRestriction ();
+				stype.ContentModel.Content = res;
+				res.BaseTypeName = arrayType;
+				
+				XmlSchemaAttribute att = new XmlSchemaAttribute ();
+				att.RefName = arrayTypeRefName;
+				res.Attributes.Add (att);
+				
+				XmlAttribute xat = document.CreateAttribute ("arrayType", WsdlNamespace);
+				xat.Value = qname.Namespace + ":" + qname.Name;
+				att.UnhandledAttributes = new XmlAttribute[] {xat};
+				return stype;
+			}
+				
+			return (XmlSchemaComplexType) schemas.Find (qname, typeof(XmlSchemaComplexType));
+		}
+		
+		string GetQualifiedNameString (XmlTextWriter xtw, XmlQualifiedName qname)
+		{
+			string pref = xtw.LookupPrefix (qname.Namespace);
+			if (pref != null) return pref + ":" + qname.Name;
+			
+			xtw.WriteAttributeString ("xmlns", "q1", null, qname.Namespace);
+			return "q1:" + qname.Name;
+		}
+				
+		protected virtual string GetLiteral (string s)
+		{
+			return s;
+		}
+
+		void GetOperationFormat (OperationBinding obin, out SoapBindingStyle style, out SoapBindingUse use)
+		{
+			style = SoapBindingStyle.Document;
+			use = SoapBindingUse.Literal;
+			SoapOperationBinding sob = obin.Extensions.Find (typeof(SoapOperationBinding)) as SoapOperationBinding;
+			if (sob != null) {
+				style = sob.Style;
+				SoapBodyBinding sbb = obin.Input.Extensions.Find (typeof(SoapBodyBinding)) as SoapBodyBinding;
+				if (sbb != null)
+					use = sbb.Use;
+			}
+		}
+	}
+
+
+
+
+
+</script>
+
+<head>
+	<link rel="alternate" type="text/xml" href="<%=Request.FilePath%>?disco"/>
+
+	<title><%=WebServiceName%> Web Service</title>
+    <style type="text/css">
+		BODY { font-family: Arial; margin-left: 20px; margin-top: 20px; font-size: x-small}
+		TABLE { font-size: x-small }
+		.title { color:dimgray; font-family: Arial; font-size:20pt; font-weight:900}
+		.operationTitle { color:dimgray; font-family: Arial; font-size:15pt; font-weight:900}
+		.method { font-size: x-small }
+		.bindingLabel { font-size: x-small; font-weight:bold; color:darkgray; line-height:8pt; display:block; margin-bottom:3px }
+		.label { font-size: small; font-weight:bold; color:darkgray }
+		.paramTable { font-size: x-small }
+		.paramTable TR { background-color: gainsboro }
+		.paramFormTable { font-size: x-small; padding: 10px; background-color: gainsboro }
+		.paramFormTable TR { background-color: gainsboro }
+		.paramInput { border: solid 1px gray }
+		.button {border: solid 1px gray }
+		.smallSeparator { height:3px; overflow:hidden }
+		.panel { background-color:whitesmoke; border: solid 1px silver; border-top: solid 1px silver  }
+		.codePanel { background-color: white; font-size:x-small; padding:7px; border:solid 1px silver}
+		.code-xml { font-size:10pt; font-family:courier }
+		.code-cs { font-size:10pt; font-family:courier }
+		.code-vb { font-size:10pt; font-family:courier }
+		.tabLabelOn { font-weight:bold }
+		.tabLabelOff {color: darkgray }
+		.literal-placeholder {color: darkblue; font-weight:bold}
+		A:link { color: black; }
+		A:visited { color: black; }
+		A:active { color: black; }
+		A:hover { color: blue }
+    </style>
+	
+<script>
+function clearForm ()
+{
+	document.getElementById("testFormResult").style.display="none";
+}
+</script>
+
+</head>
+
+<body>
+<div class="title" style="margin-left:20px">
+<span class="label">Web Service</span><br>
+<%=WebServiceName%>
+</div>
+
+<!--
+	**********************************************************
+	Left panel
+-->
+
+<table border="0" width="100%" cellpadding="15px" cellspacing="15px">
+<tr valign="top"><td width="150px" class="panel">
+<div style="width:150px"></div>
+<a class="method" href='<%=PageName%>'>Overview</a><br>
+<div class="smallSeparator"></div>
+<a class="method" href='<%=PageName + "?" + GetPageContext("wsdl")%>'>Service Description</a>
+<div class="smallSeparator"></div>
+<a class="method" href='<%=PageName + "?" + GetPageContext("proxy")%>'>Client proxy</a>
+<br><br>
+	<asp:repeater id="BindingsRepeater" runat=server>
+		<itemtemplate name="itemtemplate">
+			<span class="bindingLabel"><%#FormatBindingName(DataBinder.Eval(Container.DataItem, "Name").ToString())%></span>
+			<asp:repeater id="OperationsRepeater" runat=server datasource='<%# ((Binding)Container.DataItem).Operations %>'>
+				<itemtemplate>
+					<a class="method" href="<%=PageName%>?<%=GetTabContext("op",null)%>op=<%#GetOpName(Container.DataItem)%>&bnd=<%#DataBinder.Eval(Container.DataItem, "Binding.Name")%>"><%#GetOpName(Container.DataItem)%></a>
+					<div class="smallSeparator"></div>
+				</itemtemplate>
+			</asp:repeater>
+			<br>
+		</itemtemplate>
+	</asp:repeater>
+
+</td><td class="panel">
+
+<% if (CurrentPage == "main") {%>
+
+<!--
+	**********************************************************
+	Web service overview
+-->
+
+	<p class="label">Web Service Overview</p>
+	<%=WebServiceDescription%>
+	
+<%} if (DefaultBinding == null) {%>
+This service does not contain any public web method.
+<%} else if (CurrentPage == "op") {%>
+
+<!--
+	**********************************************************
+	Operation description
+-->
+
+	<span class="operationTitle"><%=CurrentOperationName%></span>
+	<br><br>
+	<% WriteTabs (); %>
+	<br><br><br>
+	
+	<% if (CurrentTab == "main") { %>
+		<span class="label">Input Parameters</span>
+		<div class="smallSeparator"></div>
+		<% if (InParams.Count == 0) { %>
+			No input parameters<br>
+		<% } else { %>
+			<table class="paramTable" cellspacing="1" cellpadding="5">
+			<asp:repeater id="InputParamsRepeater" runat=server>
+				<itemtemplate>
+					<tr>
+					<td width="150"><%#DataBinder.Eval(Container.DataItem, "Name")%></td>
+					<td width="150"><%#DataBinder.Eval(Container.DataItem, "Type")%></td>
+					</tr>
+				</itemtemplate>
+			</asp:repeater>
+			</table>
+		<% } %>
+		<br>
+		
+		<% if (OutParams.Count > 0) { %>
+		<span class="label">Output Parameters</span>
+			<div class="smallSeparator"></div>
+			<table class="paramTable" cellspacing="1" cellpadding="5">
+			<asp:repeater id="OutputParamsRepeater" runat=server>
+				<itemtemplate>
+					<tr>
+					<td width="150"><%#DataBinder.Eval(Container.DataItem, "Name")%></td>
+					<td width="150"><%#DataBinder.Eval(Container.DataItem, "Type")%></td>
+					</tr>
+				</itemtemplate>
+			</asp:repeater>
+			</table>
+		<br>
+		<% } %>
+		
+		<span class="label">Remarks</span>
+		<div class="smallSeparator"></div>
+		<%=OperationDocumentation%>
+		<br><br>
+		<span class="label">Technical information</span>
+		<div class="smallSeparator"></div>
+		Format: <%=CurrentOperationFormat%>
+		<br>Supported protocols: <%=CurrentOperationProtocols%>
+	<% } %>
+	
+<!--
+	**********************************************************
+	Operation description - Test form
+-->
+
+	<% if (CurrentTab == "test") { 
+		if (CurrentOperationSupportsTest) {%>
+			Enter values for the parameters and click the 'Invoke' button to test this method:<br><br>
+			<form action="<%=PageName%>" method="GET">
+			<input type="hidden" name="page" value="<%=CurrentPage%>">
+			<input type="hidden" name="tab" value="<%=CurrentTab%>">
+			<input type="hidden" name="op" value="<%=CurrentOperationName%>">
+			<input type="hidden" name="bnd" value="<%=CurrentOperationBinding%>">
+			<input type="hidden" name="ext" value="testform">
+			<table class="paramFormTable" cellspacing="0" cellpadding="3">
+			<asp:repeater id="InputFormParamsRepeater" runat=server>
+				<itemtemplate>
+					<tr>
+					<td><%#DataBinder.Eval(Container.DataItem, "Name")%>:&nbsp;</td>
+					<td width="150"><input class="paramInput" type="text" size="20" name="<%#DataBinder.Eval(Container.DataItem, "Name")%>"></td>
+					</tr>
+				</itemtemplate>
+			</asp:repeater>
+			<tr><td></td><td><input class="button" type="submit" value="Invoke">&nbsp;<input class="button" type="button" onclick="clearForm()" value="Clear"></td></tr>
+			</table>
+			</form>
+			<div id="testFormResult" style="display:<%= (HasFormResult?"block":"none") %>">
+			The web service returned the following result:<br/><br/>
+			<div class="codePanel"><%=GetTestResult()%></div>
+			</div>
+		<% } else {%>
+		The test form is not available for this operation because it has parameters with a complex structure.
+		<% } %>
+	<% } %>
+	
+<!--
+	**********************************************************
+	Operation description - Message Layout
+-->
+
+	<% if (CurrentTab == "msg") { %>
+		
+		The following are sample SOAP requests and responses for each protocol supported by this method:
+			<br/><br/>
+		
+		<% if (IsOperationSupported ("Soap")) { %>
+			<span class="label">Soap</span>
+			<br/><br/>
+			<div class="codePanel"><div class="code-xml"><%=GenerateOperationMessages ("Soap", true)%></div></div>
+			<br/>
+			<div class="codePanel"><div class="code-xml"><%=GenerateOperationMessages ("Soap", false)%></div></div>
+			<br/>
+		<% } %>
+		<% if (IsOperationSupported ("HttpGet")) { %>
+			<span class="label">HTTP Get</span>
+			<br/><br/>
+			<div class="codePanel"><div class="code-xml"><%=GenerateOperationMessages ("HttpGet", true)%></div></div>
+			<br/>
+			<div class="codePanel"><div class="code-xml"><%=GenerateOperationMessages ("HttpGet", false)%></div></div>
+			<br/>
+		<% } %>
+		<% if (IsOperationSupported ("HttpPost")) { %>
+			<span class="label">HTTP Post</span>
+			<br/><br/>
+			<div class="codePanel"><div class="code-xml"><%=GenerateOperationMessages ("HttpPost", true)%></div></div>
+			<br/>
+			<div class="codePanel"><div class="code-xml"><%=GenerateOperationMessages ("HttpPost", false)%></div></div>
+			<br/>
+		<% } %>
+		
+	<% } %>
+<%} else if (CurrentPage == "proxy") {%>
+<!--
+	**********************************************************
+	Client Proxy
+-->
+	<form action="<%=PageName%>" name="langForm" method="GET">
+		Select the language for which you want to generate a proxy 
+		<input type="hidden" name="page" value="<%=CurrentPage%>">&nbsp;
+		<SELECT name="lang" onchange="langForm.submit()">
+			<%=GetOptionSel("cs",CurrentLanguage)%>C#</option>
+			<%=GetOptionSel("vb",CurrentLanguage)%>Visual Basic</option>
+		</SELECT>
+		&nbsp;&nbsp;
+	</form>
+	<br>
+	<span class="label"><%=CurrentProxytName%></span>&nbsp;&nbsp;&nbsp;
+	<a href="<%=PageName + "?code=" + CurrentLanguage%>">Download</a>
+	<br><br>
+	<div class="codePanel">
+	<div class="code-<%=CurrentLanguage%>"><%=GetProxyCode ()%></div>
+	</div>
+<%} else if (CurrentPage == "wsdl") {%>
+<!--
+	**********************************************************
+	Service description
+-->
+	<% if (descriptions.Count > 1 || schemas.Count > 1) {%>
+	The description of this web service is composed by several documents. Click on the document you want to see:
+	
+	<ul>
+	<% 
+		for (int n=0; n<descriptions.Count; n++)
+			Response.Write ("<li><a href='" + PageName + "?" + GetPageContext(null) + "doctype=wsdl&docind=" + n + "'>WSDL document " + descriptions[n].TargetNamespace + "</a></li>");
+		for (int n=0; n<schemas.Count; n++)
+			Response.Write ("<li><a href='" + PageName + "?" + GetPageContext(null) + "doctype=schema&docind=" + n + "'>Xml Schema " + schemas[n].TargetNamespace + "</a></li>");
+	%>
+	</ul>
+	
+	<%} else {%>
+	<%}%>
+	<br>
+	<span class="label"><%=CurrentDocumentName%></span>&nbsp;&nbsp;&nbsp;
+	<a href="<%=PageName + "?" + CurrentDocType + "=" + CurrentDocInd %>">Download</a>
+	<br><br>
+	<div class="codePanel">
+	<div class="code-xml"><%=GenerateDocument ()%></div>
+	</div>
+
+<%}%>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</td>
+<td width="20px"></td>
+</tr>
+
+</table>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>RomanNumeral->Words/Misc/Numbers_SmallRoman</li>
+    <li>Direction->Words/Adjectives/CompassDirections</li>
+    <li>Letter->WordParts/CapitalLetters</li>
+    <li>SylE->WordParts/Syllables_English</li>
+    <li>SylG->WordParts/Syllables_Galician</li>
+    <li>Color->Words/Nouns/Colors</li>
+    <li>ColorBadass->Words/Nouns/Colors_Badass</li>
+    <li>Vegetable->Words/Nouns/Vegetables</li>
+    <li>Game->Words/Nouns/Games</li>
+    <li>Animal->Words/Nouns/Animals</li>
+    <li>AnimalBadass->Words/Nouns/Animals_Badass</li>
+    <li>AnimalGroup->Words/Nouns/AnimalGroups</li>
+    <li>Weapon->Words/Nouns/Weapons</li>
+    <li>TerrainFeature->Words/Nouns/TerrainFeatures</li>
+    <li>NaturalObject->Words/Nouns/NaturalObject</li>
+    <li>TreeType->Words/Nouns/TreeTypes</li>
+    <li>PersonJob->Words/Nouns/People_Jobs</li>
+    <li>PersonFamily->Words/Nouns/People_Family</li>
+    <li>PersonAlly->Words/Nouns/People_Allies</li>
+    <li>PersonBadass->Words/Nouns/People_Badass</li>
+    <li>Enemy->Words/Nouns/Enemies</li>
+    <li>Apparel->Words/Nouns/Apparel</li>
+    <li>Gore->Words/Nouns/Gore</li>
+    <li>Mechanoid->Words/Nouns/Mechanoid</li>
+    <li>ConceptPositive->Words/Nouns/Concepts_Positive</li>
+    <li>ConceptBadass->Words/Nouns/Concepts_Badass</li>
+    <li>ConceptAngsty->Words/Nouns/Concepts_Angsty</li>
+    <li>Community->Words/Nouns/Communities</li>
+    <li>Bodypart->Words/Nouns/Bodyparts</li>
+    <li>AdjectiveLarge->Words/Adjectives/Large</li>
+    <li>AdjectiveBadass->Words/Adjectives/Badass</li>
+    <li>AdjectiveAngsty->Words/Adjectives/Angsty</li>
+    <li>AdjectiveFriendly->Words/Adjectives/Friendly</li>
+    <li>AdjectiveNatural->Words/Adjectives/Natural</li>
+    <li>VerbFriendly->Words/Verbs/Friendly</li>
+    <li>PersonalCharacteristic->Words/Nouns/PersonalCharacteristics</li>
+  -->
+  <GlobalUtility.rulePack.rulesFiles>
+    <li>RomanNumeral->Words/Misc/Numbers_SmallRoman</li>
+
+    <li>Direction->Words/Adjectives/CompassDirections</li>
+    <li>DirectionUni->Words/Adjectives/CompassDirections_Universal</li>
+
+    <li>Letter->WordParts/CapitalLetters</li>
+
+    <li>SylE->WordParts/Syllables_English</li>
+
+    <li>SylG->WordParts/Syllables_Galician</li>
+
+    <li>Color->Words/Nouns/Colors</li>
+    <li>ColorUni->Words/Nouns/Colors_Universal</li>
+    <li>ColorMas->Words/Nouns/Colors_Masculine</li>
+    <li>ColorFem->Words/Nouns/Colors_Feminine</li>
+    <li>ColorNeu->Words/Nouns/Colors_Neuter</li>
+
+    <li>ColorBadass->Words/Nouns/Colors_Badass</li>
+    <li>ColorBadassUni->Words/Nouns/Colors_Badass_Universal</li>
+    <li>ColorBadassMas->Words/Nouns/Colors_Badass_Masculine</li>
+    <li>ColorBadassFem->Words/Nouns/Colors_Badass_Feminine</li>
+    <li>ColorBadassNeu->Words/Nouns/Colors_Badass_Neuter</li>
+
+    <li>Vegetable->Words/Nouns/Vegetables</li>
+    <li>VegetablePluGen->Words/Nouns/Vegetables_PluralGenitive</li>
+    <li>VegetablePluAcc->Words/Nouns/Vegetables_PluralAccusative</li>
+    <li>VegetablePluLoc->Words/Nouns/Vegetables_PluralLocative</li>
+
+    <li>Game->Words/Nouns/Games</li>
+    <li>GameGen->Words/Nouns/Games_Genitive</li>
+    <li>GameAcc->Words/Nouns/Games_Accusative</li>
+    <li>GameLoc->Words/Nouns/Games_Locative</li>
+
+    <li>Animal->Words/Nouns/Animals</li>
+    <li>AnimalUniLoc->Words/Nouns/Animals_UniversalLocative</li>
+    <li>AnimalPluGen->Words/Nouns/Animals_PluralGenitive</li>
+    <li>AnimalPluAcc->Words/Nouns/Animals_PluralAccusative</li>
+    <li>AnimalPluLoc->Words/Nouns/Animals_PluralLocative</li>
+    <li>AnimalWitPluIns->Words/Nouns/Animals_WithPluralInstrumental</li>
+    <li>AnimalMas->Words/Nouns/Animals_Masculine</li>
+    <li>AnimalMasGen->Words/Nouns/Animals_MasculineGenitive</li>
+    <li>AnimalMasAcc->Words/Nouns/Animals_MasculineAccusative</li>
+    <li>AnimalFem->Words/Nouns/Animals_Feminine</li>
+    <li>AnimalFemGen->Words/Nouns/Animals_FeminineGenitive</li>
+    <li>AnimalFemAcc->Words/Nouns/Animals_FeminineAccusative</li>
+    <li>AnimalNeu->Words/Nouns/Animals_Neuter</li>
+    <li>AnimalNeuGen->Words/Nouns/Animals_NeuterGenitive</li>
+    <li>AnimalNeuAcc->Words/Nouns/Animals_NeuterAccusative</li>
+
+    <li>AnimalBadass->Words/Nouns/Animals_Badass</li>
+    <li>AnimalBadassPlu->Words/Nouns/Animals_Badass_Plural</li>
+    <li>AnimalBadassPluGen->Words/Nouns/Animals_Badass_PluralGenitive</li>
+
+    <li>AdjAnimalBadassPlu->Words/Adjectives/AdjectiveAnimals_Badass_Plural</li>
+
+    <li>AnimalGroup->Words/Nouns/AnimalGroups</li>
+
+    <li>Weapon->Words/Nouns/Weapons</li>
+    <li>WeaponUni->Words/Nouns/Weapons_Universal</li>
+    <li>WeaponPlu->Words/Nouns/Weapons_Plural</li>
+    <li>WeaponPluGen->Words/Nouns/Weapons_PluralGenitive</li>
+    <li>WeaponPluLoc->Words/Nouns/Weapons_PluralLocative</li>
+    <li>WeaponWitPluIns->Words/Nouns/Weapons_WithPluralInstrumental</li>
+    <li>WeaponUniGen->Words/Nouns/Weapons_UniversalGenitive</li>
+    <li>WeaponMasGen->Words/Nouns/Weapons_MasculineGenitive</li>
+    <li>WeaponMasAcc->Words/Nouns/Weapons_MasculineAccusative</li>
+    <li>WeaponFemGen->Words/Nouns/Weapons_FeminineGenitive</li>
+    <li>WeaponFemAcc->Words/Nouns/Weapons_FeminineAccusative</li>
+    <li>WeaponNeuGen->Words/Nouns/Weapons_NeuterGenitive</li>
+    <li>WeaponNeuAcc->Words/Nouns/Weapons_NeuterAccusative</li>
+
+    <li>TerrainFeature->Words/Nouns/TerrainFeatures</li>
+    <li>TerrainFeatureUniGen->Words/Nouns/TerrainFeatures_UniversalGenitive</li>
+    <li>TerrainFeaturePluLoc->Words/Nouns/TerrainFeatures_PluralLocative</li>
+    <li>TerrainFeatureMas->Words/Nouns/TerrainFeatures_Masculine</li>
+    <li>TerrainFeatureMasGen->Words/Nouns/TerrainFeatures_MasculineGenitive</li>
+    <li>TerrainFeatureMasAcc->Words/Nouns/TerrainFeatures_MasculineAccusative</li>
+    <li>TerrainFeatureFem->Words/Nouns/TerrainFeatures_Feminine</li>
+    <li>TerrainFeatureFemGen->Words/Nouns/TerrainFeatures_FeminineGenitive</li>
+    <li>TerrainFeatureFemAcc->Words/Nouns/TerrainFeatures_FeminineAccusative</li>
+    <li>TerrainFeatureNeu->Words/Nouns/TerrainFeatures_Neuter</li>
+    <li>TerrainFeatureNeuGen->Words/Nouns/TerrainFeatures_NeuterGenitive</li>
+    <li>TerrainFeatureNeuAcc->Words/Nouns/TerrainFeatures_NeuterAccusative</li>
+
+    <li>NaturalObject->Words/Nouns/NaturalObject</li>
+    <li>NaturalObjectPluLoc->Words/Nouns/NaturalObjectPluralLocative</li>
+    <li>NaturalObjectMasGen->Words/Nouns/NaturalObject_MasculineGenitive</li>
+    <li>NaturalObjectMasAcc->Words/Nouns/NaturalObject_MasculineAccusative</li>
+    <li>NaturalObjectFemGen->Words/Nouns/NaturalObject_FeminineGenitive</li>
+    <li>NaturalObjectFemAcc->Words/Nouns/NaturalObject_FeminineAccusative</li>
+    <li>NaturalObjectNeuGen->Words/Nouns/NaturalObject_NeuterGenitive</li>
+    <li>NaturalObjectNeuAcc->Words/Nouns/NaturalObject_NeuterAccusative</li>
+
+    <li>TreeType->Words/Nouns/TreeTypes</li>
+    <li>TreeTypePluLoc->Words/Nouns/TreeTypes_PluralLocative</li>
+    <li>TreeTypeUniGen->Words/Nouns/TreeTypes_UniversalGenitive</li>
+    <li>TreeTypeUniAcc->Words/Nouns/TreeTypes_UniversalAccusative</li>
+
+    <li>PersonJob->Words/Nouns/People_Jobs</li>
+    <li>PersonJobPluGen->Words/Nouns/People_Jobs_PluralGenitive</li>
+    <li>PersonJobPluAcc->Words/Nouns/People_Jobs_PluralAccusative</li>
+    <li>PersonJobPluLoc->Words/Nouns/People_Jobs_PluralLocative</li>
+    <li>PersonJobMasGen->Words/Nouns/People_Jobs_MasculineGenitive</li>
+    <li>PersonJobMasAcc->Words/Nouns/People_Jobs_MasculineAccusative</li>
+    <li>PersonJobFemGen->Words/Nouns/People_Jobs_FeminineGenitive</li>
+    <li>PersonJobFemAcc->Words/Nouns/People_Jobs_FeminineAccusative</li>
+
+    <li>PersonFamily->Words/Nouns/People_Family</li>
+
+    <li>PersonAlly->Words/Nouns/People_Allies</li>
+
+    <li>PersonBadass->Words/Nouns/People_Badass</li>
+    <li>PersonBadassUni->Words/Nouns/People_Badass_Universal</li>
+    <li>PersonBadassPlu->Words/Nouns/People_Badass_Plural</li>
+
+    <li>Enemy->Words/Nouns/Enemies</li>
+    <li>EnemyPlu->Words/Nouns/Enemies_Plural</li>
+    <li>EnemyPluGen->Words/Nouns/Enemies_PluralGenitive</li>
+    <li>EnemyPluAcc->Words/Nouns/Enemies_PluralAccusative</li>
+    <li>EnemyPluLoc->Words/Nouns/Enemies_PluralLocative</li>
+    <li>EnemyWitPluIns->Words/Nouns/Enemies_WithPluralInstrumental</li>
+    <li>EnemyMasGen->Words/Nouns/Enemies_MasculineGenitive</li>
+    <li>EnemyMasAcc->Words/Nouns/Enemies_MasculineAccusative</li>
+    <li>EnemyFemGen->Words/Nouns/Enemies_FeminineGenitive</li>
+    <li>EnemyFemAcc->Words/Nouns/Enemies_FeminineAccusative</li>
+
+    <li>Apparel->Words/Nouns/Apparel</li>
+    <li>ApparelUniAcc->Words/Nouns/Apparel_UniversalAccusative</li>
+    <li>ApparelPluGen->Words/Nouns/Apparel_PluralGenitive</li>
+    <li>ApparelPluLoc->Words/Nouns/Apparel_PluralLocative</li>
+    <li>ApparelMasGen->Words/Nouns/Apparel_MasculineGenitive</li>
+    <li>ApparelMasAcc->Words/Nouns/Apparel_MasculineAccusative</li>
+    <li>ApparelFemGen->Words/Nouns/Apparel_FeminineGenitive</li>
+    <li>ApparelFemAcc->Words/Nouns/Apparel_FeminineAccusative</li>
+    <li>ApparelNeuGen->Words/Nouns/Apparel_NeuterGenitive</li>
+    <li>ApparelNeuAcc->Words/Nouns/Apparel_NeuterAccusative</li>
+
+    <li>Gore->Words/Nouns/Gore</li>
+    <li>GorePluGen->Words/Nouns/Gore_PluralGenitive</li>
+    <li>GorePluIns->Words/Nouns/Gore_PluralInstrumental</li>
+
+    <li>Mechanoid->Words/Nouns/Mechanoid</li>
+    <li>MechanoidPluGen->Words/Nouns/Mechanoid_PluralGenitive</li>
+    <li>MechanoidPluAcc->Words/Nouns/Mechanoid_PluralAccusative</li>
+    <li>MechanoidMasGen->Words/Nouns/Mechanoid_MasculineGenitive</li>
+    <li>MechanoidMasAcc->Words/Nouns/Mechanoid_MasculineAccusative</li>
+    <li>MechanoidFemGen->Words/Nouns/Mechanoid_FeminineGenitive</li>
+    <li>MechanoidFemAcc->Words/Nouns/Mechanoid_FeminineAccusative</li>
+
+    <li>ConceptPositive->Words/Nouns/Concepts_Positive</li>
+    <li>ConceptPositiveUniGen->Words/Nouns/Concepts_Positive_UniversalGenitive</li>
+    <li>ConceptPositiveUniAcc->Words/Nouns/Concepts_Positive_UniversalAccusative</li>
+    <li>ConceptPositiveUniLoc->Words/Nouns/Concepts_Positive_UniversalLocative</li>
+
+    <li>ConceptBadass->Words/Nouns/Concepts_Badass</li>
+    <li>ConceptBadassUni->Words/Nouns/Concepts_Badass_Universal</li>
+    <li>ConceptBadassUniGen->Words/Nouns/Concepts_Badass_UniversalGenitive</li>
+
+    <li>ConceptAngsty->Words/Nouns/Concepts_Angsty</li>
+    <li>ConceptAngstyUniGen->Words/Nouns/Concepts_Angsty_UniversalGenitive</li>
+
+    <li>Community->Words/Nouns/Communities</li>
+    <li>CommunityUniGen->Words/Nouns/Communities_UniversalGenitive</li>
+    <li>CommunityUniAcc->Words/Nouns/Communities_UniversalAccusative</li>
+    <li>CommunityMasGen->Words/Nouns/Communities_MasculineGenitive</li>
+    <li>CommunityMasAcc->Words/Nouns/Communities_MasculineAccusative</li>
+    <li>CommunityFemGen->Words/Nouns/Communities_FeminineGenitive</li>
+    <li>CommunityFemAcc->Words/Nouns/Communities_FeminineAccusative</li>
+    <li>CommunityNeuGen->Words/Nouns/Communities_NeuterGenitive</li>
+    <li>CommunityNeuAcc->Words/Nouns/Communities_NeuterAccusative</li>
+
+    <li>Bodypart->Words/Nouns/Bodyparts</li>
+
+    <li>AdjectiveLarge->Words/Adjectives/Large</li>
+
+    <li>AdjectiveBadass->Words/Adjectives/Badass</li>
+    <li>AdjectiveBadassPlu->Words/Adjectives/Badass_Plural</li>
+    <li>AdjectiveBadassMas->Words/Adjectives/Badass_Masculine</li>
+    <li>AdjectiveBadassFem->Words/Adjectives/Badass_Feminine</li>
+    <li>AdjectiveBadassFemGen->Words/Adjectives/Badass_FeminineGenitive</li>
+    <li>AdjectiveBadassFemAcc->Words/Adjectives/Badass_FeminineAccusative</li>
+    <li>AdjectiveBadassNeu->Words/Adjectives/Badass_Neuter</li>
+
+    <li>AdjectiveAngsty->Words/Adjectives/Angsty</li>
+    <li>AdjectiveAngstyFemGen->Words/Adjectives/Angsty_FeminineGenitive</li>
+    <li>AdjectiveAngstyFemAcc->Words/Adjectives/Angsty_FeminineAccusative</li>
+
+    <li>AdjectiveFriendly->Words/Adjectives/Friendly</li>
+    <li>AdjectiveFriendlyFemGen->Words/Adjectives/Friendly_FeminineGenitive</li>
+    <li>AdjectiveFriendlyFemAcc->Words/Adjectives/Friendly_FeminineAccusative</li>
+
+    <li>AdjectiveNatural->Words/Adjectives/Natural</li>
+    <li>AdjectiveNaturalFemGen->Words/Adjectives/Natural_FeminineGenitive</li>
+    <li>AdjectiveNaturalFemAcc->Words/Adjectives/Natural_FeminineAccusative</li>
+
+    <li>VerbFriendly->Words/Verbs/Friendly</li>
+
+    <li>PersonalCharacteristic->Words/Nouns/PersonalCharacteristics</li>
+    <li>PersonalCharacteristicUniAcc->Words/Nouns/PersonalCharacteristics_UniversalAccusative</li>
+    <li>PersonalCharacteristicPosLoc->Words/Nouns/PersonalCharacteristics_PossessiveLocative</li>
+
+    <li>PoliticalAdjectiveMas->Words/Adjectives/PoliticalUnions_Masculine</li>
+    <li>PoliticalAdjectiveFem->Words/Adjectives/PoliticalUnions_Feminine</li>
+    <li>PoliticalAdjectiveNeu->Words/Adjectives/PoliticalUnions_Neuter</li>
+
+    <li>PoliticalUnionTribalUni->Words/Nouns/PoliticalUnions_Tribal_Universal</li>
+
+    <li>PoliticalUnionOutlanderUni->Words/Nouns/PoliticalUnions_Outlander_Universal</li>
+    <li>PoliticalUnionOutlanderMas->Words/Nouns/PoliticalUnions_Outlander_Masculine</li>
+    <li>PoliticalUnionOutlanderFem->Words/Nouns/PoliticalUnions_Outlander_Feminine</li>
+    <li>PoliticalUnionOutlanderNeu->Words/Nouns/PoliticalUnions_Outlander_Neuter</li>
+
+    <li>GroupNameUni->Words/Nouns/GroupNames_Universal</li>
+    <li>GroupNameMas->Words/Nouns/GroupNames_Masculine</li>
+    <li>GroupNameFem->Words/Nouns/GroupNames_Feminine</li>
+    <li>GroupNameNeu->Words/Nouns/GroupNames_Neuter</li>
+  </GlobalUtility.rulePack.rulesFiles>
+  <!-- EN:
+    <li>Trans->of</li>
+    <li>Trans->for</li>
+    <li>Trans->by</li>
+    <li>Trans->with</li>
+    <li>Character(p=6)->[PersonJob]</li>
+    <li>Character(p=4)->[Animal]</li>
+    <li>Character(p=3)->[Enemy]</li>
+    <li>Character->[Mechanoid]</li>
+    <li>Quantity_adjphrase->two</li>
+    <li>Quantity_adjphrase->three</li>
+    <li>Quantity_adjphrase->four</li>
+    <li>Quantity_adjphrase->five</li>
+    <li>Quantity_adjphrase->six</li>
+    <li>Quantity_adjphrase->seven</li>
+    <li>Quantity_adjphrase->eight</li>
+    <li>Quantity_adjphrase->nine</li>
+    <li>Quantity_adjphrase->ten</li>
+    <li>Quantity_adjphrase->several</li>
+    <li>Quantity_adjphrase->a group of</li>
+    <li>Quantity_adjphrase->a large group of</li>
+    <li>Quantity_adjphrase->dozens of</li>
+    <li>Quantity_adjphrase->hundreds of</li>
+    <li>Quantity_adjphrase->a thousand</li>
+    <li>Quantity_adjphrase->thousands of</li>
+    <li>Shape->triangle</li>
+    <li>Shape->square</li>
+    <li>Shape->rectangle</li>
+    <li>Shape->cone</li>
+    <li>Shape->line</li>
+    <li>Shape->heart</li>
+    <li>Shape->star</li>
+    <li>Shape->circle</li>
+    <li>Shape->ellipse</li>
+    <li>AdjectiveAny->[AdjectiveBadass]</li>
+    <li>AdjectiveAny->[AdjectiveAngsty]</li>
+    <li>AdjectiveAny->[AdjectiveFriendly]</li>
+    <li>AdjectiveAny->[AdjectiveNatural]</li>
+    <li>ConceptAny->[ConceptPositive]</li>
+    <li>ConceptAny->[ConceptBadass]</li>
+    <li>ConceptAny->[ConceptAngsty]</li>
+    <li>PersonalCharacteristic(p=0.15)->genitals</li>
+    <li>PersonalCharacteristic(p=0.15)->pubic hair</li>
+    <li>PersonalCharacteristic(p=0.15)->body hair</li>
+    <li>PersonalCharacteristic(p=0.15)->toilet habits</li>
+    <li>PersonalCharacteristic(p=0.15)->sexual prowess</li>
+    <li>PersonalCharacteristic(p=0.15)->sexual preferences</li>
+    <li>PersonalCharacteristic(p=0.15)->sexual experience</li>
+  -->
+  <GlobalUtility.rulePack.rulesStrings>
+    <li>Trans->of</li>
+    <li>Trans->for</li>
+    <li>Trans->by</li>
+    <li>Trans->with</li>
+    <li>Character(p=6)->[PersonJob]</li>
+    <li>Character(p=4)->[Animal]</li>
+    <li>Character(p=3)->[Enemy]</li>
+    <li>Character->[Mechanoid]</li>
+
+    <li>CharacterPluGen(p=6)->[PersonJobPluGen]</li>
+    <li>CharacterPluGen(p=4)->[AnimalPluGen]</li>
+    <li>CharacterPluGen(p=3)->[EnemyPluGen]</li>
+    <li>CharacterPluGen->[MechanoidPluGen]</li>
+    <li>CharacterPluAcc(p=6)->[PersonJobPluAcc]</li>
+    <li>CharacterPluAcc(p=4)->[AnimalPluAcc]</li>
+    <li>CharacterPluAcc(p=3)->[EnemyPluAcc]</li>
+    <li>CharacterPluAcc->[MechanoidPluAcc]</li>
+
+    <li>CharacterUniGen(p=6)->[PersonJobMasFemGenTaleless]</li>
+    <li>CharacterUniGen(p=4)->[AnimalMasFemNeuGenTaleless]</li>
+    <li>CharacterUniGen(p=3)->[EnemyMasFemGenTaleless]</li>
+    <li>CharacterUniGen->[MechanoidMasFemGenTaleless]</li>
+
+    <li>PersonJobMasFemGenTaleless->ého [PersonJobMasGen] [desc_pawnMas]</li>
+    <li>PersonJobMasFemGenTaleless->é [PersonJobFemGen] [desc_pawnFemGen]</li>
+    <li>AnimalMasFemNeuGenTaleless(p=0.60)->ého [AnimalMasGen] [desc_pawnMas]</li>
+    <li>AnimalMasFemNeuGenTaleless(p=0.38)->é [AnimalFemGen] [desc_pawnFemGen]</li>
+    <li>AnimalMasFemNeuGenTaleless(p=0.02)->ého [AnimalNeuGen] [desc_pawnNeuGen]</li>
+    <li>EnemyMasFemGenTaleless->ého [EnemyMasGen] [desc_pawnMas]</li>
+    <li>EnemyMasFemGenTaleless->é [EnemyFemGen] [desc_pawnFemGen]</li>
+    <li>MechanoidMasFemGenTaleless(p=0.86)->ého [MechanoidMasGen] [desc_pawnMas]</li>
+    <li>MechanoidMasFemGenTaleless(p=0.14)->é [MechanoidFemGen] [desc_pawnFemGen]</li>
+
+    <li>CharacterUniAcc(p=6)->[PersonJobMasFemAccTaleless]</li>
+    <li>CharacterUniAcc(p=4)->[AnimalMasFemNeuAccTaleless]</li>
+    <li>CharacterUniAcc(p=3)->[EnemyMasFemAccTaleless]</li>
+    <li>CharacterUniAcc->[MechanoidMasFemAccTaleless]</li>
+
+    <li>PersonJobMasFemAccTaleless->ého [PersonJobMasAcc] [desc_pawnMas]</li>
+    <li>PersonJobMasFemAccTaleless->ou [PersonJobFemAcc] [desc_pawnFemAcc]</li>
+    <li>AnimalMasFemNeuAccTaleless(p=0.60)->ého [AnimalMasAcc] [desc_pawnMas]</li>
+    <li>AnimalMasFemNeuAccTaleless(p=0.38)->ou [AnimalFemAcc] [desc_pawnFemAcc]</li>
+    <li>AnimalMasFemNeuAccTaleless(p=0.02)->é [AnimalNeuAcc] [desc_pawnNeuAcc]</li>
+    <li>EnemyMasFemAccTaleless->ého [EnemyMasAcc] [desc_pawnMas]</li>
+    <li>EnemyMasFemAccTaleless->ou [EnemyFemAcc] [desc_pawnFemAcc]</li>
+    <li>MechanoidMasFemAccTaleless(p=0.86)->ého [MechanoidMasAcc] [desc_pawnMas]</li>
+    <li>Mechanoi

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEngine.ARModule</name>
+    </assembly>
+    <member name="T:UnityEngine.XR.ARBackgroundRenderer">
+      <summary>
+        <para>Class used to override a camera's default background rendering path to instead render a given Texture and/or Material. This will typically be used with images from the color camera for rendering the AR background on mobile devices.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.ARBackgroundRenderer.backgroundMaterial">
+      <summary>
+        <para>The Material used for AR rendering.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.XR.ARBackgroundRenderer.backgroundRendererChanged(System.Action)">
+      <summary>
+        <para>Called when any of the public properties of this class have been changed.</para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:UnityEngine.XR.ARBackgroundRenderer.backgroundTexture">
+      <summary>
+        <para>An optional Texture used for AR rendering. If this property is not set then the texture set in XR.ARBackgroundRenderer._backgroundMaterial as "_MainTex" is used.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.ARBackgroundRenderer.camera">
+      

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: abandoned settlement -->
+  <AbandonedSettlement.label>TODO</AbandonedSettlement.label>
+  <!-- EN: An abandoned settlement. -->
+  <AbandonedSettlement.description>TODO</AbandonedSettlement.description>
+  
+  <!-- EN: attacked caravan -->
+  <AttackedNonPlayerCaravan.label>TODO</AttackedNonPlayerCaravan.label>
+  <!-- EN: A caravan under attack. -->
+  <AttackedNonPlayerCaravan.description>TODO</AttackedNonPlayerCaravan.description>
+  
+  <!-- EN: caravan -->
+  <Caravan.label>TODO</Caravan.label>
+  <!-- EN: A group of traveling people. -->
+  <Car

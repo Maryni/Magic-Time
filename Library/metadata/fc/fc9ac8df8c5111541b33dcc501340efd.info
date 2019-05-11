@@ -1,0 +1,10 @@
+ialReferenceIndexLookup);
+                            m_materialReferences[m_currentMaterialIndex].referenceCount += 1;
+
+                            m_textInfo.characterInfo[m_totalCharacterCount].character = (char)c;
+                            m_textInfo.characterInfo[m_totalCharacterCount].spriteIndex = spriteIndex;
+                            m_textInfo.characterInfo[m_totalCharacterCount].fontAsset = m_currentFontAsset;
+                            m_textInfo.characterInfo[m_totalCharacterCount].spriteAsset = spriteAsset;
+                            m_textInfo.characterInfo[m_totalCharacterCount].materialReferenceIndex = m_currentMaterialIndex;
+
+                            // Restore elemen

@@ -1,0 +1,222 @@
+ayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <param name="buttonSize">Determines how toolbar button size is calculated.</param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Toolbar(System.Int32,UnityEngine.Texture[],UnityEngine.GUIStyle,UnityEngine.GUI/ToolbarButtonSize,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a toolbar.</para>
+      </summary>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the buttons.</param>
+      <param name="images">An array of textures on the buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <param name="buttonSize">Determines how toolbar button size is calculated.</param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Toolbar(System.Int32,UnityEngine.GUIContent[],UnityEngine.GUIStyle,UnityEngine.GUI/ToolbarButtonSize,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a toolbar.</para>
+      </summary>
+      <param name="selected">The index of the selected button.</param>
+      <param name="texts">An array of strings to show on the buttons.</param>
+      <param name="images">An array of textures on the buttons.</param>
+      <param name="contents">An array of text, image and tooltips for the button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <param name="buttonSize">Determines how toolbar button size is calculated.</param>
+      <returns>
+        <para>The index of the selected button.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.GUILayout.VerticalScope">
+      <summary>
+        <para>Disposable helper class for managing BeginVertical / EndVertical.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalScope.#ctor(UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new VerticalScope and begin the corresponding vertical group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalScope.#ctor(UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new VerticalScope and begin the corresponding vertical group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalScope.#ctor(System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new VerticalScope and begin the corresponding vertical group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalScope.#ctor(UnityEngine.Texture,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new VerticalScope and begin the corresponding vertical group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalScope.#ctor(UnityEngine.GUIContent,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Create a new VerticalScope and begin the corresponding vertical group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalScrollbar(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a vertical scrollbar.</para>
+      </summary>
+      <param name="value">The position between min and max.</param>
+      <param name="size">How much can we see?</param>
+      <param name="topValue">The value at the top end of the scrollbar.</param>
+      <param name="bottomValue">The value at the bottom end of the scrollbar.</param>
+      <param name="style">The style to use for the scrollbar background. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <returns>
+        <para>The modified value. This can be changed by the user by dragging the scrollbar, or clicking the arrows at the end.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalScrollbar(System.Single,System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a vertical scrollbar.</para>
+      </summary>
+      <param name="value">The position between min and max.</param>
+      <param name="size">How much can we see?</param>
+      <param name="topValue">The value at the top end of the scrollbar.</param>
+      <param name="bottomValue">The value at the bottom end of the scrollbar.</param>
+      <param name="style">The style to use for the scrollbar background. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <returns>
+        <para>The modified value. This can be changed by the user by dragging the scrollbar, or clicking the arrows at the end.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalSlider(System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>A vertical slider the user can drag to change a value between a min and a max.</para>
+      </summary>
+      <param name="value">The value the slider shows. This determines the position of the draggable thumb.</param>
+      <param name="topValue">The value at the top end of the slider.</param>
+      <param name="bottomValue">The value at the bottom end of the slider.</param>
+      <param name="slider">The GUIStyle to use for displaying the dragging area. If left out, the horizontalSlider style from the current GUISkin is used.</param>
+      <param name="thumb">The GUIStyle to use for displaying draggable thumb. If left out, the horizontalSliderThumb style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <param name="leftValue"></param>
+      <param name="rightValue"></param>
+      <returns>
+        <para>The value that has been set by the user.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.VerticalSlider(System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>A vertical slider the user can drag to change a value between a min and a max.</para>
+      </summary>
+      <param name="value">The value the slider shows. This determines the position of the draggable thumb.</param>
+      <param name="topValue">The value at the top end of the slider.</param>
+      <param name="bottomValue">The value at the bottom end of the slider.</param>
+      <param name="slider">The GUIStyle to use for displaying the dragging area. If left out, the horizontalSlider style from the current GUISkin is used.</param>
+      <param name="thumb">The GUIStyle to use for displaying draggable thumb. If left out, the horizontalSliderThumb style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.</param>
+      <param name="leftValue"></param>
+      <param name="rightValue"></param>
+      <returns>
+        <para>The value that has been set by the user.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Width(System.Single)">
+      <summary>
+        <para>Option passed to a control to give it an absolute width.</para>
+      </summary>
+      <param name="width"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,System.String,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a popup window that layouts its contents automatically.</para>
+      </summary>
+      <param name="id">A unique ID to use for each window. This is the ID you'll use to interface to it.</param>
+      <param name="screenRect">Rectangle on the screen to use for the window. The layouting system will attempt to fit the window inside it - if that cannot be done, it will adjust the rectangle to fit.</param>
+      <param name="func">The function that creates the GUI inside the window. This function must take one parameter - the id of the window it's currently making GUI for.</param>
+      <param name="text">Text to display as a title for the window.</param>
+      <param name="image">Texture to display an image in the titlebar.</param>
+      <param name="content">Text, image and tooltip for this window.</param>
+      <param name="style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style or the screenRect you pass in.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectangle the window is at. This can be in a different position and have a different size than the one you passed in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,UnityEngine.Texture,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a popup window that layouts its contents automatically.</para>
+      </summary>
+      <param name="id">A unique ID to use for each window. This is the ID you'll use to interface to it.</param>
+      <param name="screenRect">Rectangle on the screen to use for the window. The layouting system will attempt to fit the window inside it - if that cannot be done, it will adjust the rectangle to fit.</param>
+      <param name="func">The function that creates the GUI inside the window. This function must take one parameter - the id of the window it's currently making GUI for.</param>
+      <param name="text">Text to display as a title for the window.</param>
+      <param name="image">Texture to display an image in the titlebar.</param>
+      <param name="content">Text, image and tooltip for this window.</param>
+      <param name="style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style or the screenRect you pass in.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The rectangle the window is at. This can be in a different position and have a different size than the one you passed in.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Window(System.Int32,UnityEngine.Rect,UnityEngine.GUI/WindowFunction,UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a popup window that layouts its contents automatically.</para>
+      </summary>
+      <param name="id">A unique ID to use for each window. This is the ID you'll use to interface to it.</param>
+      <param name="screenRect">Rectangle on the screen to use for the window. The layouting system will attempt to fit the window inside it - if that cannot be done, it will adjust the rectangle to fit.</param>
+      <param name="func">The function that creates the GUI inside the window. This function must take one parameter - the id of the window it's currently making GUI for.</param>
+      <param name="text">Text to display as a title for the window.</param>
+      <param name="image">Texture to display an image in the titlebar.</param>
+      <param name="content">Text, image and tooltip for this window.</param>
+      <param name="style">An optional style to use for the window. If left out, the window style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style or the screenRect you pass in.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.Expa

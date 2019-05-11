@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <Autosaving>Salvare Automată</Autosaving>
+  
+  <GameStartDialog> Sirenele de urgență răsună pe nava mamă in timp ce nava pare că se destramă. 3 dintre persoanele de pe navă reușesc să ajungă la capsulele de evacuare înainte ca nava să fie distrusă.\n\nCeva timp mai târziu, aterizați pe o planetă îndepărtată.\n\nBucăți din fosta navă se prăbușesc în apropiere, trebuie să concepi un plan pentru supraviețuire.</GameStartDialog>
+
+  <Colony>Colonie</Colony>
+  
+  <ChangeLanguageFromMainMenu>Limba se poate schimba doar din meniul principal.</ChangeLanguageFromMainMenu>
+
+  <AndLower>și</

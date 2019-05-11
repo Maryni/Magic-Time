@@ -1,0 +1,23 @@
+{
+    "user_hint_front": "open_mouth", 
+    "name": "halloween_bear", 
+    "script": "main.as", 
+    "min_version": 6, 
+    "effects": [
+        {
+            "name": "facemodel", 
+            "texture": {
+                "color": [
+                    1, 
+                    1, 
+                    1, 
+                    1
+                ], 
+                "material_file": "BilateralFilter2/horizontalPass.xml", 
+                "diffuse": "Textures/bilateral_lut_3.png", 
+                "shader": "BilateralFilter2"
+            }
+        }, 
+        {
+            "name": "facemodel", 
+           

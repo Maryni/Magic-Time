@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  <!-- EN: kibble -->
+  <Kibble.label>djurfoder</Kibble.label>
+  <!-- EN: Animal feed made from mixed meat and plant sources. Humans can eat it, but they really, really don't like it. -->
+  <Kibble.description>Djurfoder tillverkat av blandade kött och växtkällor. Människor kan äta det, men gillar det verkligen, verkligen inte.</Kibble.description>
+  
+  <!-- EN: fine meal -->
+  <MealFine.label>förfinad rätt</MealFine.label>
+  <!-- EN: A complex dish assembled with care from a variety of ingredients. -->
+  <MealFine.description>En komplex maträtt ihopsatt med omsorg från ett brett urval av ingredienser.</MealFine.description>
+  
+  <!-- EN: lavish meal -->
+  <MealLavish.label>utsökt rätt</MealLavish.label>
+  <!-- EN: A masterpiece of the culinary arts, this meal nourishes the body, mind, and soul. -->
+  <MealLavish.description>Ett kulinariskt mäst

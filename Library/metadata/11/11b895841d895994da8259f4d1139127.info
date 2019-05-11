@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Added body parts -->
+
+  <PegLeg.label>pata de palo</PegLeg.label>
+  <PegLeg.labelNoun>una pata de palo</PegLeg.labelNoun>
+
+  <WoodenFoot.label>pie de madera</WoodenFoot.label>
+  <WoodenFoot.labelNoun>un pie de madera</WoodenFoot.labelNoun>
+
+  <Denture.label>dentadura postiza</Denture.label>
+  <Denture.labelNoun>una dentadura postiza</Denture.labelNoun>
+
+  <SimpleProstheticLeg.label>pierna prostética</SimpleProstheticLeg.label>
+  <SimpleProstheticLeg.labelNoun>una pierna prostética</SimpleProstheticLeg.labelNoun>
+
+  <SimpleProstheticArm.label>brazo pr

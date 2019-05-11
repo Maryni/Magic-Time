@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: d -->
+  <LetterDay>vrk</LetterDay>
+  <!-- EN: h -->
+  <LetterHour>t</LetterHour>
+  <!-- EN: m -->
+  <LetterMinute>m</LetterMinute>
+  <!-- EN: s -->
+  <LetterSecond>s</LetterSecond>
+  
+  <!-- EN: days -->
+  <DaysLower>päivää</DaysLower>
+  <!-- EN: seconds -->
+  <SecondsLower>sekuntia</SecondsLower>
+
+  <!-- EN: spring -->
+  <SeasonSpring>kevät</SeasonSpring>
+  <!-- EN: summer -->
+  <SeasonSummer>kesä</SeasonSummer>
+  <!-- EN: fall -->
+  <SeasonFall>syksy</SeasonFall>
+  <!-- EN: winter -->
+  <SeasonWinter>talvi</SeasonWinter>
+  <!-- EN: permanent summer -->
+  <SeasonPermanentSummer>TODO</SeasonPermanentSummer>
+  <!-- EN: permanent winter -->
+  <SeasonPermanentWinter>TODO</SeasonPermanentWinter>
+
+  <!-- EN: Aprimay -->
+  <QuadrumAprimay>Huhtitouko</QuadrumAprimay>
+  <!-- EN: Jugust -->
+  <QuadrumJugust>Heinäelo</QuadrumJugust>
+  <!-- EN: Septober -->
+  <QuadrumSeptober>Syysmarras</QuadrumSeptober>
+  <!-- EN:

@@ -1,0 +1,115 @@
+y tired -->
+  <HungerLevel_VeryTired>非常疲劳</HungerLevel_VeryTired>
+  <!-- EN: Tired -->
+  <HungerLevel_Tired>疲劳</HungerLevel_Tired>
+  <!-- EN: Rested -->
+  <HungerLevel_Rested>精力充沛</HungerLevel_Rested>
+
+  <!-- Hilliness -->
+  <!-- EN: flat -->
+  <Hilliness_Flat>平原</Hilliness_Flat>
+  <!-- EN: small hills -->
+  <Hilliness_SmallHills>小丘陵</Hilliness_SmallHills>
+  <!-- EN: large hills -->
+  <Hilliness_LargeHills>大丘陵</Hilliness_LargeHills>
+  <!-- EN: mountainous -->
+  <Hilliness_Mountainous>山地</Hilliness_Mountainous>
+  <!-- EN: impassable -->
+  <Hilliness_Impassable>无法逾越</Hilliness_Impassable>
+  
+  <!-- Steam workshop interaction -->
+  <!-- EN: Creating -->
+  <WorkshopInteractStage_CreatingItem>创建</WorkshopInteractStage_CreatingItem>
+  <!-- EN: Submitting -->
+  <WorkshopInteractStage_SubmittingItem>提交</WorkshopInteractStage_SubmittingItem>
+  <!-- EN: Invalid -->
+  <EItemUpdateStatus_k_EItemUpdateStatusInvalid>无效</EItemUpdateStatus_k_EItemUpdateStatusInvalid>
+  <!-- EN: Preparing config data -->
+  <EItemUpdateStatus_k_EItemUpdateStatusPreparingConfig>准备配置数据</EItemUpdateStatus_k_EItemUpdateStatusPreparingConfig>
+  <!-- EN: Preparing content files -->
+  <EItemUpdateStatus_k_EItemUpdateStatusPreparingContent>准备内容文件</EItemUpdateStatus_k_EItemUpdateStatusPreparingContent>
+  <!-- EN: Uploading content -->
+  <EItemUpdateStatus_k_EItemUpdateStatusUploadingContent>上传内容文件</EItemUpdateStatus_k_EItemUpdateStatusUploadingContent>
+  <!-- EN: Uploading preview file -->
+  <EItemUpdateStatus_k_EItemUpdateStatusUploadingPreviewFile>上传预览文件</EItemUpdateStatus_k_EItemUpdateStatusUploadingPreviewFile>
+  <!-- EN: Committing changes -->
+  <EItemUpdateStatus_k_EItemUpdateStatusCommittingChanges>提交变更</EItemUpdateStatus_k_EItemUpdateStatusCommittingChanges>
+
+  <!-- Mod sources -->
+  <!-- EN: local folder -->
+  <ContentSource_LocalFolder>本地文件夹</ContentSource_LocalFolder>
+  <!-- EN: Steam Workshop -->
+  <ContentSource_SteamWorkshop>Steam 创意工坊</ContentSource_SteamWorkshop>
+  
+  <!-- Medical care category -->
+  <!-- EN: No medical care -->
+  <MedicalCareCategory_NoCare>无医生照顾</MedicalCareCategory_NoCare>
+  <!-- EN: Doctor care, but no medicine -->
+  <MedicalCareCategory_NoMeds>有医生照顾，无药物</MedicalCareCategory_NoMeds>
+  <!-- EN: Herbal medicine or worse -->
+  <MedicalCareCategory_HerbalOrWorse>提供草药等级及以下的药物</MedicalCareCategory_HerbalOrWorse>
+  <!-- EN: Industrial-tech medicine or worse -->
+  <MedicalCareCategory_NormalOrWorse>提供普通药物等级或以下的药物</MedicalCareCategory_NormalOrWorse>
+  <!-- EN: Best quality medicine -->
+  <MedicalCareCategory_Best>提供最高等级的医疗照顾</MedicalCareCategory_Best>
+
+  <!-- Hostility response mode -->
+  <!-- EN: Ignore -->
+  <HostilityResponseMode_Ignore>无视</HostilityResponseMode_Ignore>
+  <!-- EN: Attack -->
+  <HostilityResponseMode_Attack>反击</HostilityResponseMode_Attack>
+  <!-- EN: Flee -->
+  <HostilityResponseMode_Flee>逃跑</HostilityResponseMode_Flee>
+  
+  <!-- HediffGrowthMode -->
+  <!-- EN: growing -->
+  <HediffGrowthMode_Growing>加重</HediffGrowthMode_Growing>
+  <!-- EN: stable -->
+  <HediffGrowthMode_Stable>稳定</HediffGrowthMode_Stable>
+  <!-- EN: remission -->
+  <HediffGrowthMode_Remission>缓解</HediffGrowthMode_Remission>
+
+  <!-- TechLevel -->
+  <!-- EN: animal -->
+  <TechLevel_Animal>茹毛饮血</TechLevel_Animal>
+  <!-- EN: neolithic -->
+  <TechLevel_Neolithic>石器时代</TechLevel_Neolithic>
+  <!-- EN: medieval -->
+  <TechLevel_Medieval>中世纪</TechLevel_Medieval>
+  <!-- EN: industrial -->
+  <TechLevel_Industrial>工业时代</TechLevel_Industrial>
+  <!-- EN: spacer -->
+  <TechLevel_Spacer>太空时代</TechLevel_Spacer>
+  <!-- EN: ultra -->
+  <TechLevel_Ultra>极致时代</TechLevel_Ultra>
+  <!-- EN: archotech -->
+  <TechLevel_Archotech>远古科技</TechLevel_Archotech>
+
+  <!-- Player pawns arrive method -->
+  <!-- EN: Standing -->
+  <PlayerPawnsArriveMethod_Standing>固定</PlayerPawnsArriveMethod_Standing>
+  <!-- EN: Drop pods -->
+  <PlayerPawnsArriveMethod_DropPods>空投舱</PlayerPawnsArriveMethod_DropPods>
+
+  <!-- Pawn generation context -->
+  <!-- EN: all characters -->
+  <PawnGenerationContext_All>所有角色</PawnGenerationContext_All>
+  <!-- EN: player starting characters -->
+  <PawnGenerationContext_PlayerStarter>玩家初始角色</PawnGenerationContext_PlayerStarter>
+  <!-- EN: non-player characters -->
+  <PawnGenerationContext_NonPlayer>NPC</PawnGenerationContext_NonPlayer>
+  
+  <!-- Animal name display mode -->
+  <!-- EN: Show animal names -->
+  <ShowAnimalNames>显示动物名称</ShowAnimalNames>
+  <!-- EN: Tame (named only) -->
+  <AnimalNameDisplayMode_TameNamed>已驯服（已命名）</AnimalNameDisplayMode_TameNamed>
+  <!-- EN: Tame (all) -->
+  <AnimalNameDisplayMode_TameAll>已驯服（所有）</AnimalNameDisplayMode_TameAll>
+  
+  <!-- Temperature -->
+  <!-- EN: Celsius -->
+  <Celsius>摄氏</Celsius>
+  <!-- EN: Fahrenheit -->
+  <Fahrenheit>华氏</Fahrenheit>
+  <!-- E

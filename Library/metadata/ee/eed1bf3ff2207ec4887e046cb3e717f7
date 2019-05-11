@@ -1,0 +1,853 @@
+    TessVertex hull (InputPatch<TessVertex,3> v, uint id : SV_OutputControlPointID) {
+                    return v[id];
+                }
+                [domain("tri")]
+                VertexOutput domain (OutputPatchConstant tessFactors, const OutputPatch<TessVertex,3> vi, float3 bary : SV_DomainLocation) {
+                    VertexInput v = (VertexInput)0;
+                    v.vertex = vi[0].vertex*bary.x + vi[1].vertex*bary.y + vi[2].vertex*bary.z;
+                    v.normal = vi[0].normal*bary.x + vi[1].normal*bary.y + vi[2].normal*bary.z;
+                    v.tangent = vi[0].tangent*bary.x + vi[1].tangent*bary.y + vi[2].tangent*bary.z;
+                    v.texcoord0 = vi[0].texcoord0*bary.x + vi[1].texcoord0*bary.y + vi[2].texcoord0*bary.z;
+                    v.texcoord1 = vi[0].texcoord1*bary.x + vi[1].texcoord1*bary.y + vi[2].texcoord1*bary.z;
+                    displacement(v);
+                    VertexOutput o = vert(v);
+                    return o;
+                }
+            #endif
+            float4 frag(VertexOutput i) : COLOR {
+                i.normalDir = normalize(i.normalDir);
+                float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
+                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+                float2 node_6 = (i.uv0*2.0);
+                float3 _Normals_var = UnpackNormal(tex2D(_Normals,TRANSFORM_TEX(node_6, _Normals)));
+                float node_15 = 1.0;
+                float4 node_803 = tex2Dlod(_AORGBHeightA,float4(TRANSFORM_TEX(node_6, _AORGBHeightA),0.0,node_15));
+                float4 node_21 = _Time;
+                float2 node_161 = (node_6+node_21.g*float2(0.4,0));
+                float4 _DisplacementR_var = tex2Dlod(_DisplacementR,float4(TRANSFORM_TEX(node_161, _DisplacementR),0.0,node_15));
+                float node_156 = saturate((node_803.a-_DisplacementR_var.r));
+                float3 normalLocal = normalize(lerp(float3(0,0,1),_Normals_var.rgb,node_156));
+                float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
+                float3 viewReflectDirection = reflect( -viewDirection, normalDirection );
+                float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
+                float3 lightColor = _LightColor0.rgb;
+                float3 halfDirection = normalize(viewDirection+lightDirection);
+////// Lighting:
+                float attenuation = LIGHT_ATTENUATION(i);
+                float3 attenColor = attenuation * _LightColor0.xyz;
+///////// Gloss:
+                float gloss = 10.0;
+                float specPow = exp2( gloss * 10.0 + 1.0 );
+/////// GI Data:
+                UnityLight light;
+                #ifdef LIGHTMAP_OFF
+                    light.color = lightColor;
+                    light.dir = lightDirection;
+                    light.ndotl = LambertTerm (normalDirection, light.dir);
+                #else
+                    light.color = half3(0.f, 0.f, 0.f);
+                    light.ndotl = 0.0f;
+                    light.dir = half3(0.f, 0.f, 0.f);
+                #endif
+                UnityGIInput d;
+                d.light = light;
+                d.worldPos = i.posWorld.xyz;
+                d.worldViewDir = viewDirection;
+                d.atten = attenuation;
+                #if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
+                    d.ambient = 0;
+                    d.lightmapUV = i.ambientOrLightmapUV;
+                #else
+                    d.ambient = i.ambientOrLightmapUV;
+                #endif
+                #if UNITY_SPECCUBE_BLENDING || UNITY_SPECCUBE_BOX_PROJECTION
+                    d.boxMin[0] = unity_SpecCube0_BoxMin;
+                    d.boxMin[1] = unity_SpecCube1_BoxMin;
+                #endif
+                #if UNITY_SPECCUBE_BOX_PROJECTION
+                    d.boxMax[0] = unity_SpecCube0_BoxMax;
+                    d.boxMax[1] = unity_SpecCube1_BoxMax;
+                    d.probePosition[0] = unity_SpecCube0_ProbePosition;
+                    d.probePosition[1] = unity_SpecCube1_ProbePosition;
+                #endif
+                d.probeHDR[0] = unity_SpecCube0_HDR;
+                d.probeHDR[1] = unity_SpecCube1_HDR;
+                Unity_GlossyEnvironmentData ugls_en_data;
+                ugls_en_data.roughness = 1.0 - gloss;
+                ugls_en_data.reflUVW = viewReflectDirection;
+                UnityGI gi = UnityGlobalIllumination(d, 1, normalDirection, ugls_en_data );
+                lightDirection = gi.light.dir;
+                lightColor = gi.light.color;
+////// Specular:
+                float NdotL = saturate(dot( normalDirection, lightDirection ));
+                float4 _Diffuse_var = tex2D(_Diffuse,TRANSFORM_TEX(i.uv0, _Diffuse));
+                float4 node_798 = tex2D(_AORGBHeightA,TRANSFORM_TEX(node_6, _AORGBHeightA));
+                float3 node_162 = lerp(float3(0.4117647,0.3826572,0.3602941),(_Diffuse_var.rgb*node_798.rgb),node_156);
+                float node_165 = (node_156*node_162.r);
+                float3 specularColor = float3(node_165,node_165,node_165);
+                float3 directSpecular = attenColor * pow(max(0,dot(halfDirection,normalDirection)),specPow)*specularColor;
+                float3 indirectSpecular = (gi.indirect.specular)*specularColor;
+                float3 specular = (directSpecular + indirectSpecular);
+/////// Diffuse:
+                NdotL = dot( normalDirection, lightDirection );
+                float node_237 = (0.5*(1.0 - node_156));
+                float3 w = float3(node_237,node_237,node_237)*0.5; // Light wrapping
+                float3 NdotLWrap = NdotL * ( 1.0 - w );
+                float3 forwardLight = max(float3(0.0,0.0,0.0), NdotLWrap + w );
+                NdotL = max(0.0,dot( normalDirection, lightDirection ));
+                float3 directDiffuse = forwardLight * attenColor;
+                float3 indirectDiffuse = float3(0,0,0);
+                indirectDiffuse += gi.indirect.diffuse;
+                float3 diffuseColor = node_162;
+                float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
+/// Final Color:
+                float3 finalColor = diffuse + specular;
+                fixed4 finalRGBA = fixed4(finalColor,1);
+                UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
+                return finalRGBA;
+            }
+            ENDCG
+        }
+        Pass {
+            Name "FORWARD_DELTA"
+            Tags {
+                "LightMode"="ForwardAdd"
+            }
+            Blend One One
+            
+            
+            CGPROGRAM
+            #pragma hull hull
+            #pragma domain domain
+            #pragma vertex tessvert
+            #pragma fragment frag
+            #define UNITY_PASS_FORWARDADD
+            #define SHOULD_SAMPLE_SH ( defined (LIGHTMAP_OFF) && defined(DYNAMICLIGHTMAP_OFF) )
+            #define _GLOSSYENV 1
+            #include "UnityCG.cginc"
+            #include "AutoLight.cginc"
+            #include "Lighting.cginc"
+            #include "Tessellation.cginc"
+            #include "UnityPBSLighting.cginc"
+            #include "UnityStandardBRDF.cginc"
+            #pragma multi_compile_fwdadd_fullshadows
+            #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
+            #pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
+            #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
+            #pragma multi_compile_fog
+            #pragma only_renderers d3d9 d3d11 glcore gles3 metal d3d11_9x xboxone ps4 psp2 
+            #pragma target 5.0
+            uniform sampler2D _Normals; uniform float4 _Normals_ST;
+            uniform float _Depth;
+            uniform sampler2D _DisplacementR; uniform float4 _DisplacementR_ST;
+            uniform sampler2D _AORGBHeightA; uniform float4 _AORGBHeightA_ST;
+            uniform sampler2D _Diffuse; uniform float4 _Diffuse_ST;
+            struct VertexInput {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                float4 tangent : TANGENT;
+                float2 texcoord0 : TEXCOORD0;
+                float2 texcoord1 : TEXCOORD1;
+                float2 texcoord2 : TEXCOORD2;
+            };
+            struct VertexOutput {
+                float4 pos : SV_POSITION;
+                float2 uv0 : TEXCOORD0;
+                float2 uv1 : TEXCOORD1;
+                float2 uv2 : TEXCOORD2;
+                float4 posWorld : TEXCOORD3;
+                float3 normalDir : TEXCOORD4;
+                float3 tangentDir : TEXCOORD5;
+                float3 bitangentDir : TEXCOORD6;
+                LIGHTING_COORDS(7,8)
+                UNITY_FOG_COORDS(9)
+            };
+            VertexOutput vert (VertexInput v) {
+                VertexOutput o = (VertexOutput)0;
+                o.uv0 = v.texcoord0;
+                o.uv1 = v.texcoord1;
+                o.uv2 = v.texcoord2;
+                o.normalDir = UnityObjectToWorldNormal(v.normal);
+                o.tangentDir = normalize( mul( unity_ObjectToWorld, float4( v.tangent.xyz, 0.0 ) ).xyz );
+                o.bitangentDir = normalize(cross(o.normalDir, o.tangentDir) * v.tangent.w);
+                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
+                float3 lightColor = _LightColor0.rgb;
+                o.pos = UnityObjectToClipPos( v.vertex );
+                UNITY_TRANSFER_FOG(o,o.pos);
+                TRANSFER_VERTEX_TO_FRAGMENT(o)
+                return o;
+            }
+            #ifdef UNITY_CAN_COMPILE_TESSELLATION
+                struct TessVertex {
+                    float4 vertex : INTERNALTESSPOS;
+                    float3 normal : NORMAL;
+                    float4 tangent : TANGENT;
+                    float2 texcoord0 : TEXCOORD0;
+                    float2 texcoord1 : TEXCOORD1;
+                    float2 texcoord2 : TEXCOORD2;
+                };
+                struct OutputPatchConstant {
+                    float edge[3]         : SV_TessFactor;
+                    float inside          : SV_InsideTessFactor;
+                    float3 vTangent[4]    : TANGENT;
+                    float2 vUV[4]         : TEXCOORD;
+                    float3 vTanUCorner[4] : TANUCORNER;
+                    float3 vTanVCorner[4] : TANVCORNER;
+                    float4 vCWts          : TANWEIGHTS;
+                };
+                TessVertex tessvert (VertexInput v) {
+                    TessVertex o;
+                    o.vertex = v.vertex;
+                    o.normal = v.normal;
+                    o.tangent = v.tangent;
+                    o.texcoord0 = v.texcoord0;
+                    o.texcoord1 = v.texcoord1;
+                    o.texcoord2 = v.texcoord2;
+                    return o;
+                }
+                void displacement (inout VertexInput v){
+                    float4 node_2942 = _Time;
+                    float2 node_6 = (v.texcoord0*2.0);
+                    float2 node_161 = (node_6+node_2942.g*float2(0.4,0));
+                    float node_15 = 1.0;
+                    float4 _DisplacementR_var = tex2Dlod(_DisplacementR,float4(TRANSFORM_TEX(node_161, _DisplacementR),0.0,node_15));
+                    float4 node_803 = tex2Dlod(_AORGBHeightA,float4(TRANSFORM_TEX(node_6, _AORGBHeightA),0.0,node_15));
+                    v.vertex.xyz += (v.normal*((1.0 - max(_DisplacementR_var.r,node_803.a))*((-1.0)*_Depth)));
+                }
+                float Tessellation(TessVertex v){
+                    return 3.0;
+                }
+                float4 Tessellation(TessVertex v, TessVertex v1, TessVertex v2){
+                    float tv = Tessellation(v);
+                    float tv1 = Tessellation(v1);
+                    float tv2 = Tessellation(v2);
+                    return float4( tv1+tv2, tv2+tv, tv+tv1, tv+tv1+tv2 ) / float4(2,2,2,3);
+                }
+                OutputPatchConstant hullconst (InputPatch<TessVertex,3> v) {
+                    OutputPatchConstant o = (OutputPatchConstant)0;
+                    float4 ts = Tessellation( v[0], v[1], v[2] );
+                    o.edge[0] = ts.x;
+                    o.edge[1] = ts.y;
+                    o.edge[2] = ts.z;
+                    o.inside = ts.w;
+                    return o;
+                }
+                [domain("tri")]
+                [partitioning("fractional_odd")]
+                [outputtopology("triangle_cw")]
+                [patchconstantfunc("hullconst")]
+                [outputcontrolpoints(3)]
+                TessVertex hull (InputPatch<TessVertex,3> v, uint id : SV_OutputControlPointID) {
+                    return v[id];
+                }
+                [domain("tri")]
+                VertexOutput domain (OutputPatchConstant tessFactors, const OutputPatch<TessVertex,3> vi, float3 bary : SV_DomainLocation) {
+                    VertexInput v = (VertexInput)0;
+                    v.vertex = vi[0].vertex*bary.x + vi[1].vertex*bary.y + vi[2].vertex*bary.z;
+                    v.normal = vi[0].normal*bary.x + vi[1].normal*bary.y + vi[2].normal*bary.z;
+                    v.tangent = vi[0].tangent*bary.x + vi[1].tangent*bary.y + vi[2].tangent*bary.z;
+                    v.texcoord0 = vi[0].texcoord0*bary.x + vi[1].texcoord0*bary.y + vi[2].texcoord0*bary.z;
+                    v.texcoord1 = vi[0].texcoord1*bary.x + vi[1].texcoord1*bary.y + vi[2].texcoord1*bary.z;
+                    displacement(v);
+                    VertexOutput o = vert(v);
+                    return o;
+                }
+            #endif
+            float4 frag(VertexOutput i) : COLOR {
+                i.normalDir = normalize(i.normalDir);
+                float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
+                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+                float2 node_6 = (i.uv0*2.0);
+                float3 _Normals_var = UnpackNormal(tex2D(_Normals,TRANSFORM_TEX(node_6, _Normals)));
+                float node_15 = 1.0;
+                float4 node_803 = tex2Dlod(_AORGBHeightA,float4(TRANSFORM_TEX(node_6, _AORGBHeightA),0.0,node_15));
+                float4 node_2942 = _Time;
+                float2 node_161 = (node_6+node_2942.g*float2(0.4,0));
+                float4 _DisplacementR_var = tex2Dlod(_DisplacementR,float4(TRANSFORM_TEX(node_161, _DisplacementR),0.0,node_15));
+                float node_156 = saturate((node_803.a-_DisplacementR_var.r));
+                float3 normalLocal = normalize(lerp(float3(0,0,1),_Normals_var.rgb,node_156));
+                float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
+                float3 lightDirection = normalize(lerp(_WorldSpaceLightPos0.xyz, _WorldSpaceLightPos0.xyz - i.posWorld.xyz,_WorldSpaceLightPos0.w));
+                float3 lightColor = _LightColor0.rgb;
+                float3 halfDirection = normalize(viewDirection+lightDirection);
+////// Lighting:
+                float attenuation = LIGHT_ATTENUATION(i);
+                float3 attenColor = attenuation * _LightColor0.xyz;
+///////// Gloss:
+                float gloss = 10.0;
+                float specPow = exp2( gloss * 10.0 + 1.0 );
+////// Specular:
+                float NdotL = saturate(dot( normalDirection, lightDirection ));
+                float4 _Diffuse_var = tex2D(_Diffuse,TRANSFORM_TEX(i.uv0, _Diffuse));
+                float4 node_798 = tex2D(_AORGBHeightA,TRANSFORM_TEX(node_6, _AORGBHeightA));
+                float3 node_162 = lerp(float3(0.4117647,0.3826572,0.3602941),(_Diffuse_var.rgb*node_798.rgb),node_156);
+                float node_165 = (node_156*node_162.r);
+                float3 specularColor = float3(node_165,node_165,node_165);
+                float3 directSpecular = attenColor * pow(max(0,dot(halfDirection,normalDirection)),specPow)*specularColor;
+                float3 specular = directSpecular;
+/////// Diffuse:
+                NdotL = dot( normalDirection, lightDirection );
+                float node_237 = (0.5*(1.0 - node_156));
+                float3 w = float3(node_237,node_237,node_237)*0.5; // Light wrapping
+                float3 NdotLWrap = NdotL * ( 1.0 - w );
+                float3 forwardLight = max(float3(0.0,0.0,0.0), NdotLWrap + w );
+                NdotL = max(0.0,dot( normalDirection, lightDirection ));
+                float3 directDiffuse = forwardLight * attenColor;
+                float3 diffuseColor = node_162;
+                float3 diffuse = directDiffuse * diffuseColor;
+/// Final Color:
+                float3 finalColor = diffuse + specular;
+                fixed4 finalRGBA = fixed4(finalColor * 1,0);
+                UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
+                return finalRGBA;
+            }
+            ENDCG
+        }
+        Pass {
+            Name "ShadowCaster"
+            Tags {
+                "LightMode"="ShadowCaster"
+            }
+            Offset 1, 1
+            Cull Back
+            
+            CGPROGRAM
+            #pragma hull hull
+            #pragma domain domain
+            #pragma vertex tessvert
+            #pragma fragment frag
+            #define UNITY_PASS_SHADOWCASTER
+            #define SHOULD_SAMPLE_SH ( defined (LIGHTMAP_OFF) && defined(DYNAMICLIGHTMAP_OFF) )
+            #define _GLOSSYENV 1
+            #include "UnityCG.cginc"
+            #include "Lighting.cginc"
+            #include "Tessellation.cginc"
+            #include "UnityPBSLighting.cginc"
+            #include "UnityStandardBRDF.cginc"
+            #pragma fragmentoption ARB_precision_hint_fastest
+            #pragma multi_compile_shadowcaster
+            #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
+            #pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
+            #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
+            #pragma multi_compile_fog
+            #pragma only_renderers d3d9 d3d11 glcore gles3 metal d3d11_9x xboxone ps4 psp2 
+            #pragma target 5.0
+            uniform float _Depth;
+            uniform sampler2D _DisplacementR; uniform float4 _DisplacementR_ST;
+            uniform sampler2D _AORGBHeightA; uniform float4 _AORGBHeightA_ST;
+            struct VertexInput {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                float4 tangent : TANGENT;
+                float2 texcoord0 : TEXCOORD0;
+                float2 texcoord1 : TEXCOORD1;
+                float2 texcoord2 : TEXCOORD2;
+            };
+            struct VertexOutput {
+                V2F_SHADOW_CASTER;
+                float2 uv0 : TEXCOORD1;
+                float2 uv1 : TEXCOORD2;
+                float2 uv2 : TEXCOORD3;
+                float4 posWorld : TEXCOORD4;
+                float3 normalDir : TEXCOORD5;
+            };
+            VertexOutput vert (VertexInput v) {
+                VertexOutput o = (VertexOutput)0;
+                o.uv0 = v.texcoord0;
+                o.uv1 = v.texcoord1;
+                o.uv2 = v.texcoord2;
+                o.normalDir = UnityObjectToWorldNormal(v.normal);
+                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
+                o.pos = UnityObjectToClipPos( v.vertex );
+                TRANSFER_SHADOW_CASTER(o)
+                return o;
+            }
+            #ifdef UNITY_CAN_COMPILE_TESSELLATION
+                struct TessVertex {
+                    float4 vertex : INTERNALTESSPOS;
+                    float3 normal : NORMAL;
+                    float4 tangent : TANGENT;
+                    float2 texcoord0 : TEXCOORD0;
+                    float2 texcoord1 : TEXCOORD1;
+                    float2 texcoord2 : TEXCOORD2;
+                };
+                struct OutputPatchConstant {
+                    float edge[3]         : SV_TessFactor;
+                    float inside          : SV_InsideTessFactor;
+                    float3 vTangent[4]    : TANGENT;
+                    float2 vUV[4]         : TEXCOORD;
+                    float3 vTanUCorner[4] : TANUCORNER;
+                    float3 vTanVCorner[4] : TANVCORNER;
+                    float4 vCWts          : TANWEIGHTS;
+                };
+                TessVertex tessvert (VertexInput v) {
+                    TessVertex o;
+                    o.vertex = v.vertex;
+                    o.normal = v.normal;
+                    o.tangent = v.tangent;
+                    o.texcoord0 = v.texcoord0;
+                    o.texcoord1 = v.texcoord1;
+                    o.texcoord2 = v.texcoord2;
+                    return o;
+                }
+                void displacement (inout VertexInput v){
+                    float4 node_7647 = _Time;
+                    float2 node_6 = (v.texcoord0*2.0);
+                    float2 node_161 = (node_6+node_7647.g*float2(0.4,0));
+                    float node_15 = 1.0;
+                    float4 _DisplacementR_var = tex2Dlod(_DisplacementR,float4(TRANSFORM_TEX(node_161, _DisplacementR),0.0,node_15));
+                    float4 node_803 = tex2Dlod(_AORGBHeightA,float4(TRANSFORM_TEX(node_6, _AORGBHeightA),0.0,node_15));
+                    v.vertex.xyz += (v.normal*((1.0 - max(_DisplacementR_var.r,node_803.a))*((-1.0)*_Depth)));
+                }
+                float Tessellation(TessVertex v){
+                    return 3.0;
+                }
+                float4 Tessellation(TessVertex v, TessVertex v1, TessVertex v2){
+                    float tv = Tessellation(v);
+                    float tv1 = Tessellation(v1);
+                    float tv2 = Tessellation(v2);
+                    return float4( tv1+tv2, tv2+tv, tv+tv1, tv+tv1+tv2 ) / float4(2,2,2,3);
+                }
+                OutputPatchConstant hullconst (InputPatch<TessVertex,3> v) {
+                    OutputPatchConstant o = (OutputPatchConstant)0;
+                    float4 ts = Tessellation( v[0], v[1], v[2] );
+                    o.edge[0] = ts.x;
+                    o.edge[1] = ts.y;
+                    o.edge[2] = ts.z;
+                    o.inside = ts.w;
+                    return o;
+                }
+                [domain("tri")]
+                [partitioning("fractional_odd")]
+                [outputtopology("triangle_cw")]
+                [patchconstantfunc("hullconst")]
+                [outputcontrolpoints(3)]
+                TessVertex hull (InputPatch<TessVertex,3> v, uint id : SV_OutputControlPointID) {
+                    return v[id];
+                }
+                [domain("tri")]
+                VertexOutput domain (OutputPatchConstant tessFactors, const OutputPatch<TessVertex,3> vi, float3 bary : SV_DomainLocation) {
+                    VertexInput v = (VertexInput)0;
+                    v.vertex = vi[0].vertex*bary.x + vi[1].vertex*bary.y + vi[2].vertex*bary.z;
+                    v.normal = vi[0].normal*bary.x + vi[1].normal*bary.y + vi[2].normal*bary.z;
+                    v.tangent = vi[0].tangent*bary.x + vi[1].tangent*bary.y + vi[2].tangent*bary.z;
+                    v.texcoord0 = vi[0].texcoord0*bary.x + vi[1].texcoord0*bary.y + vi[2].texcoord0*bary.z;
+                    v.texcoord1 = vi[0].texcoord1*bary.x + vi[1].texcoord1*bary.y + vi[2].texcoord1*bary.z;
+                    displacement(v);
+                    VertexOutput o = vert(v);
+                    return o;
+                }
+            #endif
+            float4 frag(VertexOutput i) : COLOR {
+                i.normalDir = normalize(i.normalDir);
+                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+                float3 normalDirection = i.normalDir;
+                SHADOW_CASTER_FRAGMENT(i)
+            }
+            ENDCG
+        }
+        Pass {
+            Name "Meta"
+            Tags {
+                "LightMode"="Meta"
+            }
+            Cull Off
+            
+            CGPROGRAM
+            #pragma hull hull
+            #pragma domain domain
+            #pragma vertex tessvert
+            #pragma fragment frag
+            #define UNITY_PASS_META 1
+            #define SHOULD_SAMPLE_SH ( defined (LIGHTMAP_OFF) && defined(DYNAMICLIGHTMAP_OFF) )
+            #define _GLOSSYENV 1
+            #include "UnityCG.cginc"
+            #include "Lighting.cginc"
+            #include "Tessellation.cginc"
+            #include "UnityPBSLighting.cginc"
+            #include "UnityStandardBRDF.cginc"
+            #include "UnityMetaPass.cginc"
+            #pragma fragmentoption ARB_precision_hint_fastest
+            #pragma multi_compile_shadowcaster
+            #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
+            #pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
+            #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
+            #pragma multi_compile_fog
+            #pragma only_renderers d3d9 d3d11 glcore gles3 metal d3d11_9x xboxone ps4 psp2 
+            #pragma target 5.0
+            uniform float _Depth;
+            uniform sampler2D _DisplacementR; uniform float4 _DisplacementR_ST;
+            uniform sampler2D _AORGBHeightA; uniform float4 _AORGBHeightA_ST;
+            uniform sampler2D _Diffuse; uniform float4 _Diffuse_ST;
+            struct VertexInput {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                float4 tangent : TANGENT;
+                float2 texcoord0 : TEXCOORD0;
+                float2 texcoord1 : TEXCOORD1;
+                float2 texcoord2 : TEXCOORD2;
+            };
+            struct VertexOutput {
+                float4 pos : SV_POSITION;
+                float2 uv0 : TEXCOORD0;
+                float2 uv1 : TEXCOORD1;
+                float2 uv2 : TEXCOORD2;
+                float4 posWorld : TEXCOORD3;
+                float3 normalDir : TEXCOORD4;
+            };
+            VertexOutput vert (VertexInput v) {
+                VertexOutput o = (VertexOutput)0;
+                o.uv0 = v.texcoord0;
+                o.uv1 = v.texcoord1;
+                o.uv2 = v.texcoord2;
+                o.normalDir = UnityObjectToWorldNormal(v.normal);
+                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
+                o.pos = UnityMetaVertexPosition(v.vertex, v.texcoord1.xy, v.texcoord2.xy, unity_LightmapST, unity_DynamicLightmapST );
+                return o;
+            }
+            #ifdef UNITY_CAN_COMPILE_TESSELLATION
+                struct TessVertex {
+                    float4 vertex : INTERNALTESSPOS;
+                    float3 normal : NORMAL;
+                    float4 tangent : TANGENT;
+                    float2 texcoord0 : TEXCOORD0;
+                    float2 texcoord1 : TEXCOORD1;
+                    float2 texcoord2 : TEXCOORD2;
+                };
+                struct OutputPatchConstant {
+                    float edge[3]         : SV_TessFactor;
+                    float inside          : SV_InsideTessFactor;
+                    float3 vTangent[4]    : TANGENT;
+                    float2 vUV[4]         : TEXCOORD;
+                    float3 vTanUCorner[4] : TANUCORNER;
+                    float3 vTanVCorner[4] : TANVCORNER;
+                    float4 vCWts          : TANWEIGHTS;
+                };
+                TessVertex tessvert (VertexInput v) {
+                    TessVertex o;
+                    o.vertex = v.vertex;
+                    o.normal = v.normal;
+                    o.tangent = v.tangent;
+                    o.texcoord0 = v.texcoord0;
+                    o.texcoord1 = v.texcoord1;
+                    o.texcoord2 = v.texcoord2;
+                    return o;
+                }
+                void displacement (inout VertexInput v){
+                    float4 node_5250 = _Time;
+                    float2 node_6 = (v.texcoord0*2.0);
+                    float2 node_161 = (node_6+node_5250.g*float2(0.4,0));
+                    float node_15 = 1.0;
+                    float4 _DisplacementR_var = tex2Dlod(_DisplacementR,float4(TRANSFORM_TEX(node_161, _DisplacementR),0.0,node_15));
+                    float4 node_803 = tex2Dlod(_AORGBHeightA,float4(TRANSFORM_TEX(node_6, _AORGBHeightA),0.0,node_15));
+                    v.vertex.xyz += (v.normal*((1.0 - max(_DisplacementR_var.r,node_803.a))*((-1.0)*_Depth)));
+                }
+                float Tessellation(TessVertex v){
+                    return 3.0;
+                }
+                float4 Tessellation(TessVertex v, TessVertex v1, TessVertex v2){
+                    float tv = Tessellation(v);
+                    float tv1 = Tessellation(v1);
+                    float tv2 = Tessellation(v2);
+                    return float4( tv1+tv2, tv2+tv, tv+tv1, tv+tv1+tv2 ) / float4(2,2,2,3);
+                }
+                OutputPatchConstant hullconst (InputPatch<TessVertex,3> v) {
+                    OutputPatchConstant o = (OutputPatchConstant)0;
+                    float4 ts = Tessellation( v[0], v[1], v[2] );
+                    o.edge[0] = ts.x;
+                    o.edge[1] = ts.y;
+                    o.edge[2] = ts.z;
+                    o.inside = ts.w;
+                    return o;
+                }
+                [domain("tri")]
+                [partitioning("fractional_odd")]
+                [outputtopology("triangle_cw")]
+                [patchconstantfunc("hullconst")]
+                [outputcontrolpoints(3)]
+                TessVertex hull (InputPatch<TessVertex,3> v, uint id : SV_OutputControlPointID) {
+                    return v[id];
+                }
+                [domain("tri")]
+                VertexOutput domain (OutputPatchConstant tessFactors, const OutputPatch<TessVertex,3> vi, float3 bary : SV_DomainLocation) {
+                    VertexInput v = (VertexInput)0;
+                    v.vertex = vi[0].vertex*bary.x + vi[1].vertex*bary.y + vi[2].vertex*bary.z;
+                    v.normal = vi[0].normal*bary.x + vi[1].normal*bary.y + vi[2].normal*bary.z;
+                    v.tangent = vi[0].tangent*bary.x + vi[1].tangent*bary.y + vi[2].tangent*bary.z;
+                    v.texcoord0 = vi[0].texcoord0*bary.x + vi[1].texcoord0*bary.y + vi[2].texcoord0*bary.z;
+                    v.texcoord1 = vi[0].texcoord1*bary.x + vi[1].texcoord1*bary.y + vi[2].texcoord1*bary.z;
+                    displacement(v);
+                    VertexOutput o = vert(v);
+                    return o;
+                }
+            #endif
+            float4 frag(VertexOutput i) : SV_Target {
+                i.normalDir = normalize(i.normalDir);
+                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+                float3 normalDirection = i.normalDir;
+                UnityMetaInput o;
+                UNITY_INITIALIZE_OUTPUT( UnityMetaInput, o );
+                
+                o.Emission = 0;
+                
+                float4 _Diffuse_var = tex2D(_Diffuse,TRANSFORM_TEX(i.uv0, _Diffuse));
+                float2 node_6 = (i.uv0*2.0);
+                float4 node_798 = tex2D(_AORGBHeightA,TRANSFORM_TEX(node_6, _AORGBHeightA));
+                float node_15 = 1.0;
+                float4 node_803 = tex2Dlod(_AORGBHeightA,float4(TRANSFORM_TEX(node_6, _AORGBHeightA),0.0,node_15));
+                float4 node_5250 = _Time;
+                float2 node_161 = (node_6+node_5250.g*float2(0.4,0));
+                float4 _DisplacementR_var = tex2Dlod(_DisplacementR,float4(TRANSFORM_TEX(node_161, _DisplacementR),0.0,node_15));
+                float node_156 = saturate((node_803.a-_DisplacementR_var.r));
+                float3 node_162 = lerp(float3(0.4117647,0.3826572,0.3602941),(_Diffuse_var.rgb*node_798.rgb),node_156);
+                float3 diffColor = node_162;
+                float node_165 = (node_156*node_162.r);
+                float3 specColor = float3(node_165,node_165,node_165);
+                float roughness = 1.0 - 10.0;
+                o.Albedo = diffColor + specColor * roughness * roughness * 0.5;
+                
+                return UnityMetaFragment( o );
+            }
+            ENDCG
+        }
+    }
+    FallBack "Diffuse"
+    CustomEditor "ShaderForgeMaterialInspector"
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+m  ~è          2018.3.0f2 þÿÿÿ      ÿÿ’3$øÌuñì˜²e+ Í=   ^          7  €ÿÿÿÿ     €    ¦ €² €           Ð  €               ¦ €               ¦ €               ¦ €#               ¦ €+               H €3   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Þ  € €   	        Q  €j  €   
+        H €<   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Þ  € €           Q  €j  €           Õ €I   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ    À    Þ  € €            H €j  €ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Þ  € €           Q  €j  €           ™ €P             AssetMetaData guid data[0] data[1] data[2] data[3] pathName originalName labels assetStoreRef    ÿÿ«\sÝÌ–Ò‡öži”ß/   ½          7  €ÿÿÿÿ     €    ¦ €² €              E €           Þ  €)          €   . €2          €   ;   a €           Þ  €)          €   . €2          €   † €r €           Þ  €)      	    €   . €2      
+    €   H €« €ÿÿÿÿ   €  1  €1  €ÿÿÿÿ   @   Þ  € €          Q  €j  €          ñ  €P   ÿÿÿÿ    À   1  €1  €ÿÿÿÿ    €    Þ  € €             €j  €ÿÿÿÿ    €    b   ›  €ÿÿÿÿ    €    H €x   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Þ  € €           Q  €j  €           H €}   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Þ  € €           Q  €j  €           H €†   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Þ  € €           Q  €j  €           y €
+ €             Þ  €)      !    €   . €2      "    €   H €‹   ÿÿÿÿ#   €   1  €1  €ÿÿÿÿ$   @    Þ  € €   %        Q  €j  €   &        H €–   ÿÿÿÿ'   €   1  €1  €ÿÿÿÿ(   @    Þ  € €   )        Q  €j  €   *        H €¨   ÿÿÿÿ+   €   1  €1  €ÿÿÿÿ,   @    Þ  € €   -        Q  €j  €   .      TextScriptImporter PPtr<EditorExtension> m_FileID m_PathID PPtr<PrefabInstance> m_ExternalObjects SourceAssetIdentifier type assembly name m_UserData m_AssetBundleName m_AssetBundleVariant 1    ÿÿeF¼_1Ch_Þ‰Ž$   =      O €7  €ÿÿÿÿ     €    ¦ €² €               E €           Þ  €          €   . €          €   (   a €           Þ  €          €   . €          €   † €r €           Þ  €      	    €   . €      
+    €   H €« €ÿÿÿÿ   €  1  €1  €ÿÿÿÿ   @   Þ  € €          Q  €j  €          H €ê €ÿÿÿÿ   €  1  €1  €ÿÿÿÿ   @   Þ  € €          Q  €j  €        PPtr<EditorExtension> m_FileID m_PathID PPtr<PrefabInstance>                  d              h   <       ÄJ     ¨   @n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 P_û]H òI˜(”ˆ	Ÿš9   Packages/com.unity.textmeshpro/PackageConversionData.json                                                                                                                                 PackageConversionData   öm  {
+    "assetRecords": [
+        {
+            "referencedResource": "Blue to Purple - Vertical.asset",
+            "target": "guid: 1e643bbd7e13d46418da3774e72bef60",
+            "replacement": "guid: 479a66fa4b094512a62b0a8e553ad95a"
+        },
+        {
+            "referencedResource": "Dark to Light Green - Vertical.asset",
+            "target": "guid: 90c9133b254e2184b8084dea4f392337",
+            "replacement": "guid: 4c86a3366cd840348ebe8dc438570ee4"
+        },
+        {
+            "referencedResource": "Light to Dark Green - Vertical.asset",
+            "target": "guid: 33c745f0979f3984182a138bcc6e57ec",
+            "replacement": "guid: 5cf8ae092ca54931b443bec5148f3c59"
+        },
+        {
+            "referencedResource": "Yellow to Orange - Vertical.asset",
+            "target": "guid: e002cb2a36d9e4a439a062867fa24e1e",
+            "replacement": "guid: 69a525efa7e6472eab268f6ea605f06e"
+        },
+        {
+            "referencedResource": "Crate - Surface Shader Scene.mat",
+            "target": "guid: e177c46c2a091564d88df2c2ca9dcf97",
+            "replacement": "guid: e6b9b44320f4448d9d5e0ee634259966"
+        },
+        {
+            "referencedResource": "Ground - Logo Scene.mat",
+            "target": "guid: 504ae362e57fc464b847f1e9fd0e4035",
+            "replacement": "guid: c719e38f25a9480abd2480ab621a2949"
+        },
+        {
+            "referencedResource": "Ground - Surface Shader Scene.mat",
+            "target": "guid: 9ed9aa864ec2d7f4dad266b9534c6d85",
+            "replacement": "guid: aadd5a709a48466c887296bb5b1b8110"
+        },
+        {
+            "referencedResource": "Small Crate_diffuse.mat",
+            "target": "guid: 92f161029a6d3c54a92d9d283352a135",
+            "replacement": "guid: 22262639920f43d6be32430e4e58350d"
+        },
+        {
+            "referencedResource": "Text Popup.prefab",
+            "target": "guid: c879e892866c8db4f8930b25672233ac",
+            "replacement": "guid: b06f0e6c1dfa4356ac918da1bb32c603"
+        },
+        {
+            "referencedResource": "TextMeshPro - Prefab 1.prefab",
+            "target": "guid: a6a60659abb4d9d4b934feebd3dcc952",
+            "replacement": "guid: a6e39ced0ea046bcb636c3f0b2e2a745"
+        },
+        {
+            "referencedResource": "TextMeshPro - Prefab 2.prefab",
+            "target": "guid: 1b190e3e0ab4c8e4881656b9160c59c2",
+            "replacement": "guid: fdad9d952ae84cafb74c63f2e694d042"
+        },
+        {
+            "referencedResource": "Anton SDF.asset",
+            "target": "guid: f76ef802b8b940c46a31f9027f2b0158",
+            "replacement": "guid: 8a89fa14b10d46a99122fd4f73fca9a2"
+        },
+        {
+            "referencedResource": "Anton SDF - Drop Shadow.mat",
+            "target": "guid: 250a1a103b3b4914c9707e6a423446d6",
+            "replacement": "guid: 749b9069dc4742c5bfa5c74644049926"
+        },
+        {
+            "referencedResource": "Anton SDF - Outline.mat",
+            "target": "guid: e077dc203e948b740859c1c0ca8b9691",
+            "replacement": "guid: a00013af81304728b2be1f4309ee2433"
+        },
+        {
+            "referencedResource": "Bangers SDF.asset",
+            "target": "guid: 808aa8f1ab804104aa7d0c337a6c1481",
+            "replacement": "guid: 125cb55b44b24c4393181402bc6200e6"
+        },
+        {
+            "referencedResource": "Bangers SDF - Drop Shadow.mat",
+            "target": "guid: c26f698d4eee19e4a8b8f42cd299bab5",
+            "replacement": "guid: f2dcf029949142e28b974630369c8b4e"
+        },
+        {
+            "referencedResource": "Bangers SDF - Outline.mat",
+            "target": "guid: db7f2cfbf23d6d54ca4e74a9abd55326",
+            "replacement": "guid: f629c6e43dba4bf38cb74d8860150664"
+        },
+        {
+            "referencedResource": "Bangers SDF Glow.mat",
+            "target": "guid: 7dd7006c58d8a3148a73aa211d8c13d0",
+            "replacement": "guid: d75b8f41e959450c84ac6e967084d3e1"
+        },
+        {
+            "referencedResource": "Bangers SDF Logo.mat",
+            "target": "guid: 4fb51aa7001a2244395ddf6a15d37389",
+            "replacement": "guid: f4e195ac1e204eff960149d1cb34e18c"
+        },
+        {
+            "referencedResource": "Electronic Highway Sign SDF.asset",
+            "target": "guid: 163292f6f226d954593d45b079f8aae0",
+            "replacement": "guid: dc36b3fdc14f47ebb36fd484a67e268a"
+        },
+        {
+            "referencedResource": "LiberationSans SDF - Drop Shadow.mat",
+            "target": "guid: 33db60c37b63f08448ded4b385e74e38",
+            "replacement": "guid: e73a58f6e2794ae7b1b7e50b7fb811b0"
+        },
+        {
+            "referencedResource": "LiberationSans SDF - Metalic Green.mat",
+            "target": "guid: 4f9843c79516ed1468b9b5a4f32e67e3",
+            "replacement": "guid: 8b29aaa3eec7468097ff07adfcf29ac9"
+        },
+        {
+            "referencedResource": "LiberationSans SDF - Outline.mat",
+            "target": "guid: 83a1b0fe6c3dbac44b66f09c82e1d509",
+            "replacement": "guid: 79459efec17a4d00a321bdcc27bbc385"
+        },
+        {
+            "referencedResource": "LiberationSans SDF - Overlay.mat",
+            "target": "guid: 55eb086ae18c76e4bb6cc7106d0dd6e2",
+            "replacement": "guid: 9ad269c99dcf42b7aedefd83dd5a7b9d"
+        },
+        {
+            "referencedResource": "LiberationSans SDF - Soft Mask.mat",
+            "target": "guid: 74e06d99c1657fc4abd33f20685ea9ff",
+            "replacement": "guid: 42df1c7856584b6b8db9a509b6b10074"
+        },
+        {
+            "referencedResource": "Oswald Bold SDF.asset",
+            "target": "guid: 09641b029dfa78843902b548a9de7553",
+            "replacement": "guid: 0161d805a3764c089bef00bfe00793f5"
+        },
+        {
+            "referencedResource": "Roboto-Bold SDF.asset",
+            "target": "guid: d62a573c923f5cb47b8ff65261033b90",
+            "replacement": "guid: 5302535af1044152a457ed104f1f4b91"
+        },
+        {
+            "referencedResource": "Roboto-Bold SDF - Drop Shadow.mat",
+            "target": "guid: 102e7c5c5e3b1f3468518cb166967d77",
+            "replacement": "guid: b246c4190f4e46ec9352fe15a7b09ce0"
+        },
+        {
+            "referencedResource": "Roboto-Bold SDF - Surface.mat",
+            "target": "guid: e2da38ead8f8238449c54a1ef49e080f",
+            "replacement": "guid: e6b276ec991f467aa14ef1f3cc665993"
+        },
+        {
+            "referencedResource": "DropCap Numbers.asset",
+            "target": "guid: c4fd2a959a50b584b92dedfefec1ffda",
+            "replacement": "guid: 14aa93acbb234d16aaef0e8b46814db6"
+        },
+        {
+            "referencedResource": "Benchmark01.cs",
+            "target": "guid: c5fb1b5c24460f745be29cc0eb06a58c",
+            "replacement": "guid: f970ea55f9f84bf79b05dab180b8c125"
+        },
+        {
+            "referencedResource": "Benchmark01_UGUI.cs",
+            "target": "guid: 5e6abf300e36c0a4eb43969c3f2172f8",
+            "replacement": "guid: 8ef7be1c625941f7ba8ed7cc71718c0d"
+        },
+        {
+            "referencedResource": "Benchmark02.cs",
+            "target": "guid: 3467f4170568a484d8b57e2051a27363",
+            "replacement": "guid: e8538afcddc14efbb5d9e94b7ae50197"
+        },
+        {
+            "referencedResource": "Benchmark03.cs",
+            "target": "guid: e6e9d20624a23da4c8b2b6fb7608bb9a",
+            "replacement": "guid: a73109742c8d47ac822895a473300c29"
+        },
+        {
+            "referencedResource": "Benchmark04.cs",
+            "target": "guid: 481dd67bdedc3104ea2156ed49f3acd5",
+            "replacement": "guid: dc20866c0d5e413ab7559440e15333ae"
+        },
+        {
+            "referencedResource": "CameraController.cs",
+            "target": "guid: a9f0e07aefca0cc459134ff9df622278",
+            "replacement": "guid: 2d687537154440a3913a9a3c7977978c"
+        },
+        {
+            "referencedResource": "ChatController.cs",
+            "target": "guid: eba5a4db2591a5844aea5f6f3ad8548e",
+            "replacement": "guid: 53d91f98a2664f5cb9af11de72ac54ec"
+        },
+        {
+            "referencedResource": "EnvMapAnimator.cs",
+            "target": "guid: 7e69f3f28c520ce4d9ab9964b2895b1a",
+            "replacement": "guid: a4b6f99e8bc54541bbd149b014ff441c"
+        },
+        {
+            "referencedResource": "ObjectSpin.cs",
+            "target": "guid: 5e7872ff51989434dabf7807265ada3c",
+            "replacement": "guid: 4f19c7f94c794c5097d8bd11e39c750d"
+        },
+        {
+            "referencedResource": "ShaderPropAnimator.cs",
+            "target": "guid: c56cf968fb6a5b6488e709242718845d",
+            "replacement": "guid: 2787a46a4dc848c1b4b7b9307b614bfd"
+        },
+        {
+            "referencedResource": "SimpleScript.cs",
+            "target": "guid: c64808ff5137c9044a583750e5b0468a",
+            "replacement": "guid: 9eff140b25d64601aabc6ba32245d099"
+        },
+        {
+            "referencedResource": "SkewTextExample.cs",
+            "target": "guid: 48d40dfeb33b717488f55ddbf676643a",
+            "replacement": "guid: d412675cfb3441efa3bf8dcd9b7624dc"
+        },
+        {
+            "referencedResource": "TeleType.cs",
+            "target": "guid: 9094c5c777af3f14489e8947748e86e6",
+            "replacement": "guid: e32c266ee6204b21a427753cb0694c81"
+        },
+        {
+            "referencedResource": "TextConsoleSimulator.cs",
+            "target": "guid: 45757dcc8f119454dac6365e8fd15e8b",
+            "replacement": "guid: 43bcd35a1c0c40ccb6d472893fe2093f"
+        },
+        {
+            "referencedResource": "TextMeshProFloatingText.cs",
+            "target": "guid: dd0e4b969aa70504382a89d2f208ae6c",
+            "replacement": "guid: a4d4c76e63944cba8c7d00f56334b98c"
+        },
+        {
+            "referencedResource": "TextMeshSpawner.cs",
+            "target": "guid: 385939aed18e82d41894437798c30ed8",
+            "replacement": "guid: 76c11bbcfddf44e0ba17d6c2751c8d84"
+      

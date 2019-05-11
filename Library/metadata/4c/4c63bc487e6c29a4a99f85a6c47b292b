@@ -1,0 +1,229 @@
+erTexture.colorBuffer">
+      <summary>
+        <para>Color buffer of the render texture (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.depth">
+      <summary>
+        <para>The precision of the render texture's depth buffer in bits (0, 16, 24/32 are supported).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.depthBuffer">
+      <summary>
+        <para>Depth/stencil buffer of the render texture (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.descriptor">
+      <summary>
+        <para>This struct contains all the information required to create a RenderTexture. It can be copied, cached, and reused to easily create RenderTextures that all share the same properties.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.dimension">
+      <summary>
+        <para>Dimensionality (type) of the render texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.enableRandomWrite">
+      <summary>
+        <para>Enable random access write into this render texture on Shader Model 5.0 level shaders.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.format">
+      <summary>
+        <para>The color format of the render texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.height">
+      <summary>
+        <para>The height of the render texture in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.isVolume">
+      <summary>
+        <para>If enabled, this Render Texture will be used as a Texture3D.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.memorylessMode">
+      <summary>
+        <para>The render texture memoryless mode property.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.sRGB">
+      <summary>
+        <para>Does this render texture use sRGB read/write conversions (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.useDynamicScale">
+      <summary>
+        <para>Is the render texture marked to be scaled by the Dynamic Resolution system.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.useMipMap">
+      <summary>
+        <para>Render texture has mipmaps when this flag is set.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.volumeDepth">
+      <summary>
+        <para>Volume extent of a 3D render texture or number of slices of array texture.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.vrUsage">
+      <summary>
+        <para>If this RenderTexture is a VR eye texture used in stereoscopic rendering, this property decides what special rendering occurs, if any.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.RenderTexture.width">
+      <summary>
+        <para>The width of the render texture in pixels.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.Create">
+      <summary>
+        <para>Actually creates the RenderTexture.</para>
+      </summary>
+      <returns>
+        <para>True if the texture is created, else false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(System.Int32,System.Int32,System.Int32,UnityEngine.RenderTextureFormat)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(System.Int32,System.Int32,System.Int32,UnityEngine.RenderTextureFormat,UnityEngine.RenderTextureReadWrite)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(UnityEngine.RenderTexture)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.#ctor(UnityEngine.RenderTextureDescriptor)">
+      <summary>
+        <para>Creates a new RenderTexture object.</para>
+      </summary>
+      <param name="width">Texture width in pixels.</param>
+      <param name="height">Texture height in pixels.</param>
+      <param name="depth">Number of bits in depth buffer (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Texture color format.</param>
+      <param name="readWrite">How or if color space conversions should be done on texture read/write.</param>
+      <param name="desc">Create the RenderTexture with the settings in the RenderTextureDescriptor.</param>
+      <param name="textureToCopy">Copy the settings from another RenderTexture.</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.DiscardContents">
+      <summary>
+        <para>Hint the GPU driver that the contents of the RenderTexture will not be used.</para>
+      </summary>
+      <param name="discardColor">Should the colour buffer be discarded?</param>
+      <param name="discardDepth">Should the depth buffer be discarded?</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.DiscardContents(System.Boolean,System.Boolean)">
+      <summary>
+        <para>Hint the GPU driver that the contents of the RenderTexture will not be used.</para>
+      </summary>
+      <param name="discardColor">Should the colour buffer be discarded?</param>
+      <param name="discardDepth">Should the depth buffer be discarded?</param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GenerateMips">
+      <summary>
+        <para>Generate mipmap levels of a render texture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GetNativeDepthBufferPtr">
+      <summary>
+        <para>Retrieve a native (underlying graphics API) pointer to the depth buffer resource.</para>
+      </summary>
+      <returns>
+        <para>Pointer to an underlying graphics API depth buffer resource.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GetTemporary(UnityEngine.RenderTextureDescriptor)">
+      <summary>
+        <para>Allocate a temporary render texture.</para>
+      </summary>
+      <param name="width">Width in pixels.</param>
+      <param name="height">Height in pixels.</param>
+      <param name="depthBuffer">Depth buffer bits (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Render texture format.</param>
+      <param name="readWrite">Color space conversion mode.</param>
+      <param name="msaaSamples">Number of antialiasing samples to store in the texture. Valid values are 1, 2, 4, and 8. Throws an exception if any other value is passed.</param>
+      <param name="memorylessMode">Render texture memoryless mode.</param>
+      <param name="desc">Use this RenderTextureDesc for the settings when creating the temporary RenderTexture.</param>
+      <param name="antiAliasing"></param>
+      <param name="vrUsage"></param>
+      <param name="useDynamicScale"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.GetTemporary(System.Int32,System.Int32,System.Int32,UnityEngine.RenderTextureFormat,UnityEngine.RenderTextureReadWrite,System.Int32)">
+      <summary>
+        <para>Allocate a temporary render texture.</para>
+      </summary>
+      <param name="width">Width in pixels.</param>
+      <param name="height">Height in pixels.</param>
+      <param name="depthBuffer">Depth buffer bits (0, 16 or 24). Note that only 24 bit depth has stencil buffer.</param>
+      <param name="format">Render texture format.</param>
+      <param name="readWrite">Color space conversion mode.</param>
+      <param name="msaaSamples">Number of antialiasing samples to store in the texture. Valid values are 1, 2, 4, and 8. Throws an exception if any other value is passed.</param>
+      <param name="memorylessMode">Render texture memoryless mode.</param>
+      <param name="desc">Use this RenderTextureDesc for the settings when creating the temporary RenderTexture.</param>
+      <param name="antiAliasing"></param>
+      <param name="vrUsage"></param>
+      <param name="useDynamicScale"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.IsCreated">
+      <summary>
+        <para>Is the render texture actually created?</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.MarkRestoreExpected">
+      <summary>
+        <para>Indicate that there's a RenderTexture restore operation expected.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.Release">
+      <summary>
+        <para>Releases the RenderTexture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.ReleaseTemporary(UnityEngine.RenderTexture)">
+      <summary>
+        <para>Release a temporary texture allocated with GetTemporary.</para>
+      </summary>
+      <param name="temp"></param>
+    </member>
+    <member name="M:UnityEngine.RenderTexture.ResolveAntiAli

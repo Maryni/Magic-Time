@@ -1,0 +1,15 @@
+me since the sprite manager was first shown.
+            If it returns a non-None value, the interaction ends, and
+            that value is returned.
+
+        `predict`
+            If not None, a function that returns a list of
+            displayables. These displayables are predicted when the
+            sprite manager is.
+
+        `ignore_time`
+            If True, then time is ignored when rendering displayables. This
+            should be used when the sprite manager is used with a relatively
+            small pool of images, and those images do not change over time.
+            This should only be used with a small number of displayables, as
+            it will keep all displayables used in memory for the life of

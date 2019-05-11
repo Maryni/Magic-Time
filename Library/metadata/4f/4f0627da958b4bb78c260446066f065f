@@ -1,0 +1,97 @@
+/para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwayShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwayShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="alwaysShowHorizontal"></param>
+      <param name="alwaysShowVertical"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+      <returns>
+        <para>The modified scrollPosition. Feed this back into the variable you pass in, as shown in the example.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginScrollView(UnityEngine.Vector2,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Begin an automatically laid out scrollview.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwayShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwayShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="alwaysShowHorizontal"></param>
+      <param name="alwaysShowVertical"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+      <returns>
+        <para>The modified scrollPosition. Feed this back into the variable you pass in, as shown in the example.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginScrollView(UnityEngine.Vector2,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin an automatically laid out scrollview.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwayShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwayShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="alwaysShowHorizontal"></param>
+      <param name="alwaysShowVertical"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+      <returns>
+        <para>The modified scrollPosition. Feed this back into the variable you pass in, as shown in the example.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginScrollView(UnityEngine.Vector2,System.Boolean,System.Boolean,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin an automatically laid out scrollview.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwayShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwayShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="alwaysShowHorizontal"></param>
+      <param name="alwaysShowVertical"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+      <returns>
+        <para>The modified scrollPosition. Feed this back into the variable you pass in, as shown in the example.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginScrollView(UnityEngine.Vector2,System.Boolean,System.Boolean,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin an automatically laid out scrollview.</para>
+      </summary>
+      <param name="scrollPosition">The position to use display.</param>
+      <param name="alwayShowHorizontal">Optional parameter to always show the horizontal scrollbar. If false or left out, it is only shown when the content inside the ScrollView is wider than the scrollview itself.</param>
+      <param name="alwayShowVertical">Optional parameter to always show the vertical scrollbar. If false or left out, it is only shown when content inside the ScrollView is taller than the scrollview itself.</param>
+      <param name="horizontalScrollbar">Optional GUIStyle to use for the horizontal scrollbar. If left out, the horizontalScrollbar style from the current GUISkin is used.</param>
+      <param name="verticalScrollbar">Optional GUIStyle to use for the vertical scrollbar. If left out, the verticalScrollbar style from the current GUISkin is used.</param>
+      <param name="options"></param>
+      <param name="alwaysShowHorizontal"></param>
+      <param name="alwaysShowVertical"></param>
+      <param name="style"></param>
+      <param name="background"></param>
+      <returns>
+        <para>The modified scrollPosition. Feed this back into the variable you pass in, as shown in the example.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginVertical(UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Begin a vertical control group.</para>
+      </summary>
+      <param name="text">Text to display on group.</param>
+      <param name="image">Texture to display on group.</param>
+      <param name="content">Text, image, and tooltip for this group.</param>
+      <param name="style">The style to use for background image and padding values. If left out, the background is transparent.</param>
+      <param name="options">An optional list of la

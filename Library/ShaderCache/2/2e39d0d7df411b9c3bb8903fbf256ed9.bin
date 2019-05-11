@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+	<Goto.reportString>Pohybuje sa.</Goto.reportString>
+	
+	<Wait.reportString>Stojí.</Wait.reportString>
+	
+	<AttackStatic.reportString>Útočí na TargetA.</AttackStatic.reportString>
+	
+    <AttackMelee.reportString>Útočí na TargetA zblízka.</AttackMelee.reportString>
+	
+	<Hunt.reportString>Naháňa TargetA.</Hunt.reportString>
+	
+	<UseVerbOnThing.reportString>Používa verb.</UseVerbOnThing.reportString>
+	
+	<UseNeurotrainer.reportString>Použiť neurotrainer.</UseNeurotrainer.reportString>
+	
+	<Strip.reportString>Zieht TargetA aus.</Strip.reportString>
+	
+	<Wear.reportString>Ťahá TargetA an.</Wear.reportString>
+	
+	<ManThing.reportString>Obsluhuje zbraň.</ManThing.reportString>
+	
+	<LayDown.reportString>Ľahá si dolu.</LayDown.reportString>
+	
+	<Equip.reportString>Vyzbrojuje sa s: TargetA</Equip.reportString>
+	
+	<Ignite.reportString>Zapaľuje TargetA.</Ignite.reportString>
+	
+	<BeatFire.reportString>Hasí oheň.</BeatFire.reportString>
+	
+	<ExtinguishSelf.reportString>Hasí sám seba.</ExtinguishSelf.reportString>
+	
+	<EatFood.reportString>Je z: TargetA</EatFood.reportString>
+	
+	<DeliverFood.reportString>Prenáša TargetB pre: TargetA.</DeliverFood.reportString>
+	
+	<FeedPatient.reportString>Kŕmi TargetA s: TargetB.</FeedPatient.reportString>
+	
+	<HaulToCell.reportString>Nesie TargetA na

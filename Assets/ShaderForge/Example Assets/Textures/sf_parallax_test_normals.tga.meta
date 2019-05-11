@@ -1,0 +1,21 @@
+lor>";
+            missingGlyphReport += "\n----------------------------------------";
+            
+            m_OutputFeedback = missingGlyphReport;
+
+            for (int i = 0; i < m_CharacterCount; i++)
+            {
+                if (m_FontGlyphInfo[i].x == -1)
+                {
+                    missingGlyphReport += "\nID: <color=#C0ffff>" + m_FontGlyphInfo[i].id + "\t</color>Hex: <color=#C0ffff>" + m_FontGlyphInfo[i].id.ToString("X") + "\t</color>Char [<color=#C0ffff>" + (char)m_FontGlyphInfo[i].id + "</color>]";
+
+                    if (missingGlyphReport.Length < 16300)
+                        m_OutputFeedback = missingGlyphReport;
+                }
+            }
+
+            if (missingGlyphReport.Length > 16300)
+                m_OutputFeedback += "\n\n<color=#ffff00>Report truncated.</color>\n<color=#c0ffff>See</color> \"TextMesh Pro\\Glyph Report.txt\"";
+
+            // Save Missing Glyph Report file
+            if (Directory

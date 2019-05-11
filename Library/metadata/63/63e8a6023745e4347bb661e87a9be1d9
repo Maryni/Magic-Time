@@ -1,0 +1,151 @@
+erialProperty property = BeginProperty(name);
+            s_TempLabel.text = label;
+            bool value = EditorGUILayout.Toggle(s_TempLabel, property.floatValue == 1f);
+            if (EndProperty())
+            {
+                property.floatValue = value ? 1f : 0f;
+            }
+        }
+
+        protected void DoFloat(string name, string label)
+        {
+            MaterialProperty property = BeginProperty(name);
+            Rect rect = EditorGUILayout.GetControlRect();
+            rect.width = EditorGUIUtility.labelWidth + 55f;
+            s_TempLabel.text = label;
+            float value = EditorGUI.FloatField(rect, s_TempLabel, property.floatValue);
+            if (EndProperty())
+            {
+                property.floatValue = value;
+            }
+        }
+
+        protected void DoColor(string name, string label)
+        {
+            MaterialProperty property = BeginProperty(name);
+            s_TempLabel.text = label;
+            Color value = EditorGUI.ColorField(EditorGUILayout.GetControlRect(), s_TempLabel, property.colorValue);
+            if (EndProperty())
+            {
+                property.colorValue = value;
+            }
+        }
+
+        void DoFloat(Rect rect, string name, string label)
+        {
+            MaterialProperty property = BeginProperty(name);
+            s_TempLabel.text = label;
+            float value = EditorGUI.FloatField(rect, s_TempLabel, property.floatValue);
+            if (EndProperty())
+            {
+                property.floatValue = value;
+            }
+        }
+
+        protected void DoSlider(string name, string label)
+        {
+            MaterialProperty property = BeginProperty(name);
+            Vector2 range = property.rangeLimits;
+            s_TempLabel.text = label;
+            float value = EditorGUI.Slider(
+                EditorGUILayout.GetControlRect(), s_TempLabel, property.floatValue, range.x, range.y
+            );
+            if (EndProperty())
+            {
+                property.floatValue = value;
+            }
+        }
+
+        protected void DoVector3(string name, string label)
+        {
+            MaterialProperty property = BeginProperty(name);
+            s_TempLabel.text = label;
+            Vector4 value = EditorGUILayout.Vector3Field(s_TempLabel, property.vectorValue);
+            if (EndProperty())
+            {
+                property.vectorValue = value;
+            }
+        }
+
+        protected void DoVector(string name, string label, GUIContent[] subLabels)
+        {
+            MaterialProperty property = BeginProperty(name);
+            Rect rect = EditorGUILayout.GetControlRect();
+            s_TempLabel.text = label;
+            rect = EditorGUI.PrefixLabel(rect, s_TempLabel);
+            Vector4 vector = property.vectorValue;
+
+            float[] values = s_TempFloats[subLabels.Length];
+            for (int i = 0; i < subLabels.Length; i++)
+            {
+                values[i] = vector[i];
+            }
+
+            EditorGUI.MultiFloatField(rect, subLabels, values);
+            if (EndProperty())
+            {
+                for (int i = 0; i < subLabels.Length; i++)
+                {
+                    vector[i] = values[i];
+                }
+
+                property.vectorValue = vector;
+            }
+        }
+
+        void DoDragAndDropBegin()
+        {
+            m_DragAndDropMinY = GUILayoutUtility.GetRect(0f, 0f, GUILayout.ExpandWidth(true)).y;
+        }
+
+        void DoDragAndDropEnd()
+        {
+            Rect rect = GUILayoutUtility.GetRect(0f, 0f, GUILayout.ExpandWidth(true));
+            Event evt = Event.current;
+            if (evt.type == EventType.DragUpdated)
+            {
+                DragAndDrop.visualMode = DragAndDropVisualMode.Generic;
+                evt.Use();
+            }
+            else if (
+                evt.type == EventType.DragPerform &&
+                Rect.MinMaxRect(rect.xMin, m_DragAndDropMinY, rect.xMax, rect.yMax).Contains(evt.mousePosition)
+            )
+            {
+                DragAndDrop.AcceptDrag();
+                evt.Use();
+                Material droppedMaterial = DragAndDrop.objectReferences[0] as Material;
+                if (droppedMaterial && droppedMaterial != m_Material)
+                {
+                    PerformDrop(droppedMaterial);
+                }
+            }
+        }
+
+        void PerformDrop(Material droppedMaterial)
+        {
+            Texture droppedTex = droppedMaterial.GetTexture(ShaderUtilities.ID_MainTex);
+            if (!droppedTex)
+            {
+                return;
+            }
+
+            Texture currentTex = m_Material.GetTexture(ShaderUtilities.ID_MainTex);
+            TMP_FontAsset requiredFontAsset = null;
+            if (droppedTex != currentTex)
+            {
+                requiredFontAsset = TMP_EditorUtility.FindMatchingFontAsset(droppedMaterial);
+                if (!requiredFontAsset)
+                {
+                    return;
+                }
+            }
+
+            foreach (GameObject o in Selection.gameObjects)
+            {
+                if (requiredFontAsset)
+                {
+                    TMP_Text textComponent = o.GetComponent<TMP_Text>();
+                    if (textComponent)
+                    {
+                        Undo.RecordObject(textComponent, "Font Asset Chang

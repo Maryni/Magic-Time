@@ -1,0 +1,79 @@
+    <para>Make an auto-layout box.</para>
+      </summary>
+      <param name="text">Text to display on the box.</param>
+      <param name="image">Texture to display on the box.</param>
+      <param name="content">Text, image and tooltip for this box.</param>
+      <param name="style">The style to use. If left out, the box style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Button(UnityEngine.Texture,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single press button.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the users clicks the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Button(System.String,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single press button.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the users clicks the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Button(UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single press button.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the users clicks the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Button(UnityEngine.Texture,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single press button.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the users clicks the button.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.Button(System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single press button.</para>
+      </summary>
+      <param name="text">Text to display on the button.</param>
+      <param name="image">Texture to display on the button.</param>
+      <param name="content">Text, image and tooltip for this button.</param>
+      <param name="style">The style to use. If left out, the button style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting p

@@ -1,0 +1,17 @@
+ionA, SemVersion versionB)
+        {
+            if (ReferenceEquals(versionA, null))
+                return ReferenceEquals(versionB, null);
+            return versionA.Equals(versionB);
+        }
+
+        /// <summary>
+        /// Compares the specified versions.
+        /// </summary>
+        /// <param name="versionA">The version to compare to.</param>
+        /// <param name="versionB">The version to compare against.</param>
+        /// <returns>If versionA &lt; versionB <c>&lt; 0</c>, if versionA &gt; versionB <c>&gt; 0</c>,
+        /// if versionA is equal to versionB <c>0</c>.</returns>
+        public static int Compare(SemVersion versionA, SemVersion versionB)
+        {
+            i

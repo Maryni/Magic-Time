@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    
+    <Sandbags.label>sandbags</Sandbags.label>
+    <Sandbags.description>Cover from gunfire.</Sandbags.description>
+    
+    <TurretGun.label>improvised turret</TurretGun.label>
+    <TurretGun.description>An improvised turret that automatically fires at nearby enemies. Explodes when damaged. Its hacked-together AI brain isn't very smart, and can't be directly controlled, so beware of friendly fire.</TurretGun.description>
+    
+    <Turret_MortarBomb.label>mortar</Turret_MortarBomb.label>
+    <Turret_MortarBomb.description>A mortar that launches explosive shells. Must be manned. Explodes when damaged.</Turret_MortarBomb.description>
+    
+    <Turret_MortarIncendiary.label>incendiary mortar</Turret_MortarIncendiary.label>
+    <Turret_MortarIncendiary.description>A mortar that launches incendiary shells. Must be manned. Explodes when damaged.</Turret_MortarIncendiary.description>
+    
+    <Turret_MortarEMP.label>EMP mortar</Turret_MortarEMP.label>
+    <Turret_MortarEMP.description>A mo

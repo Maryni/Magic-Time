@@ -1,0 +1,62 @@
+<TEMPLATESHAPEBOX id="cot_fence_b_start_col_01_shape" width="4.459623" height="1.059819" length="0.02885196" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!18" uri="objects.pssg#default!45" />
+		<TEMPLATEENTITY id="cot_lamp_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!19">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!19" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_lamp_a_col_01_shape">
+						<TEMPLATETRANSFORM>-0.258818984 0 -0.9659259 0 0 1 0 0 0.9659259 0 -0.258818984 0 0.1336034 3.53584862 0.6367763 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_lamp_a_col_02_shape">
+						<TEMPLATETRANSFORM>-0.258819163 0 0.9659258 0 0 1 0 0 -0.9659258 0 -0.258819163 0 0.133603513 3.53584862 -0.637059152 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!19" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!25" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!19" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!19">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!19" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_lamp_a_col_01_shape" width="1.32" height="8.041213" length="0.1138669" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="cot_lamp_a_col_02_shape" width="1.32" height="8.041213" length="0.1138669" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!19" uri="objects.pssg#default!3" />
+		<TEMPLATEENTITY id="cot_road_sign_c.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="cot_road_sign_c_obj_01_subent">
+				<TEMPLATERIGIDBODY id="cot_road_sign_c_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_road_sign_c_col_03_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.006033022 1.29627883 -0.0175540429 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_road_sign_c_col_03_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_road_sign_c_damage_02_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_road_sign_c_col_04_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.009727716 1.836695 0.0276945755 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_road_sign_c_col_04_shape_behaviour" impulse="physparams.xml#bLight" typeuri="#cot_road_sign_c_damage_02_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_road_sign_c_default_01_renderable" sid="cot_road_sign_c_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_road_sign_c_obj_02_subent">
+				<TEMPLATERIGIDBODY id="cot_road_sign_c_obj_02_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_road_sign_c_col_05_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.006033022 1.60389614 -0.017554041 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_road_sign_c_col_06_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.00972771551 1.83669484 0.0276945736 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_road_sign_c_damage_02_renderable" sid="cot_road_sign_c_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_road_sign_c_obj_03_subent">
+				<TEMPLATERIGIDBODY id="cot_road_sign_c_obj_03_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_road_sign_c_col_07_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.006033022 0.04920137 -0.017554041 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_road_sign_c_damage_02_renderable" sid="cot_road_sign_c_obj_03" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATECONSTRAINT id="NeonConstraint001_subent!1" body1uri="#cot_road_sign_c_obj_03_rigidbody" body2uri="world" props="physparams.xml#cMediumPostBase">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -4.371139E-08 -1 0 0 1 -4.371139E-08 0 0 0 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="NeonConstraint002_subent!1" body1uri="#cot_road_sign_c_obj_03_rigidbody" body2uri="#cot_road_sign_c_obj_02_rigidbody" props="physparams.xml#cLightPostMiddle">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -4.371139E-08 -1 0 0 1 -4.371139E-08 0 0 0.350000024 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATEBEHAVIOUR id="initial!26" impulse="physparams.xml#bDefault" typeuri="#cot_road_sign

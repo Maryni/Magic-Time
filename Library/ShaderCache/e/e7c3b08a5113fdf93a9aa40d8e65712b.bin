@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: psychic animal pulser -->
+  <PsychicAnimalPulser.label>Pulsor psíquic animal</PsychicAnimalPulser.label>
+  <!-- EN: A one-use broad-wave psychic effector. The psychic pulse fills lower minds with terrifying imagery, driving all animals in the region into a manhunting rage. -->
+  <PsychicAnimalPulser.description>Artefacte d'un sol ús que fa que tots els animals de la zona vulguin matar persones.</PsychicAnimalPulser.description>
+  <!-- EN: Activate -->
+  <PsychicAnimalPulser.comps.CompUsable.useLabel>Activar</PsychicAnimalPulser.comps.CompUsable.useLabel>
+  
+  <!-- EN: psychic insanity lance -->
+  <PsychicInsanityLance.label>llança de bogeria psíquica</PsychicInsanityLance.label>
+  <!-- EN: A one-use psychic effector. It overwhelms the target's mind with terrifying perceptual distortions, driving him into a berserk state. There is a risk of brain damage. It works at long distances, and through walls. -->
+  <PsychicInsanityLance.description>Artefacte d'una sola càrrega que, des de qualsevol distància fa posar violent a tots els personatges. Fins i tot travessa les parets.</PsychicInsanityLance.description>
+  <!-- EN: Activate

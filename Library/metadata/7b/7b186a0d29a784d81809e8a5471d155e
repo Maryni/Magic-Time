@@ -1,0 +1,60 @@
+
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_left_damage_renderable" sid="core_barr_armco_e_left_dam_link1" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_left_dam_obj01_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_left_dam_obj01_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_left_dam_obj01_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.6 0.336479664 0.0572223738 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_left_col_02_shape">
+						<TEMPLATETRANSFORM>-0.820229948 0 -0.5720342 0 0 1 0 0 0.5720342 0 -0.820229948 0 -0.182783738 0.3111191 0.0337518975 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_left_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.08136341 0.3111191 0.08036724 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_left_damage_renderable" sid="core_barr_armco_e_left_dam_obj01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_left_dam_obj02_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_left_dam_obj02_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_left_dam_obj02_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.51999974 0.336479664 0.0572223738 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_left_damage_renderable" sid="core_barr_armco_e_left_dam_obj02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_left_dam_obj03_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_left_dam_obj03_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_left_dam_obj03_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 2.44999981 0.336479664 0.0572223738 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_left_damage_renderable" sid="core_barr_armco_e_left_dam_obj03" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_e_left_dam_obj04_subent">
+				<TEMPLATERIGIDBODY id="core_barr_armco_e_left_dam_obj04_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_e_left_dam_obj04_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.4 0.336479664 0.0572223738 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_e_left_damage_renderable" sid="core_barr_armco_e_left_dam_obj04" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATECONSTRAINT id="constrain_post_base_subent!0" body1uri="#core_barr_armco_e_left_dam_link1_rigidbody" body2uri="world" props="physparams.xml#cArmcoPost">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -4.371139E-08 -1 0 0 1 -4.371139E-08 0 0.0455560349 0 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_post_subent!0" body1uri="#core_barr_armco_e_left_dam_obj01_rigidbody" body2uri="#core_barr_armco_e_left_dam_link1_rigidbody" props="physparams.xml#cArmcoEnd">
+				<TEMPLATETRANSFORM>7.54979E-08 -1 0 0 -4.371139E-08 -3.300118E-15 -1 0 1 7.54979E-08 -4.371139E-08 0 0 0.5 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_mid01_subent!0" body1uri="#core_barr_armco_e_left_dam_obj01_rigidbody" body2uri="#core_barr_armco_e_left_dam_obj02_rigidbody" props="physparams.xml#cArmcoMiddle">
+				<TEMPLATETRANSFORM>-1.62920685E-07 1 0 0 4.371139E-08 7.12149E-15 -1 0 -1 -1.62920685E-07 -4.371139E-08 0 1.110919 0.5 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_mid02_subent!0" body1uri="#core_barr_armco_e_left_dam_obj02_rigidbody" body2uri="#core_barr_armco_e_left_dam_obj03_rigidbody" props="physparams.xml#cArmcoMiddle">
+				<TEMPLATETRANSFORM>-1.62920685E-07 1 0 0 4.371139E-08 7.12149E-15 -1 0 -1 -1.62920685E-07 -4.371139E-08 0 2.028977 0.5 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_mid03_subent!0" body1uri="#core_barr_armco_e_left_dam_obj03_rigidbody" body2uri="#core_barr_armco_e_left_dam_obj04_rigidbody" props="physparams.xml#cArmcoMiddle">
+				<TEMPLATETRANSFORM>-1.62920685E-07 1 0 0 4.371139E-08 7.12149E-15 -1 0 -1 -1.62920685E-07 -4.371139E-08 0 2.94926786 0.5 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_end_subent!0" body1uri="#core_barr_armco_e_left_dam_obj04_rigidbody" body2uri="link1" props="physparams.xml#cArmcoEnd">
+				<TEMPLATETRANSFORM>-1.62920685E-07 1 0 0 4.371139E-08 7.12149E-15 -1 0 -1 -1.62920685E-07 -4.371139E-08 0 3.99901271 0.5 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEM

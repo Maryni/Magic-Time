@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: e3ae06a3979f53046aa05330d69de1fa
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Legs_Low
+    100004: Light_Bulbs_low
+    100006: Light_Heads_Low
+    400000: //RootNode
+    400002: Legs_Low
+    400004: Light_Bulbs_low
+    400006: Light_Heads_Low
+    2100000: construction_light
+    2100002: emissive_light
+    2300000: Legs_Low
+    2300002: Light_Bulbs_low
+    2300004: Light_Heads_Low
+    3300000: Legs_Low
+    3300002: Light_Bulbs_low
+    3300004: Light_Heads_Low
+    4300000: Legs_Low
+    4300002: Light_Heads_Low
+    4300004: Light_Bulbs_low
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materia

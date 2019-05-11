@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ancients -->
+  <Ancients.label>antics</Ancients.label>
+  <!-- EN: Ancients -->
+  <Ancients.fixedName>Antics</Ancients.fixedName>
+  <!-- EN: leader -->
+  <Ancients.leaderTitle>líder</Ancients.leaderTitle>
+  <!-- EN: ancient -->
+  <Ancients.pawnSingular>antic</Ancients.pawnSingular>
+  <!-- EN: ancients -->
+  <Ancients.pawnsPlural>antics</Ancients.pawnsPlural>
+  
+  <!-- EN: ancients -->
+  <AncientsHostile.label>antics</AncientsHostile.label>
+  <!-- EN: Ancients -->
+  <AncientsHostile.fixedName>Antics</AncientsHostile.fixedName>
+  <!-- EN: leader -->
+  <AncientsHostile.leaderTitle>líder</AncientsHostile.leaderTitle>
+  <!-- EN: ancie

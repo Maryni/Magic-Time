@@ -1,0 +1,41 @@
+rendre droga de cada colon a la pestanya «Necessitats».\n\nSi el nivell arriba a zero, l'estat de l'addicció canvia a «síndrome d'abstinència» i té diversos efectes secundaris negatius.\n\nTanmateix, si està prou temps amb la síndrome d'abstinència, l'addicció es curarà i desapareixerà la necessitat de prendre droga.</DrugAddiction.helpText>
+  
+  <!-- EN: Drug burning -->
+  <DrugBurning.label>Cremar drogues</DrugBurning.label>
+  <!-- EN: Drugs can be useful, but can also lead to harmful addictions.\n\nIf you want to avoid drugs in your colony, you have the option of burning them at a campfire. -->
+  <DrugBurning.helpText>Les drogues poden ser útils, però també poden portar addiccions perjudicials.\n\nSi voleu que no hi hagi drogues a la vostra colònia, les podeu cremar en un foc de camp.</DrugBurning.helpText>
+  
+  <!-- EN: Drug policies -->
+  <DrugPolicies.label>Política de drogues</DrugPolicies.label>
+  <!-- EN: You can assign colonists to take specific drugs on a specific schedule. For example, you can make them take anti-malaria drugs regularly, or drink a beer a day to stay happy.\n\nOpen the ASSIGN tab and press the 'Manage drug policies' button. Create a new drug policy. Then, you can assign this policy to colonists.\n\nColonists can still take drugs not in their policy. You can tell them what to do, but they also follow their own desires! -->
+  <DrugPolicies.helpText>Podeu dir als vostres colons que prenguin un tipus de droga especific en un horari concret. Per exemple, podeu dir-los que prenguin regularment la profilaxi de la malària, o beguin cervesa un cop al dia perquè estiguin contents.\n\nObriu la pestanya «Assignacions» i premeu «Gestiona política de drogues». Creeu una política de drogues nova. Després assigneu-la als colons.\n\nEls colons poden prendre drogues que no formin part de la seva política. Els podeu dir el que voleu que facin, però ells faran el que voldran!!</DrugPolicies.helpText>
+  
+  <!-- EN: Interacting with traders -->
+  <InteractingWithTraders.label>Interactuar amb els comerciants</InteractingWithTraders.label>
+  <!-- EN: You can talk to people with ? over their heads.\n\nSelect a colonist and right-click on the character with ? attached to his head. -->
+  <InteractingWithTraders.helpText>Podeu parlar amb la gent que té un «?» Sobre el cap.\n\nSeleccioneu un colon i feu clic dret al personatge que porta el «?» al cap.</InteractingWithTraders.helpText>
+  
+  <!-- EN: Using the comms console -->
+  <OpeningComms.label>Emprar la consola de comunicacions</OpeningComms.label>
+  <!-- EN: To communicate, select a colonist and right-click on the comms console. -->
+  <OpeningComms.helpText>Per comunicar-se, seleccioneu un colon i feu clic dret sobre la consola de comunicacions.</OpeningComms.helpText>
+  
+  <!-- EN: Prisoner tab -->
+  <PrisonerTab.label>Pestanya de presoner</PrisonerTab.label>
+  <!-- EN: Look in a prisoner's 'Prisoner' tab to set how they'll be treated.\n\nYou can set whether they'll be recruited, ignored or executed, whether they eat, and what kind of medical care they get.\n\nColonists with the Warden work type will interact with the prisoner. -->
+  <PrisonerTab.helpText>Poseu a la pestanya «Presoner» d'un presoner com voleu que el tractin.\n\nPodeu triar si el voleu convèncer que formi part de la colònia, ignorar-lo o executar-lo; si menjarà i quin tipus de tractament mèdic rebrà.\n\nEls colons amb la feina de carceller interactuaran amb el presoner.</PrisonerTab.helpText>
+  
+  <!-- EN: Order queueing -->
+  <QueueOrders.label>cua d’ordres</QueueOrders.label>
+  <!-- EN: When giving commands to pawns, you can queue up multiple orders by holding "shift". This also works when giving jobs to undrafted pawns. -->
+  <QueueOrders.helpText>Quan doneu ordres als colons, en podeu donar vàries de seguides prement la tecla «majúscules». També funciona quan doneu ordres a colons que no estan reclutats.</QueueOrders.helpText>
+  
+  <!-- EN: Reforming caravans -->
+  <ReformCaravan.label>Refer caravanes</ReformCaravan.label>
+  <!-- EN: After an encounter, you can easily re-form a caravan by using the RE-FORM CARAVAN command in the World view. -->
+  <ReformCaravan.helpText>Després d'una trobada, podeu tornar a muntar fàcilment la caravana amb el botó TORNAR A CARAVANA a la vista planetària.</ReformCaravan.helpText>
+  
+  <!-- EN: Rescuing -->
+  <Rescuing.label>Rescatar</Rescuing.label>
+  <!-- EN: To rescue a wounded person, select a healthy colonist and the right-click on the wounded one.\n\nIf you rescue a non-colonist, they won't necessarily join your colony. They may simply walk away after healing. If you want to guarantee that they join, capture them and recruit them. -->
+  <Rescuing.helpText>Per rescatar una persona ferida, seleccioneu un colon que no estigui de baixa i feu clic dret sobre el ferit.\n\nSi rescateu algú de fora de la colònia, no té per què afegir-s'hi. Poden marxar tranquil·lament quan estiguin curats. S

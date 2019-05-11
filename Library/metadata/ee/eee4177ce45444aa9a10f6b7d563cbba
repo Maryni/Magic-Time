@@ -1,0 +1,244 @@
+          <Cell>
+            <Data ss:Type="String">Outsmouth</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Outsmouth</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#CHALLENGE_OUTSMOUTH_D</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Jestes uwieziony w rybackiej wiosce Outsmouth i musisz przetrwac niezliczone fale przerazajacych okropienstw.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Trapped in the fishing village of Outsmouth, you must withstand wave after wave of horrible nightmares.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Trapped in the fishing village of Outsmouth, you must withstand wave after wave of horrible nightmares.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_CUTSCENE0</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Dwadziescia lat temu pewien dzielny czarodziej (choc prawde mówiac moglo byc ich nawet czterech) ocalil swiat od pewnej zaglady z rak Assatura - straszliwego demona z innego swiata. Teraz cos podejrzanego zaczyna dziac sie w rybackiej wiosce Outsmouth, a ja, Vlad, Hrabia Wielu Róznych Rzeczy, musze po raz kolejny poprowadzic za raczke starszych juz, lecz wciaz nieporadnych czarodziejów. A wszystko to dla najbardziej ludzkich ze spraw - by ocalic swiat.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">referring to the original game. Magicka can be played by one to four players.\n\nJoke on the word &quot;fishy&quot; = suspicious.\n\nMinor joke on humane = human (Vlad denying that he's a vampire again, emphasizing his humanity)</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Twenty years ago, between one and four brave wizards saved the world from certain doom at the hands of Assatur -- a terrible daemon from another world. Now, something fishy is stirring in the fishing village of Outsmouth, and I, Vlad, Count of many things, must guide the elderly but still semi-capable wizards once more. All for that most humane of causes: saving the world.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_CUTSCENE1</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Pokonawszy olbrzymiego pajaka Parkera, czarodzieje poczeli przedzierac sie przez straszliwie zawilgotniale tunele. Gdy po wielu godzinach dotarli do wyjscia, od razu wyczuli, ze w poblizu czai sie zlo, poniewaz nie panowal juz zmierzch, a ciemna noc. Jakby tego bylo malo, znalezli sie w znajomym sobie miejscu, niedaleko wejscia do podziemnego swiata.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">It's not at all a sinister reason, in a couple of hours dusk really does turn to night.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">With the giant spider, Parker, lying dead, the wizards made their way through some horribly moist tunnels. As they reached the exit many hours later, it became clear that something sinister was afoot: dusk had turned to night. And if that wasn't enough, they had emerged somewhere familiar, not so far away from the place where they entered the underworld.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#TSAR_CUTSCENE2</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Czarodzieje po raz kolejny przypadkowo sprowadzili na swiat wielkie zagrozenie, budzac do zycia R'lyeh, zaginione miasto trupów bedace domem dla pewnego niewiarygodnego, nieopisanego oraz, co najwazniejsze, nieposkromionego stworzenia. Z niewielkimi szansami na przezycie czarodzieje nie mieli innego wyboru - musieli pokonac wladce R'lyeh. Tylko to pozwoliloby im powrócic do swiata zywych.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The wizards had, once again, accidentally brought peril upon the world, resulting in the awakening of the lost corpse-city of R'lyeh, home to an unspeakable, unnamable, and, well... untamable being.\nWith little hope of survival, the wizards now had only one choice: defeat the lord of R'lyeh, that they might return to the material realm.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">The wizards had, once again, accidentally brought peril upon the world, resulting in the awakening of the lost corpse-city of R'lyeh, home to an unspeakable, unnamable, and more to the point, untamable being.\nWith little hope of survival, the wizards now had only one choice: defeat the lord of R'lyeh, that they might return to the material realm.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_Portal</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Portal</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Portal</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Portal</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_PortalD</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Jesli wciaz czujesz sie przybity, niedoceniany i skazany na pewna zaglade, byc moze potrzebujesz drzwi do innego swiata!  Nowy, niesamowity Portal pozwala ci otwierac bramy umozliwiajace swobodna podróz pomiedzy dowolnymi miejscami.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">If you constantly feel cornered, unappreciated, and headed for certain doom, maybe you are in need of a door to another location!\nWith astonishing new Portal(s), you can create gates between locations, and freely roam wherever you like.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">If you constantly feel cornered, unappreciated, and headed for certain doom, maybe you are in need of a door to another location!\nWith astonishing new Portal(s), you can create gates between locations, and freely roam wherever you like.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_Chainlightning</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Lancuch blyskawic</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chain Lightning</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Chain Lightning</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_ChainlightningD</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Niski sufit uniemozliwia ci uzycie Pioruna? Kilku przeciwników wymaga zbiorowej terapii wstrzasowej?\nLancuch blyskawic to idealne rozwiazanie dla ciebie - nowa, ulepszona formula pozwoli ci uwolnic serie pocisków czystego bólu, od których zarówno wrogowie, jak i przyjaciele beda wyc w agonii.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A low ceiling preventing the use of Thunder Bolt? Several foes in need shock therapy?\nChain lightning is your answer: its new and improved formula will have enemies and friends alike crying out in agony as you unleash horizontal bolts of pure pain!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">A low ceiling preventing the use of Thunder Bolt? Several foes in need shock therapy?\nChain lightning is your answer: its new and improved formula will have enemies and friends alike crying out in agony as you unleash horizontal bolts of pure pain!</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_levitate</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Lewitacja</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Levitation</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Levitation</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_levitateD</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Kazdemu zdarzylo sie kiedys trafic na sciezke lub most pokryty losiowym lajnem. Lewitacja idealnie rozwiazuje ten problem, umozliwiajac ci swobodny przelot nad calymi polami przerazajacego paskudztwa.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Who hasn't come across a path or bridge covered in moose muck? Levitation solves this problem by allowing you to hover above fields of filthy fear.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Who hasn't come across a path or bridge covered in moose muck? Levitation solves this problem by allowing you to hover above fields of filthy fear.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_proppmagick</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Plazmowe przyjecie Proppa</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Propp's Party Plasma</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Propp's Party Plasma</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Magick_proppmagickD</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Poczatkowym zamyslem Proppa bylo stworzenie magicka „dajacego radosc calej rodzinie”. Przypadkowo wyszlo mu potezne, lecz nieprzewidywalne zaklecie zdolne zabic nawet najwiekszego lesnego trolla. Magick niestety zaginal po tym, jak kilku „dzielnych” czarodziejów wyruszylo polowac na trolle.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Originally intending to invent a &quot;fun for the family&quot; Magick, Propp accidentally created a very powerful and unpredictable spell capable of destroying even the most powerful of forest trolls. This amazing Magick, however, went missing after some &quot;brave&quot; wizards decided to go troll-hunting.</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Originally intending to invent a &quot;fun for the family&quot; Magick, Propp accidentally created a very powerful and unpredictable spell capable of destroying even the most powerful of forest trolls. This amazing Magick, however, went missing after some &quot;brave&quot; wizards decided to go troll-hunting.</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#magick_tractorpull</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Przyciagnik</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Tractor Pull</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Tractor Pull</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#magick_tractorpullD</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Kazdy czarodziej wie, jak odpychac rózne rzeczy od siebie, ale gdy chodzi o przyciaganie, wiekszosc traci glowe. Dlatego wlasnie stworzono Przyciagnik. Jest bardzo pomocny podczas przyciagania ksiazek, kielbasek i innych przedmiotów w kierunku rzucajacego. Korzystac z rozwaga i kompletem sztucców pod reka!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Every wizard knows how to push things around, but when it comes to attraction, most are clueless. This is precisely why Tractor Pull was created. It is very useful for pulling Books, Sausages, and other Items towards the caster. Use with caution around cutlery!</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Every wizard knows how to push things around, but when it comes to attraction, most are clueless. This is precisely why Tractor Pull was created. It is very useful for pulling Books, Sausages, and other Items towards the caster. Use with caution around cutlery!</Data>
+          </Cell>
+        </Row>
+      </Table>
+    </Worksheet>
+    <Worksheet ss:Name="Names">
+      <Table>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">ID</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">pol</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Comments</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Localized Text</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Ferocious_Rat</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Morderczy szczur</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String"></Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Ferocious Rat</Data>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Data ss:Type="String">#Ent_Crazed_Cultist</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Type="String">Okultysta</Data>
+          </Cell>
+          <Cell>
+            <Data ss:Typ

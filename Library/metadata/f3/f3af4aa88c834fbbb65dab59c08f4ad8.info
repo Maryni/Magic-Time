@@ -1,0 +1,26 @@
+
+module.exports = exports = remove
+
+exports.usage = 'Removes the node development files for the specified version'
+
+/**
+ * Module dependencies.
+ */
+
+var fs = require('fs')
+  , rm = require('rimraf')
+  , path = require('path')
+  , log = require('npmlog')
+  , semver = require('semver')
+
+function remove (gyp, argv, callback) {
+
+  var devDir = gyp.devDir
+  log.verbose('remove', 'using node-gyp dir:', devDir)
+
+  // get the user-specified version to remove
+  var version = argv[0] || gyp.opts.target
+  log.verbose('remove', 'removing target version:', version)
+
+  if (!version) {
+    return callback(new Error('You must specify a version number to remove. Ex: "' + process.version + '"'))

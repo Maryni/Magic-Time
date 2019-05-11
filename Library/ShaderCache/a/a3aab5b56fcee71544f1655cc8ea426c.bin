@@ -1,0 +1,43 @@
+div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/nav-MoveToDestination.html">English</a></li>
+<li><a href="/ja/current/Manual/nav-MoveToDestination.html">日本語</a></li>
+<li><a href="/es/current/Manual/nav-MoveToDestination.html">Español</a></li>
+<li><a href="/kr/current/Manual/nav-MoveToDestination.html">한국어</a></li>
+<li><a href="/ru/current/Manual/nav-MoveToDestination.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual (2018.3)</a></li>
+<li><a href="Navigation.html">Navigation and Pathfinding</a></li>
+<li><a href="nav-HowTos.html">Navigation How-Tos</a></li>
+<li>Telling a NavMeshAgent to Move to a Destination</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="nav-HowTos.html"></a></span><div class="tip">Navigation How-Tos</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="nav-MoveToClickPoint.html"></a></span><div class="tip">Moving an Agent to a Position Clicked by the Mouse</div>
+</div>
+</div></div>
+<div class="otherversionswrapper" onmouseover="setOtherVersionsDisplay(true)" onmouseout="setOtherVersionsDisplay(false)">
+<a>Other Versions</a><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">Cannot access other versions offline!</div>
+</div>
+<div class="scrollToFeedback"><a id="scrollToFeedback">Leave feedback</a></div>
+<h1>Telling a NavMeshAgent to Move to a Destination</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can tell an agent to start calculating a path simply by setting the <a href="../ScriptReference/AI.NavMeshAgent-destination.html">NavMeshAgent.destination</a> property with the point you want the agent to move to. As soon as the calculation is finished, the agent will automatically move along the path until it reaches its destination. The following code implements a simple class that uses a <span class="tooltip"><strong>GameObject</strong><span class="tooltiptext">The fundamental object in Unity scenes, which can represent characters, props, scenery, cameras, waypoints, and more. A GameObject’s functionality is defined by the Components attached to it. <a href="class-GameObject.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#GameObject">Glossary</a></span></span></span> to mark the target point which gets assigned to the <em>destination</em> property in the <em>Start</em> function. Note that the script assumes you have already added and config

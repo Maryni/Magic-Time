@@ -1,0 +1,130 @@
+;
+
+            // resize (make sure that insertBefore does not get invalid in the meantime because of a reallocation)
+            size_t insert_before_index = insert_before - begin();
+            size_t elements_to_be_moved = size() - insert_before_index;
+            resize_uninitialized((input_end - input_begin) + size(), true);
+            insert_before = begin() + insert_before_index;
+
+            size_t insertsize = input_end - input_begin;
+            // move to the end of where the inserted data will be
+            memmove(insert_before + insertsize, insert_before, elements_to_be_moved * sizeof(T));
+            // inject input data in the hole we just created
+            memcpy(insert_before, input_begin, insertsize * sizeof(T));
+
+            return insert_before;
+        }
+
+        iterator insert(iterator insertBefore, const T &t) { return insert(insertBefore, &t, &t + 1); }
+
+        void swap(dynamic_array &other) throw ()
+        {
+            std::swap(m_data, other.m_data);
+            std::swap(m_size, other.m_size);
+            std::swap(m_capacity, other.m_capacity);
+        }
+
+        // Returns the memory to the object.
+        // This does not call the constructor for the newly added element.
+        // You are expected to initialize all member variables of the returned data.
+        T &push_back()
+        {
+            if (++m_size > capacity())
+                reserve(std::max<size_t>(capacity() * 2, 1));
+            return back();
+        }
+
+        // push_back but it also calls the constructor for the newly added element.
+        T &push_back_construct()
+        {
+            if (++m_size > capacity())
+                reserve(std::max<size_t>(capacity() * 2, 1));
+            // construct
+            T *ptr = &back();
+            new(ptr)T;
+            return *ptr;
+        }
+
+        // push_back but assigns /t/ to the newly added element.
+        void push_back(const T &t)
+        {
+            push_back() = t;
+        }
+
+        void pop_back()
+        {
+            Assert(m_size >= 1);
+            m_size--;
+        }
+
+        void resize_uninitialized(size_t size, bool double_on_resize = false)
+        {
+            m_size = size;
+            if (m_size <= capacity())
+                return;
+
+            if (double_on_resize && size < capacity() * 2)
+                size = capacity() * 2;
+            reserve(size);
+        }
+
+        void resize_initialized(size_t size, const T &t = T(), bool double_on_resize = false)
+        {
+            if (size > capacity())
+            {
+                size_t requested_size = size;
+                if (double_on_resize && size < capacity() * 2)
+                    requested_size = capacity() * 2;
+                reserve(requested_size);
+            }
+
+            if (size > m_size)
+                std::uninitialized_fill(m_data + m_size, m_data + size, t);
+            m_size = size;
+        }
+
+        void reserve(size_t inCapacity)
+        {
+            if (capacity() >= inCapacity)
+                return;
+
+            if (owns_data())
+            {
+                Assert((inCapacity & k_reference_bit) == 0 && "Dynamic array capacity overflow");
+                m_capacity = inCapacity;
+                m_data = reallocate(m_data, inCapacity);
+            }
+            else
+            {
+                T *newData = allocate(inCapacity);
+                memcpy(newData, m_data, m_size * sizeof(T));
+
+                // Invalidate old non-owned data, since using the data from two places is most likely a really really bad idea.
+#if IL2CPP_DEBUG
+                memset(m_data, 0xCD, capacity() * sizeof(T));
+#endif
+
+                m_capacity = inCapacity; // and clear reference bit
+                m_data = newData;
+            }
+        }
+
+        void assign_external(T *begin, T *end)
+        {
+            if (owns_data())
+                m_data = deallocate(m_data);
+            m_size = m_capacity = reinterpret_cast<value_type *>(end) - reinterpret_cast<value_type *>(begin);
+            Assert(m_size < k_reference_bit);
+            m_capacity |= k_reference_bit;
+            m_data = begin;
+        }
+
+        void set_owns_data(bool ownsData)
+        {
+            if (ownsData)
+                m_capacity &= ~k_reference_bit;
+            else
+                m_capacity |= k_reference_bit;
+        }
+
+     

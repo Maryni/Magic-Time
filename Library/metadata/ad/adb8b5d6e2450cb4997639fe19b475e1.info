@@ -1,0 +1,165 @@
+ <member name="P:UnityEngine.GUIContent.text">
+      <summary>
+        <para>The text contained.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.GUIContent.tooltip">
+      <summary>
+        <para>The tooltip of this element.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor">
+      <summary>
+        <para>Constructor for GUIContent in all shapes and sizes.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor(System.String)">
+      <summary>
+        <para>Build a GUIContent object containing only text.</para>
+      </summary>
+      <param name="text"></param>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor(UnityEngine.Texture)">
+      <summary>
+        <para>Build a GUIContent object containing only an image.</para>
+      </summary>
+      <param name="image"></param>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor(System.String,UnityEngine.Texture)">
+      <summary>
+        <para>Build a GUIContent object containing both text and an image.</para>
+      </summary>
+      <param name="text"></param>
+      <param name="image"></param>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor(System.String,System.String)">
+      <summary>
+        <para>Build a GUIContent containing some text. When the user hovers the mouse over it, the global GUI.tooltip is set to the tooltip.</para>
+      </summary>
+      <param name="text"></param>
+      <param name="tooltip"></param>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor(UnityEngine.Texture,System.String)">
+      <summary>
+        <para>Build a GUIContent containing an image. When the user hovers the mouse over it, the global GUI.tooltip is set to the tooltip.</para>
+      </summary>
+      <param name="image"></param>
+      <param name="tooltip"></param>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor(System.String,UnityEngine.Texture,System.String)">
+      <summary>
+        <para>Build a GUIContent that contains both text, an image and has a tooltip defined. When the user hovers the mouse over it, the global GUI.tooltip is set to the tooltip.</para>
+      </summary>
+      <param name="text"></param>
+      <param name="image"></param>
+      <param name="tooltip"></param>
+    </member>
+    <member name="M:UnityEngine.GUIContent.#ctor(UnityEngine.GUIContent)">
+      <summary>
+        <para>Build a GUIContent as a copy of another GUIContent.</para>
+      </summary>
+      <param name="src"></param>
+    </member>
+    <member name="T:UnityEngine.GUILayout">
+      <summary>
+        <para>The GUILayout class is the interface for Unity gui with automatic layout.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.GUILayout.AreaScope">
+      <summary>
+        <para>Disposable helper class for managing BeginArea / EndArea.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.GUILayout.AreaScope.#ctor(UnityEngine.Rect)">
+      <summary>
+        <para>Create a new AreaScope and begin the corresponding Area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.AreaScope.#ctor(UnityEngine.Rect,System.String)">
+      <summary>
+        <para>Create a new AreaScope and begin the corresponding Area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.AreaScope.#ctor(UnityEngine.Rect,UnityEngine.Texture)">
+      <summary>
+        <para>Create a new AreaScope and begin the corresponding Area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.AreaScope.#ctor(UnityEngine.Rect,UnityEngine.GUIContent)">
+      <summary>
+        <para>Create a new AreaScope and begin the corresponding Area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.AreaScope.#ctor(UnityEngine.Rect,System.String,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Create a new AreaScope and begin the corresponding Area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.AreaScope.#ctor(UnityEngine.Rect,UnityEngine.Texture,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Create a new AreaScope and begin the corresponding Area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.AreaScope.#ctor(UnityEngine.Rect,UnityEngine.GUIContent,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Create a new AreaScope and begin the corresponding Area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginArea(UnityEngine.Rect)">
+      <summary>
+        <para>Begin a GUILayout block of GUI controls in a fixed screen area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginArea(UnityEngine.Rect,System.String)">
+      <summary>
+        <para>Begin a GUILayout block of GUI controls in a fixed screen area.</para>
+      </summary>
+      <param name="text">Optional text to display in the area.</param>
+      <param name="image">Optional texture to display in the area.</param>
+      <param name="content">Optional text, image and tooltip top display for this area.</param>
+      <param name="style">The style to use. If left out, the empty GUIStyle (GUIStyle.none) is used, giving a transparent background.</param>
+      <param name="screenRect"></param>
+    </member>
+    <member name="M:UnityEngine.GUILayout.BeginArea(UnityEngine.Rect,UnityEngine.Texture)">
+      <summary>
+        <para>Begin a GUILayout b

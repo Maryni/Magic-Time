@@ -1,0 +1,84 @@
+ore_barr_tyrewall_stripy_a_dam_fr_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre02_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre03_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre04_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre05_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre06_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre07_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre08_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre09_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre10_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre11_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre12_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre13_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre14_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre15_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre16_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#tyre01_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_tyrewall_stripy_a_obj_01_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_tyrewall_stripy_a_col_01_shape" width="5.462435" height="1.326423" length="1.569659" shell="0.02" props="physparams.xml#sDeformableRubber" />
+		<TEMPLATERENDERABLE id="core_barr_tyrewall_stripy_a_default_01_renderable" uri="route_objects.pssg#core_barr_tyrewall_stripy_a_default_01" />
+		<TEMPLATEENTITY id="core_barr_blockconcrete_a~0.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!5">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!5" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockconcrete_a_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 2.00028872 0.5 -1.49011612E-08 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!5" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!9" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!5" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!5">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!5" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockconcrete_a_col_01_shape" width="3.960622" height="0.96" length="0.3779516" shell="0.02" props="physparams.xml#sStone" />
+		<TEMPLATERENDERABLE id="default_renderable!5" uri="route_objects.pssg#default!1" />
+		<TEMPLATEENTITY id="mia_cafe_marquee_barrier~0.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!6">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!6" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#mia_cafe_marquee_barrier_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 6.0885 0.2906741 -0.3320666 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#mia_cafe_marquee_barrier_col_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 4 0.290799081 -0.332067 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#mia_cafe_marquee_barrier_col_03_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.9115 0.2906741 -0.3320666 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!6" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!10" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!6" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!6">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!6" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="mia_cafe_marquee_barrier_col_01_shape" width="3.783" height="0.5412499" length="0.9599999" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATESHAPEBOX id="mia_cafe_marquee_barrier_col_02_shape" width="0.3138284" height="0.5409999" length="0.96" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="mia_cafe_marquee_barrier_col_03_shape" width="3.783" height="0.5412499" length="0.9599999" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!6" uri="route_objects.pssg#default!4" />
+		<TEMPLATEENTITY id="mia_cafe_marquee_barrier.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!7">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!7" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#mia_cafe_marquee_barrier_col_01_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 6.0885 0.2906741 -0.3320666 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#mia_cafe_marquee_barrier_col_02_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 4 0.290799081 -0.332067 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#mia_cafe_marquee_barrier_col_03_shape!0">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.9115 0.2906741 -0.3320666 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!7" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!11" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!7" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!7">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!7" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="mia_cafe_marquee_barrier_col_01_shape!0" width="3.783" height="0.5412499" length="0.9599999" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATESHAPEBOX id="mia_cafe_marquee_barrier_col_02_shape!0" width="0.3138284" height="0.5409999" length="0.96" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATESHAPEBOX id="mia_cafe_marq

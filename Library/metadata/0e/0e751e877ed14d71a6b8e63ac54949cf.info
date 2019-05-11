@@ -1,0 +1,32 @@
+﻿#if UNITY_EDITOR
+	using UnityEngine;
+	using UnityEditor;
+	using System.Collections;
+
+	public class EditorLabel : MonoBehaviour {
+
+
+
+		public string text;
+
+		private static GUIStyle style;
+		private static GUIStyle Style{
+			get{
+				if(style == null){
+					style = new GUIStyle( EditorStyles.largeLabel );
+					style.alignment = TextAnchor.MiddleCenter;
+					style.normal.textColor = new Color(0.9f,0.9f,0.9f);
+					style.fontSize = 32;
+				}
+				return style;
+			}
+
+		}
+
+
+		void OnDrawGizmos(){
+
+
+			RaycastHit hit;
+			Ray r = new Ray(transform.position + Camera.current.transform.up * 8f, -Camera.current.transform.up );
+			if( GetComponent<Collider>().Ra

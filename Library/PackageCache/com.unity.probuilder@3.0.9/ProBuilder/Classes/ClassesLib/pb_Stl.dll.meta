@@ -1,0 +1,46 @@
+#include "il2cpp-config.h"
+#include "os/Memory.h"
+#include "utils/Memory.h"
+#include <string>
+
+namespace il2cpp
+{
+namespace utils
+{
+    struct MonoMemoryCallbacks
+    {
+        int version;
+        void *(*malloc_func)(size_t size);
+        void *(*realloc_func)(void *mem, size_t count);
+        void(*free_func)(void *mem);
+        void *(*calloc_func)(size_t count, size_t size);
+    };
+
+    extern "C"
+    {
+    int32_t mono_set_allocator_vtable(MonoMemoryCallbacks* callbacks);
+    }
+
+    static MonoMemoryCallbacks s_MonoCallbacks =
+    {
+        1, //MONO_ALLOCATOR_VTABLE_VERSION
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    };
+
+    static Il2CppMemoryCallbacks s_Callbacks =
+    {
+        malloc,
+        os::Memory::AlignedAlloc,
+        free,
+        os::Memory::AlignedFree,
+        calloc,
+        realloc,
+        os::Memory::AlignedReAlloc
+    };
+
+    void Memory::SetMemoryCallbacks(Il2CppMemoryCallbacks* callbacks)
+    {
+        memcpy(&s_Callbacks, callb

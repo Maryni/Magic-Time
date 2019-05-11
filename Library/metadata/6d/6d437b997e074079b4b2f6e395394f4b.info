@@ -1,0 +1,25 @@
+Magnitude;
+
+        //        float d = dbl < dtl ? dbl : dtl;
+        //        d = d < dtr ? d : dtr;
+        //        d = d < dbr ? d : dbr;
+
+        //        if (distanceSqr > d)
+        //        {
+        //            distanceSqr = d;
+        //            closest = i;
+        //        }
+        //    }
+
+        //    //Debug.Log("Returning nearest character at index: " + closest);
+
+        //    return closest;
+        //}
+
+
+        // WORD HANDLING
+        /// <summary>
+        /// Function returning the index of the word at the given position (if any).
+        /// </summary>
+        /// <param name="text">A reference to the TMP_Text component.</param>
+        /// <pa

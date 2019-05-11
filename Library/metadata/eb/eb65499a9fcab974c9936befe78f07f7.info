@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: A story generator by Tynan Sylvester -->
+  <MainPageCredit>Een verhalengenerator van Tynan Sylvester</MainPageCredit>
+
+  <!-- EN: Developers -->
+  <Credits_Developers>Ontwikkelaars</Credits_Developers>
+  <!-- EN: Direction, design, code, art -->
+  <Credit_DirectionVarious>Regie, ontwerp, code, grafisch</Credit_DirectionVarious>
+  <!-- EN: Audio -->
+  <Credit_MusicAndSound>Muziek en geluid</Credit_MusicAndSound>
+  <!-- EN: Code -->
+  <Credit_Code>Code</Credit_Code>
+  <!-- EN: Art -->
+  <Credit_GameArt>Grafisch</Credit_GameArt>
+  <!-- EN: Menu art -->
+  <Credit_MenuArt>Menu illustraties</Credit_MenuArt>
+  <!-- EN: Additi

@@ -1,0 +1,9 @@
+ATERIGIDBODY id="core_barr_armco_b_left_01_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_armco_b_left_col_01_shape">
+						<TEMPLATETRANSFORM>1 -4.76837158E-07 -7.549793E-08 0 4.76837158E-07 1 -1.1920929E-07 0 7.549799E-08 1.19209254E-07 1 0 0.5700513 0.4999197 -4.06587723E-08 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_armco_b_left_damage_renderable" sid="core_barr_armco_b_left_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_armco_b_left_post_link1_subent">
+				<

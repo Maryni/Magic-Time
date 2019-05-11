@@ -1,0 +1,75 @@
+        //                    return i;
+
+        //                //Debug.Log("End Word Region at [" + currentCharInfo.character + "]");
+        //            }
+        //        }
+
+        //        //Debug.Log("Word at Index: " + i + " is located at (" + bl + ", " + tl + ", " + tr + ", " + br + ").");
+
+        //    }
+
+        //    return -1;
+        //}
+
+
+        /// <summary>
+        /// Function returning the index of the Link at the given position (if any).
+        /// </summary>
+        /// <param name="text">A reference to the TextMeshPro component.</param>
+        /// <param name="position">Position to check for intersection.</param>
+        /// <param name="camera">The camera which is rendering the text object.</param>
+        /// <returns></returns>
+        //public static int FindIntersectingLink(TextMeshPro text, Vector3 position, Camera camera)
+        //{
+        //    Transform textTransform = text.transform;
+
+        //    // Convert position into Worldspace coordinates
+        //    ScreenPointToWorldPointInRectangle(textTransform, position, camera, out position);
+
+        //    for (int i = 0; i < text.textInfo.linkCount; i++)
+        //    {
+        //        TMP_LinkInfo linkInfo = text.textInfo.linkInfo[i];
+
+        //        bool isBeginRegion = false;
+
+        //        Vector3 bl = Vector3.zero;
+        //        Vector3 tl = Vector3.zero;
+        //        Vector3 br = Vector3.zero;
+        //        Vector3 tr = Vector3.zero;
+
+        //        // Iterate through each character of the word
+        //        for (int j = 0; j < linkInfo.linkTextLength; j++)
+        //        {
+        //            int characterIndex = linkInfo.linkTextfirstCharacterIndex + j;
+        //            TMP_CharacterInfo currentCharInfo = text.textInfo.characterInfo[characterIndex];
+        //            int currentLine = currentCharInfo.lineNumber;
+
+        //            // Check if Link characters are on the current page
+        //            if (text.OverflowMode == TextOverflowModes.Page && currentCharInfo.pageNumber + 1 != text.pageToDisplay) continue;
+
+        //            if (isBeginRegion == false)
+        //            {
+        //                isBeginRegion = true;
+
+        //                bl = textTransform.TransformPoint(new Vector3(currentCharInfo.bottomLeft.x, currentCharInfo.descender, 0));
+        //                tl = textTransform.TransformPoint(new Vector3(currentCharInfo.bottomLeft.x, currentCharInfo.ascender, 0));
+
+        //                //Debug.Log("Start Word Region at [" + currentCharInfo.character + "]");
+
+        //                // If Word is one character
+        //                if (linkInfo.linkTextLength == 1)
+        //                {
+        //                    isBeginRegion = false;
+
+        //                    br = textTransform.TransformPoint(new Vector3(currentCharInfo.topRight.x, currentCharInfo.descender, 0));
+        //                    tr = textTransform.TransformPoint(new Vector3(currentCharInfo.topRight.x, currentCharInfo.ascender, 0));
+
+        //                    // Check for Intersection
+        //                    if (PointIntersectRectangle(position, bl, tl, tr, br))
+        //                        return i;
+
+        //                    //Debug.Log("End Word Region at [" + currentCharInfo.character + "]");
+        //                }
+        //            }
+
+        //            // Last

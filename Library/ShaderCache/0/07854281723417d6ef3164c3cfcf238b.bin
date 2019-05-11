@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- Audiovisuals -->
+  <Audiovisuals>Hääled ja graafika</Audiovisuals>
+  <GameVolume>Mängu helitegevus</GameVolume>
+  <MusicVolume>Muusika helitegevus</MusicVolume>
+  <Antialiasing>Anti-aliasing</Antialiasing>
+
+  <!-- Gameplay -->
+  <EdgeScreenScroll>Ekraani hiirega liigutamine</EdgeScreenScroll>
+  <PauseOnLoad>Peata laadimisel</PauseOnLoad>
+  <PauseOnUrgentLetter>Peata tähtsa kirja korral</PauseOnUrgentLetter>
+  <CustomCursor>Erinev hiir</CustomCursor>
+  <KeyboardConfig>Klaviatuuri konfiguratsioon</KeyboardConfig>
+  <ChooseLanguage>Vali keel</ChooseLanguage>
+  <AdaptiveTutor>Kohanev õpetaja</AdaptiveTutor>
+  <ResetAdaptiveTutor>Lähtesta Kohanev õpetaja</ResetAdaptiveTutor>
+  <AdaptiveTutorIsReset>Kohanemisvõimeline õpetaja on lähtestatud. Ta nüüd õpetab sind algusest peale.</AdaptiveTutorIsReset>
+  <RunInBackground>Jookse t

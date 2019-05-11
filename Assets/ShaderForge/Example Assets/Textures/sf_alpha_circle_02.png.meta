@@ -1,0 +1,13 @@
+_armco_lrg_start_dam_centre_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_start_dam_centre_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_start_damage_skin_centre_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.57219553 0.5916455 -0.0271939188 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_armco_lrg_start_damage_renderable" sid="cot_armco_lrg_start_dam_centre" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_armco_lrg_start_dam_right_centre_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_start_dam_right_centre_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_start_damage_skin_right_centre_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.16600573 0.5916455 -0.0271939188 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODY

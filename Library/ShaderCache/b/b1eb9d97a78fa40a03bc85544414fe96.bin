@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <SolarFlare.label>llamarada solar</SolarFlare.label>
+  <SolarFlare.description>Una llamarada solar está afectando al planeta. Esta situación está causando interferencias eléctricas extremas e impide que la mayoría de los dispositivos electrónicos funcionen.</SolarFlare.description>
+  <SolarFlare.endMessage>La llamarada solar ha terminado.</SolarFlare.endMessage>
+
+  <Eclipse.label>eclipse</Eclipse.label>
+  <Eclipse.description>Un eclipse está ensombreciendo la superficie. Estará oscuro, incluso durante el día.</Eclipse.description>
+  <Eclipse.endMessage>El eclipse ha terminado.</Eclipse.endMessage>
+
+  <PsychicDrone.label>zumbido psíquico</PsychicDrone.label>
+  <PsychicDrone.description>Una lejana y poderosa IA está emitiendo ondas psíquicas que empujan a la gente hacia la locura.</PsychicDrone.description>
+  <PsychicDrone.endMessage>El zumbido psíquico ha terminado.</PsychicDrone.endMessage>
+
+  <PsychicSoothe.label>sedante psíquico</PsychicSoothe.label>
+  <PsychicSoothe.description>Una lejana y poderosa IA está emitiendo ondas psíquicas que calman y estabilizan a la gente.</PsychicSoothe.description>
+  <PsychicSoothe.endMessage>El sedante psíquico ha terminado</PsychicSoothe.endMessage>
+
+  <ToxicFallout.label>cenizas tóxicas</ToxicFallout.label>
+  <ToxicFallout.description>Una columna de cenizas tóxicas de alguna fuente distante se está asentando en esta región del planeta. Todo el que esté en exteriores se envenenará lentamente.</ToxicFallout.description>
+  <ToxicFallout.endMessage>Las cenizas tóxicas han terminado.</ToxicFallout.endMessage>
+
+  <VolcanicWinter.label>invierno volcánico</VolcanicWinter.label>
+  <VolcanicWinter.description>La atmósfera se está lle

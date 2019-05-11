@@ -1,0 +1,27 @@
+1788167975}
+  - 114: {fileID: 1788167974}
+  - 135: {fileID: 1788167973}
+  m_Layer: 0
+  m_Name: 1. Pixelated Rotator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1788167972
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788167971}
+  m_LocalRotation: {x: 0, y: -2.98023224e-08, z: 0, w: 1}
+  m_LocalPosition: {x: -13, y: 1.17524433, z: .698500097}
+  m_LocalScale: {x: 1.20808339, y: 1.20808339, z: 1.20808339}
+  m_Children:
+  - {fileID: 319108398}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!135 &1788167973
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 

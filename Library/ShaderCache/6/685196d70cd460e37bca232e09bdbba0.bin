@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: antigrain warhead -->
+  <Bullet_Shell_AntigrainWarhead.label>Capçal de grans d’antimatèria</Bullet_Shell_AntigrainWarhead.label>
+  
+  <!-- EN: EMP shell -->
+  <Bullet_Shell_EMP.label>projectil IEM</Bullet_Shell_EMP.label>
+  
+  <!-- EN: firefoam shell -->
+  <Bullet_Shell_Firefoam.label>projectil d’espuma antiincendis</Bullet_Shell_Firefoam.label>
+  
+  <!-- EN: high-explosive shell -->
+  <Bullet_Shell_HighExplosive.label>projectil explosiu</Bullet_Shell_HighExplosive.label>
+  
+  <!-- EN: incendiary shell -->
+  <Bullet_Shell_Incendiary.label>projectil incendiari</Bullet_Shell_Incendiary.label>
+  
+  <!-- EN: antigrain warhead -->
+  <Shell_AntigrainWarhead.label>Capçal de grans d’antimatèria</Shell_AntigrainWarhead.label>
+  <!-- EN: An ultra-tech warhead powered by a grain of antimatter. Usually used by spacecraft or glitterworld war machines, it creates a huge explosion and starts fires around the target. Can be fired from mortars or installed as a trap. Explodes when damaged. -->
+  <She

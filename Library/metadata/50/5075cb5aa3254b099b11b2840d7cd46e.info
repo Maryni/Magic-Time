@@ -1,0 +1,11 @@
+        m_currentMaterial = TMP_MaterialManager.GetFallbackMaterial(m_currentMaterial, m_currentFontAsset.material);
+                    else
+                        m_currentMaterial = m_currentFontAsset.material;
+
+                    m_currentMaterialIndex = MaterialReference.AddMaterialReference(m_currentMaterial, m_currentFontAsset, m_materialReferences, m_materialReferenceIndexLookup);
+                }
+
+                if (!char.IsWhiteSpace((char)c) && c != 0x200B)
+                {
+                    // Limit the mesh of the main text object to 65535 vertices and use sub objects for the overflow.
+                    if (m_materialReferences[m_currentMaterial

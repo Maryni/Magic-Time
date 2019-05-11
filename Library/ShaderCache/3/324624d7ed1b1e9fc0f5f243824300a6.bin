@@ -1,0 +1,4 @@
+are treated during the NavMesh build process, specifically when collecting sources for building.</td></tr>
+      <tr><td class="lbl"><a href="AI.NavMeshBuildSettings.html">NavMeshBuildSettings</a></td><td class="desc">The NavMeshBuildSettings struct allows you to specify a collection of settings which describe the dimensions and limitations of a particular agent type.</td></tr>
+      <tr><td class="lbl"><a href="AI.NavMeshBuildSource.html">NavMeshBuildSource</a></td><td class="desc">The input to the NavMesh builder is a list of NavMesh build sources.</td></tr>
+      <tr><td class="lbl"><a href="AI.NavMeshDataInstance.html">NavMeshDataInstance</a></td><td class="desc">The instance is returned when adding NavMesh data.</td><

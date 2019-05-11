@@ -1,0 +1,122 @@
+>
+  <Handling.description>TODO</Handling.description>
+  <!-- EN: handling -->
+  <Handling.gerundLabel>TODO</Handling.gerundLabel>
+  <!-- EN: Handle -->
+  <Handling.labelShort>TODO</Handling.labelShort>
+  <!-- EN: Handler -->
+  <Handling.pawnLabel>TODO</Handling.pawnLabel>
+  <!-- EN: Handle -->
+  <Handling.verb>TODO</Handling.verb>
+  
+  <!-- EN: Carry things to where they need to be. -->
+  <Hauling.description>TODO</Hauling.description>
+  <!-- EN: hauling -->
+  <Hauling.gerundLabel>dragen</Hauling.gerundLabel>
+  <!-- EN: Haul -->
+  <Hauling.labelShort>TODO</Hauling.labelShort>
+  <!-- EN: Hauler -->
+  <Hauling.pawnLabel>drager</Hauling.pawnLabel>
+  <!-- EN: Haul -->
+  <Hauling.verb>draagt</Hauling.verb>
+  
+  <!-- EN: Kill animals which are designated to be hunted. -->
+  <Hunting.description>TODO</Hunting.description>
+  <!-- EN: hunting -->
+  <Hunting.gerundLabel>Jagen</Hunting.gerundLabel>
+  <!-- EN: Hunt -->
+  <Hunting.labelShort>TODO</Hunting.labelShort>
+  <!-- EN: Hunter -->
+  <Hunting.pawnLabel>Jager</Hunting.pawnLabel>
+  <!-- EN: Hunt -->
+  <Hunting.verb>Jaagt</Hunting.verb>
+  
+  <!-- EN: Digging and drilling. -->
+  <Mining.description>TODO</Mining.description>
+  <!-- EN: mining -->
+  <Mining.gerundLabel>Delven</Mining.gerundLabel>
+  <!-- EN: Mine -->
+  <Mining.labelShort>TODO</Mining.labelShort>
+  <!-- EN: Miner -->
+  <Mining.pawnLabel>Delver</Mining.pawnLabel>
+  <!-- EN: Mine -->
+  <Mining.verb>Delft</Mining.verb>
+  
+  <!-- EN: Go to a medical bed for treatment if you have an immediately life-threatening health condition. -->
+  <Patient.description>TODO</Patient.description>
+  <!-- EN: patienting -->
+  <Patient.gerundLabel>Patient</Patient.gerundLabel>
+  <!-- EN: Patient -->
+  <Patient.labelShort>TODO</Patient.labelShort>
+  <!-- EN: Patient -->
+  <Patient.pawnLabel>Patient</Patient.pawnLabel>
+  <!-- EN: Become patient -->
+  <Patient.verb>Patient</Patient.verb>
+  
+  <!-- EN: Rest in bed to recuperate from not-immediately-life-threatening medical problems. -->
+  <PatientBedRest.description>TODO</PatientBedRest.description>
+  <!-- EN: resting in bed -->
+  <PatientBedRest.gerundLabel>TODO</PatientBedRest.gerundLabel>
+  <!-- EN: Bed rest -->
+  <PatientBedRest.labelShort>TODO</PatientBedRest.labelShort>
+  <!-- EN: Bed rester -->
+  <PatientBedRest.pawnLabel>TODO</PatientBedRest.pawnLabel>
+  <!-- EN: Become patient -->
+  <PatientBedRest.verb>TODO</PatientBedRest.verb>
+  
+  <!-- EN: Cut or harvest plants as designated. -->
+  <PlantCutting.description>TODO</PlantCutting.description>
+  <!-- EN: plant cutting -->
+  <PlantCutting.gerundLabel>plant snijden</PlantCutting.gerundLabel>
+  <!-- EN: Plant cut -->
+  <PlantCutting.labelShort>TODO</PlantCutting.labelShort>
+  <!-- EN: Plant cutter -->
+  <PlantCutting.pawnLabel>plantensneider</PlantCutting.pawnLabel>
+  <!-- EN: Cut -->
+  <PlantCutting.verb>snijdt planten</PlantCutting.verb>
+  
+  <!-- EN: Perform research work. -->
+  <Research.description>TODO</Research.description>
+  <!-- EN: researching -->
+  <Research.gerundLabel>onderzoeker</Research.gerundLabel>
+  <!-- EN: Research -->
+  <Research.labelShort>TODO</Research.labelShort>
+  <!-- EN: Researcher -->
+  <Research.pawnLabel>onderzoeken</Research.pawnLabel>
+  <!-- EN: Research at -->
+  <Research.verb>onderzoek naar</Research.verb>
+  
+  <!-- EN: Create weapons and tools from raw materials, either as a blacksmith or by machining. -->
+  <Smithing.description>TODO</Smithing.description>
+  <!-- EN: smithing -->
+  <Smithing.gerundLabel>TODO</Smithing.gerundLabel>
+  <!-- EN: Smith -->
+  <Smithing.labelShort>TODO</Smithing.labelShort>
+  <!-- EN: Smith -->
+  <Smithing.pawnLabel>TODO</Smithing.pawnLabel>
+  <!-- EN: Smith at -->
+  <Smithing.verb>TODO</Smithing.verb>
+  
+  <!-- EN: Create apparel from raw materials. -->
+  <Tailoring.description>TODO</Tailoring.description>
+  <!-- EN: tailoring -->
+  <Tailoring.gerundLabel>TODO</Tailoring.gerundLabel>
+  <!-- EN: Tailor -->
+  <Tailoring.labelShort>TODO</Tailoring.labelShort>
+  <!-- EN: Tailor -->
+  <Tailoring.pawnLabel>TODO</Tailoring.pawnLabel>
+  <!-- EN: Tailor at -->
+  <Tailoring.verb>TODO</Tailoring.verb>
+  
+  <!-- EN: Manage, feed, chat with, and recruit prisoners. -->
+  <Warden.description>TODO</Warden.description>
+  <!-- EN: wardening -->
+  <Warden.gerundLabel>Bewaken</Warden.gerundLabel>
+  <!-- EN: Warden -->
+  <Warden.labelShort>TODO</Warden.labelShort>
+  <!-- EN: Warden -->
+  <Warden.pawnLabel>Bewaker</Warden.pawnLabel>
+  <!-- EN: Handle -->
+  <Warden.verb>Bewaakt</Warden.verb>
+  
+</LanguageData

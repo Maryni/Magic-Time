@@ -1,0 +1,7 @@
+on="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#corr_barr_armco_b_half_dam_left_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#corr_barr_armco_b_half_dam_centre_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#corr_barr_armco_b_half_dam_right_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="col_left_shape" width="0.61" height="0.96" length="0.09093717" shell="0.02" props="physparams.xml#sArmco" />
+		<TEMPLATESHAPEBOX id="col_centre_shape" width="0.7599999" height="0.96" length="0.09093717" shell="0.02" props="physparams.xml#sArmco" /

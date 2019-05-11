@@ -1,0 +1,89 @@
+>rubbedpart->leg</li>
+    <li>rubbedpart->knee</li>
+    <li>rubbedpart->foot</li>
+    <li>rubbedpart->elbow</li>
+    <li>rubbedpart->hip</li>
+    <li>rubbedpart->shoulder</li>
+    <li>rubbedpart->hand</li>
+    <li>rubbedpart->side</li>
+    <li>rubbedpart->arm</li>
+  -->
+  <Nuzzle.logRulesInitiator.rulesStrings>
+    <li>r_logentry(p=2)->[INITIATOR_nameDef][nuzzleadverb]的[nuzzled][RECIPIENT_nameDef]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]用[INITIATOR_possessive]鼻子[nuzzleadverb]的磨蹭[RECIPIENT_nameDef]的[rubbedpart]。</li>
+    <li>nuzzled(p=2)->用鼻子磨蹭</li>
+    <li>nuzzled->用側臉磨蹭</li>
+    <li>nuzzleadverb(p=4)-></li>
+    <li>nuzzleadverb->輕輕</li>
+    <li>nuzzleadverb->溫柔</li>
+    <li>nuzzleadverb->愉悅</li>
+    <li>nuzzleadverb->輕柔</li>
+    <li>nuzzleadverb->小心</li>
+    <li>nuzzleadverb->輕巧</li>
+    <li>nuzzleadverb->溫暖</li>
+    <li>nuzzleadverb->哀憐</li>
+    <li>nuzzleadverb->充滿愛意</li>
+    <li>nuzzleadverb->深情</li>
+    <li>rubbedpart->腿</li>
+    <li>rubbedpart->膝蓋</li>
+    <li>rubbedpart->腳</li>
+    <li>rubbedpart->手肘</li>
+    <li>rubbedpart->臀部</li>
+    <li>rubbedpart->肩膀</li>
+    <li>rubbedpart->手</li>
+    <li>rubbedpart->側身</li>
+    <li>rubbedpart->手臂</li>
+  </Nuzzle.logRulesInitiator.rulesStrings>
+  
+  <!-- EN: tame attempt -->
+  <TameAttempt.label>嘗試馴服</TameAttempt.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] tried to tame [RECIPIENT_nameDef].</li>
+    <li>r_logentry->[INITIATOR_nameDef] tried to bring [RECIPIENT_nameDef] under control.</li>
+    <li>r_logentry->[INITIATOR_nameDef] attempted to collar [RECIPIENT_nameDef].</li>
+    <li>r_logentry->[INITIATOR_nameDef] demanded obedience from [RECIPIENT_nameDef].</li>
+    <li>r_logentry->[INITIATOR_nameDef] called [RECIPIENT_nameDef] to come to [INITIATOR_objective].</li>
+    <li>r_logentry->[INITIATOR_nameDef] tried to make [RECIPIENT_nameDef] sit still.</li>
+    <li>r_logentry->[INITIATOR_nameDef] seized [RECIPIENT_nameDef] sharply and barked a command.</li>
+    <li>r_logentry->[INITIATOR_nameDef] attempted to hold [RECIPIENT_nameDef] still.</li>
+    <li>r_logentry->[INITIATOR_nameDef] shouted a command at [RECIPIENT_nameDef].</li>
+    <li>r_logentry->[INITIATOR_nameDef] slapped [RECIPIENT_nameDef] in a show of dominance.</li>
+    <li>r_logentry->[INITIATOR_nameDef] directed [RECIPIENT_nameDef] back towards the community.</li>
+    <li>r_logentry->[INITIATOR_nameDef] called [RECIPIENT_nameDef] to come back to the community.</li>
+    <li>r_logentry->[INITIATOR_nameDef] touched a vulnerable body part of [RECIPIENT_nameDef], demanding obedience.</li>
+    <li>r_logentry->[INITIATOR_nameDef] pointed at the ground, demanding that [RECIPIENT_nameDef] come.</li>
+    <li>r_logentry->[INITIATOR_nameDef] gave [RECIPIENT_nameDef] a first command.</li>
+  -->
+  <TameAttempt.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef]嘗試馴服[RECIPIENT_nameDef]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]嘗試控制[RECIPIENT_nameDef]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]試圖給[RECIPIENT_nameDef]套上項圈。</li>
+    <li>r_logentry->[INITIATOR_nameDef]試圖讓[RECIPIENT_nameDef]服從。</li>
+    <li>r_logentry->[INITIATOR_nameDef]叫[RECIPIENT_nameDef]前往[INITIATOR_objective]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]試圖讓[RECIPIENT_nameDef]坐好。</li>
+    <li>r_logentry->[INITIATOR_nameDef]向[RECIPIENT_nameDef]尖銳而大聲的下令。</li>
+    <li>r_logentry->[INITIATOR_nameDef]試圖讓[RECIPIENT_nameDef]靜止不動。</li>
+    <li>r_logentry->[INITIATOR_nameDef]大聲的命令[RECIPIENT_nameDef]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]拍打[RECIPIENT_nameDef]以彰顯自己支配者的身份。</li>
+    <li>r_logentry->[INITIATOR_nameDef]命令[RECIPIENT_nameDef]立刻返回群體。</li>
+    <li>r_logentry->[INITIATOR_nameDef]呼叫[RECIPIENT_nameDef]返回群體。</li>
+    <li>r_logentry->[INITIATOR_nameDef]手按著[RECIPIENT_nameDef]身上最脆弱的部份，要求牠服從。</li>
+    <li>r_logentry->[INITIATOR_nameDef]手指地面，要求[RECIPIENT_nameDef]過來。</li>
+    <li>r_logentry->[INITIATOR_nameDef]向[RECIPIENT_nameDef]下達第一個命令。</li>
+  </TameAttempt.logRulesInitiator.rulesStrings>
+  
+  <!-- EN: train attempt -->
+  <TrainAttempt.label>嘗試訓練</TrainAttempt.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] [trained] [RECIPIENT_nameDef].</li>
+    <li>trained(p=2)->[tried] to train</li>
+    <li>trained->[tried] to show a new trick to</li>
+    <li>trained->[tried] to discipline</li>
+    <li>trained->[tried] to instruct</li>
+    <li>trained->[tried] to encourage a new skill in</li>
+    <li>trained->demonstrated a skill to</li>
+    <li>trained->encouraged a new response from</li>
+    <li>tried->tried</li>
+    <li>tried->attempted</li>
+  -->
+  <TrainAttempt.logRulesInitiator

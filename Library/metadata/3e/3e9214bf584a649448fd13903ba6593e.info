@@ -1,0 +1,31 @@
+ = Class::GetFieldFromName(assemblyNameType, "name");
+        FieldInfo* codebaseField = Class::GetFieldFromName(assemblyNameType, "codebase");
+
+        if (assemblyNameField != NULL)
+            Field::SetValue(assemblyNameObject, assemblyNameField, String::New(assemblyName->name));
+
+        if (codebaseField != NULL)
+            Field::SetValue(assemblyNameObject, codebaseField, get_code_base(ass, false));
+
+        FieldInfo* field = Class::GetFieldFromName(assemblyNameType, "major");
+        if (field != NULL)
+        {
+            int32_t major = assemblyName->major;
+            Field::SetValue(assemblyNameObject, field, &major);
+        }
+
+        field = Class::GetFieldFromName(assemblyNameType, "minor");
+        if (field != NULL)
+        {
+            int32_t minor = assemblyName->minor;
+            Field::SetValue(assemblyNameObject, field, &minor);
+        }
+
+        field = Class::GetFieldFromName(assemblyNameType, "build");
+        if (field != NULL)
+        {
+            int32_t build = assemblyName->build;
+            Field::SetValue(assemblyNameObject, field, &build);
+        }
+
+        field = Class::

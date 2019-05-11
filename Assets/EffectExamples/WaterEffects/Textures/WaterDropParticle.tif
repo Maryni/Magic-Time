@@ -1,0 +1,588 @@
+given value and override state.
+        /// </summary>
+        /// <param name="value">The value to set this parameter to</param>
+        /// <param name="overrideState">The override state for this value</param>
+        public ParameterOverride(T value, bool overrideState)
+        {
+            this.value = value;
+            this.overrideState = overrideState;
+        }
+
+        internal override void Interp(ParameterOverride from, ParameterOverride to, float t)
+        {
+            // Note: this isn't completely safe but it'll do fine
+            Interp(from.GetValue<T>(), to.GetValue<T>(), t);
+        }
+
+        /// <summary>
+        /// Interpolates between two values given an interpolation factor <paramref name="t"/>.
+        /// </summary>
+        /// <param name="from">The value to interpolate from</param>
+        /// <param name="to">The value to interpolate to</param>
+        /// <param name="t">An interpolation factor (generally in range <c>[0,1]</c>)</param>
+        /// <remarks>
+        /// By default this method does a "snap" interpolation, meaning it will return the value
+        /// <paramref name="to"/> if <paramref name="t"/> is higher than 0, <paramref name="from"/>
+        /// otherwise.
+        /// </remarks>
+        public virtual void Interp(T from, T to, float t)
+        {
+            // Returns `to` if `dt > 0` by default so we don't have to write overrides for bools and
+            // enumerations.
+            value = t > 0f ? to : from;
+        }
+
+        /// <summary>
+        /// Sets the value for this parameter to <paramref name="x"/> and mark the override state
+        /// to <c>true</c>.
+        /// </summary>
+        /// <param name="x"></param>
+        public void Override(T x)
+        {
+            overrideState = true;
+            value = x;
+        }
+
+        internal override void SetValue(ParameterOverride parameter)
+        {
+            value = parameter.GetValue<T>();
+        }
+        
+        /// <inheritdoc />
+        public override int GetHash()
+        {
+            unchecked
+            {
+                int hash = 17;
+                hash = hash * 23 + overrideState.GetHashCode();
+                hash = hash * 23 + value.GetHashCode();
+                return hash;
+            }
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="ParameterOverride{T}"/> and its value type.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator T(ParameterOverride<T> prop)
+        {
+            return prop.value;
+        }
+    }
+
+    // Bypassing the limited unity serialization system...
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <c>float</c> value.
+    /// </summary>
+    /// <remarks>
+    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>.
+    /// </remarks>
+    [Serializable]
+    public sealed class FloatParameter : ParameterOverride<float>
+    {
+        /// <inheritdoc />
+        public override void Interp(float from, float to, float t)
+        {
+            value = from + (to - from) * t;
+        }
+    }
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <c>int</c> value.
+    /// </summary>
+    /// <remarks>
+    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+    /// casted to <c>int</c>.
+    /// </remarks>
+    [Serializable]
+    public sealed class IntParameter : ParameterOverride<int>
+    {
+        /// <inheritdoc />
+        public override void Interp(int from, int to, float t)
+        {
+            // Int snapping interpolation. Don't use this for enums as they don't necessarily have
+            // contiguous values. Use the default interpolator instead (same as bool).
+            value = (int)(from + (to - from) * t);
+        }
+    }
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <c>bool</c> value.
+    /// </summary>
+    [Serializable]
+    public sealed class BoolParameter : ParameterOverride<bool> {}
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Color"/> value.
+    /// </summary>
+    /// <remarks>
+    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+    /// for each channel.
+    /// </remarks>
+    [Serializable]
+    public sealed class ColorParameter : ParameterOverride<Color>
+    {
+        /// <inheritdoc />
+        public override void Interp(Color from, Color to, float t)
+        {
+            // Lerping color values is a sensitive subject... We looked into lerping colors using
+            // HSV and LCH but they have some downsides that make them not work correctly in all
+            // situations, so we stick with RGB lerping for now, at least its behavior is
+            // predictable despite looking desaturated when `t ~= 0.5` and it's faster anyway.
+            value.r = from.r + (to.r - from.r) * t;
+            value.g = from.g + (to.g - from.g) * t;
+            value.b = from.b + (to.b - from.b) * t;
+            value.a = from.a + (to.a - from.a) * t;
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="ColorParameter"/> and a <see cref="Vector4"/>.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator Vector4(ColorParameter prop)
+        {
+            return prop.value;
+        }
+    }
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Vector2"/> value.
+    /// </summary>
+    /// <remarks>
+    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+    /// for each axis.
+    /// </remarks>
+    [Serializable]
+    public sealed class Vector2Parameter : ParameterOverride<Vector2>
+    {
+        /// <inheritdoc />
+        public override void Interp(Vector2 from, Vector2 to, float t)
+        {
+            value.x = from.x + (to.x - from.x) * t;
+            value.y = from.y + (to.y - from.y) * t;
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="Vector2Parameter"/> and a <see cref="Vector3"/>.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator Vector3(Vector2Parameter prop)
+        {
+            return prop.value;
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="Vector2Parameter"/> and a <see cref="Vector4"/>.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator Vector4(Vector2Parameter prop)
+        {
+            return prop.value;
+        }
+    }
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Vector3"/> value.
+    /// </summary>
+    /// <remarks>
+    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+    /// for each axis.
+    /// </remarks>
+    [Serializable]
+    public sealed class Vector3Parameter : ParameterOverride<Vector3>
+    {
+        /// <inheritdoc />
+        public override void Interp(Vector3 from, Vector3 to, float t)
+        {
+            value.x = from.x + (to.x - from.x) * t;
+            value.y = from.y + (to.y - from.y) * t;
+            value.z = from.z + (to.z - from.z) * t;
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="Vector3Parameter"/> and a <see cref="Vector2"/>.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator Vector2(Vector3Parameter prop)
+        {
+            return prop.value;
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="Vector3Parameter"/> and a <see cref="Vector4"/>.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator Vector4(Vector3Parameter prop)
+        {
+            return prop.value;
+        }
+    }
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Vector4"/> value.
+    /// </summary>
+    /// <remarks>
+    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+    /// for each axis.
+    /// </remarks>
+    [Serializable]
+    public sealed class Vector4Parameter : ParameterOverride<Vector4>
+    {
+        /// <inheritdoc />
+        public override void Interp(Vector4 from, Vector4 to, float t)
+        {
+            value.x = from.x + (to.x - from.x) * t;
+            value.y = from.y + (to.y - from.y) * t;
+            value.z = from.z + (to.z - from.z) * t;
+            value.w = from.w + (to.w - from.w) * t;
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="Vector4Parameter"/> and a <see cref="Vector2"/>.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator Vector2(Vector4Parameter prop)
+        {
+            return prop.value;
+        }
+
+        /// <summary>
+        /// Implicit conversion between <see cref="Vector4Parameter"/> and a <see cref="Vector3"/>.
+        /// </summary>
+        /// <param name="prop">The parameter to implicitly cast</param>
+        public static implicit operator Vector3(Vector4Parameter prop)
+        {
+            return prop.value;
+        }
+    }
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Spline"/> value.
+    /// </summary>
+    /// <remarks>
+    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+    /// for each point on the curve.
+    /// </remarks>
+    [Serializable]
+    public sealed class SplineParameter : ParameterOverride<Spline>
+    {
+        /// <inheritdoc />
+        protected internal override void OnEnable()
+        {
+            if (value != null)
+                value.Cache(int.MinValue);
+        }
+
+        internal override void SetValue(ParameterOverride parameter)
+        {
+            base.SetValue(parameter);
+
+            if (value != null)
+                value.Cache(Time.renderedFrameCount);
+        }
+        
+        /// <inheritdoc />
+        public override void Interp(Spline from, Spline to, float t)
+        {
+            if (from == null || to == null)
+            {
+                base.Interp(from, to, t);
+                return;
+            }
+            
+            int frameCount = Time.renderedFrameCount;
+            from.Cache(frameCount);
+            to.Cache(frameCount);
+
+            for (int i = 0; i < Spline.k_Precision; i++)
+            {
+                float a = from.cachedData[i];
+                float b = to.cachedData[i];
+                value.cachedData[i] = a + (b - a) * t;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A set of default textures to use as default values for <see cref="TextureParameter"/>.
+    /// </summary>
+    public enum TextureParameterDefault
+    {
+        /// <summary>
+        /// No texture, or <c>null</c>.
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// A black texture.
+        /// </summary>
+        Black,
+
+        /// <summary>
+        /// A white texture.
+        /// </summary>
+        White,
+
+        /// <summary>
+        /// A transparent texture.
+        /// </summary>
+        Transparent,
+
+        /// <summary>
+        /// A 2D lookup table in strip format with <c>width = height * height</c>.
+        /// </summary>
+        Lut2D
+    }
+
+    /// <summary>
+    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Texture"/> value.
+    /// </summary>
+    /// <remarks>
+    /// Texture interpolation is done using a classic linear interpolation method.
+    /// </remarks>
+    [Serializable]
+    public sealed class TextureParameter : ParameterOverride<Texture>
+    {
+        public TextureParameterDefault defaultState = TextureParameterDefault.Black;
+        
+        /// <inheritdoc />
+        public override void Interp(Texture from, Texture to, float t)
+        {
+            // Both are null, do nothing
+            if (from == null && to == null)
+            {
+                value = null;
+                return;
+            }
+
+            // Both aren't null we're ready to blend
+            if (from != null && to != null)
+            {
+                value = TextureLerper.instance.Lerp(from, to, t);
+                return;
+            }
+
+            // One of them is null, blend to/from a default value is applicable
+            {
+                if (defaultState == TextureParameterDefault.Lut2D)
+                {
+                    int size = from != null ? from.height : to.height;
+                    Texture defaultTexture = RuntimeUtilities.GetLutStrip(size);
+                    
+                    if (from == null) from = defaultTexture;
+                    if (to == null) to = defaultTexture;
+                }
+
+                Color tgtColor;
+                                
+                switch (defaultState)
+                {
+                    case TextureParameterDefault.Black:
+                        tgtColor = Color.black;
+                        break;
+                    case TextureParameterDefault.White:
+                        tgtColor = Color.white;
+                        break;
+                    case TextureParameterDefault.Transparent:
+                        tgtColor = Color.clear;
+                        break;
+                    case TextureParameterDefault.Lut2D:
+                    {
+                        // Find the current lut size
+                        int size = from != null ? from.height : to.height;
+                        Texture defaultTexture = RuntimeUtilities.GetLutStrip(size);
+                        if (from == null) from = defaultTexture;
+                        if (to == null) to = defaultTexture;
+
+                        // Fail safe in case the lut size is incorrect
+                        if (from.width != to.width || from.height != to.height)
+                        {
+                            value = null;
+                            return;
+                        }
+
+                        value = TextureLerper.instance.Lerp(from, to, t);
+                        // All done, return
+                        return;
+                    }
+                    default:
+                        // defaultState is none, so just interpolate the base and return
+                        base.Interp(from, to, t);
+                        return;
+                }
+                // If we made it this far, tgtColor contains the color we'll be lerping into (or out of)
+                if (from == null)
+                {
+                    // color -> texture lerp, invert ratio
+                    value = TextureLerper.instance.Lerp(to, tgtColor, 1f - t);
+                }
+                else
+                {
+                    value = TextureLerper.instance.Lerp(from, tgtColor, t);
+                }
+            }
+        }
+    }
+}
+                         ParameterOverride   $   UnityEngine.Rendering.PostProcessing                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  a  SÔ          2018.3.0f2 şÿÿÿ      ÿÿ’3$øÌuñì˜²e+ Í=   ^          7  €ÿÿÿÿ     €    ¦ €² €           Ğ  €               ¦ €               ¦ €               ¦ €#               ¦ €+               H €3   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Ş  € €   	        Q  €j  €   
+        H €<   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Ş  € €           Q  €j  €           Õ €I   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ    À    Ş  € €            H €j  €ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Ş  € €           Q  €j  €           ™ €P             AssetMetaData guid data[0] data[1] data[2] data[3] pathName originalName labels assetStoreRef    ÿÿTMäbŸ&H²ãr¢3ˆÅ!>   ß          7  €ÿÿÿÿ     €    ¦ €² €              E €           Ş  €#          €   . €,          €   5   a €           Ş  €#          €   . €,          €   † €r €           Ş  €#      	    €   . €,      
+    €   H €« €ÿÿÿÿ   €  1  €1  €ÿÿÿÿ   @   Ş  € €          Q  €j  €          ñ  €J   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ    €    Ş  € €             €j  €ÿÿÿÿ    €    \   ›  €ÿÿÿÿ    €    H €r   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Ş  € €           Q  €j  €           H €w   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Ş  € €           Q  €j  €           H €€   ÿÿÿÿ    €   1  €1  €ÿÿÿÿ   @    Ş  € €           Q  €j  €           y €
+ €             Ş  €#      !    €   . €,      "    €   Õ €…   ÿÿÿÿ#    €   1  €1  €ÿÿÿÿ$    À    Ş  € €   %          €j  €ÿÿÿÿ&    €    H €›  €ÿÿÿÿ'    €   1  €1  €ÿÿÿÿ(   @    Ş  € €   )        Q  €j  €   *        y €
+ €   +         Ş  €#      ,    €   . €,      -    €     €™      .    @    ¾ €¨      /    @    Ş  €#      0    €   . €,      1    €   H €­   ÿÿÿÿ2   €   1  €1  €ÿÿÿÿ3   @    Ş  € €   4        Q  €j  €   5        H €¸   ÿÿÿÿ6   €   1  €1  €ÿÿÿÿ7   @    Ş  € €   8        Q  €j  €   9        H €Ê   ÿÿÿÿ:   €   1  €1  €ÿÿÿÿ;   @    Ş  € €   <        Q  €j  €   =      MonoImporter PPtr<EditorExtension> m_FileID m_PathID PPtr<PrefabInstance> m_ExternalObjects SourceAssetIdentifier type assembly name m_DefaultReferences executionOrder icon m_UserData m_AssetBundleName m_AssetBundleVariant s    ÿÿ£Gñ×ÜZ56 :!@iÁJ*          €7  €ÿÿÿÿ     €    ¦ €² €               E €           Ş  €          €   . €          €   (   a €           Ş  €          €   . €          €   † €r €           Ş  €      	    €   . €      
+    €   H €« €ÿÿÿÿ   €  1  €1  €ÿÿÿÿ   @   Ş  € €          Q  €j  €          H €ê €ÿÿÿÿ   €   1  €1  €ÿÿÿÿ   @    Ş  € €           Q  €j  €           ñ  €=   ÿÿÿÿ   €   1  €1  €ÿÿÿÿ   €    Ş  € €            €j  €ÿÿÿÿ   €    H €›  €ÿÿÿÿ   €   1  €1  €ÿÿÿÿ   @    Ş  € €           Q  €j  €           y €
+ €           Ş  €          €   . €          €   y €Q               Ş  €          €   . €           €   Ş  €X      !        H €i   ÿÿÿÿ"   €   1  €1  €ÿÿÿÿ#   @    Ş  € €   $        Q  €j  €   %        H €u   ÿÿÿÿ&   €   1  €1  €ÿÿÿÿ'   @    Ş  € €   (        Q  €j  €   )      PPtr<EditorExtension> m_FileID m_PathID PPtr<PrefabInstance> m_DefaultReferences m_Icon m_ExecutionOrder m_ClassName m_Namespace                |              €   P      ày¯     Ğ   C                                                                                                                                                                                                                                                                                                                                                                                                                             {7ó¦öAGÏ•˜ŸğºT   Packages/com.unity.postprocessing/PostProcessing/Runtime/PostProcessRenderContext.cs                                                                                                                                               PostProcessRenderContextaB  using System.Collections.Generic;
+
+namespace UnityEngine.Rendering.PostProcessing
+{
+#if UNITY_2017_2_OR_NEWER
+    using XRSettings = UnityEngine.XR.XRSettings;
+#elif UNITY_5_6_OR_NEWER
+    using XRSettings = UnityEngine.VR.VRSettings;
+#endif
+
+    /// <summary>
+    /// A context object passed around all post-processing effects in a frame.
+    /// </summary>
+    public sealed class PostProcessRenderContext
+    {
+        // -----------------------------------------------------------------------------------------
+        // The following should be filled by the render pipeline
+
+        Camera m_Camera;
+
+        /// <summary>
+        /// The camera currently being rendered.
+        /// </summary>
+        public Camera camera
+        {
+            get { return m_Camera; }
+            set
+            {
+                m_Camera = value;
+
+#if !UNITY_SWITCH && ENABLE_VR
+                if (m_Camera.stereoEnabled)
+                {
+#if UNITY_2017_2_OR_NEWER
+                    var xrDesc = XRSettings.eyeTextureDesc;
+                    stereoRenderingMode = StereoRenderingMode.SinglePass;
+
+#if UNITY_STANDALONE || UNITY_EDITOR
+                    if (xrDesc.dimension == TextureDimension.Tex2DArray)
+                        stereoRenderingMode = StereoRenderingMode.SinglePassInstanced;
+#endif
+                    if (stereoRenderingMode == StereoRenderingMode.SinglePassInstanced)
+                        numberOfEyes = 2;
+
+#if UNITY_2019_1_OR_NEWER
+                    if (stereoRenderingMode == StereoRenderingMode.SinglePass)
+                    {
+                        numberOfEyes = 2;
+                        xrDesc.width /= 2;
+                        xrDesc.vrUsage = VRTextureUsage.None;
+                    }
+#else
+                    //before 2019.1 double-wide still issues two drawcalls
+                    if (stereoRenderingMode == StereoRenderingMode.SinglePass)
+                    {
+                        numberOfEyes = 1;
+                    }
+#endif
+
+                    width = xrDesc.width;
+                    height = xrDesc.height;
+                    m_sourceDescriptor = xrDesc;
+#else
+                    // Single-pass is only supported with 2017.2+ because
+                    // that is when XRSettings.eyeTextureDesc is available.
+                    // Without it, we don't have a robust method of determining
+                    // if we are in single-pass.  Users can just double the width
+                    // here if they KNOW they are using single-pass.
+                    width = XRSettings.eyeTextureWidth;
+                    height = XRSettings.eyeTextureHeight;
+#endif
+
+                    if (m_Camera.stereoActiveEye == Camera.MonoOrStereoscopicEye.Right)
+                        xrActiveEye = (int)Camera.StereoscopicEye.Right;
+
+                    screenWidth = XRSettings.eyeTextureWidth;
+                    screenHeight = XRSettings.eyeTextureHeight;
+
+#if UNITY_2019_1_OR_NEWER
+                    if (stereoRenderingMode == StereoRenderingMode.SinglePass)
+                        screenWidth /= 2;
+#endif
+                    stereoActive = true;
+
+                }
+                else
+#endif
+                {
+                    width = m_Camera.pixelWidth;
+                    height = m_Camera.pixelHeight;
+
+#if UNITY_2017_2_OR_NEWER
+                    m_sourceDescriptor.width = width;
+                    m_sourceDescriptor.height = height;
+#endif
+                    screenWidth = width;
+                    screenHeight = height;
+                    stereoActive = false;
+                    numberOfEyes = 1;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// The command buffer to fill render commands in.
+        /// </summary>
+        public CommandBuffer command { get; set; }
+
+        /// <summary>
+        /// The source target for this pass (can't be the same as <see cref="destination"/>).
+        /// </summary>
+        public RenderTargetIdentifier source { get; set; }
+
+        /// <summary>
+        /// The destination target for this pass (can't be the same as <see cref="source"/>).
+        /// </summary>
+        public RenderTargetIdentifier destination { get; set; }
+
+        /// <summary>
+        /// The texture format used for the source target.
+        /// </summary>
+        // We need this to be set explictely as we don't have any way of knowing if we're rendering
+        // using  HDR or not as scriptable render pipelines may ignore the HDR toggle on camera
+        // completely
+        public RenderTextureFormat sourceFormat { get; set; }
+
+        /// <summary>
+        /// Should we flip the last pass?
+        /// </summary>
+        public bool flip { get; set; }
+
+        // -----------------------------------------------------------------------------------------
+        // The following is auto-populated by the post-processing stack
+
+        /// <summary>
+        /// The resource asset contains reference to external resources (shaders, textures...).
+        /// </summary>
+        public PostProcessResources resources { get; internal set; }
+
+        /// <summary>
+        /// The property sheet factory handled by the currently active <see cref="PostProcessLayer"/>.
+        /// </summary>
+        public PropertySheetFactory propertySheets { get; internal set; }
+
+        /// <summary>
+        /// A dictionary to store custom user data objects. This is handy to share data between
+        /// custom effects.
+        /// </summary>
+        public Dictionary<string, object> userData { get; private set; }
+
+        /// <summary>
+        /// A reference to the internal debug layer.
+        /// </summary>
+        public PostProcessDebu

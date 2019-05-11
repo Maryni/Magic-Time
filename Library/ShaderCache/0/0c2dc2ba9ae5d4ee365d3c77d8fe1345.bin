@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: collapsed rocks -->
+  <CollapsedRocks.label>Roques caigudes</CollapsedRocks.label>
+  <!-- EN: Collapsed rocks, packed tightly enough to hold up a roof. -->
+  <CollapsedRocks.description>Roques caigudes, prou compactes per aguantar un sostre.</CollapsedRocks.description>
+  
+  <!-- EN: glow pod -->
+  <GlowPod.label>baina iridescent</GlowPod.label>
+  <!-- EN: A bioluminescent pod produced by giant insects. Glows under its own light for a long time, then dies. -->
+  <GlowPod.description>una baina bio-lumínica produïda pels insectes gegants. Brilla amb llum pròpia durant molt temps i després es desfà.</GlowPod.description>
+  
+  <!-- EN: hive -->
+  <Hive.label>niu</Hive.label>
+  <!-- EN: A hive of giant insects. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly. -->
+  <Hive.description>Niu d'inse

@@ -1,0 +1,477 @@
+dy.dds
+2018/12/21 16:01:52 690091997 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/BodyArmour/ArcticCrystalBody.dds
+2018/12/21 16:01:52 690091997 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/BodyArmour/EzomyteBody.dds
+2018/12/21 16:01:52 690091997 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/BodyArmour/EmpyreanBody.dds
+2018/12/21 16:01:52 690091997 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/BodyArmour/PitfighterBody.dds
+2018/12/21 16:01:52 690091997 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/BodyArmour/CrucibleBody.dds
+2018/12/21 16:01:52 690092013 26d [INFO Client 7256] Got file list for "Art/2DItems/Effects/Frames" 76
+2018/12/21 16:01:52 690092044 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Frames/SupporterIconFrame143.dds
+2018/12/21 16:01:52 690092059 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Frames/SupporterIconFrame145.dds
+2018/12/21 16:01:52 690092059 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Frames/SupporterIconFrame142.dds
+2018/12/21 16:01:52 690092059 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Frames/SupporterIconFrame146.dds
+2018/12/21 16:01:52 690092059 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Frames/SupporterIconFrame144.dds
+2018/12/21 16:01:52 690092059 26d [INFO Client 7256] Got file list for "Art/2DItems/Effects/Hats" 75
+2018/12/21 16:01:52 690092278 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/PitfighterHelmet.dds
+2018/12/21 16:01:52 690092278 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/PitfighterHelmetAttachment.dds
+2018/12/21 16:01:52 690092293 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/CrucibleHelmet.dds
+2018/12/21 16:01:52 690092293 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/VanguardHood.dds
+2018/12/21 16:01:52 690092293 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/CrucibleHood.dds
+2018/12/21 16:01:52 690092309 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/EmpyreanHelmet.dds
+2018/12/21 16:01:52 690092309 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/ArcticCrystalHelmet.dds
+2018/12/21 16:01:52 690092309 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/EzomyteHood.dds
+2018/12/21 16:01:52 690092325 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/VanguardHelmet.dds
+2018/12/21 16:01:52 690092325 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/EmpyreanHood.dds
+2018/12/21 16:01:52 690092325 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Hats/EzomyteHelmet.dds
+2018/12/21 16:01:52 690092325 26d [INFO Client 7256] Got file list for "Art/2DItems/Effects/Wings" 74
+2018/12/21 16:01:52 690092449 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Wings/PitfighterBackAttachment.dds
+2018/12/21 16:01:52 690092465 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Wings/EzomyteCloak.dds
+2018/12/21 16:01:52 690092465 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Wings/VanguardBackAttachment.dds
+2018/12/21 16:01:52 690092481 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Wings/EmpyreanBackAttachment.dds
+2018/12/21 16:01:52 690092481 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Wings/CrucibleBackAttachment.dds
+2018/12/21 16:01:52 690092481 26d [INFO Client 7256] Got file list for "Art/2DItems/Effects/Portals" 73
+2018/12/21 16:01:52 690092559 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Portals/EmpyreanPortal.dds
+2018/12/21 16:01:52 690092559 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Portals/CrucibleArmour.dds
+2018/12/21 16:01:52 690092574 26d [INFO Client 7256] Got file list for "Art/2DItems/Effects/Weapon" 72
+2018/12/21 16:01:52 690092715 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Weapon/weapon_assassin.dds
+2018/12/21 16:01:52 690092715 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Weapon/weapon_pitfighter.dds
+2018/12/21 16:01:52 690092715 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Weapon/weapon_crucible.dds
+2018/12/21 16:01:52 690092715 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Weapon/weapon_empyrean.dds
+2018/12/21 16:01:52 690092715 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Weapon/weapon_vanguard.dds
+2018/12/21 16:01:52 690092730 26d [INFO Client 7256] Got file list for "Art/2DItems/Effects/Character" 71
+2018/12/21 16:01:52 690092808 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Character/PitfighterApparition.dds
+2018/12/21 16:01:52 690092808 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Character/CrucibleApparition.dds
+2018/12/21 16:01:52 690092824 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Character/AssassinApparition.dds
+2018/12/21 16:01:52 690092824 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Character/VanguardApparition.dds
+2018/12/21 16:01:52 690092824 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Character/ArcticCrystalApparition.dds
+2018/12/21 16:01:52 690092824 2b3 [INFO Client 7256] Queue file to download: Art/2DItems/Effects/Character/EmpyreanApparition.dds
+2018/12/21 16:01:52 690092824 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Doodads/Leagues" 70
+2018/12/21 16:01:52 690092855 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Doodads/Leagues/Betrayal 71
+2018/12/21 16:01:52 690092855 26d [INFO Client 7256] Got file list for "Metadata/Terrain/Leagues/Betrayal" 70
+2018/12/21 16:01:52 690092871 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/Tiles 71
+2018/12/21 16:01:52 690092886 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/MastermindFight 72
+2018/12/21 16:01:52 690092886 2a5 [INFO Client 7256] Requesting folder Metadata/Terrain/Leagues/Betrayal/SafeHouses 73
+2018/12/21 16:01:52 690092886 26d [INFO Client 7256] Got file list for "Metadata/Particles/monster_effects/League_Betrayal" 72
+2018/12/21 16:01:53 690092949 2a5 [INFO Client 7256] Requesting folder Metadata/Particles/monster_effects/League_Betrayal/BossCatarina 73
+2018/12/21 16:01:53 690092964 26d [INFO Client 7256] Got file list for "Metadata/Effects/Spells/monsters_effects" 72
+2018/12/21 16:01:53 690093105 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Spells/monsters_effects/League_Betrayal 73
+2018/12/21 16:01:53 690093136 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Weapon_effects" 72
+2018/12/21 16:01:53 690093183 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Weapon_effects/Weapon_effects 73
+2018/12/21 16:01:53 690093183 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Town_Portals" 72
+2018/12/21 16:01:53 690093292 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Town_Portals/EmpyreanPortal 73
+2018/12/21 16:01:53 690093307 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Spells" 72
+2018/12/21 16:01:53 690093479 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Spells/mirage_archer 73
+2018/12/21 16:01:53 690093495 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/Aura" 72
+2018/12/21 16:01:53 690093526 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/CrucibleDemon 73
+2018/12/21 16:01:53 690093526 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/PitfighterDemon 74
+2018/12/21 16:01:53 690093526 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/PurpleCrystalDemon 75
+2018/12/21 16:01:53 690093526 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/EmpyreanDemon 76
+2018/12/21 16:01:53 690093526 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/VanguardDemon 77
+2018/12/21 16:01:53 690093526 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/ArcticCrystalDemon 78
+2018/12/21 16:01:53 690093526 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/Aura/AssassinDemon 79
+2018/12/21 16:01:53 690093526 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/BodyArmours" 78
+2018/12/21 16:01:53 690093557 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/BodyArmours/empyrean 79
+2018/12/21 16:01:53 690093557 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/BodyArmours/Wings 80
+2018/12/21 16:01:53 690093557 26d [INFO Client 7256] Got file list for "Metadata/Effects/Microtransactions/shield" 79
+2018/12/21 16:01:53 690093557 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/shield/Sin 80
+2018/12/21 16:01:53 690093573 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/shield/Innocence 81
+2018/12/21 16:01:53 690093573 2a5 [INFO Client 7256] Requesting folder Metadata/Effects/Microtransactions/shield/Sin&Innocence 82
+2018/12/21 16:01:53 690093573 26d [INFO Client 7256] Got file list for "Metadata/Effects/Graphs/General" 81
+2018/12/21 16:01:53 690093698 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Graphs/General/GrayScale.fxgraph
+2018/12/21 16:01:53 690093713 2b3 [INFO Client 7256] Queue file to download: Metadata/Effects/Graphs/General/ModulateEdges.fxgraph
+2018/12/21 16:01:53 690093713 26d [INFO Client 7256] Got file list for "Metadata/Items/Armours/Shields" 80
+2018/12/21 16:01:53 690093791 2b3 [INFO Client 7256] Queue file to download: Metadata/Items/Armours/Shields/SinShieldHeld.aoc
+2018/12/21 16:01:53 690093807 2b3 [INFO Client 7256] Queue file to download: Metadata/Items/Armours/Shields/SinAndInnocenceShieldHeld.aoc
+2018/12/21 16:01:53 690093807 2b3 [INFO Client 7256] Queue file to download: Metadata/Items/Armours/Shields/SinAndInnocenceShieldHeld.ao
+2018/12/21 16:01:53 690093822 2b3 [INFO Client 7256] Queue file to download: Metadata/Items/Armours/Shields/SinShieldHeld.ao
+2018/12/21 16:01:53 690093838 2b3 [INFO Client 7256] Queue file to download: Metadata/Items/Armours/Shields/InnocenceShieldHeld.aoc
+2018/12/21 16:01:53 690093838 2b3 [INFO Client 7256] Queue file to download: Metadata/Items/Armours/Shields/InnocenceShieldHeld.ao
+2018/12/21 16:01:53 690093838 26d [INFO Client 7256] Got file list for "Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects" 79
+2018/12/21 16:01:53 690093838 2b3 [INFO Client 7256] Queue file to download: Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects/GraveyardTotem.ao
+2018/12/21 16:01:53 690093838 2b3 [INFO Client 7256] Queue file to download: Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects/Arrow.otc
+2018/12/21 16:01:53 690093854 2b3 [INFO Client 7256] Queue file to download: Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects/GraveyardTotem.otc
+2018/12/21 16:01:53 690093854 2b3 [INFO Client 7256] Queue file to download: Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects/GraveyardTotem.aoc
+2018/12/21 16:01:53 690093854 2b3 [INFO Client 7256] Queue file to download: Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects/GraveyardTotem.ot
+2018/12/21 16:01:53 690093854 2b3 [INFO Client 7256] Queue file to download: Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects/GraveyardRunes.ot
+2018/12/21 16:01:53 690093854 2b3 [INFO Client 7256] Queue file to download: Metadata/Monsters/LeagueBetrayal/CatarinaArenaObjects/CatarinaSculpture.ot
+2018/12/21 16:01:53 690093854 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/League_Betrayal/BossCatarina" 78
+2018/12/21 16:01:54 690093963 2a5 [INFO Client 7256] Requesting folder Art/particles/monster_particles/League_Betrayal/BossCatarina/graveyard 79
+2018/12/21 16:01:54 690093963 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/League_Betrayal/Fort_Seige" 78
+2018/12/21 16:01:54 690094010 2a5 [INFO Client 7256] Requesting folder Art/particles/monster_particles/League_Betrayal/Fort_Seige/Ice 79
+2018/12/21 16:01:54 690094010 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/League_Betrayal/CatarinaBargainPortal" 78
+2018/12/21 16:01:54 690094041 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/League_Betrayal/CatarinaBargainPortal/portal_core.dds
+2018/12/21 16:01:54 690094041 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/vaalspiderboss_p/EggHatch" 77
+2018/12/21 16:01:54 690094041 2b3 [INFO Client 7256] Queue file to download: Art/particles/monster_particles/vaalspiderboss_p/EggHatch/solid.dds
+2018/12/21 16:01:54 690094041 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/League_Bestiary/Spider_Boss" 76
+2018/12/21 16:01:54 690094072 2a5 [INFO Client 7256] Requesting folder Art/particles/monster_particles/League_Bestiary/Spider_Boss/tail_strike 77
+2018/12/21 16:01:54 690094072 2a5 [INFO Client 7256] Requesting folder Art/particles/monster_particles/League_Bestiary/Spider_Boss/web_coat 78
+2018/12/21 16:01:54 690094072 26d [INFO Client 7256] Got file list for "Art/particles/monster_particles/AtlasofWorlds/TheShaper" 77
+2018/12/21 16:01:54 690094150 2a5 [INFO Client 7256] Requesting folder Art/particles/monster_particles/AtlasofWorlds/TheShaper/teleport_slam 78
+2018/12/21 16:01:54 690094150 2a5 [INFO Client 7256] Requesting folder Art/particles/monster_particles/AtlasofWorlds/TheShaper/super_blackhole 79
+2018/12/21 16:01:54 690094166 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Town_Portal/EmpyreanPortal/textures" 78
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/beam.dds
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/mask2.dds
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/STRIPs.dds
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/flare.mat
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/waves_tiled.dds
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/ink.mat
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/soul_trail.dds
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad2.mat
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad_blk.mat
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/blood_drip.dds
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/I.mat
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/ribbon_mask.dds
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad.mat
+2018/12/21 16:01:54 690094166 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad3.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad_0.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/I.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/light_grad.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/ink.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/ribbon_mask.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/flare.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad2.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/checker_DXT5.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad3.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad_0.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/waves_tiled.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/beam2.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/mask2.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/beam.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/soul_trail.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/soul_trail_DXT1.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/glow.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/STRIPs.mat
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/glow.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/grad_blk.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/soul_trail_DXT5.dds
+2018/12/21 16:01:54 690094181 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/EmpyreanPortal/textures/beam2.dds
+2018/12/21 16:01:54 690094181 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Town_Portal/Breach_portal/textures" 77
+2018/12/21 16:01:54 690094197 2a5 [INFO Client 7256] Requesting folder Art/Microtransactions/Town_Portal/Breach_portal/textures/breached 78
+2018/12/21 16:01:54 690094197 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Town_Portal/spirit_realm_portal/textures" 77
+2018/12/21 16:01:54 690094244 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Town_Portal/spirit_realm_portal/textures/portal_core.dds
+2018/12/21 16:01:54 690094244 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Misc/uniques/wands" 76
+2018/12/21 16:01:54 690094259 2a5 [INFO Client 7256] Requesting folder Art/Microtransactions/Misc/uniques/wands/Midnight_Bargain 77
+2018/12/21 16:01:54 690094259 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Aura/CrucibleAmuletEffect/particles" 76
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lensFlare.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lens_flarey.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lookup.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/wing_trails.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lens_flarey_horizontal.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/Dark_Grad.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/swirl.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/soul_trail.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/celest_glow.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/light_spine.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/white_solidc.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/ice_shockwave.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/ring.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/shockwaveRing.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lens_flarey_horizontal.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/pro_flare.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lensFlare.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lens_flarey.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/muddle_double_DXT5.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/ribbon_mask.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/shockwaveRing.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/azurite_sparkling.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/coreLight.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/ribbon_mask.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/spark.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/lookup.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/swirl.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/azurite_sparkling.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/hole_flare.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/DistortionSwirl2_DXT5.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/pro_flare.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/wing_trails.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/coreLight.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/Dark_Grad.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/ice_shockwave.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/celest_glow.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/soul_trail.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/hole_flare.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/perlinNoise_DXT5.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/ring.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/spots_DXT5.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/white_solid.dds
+2018/12/21 16:01:54 690094259 2a5 [INFO Client 7256] Requesting folder Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/epk 77
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/spark.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/CrucibleAmuletEffect/particles/light_spine.dds
+2018/12/21 16:01:54 690094259 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Aura/VanguardDemon/particles" 76
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/fire_lookup_DXT5.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/grd_mask.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/Explosion - shimmer.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/trails.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/lens_flarey.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/sandSwirl.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/wisp.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/lens_flarey_horizontal.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/fire_lookup.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/Dark_Grad.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/light_gradient.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/flowerall_colour.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/flare_suck_in.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/space_bg.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/II.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/SWIRL.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/spoculer.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/maxres.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/sharp_trail.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/light_spine.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/flowerall_colour.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/vine_trail.dds
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/swirl_sat_add.mat
+2018/12/21 16:01:54 690094259 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/light_immortal_call2.png.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/ring.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/Explosion.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/rainbow2.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/grd_mask.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/swirl_trail.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/lens_flarey_horizontal.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/I.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/pro_flare.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/lens_flarey.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/Explosion - shimmer.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/sharp_trail.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/black_smoke_tile.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/vine_trail.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/flare_suck_in_gold.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/I.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/T_Lu_Noise_09_DXT5.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/ground_bits.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/light_immortal_call2.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/spark.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/trail_center.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/swirl_sat.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/SWIRL.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/runes_ring_outer.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/zana_sparkling.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/hole_flare.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/pro_flare.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/Explosion.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/scream_wisp.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/wisp.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/runes_ring_outer.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/zana_sparkling.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/flowerallnspoculers.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/Dark_Grad.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/swirl_sat_add.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/fire_lookup.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/zana_lookup.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/projectile_orb_at.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/swirl_trail.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/hole_flare.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/projectile_orb_at.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/red_lookup.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/rainbow2.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/swirl_sat.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/glow.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/ring.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/flare_suck_in_gold.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/light_gradient.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/black_smoke_tile.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/flare_suck_in.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/trails.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/scream_wisp.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/light_immortal_call2.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/glow.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/fadeNoise_DXT5.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/zana_lookup.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/spark.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/spoculer.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/trail_center.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/ground_bits.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/maxres.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/light_spine.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/sandSwirl.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/red_lookup.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/II.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/particles/space_bg.mat
+2018/12/21 16:01:54 690094275 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Aura/VanguardDemon/model" 75
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/model/vanguardFx.sm
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/model/rig.amd
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/model/rig_12ce989c.smd
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/VanguardDemon/model/rig.ast
+2018/12/21 16:01:54 690094275 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Aura/pitfighter/particles" 74
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/lensFlare.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/sandSwirl.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/flare_suck_in.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/warcry_04_gold.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/SWIRL.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/warcry_03_multi.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/blue_lens_flare2.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/soul_trail.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/sharp_trail.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/trail_FLAME.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/warcry_04.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/blink_spiral_bigger.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/fire_lookup_01_DXT5.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/trail_XT.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/smoke_Add.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/blood_lookup_DXT5.dds
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/dark_ink_3.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/energy_trail_at.mat
+2018/12/21 16:01:54 690094275 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/lensFlare.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/spark_big.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/white_sparks.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/red_wisps_dark.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/sharp_trail.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/red_wisps_dark.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/static_ring_AT.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/smoke_black_velocity copy.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/red_light_gradient_head.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/smoke_grain_ab.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/ground_bits.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/trail_center.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/swirl_sat.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/light_gradSmall.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/blue_lens_flare2.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/T_Lu_Noise_17_DXT5.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/SWIRL.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/lava_dots.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/spark_big.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/zana_sparkling.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/zana_sparkling.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/smoke_black_velocity copy.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/dark_ink_3.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/warcry_04.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/projectile_orb_at.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/blink_spiral_bigger.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/trail_XT.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/smoke_Add.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/static_ring_AT.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/soul_trail.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/lava_dots.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/projectile_orb_at.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/perlinNoise_DXT5.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/swirl_sat.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/red_light_gradient_head.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/trail_FLAME.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/flare_suck_in.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/white_sparks.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/warcry_04_gold.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/warcry_03_multi.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/trail_center.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/ground_bits.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/sandSwirl.mat
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/smoke_grain_ab.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/energy_trail_at.dds
+2018/12/21 16:01:54 690094290 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/pitfighter/particles/light_gradSmall.dds
+2018/12/21 16:01:54 690094290 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Aura/ArcticCrystalDemon/Model" 73
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/ArcticCrystalDemon/Model/rig.amd
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/ArcticCrystalDemon/Model/rig.ast
+2018/12/21 16:01:54 690094337 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Aura/AssassinDemon/models" 72
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/models/assassinemerge.amd
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/models/assassinemerge.ast
+2018/12/21 16:01:54 690094337 26d [INFO Client 7256] Got file list for "Art/Microtransactions/Aura/AssassinDemon/textures" 71
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/shockadda_9x9.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/ezomyte_lookup.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/light_multi.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/sharp_trail.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/slash_base.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/light_immortal_call.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/shockadda_9x9.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/shockwave_8x8.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/glow_adda_DXT5.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/blade_sub.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/sharp_trail.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/shockwave_8x8.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/trail_center.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/noise_01_DXT5.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/light_immortal_call.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/ezomyte_lookup.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/ezomyte_sparkling.dds
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/light_multi.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/ezomyte_sparkling.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/blade_sub.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/trail_center.mat
+2018/12/21 16:01:54 690094337 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/Aura/AssassinDemon/textures/slash_base.dds
+2018/12/21 16:01:54 690094337 26d [INFO Client 7256] Got file list for "Art/Microtransactions/BodyArmours/Wings/CrucibleWings" 70
+2018/12/21 16:01:54 690094353 2a5 [INFO Client 7256] Requesting folder Art/Microtransactions/BodyArmours/Wings/CrucibleWings/textures 71
+2018/12/21 16:01:54 690094353 26d [INFO Client 7256] Got file list for "Art/Microtransactions/spell/mirage_archer/stygian" 70
+2018/12/21 16:01:54 690094353 2a5 [INFO Client 7256] Requesting folder Art/Microtransactions/spell/mirage_archer/stygian/models 71
+2018/12/21 16:01:54 690094353 2a5 [INFO Client 7256] Requesting folder Art/Microtransactions/spell/mirage_archer/stygian/textures 72
+2018/12/21 16:01:54 690094353 26d [INFO Client 7256] Got file list for "Art/Microtransactions/spell/flame_dash/corsair" 71
+2018/12/21 16:01:54 690094384 2b3 [INFO Client 7256] Queue file to download: Art/Microtransactions/spell/flame_dash/corsair/inksplat_FB.dds
+2018/12/21 16:01:54 690094384 26d [INFO Client 7256] Got file list for "Art/Models/Terrain/Doodads/Leagues" 70
+2018/12/21 16:01:54 690094415 2a5 [INFO Client 7256] Requesting folder Art/Models/Terrain/Doodads/Leagues/Betrayal 71
+2018/12/21 16:01:54 690094415 26d [INFO Client 7256] Got file list for "Art/Models/Terrain/Forest/Walls" 70
+2018/12/21 16:01:54 690094493 2a5 [INFO Client 7256] Requesting folder Art/Models/Terrain/Forest/Walls/Betrayal 71
+2018/12/21 16:01:54 690094509 26d [INFO Client 7256] Got file list for "Art/Models/Effects/totems/KaruiTotem" 70
+2018/12/21 16:01:54 690094524 2a5 [INFO Client 7256] Requesting folder Art/Models/Effects/totems/KaruiTotem/Warrior 71
+2018/12/21 16:01:54 690094524 26d [INFO Client 7256] Got file list for "Art/Models/Effects/monster_effects/League_Betrayal" 70
+2018/12/21 16:01:54 690094571 2a5 [INFO Client 7256] Requesting folder Art/Models/Effects/monster_effects/League_Betrayal/BossCatarina 71
+2018/12/21 16:01:54 690094587 26d [INFO Client 7256] Got file list for "Art/Models/Effects/monster_effects/AtlasofWorldsBoss" 70
+2018/12/21 16:01:54 690094665 2a5 [INFO Client 7256] Requesting folder Art/Models/Effects/monster_effects/AtlasofWorldsBoss/TheShaper 71
+2018/12/21 16:01:54 690094665 26d [INFO Client 7256] Got file list for "Art/Models/Misc/portals/Empyrean" 70
+2018/12/21 16:01:54 690094680 2b3 [INFO Client 7256] Queue file to download: Art/Models/Misc/portals/Empyrean/rig.amd
+2018/12/21 16:01:54 690094680 2b3 [INFO Client 7256] Queue file to download: Art/Models/Misc/portals/Empyrean/rig.ast
+2018/12/21 16:01:54 690094680 2a5 [INFO Client 7256] Requesting folder Art/Models/Misc/portals/Empyrean/FXmb_slave 71
+2018/12/21 16:01:54 690094680 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Boots" 70
+2018/12/21 16:01:54 690094883 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Boots/Microtransactions 71
+2018/12/21 16:01:54 690094899 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Robes" 70
+2018/12/21 16:01:55 690094977 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Robes/EmpyreanRobe 71
+2018/12/21 16:01:55 690094977 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Robes/PitFighterRobe 72
+2018/12/21 16:01:55 690094977 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Robes/PinkCrystalRobe 73
+2018/12/21 16:01:55 690094977 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Robes/CrucibleRobe 74
+2018/12/21 16:01:55 690094977 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Shields" 73
+2018/12/21 16:01:55 690095024 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Shields/Microtransactions 74
+2018/12/21 16:01:55 690095039 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Helmets" 73
+2018/12/21 16:01:55 690095195 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Helmets/Microtransactions 74
+2018/12/21 16:01:55 690095195 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/Capes" 73
+2018/12/21 16:01:55 690095320 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Capes/EmpyreanBackAttach 74
+2018/12/21 16:01:55 690095336 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/Capes/PitfighterCape 75
+2018/12/21 16:01:55 690095336 26d [INFO Client 7256] Got file list for "Art/Models/Items/Armours/BodyArmours" 74
+2018/12/21 16:01:55 690095585 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Armours/BodyArmours/Microtransactions 75
+2018/12/21 16:01:55 690095585 26d [INFO Client 7256] Got file list for "Art/Models/Items/Weapons/TwoHandWeapons" 74
+2018/12/21 16:01:55 690095632 2a5 [INFO Client 7256] Requesting folder Art/Models/Items/Weapons/TwoHandWeapons/Staves 75
+2018/12/21 16:01:55 690095632 26d [INFO Client 7256] Got file list for "Art/Models/Items/ApparitionEffects/PitfighterApparitionEffect" 74
+2018/12/21 16:01:55 690095648 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/PitfighterApparitionEffect/rig.amd
+2018/12/21 16:01:55 690095648 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/PitfighterApparitionEffect/PitfighterApparition.sm
+2018/12/21 16:01:55 690095648 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/PitfighterApparitionEffect/rig_8f36a356.smd
+2018/12/21 16:01:55 690095648 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/PitfighterApparitionEffect/rig.ast
+2018/12/21 16:01:55 690095648 26d [INFO Client 7256] Got file list for "Art/Models/Items/ApparitionEffects/CrucibleAmuletEffect" 73
+2018/12/21 16:01:55 690095648 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/CrucibleAmuletEffect/rig.amd
+2018/12/21 16:01:55 690095648 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/CrucibleAmuletEffect/rig.ast
+2018/12/21 16:01:55 690095648 26d [INFO Client 7256] Got file list for "Art/Models/Items/ApparitionEffects/ArcticCrystalApparitionEffect" 72
+2018/12/21 16:01:55 690095679 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/ArcticCrystalApparitionEffect/rig.amd
+2018/12/21 16:01:55 690095679 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/ArcticCrystalApparitionEffect/rig.ast
+2018/12/21 16:01:55 690095679 26d [INFO Client 7256] Got file list for "Art/Models/Items/ApparitionEffects/VanguardApparitionEffect" 71
+2018/12/21 16:01:55 690095694 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/VanguardApparitionEffect/rig.amd
+2018/12/21 16:01:55 690095694 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/VanguardApparitionEffect/rig_a0e5287f.smd
+2018/12/21 16:01:55 690095694 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/VanguardApparitionEffect/rig.ast
+2018/12/21 16:01:55 690095694 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/VanguardApparitionEffect/VanguardAvatar.sm
+2018/12/21 16:01:55 690095694 26d [INFO Client 7256] Got file list for "Art/Models/Items/ApparitionEffects/EzomyteApparitionEffect" 70
+2018/12/21 16:01:55 690095694 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/EzomyteApparitionEffect/rig.amd
+2018/12/21 16:01:55 690095694 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/EzomyteApparitionEffect/rig.ast
+2018/12/21 16:01:55 690095694 26d [INFO Client 7256] Got file list for "Art/Models/Items/ApparitionEffects/EmpyreanApparitionEffect" 69
+2018/12/21 16:01:55 690095710 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/EmpyreanApparitionEffect/rig.amd
+2018/12/21 16:01:55 690095710 2b3 [INFO Client 7256] Queue file to download: Art/Models/Items/ApparitionEffects/EmpyreanApparitionEffect/rig.ast
+2018/12/21 16:01:55 690095710 26d [INFO Client 7256] Got file list for "Art/Models/MONSTERS/TheShaper/TheShaperHead" 68
+2018/12/21 16:01:55 690095710 2b3 [INFO Client 7256] Queue file to download: Art/Models/MONSTERS/TheShaper/TheShaperHead/rig.ast
+2018/12/21 16:01:55 690095710 26d [INFO Client 7256] Got file list for "Art/Models/MONSTERS/TheShaper/TheShaperBody" 67
+2018/12/21 16:01:55 690095726 2b3 [INFO Client 7256] Queue file to download: Art/Models/MONSTERS/TheShaper/TheShaperBody/rig.ast
+2018/12/21 16:01:55 690095726 26d [INFO Client 7256] Got file list for "Art/Models/MONSTERS/Cannibals/female" 66
+2018/12/21 16:01:55 690095741 2b3 [INFO Client 7256] Queue file to download: Art/Models/MONSTERS/Cannibals/female/Rig.ast
+2018/12/21 16:01:55 690095741 26d [INFO Client 7256] Got file list for "Art/Textures/Interface/2D/Shop" 65
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_Upgrade Packs_Spanish_2.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_4.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_Russian_2.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_bundles_large_9.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_3.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_3.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_large_43.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_Upgrade Packs_Thai_2.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_large_28.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_French_2.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_Upgrade Packs_Russian_2.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_abyssal_Thai_1.dds
+2018/12/21 16:01:58 690098331 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_5.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_large_32.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_large_18.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_Upgrade Packs_Russian_3.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_large_29.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_pack_core_Thai_2.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_large_8.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2D/Shop/2DArt_Shop_item_item_effects_large_31.dds
+2018/12/21 16:01:58 690098346 2b3 [INFO Client 7256] Queue file to download: Art/Textures/Interface/2

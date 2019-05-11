@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Heatstroke.label>熱中症</Heatstroke.label>
+    <Heatstroke.stages.initial-0.label>初期</Heatstroke.stages.initial-0.label>
+    <Heatstroke.stages.initial-1.label>初期段階</Heatstroke.stages.initial-1.label>
+    <Heatstroke.stages.minor.label>わずかに</Heatstroke.stages.minor.label>
+    <Heatstroke.stages.serious.label>深刻な</Heatstroke.stages.serious.label>
+    <Heatstroke.stages.extreme.label>致命的</Heatstroke.stages.extreme.label>
+
+    <Hypothermia.label>低体温症</Hypothermia.label>
+    <Hypothermia.stages.s

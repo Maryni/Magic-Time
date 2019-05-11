@@ -1,0 +1,318 @@
+/TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_b_obj_02_subent!1">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_b_obj_02_rigidbody!1" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_03_shape!1">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_04_shape!1">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_b_damage_01_renderable!1" sid="core_barr_blockplastic_b_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!37" impulse="physparams.xml#bDefault" typeuri="#core_barr_blockplastic_b_default_01_behaviour!1" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_default_01_behaviour!1">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent!1" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent!1" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_02_shape!1" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_01_shape!1" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_default_01_renderable!1" uri="objects.pssg#core_barr_blockplastic_b_default_01!2" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_damage_01_behaviour!1">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent!1" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent!1" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_03_shape!1" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_04_shape!1" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_damage_01_renderable!1" uri="objects.pssg#core_barr_blockplastic_b_damage_01!2" />
+		<TEMPLATEENTITY id="core_barr_blockplastic_light~0.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_light_obj_01_subent">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_light_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_col_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_light_col_02_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_light_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_light_col_01_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_light_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_col_05_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.32886314 0.899084568 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_light_col_05_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_light_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_light_default_01_renderable" sid="core_barr_blockplastic_light_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_light_obj_02_subent">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_light_obj_02_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_col_03_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_col_04_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_col_06_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.32886314 0.899084568 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_light_damage_01_renderable" sid="core_barr_blockplastic_light_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!38" impulse="physparams.xml#bDefault" typeuri="#core_barr_blockplastic_light_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_light_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_obj_02_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_col_02_shape" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_col_01_shape" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_col_05_shape" width="0.1715123" height="0.2096913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_light_default_01_renderable" uri="objects.pssg#core_barr_blockplastic_light_default_01" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_light_damage_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_obj_02_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_col_03_shape" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_col_04_shape" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_col_06_shape" width="0.1715123" height="0.2096913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_light_damage_01_renderable" uri="objects.pssg#core_barr_blockplastic_light_damage_01" />
+		<TEMPLATEENTITY id="core_barr_blockplastic_light_b.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_light_b_obj_01_subent">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_light_b_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_b_col_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_light_b_col_02_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_light_b_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_b_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_light_b_col_01_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_light_b_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_b_col_05_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.32886314 0.899084568 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_light_b_col_05_shape_behaviour" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_light_b_damage_01_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_light_b_default_01_renderable" sid="core_barr_blockplastic_light_b_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_light_b_obj_02_subent">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_light_b_obj_02_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_b_col_03_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_b_col_04_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_light_b_col_06_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.32886314 0.899084568 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_light_b_damage_01_renderable" sid="core_barr_blockplastic_light_b_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!39" impulse="physparams.xml#bDefault" typeuri="#core_barr_blockplastic_light_b_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_light_b_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_b_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_b_obj_02_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_b_col_02_shape" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_b_col_01_shape" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_b_col_05_shape" width="0.1715123" height="0.2096913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_light_b_default_01_renderable" uri="objects.pssg#core_barr_blockplastic_light_b_default_01" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_light_b_damage_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_b_obj_01_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_light_b_obj_02_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_b_col_03_shape" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_b_col_04_shape" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_light_b_col_06_shape" width="0.1715123" height="0.2096913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_light_b_damage_01_renderable" uri="objects.pssg#core_barr_blockplastic_light_b_damage_01" />
+		<TEMPLATEENTITY id="core_barr_blockplastic_b.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_b_obj_01_subent!2">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_b_obj_01_rigidbody!2" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_02_shape!2">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_b_col_02_shape_behaviour!2" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_b_damage_01_behaviour!2" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_01_shape!2">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="core_barr_blockplastic_b_col_01_shape_behaviour!2" impulse="physparams.xml#bHeavy" typeuri="#core_barr_blockplastic_b_damage_01_behaviour!2" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_b_default_01_renderable!2" sid="core_barr_blockplastic_b_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="core_barr_blockplastic_b_obj_02_subent!2">
+				<TEMPLATERIGIDBODY id="core_barr_blockplastic_b_obj_02_rigidbody!2" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_03_shape!2">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.13452062 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#core_barr_blockplastic_b_col_04_shape!2">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.8385056 0.524486065 0.00335168839 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#core_barr_blockplastic_b_damage_01_renderable!2" sid="core_barr_blockplastic_b_obj_02" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!40" impulse="physparams.xml#bDefault" typeuri="#core_barr_blockplastic_b_default_01_behaviour!2" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_default_01_behaviour!2">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent!2" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent!2" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_02_shape!2" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_01_shape!2" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_default_01_renderable!2" uri="objects.pssg#core_barr_blockplastic_b_default_01!1" />
+		<TEMPLATEBEHAVIOURTYPE id="core_barr_blockplastic_b_damage_01_behaviour!2">
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_01_subent!2" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#core_barr_blockplastic_b_obj_02_subent!2" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_03_shape!2" width="1.46" height="0.2296913" length="0.4377611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATESHAPEBOX id="core_barr_blockplastic_b_col_04_shape!2" width="1.470803" height="0.4696913" length="0.1677611" shell="0.02" props="physparams.xml#sPlasticHeavy" />
+		<TEMPLATERENDERABLE id="core_barr_blockplastic_b_damage_01_renderable!2" uri="objects.pssg#core_barr_blockplastic_b_damage_01!1" />
+		<TEMPLATEENTITY id="cot_fence_b_end.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!26">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!26" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_fence_b_end_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0 0.249909222 1.86264515E-09 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!26" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!41" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!26" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!26">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!26" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_fence_b_end_col_01_shape" width="1.460111" height="1.059818" length="0.02885187" shell="0.02" props="physparams.xml#sMetal" />
+		<TEMPLATERENDERABLE id="default_renderable!26" uri="objects.pssg#default!44" />
+		<TEMPLATEENTITY id="cot_roadside_hut_b.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="rigidbody_subent!27">
+				<TEMPLATERIGIDBODY id="rigidbody_rigidbody!27" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_roadside_hut_b_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.757359266 -1.39699125 -0.0165694952 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_roadside_hut_b_col_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -1.47610474 -1.88099122 1.86506951 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#default_renderable!27" sid="rigidbody" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!42" impulse="physparams.xml#bDefault" typeuri="#default_behaviour!27" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="default_behaviour!27">
+			<TEMPLATECOMPONENTCHANGE componenturi="#rigidbody_subent!27" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_roadside_hut_b_col_01_shape" width="2.79481" height="8.76" length="4.49" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATESHAPEBOX id="cot_roadside_hut_b_col_02_shape" width="1.593701" height="7.792" length="0.7148003" shell="0.02" props="physparams.xml#sConcrete" />
+		<TEMPLATERENDERABLE id="default_renderable!27" uri="objects.pssg#default!71" />
+		<TEMPLATEENTITY id="par_flag_type_a.max" PredictiveWakeUp="unknown">
+			<TEMPLATECLOTH id="Plane01_subent" uri="#Plane01pool" startsActive="1" collisionDetection="0">
+				<TEMPLATECLOTHATTACHINSTANCE name="Point02" />
+				<TEMPLATECLOTHATTACHINSTANCE name="Point01" />
+			</TEMPLATECLOTH>
+			<TEMPLATESUBENTITY id="paris_flag_type_a_obj_01_subent">
+				<TEMPLATERIGIDBODY id="paris_flag_type_a_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATELINKPOINT id="Point02_link">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.000197851783 7.0780983 0.0862965 1 </TEMPLATETRANSFORM>
+					</TEMPLATELINKPOINT>
+					<TEMPLATELINKPOINT id="Point01_link">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 -0.000197917354 8.578098 0.08629653 1 </TEMPLATETRANSFORM>
+					</TEMPLATELINKPOINT>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#paris_flag_type_a_default_01_renderable" sid="paris_flag_type_a_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!43" impulse="physparams.xml#bDefault" typeuri="#paris_flag_type_a_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATECLOTHTYPEPOOL id="Plane01pool" data="objects.pssg#cloth!2" shaderfront="objects.pssg#paris_flag_type_a_front!2" shaderback="objects.pssg#paris_flag_type_a_back!2" />
+		<TEMPLATEBEHAVIOURTYPE id="paris_flag_type_a_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#paris_flag_type_a_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#Plane01_subent" operation="add" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATERENDERABLE id="paris_flag_type_a_default_01_renderable" uri="objects.pssg#paris_flag_type_a_default_01" />
+		<TEMPLATEENTITY id="cot_armco_lrg.max" PredictiveWakeUp="unknown">
+			<TEMPLATESUBENTITY id="cot_armco_lrg_obj_01_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_obj_01_rigidbody" infMass="1" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_col_01_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.83147168 0.5916456 -0.0216100067 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_armco_lrg_col_01_shape_behaviour" impulse="physparams.xml#bArmco" typeuri="#cot_armco_lrg_damage_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_col_02_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.002645135 0.5488518 -0.232205212 1 </TEMPLATETRANSFORM>
+						<TEMPLATEBEHAVIOUR id="cot_armco_lrg_col_02_shape_behaviour" impulse="physparams.xml#bArmco" typeuri="#cot_armco_lrg_damage_behaviour" />
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_armco_lrg_default_01_renderable" sid="cot_armco_lrg_obj_01" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATECONSTRAINT id="constrain_post_base_subent!2" body1uri="#cot_armco_lrg_post_link1_rigidbody" body2uri="world" props="physparams.xml#cArmcoPost">
+				<TEMPLATETRANSFORM>1 0 0 0 0 -4.371139E-08 -1 0 0 1 -4.371139E-08 0 0 0 0 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_post_subent!1" body1uri="#cot_armco_lrg_dam_left_rigidbody" body2uri="#cot_armco_lrg_post_link1_rigidbody" props="physparams.xml#cArmcoEnd">
+				<TEMPLATETRANSFORM>7.54979E-08 -1 0 0 -4.371139E-08 -3.300118E-15 -1 0 1 7.54979E-08 -4.371139E-08 0 -0.114244431 0.5454968 2.38444233E-08 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_mid01_subent!1" body1uri="#cot_armco_lrg_dam_left_centre_rigidbody" body2uri="#cot_armco_lrg_dam_left_rigidbody" props="physparams.xml#cArmcoMiddle">
+				<TEMPLATETRANSFORM>3.13916473E-07 1 0 0 4.371139E-08 -1.37217245E-14 -1 0 -1 3.13916473E-07 -4.371139E-08 0 1.23884225 0.5454968 2.38444233E-08 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_mid02_subent!1" body1uri="#cot_armco_lrg_dam_centre_rigidbody" body2uri="#cot_armco_lrg_dam_left_centre_rigidbody" props="physparams.xml#cArmcoMiddle">
+				<TEMPLATETRANSFORM>3.13916473E-07 1 0 0 4.371139E-08 -1.37217245E-14 -1 0 -1 3.13916473E-07 -4.371139E-08 0 2.17388868 0.5454968 2.38444233E-08 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_mid03_subent!1" body1uri="#cot_armco_lrg_dam_right_rigidbody" body2uri="#cot_armco_lrg_dam_centre_rigidbody" props="physparams.xml#cArmcoMiddle">
+				<TEMPLATETRANSFORM>3.13916473E-07 1 0 0 4.371139E-08 -1.37217245E-14 -1 0 -1 3.13916473E-07 -4.371139E-08 0 3.12870884 0.5454968 2.38444233E-08 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATECONSTRAINT id="constrain_end_subent!1" body1uri="#cot_armco_lrg_dam_right_rigidbody" body2uri="link1" props="physparams.xml#cArmcoEnd">
+				<TEMPLATETRANSFORM>3.13916473E-07 1 0 0 4.371139E-08 -1.37217245E-14 -1 0 -1 3.13916473E-07 -4.371139E-08 0 3.8637023 0.5454968 2.38444233E-08 1 </TEMPLATETRANSFORM>
+			</TEMPLATECONSTRAINT>
+			<TEMPLATESUBENTITY id="cot_armco_lrg_post_link1_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_post_link1_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_post_link1_col_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.002297759 0.5916456 -0.180638045 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_armco_lrg_damage_renderable" sid="cot_armco_lrg_post_link1" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_armco_lrg_dam_left_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_dam_left_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_damage_skin_left_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 0.4467756 0.5916456 -0.020304054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_armco_lrg_damage_renderable" sid="cot_armco_lrg_dam_left" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_armco_lrg_dam_left_centre_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_dam_left_centre_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_damage_skin_left_centre_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 1.40249133 0.5916456 -0.020304054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_armco_lrg_damage_renderable" sid="cot_armco_lrg_dam_left_centre" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_armco_lrg_dam_centre_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_dam_centre_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_damage_skin_centre_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 2.3431375 0.5916456 -0.020304054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_armco_lrg_damage_renderable" sid="cot_armco_lrg_dam_centre" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATESUBENTITY id="cot_armco_lrg_dam_right_subent">
+				<TEMPLATERIGIDBODY id="cot_armco_lrg_dam_right_rigidbody" infMass="0" props="physparams.xml#rbDefault">
+					<TEMPLATERIGIDBODYSHAPE uri="#cot_armco_lrg_damage_skin_right_shape">
+						<TEMPLATETRANSFORM>1 0 0 0 0 1 0 0 0 0 1 0 3.287945 0.5916456 -0.020304054 1 </TEMPLATETRANSFORM>
+					</TEMPLATERIGIDBODYSHAPE>
+				</TEMPLATERIGIDBODY>
+				<TEMPLATETRANSFORMABLE uri="#cot_armco_lrg_damage_renderable" sid="cot_armco_lrg_dam_right" />
+			</TEMPLATESUBENTITY>
+			<TEMPLATEBEHAVIOUR id="initial!44" impulse="physparams.xml#bDefault" typeuri="#cot_armco_lrg_default_01_behaviour" />
+		</TEMPLATEENTITY>
+		<TEMPLATEBEHAVIOURTYPE id="cot_armco_lrg_default_01_behaviour">
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_armco_lrg_obj_01_subent" operation="add" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_post_base_subent!2" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_post_subent!1" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_mid01_subent!1" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_mid02_subent!1" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_mid03_subent!1" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#constrain_end_subent!1" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_armco_lrg_post_link1_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_armco_lrg_dam_left_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_armco_lrg_dam_left_centre_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_armco_lrg_dam_centre_subent" operation="delete" />
+			<TEMPLATECOMPONENTCHANGE componenturi="#cot_armco_lrg_dam_right_subent" operation="delete" />
+		</TEMPLATEBEHAVIOURTYPE>
+		<TEMPLATESHAPEBOX id="cot_armco_lrg_col_01_shape" width="4.025348" height="1.18268" length="0.06215

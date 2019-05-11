@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: alzheimer's -->
+  <Alzheimers.label>alzheimer</Alzheimers.label>
+  <!-- EN: minor -->
+  <Alzheimers.stages.minor-0.label>menor</Alzheimers.stages.minor-0.label>
+  <!-- EN: minor -->
+  <Alzheimers.stages.minor-1.label>menor</Alzheimers.stages.minor-1.label>
+  <!-- EN: major -->
+  <Alzheimers.stages.major-0.label>major</Alzheimers.stages.major-0.label>
+  <!-- EN: major -->
+  <Alzheimers.stages.major-1.label>major</Alzheimers.stages.major-1.label>
+  
+  <!-- EN: asthma -->
+  <Asthma.label>asma</Asthma.label>
+  <!-- EN: minor -->
+  <Asthma.stages.minor.label>menor</Asthma.stages.minor.label>
+  <!-- EN: major -->
+  <Asthma.stages.major-0.label>major</Asthma.stages.major-0.label>
+  <!-- EN: major -->
+  <Asthma.stages.major-1.label>major</Asthma.stages.major-1.label>
+  
+  <!-- EN: bad back -->
+  <BadBack.label>mal d'esquena</BadB

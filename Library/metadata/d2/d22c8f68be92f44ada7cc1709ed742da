@@ -1,0 +1,2173 @@
+.WriteNewNinjaRule(name, args, description,
+                                            is_cygwin, env, pool,
+                                            depfile=depfile)
+
+      inputs = [self.GypPathToNinja(i, env) for i in action['inputs']]
+      if int(action.get('process_outputs_as_sources', False)):
+        extra_sources += action['outputs']
+      if int(action.get('process_outputs_as_mac_bundle_resources', False)):
+        extra_mac_bundle_resources += action['outputs']
+      outputs = [self.GypPathToNinja(o, env) for o in action['outputs']]
+
+      # Then write out an edge using the rule.
+      self.ninja.build(outputs, rule_name, inputs,
+                       order_only=prebuild)
+      all_outputs += outputs
+
+      self.ninja.newline()
+
+    return all_outputs
+
+  def WriteRules(self, rules, extra_sources, prebuild,
+                 mac_bundle_resources, extra_mac_bundle_resources):
+    env = self.GetToolchainEnv()
+    all_outputs = []
+    for rule in rules:
+      # Skip a rule with no action and no inputs.
+      if 'action' not in rule and not rule.get('rule_sources', []):
+        continue
+
+      # First write out a rule for the rule action.
+      name = '%s_%s' % (rule['rule_name'], self.hash_for_rules)
+
+      args = rule['action']
+      description = self.GenerateDescription(
+          'RULE',
+          rule.get('message', None),
+          ('%s ' + generator_default_variables['RULE_INPUT_PATH']) % name)
+      is_cygwin = (self.msvs_settings.IsRuleRunUnderCygwin(rule)
+                   if self.flavor == 'win' else False)
+      pool = 'console' if int(rule.get('ninja_use_console', 0)) else None
+      rule_name, args = self.WriteNewNinjaRule(
+          name, args, description, is_cygwin, env, pool)
+
+      # TODO: if the command references the outputs directly, we should
+      # simplify it to just use $out.
+
+      # Rules can potentially make use of some special variables which
+      # must vary per source file.
+      # Compute the list of variables we'll need to provide.
+      special_locals = ('source', 'root', 'dirname', 'ext', 'name')
+      needed_variables = set(['source'])
+      for argument in args:
+        for var in special_locals:
+          if '${%s}' % var in argument:
+            needed_variables.add(var)
+
+      def cygwin_munge(path):
+        # pylint: disable=cell-var-from-loop
+        if is_cygwin:
+          return path.replace('\\', '/')
+        return path
+
+      inputs = [self.GypPathToNinja(i, env) for i in rule.get('inputs', [])]
+
+      # If there are n source files matching the rule, and m additional rule
+      # inputs, then adding 'inputs' to each build edge written below will
+      # write m * n inputs. Collapsing reduces this to m + n.
+      sources = rule.get('rule_sources', [])
+      num_inputs = len(inputs)
+      if prebuild:
+        num_inputs += 1
+      if num_inputs > 2 and len(sources) > 2:
+        inputs = [self.WriteCollapsedDependencies(
+          rule['rule_name'], inputs, order_only=prebuild)]
+        prebuild = []
+
+      # For each source file, write an edge that generates all the outputs.
+      for source in sources:
+        source = os.path.normpath(source)
+        dirname, basename = os.path.split(source)
+        root, ext = os.path.splitext(basename)
+
+        # Gather the list of inputs and outputs, expanding $vars if possible.
+        outputs = [self.ExpandRuleVariables(o, root, dirname,
+                                            source, ext, basename)
+                   for o in rule['outputs']]
+
+        if int(rule.get('process_outputs_as_sources', False)):
+          extra_sources += outputs
+
+        was_mac_bundle_resource = source in mac_bundle_resources
+        if was_mac_bundle_resource or \
+            int(rule.get('process_outputs_as_mac_bundle_resources', False)):
+          extra_mac_bundle_resources += outputs
+          # Note: This is n_resources * n_outputs_in_rule.  Put to-be-removed
+          # items in a set and remove them all in a single pass if this becomes
+          # a performance issue.
+          if was_mac_bundle_resource:
+            mac_bundle_resources.remove(source)
+
+        extra_bindings = []
+        for var in needed_variables:
+          if var == 'root':
+            extra_bindings.append(('root', cygwin_munge(root)))
+          elif var == 'dirname':
+            # '$dirname' is a parameter to the rule action, which means
+            # it shouldn't be converted to a Ninja path.  But we don't
+            # want $!PRODUCT_DIR in there either.
+            dirname_expanded = self.ExpandSpecial(dirname, self.base_to_build)
+            extra_bindings.append(('dirname', cygwin_munge(dirname_expanded)))
+          elif var == 'source':
+            # '$source' is a parameter to the rule action, which means
+            # it shouldn't be converted to a Ninja path.  But we don't
+            # want $!PRODUCT_DIR in there either.
+            source_expanded = self.ExpandSpecial(source, self.base_to_build)
+            extra_bindings.append(('source', cygwin_munge(source_expanded)))
+          elif var == 'ext':
+            extra_bindings.append(('ext', ext))
+          elif var == 'name':
+            extra_bindings.append(('name', cygwin_munge(basename)))
+          else:
+            assert var == None, repr(var)
+
+        outputs = [self.GypPathToNinja(o, env) for o in outputs]
+        if self.flavor == 'win':
+          # WriteNewNinjaRule uses unique_name for creating an rsp file on win.
+          extra_bindings.append(('unique_name',
+              hashlib.md5(outputs[0]).hexdigest()))
+        self.ninja.build(outputs, rule_name, self.GypPathToNinja(source),
+                         implicit=inputs,
+                         order_only=prebuild,
+                         variables=extra_bindings)
+
+        all_outputs.extend(outputs)
+
+    return all_outputs
+
+  def WriteCopies(self, copies, prebuild, mac_bundle_depends):
+    outputs = []
+    env = self.GetToolchainEnv()
+    for copy in copies:
+      for path in copy['files']:
+        # Normalize the path so trailing slashes don't confuse us.
+        path = os.path.normpath(path)
+        basename = os.path.split(path)[1]
+        src = self.GypPathToNinja(path, env)
+        dst = self.GypPathToNinja(os.path.join(copy['destination'], basename),
+                                  env)
+        outputs += self.ninja.build(dst, 'copy', src, order_only=prebuild)
+        if self.is_mac_bundle:
+          # gyp has mac_bundle_resources to copy things into a bundle's
+          # Resources folder, but there's no built-in way to copy files to other
+          # places in the bundle. Hence, some targets use copies for this. Check
+          # if this file is copied into the current bundle, and if so add it to
+          # the bundle depends so that dependent targets get rebuilt if the copy
+          # input changes.
+          if dst.startswith(self.xcode_settings.GetBundleContentsFolderPath()):
+            mac_bundle_depends.append(dst)
+
+    return outputs
+
+  def WriteMacBundleResources(self, resources, bundle_depends):
+    """Writes ninja edges for 'mac_bundle_resources'."""
+    xcassets = []
+    for output, res in gyp.xcode_emulation.GetMacBundleResources(
+        generator_default_variables['PRODUCT_DIR'],
+        self.xcode_settings, map(self.GypPathToNinja, resources)):
+      output = self.ExpandSpecial(output)
+      if os.path.splitext(output)[-1] != '.xcassets':
+        isBinary = self.xcode_settings.IsBinaryOutputFormat(self.config_name)
+        self.ninja.build(output, 'mac_tool', res,
+                         variables=[('mactool_cmd', 'copy-bundle-resource'), \
+                                    ('binary', isBinary)])
+        bundle_depends.append(output)
+      else:
+        xcassets.append(res)
+    return xcassets
+
+  def WriteMacXCassets(self, xcassets, bundle_depends):
+    """Writes ninja edges for 'mac_bundle_resources' .xcassets files.
+
+    This add an invocation of 'actool' via the 'mac_tool.py' helper script.
+    It assumes that the assets catalogs define at least one imageset and
+    thus an Assets.car file will be generated in the application resources
+    directory. If this is not the case, then the build will probably be done
+    at each invocation of ninja."""
+    if not xcassets:
+      return
+
+    extra_arguments = {}
+    settings_to_arg = {
+        'XCASSETS_APP_ICON': 'app-icon',
+        'XCASSETS_LAUNCH_IMAGE': 'launch-image',
+    }
+    settings = self.xcode_settings.xcode_settings[self.config_name]
+    for settings_key, arg_name in settings_to_arg.iteritems():
+      value = settings.get(settings_key)
+      if value:
+        extra_arguments[arg_name] = value
+
+    partial_info_plist = None
+    if extra_arguments:
+      partial_info_plist = self.GypPathToUniqueOutput(
+          'assetcatalog_generated_info.plist')
+      extra_arguments['output-partial-info-plist'] = partial_info_plist
+
+    outputs = []
+    outputs.append(
+        os.path.join(
+            self.xcode_settings.GetBundleResourceFolder(),
+            'Assets.car'))
+    if partial_info_plist:
+      outputs.append(partial_info_plist)
+
+    keys = QuoteShellArgument(json.dumps(extra_arguments), self.flavor)
+    extra_env = self.xcode_settings.GetPerTargetSettings()
+    env = self.GetSortedXcodeEnv(additional_settings=extra_env)
+    env = self.ComputeExportEnvString(env)
+
+    bundle_depends.extend(self.ninja.build(
+        outputs, 'compile_xcassets', xcassets,
+        variables=[('env', env), ('keys', keys)]))
+    return partial_info_plist
+
+  def WriteMacInfoPlist(self, partial_info_plist, bundle_depends):
+    """Write build rules for bundle Info.plist files."""
+    info_plist, out, defines, extra_env = gyp.xcode_emulation.GetMacInfoPlist(
+        generator_default_variables['PRODUCT_DIR'],
+        self.xcode_settings, self.GypPathToNinja)
+    if not info_plist:
+      return
+    out = self.ExpandSpecial(out)
+    if defines:
+      # Create an intermediate file to store preprocessed results.
+      intermediate_plist = self.GypPathToUniqueOutput(
+          os.path.basename(info_plist))
+      defines = ' '.join([Define(d, self.flavor) for d in defines])
+      info_plist = self.ninja.build(
+          intermediate_plist, 'preprocess_infoplist', info_plist,
+          variables=[('defines',defines)])
+
+    env = self.GetSortedXcodeEnv(additional_settings=extra_env)
+    env = self.ComputeExportEnvString(env)
+
+    if partial_info_plist:
+      intermediate_plist = self.GypPathToUniqueOutput('merged_info.plist')
+      info_plist = self.ninja.build(
+          intermediate_plist, 'merge_infoplist',
+          [partial_info_plist, info_plist])
+
+    keys = self.xcode_settings.GetExtraPlistItems(self.config_name)
+    keys = QuoteShellArgument(json.dumps(keys), self.flavor)
+    isBinary = self.xcode_settings.IsBinaryOutputFormat(self.config_name)
+    self.ninja.build(out, 'copy_infoplist', info_plist,
+                     variables=[('env', env), ('keys', keys),
+                                ('binary', isBinary)])
+    bundle_depends.append(out)
+
+  def WriteSources(self, ninja_file, config_name, config, sources, predepends,
+                   precompiled_header, spec):
+    """Write build rules to compile all of |sources|."""
+    if self.toolset == 'host':
+      self.ninja.variable('ar', '$ar_host')
+      self.ninja.variable('cc', '$cc_host')
+      self.ninja.variable('cxx', '$cxx_host')
+      self.ninja.variable('ld', '$ld_host')
+      self.ninja.variable('ldxx', '$ldxx_host')
+      self.ninja.variable('nm', '$nm_host')
+      self.ninja.variable('readelf', '$readelf_host')
+
+    if self.flavor != 'mac' or len(self.archs) == 1:
+      return self.WriteSourcesForArch(
+          self.ninja, config_name, config, sources, predepends,
+          precompiled_header, spec)
+    else:
+      return dict((arch, self.WriteSourcesForArch(
+            self.arch_subninjas[arch], config_name, config, sources, predepends,
+            precompiled_header, spec, arch=arch))
+          for arch in self.archs)
+
+  def WriteSourcesForArch(self, ninja_file, config_name, config, sources,
+                          predepends, precompiled_header, spec, arch=None):
+    """Write build rules to compile all of |sources|."""
+
+    extra_defines = []
+    if self.flavor == 'mac':
+      cflags = self.xcode_settings.GetCflags(config_name, arch=arch)
+      cflags_c = self.xcode_settings.GetCflagsC(config_name)
+      cflags_cc = self.xcode_settings.GetCflagsCC(config_name)
+      cflags_objc = ['$cflags_c'] + \
+                    self.xcode_settings.GetCflagsObjC(config_name)
+      cflags_objcc = ['$cflags_cc'] + \
+                     self.xcode_settings.GetCflagsObjCC(config_name)
+    elif self.flavor == 'win':
+      asmflags = self.msvs_settings.GetAsmflags(config_name)
+      cflags = self.msvs_settings.GetCflags(config_name)
+      cflags_c = self.msvs_settings.GetCflagsC(config_name)
+      cflags_cc = self.msvs_settings.GetCflagsCC(config_name)
+      extra_defines = self.msvs_settings.GetComputedDefines(config_name)
+      # See comment at cc_command for why there's two .pdb files.
+      pdbpath_c = pdbpath_cc = self.msvs_settings.GetCompilerPdbName(
+          config_name, self.ExpandSpecial)
+      if not pdbpath_c:
+        obj = 'obj'
+        if self.toolset != 'target':
+          obj += '.' + self.toolset
+        pdbpath = os.path.normpath(os.path.join(obj, self.base_dir, self.name))
+        pdbpath_c = pdbpath + '.c.pdb'
+        pdbpath_cc = pdbpath + '.cc.pdb'
+      self.WriteVariableList(ninja_file, 'pdbname_c', [pdbpath_c])
+      self.WriteVariableList(ninja_file, 'pdbname_cc', [pdbpath_cc])
+      self.WriteVariableList(ninja_file, 'pchprefix', [self.name])
+    else:
+      cflags = config.get('cflags', [])
+      cflags_c = config.get('cflags_c', [])
+      cflags_cc = config.get('cflags_cc', [])
+
+    # Respect environment variables related to build, but target-specific
+    # flags can still override them.
+    if self.toolset == 'target':
+      cflags_c = (os.environ.get('CPPFLAGS', '').split() +
+                  os.environ.get('CFLAGS', '').split() + cflags_c)
+      cflags_cc = (os.environ.get('CPPFLAGS', '').split() +
+                   os.environ.get('CXXFLAGS', '').split() + cflags_cc)
+    elif self.toolset == 'host':
+      cflags_c = (os.environ.get('CPPFLAGS_host', '').split() +
+                  os.environ.get('CFLAGS_host', '').split() + cflags_c)
+      cflags_cc = (os.environ.get('CPPFLAGS_host', '').split() +
+                   os.environ.get('CXXFLAGS_host', '').split() + cflags_cc)
+
+    defines = config.get('defines', []) + extra_defines
+    self.WriteVariableList(ninja_file, 'defines',
+                           [Define(d, self.flavor) for d in defines])
+    if self.flavor == 'win':
+      self.WriteVariableList(ninja_file, 'asmflags',
+                             map(self.ExpandSpecial, asmflags))
+      self.WriteVariableList(ninja_file, 'rcflags',
+          [QuoteShellArgument(self.ExpandSpecial(f), self.flavor)
+           for f in self.msvs_settings.GetRcflags(config_name,
+                                                  self.GypPathToNinja)])
+
+    include_dirs = config.get('include_dirs', [])
+
+    env = self.GetToolchainEnv()
+    if self.flavor == 'win':
+      include_dirs = self.msvs_settings.AdjustIncludeDirs(include_dirs,
+                                                          config_name)
+    self.WriteVariableList(ninja_file, 'includes',
+        [QuoteShellArgument('-I' + self.GypPathToNinja(i, env), self.flavor)
+         for i in include_dirs])
+
+    if self.flavor == 'win':
+      midl_include_dirs = config.get('midl_include_dirs', [])
+      midl_include_dirs = self.msvs_settings.AdjustMidlIncludeDirs(
+          midl_include_dirs, config_name)
+      self.WriteVariableList(ninja_file, 'midl_includes',
+          [QuoteShellArgument('-I' + self.GypPathToNinja(i, env), self.flavor)
+           for i in midl_include_dirs])
+
+    pch_commands = precompiled_header.GetPchBuildCommands(arch)
+    if self.flavor == 'mac':
+      # Most targets use no precompiled headers, so only write these if needed.
+      for ext, var in [('c', 'cflags_pch_c'), ('cc', 'cflags_pch_cc'),
+                       ('m', 'cflags_pch_objc'), ('mm', 'cflags_pch_objcc')]:
+        include = precompiled_header.GetInclude(ext, arch)
+        if include: ninja_file.variable(var, include)
+
+    arflags = config.get('arflags', [])
+
+    self.WriteVariableList(ninja_file, 'cflags',
+                           map(self.ExpandSpecial, cflags))
+    self.WriteVariableList(ninja_file, 'cflags_c',
+                           map(self.ExpandSpecial, cflags_c))
+    self.WriteVariableList(ninja_file, 'cflags_cc',
+                           map(self.ExpandSpecial, cflags_cc))
+    if self.flavor == 'mac':
+      self.WriteVariableList(ninja_file, 'cflags_objc',
+                             map(self.ExpandSpecial, cflags_objc))
+      self.WriteVariableList(ninja_file, 'cflags_objcc',
+                             map(self.ExpandSpecial, cflags_objcc))
+    self.WriteVariableList(ninja_file, 'arflags',
+                           map(self.ExpandSpecial, arflags))
+    ninja_file.newline()
+    outputs = []
+    has_rc_source = False
+    for source in sources:
+      filename, ext = os.path.splitext(source)
+      ext = ext[1:]
+      obj_ext = self.obj_ext
+      if ext in ('cc', 'cpp', 'cxx'):
+        command = 'cxx'
+        self.uses_cpp = True
+      elif ext == 'c' or (ext == 'S' and self.flavor != 'win'):
+        command = 'cc'
+      elif ext == 's' and self.flavor != 'win':  # Doesn't generate .o.d files.
+        command = 'cc_s'
+      elif (self.flavor == 'win' and ext == 'asm' and
+            not self.msvs_settings.HasExplicitAsmRules(spec)):
+        command = 'asm'
+        # Add the _asm suffix as msvs is capable of handling .cc and
+        # .asm files of the same name without collision.
+        obj_ext = '_asm.obj'
+      elif self.flavor == 'mac' and ext == 'm':
+        command = 'objc'
+      elif self.flavor == 'mac' and ext == 'mm':
+        command = 'objcxx'
+        self.uses_cpp = True
+      elif self.flavor == 'win' and ext == 'rc':
+        command = 'rc'
+        obj_ext = '.res'
+        has_rc_source = True
+      else:
+        # Ignore unhandled extensions.
+        continue
+      input = self.GypPathToNinja(source)
+      output = self.GypPathToUniqueOutput(filename + obj_ext)
+      if arch is not None:
+        output = AddArch(output, arch)
+      implicit = precompiled_header.GetObjDependencies([input], [output], arch)
+      variables = []
+      if self.flavor == 'win':
+        variables, output, implicit = precompiled_header.GetFlagsModifications(
+            input, output, implicit, command, cflags_c, cflags_cc,
+            self.ExpandSpecial)
+      ninja_file.build(output, command, input,
+                       implicit=[gch for _, _, gch in implicit],
+                       order_only=predepends, variables=variables)
+      outputs.append(output)
+
+    if has_rc_source:
+      resource_include_dirs = config.get('resource_include_dirs', include_dirs)
+      self.WriteVariableList(ninja_file, 'resource_includes',
+          [QuoteShellArgument('-I' + self.GypPathToNinja(i, env), self.flavor)
+           for i in resource_include_dirs])
+
+    self.WritePchTargets(ninja_file, pch_commands)
+
+    ninja_file.newline()
+    return outputs
+
+  def WritePchTargets(self, ninja_file, pch_commands):
+    """Writes ninja rules to compile prefix headers."""
+    if not pch_commands:
+      return
+
+    for gch, lang_flag, lang, input in pch_commands:
+      var_name = {
+        'c': 'cflags_pch_c',
+        'cc': 'cflags_pch_cc',
+        'm': 'cflags_pch_objc',
+        'mm': 'cflags_pch_objcc',
+      }[lang]
+
+      map = { 'c': 'cc', 'cc': 'cxx', 'm': 'objc', 'mm': 'objcxx', }
+      cmd = map.get(lang)
+      ninja_file.build(gch, cmd, input, variables=[(var_name, lang_flag)])
+
+  def WriteLink(self, spec, config_name, config, link_deps):
+    """Write out a link step. Fills out target.binary. """
+    if self.flavor != 'mac' or len(self.archs) == 1:
+      return self.WriteLinkForArch(
+          self.ninja, spec, config_name, config, link_deps)
+    else:
+      output = self.ComputeOutput(spec)
+      inputs = [self.WriteLinkForArch(self.arch_subninjas[arch], spec,
+                                      config_name, config, link_deps[arch],
+                                      arch=arch)
+                for arch in self.archs]
+      extra_bindings = []
+      build_output = output
+      if not self.is_mac_bundle:
+        self.AppendPostbuildVariable(extra_bindings, spec, output, output)
+
+      # TODO(yyanagisawa): more work needed to fix:
+      # https://code.google.com/p/gyp/issues/detail?id=411
+      if (spec['type'] in ('shared_library', 'loadable_module') and
+          not self.is_mac_bundle):
+        extra_bindings.append(('lib', output))
+        self.ninja.build([output, output + '.TOC'], 'solipo', inputs,
+            variables=extra_bindings)
+      else:
+        self.ninja.build(build_output, 'lipo', inputs, variables=extra_bindings)
+      return output
+
+  def WriteLinkForArch(self, ninja_file, spec, config_name, config,
+                       link_deps, arch=None):
+    """Write out a link step. Fills out target.binary. """
+    command = {
+      'executable':      'link',
+      'loadable_module': 'solink_module',
+      'shared_library':  'solink',
+    }[spec['type']]
+    command_suffix = ''
+
+    implicit_deps = set()
+    solibs = set()
+    order_deps = set()
+
+    if 'dependencies' in spec:
+      # Two kinds of dependencies:
+      # - Linkable dependencies (like a .a or a .so): add them to the link line.
+      # - Non-linkable dependencies (like a rule that generates a file
+      #   and writes a stamp file): add them to implicit_deps
+      extra_link_deps = set()
+      for dep in spec['dependencies']:
+        target = self.target_outputs.get(dep)
+        if not target:
+          continue
+        linkable = target.Linkable()
+        if linkable:
+          new_deps = []
+          if (self.flavor == 'win' and
+              target.component_objs and
+              self.msvs_settings.IsUseLibraryDependencyInputs(config_name)):
+            new_deps = target.component_objs
+            if target.compile_deps:
+              order_deps.add(target.compile_deps)
+          elif self.flavor == 'win' and target.import_lib:
+            new_deps = [target.import_lib]
+          elif target.UsesToc(self.flavor):
+            solibs.add(target.binary)
+            implicit_deps.add(target.binary + '.TOC')
+          else:
+            new_deps = [target.binary]
+          for new_dep in new_deps:
+            if new_dep not in extra_link_deps:
+              extra_link_deps.add(new_dep)
+              link_deps.append(new_dep)
+
+        final_output = target.FinalOutput()
+        if not linkable or final_output != target.binary:
+          implicit_deps.add(final_output)
+
+    extra_bindings = []
+    if self.uses_cpp and self.flavor != 'win':
+      extra_bindings.append(('ld', '$ldxx'))
+
+    output = self.ComputeOutput(spec, arch)
+    if arch is None and not self.is_mac_bundle:
+      self.AppendPostbuildVariable(extra_bindings, spec, output, output)
+
+    is_executable = spec['type'] == 'executable'
+    # The ldflags config key is not used on mac or win. On those platforms
+    # linker flags are set via xcode_settings and msvs_settings, respectively.
+    env_ldflags = os.environ.get('LDFLAGS', '').split()
+    if self.flavor == 'mac':
+      ldflags = self.xcode_settings.GetLdflags(config_name,
+          self.ExpandSpecial(generator_default_variables['PRODUCT_DIR']),
+          self.GypPathToNinja, arch)
+      ldflags = env_ldflags + ldflags
+    elif self.flavor == 'win':
+      manifest_base_name = self.GypPathToUniqueOutput(
+          self.ComputeOutputFileName(spec))
+      ldflags, intermediate_manifest, manifest_files = \
+          self.msvs_settings.GetLdflags(config_name, self.GypPathToNinja,
+                                        self.ExpandSpecial, manifest_base_name,
+                                        output, is_executable,
+                                        self.toplevel_build)
+      ldflags = env_ldflags + ldflags
+      self.WriteVariableList(ninja_file, 'manifests', manifest_files)
+      implicit_deps = implicit_deps.union(manifest_files)
+      if intermediate_manifest:
+        self.WriteVariableList(
+            ninja_file, 'intermediatemanifest', [intermediate_manifest])
+      command_suffix = _GetWinLinkRuleNameSuffix(
+          self.msvs_settings.IsEmbedManifest(config_name))
+      def_file = self.msvs_settings.GetDefFile(self.GypPathToNinja)
+      if def_file:
+        implicit_deps.add(def_file)
+    else:
+      # Respect environment variables related to build, but target-specific
+      # flags can still override them.
+      ldflags = env_ldflags + config.get('ldflags', [])
+      if is_executable and len(solibs):
+        rpath = 'lib/'
+        if self.toolset != 'target':
+          rpath += self.toolset
+        ldflags.append(r'-Wl,-rpath=\$$ORIGIN/%s' % rpath)
+        ldflags.append('-Wl,-rpath-link=%s' % rpath)
+    self.WriteVariableList(ninja_file, 'ldflags',
+                           map(self.ExpandSpecial, ldflags))
+
+    library_dirs = config.get('library_dirs', [])
+    if self.flavor == 'win':
+      library_dirs = [self.msvs_settings.ConvertVSMacros(l, config_name)
+                      for l in library_dirs]
+      library_dirs = ['/LIBPATH:' + QuoteShellArgument(self.GypPathToNinja(l),
+                                                       self.flavor)
+                      for l in library_dirs]
+    else:
+      library_dirs = [QuoteShellArgument('-L' + self.GypPathToNinja(l),
+                                         self.flavor)
+                      for l in library_dirs]
+
+    libraries = gyp.common.uniquer(map(self.ExpandSpecial,
+                                       spec.get('libraries', [])))
+    if self.flavor == 'mac':
+      libraries = self.xcode_settings.AdjustLibraries(libraries, config_name)
+    elif self.flavor == 'win':
+      libraries = self.msvs_settings.AdjustLibraries(libraries)
+
+    self.WriteVariableList(ninja_file, 'libs', library_dirs + libraries)
+
+    linked_binary = output
+
+    if command in ('solink', 'solink_module'):
+      extra_bindings.append(('soname', os.path.split(output)[1]))
+      extra_bindings.append(('lib',
+                            gyp.common.EncodePOSIXShellArgument(output)))
+      if self.flavor != 'win':
+        link_file_list = output
+        if self.is_mac_bundle:
+          # 'Dependency Framework.framework/Versions/A/Dependency Framework' ->
+          # 'Dependency Framework.framework.rsp'
+          link_file_list = self.xcode_settings.GetWrapperName()
+        if arch:
+          link_file_list += '.' + arch
+        link_file_list += '.rsp'
+        # If an rspfile contains spaces, ninja surrounds the filename with
+        # quotes around it and then passes it to open(), creating a file with
+        # quotes in its name (and when looking for the rsp file, the name
+        # makes it through bash which strips the quotes) :-/
+        link_file_list = link_file_list.replace(' ', '_')
+        extra_bindings.append(
+          ('link_file_list',
+            gyp.common.EncodePOSIXShellArgument(link_file_list)))
+      if self.flavor == 'win':
+        extra_bindings.append(('binary', output))
+        if ('/NOENTRY' not in ldflags and
+            not self.msvs_settings.GetNoImportLibrary(config_name)):
+          self.target.import_lib = output + '.lib'
+          extra_bindings.append(('implibflag',
+                                 '/IMPLIB:%s' % self.target.import_lib))
+          pdbname = self.msvs_settings.GetPDBName(
+              config_name, self.ExpandSpecial, output + '.pdb')
+          output = [output, self.target.import_lib]
+          if pdbname:
+            output.append(pdbname)
+      elif not self.is_mac_bundle:
+        output = [output, output + '.TOC']
+      else:
+        command = command + '_notoc'
+    elif self.flavor == 'win':
+      extra_bindings.append(('binary', output))
+      pdbname = self.msvs_settings.GetPDBName(
+          config_name, self.ExpandSpecial, output + '.pdb')
+      if pdbname:
+        output = [output, pdbname]
+
+
+    if len(solibs):
+      extra_bindings.append(('solibs', gyp.common.EncodePOSIXShellList(solibs)))
+
+    ninja_file.build(output, command + command_suffix, link_deps,
+                     implicit=list(implicit_deps),
+                     order_only=list(order_deps),
+                     variables=extra_bindings)
+    return linked_binary
+
+  def WriteTarget(self, spec, config_name, config, link_deps, compile_deps):
+    extra_link_deps = any(self.target_outputs.get(dep).Linkable()
+                          for dep in spec.get('dependencies', [])
+                          if dep in self.target_outputs)
+    if spec['type'] == 'none' or (not link_deps and not extra_link_deps):
+      # TODO(evan): don't call this function for 'none' target types, as
+      # it doesn't do anything, and we fake out a 'binary' with a stamp file.
+      self.target.binary = compile_deps
+      self.target.type = 'none'
+    elif spec['type'] == 'static_library':
+      self.target.binary = self.ComputeOutput(spec)
+      if (self.flavor not in ('mac', 'openbsd', 'netbsd', 'win') and not
+          self.is_standalone_static_library):
+        self.ninja.build(self.target.binary, 'alink_thin', link_deps,
+                         order_only=compile_deps)
+      else:
+        variables = []
+        if self.xcode_settings:
+          libtool_flags = self.xcode_settings.GetLibtoolflags(config_name)
+          if libtool_flags:
+            variables.append(('libtool_flags', libtool_flags))
+        if self.msvs_settings:
+          libflags = self.msvs_settings.GetLibFlags(config_name,
+                                                    self.GypPathToNinja)
+          variables.append(('libflags', libflags))
+
+        if self.flavor != 'mac' or len(self.archs) == 1:
+          self.AppendPostbuildVariable(variables, spec,
+                                       self.target.binary, self.target.binary)
+          self.ninja.build(self.target.binary, 'alink', link_deps,
+                           order_only=compile_deps, variables=variables)
+        else:
+          inputs = []
+          for arch in self.archs:
+            output = self.ComputeOutput(spec, arch)
+            self.arch_subninjas[arch].build(output, 'alink', link_deps[arch],
+                                            order_only=compile_deps,
+                                            variables=variables)
+            inputs.append(output)
+          # TODO: It's not clear if libtool_flags should be passed to the alink
+          # call that combines single-arch .a files into a fat .a file.
+          self.AppendPostbuildVariable(variables, spec,
+                                       self.target.binary, self.target.binary)
+          self.ninja.build(self.target.binary, 'alink', inputs,
+                           # FIXME: test proving order_only=compile_deps isn't
+                           # needed.
+                           variables=variables)
+    else:
+      self.target.binary = self.WriteLink(spec, config_name, config, link_deps)
+    return self.target.binary
+
+  def WriteMacBundle(self, spec, mac_bundle_depends, is_empty):
+    assert self.is_mac_bundle
+    package_framework = spec['type'] in ('shared_library', 'loadable_module')
+    output = self.ComputeMacBundleOutput()
+    if is_empty:
+      output += '.stamp'
+    variables = []
+    self.AppendPostbuildVariable(variables, spec, output, self.target.binary,
+                                 is_command_start=not package_framework)
+    if package_framework and not is_empty:
+      variables.append(('version', self.xcode_settings.GetFrameworkVersion()))
+      self.ninja.build(output, 'package_framework', mac_bundle_depends,
+                       variables=variables)
+    else:
+      self.ninja.build(output, 'stamp', mac_bundle_depends,
+                       variables=variables)
+    self.target.bundle = output
+    return output
+
+  def GetToolchainEnv(self, additional_settings=None):
+    """Returns the variables toolchain would set for build steps."""
+    env = self.GetSortedXcodeEnv(additional_settings=additional_settings)
+    if self.flavor == 'win':
+      env = self.GetMsvsToolchainEnv(
+          additional_settings=additional_settings)
+    return env
+
+  def GetMsvsToolchainEnv(self, additional_settings=None):
+    """Returns the variables Visual Studio would set for build steps."""
+    return self.msvs_settings.GetVSMacroEnv('$!PRODUCT_DIR',
+                                             config=self.config_name)
+
+  def GetSortedXcodeEnv(self, additional_settings=None):
+    """Returns the variables Xcode would set for build steps."""
+    assert self.abs_build_dir
+    abs_build_dir = self.abs_build_dir
+    return gyp.xcode_emulation.GetSortedXcodeEnv(
+        self.xcode_settings, abs_build_dir,
+        os.path.join(abs_build_dir, self.build_to_base), self.config_name,
+        additional_settings)
+
+  def GetSortedXcodePostbuildEnv(self):
+    """Returns the variables Xcode would set for postbuild steps."""
+    postbuild_settings = {}
+    # CHROMIUM_STRIP_SAVE_FILE is a chromium-specific hack.
+    # TODO(thakis): It would be nice to have some general mechanism instead.
+    strip_save_file = self.xcode_settings.GetPerTargetSetting(
+        'CHROMIUM_STRIP_SAVE_FILE')
+    if strip_save_file:
+      postbuild_settings['CHROMIUM_STRIP_SAVE_FILE'] = strip_save_file
+    return self.GetSortedXcodeEnv(additional_settings=postbuild_settings)
+
+  def AppendPostbuildVariable(self, variables, spec, output, binary,
+                              is_command_start=False):
+    """Adds a 'postbuild' variable if there is a postbuild for |output|."""
+    postbuild = self.GetPostbuildCommand(spec, output, binary, is_command_start)
+    if postbuild:
+      variables.append(('postbuilds', postbuild))
+
+  def GetPostbuildCommand(self, spec, output, output_binary, is_command_start):
+    """Returns a shell command that runs all the postbuilds, and removes
+    |output| if any of them fails. If |is_command_start| is False, then the
+    returned string will start with ' && '."""
+    if not self.xcode_settings or spec['type'] == 'none' or not output:
+      return ''
+    output = QuoteShellArgument(output, self.flavor)
+    postbuilds = gyp.xcode_emulation.GetSpecPostbuildCommands(spec, quiet=True)
+    if output_binary is not None:
+      postbuilds = self.xcode_settings.AddImplicitPostbuilds(
+          self.config_name,
+          os.path.normpath(os.path.join(self.base_to_build, output)),
+          QuoteShellArgument(
+              os.path.normpath(os.path.join(self.base_to_build, output_binary)),
+              self.flavor),
+          postbuilds, quiet=True)
+
+    if not postbuilds:
+      return ''
+    # Postbuilds expect to be run in the gyp file's directory, so insert an
+    # implicit postbuild to cd to there.
+    postbuilds.insert(0, gyp.common.EncodePOSIXShellList(
+        ['cd', self.build_to_base]))
+    env = self.ComputeExportEnvString(self.GetSortedXcodePostbuildEnv())
+    # G will be non-null if any postbuild fails. Run all postbuilds in a
+    # subshell.
+    commands = env + ' (' + \
+        ' && '.join([ninja_syntax.escape(command) for command in postbuilds])
+    command_string = (commands + '); G=$$?; '
+                      # Remove the final output if any postbuild failed.
+                      '((exit $$G) || rm -rf %s) ' % output + '&& exit $$G)')
+    if is_command_start:
+      return '(' + command_string + ' && '
+    else:
+      return '$ && (' + command_string
+
+  def ComputeExportEnvString(self, env):
+    """Given an environment, returns a string looking like
+        'export FOO=foo; export BAR="${FOO} bar;'
+    that exports |env| to the shell."""
+    export_str = []
+    for k, v in env:
+      export_str.append('export %s=%s;' %
+          (k, ninja_syntax.escape(gyp.common.EncodePOSIXShellArgument(v))))
+    return ' '.join(export_str)
+
+  def ComputeMacBundleOutput(self):
+    """Return the 'output' (full output path) to a bundle output directory."""
+    assert self.is_mac_bundle
+    path = generator_default_variables['PRODUCT_DIR']
+    return self.ExpandSpecial(
+        os.path.join(path, self.xcode_settings.GetWrapperName()))
+
+  def ComputeOutputFileName(self, spec, type=None):
+    """Compute the filename of the final output for the current target."""
+    if not type:
+      type = spec['type']
+
+    default_variables = copy.copy(generator_default_variables)
+    CalculateVariables(default_variables, {'flavor': self.flavor})
+
+    # Compute filename prefix: the product prefix, or a default for
+    # the product type.
+    DEFAULT_PREFIX = {
+      'loadable_module': default_variables['SHARED_LIB_PREFIX'],
+      'shared_library': default_variables['SHARED_LIB_PREFIX'],
+      'static_library': default_variables['STATIC_LIB_PREFIX'],
+      'executable': default_variables['EXECUTABLE_PREFIX'],
+      }
+    prefix = spec.get('product_prefix', DEFAULT_PREFIX.get(type, ''))
+
+    # Compute filename extension: the product extension, or a default
+    # for the product type.
+    DEFAULT_EXTENSION = {
+        'loadable_module': default_variables['SHARED_LIB_SUFFIX'],
+        'shared_library': default_variables['SHARED_LIB_SUFFIX'],
+        'static_library': default_variables['STATIC_LIB_SUFFIX'],
+        'executable': default_variables['EXECUTABLE_SUFFIX'],
+      }
+    extension = spec.get('product_extension')
+    if extension:
+      extension = '.' + extension
+    else:
+      extension = DEFAULT_EXTENSION.get(type, '')
+
+    if 'product_name' in spec:
+      # If we were given an explicit name, use that.
+      target = spec['product_name']
+    else:
+      # Otherwise, derive a name from the target name.
+      target = spec['target_name']
+      if prefix == 'lib':
+        # Snip out an extra 'lib' from libs if appropriate.
+        target = StripPrefix(target, 'lib')
+
+    if type in ('static_library', 'loadable_module', 'shared_library',
+                        'executable'):
+      return '%s%s%s' % (prefix, target, extension)
+    elif type == 'none':
+      return '%s.stamp' % target
+    else:
+      raise Exception('Unhandled output type %s' % type)
+
+  def ComputeOutput(self, spec, arch=None):
+    """Compute the path for the final output of the spec."""
+    type = spec['type']
+
+    if self.flavor == 'win':
+      override = self.msvs_settings.GetOutputName(self.config_name,
+                                                  self.ExpandSpecial)
+      if override:
+        return override
+
+    if arch is None and self.flavor == 'mac' and type in (
+        'static_library', 'executable', 'shared_library', 'loadable_module'):
+      filename = self.xcode_settings.GetExecutablePath()
+    else:
+      filename = self.ComputeOutputFileName(spec, type)
+
+    if arch is None and 'product_dir' in spec:
+      path = os.path.join(spec['product_dir'], filename)
+      return self.ExpandSpecial(path)
+
+    # Some products go into the output root, libraries go into shared library
+    # dir, and everything else goes into the normal place.
+    type_in_output_root = ['executable', 'loadable_module']
+    if self.flavor == 'mac' and self.toolset == 'target':
+      type_in_output_root += ['shared_library', 'static_library']
+    elif self.flavor == 'win' and self.toolset == 'target':
+      type_in_output_root += ['shared_library']
+
+    if arch is not None:
+      # Make sure partial executables don't end up in a bundle or the regular
+      # output directory.
+      archdir = 'arch'
+      if self.toolset != 'target':
+        archdir = os.path.join('arch', '%s' % self.toolset)
+      return os.path.join(archdir, AddArch(filename, arch))
+    elif type in type_in_output_root or self.is_standalone_static_library:
+      return filename
+    elif type == 'shared_library':
+      libdir = 'lib'
+      if self.toolset != 'target':
+        libdir = os.path.join('lib', '%s' % self.toolset)
+      return os.path.join(libdir, filename)
+    else:
+      return self.GypPathToUniqueOutput(filename, qualified=False)
+
+  def WriteVariableList(self, ninja_file, var, values):
+    assert not isinstance(values, str)
+    if values is None:
+      values = []
+    ninja_file.variable(var, ' '.join(values))
+
+  def WriteNewNinjaRule(self, name, args, description, is_cygwin, env, pool,
+                        depfile=None):
+    """Write out a new ninja "rule" statement for a given command.
+
+    Returns the name of the new rule, and a copy of |args| with variables
+    expanded."""
+
+    if self.flavor == 'win':
+      args = [self.msvs_settings.ConvertVSMacros(
+                  arg, self.base_to_build, config=self.config_name)
+              for arg in args]
+      description = self.msvs_settings.ConvertVSMacros(
+          description, config=self.config_name)
+    elif self.flavor == 'mac':
+      # |env| is an empty list on non-mac.
+      args = [gyp.xcode_emulation.ExpandEnvVars(arg, env) for arg in args]
+      description = gyp.xcode_emulation.ExpandEnvVars(description, env)
+
+    # TODO: we shouldn't need to qualify names; we do it because
+    # currently the ninja rule namespace is global, but it really
+    # should be scoped to the subninja.
+    rule_name = self.name
+    if self.toolset == 'target':
+      rule_name += '.' + self.toolset
+    rule_name += '.' + name
+    rule_name = re.sub('[^a-zA-Z0-9_]', '_', rule_name)
+
+    # Remove variable references, but not if they refer to the magic rule
+    # variables.  This is not quite right, as it also protects these for
+    # actions, not just for rules where they are valid. Good enough.
+    protect = [ '${root}', '${dirname}', '${source}', '${ext}', '${name}' ]
+    protect = '(?!' + '|'.join(map(re.escape, protect)) + ')'
+    description = re.sub(protect + r'\$', '_', description)
+
+    # gyp dictates that commands are run from the base directory.
+    # cd into the directory before running, and adjust paths in
+    # the arguments to point to the proper locations.
+    rspfile = None
+    rspfile_content = None
+    args = [self.ExpandSpecial(arg, self.base_to_build) for arg in args]
+    if self.flavor == 'win':
+      rspfile = rule_name + '.$unique_name.rsp'
+      # The cygwin case handles this inside the bash sub-shell.
+      run_in = '' if is_cygwin else ' ' + self.build_to_base
+      if is_cygwin:
+        rspfile_content = self.msvs_settings.BuildCygwinBashCommandLine(
+            args, self.build_to_base)
+      else:
+        rspfile_content = gyp.msvs_emulation.EncodeRspFileList(args)
+      command = ('%s gyp-win-tool action-wrapper $arch ' % sys.executable +
+                 rspfile + run_in)
+    else:
+      env = self.ComputeExportEnvString(env)
+      command = gyp.common.EncodePOSIXShellList(args)
+      command = 'cd %s; ' % self.build_to_base + env + command
+
+    # GYP rules/actions express being no-ops by not touching their outputs.
+    # Avoid executing downstream dependencies in this case by specifying
+    # restat=1 to ninja.
+    self.ninja.rule(rule_name, command, description, depfile=depfile,
+                    restat=True, pool=pool,
+                    rspfile=rspfile, rspfile_content=rspfile_content)
+    self.ninja.newline()
+
+    return rule_name, args
+
+
+def CalculateVariables(default_variables, params):
+  """Calculate additional variables for use in the build (called by gyp)."""
+  global generator_additional_non_configuration_keys
+  global generator_additional_path_sections
+  flavor = gyp.common.GetFlavor(params)
+  if flavor == 'mac':
+    default_variables.setdefault('OS', 'mac')
+    default_variables.setdefault('SHARED_LIB_SUFFIX', '.dylib')
+    default_variables.setdefault('SHARED_LIB_DIR',
+                                 generator_default_variables['PRODUCT_DIR'])
+    default_variables.setdefault('LIB_DIR',
+                                 generator_default_variables['PRODUCT_DIR'])
+
+    # Copy additional generator configuration data from Xcode, which is shared
+    # by the Mac Ninja generator.
+    import gyp.generator.xcode as xcode_generator
+    generator_additional_non_configuration_keys = getattr(xcode_generator,
+        'generator_additional_non_configuration_keys', [])
+    generator_additional_path_sections = getattr(xcode_generator,
+        'generator_additional_path_sections', [])
+    global generator_extra_sources_for_rules
+    generator_extra_sources_for_rules = getattr(xcode_generator,
+        'generator_extra_sources_for_rules', [])
+  elif flavor == 'win':
+    exts = gyp.MSVSUtil.TARGET_TYPE_EXT
+    default_variables.setdefault('OS', 'win')
+    default_variables['EXECUTABLE_SUFFIX'] = '.' + exts['executable']
+    default_variables['STATIC_LIB_PREFIX'] = ''
+    default_variables['STATIC_LIB_SUFFIX'] = '.' + exts['static_library']
+    default_variables['SHARED_LIB_PREFIX'] = ''
+    default_variables['SHARED_LIB_SUFFIX'] = '.' + exts['shared_library']
+
+    # Copy additional generator configuration data from VS, which is shared
+    # by the Windows Ninja generator.
+    import gyp.generator.msvs as msvs_generator
+    generator_additional_non_configuration_keys = getattr(msvs_generator,
+        'generator_additional_non_configuration_keys', [])
+    generator_additional_path_sections = getattr(msvs_generator,
+        'generator_additional_path_sections', [])
+
+    gyp.msvs_emulation.CalculateCommonVariables(default_variables, params)
+  else:
+    operating_system = flavor
+    if flavor == 'android':
+      operating_system = 'linux'  # Keep this legacy behavior for now.
+    default_variables.setdefault('OS', operating_system)
+    default_variables.setdefault('SHARED_LIB_SUFFIX', '.so')
+    default_variables.setdefault('SHARED_LIB_DIR',
+                                 os.path.join('$!PRODUCT_DIR', 'lib'))
+    default_variables.setdefault('LIB_DIR',
+                                 os.path.join('$!PRODUCT_DIR', 'obj'))
+
+def ComputeOutputDir(params):
+  """Returns the path from the toplevel_dir to the build output directory."""
+  # generator_dir: relative path from pwd to where make puts build files.
+  # Makes migrating from make to ninja easier, ninja doesn't put anything here.
+  generator_dir = os.path.relpath(params['options'].generator_output or '.')
+
+  # output_dir: relative path from generator_dir to the build directory.
+  output_dir = params.get('generator_flags', {}).get('output_dir', 'out')
+
+  # Relative path from source root to our output files.  e.g. "out"
+  return os.path.normpath(os.path.join(generator_dir, output_dir))
+
+
+def CalculateGeneratorInputInfo(params):
+  """Called by __init__ to initialize generator values based on params."""
+  # E.g. "out/gypfiles"
+  toplevel = params['options'].toplevel_dir
+  qualified_out_dir = os.path.normpath(os.path.join(
+      toplevel, ComputeOutputDir(params), 'gypfiles'))
+
+  global generator_filelist_paths
+  generator_filelist_paths = {
+      'toplevel': toplevel,
+      'qualified_out_dir': qualified_out_dir,
+  }
+
+
+def OpenOutput(path, mode='w'):
+  """Open |path| for writing, creating directories if necessary."""
+  gyp.common.EnsureDirExists(path)
+  return open(path, mode)
+
+
+def CommandWithWrapper(cmd, wrappers, prog):
+  wrapper = wrappers.get(cmd, '')
+  if wrapper:
+    return wrapper + ' ' + prog
+  return prog
+
+
+def GetDefaultConcurrentLinks():
+  """Returns a best-guess for a number of concurrent links."""
+  pool_size = int(os.environ.get('GYP_LINK_CONCURRENCY', 0))
+  if pool_size:
+    return pool_size
+
+  if sys.platform in ('win32', 'cygwin'):
+    import ctypes
+
+    class MEMORYSTATUSEX(ctypes.Structure):
+      _fields_ = [
+        ("dwLength", ctypes.c_ulong),
+        ("dwMemoryLoad", ctypes.c_ulong),
+        ("ullTotalPhys", ctypes.c_ulonglong),
+        ("ullAvailPhys", ctypes.c_ulonglong),
+        ("ullTotalPageFile", ctypes.c_ulonglong),
+        ("ullAvailPageFile", ctypes.c_ulonglong),
+        ("ullTotalVirtual", ctypes.c_ulonglong),
+        ("ullAvailVirtual", ctypes.c_ulonglong),
+        ("sullAvailExtendedVirtual", ctypes.c_ulonglong),
+      ]
+
+    stat = MEMORYSTATUSEX()
+    stat.dwLength = ctypes.sizeof(stat)
+    ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(stat))
+
+    # VS 2015 uses 20% more working set than VS 2013 and can consume all RAM
+    # on a 64 GB machine.
+    mem_limit = max(1, stat.ullTotalPhys / (5 * (2 ** 30)))  # total / 5GB
+    hard_cap = max(1, int(os.environ.get('GYP_LINK_CONCURRENCY_MAX', 2**32)))
+    return min(mem_limit, hard_cap)
+  elif sys.platform.startswith('linux'):
+    if os.path.exists("/proc/meminfo"):
+      with open("/proc/meminfo") as meminfo:
+        memtotal_re = re.compile(r'^MemTotal:\s*(\d*)\s*kB')
+        for line in meminfo:
+          match = memtotal_re.match(line)
+          if not match:
+            continue
+          # Allow 8Gb per link on Linux because Gold is quite memory hungry
+          return max(1, int(match.group(1)) / (8 * (2 ** 20)))
+    return 1
+  elif sys.platform == 'darwin':
+    try:
+      avail_bytes = int(subprocess.check_output(['sysctl', '-n', 'hw.memsize']))
+      # A static library debug build of Chromium's unit_tests takes ~2.7GB, so
+      # 4GB per ld process allows for some more bloat.
+      return max(1, avail_bytes / (4 * (2 ** 30)))  # total / 4GB
+    except:
+      return 1
+  else:
+    # TODO(scottmg): Implement this for other platforms.
+    return 1
+
+
+def _GetWinLinkRuleNameSuffix(embed_manifest):
+  """Returns the suffix used to select an appropriate linking rule depending on
+  whether the manifest embedding is enabled."""
+  return '_embed' if embed_manifest else ''
+
+
+def _AddWinLinkRules(master_ninja, embed_manifest):
+  """Adds link rules for Windows platform to |master_ninja|."""
+  def FullLinkCommand(ldcmd, out, binary_type):
+    resource_name = {
+      'exe': '1',
+      'dll': '2',
+    }[binary_type]
+    return '%(python)s gyp-win-tool link-with-manifests $arch %(embed)s ' \
+           '%(out)s "%(ldcmd)s" %(resname)s $mt $rc "$intermediatemanifest" ' \
+           '$manifests' % {
+               'python': sys.executable,
+               'out': out,
+               'ldcmd': ldcmd,
+               'resname': resource_name,
+               'embed': embed_manifest }
+  rule_name_suffix = _GetWinLinkRuleNameSuffix(embed_manifest)
+  use_separate_mspdbsrv = (
+      int(os.environ.get('GYP_USE_SEPARATE_MSPDBSRV', '0')) != 0)
+  dlldesc = 'LINK%s(DLL) $binary' % rule_name_suffix.upper()
+  dllcmd = ('%s gyp-win-tool link-wrapper $arch %s '
+            '$ld /nologo $implibflag /DLL /OUT:$binary '
+            '@$binary.rsp' % (sys.executable, use_separate_mspdbsrv))
+  dllcmd = FullLinkCommand(dllcmd, '$binary', 'dll')
+  master_ninja.rule('solink' + rule_name_suffix,
+                    description=dlldesc, command=dllcmd,
+                    rspfile='$binary.rsp',
+                    rspfile_content='$libs $in_newline $ldflags',
+                    restat=True,
+                    pool='link_pool')
+  master_ninja.rule('solink_module' + rule_name_suffix,
+                    description=dlldesc, command=dllcmd,
+                    rspfile='$binary.rsp',
+                    rspfile_content='$libs $in_newline $ldflags',
+                    restat=True,
+                    pool='link_pool')
+  # Note that ldflags goes at the end so that it has the option of
+  # overriding default settings earlier in the command line.
+  exe_cmd = ('%s gyp-win-tool link-wrapper $arch %s '
+             '$ld /nologo /OUT:$binary @$binary.rsp' %
+              (sys.executable, use_separate_mspdbsrv))
+  exe_cmd = FullLinkCommand(exe_cmd, '$binary', 'exe')
+  master_ninja.rule('link' + rule_name_suffix,
+                    description='LINK%s $binary' % rule_name_suffix.upper(),
+                    command=exe_cmd,
+                    rspfile='$binary.rsp',
+                    rspfile_content='$in_newline $libs $ldflags',
+                    pool='link_pool')
+
+
+def GenerateOutputForConfig(target_list, target_dicts, data, params,
+                            config_name):
+  options = params['options']
+  flavor = gyp.common.GetFlavor(params)
+  generator_flags = params.get('generator_flags', {})
+
+  # build_dir: relative path from source root to our output files.
+  # e.g. "out/Debug"
+  build_dir = os.path.normpath(
+      os.path.join(ComputeOutputDir(params), config_name))
+
+  toplevel_build = os.path.join(options.toplevel_dir, build_dir)
+
+  master_ninja_file = OpenOutput(os.path.join(toplevel_build, 'build.ninja'))
+  master_ninja = ninja_syntax.Writer(master_ninja_file, width=120)
+
+  # Put build-time support tools in out/{config_name}.
+  gyp.common.CopyTool(flavor, toplevel_build)
+
+  # Grab make settings for CC/CXX.
+  # The rules are
+  # - The priority from low to high is gcc/g++, the 'make_global_settings' in
+  #   gyp, the environment variable.
+  # - If there is no 'make_global_settings' for CC.host/CXX.host or
+  #   'CC_host'/'CXX_host' enviroment variable, cc_host/cxx_host should be set
+  #   to cc/cxx.
+  if flavor == 'win':
+    ar = 'lib.exe'
+    # cc and cxx must be set to the correct architecture by overriding with one
+    # of cl_x86 or cl_x64 below.
+    cc = 'UNSET'
+    cxx = 'UNSET'
+    ld = 'link.exe'
+    ld_host = '$ld'
+  else:
+    ar = 'ar'
+    cc = 'cc'
+    cxx = 'c++'
+    ld = '$cc'
+    ldxx = '$cxx'
+    ld_host = '$cc_host'
+    ldxx_host = '$cxx_host'
+
+  ar_host = 'ar'
+  cc_host = None
+  cxx_host = None
+  cc_host_global_setting = None
+  cxx_host_global_setting = None
+  clang_cl = None
+  nm = 'nm'
+  nm_host = 'nm'
+  readelf = 'readelf'
+  readelf_host = 'readelf'
+
+  build_file, _, _ = gyp.common.ParseQualifiedTarget(target_list[0])
+  make_global_settings = data[build_file].get('make_global_settings', [])
+  build_to_root = gyp.common.InvertRelativePath(build_dir,
+                                                options.toplevel_dir)
+  wrappers = {}
+  for key, value in make_global_settings:
+    if key == 'AR':
+      ar = os.path.join(build_to_root, value)
+    if key == 'AR.host':
+      ar_host = os.path.join(build_to_root, value)
+    if key == 'CC':
+      cc = os.path.join(build_to_root, value)
+      if cc.endswith('clang-cl'):
+        clang_cl = cc
+    if key == 'CXX':
+      cxx = os.path.join(build_to_root, value)
+    if key == 'CC.host':
+      cc_host = os.path.join(build_to_root, value)
+      cc_host_global_setting = value
+    if key == 'CXX.host':
+      cxx_host = os.path.join(build_to_root, value)
+      cxx_host_global_setting = value
+    if key == 'LD':
+      ld = os.path.join(build_to_root, value)
+    if key == 'LD.host':
+      ld_host = os.path.join(build_to_root, value)
+    if key == 'NM':
+      nm = os.path.join(build_to_root, value)
+    if key == 'NM.host':
+      nm_host = os.path.join(build_to_root, value)
+    if key == 'READELF':
+      readelf = os.path.join(build_to_root, value)
+    if key == 'READELF.host':
+      readelf_host = os.path.join(build_to_root, value)
+    if key.endswith('_wrapper'):
+      wrappers[key[:-len('_wrapper')]] = os.path.join(build_to_root, value)
+
+  # Support wrappers from environment variables too.
+  for key, value in os.environ.iteritems():
+    if key.lower().endswith('_wrapper'):
+      key_prefix = key[:-len('_wrapper')]
+      key_prefix = re.sub(r'\.HOST$', '.host', key_prefix)
+      wrappers[key_prefix] = os.path.join(build_to_root, value)
+
+  if flavor == 'win':
+    configs = [target_dicts[qualified_target]['configurations'][config_name]
+               for qualified_target in target_list]
+    shared_system_includes = None
+    if not generator_flags.get('ninja_use_custom_environment_files', 0):
+      shared_system_includes = \
+          gyp.msvs_emulation.ExtractSharedMSVSSystemIncludes(
+              configs, generator_flags)
+    cl_paths = gyp.msvs_emulation.GenerateEnvironmentFiles(
+        toplevel_build, generator_flags, shared_system_includes, OpenOutput)
+    for arch, path in cl_paths.iteritems():
+      if clang_cl:
+        # If we have selected clang-cl, use that instead.
+        path = clang_cl
+      command = CommandWithWrapper('CC', wrappers,
+          QuoteShellArgument(path, 'win'))
+      if clang_cl:
+        # Use clang-cl to cross-compile for x86 or x86_64.
+        command += (' -m32' if arch == 'x86' else ' -m64')
+      master_ninja.variable('cl_' + arch, command)
+
+  cc = GetEnvironFallback(['CC_target', 'CC'], cc)
+  master_ninja.variable('cc', CommandWithWrapper('CC', wrappers, cc))
+  cxx = GetEnvironFallback(['CXX_target', 'CXX'], cxx)
+  master_ninja.variable('cxx', CommandWithWrapper('CXX', wrappers, cxx))
+
+  if flavor == 'win':
+    master_ninja.variable('ld', ld)
+    master_ninja.variable('idl', 'midl.exe')
+    master_ninja.variable('ar', ar)
+    master_ninja.variable('rc', 'rc.exe')
+    master_ninja.variable('ml_x86', 'ml.exe')
+    master_ninja.variable('ml_x64', 'ml64.exe')
+    master_ninja.variable('mt', 'mt.exe')
+  else:
+    master_ninja.variable('ld', CommandWithWrapper('LINK', wrappers, ld))
+    master_ninja.variable('ldxx', CommandWithWrapper('LINK', wrappers, ldxx))
+    master_ninja.variable('ar', GetEnvironFallback(['AR_target', 'AR'], ar))
+    if flavor != 'mac':
+      # Mac does not use readelf/nm for .TOC generation, so avoiding polluting
+      # the master ninja with extra unused variables.
+      master_ninja.variable(
+          'nm', GetEnvironFallback(['NM_target', 'NM'], nm))
+      master_ninja.variable(
+          'readelf', GetEnvironFallback(['READELF_target', 'READELF'], readelf))
+
+  if generator_supports_multiple_toolsets:
+    if not cc_host:
+      cc_host = cc
+    if not cxx_host:
+      cxx_host = cxx
+
+    master_ninja.variable('ar_host', GetEnvironFallback(['AR_host'], ar_host))
+    master_ninja.variable('nm_host', GetEnvironFallback(['NM_host'], nm_host))
+    master_ninja.variable('readelf_host',
+                          GetEnvironFallback(['READELF_host'], readelf_host))
+    cc_host = GetEnvironFallback(['CC_host'], cc_host)
+    cxx_host = GetEnvironFallback(['CXX_host'], cxx_host)
+
+    # The environment variable could be used in 'make_global_settings', like
+    # ['CC.host', '$(CC)'] or ['CXX.host', '$(CXX)'], transform them here.
+    if '$(CC)' in cc_host and cc_host_global_setting:
+      cc_host = cc_host_global_setting.replace('$(CC)', cc)
+    if '$(CXX)' in cxx_host and cxx_host_global_setting:
+      cxx_host = cxx_host_global_setting.replace('$(CXX)', cxx)
+    master_ninja.variable('cc_host',
+                          CommandWithWrapper('CC.host', wrappers, cc_host))
+    master_ninja.variable('cxx_host',
+                          CommandWithWrapper('CXX.host', wrappers, cxx_host))
+    if flavor == 'win':
+      master_ninja.variable('ld_host', ld_host)
+    else:
+      master_ninja.variable('ld_host', CommandWithWrapper(
+          'LINK', wrappers, ld_host))
+      master_ninja.variable('ldxx_host', CommandWithWrapper(
+          'LINK', wrappers, ldxx_host))
+
+  master_ninja.newline()
+
+  master_ninja.pool('link_pool', depth=GetDefaultConcurrentLinks())
+  master_ninja.newline()
+
+  deps = 'msvc' if flavor == 'win' else 'gcc'
+
+  if flavor != 'win':
+    master_ninja.rule(
+      'cc',
+      description='CC $out',
+      command=('$cc -MMD -MF $out.d $defines $includes $cflags $cflags_c '
+              '$cflags_pch_c -c $in -o $out'),
+      depfile='$out.d',
+      deps=deps)
+    master_ninja.rule(
+      'cc_s',
+      description='CC $out',
+      command=('$cc $defines $includes $cflags $cflags_c '
+              '$cflags_pch_c -c $in -o $out'))
+    master_ninja.rule(
+      'cxx',
+      description='CXX $out',
+      command=('$cxx -MMD -MF $out.d $defines $includes $cflags $cflags_cc '
+              '$cflags_pch_cc -c $in -o $out'),
+      depfile='$out.d',
+      deps=deps)
+  else:
+    # TODO(scottmg) Separate pdb names is a test to see if it works around
+    # http://crbug.com/142362. It seems there's a race between the creation of
+    # the .pdb by the precompiled header step for .cc and the compilation of
+    # .c files. This should be handled by mspdbsrv, but rarely errors out with
+    #   c1xx : fatal error C1033: cannot open program database
+    # By making the rules target separate pdb files this might be avoided.
+    cc_command = ('ninja -t msvc -e $arch ' +
+                  '-- '
+                  '$cc /nologo /showIncludes /FC '
+                  '@$out.rsp /c $in /Fo$out /Fd$pdbname_c ')
+    cxx_command = ('ninja -t msvc -e $arch ' +
+                   '-- '
+                   '$cxx /nologo /showIncludes /FC '
+                   '@$out.rsp /c $in /Fo$out /Fd$pdbname_cc ')
+    master_ninja.rule(
+      'cc',
+      description='CC $out',
+      command=cc_command,
+      rspfile='$out.rsp',
+      rspfile_content='$defines $includes $cflags $cflags_c',
+      deps=deps)
+    master_ninja.rule(
+      'cxx',
+      description='CXX $out',
+      command=cxx_command,
+      rspfile='$out.rsp',
+      rspfile_content='$defines $includes $cflags $cflags_cc',
+      deps=deps)
+    master_ninja.rule(
+      'idl',
+      description='IDL $in',
+      command=('%s gyp-win-tool midl-wrapper $arch $outdir '
+               '$tlb $h $dlldata $iid $proxy $in '
+               '$midl_includes $idlflags' % sys.executable))
+    master_ninja.rule(
+      'rc',
+      description='RC $in',
+      # Note: $in must be last otherwise rc.exe complains.
+      command=('%s gyp-win-tool rc-wrapper '
+               '$arch $rc $defines $resource_includes $rcflags /fo$out $in' %
+               sys.executable))
+    master_ninja.rule(
+      'asm',
+      description='ASM $out',
+      command=('%s gyp-win-tool asm-wrapper '
+               '$arch $asm $defines $includes $asmflags /c /Fo $out $in' %
+               sys.executable))
+
+  if flavor != 'mac' and flavor != 'win':
+    master_ninja.rule(
+      'alink',
+      description='AR $out',
+      command='rm -f $out && $ar rcs $arflags $out $in')
+    master_ninja.rule(
+      'alink_thin',
+      description='AR $out',
+      command='rm -f $out && $ar rcsT $arflags $out $in')
+
+    # This allows targets that only need to depend on $lib's API to declare an
+    # order-only dependency on $lib.TOC and avoid relinking such downstream
+    # dependencies when $lib changes only in non-public ways.
+    # The resulting string leaves an uninterpolated %{suffix} which
+    # is used in the final substitution below.
+    mtime_preserving_solink_base = (
+        'if [ ! -e $lib -o ! -e $lib.TOC ]; then '
+        '%(solink)s && %(extract_toc)s > $lib.TOC; else '
+        '%(solink)s && %(extract_toc)s > $lib.tmp && '
+        'if ! cmp -s $lib.tmp $lib.TOC; then mv $lib.tmp $lib.TOC ; '
+        'fi; fi'
+        % { 'solink':
+              '$ld -shared $ldflags -o $lib -Wl,-soname=$soname %(suffix)s',
+            'extract_toc':
+              ('{ $readelf -d $lib | grep SONAME ; '
+               '$nm -gD -f p $lib | cut -f1-2 -d\' \'; }')})
+
+    master_ninja.rule(
+      'solink',
+      description='SOLINK $lib',
+      restat=True,
+      command=mtime_preserving_solink_base % {'suffix': '@$link_file_list'},
+      rspfile='$link_file_list',
+      rspfile_content=
+          '-Wl,--whole-archive $in $solibs -Wl,--no-whole-archive $libs',
+      pool='link_pool')
+    master_ninja.rule(
+      'solink_module',
+      description='SOLINK(module) $lib',
+      restat=True,
+      command=mtime_preserving_solink_base % {'suffix': '@$link_file_list'},
+      rspfile='$link_file_list',
+      rspfile_content='-Wl,--start-group $in -Wl,--end-group $solibs $libs',
+      pool='link_pool')
+    master_ninja.rule(
+      'link',
+      description='LINK $out',
+      command=('$ld $ldflags -o $out '
+               '-Wl,--start-group $in -Wl,--end-group $solibs $libs'),
+      pool='link_pool')
+  elif flavor == 'win':
+    master_ninja.rule(
+        'alink',
+        description='LIB $out',
+        command=('%s gyp-win-tool link-wrapper $arch False '
+                 '$ar /nologo /ignore:4221 /OUT:$out @$out.rsp' %
+                 sys.executable),
+        rspfile='$out.rsp',
+        rspfile_content='$in_newline $libflags')
+    _AddWinLinkRules(master_ninja, embed_manifest=True)
+    _AddWinLinkRules(master_ninja, embed_manifest=False)
+  else:
+    master_ninja.rule(
+      'objc',
+      description='OBJC $out',
+      command=('$cc -MMD -MF $out.d $defines $includes $cflags $cflags_objc '
+               '$cflags_pch_objc -c $in -o $out'),
+      depfile='$out.d',
+      deps=deps)
+    master_ninja.rule(
+      'objcxx',
+      description='OBJCXX $out',
+      command=('$cxx -MMD -MF $out.d $defines $includes $cflags $cflags_objcc '
+               '$cflags_pch_objcc -c $in -o $out'),
+      depfile='$out.d',
+      deps=deps)
+    master_ninja.rule(
+      'alink',
+      description='LIBTOOL-STATIC $out, POSTBUILDS',
+      command='rm -f $out && '
+              './gyp-mac-tool filter-libtool libtool $libtool_flags '
+              '-static -o $out $in'
+              '$postbuilds')
+    master_ninja.rule(
+      'lipo',
+      description='LIPO $out, POSTBUILDS',
+      command='rm -f $out && lipo -create $in -output $out$postbuilds')
+    master_ninja.rule(
+      'solipo',
+      description='SOLIPO $out, POSTBUILDS',
+      command=(
+          'rm -f $lib $lib.TOC && lipo -create $in -output $lib$postbuilds &&'
+          '%(extract_toc)s > $lib.TOC'
+          % { 'extract_toc':
+                '{ otool -l $lib | grep LC_ID_DYLIB -A 5; '
+                'nm -gP $lib | cut -f1-2 -d\' \' | grep -v U$$; true; }'}))
+
+
+    # Record the public interface of $lib in $lib.TOC. See the corresponding
+    # comment in the posix section above for details.
+    solink_base = '$ld %(type)s $ldflags -o $lib %(suffix)s'
+    mtime_preserving_solink_base = (
+        'if [ ! -e $lib -o ! -e $lib.TOC ] || '
+             # Always force dependent targets to relink if this library
+             # reexports something. Handling this correctly would require
+             # recursive TOC dumping but this is rare in practice, so punt.
+             'otool -l $lib | grep -q LC_REEXPORT_DYLIB ; then '
+          '%(solink)s && %(extract_toc)s > $lib.TOC; '
+        'else '
+          '%(solink)s && %(extract_toc)s > $lib.tmp && '
+          'if ! cmp -s $lib.tmp $lib.TOC; then '
+            'mv $lib.tmp $lib.TOC ; '
+          'fi; '
+        'fi'
+        % { 'solink': solink_base,
+            'extract_toc':
+              '{ otool -l $lib | grep LC_ID_DYLIB -A 5; '
+              'nm -gP $lib | cut -f1-2 -d\' \' | grep -v U$$; true; }'})
+
+
+    solink_suffix = '@$link_file_list$postbuilds'
+    master_ninja.rule(
+      'solink',
+      description='SOLINK $lib, POSTBUILDS',
+      restat=True,
+      command=mtime_preserving_solink_base % {'suffix': solink_suffix,
+                                              'type': '-shared'},
+      rspfile='$link_file_list',
+      rspfile_content='$in $solibs $libs',
+      pool='link_pool')
+    master_ninja.rule(
+      'solink_notoc',
+      description='SOLINK $lib, POSTBUILDS',
+      restat=True,
+      command=solink_base % {'suffix':solink_suffix, 'type': '-shared'},
+      rspfile='$link_file_list',
+      rspfile_content='$in $solibs $libs',
+      pool='link_pool')
+
+    master_ninja.rule(
+      'solink_module',
+      description='SOLINK(module) $lib, POSTBUILDS',
+      restat=True,
+      command=mtime_preserving_solink_base % {'suffix': solink_suffix,
+                                              'type': '-bundle'},
+      rspfile='$link_file_list',
+      rspfile_content='$in $solibs $libs',
+      pool='link_pool')
+    master_ninja.rule(
+      'solink_module_notoc',
+      description='SOLINK(module) $lib, POSTBUILDS',
+      restat=True,
+      command=solink_base % {'suffix': solink_suffix, 'type': '-bundle'},
+      rspfile='$link_file_list',
+      rspfile_content='$in $solibs $libs',
+      pool='link_pool')
+
+    master_ninja.rule(
+      'link',
+      description='LINK $out, POSTBUILDS',
+      command=('$ld $ldflags -o $out '
+               '$in $solibs $libs$postbuilds'),
+      pool='link_pool')
+    master_ninja.rule(
+      'preprocess_infoplist',
+      description='PREPROCESS INFOPLIST $out',
+      command=('$cc -E -P -Wno-trigraphs -x c $defines $in -o $out && '
+               'plutil -convert xml1 $out $out'))
+    master_ninja.rule(
+      'copy_infoplist',
+      description='COPY INFOPLIST $in',
+      command='$env ./gyp-mac-tool copy-info-plist $in $out $binary $keys')
+    master_ninja.rule(
+      'merge_infoplist',
+      description='MERGE INFOPLISTS $in',
+      command='$env ./gyp-mac-tool merge-info-plist $out $in')
+    master_ninja.rule(
+      'compile_xcassets',
+      description='COMPILE XCASSETS $in',
+      command='$env ./gyp-mac-tool compile-xcassets $keys $in')
+    master_ninja.rule(
+      'mac_tool',
+      description='MACTOOL $mactool_cmd $in',
+      command='$env ./gyp-mac-tool $mactool_cmd $in $out $binary')
+    master_ninja.rule(
+      'package_framework',
+      description='PACKAGE FRAMEWORK $out, POSTBUILDS',
+      command='./gyp-mac-tool package-framework $out $version$postbuilds '
+              '&& touch $out')
+  if flavor == 'win':
+    master_ninja.rule(
+      'stamp',
+      description='STAMP $out',
+      command='%s gyp-win-tool stamp $out' % sys.executable)
+    master_ninja.rule(
+      'copy',
+      description='COPY $in $out',
+      command='%s gyp-win-tool recursive-mirror $in $out' % sys.executable)
+  else:
+    master_ninja.rule(
+      'stamp',
+      description='STAMP $out',
+      command='${postbuilds}touch $out')
+    master_ninja.rule(
+      'copy',
+      description='COPY $in $out',
+      command='rm -rf $out && cp -af $in $out')
+  master_ninja.newline()
+
+  all_targets = set()
+  for build_file in params['build_files']:
+    for target in gyp.common.AllTargets(target_list,
+                                        target_dicts,
+                                        os.path.normpath(build_file)):
+      all_targets.add(target)
+  all_outputs = set()
+
+  # target_outputs is a map from qualified target name to a Target object.
+  target_outputs = {}
+  # target_short_names is a map from target short name to a list of Target
+  # objects.
+  target_short_names = {}
+
+  # short name of targets that were skipped because they didn't contain anything
+  # interesting.
+  # NOTE: there may be overlap between this an non_empty_target_names.
+  empty_target_names = set()
+
+  # Set of non-empty short target names.
+  # NOTE: there may be overlap between this an empty_target_names.
+  non_empty_target_names = set()
+
+  for qualified_target in target_list:
+    # qualified_target is like: third_party/icu/icu.gyp:icui18n#target
+    build_file, name, toolset = \
+        gyp.common.ParseQualifiedTarget(qualified_target)
+
+    this_make_global_settings = data[build_file].get('make_global_settings', [])
+    assert make_global_settings == this_make_global_settings, (
+        "make_global_settings needs to be the same for all targets. %s vs. %s" %
+        (this_make_global_settings, make_global_settings))
+
+    spec = target_dicts[qualified_target]
+    if flavor == 'mac':
+      gyp.xcode_emulation.MergeGlobalXcodeSettingsToSpec(data[build_file], spec)
+
+    # If build_file is a symlink, we must not follow it because there's a chance
+    # it could point to a path above toplevel_dir, and we cannot correctly deal
+    # with that case at the moment.
+    build_file = gyp.common.RelativePath(build_file, options.toplevel_dir,
+                                         False)
+
+    qualified_target_for_hash = gyp.common.QualifiedTarget(build_file, name,
+                                                           toolset)
+    hash_for_rules = hashlib.md5(qualified_target_for_hash).hexdigest()
+
+    base_path = os.path.dirname(build_file)
+    obj = 'obj'
+    if toolset != 'target':
+      obj += '.' + toolset
+    output_file = os.path.join(obj, base_path, name + '.ninja')
+
+    ninja_output = StringIO()
+    writer = NinjaWriter(hash_for_rules, target_outputs, base_path, build_dir,
+                         ninja_output,
+                         toplevel_build, output_file,
+                         flavor, toplevel_dir=options.toplevel_dir)
+
+    target = writer.WriteSpec(spec, config_name, generator_flags)
+
+    if ninja_output.tell() > 0:
+      # Only create files for ninja files that actually have contents.
+      with OpenOutput(os.path.join(toplevel_build, output_file)) as ninja_file:
+        ninja_file.write(ninja_output.getvalue())
+      ninja_output.close()
+      master_ninja.subninja(output_file)
+
+    if target:
+      if name != target.FinalOutput() and spec['toolset'] == 'target':
+        target_short_names.setdefault(name, []).append(target)
+      target_outputs[qualified_target] = target
+      if qualified_target in all_targets:
+        all_outputs.add(target.FinalOutput())
+      non_empty_target_names.add(name)
+    else:
+      empty_target_names.add(name)
+
+  if target_short_names:
+    # Write a short name to build this target.  This benefits both the
+    # "build chrome" case as well as the gyp tests, which expect to be
+    # able to run actions and build libraries by their short name.
+    master_ninja.newline()
+    master_ninja.comment('Short names for targets.')
+    for short_name in target_short_names:
+      master_ninja.build(short_name, 'phony', [x.FinalOutput() for x in
+                                               target_short_names[short_name]])
+
+  # Write phony targets for any empty targets that weren't written yet. As
+  # short names are  not necessarily unique only do this for short names that
+  # haven't already been output for another target.
+  empty_target_names = empty_target_names - non_empty_target_names
+  if empty_target_names:
+    master_ninja.newline()
+    master_ninja.comment('Empty targets (output for completeness).')
+    for name in sorted(empty_target_names):
+      master_ninja.build(name, 'phony')
+
+  if all_outputs:
+    master_ninja.newline()
+    master_ninja.build('all', 'phony', list(all_outputs))
+    master_ninja.default(generator_flags.get('default_target', 'all'))
+
+  master_ninja_file.close()
+
+
+def PerformBuild(data, configurations, params):
+  options = params['options']
+  for config in configurations:
+    builddir = os.path.join(options.toplevel_dir, 'out', config)
+    arguments = ['ninja', '-C', builddir]
+    print 'Building [%s]: %s' % (config, arguments)
+    subprocess.check_call(arguments)
+
+
+def CallGenerateOutputForConfig(arglist):
+  # Ignore the interrupt signal so that the parent process catches it and
+  # kills all multiprocessing children.
+  signal.signal(signal.SIGINT, signal.SIG_IGN)
+
+  (target_list, target_dicts, data, params, config_name) = arglist
+  GenerateOutputForConfig(target_list, target_dicts, data, params, config_name)
+
+
+def GenerateOutput(target_list, target_dicts, data, params):
+  # Update target_dicts for iOS device builds.
+  target_dicts = gyp.xcode_emulation.CloneConfigurationForDeviceAndEmulator(
+      target_dicts)
+
+  user_config = params.get('generator_flags', {}).get('config', None)
+  if gyp.common.GetFlavor(params) == 'win':
+    target_list, target_dicts = MSVSUtil.ShardTargets(target_list, target_dicts)
+    target_list, target_dicts = MSVSUtil.InsertLargePdbShims(
+        target_list, target_dicts, generator_default_variables)
+
+  if user_config:
+    GenerateOutputForConfig(target_list, target_dicts, data, params,
+                            user_config)
+  else:
+    config_names = target_dicts[target_list[0]]['configurations'].keys()
+    if params['parallel']:
+      try:
+        pool = multiprocessing.Pool(len(config_names))
+        arglists = []
+        for config_name in config_names:
+          arglists.append(
+              (target_list, target_dicts, data, params, config_name))
+        pool.map(CallGenerateOutputForConfig, arglists)
+      except KeyboardInterrupt, e:
+        pool.terminate()
+        raise e
+    else:
+      for config_name in config_names:
+        GenerateOutputForConfig(target_list, target_dicts, data, params,
+                                config_name)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MC35ML');</script>
+    <script src="https://store.unity.com/themes/contrib/unity_base/js/unity-cdp.js">
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unity - : </title>
+    <meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="../StaticFiles/images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" />
+    <meta name="msapplication-TileColor" content="#222c37" />
+    <meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png" />
+    <script type="text/javascript" src="../StaticFiles/js/jquery.js">
+    </script>
+    <script type="text/javascript" src="docdata/toc.js">//toc</script>
+    <!--local TOC-->
+    <script type="text/javascript" src="docdata/global_toc.js">//toc</script>
+    <!--global TOC, including other platforms-->
+    <script type="text/javascript" src="../StaticFiles/js/core.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" />
+    <link rel="stylesheet" href="../StaticFiles/js/feedback/five-star-rating-master/css/rating.min.css" />
+    <script src="../StaticFiles/js/feedback/five-star-rating-master/js/src/rating.js">
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC35ML" height="0" width="0" style="display:none;visibility:hidden">
+      </iframe>
+    </noscript>
+    <div class="header-wrapper">
+      <div id="header" class="header">
+        <div class="content">
+          <div class="spacer">
+            <div class="menu">
+              <div class="logo">
+                <a href="">
+                </a>
+              </div>
+              <div class="search-form">
+                <form action="30_search.html" method="get" class="apisearch">
+                  <input type="text" name="q" placeholder="Search scripting..." autosave="Unity Reference" results="5" class="sbox field" id="q">
+                  </input>
+                  <input type="submit" class="submit">
+                  </input>
+                </form>
+              </div>
+              <ul>
+                <li>
+                  <a href="../Manual/index.html">
+                  </a>
+                </li>
+                <li>
+                  <a href="../ScriptReference/index.html" class="selected">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="more">
+            <div class="filler">
+            </div>
+            <ul>
+              <li>
+                <a href="https://unity3d.com/">unity3d.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="content clear">
+          <div class="version-number">Version: <b>2018.2b</b> (switch to <a href="https://docs.unity3d.com/2018.1/Documentation/ScriptReference">2018.1</a> or <a href="https://docs.unity3d.com/2017.4/Documentation/ScriptReference">2017.4</a>)</div>
+          <div class="lang-switcher hide">
+            <div class="current toggle" data-target=".lang-list">
+              <div class="lbl">
+                <span class="b">English</span>
+              </div>
+              <div class="arrow">
+              </div>
+            </div>
+            <div class="lang-list" style="display:none;">
+              <ul>
+                <li>
+                  <a href="">English</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="script-lang">
+            <ul>
+              <li class="selected" data-lang="CS">C#</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+      <div id="sidebar" class="sidebar">
+        <div class="sidebar-wrap">
+          <div class="content">
+            <div class="sidebar-menu">
+              <div class="toc">
+                <h2>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content-wrap" class="content-wrap">
+        <div class="content-block">
+          <div class="content">
+            <div class="section">
+            </div>
+            <div class="section">
+              <div class="feedbackbox" id="feedbackbox">
+                <div id="rating">
+                  <p>
+                    <br />
+                    <div id="ratecontent" class="c-rating">
+                    </div>
+                  </p>
+                </div>
+                <div id="ratingThanks" style="display:none">
+                  <p>
+                  </p>
+                </div>
+                <div id="problem">
+                  <p>
+                    <a name="problem" onclick="document.getElementById('problemType').style.display = '';document.getElementById('problem').style.display = 'none';">
+                    </a>
+                  </p>
+                </div>
+                <div id="problemType" style="display:none">
+                  <p>
+                    <ul type="problems">
+                      <li>
+                        <a name="needcode" onclick="                                                             document.getElementById('problemType').style.display = 'none';                                                             document.getElementById('problemThanks').style.display = '';                                                             SendFeedback('problem-needcode',window.location.href,0);                                                             document.getElementById('problemFormDescription').value='Needs code samples.';                                                             document.getElementById('problemNeedCodeForm').style.display = ''                                                         ">
+                        </a>
+                      </li>
+                      <li>
+                        <a name="code" onclick="document.getElementById('problemType').style.display = 'none';                                                         document.getElementById('problemThanks').style.display = '';                                                         SendFeedback('problem-brokencode',window.location.href,0);                                                         document.getElementById('problemFormDescription').value='Code samples do not work.';                                                         document.getElementById('problemCodeForm').style.display = ''                                                         ">
+                        </a>
+                      </li>
+                      <li>
+                        <a name="missing" onclick="document.getElementById('problemType').style.display = 'none';                                                         document.getElementById('problemThanks').style.display = '';                                                         SendFeedback('problem-missing',window.location.href,0);                                                         document.getElementById('problemFormDescription').value='Missing information';                                                         document.getElementById('problemMissingForm').style.display = ''                                                         ">
+                        </a>
+                      </li>
+                      <li>
+                        <a name="incorrect" onclick="document.getElementById('problemType').style.display = 'none';                                                         document.getElementById('problemThanks').style.display = '';                                                         SendFeedback('problem-incorrect',window.location.href,0);                                                         document.getElementById('problemFormDescription').value='Incorrect information';                                                         document.getElementById('problemIncorrectForm').style.display = ''                                                         ">
+                        </a>
+                      </li>
+                      <li>
+                        <a name="unclear" onclick="document.getElementById('problemType').style.display = 'none';                                                         document.getElementById('problemThanks').style.display = '';                                                         SendFeedback('problem-unclear',window.location.href,0);                                                         document.getElementById('problemFormDescription').value='Unclear or confusing information';                                                         document.getElementById('problemUnclearForm').style.display = ''                                                         ">
+                        </a>
+                      </li>
+                      <li>
+                        <a name="language" onclick="document.getElementById('problemType').style.display = 'none';                                                         document.getElementById('problemThanks').style.display = '';                                                         SendFeedback('problem-language',window.location.href,0);                                                         document.getElementById('problemFormDescription').value='Spelling or grammar error';                                                         document.getElementById('problemLanguageForm').style.display = ''                                                         ">
+                        </a>
+                      </li>
+                      <li>
+                        <a name="other" onclick="document.getElementById('problemType').style.display = 'none';                                                         document.getElementById('problemThanks').style.display = '';                                                         SendFeedback('problem-other',window.location.href,0);                                                         document.getElementById('problemFormDescription').value='This page has a problem';                                                         document.getElementById('problemOtherForm').style.display = ''                                                         ">
+                        </a>
+                      </li>
+                    </ul>
+                    <p>
+                    </p>
+                  </p>
+                </div>
+                <div id="problemThanks" style="display:none">
+                  <p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <a onclick="document.getElementById('problemMoreInfo').style.display = '';document.getElementById('problemThanks').style.display = 'none';">
+                    </a>
+                    <br />
+                  </p>
+                </div>
+                <div id="problemMoreInfo" style="display:none">
+                  <p id="problemNeedCodeForm" style="display:none">
+                  </p>
+                  <p id="problemCodeForm" style="display:none">
+                  </p>
+                  <p id="problemMissingForm" style="display:none">
+                  </p>
+                  <p id="problemIncorrectForm" style="display:none">
+                  </p>
+                  <p id="problemUnclearForm" style="display:none">
+                  </p>
+                  <p id="problemLanguageForm" style="display:none">
+                  </p>
+                  <p id="problemOtherForm" style="display:none">
+                  </p>
+                  <form>
+                    <textarea id="problemFormSuggestionField" cols="40" rows="5">
+                    </textarea>
+                    <input type="hidden" id="problemFormDescription">
+                    </input>
+                    <input type="submit" id="problemFormDescriptionSubmit" value="Submit" onclick="                                             document.getElementById('problemMoreInfo').style.display = 'none';                                             document.getElementById('problemMoreInfoThanks').style.display = '';                                             return false;                                             ">
+                    </input>
+                  </form>
+                </div>
+                <div id="problemMoreInfoThanks" style="display:none">
+                  <p>
+                  </p>
+                </div>
+                <script>
+
+                                            var ratecontent = document.querySelector('#ratecontent'); // target element
+                                            var currentRating = 0; // initial rating
+                                            var maxRating= 5; // max rating
+
+                                            // callback to run after setting the rating
+                                            var callback = function(rating) {
+                                                document.getElementById('ratingThanks').style.display = '';
+                                                document.getElementById('ratecontent').style.display = 'none';
+                                                document.getElementById('rating').style.display = 'none';
+                                                SendFeedback("rating",window.location.href,rating);
+                                            };
+
+                                            // rating instance
+                                            var myRating = rating(ratecontent, currentRating, maxRating, callback);
+                                        </script>
+              </div>
+            </div>
+            <div class="footer-wrapper">
+              <div class="footer clear">
+                <div class="copy">
+                  <p>
+                    <a href="">
+                    </a>.</p>. Publication: 2018.2b-002B. Built: 2018-04-30.</div>
+                <div class="menu">
+                  <a href="">
+                  </a>
+                  <a href="">
+                  </a>
+                  <a href="">
+                  </a>
+                  <a href="">
+                  </a>
+                  <a href="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>                                                                                                                                                                ³          REDI   ¨  DATA°  ã   P                   4                             X                         R          b   “   İÀ›f   panorama/layout/custom_game/tutorial_client_code.vxml dota_addons/tutorial_basics panorama/layout/custom_game/tutorial_client_code.xml dota_addons/tutorial_basics     $           ___OverrideInputData___ BinaryBlobArg                 CompilePanorama Panorama Layout Compiler Version           IsChildResource À½¿R  <root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+  </styles>
+  <scripts>
+    <include src="s2r://panorama/scripts/custom_game/client_code.vjs_c" />
+  </scripts>
+  <Panel>
+  </Panel>
+</root>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             IDST1   º<ùplayer/custom_player/kuristaja/hitler/hitler_arms.mdl           ÄA              :MW¿ à»öRABñ’‹ÀÔˆäÁ^<BE+@äAihB                           $   ˜      ø      ø      à$     '             )     Ğ)        Ô)     x(      ø       x(  x(      )      )      )      )      )      )  ã=  Ø)  r       )    €?       )      ¬=      )      ¼$                      )          ˜          L*          ´(  <                                                                                                                                                                                                                                          S;  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿcêuAGYÙ?T`JBÆ©Ï;”Ÿ»ÿ¼FŞ?¯
+T<¾	¼HY½ €; €; €;mI7¡]Â7"R8g~?ª,½U	<€‚zÁ(¸~=¨{?ET<³‡SÀû¼’K¼8ø?„´IÂ                               K;                                     ”:      ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ¶º$A  €4  €¶ü<¿Ğ5×¼ìê>½$,?ÜÔÔ¿)¯Õ½«ÜÄ¼ €; €; €;mI7mI7mI7h}?LX²½â¬å=JĞ÷ÁÆ÷Õ=Cƒ´½ß˜}¿3y>B.êÄ=ÿ~? ½Èä>                               s:                                     Ò9     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÀ#“?€?Õ>Àµ¿ÇÆ?ş¨¬>0”¾¼265?ë•È?qæ?ş1í> €; €; €;mI7mI7mI7‹WA?}€¿Âç‚¾†'ñÀ·?'ÓK?¢z¾ø˜À‚¯³>/¶/=#wo?E]bÂ                               ›9                                     9     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÆ¡?  €5  €6c~2½jkú:¡i=Ø˜?k*²½s´á;[÷= €; €; €;mI7mI7mI7Ó1J?Zà¿Ú¨¾©…ÁÒ¿î>1~T?²œ¾t¦_@”ıË>·ä=i?õ>bÂ                               Ã8                                     U8     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿH/˜?  €µ    )ì¿2.0|½è<Œå?  @3   €Åh= €; €; €;mI7mI7mI7¦P?¢)ÿ¾6S—¾JÁ.e×>;\?¤C”¾`P@“ıË>
+·ä=i?ö>bÂ                               ë7                                     —7     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ`…q@ m>Œwx¿Ì«»÷â>|ëß=]I|?Ú×È<°´„>øe> €; €; €;mI7mI7mI7T@n?öíµ¾-{²½ÌD·Á-›à½`ş2½³5~¿p’WBµ²>,o?ø£½Í½À                               7                                     Ø6     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ{·?       ¶-ğÿ°°4®¯´<+ğ? €±   €e4= €; €; €;mI7mI7mI7Él?®¼¶¾×¾î™¯Á@¾ƒ¸å¼Öû|¿‡¤[Bµ²>,o?ø£½ŒÍ½À                               ;6                                     6     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿàs‚?   7   5š÷±’2ƒ®‘2ƒ<˜÷?  ²   €4= €; €; €;mI7mI7mI7¦nk?f·¾*.&¾o—©ÁT8¾Éö‡¼HÈ{¿öx^Bµ²>,o?ù£½ŠÍ½À                               c5                                     \5     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿP+s@ ğt< «#½h¤Œ8;^$¼„É= À~?îÇğº-¯£¼rI> €; €; €;mI7mI7mI70~?éŠ©½Au®½sJÆÁş¯º½é‘½éG~¿(ìUBù›=ïw~?yU ½D>Š?                               ‹4                                     4     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ0/ã?  €6  €µGä°lŠ>2Î†=ls?şÿÿ°ÿÿ¿2^*> €; €; €;mI7mI7mI7Îõx?'»½n][¾­ÅšÁå`a¾Óu½Ÿ@y¿0øaB„ù›=ïw~?zU ½H>Š?                               ³3                                     ß3  	   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ "?  €¶    š÷]0V*@2§l5<ûû?şÿÿ0ÿÿ¿2šmµ< €; €; €;mI7mI7mI7À¦w?ÒÑ½½ßcq¾wË˜ÁU`w¾r¬l½úw¿š·cB‡ù›=ïw~?{U ½H>Š?                               Û2                                     !3     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿPh@ àq=ëA?ğrt»œ¾¹	>-…{?,Ù1½5ƒ¾†{> €; €; €;mI7mI7mI7!y?K¿>ä 5¾ãÁÆŠ&¾$¦Ô½d0{¿j½[B¦¸&¾ÍÏ{?$è½ê·ç@                               2                                     b2     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ À?   ·    ŠÊ±á¾÷1wP+=§Æ? @²  €2C]«= €; €; €;mI7mI7mI7Çt?gU>ı;„¾Æ„Á>y¾Tí½”†v¿bB¥¸&¾ÍÏ{?&è½ê·ç@                               +1                                     ¤1     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ`Ùg?  @7    ¬©±÷ÿ12«u<¢ø? €±  €2­õ< €; €; €;mI7mI7mI7“Ìr?·	>’õ’¾ka|Áî>‹¾Şxõ½ªnt¿¢dB¤¸&¾ÍÏ{?(è½ê·ç@                               S0                                     æ0     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ±T@ \o>VR½?•?Ñ<eÚ‚¾¯¼>BTt?0³½ù¾¿)Y¦> €; €; €;mI7mI7mI7Æ1d??–Ê>Ê`b¾êµyÁjtP¾I¸°½ªy¿šC^BWÏ¾Rj? ÷m;é7A                               {/                                     '0     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÀv?   7  €¶Zšÿ±Hä¯Fd=Xš? €²   €z+ä= €; €; €;mI7mI7mI7Sü\?@kÄ>Ã ¨¾p¡$Á¤Rš¾Ü¾÷Òq¿OAdBWÏ¾Rj?Äöm;í7A                               £.                                     i/     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿpÒ.?   ·  €5yO¯Âú2{O<Äú?    şÿÿ2äÏ< €; €; €;mI7mI7mI7ööZ?U­Â>”,´¾RlÁæq¥¾'¿¾£Ÿo¿¥JeBWÏ¾Rj?—öm;ì7A                               Ë-                                     «.  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿcêuAGYÙ?T`JB‚Ã<€“»Š©ÿ¼LÜ?ı¡<Œ	¼W€½ €; €; €;mI7]Â7ÍR8²}?³á½#	<j€zÁ*=ßs?îø¡<¾iÀÕ¼‡a¼åğ?(œIÂ                               ó,                                     î-  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿeêuÁæWÙ?T`JB!ÿ<FŞ¿•©Ï»Œ¢;Ğ;H@¢	¼iEÀ €; €; €;mI7­]Â7»!@8d~¿É/½9	<¡‚zÁE»~½¥{?8T<À‡SÀ¼:K<8ø¿‚´IB                               ,                                     /-     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ¹º$A   µ  @·2è;?>²ó<yJ½Û:-?fJÓ?ğªç=üé¿¼ €; €; €;mI7mI7mI7ï'}¿.±½c÷=0(ûÁ^+ê½äw½æ}¿b=B†Â=ŒG~¿Ìu‡=°Y>                               C+                                     m,     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ`#“? AÕ>Êµ?5Q)¿²º¾Z2‡½ÿï&?ìùŞ¿ˆ¿Jşÿ> €; €; €;mI7mI7mI72Š5¿éş&¿şˆ¾öf·À}'¿7@?„¶Í½jæ?Á‚hˆ>åÔÓ=‡Ru¿ë8^B                               k*                                     ®+     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿøÆ¡?  €5  €·JÙ1=(…ˆ»ü²=7É~?eÂ¯=2Ë¼ŞÂ1> €; €; €;mI7mI7mI7Í‘N¿nÙ¿U’—¾5IÁ;Bı¾Ñ[?r	¾ë]¹À¸I¥>ìÿ=Ïr¿&”aB                               “)                                     ğ*     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ/˜?      @7ü‘Ÿ/ó2ş‘Ÿ¼‘ó?    üÿÿ2“”½ €; €; €;mI7mI7mI7{I¿ÜO¿_Ç”¾–ÁF”¿§V?t3¾’ÇÄÀ·I¥>èÿ=Ïr¿#”aB                               »(                                     2*     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ0…q@ l>Œwx?D„;¦˜
+¾†È×=64|?,û®¼;ªŠ¾•.]> €; €; €;mI7mI7mI7»Ìm¿¬ß¹¾:¬•½ê•¼Á°½=Ş@½ş¹~¿àVB”“·>„Yn¿¦Š=CÚ@                               ã'                                     s)     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ {·?      €µVÿ4±È ³É©==Ô?şÿÿ±  €³Q²•= €; €; €;mI7mI7mI7änk¿Á¿º¾Ó¾Y@¨Á<$>	%¼®|¿•Ï\B–“·>„Yn¿¦Š=CÚ@                               '                                     µ(     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÀs‚?  €¶   6…-K±Ñx²UñQ=Ü©?şÿÿ±   ³äÒ= €; €; €;mI7mI7mI7Nÿe¿ºKº¾¦¼{¾ D‚ÁhÍ>™Ğß<¨‰w¿5®dB—“·>„Yn¿¦Š=CÚ@                               3&                                     ÷'     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿP+s@ @u< «#=ö»
+÷<¼Kíû=¼	~?ç»OA·¼3ª|> €; €; €;mI7mI7mI7í|¿b¹ÿ½BLü½	{´Á‚ñ>~:>½}¿ˆóYBpñ=Ó·}¿å­}=´p{?                               [%                                     8'     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ@/ã?      €´Œòÿ0ï%.ï¥<ò?şÿ1   €ò%= €; €; €;mI7mI7mI7^zz¿ñ®¾Ğ'¾Tİ°Áª->u[)½Â|¿
+·]Bpñ=Ó·}¿æ­}=¼p{?                               ƒ$                                     z&     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ !?   ·    ôL—0iÍ|±bz;=Q»?şÿÿ0  ²(‹»= €; €; €;mI7mI7mI7Nuu¿¾CP¾HœÁG„>Llò¼G1w¿ê=eBqñ=Ó·}¿ç­}=¼p{?                               «#                                     ¼%     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ0h@ èq=ëA¿°{<éÖì=zQ>%×{?HP=Vph>6±> €; €; €;mI7mI7mI7ˆMz¿:ù=˜ş.¾T¡Á	#>!àÌ½o{¿x«[B„å¾´Í|¿½¢ =~ÑÀ                               Ó"                                     ı$     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿpÀ?        ´i/1_€2ñ~„<m÷?  À1  3l€= €; €; €;mI7mI7mI7†Úx¿[xò=ŒnO¾¼¸Á(UC>DÔÔ½ãy¿YZ^B†å¾´Í|¿½¢ =€ÑÀ                               û!                                     ?$     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ€Ùg?   ·   5çïæ¯Å—ÿ1ãïf=Á—?     €2Aç= €; €; €;mI7mI7mI7Æq¿»÷Ø=’RŸ¾æ°eÁ%™>(Æî½Èur¿&HfB‡å¾´Í|¿½¢ =‚ÑÀ                               #!                                     #     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ`±T@ ^o>RR½¿x1©;Éäg>‚¬+>ÙŸu?@OÃ=¤/å>…B¼> €; €; €;mI7mI7mI76øh¿Ãª>«Ú}¾/jÁ—A]>ùQ¾v¸w¿À^Båµ¾Ç%o¿•F?="p)Á                               K                                      Â"      ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿğv?  @7   ¶TÆä1”Í 3=Ù<üè?  €2 €3¿Y= €; €; €;mI7mI7mI7:¶e¿T¦>Tÿ˜¾
+JÁ„(‡>*(¾¥t¿H¾aBçµ¾Ç%o¿”F?="p)Á                               s                                     "  !   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿğÑ.?   ·  €5'ú18À2½2}»ƒÿ?   2  3æ2ı» €; €; €;mI7mI7mI7%:f¿¼è¦>Ï8•¾Ãï[Á²šƒ>ù”¾˜t¿>SaBèµ¾Ç%o¿”F?=$p)Á                               ›                                     F!  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿeêuÁæWÙ?T`JBÅ¬ÿ<KÜ¿¾Ã¼»“;àËG@¢	¼“EÀ €; €; €;mI7‰]Â7@8¯}¿ìä½9	<M€zÁM-½Üs?*ù¡<<¾iÀ3¼Âa<åğ¿*œIB                               Ã                                     ë                ÖçÀİN‰À3•ñ¿¶º$A È$@‹•^@¨                                         pe
+ÀÆl1À*Ç&À5K @hFÈ?¡³ @d                                         ­¿ît[¿ô¿¿jÖ
+@Rß?ÔåÊ?                                          8Ÿg¾,*Ú¾VÓ{¿]a@u?K?Ü                                         ¼€¾óî¾VO¿uÚí?–Ò?!À5?˜                                         ~J	¿âK	¿3o8¿>¾™?îtí>zÇ?T                                         ÊçÀ^4‰À“†ñ¿ŒJ9A7¬$@˜ì^@                                         îçÀ¬N‰À•^À¹º$AÉ$@•ñ?Ì                                         šÌ	Àßº2Àpp ÀÊ @=*È?…X'@ˆ                                         ¤©¿×æh¿ğ»¿P@ûŸõ?ö!?D                                         Ê!¾P¿Õ¾É@F¿Å¼?>ı?Tbğ>                                          Ã!u¾'³Å¾—"¿kS@JÓ ?Úx?¼                                         ‡_¾æTÜ¾pÆ5¿7­ï?“–!?ÃxN?x                                  #       ççÀ/4‰ÀŠì^À†J9A±¬$@¬†ñ?4                                  	
+  !"# Ûÿÿ¡    ğA                                           p                                                        ! sç«o†î&jÊ¾¯KSR  pºÄüûU†>  ^ë¹Wd?      :º?      :º?  í0r$2+@      Ï@      Ï@  ıî÷™¸@	      Ï@
+      Ï@  ¸å/7Ö‰SA      Ï@      Ï@  áÈA­qÓ@      Ï@! ¦ğK–‡*jÊ¾¯KSR! XƒÚÈ®2¯Ê¾¯ËSR  E[V†>  ¢f¨›?      :º?      :º?  îïÛ1+@      Ï@      Ï@  åš¸@      Ï@      Ï@  HğÈ)ŠSA      Ï@      Ï@   7¾RrÓ@!      Ï@"      Ï@#!  é†ú>¯8¯Ê¾¯ËSR    ğØÿÿw  œ      ÿÿÿÿ        Ô   ñ’‹ÀÔˆäÁ^<BE+@äAihB   d            ÿÿÿÿÿÿÿÿ                    ÍÌL>ÍÌL>                                        Ô   Ô           d  h          h      h                    €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?  €?               hitler_arms_ref.smd                                                        ”   ü                        Pşí                                    lÿÿÿü                                      ô*àyü  ü  ü  ü  ü  ü  ü  ü                                                                                                ¤A      mdlkeyvalue
+{
+qc_path {
+"value" "i:\i-stuff\software\tutorial\3dsmax\export\csgo\hitler\arms\hitler_arms.qc" }
+}
+   $   @   Ğ   `    P     À  p                                                                                                                                         ÿÿÿÿ                            	                     ÿÿÿÿÿÿÿÿ                                              !   ÿÿÿÿcêuAGYÙ?T`JB¶º$A  €4  €¶À#“?€?Õ>Àµ¿Æ¡?  €5  €6H/˜?  €µ    `…q@ m>Œwx¿{·?       ¶às‚?   7   5P+s@ ğt< «#½0/ã?  €6  €µ "?  €¶    Ph@ àq=ëA? À?   ·    `Ùg?  @7    ±T@ \o>VR½?Àv?   7  €¶pÒ.?   ·  €5cêuAGYÙ?T`JBeêuÁæWÙ?T`JB¹º$A   µ  @·`#“? AÕ>Êµ?øÆ¡?  €5  €·/˜?      @70…q@ l>Œwx? {·?      €µÀs‚?  €¶   6P+s@ @u< «#=@/ã?      €´ !?   ·    0h@ èq=ëA¿pÀ?        €Ùg?   ·   5`±T@ ^o>RR½¿ğv?  @7   ¶ğÑ.?   ·  €5eêuÁæWÙ?T`JBÆ©Ï;”Ÿ»ÿ¼FŞ?ü<¿Ğ5×¼ìê>½$,?ÇÆ?ş¨¬>0”¾¼265?c~2½jkú:¡i=Ø˜?)ì¿2.0|½è<Œå?Ì«»÷â>|ëß=]I|?-ğÿ°°4®¯´<+ğ?š÷±’2ƒ®‘2ƒ<˜÷?h¤Œ8;^$¼„É= À~?Gä°lŠ>2Î†=ls?š÷]0V*@2§l5<ûû?ğrt»œ¾¹	>-…{?ŠÊ±á¾÷1wP+=§Æ?¬©±÷ÿ12«u<¢ø?•?Ñ<eÚ‚¾¯¼>BTt?Zšÿ±Hä¯Fd=Xš?yO¯Âú2{O<Äú?‚Ã<€“»Š©ÿ¼LÜ?!ÿ<FŞ¿•©Ï»Œ¢;2è;?>²ó<yJ½Û:-?5Q)¿²º¾Z2‡½ÿï&?JÙ1=(…ˆ»ü²=7É~?ü‘Ÿ/ó2ş‘Ÿ¼‘ó?D„;¦˜
+¾†È×=64|?Vÿ4±È ³É©==Ô?…-K±Ñx²UñQ=Ü©?ö»
+÷<¼Kíû=¼	~?Œòÿ0ï%.ï¥<ò?ôL—0iÍ|±bz;=Q»?°{<éÖì=zQ>%×{?´i/1_€2ñ~„<m÷?çïæ¯Å—ÿ1ãïf=Á—?x1©;Éäg>‚¬+>ÙŸu?TÆä1”Í 3=Ù<üè?'ú18À2½2}»ƒÿ?Å¬ÿ<KÜ¿¾Ã¼»“;¯
+T<¾	¼HY½ÜÔÔ¿)¯Õ½«ÜÄ¼ë•È?qæ?ş1í>k*²½s´á;[÷=  @3   €Åh=Ú×È<°´„>øe> €±   €e4=  ²   €4=îÇğº-¯£¼rI>şÿÿ°ÿÿ¿2^*>şÿÿ0ÿÿ¿2šmµ<,Ù1½5ƒ¾†{> @²  €2C]«= €±  €2­õ<0³½ù¾¿)Y¦> €²   €z+ä=    şÿÿ2äÏ<ı¡<Œ	¼W€½Ğ;H@¢	¼iEÀfJÓ?ğªç=üé¿¼ìùŞ¿ˆ¿Jşÿ>eÂ¯=2Ë¼ŞÂ1>    üÿÿ2“”½,û®¼;ªŠ¾•.]>şÿÿ±  €³Q²•=şÿÿ±   ³äÒ=ç»OA·¼3ª|>şÿ1   €ò%=şÿÿ0  ²(‹»=HP=Vph>6±>  À1  3l€=     €2Aç=@OÃ=¤/å>…B¼>  €2 €3¿Y=   2  3æ2ı»àËG@¢	¼“EÀg~?ª,½U	<€‚zÁ(¸~=¨{?ET<³‡SÀû¼’K¼8ø?„´IÂh}?LX²½â¬å=JĞ÷ÁÆ÷Õ=Cƒ´½ß˜}¿3y>B.êÄ=ÿ~? ½Èä>‹WA?}€¿Âç‚¾†'ñÀ·?'ÓK?¢z¾ø˜À‚¯³>/¶/=#wo?E]bÂÓ1J?Zà¿Ú¨¾©…ÁÒ¿î>1~T?²œ¾t¦_@”ıË>·ä=i?õ>bÂ¦P?¢)ÿ¾6S—¾JÁ.e×>;\?¤C”¾`P@“ıË>
+·ä=i?ö>bÂT@n?öíµ¾-{²½ÌD·Á-›à½`ş2½³5~¿p’WBµ²>,o?ø£½Í½ÀÉl?®¼¶¾×¾î™¯Á@¾ƒ¸å¼Öû|¿‡¤[Bµ²>,o?ø£½ŒÍ½À¦nk?f·¾*.&¾o—©ÁT8¾Éö‡¼HÈ{¿öx^Bµ²>,o?ù£½ŠÍ½À0~?éŠ©½Au®½sJÆÁş¯º½é‘½éG~¿(ìUBù›=ïw~?yU ½D>Š?Îõx?'»½n][¾­ÅšÁå`a¾Óu½Ÿ@y¿0øaB„ù›=ïw~?zU ½H>Š?À¦w?ÒÑ½½ßcq¾wË˜ÁU`w¾r¬l½úw¿š·cB‡ù›=ïw~?{U ½H>Š?!y?K¿>ä 5¾ãÁÆŠ&¾$¦Ô½d0{¿j½[B¦¸&¾ÍÏ{?$è½ê·ç@Çt?gU>ı;„¾Æ„Á>y¾Tí½”†v¿bB¥¸&¾ÍÏ{?&è½ê·ç@“Ìr?·	>’õ’¾ka|Áî>‹¾Şxõ½ªnt¿¢dB¤¸&¾ÍÏ{?(è½ê·ç@Æ1d??–Ê>Ê`b¾êµyÁjtP¾I¸°½ªy¿šC^BWÏ¾Rj? ÷m;é7ASü\?@kÄ>Ã ¨¾p¡$Á¤Rš¾Ü¾÷Òq¿OAdBWÏ¾Rj?Äöm;í7AööZ?U­Â>”,´¾RlÁæq¥¾'¿¾£Ÿo¿¥JeBWÏ¾Rj?—öm;ì7A²}?³á½#	<j€zÁ*=ßs?îø¡<¾iÀÕ¼‡a¼åğ?(œIÂd~¿É/½9	<¡‚zÁE»~½¥{?8T<À‡SÀ¼:K<8ø¿‚´IBï'}¿.±½c÷=0(ûÁ^+ê½äw½æ}¿b=B†Â=ŒG~¿Ìu‡=°Y>2Š5¿éş&¿şˆ¾öf·À}'¿7@?„¶Í½jæ?Á‚hˆ>åÔÓ=‡Ru¿ë8^BÍ‘N¿nÙ¿U’—¾5IÁ;Bı¾Ñ[?r	¾ë]¹À¸I¥>ìÿ=Ïr¿&”aB{I¿ÜO¿_Ç”¾–ÁF”¿§V?t3¾’ÇÄÀ·I¥>èÿ=Ïr¿#”aB»Ìm¿¬ß¹¾:¬•½ê•¼Á°½=Ş@½ş¹~¿àVB”“·>„Yn¿¦Š=CÚ@änk¿Á¿º¾Ó¾Y@¨Á<$>	%¼®|¿•Ï\B–“·>„Yn¿¦Š=CÚ@Nÿe¿ºKº¾¦¼{¾ D‚ÁhÍ>™Ğß<¨‰w¿5®dB—“·>„Yn¿¦Š=CÚ@í|¿b¹ÿ½BLü½	{´Á‚ñ>~:>½}¿ˆóYBpñ=Ó·}¿å­}=´p{?^zz¿ñ®¾Ğ'¾Tİ°Áª->u[)½Â|¿
+·]Bpñ=Ó·}¿æ­}=¼p{?Nuu¿¾CP¾HœÁG„>Llò¼G1w¿ê=eBqñ=Ó·}¿ç­}=¼p{?ˆMz¿:ù=˜ş.¾T¡Á	#>!àÌ½o{¿x«[B„å¾´Í|¿½¢ =~ÑÀ†Úx¿[xò=ŒnO¾¼¸Á(UC>DÔÔ½ãy¿YZ^B†å¾´Í|¿½¢ =€ÑÀÆq¿»÷Ø=’RŸ¾æ°eÁ%™>(Æî½Èur¿&HfB‡å¾´Í|¿½¢ =‚ÑÀ6øh¿Ãª>«Ú}¾/jÁ—A]>ùQ¾v¸w¿À^Båµ¾Ç%o¿•F?="p)Á:¶e¿T¦>Tÿ˜¾
+JÁ„(‡>*(¾¥t¿H¾aBçµ¾Ç%o¿”F?="p)Á%:f¿¼è¦>Ï8•¾Ãï[Á²šƒ>ù”¾˜t¿>SaBèµ¾Ç%o¿”F?=$p)Á¯}¿ìä½9	<M€zÁM-½Üs?*ù¡<<¾iÀ3¼Âa<åğ¿*œIB €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €; €;mI7¡]Â7"R8mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7]Â7ÍR8mI7­]Â7»!@8mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7mI7‰]Â7@8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 player/custom_player/kuristaja/hitler/hitler_arms.mdl default v_weapon.Bip01_L_Forearm v_weapon.Bip01_L_Hand v_weapon.Bip01_L_Finger0 v_weapon.Bip01_L_Finger01 v_weapon.Bip01_L_Finger02 v_weapon.Bip01_L_Finger1 v_weapon.Bip01_L_Finger11 v_weapon.Bip01_L_Finger12 v_weapon.Bip01_L_Finger2 v_weapon.Bip01_L_Finger21 v_weapon.Bip01_L_Finger22 v_weapon.Bip01_L_Finger3 v_weapon.Bip01_L_Finger31 v_weapon.Bip01_L_Finger32 v_weapon.Bip01_L_Finger4 v_weapon.Bip01_L_Finger41 v_weapon.Bip01_L_Finger42 v_weapon.Bip01_L_ForeTwist v_weapon.Bip01_R_Forearm v_weapon.Bip01_R_Hand v_weapon.Bip01_R_Finger0 v_weapon.Bip01_R_Finger01 v_weapon.Bip01_R_Finger02 v_weapon.Bip01_R_Finger1 v_weapon.Bip01_R_Finger11 v_weapon.Bip01_R_Finger12 v_weapon.Bip01_R_Finger2 v_weapon.Bip01_R_Finger21 v_weapon.Bip01_R_Finger22 v_weapon.Bip01_R_Finger3 v_weapon.Bip01_R_Finger31 v_weapon.Bip01_R_Finger32 v_weapon.Bip01_R_Finger4 v_weapon.Bip01_R_Finger41 v_weapon.Bip01_R_Finger42 v_weapon.Bip01_R_ForeTwist @idle idle arms hitlerbody_colspec models\player\kuristaja\hitler\                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             INDX( 	 )`            (   ˜	  è       .   Ô     7         Î‘     x d     &“    7 á*¬Ô¼Zİ ¬Ô¼Zİ ¬Ô¼Zİ ¬Ô                       1 0 . 6 5 . 1 5 3 . 2 ~ 5 0 1 4 0     ”     x d     &“    7 *ï€Õ¯Ô*ï€Õ¯Ô*ï€Õ¯Ô*ï€Õ¯Ô                       1 0 . 6 5 . 1 5 3 . 2 ~ 5 0 2 5 4     $”     x d     &“    7 ¦$¶°Ô•'=¶Ô•'=¶Ô•'=¶Ô                       1 0 . 6 5 . 1 5 3 . 2 ~ 5 0 2 7 6     ^“     x d     &“    7 NËJ|¸ÔŸ!h-ğÔŸ!h-ğÔŸ!h-ğÔ                       1 0  6 5 . 1 5 3 . 2 ~ 5 0 3 3 3     ı’    	 x d     &“    7 ç¹M.Ï
+Ôt4ñã
+Ôt4ñã
+Ôt4ñã
+Ô                       1 0 . 6 5 . 1 5 3 . 2 ~ 5 1 1 3 9     ü²     x d     &“    7 $xé¦ÔëLé¦ÔëLé¦ÔëLé¦Ô                       1 0 . 6 5 . 1 5 3 . 2 ~ 5 1 5 7 5     ²“     x d     &“    7 ÿ%g¢œÔ”…h¢œÔ”…h¢œÔ”…h¢œÔ                       1 0 . 6 5 . 1 5 3 . 2 ~ 5 2 2 4 8     ”     x d     &“    7 ³ ›+¡Ô³ ›+¡Ô³ ›+¡Ô³ ›+¡Ô                       1 0 . 6 5 . 1 5 3 . 2 ~ 5 2 3 3 8    °     x d     &“    7 ©p`’…Ô©p`’…Ô©p`’…Ô©p`’…Ô                       1 0 . 6 5 . 1 5 3 . 2 ~ 6 3 0 3 1     °     x d     &“    7 ë w‚ŒÔ,ÈÕtÔ,ÈÕtÔ,ÈÕtÔ                       1 0 . 6 5 . 1 5 3 . 2 ~ 6 3 1 3 5     Æ²     x d     &“    7 –Å‚¥BÔ‘6=JÔ‘6=JÔ‘6=JÔ                       1 0 . 6 5 . 1 5 3 . 3 ~ 4 9 9 2 5     Q³     x d     &“    7 A˜DÓwÔA˜DÓwÔA˜DÓwÔA˜DÓwÔ                       1 0 . 6 5 . 1 5 3 . 3 ~ 5 0 3 9 5     9“     x d     &“    7 ®O6p
+ ®O6p
+Ô®O6p
+Ô®O6p
+Ô                       1 0 . 6 5 . 1 5 3 . 3 ~ 5 0 8 5 2     İ     x d     &“    7 ´BåEÔÅiåEÔÅiåEÔÅiåEÔ                       1 0 . 6 5 . 1 5 3 . 3 ~ 6 0 0 9 4    Ù     x d     &“    7 Ìb.JÔÌb.JÔÌb.JÔÌb.JÔ                       1 0 . 6 5 . 1 5 3 . 3 ~ 6 0 1 2 6    è     x d     &“    7 6û¼Ô6û¼Ô6û¼Ô6û¼Ô                       1 0 . 6 5 . 1 5 3 . 3 ~ 6 1 6 1 3    À¯     x d     &“    7 hXuÉÅÔáÖ§	ëÔáÖ§	ëÔáÖ§	ëÔ                      1 0 . 6 5 . 1 5 3 . 3 ~ 6 1 6 8 9    à¯     x d     &“    7 …ÜûÔæ}IÿÔæ}IÿÔæ}IÿÔ                       1 0 . 6 5 . 1 5 3 . 3 ~ 6 2 1 3 7     °     x d     &“    7 Óõ—KÔ3ÇÓKÔ3ÇÓKÔ3ÇÓKÔ                       1 0 . 6 5 . 1 5 3 . 3 ~ 6 2 2 4 4    Ê¯     x d     &“    7 øÄö£Ô	ìö£Ô	ìö£Ô	ìö£Ô                       1 0 . 6 5 . 1 5 3 . 3 ~ 6 2 4 1 6                  ©p`’…Ô©p`’…Ô                       1 0 6 5 1 5 ~ 1 . 2 ~ 6       9“     p Z     &“    7 ®O6p
+Ô®O6p
+Ô®O6p
+Ô®O6p
+Ô                       1 0 6 5 1 5 ~ 1 . 3 ~ 5       İ     p Z     &“    7 ´BåEÔÅiåEÔÅiåEÔÅiåEÔ                       1 0 6 5 1 5 ~ 1 . 3 ~ 6       ²“     p Z     &“    7 ÿ%g¢œÔ”…h¢œÔ”…h¢œÔ”…h¢œÔ                       1 0 6 5 1 5 ~ 2 . 2 ~ 5       Ù     p Z     &“    7 Ìb.JÔÌb.JÔÌb.JÔÌb.JÔ                       1 0 6 5 1 5 ~ 2 . 3 ~ 6       ”     p Z     &“    7 ³ ›+¡Ô³ ›+¡Ô³ ›+¡Ô³ ›+¡Ô                      1 0 6 5 1 5 ~ 3 . 2 ~ 5       è     p Z     &“    7 6û¼Ô6û¼Ô6û¼Ô6û¼Ô                       1 0 6 5 1 5 ~ 3 . 3 ~ 6       Î‘     p Z     &“    7 á*¬Ô¼Zİ ¬Ô¼Zİ ¬Ô¼Zİ ¬Ô                       1 0 6 5 1 5 ~ 4 . 2 ~ 5       À¯     p Z     &“    7 hXuÉÅÔáÖ§	ëÔáÖ§	ëÔáÖ§	ëÔ                       1 0 6 5 1 5 ~ 4 . 3 ~ 6       ş¯     p Z     &“    7 ı±Ñ“Ôı±Ñ“Ôı±Ñ“Ôı±Ñ“Ô                       1 0 7 A D 1 ~ 1 . 3 ~ 6       $”     p Z     &“     ¦$¶°Ô•'=¶Ô•'=¶Ô•'=¶Ô                       1 0 9 7 D 2 ~ 1 . 2 ~ 5        °     p Z     &“    7 Óõ—KÔ3ÇÓKÔ3ÇÓKÔ3ÇÓKÔ                       1 0 A 8 2 E ~ 1 . 3 ~ 6       à¯     p Z     &“    7 …ÜûÔæ}IÿÔæ}IÿÔæ}IÿÔ                       1 0 F 2 5 0 ~ 1 . 3 ~ 6       Ê¯     p Z     &“    7 øÄö£Ô	ìö£Ô	ìö£Ô	ìö£Ô                       1 0 F E B 2 ~ 1 . 3 ~ 6                                                                                            INDX( 	 +)`           (   P
+  è       ~ Ô   7             ×     x d     &“    7 ‰|/„ŸÔ?*1„ŸÔ?*1„ŸÔ?*1„ŸÔ                       1 0 . 6 5 . 1 5 3 . 3 ~ 6 5 2 2 5    ^“     p Z     &“    7 NËJ|¸ÔŸ!h-ğÔŸ!h-ğÔŸ!h-ğÔ                       1 0 1 9 3 4 ~ 1 . 2 ~ 5       ”     p Z     &“    7 *ï€Õ¯Ô*ï€Õ¯Ô*ï€Õ¯Ô*ï€Õ¯Ô                       1 0 4 8 7 9 ~ 1 . 2 ~ 5       ×     p Z     &“    7 ‰|/„ŸÔ?*1„ŸÔ?*1„ŸÔ?*1„ŸÔ                       1 0 5 B A 5 ~ 1 . 3  6       ı’    	 p Z     &“    7 ç¹M.Ï
+Ôt4ñã
+Ôt4ñã
+Ôt4ñã
+Ô                       1 0 6 5 1 5 ~ 1 . 2 ~ 5       °     p Z     &“    7 ©p`’…Ô©p`’…Ô©p`’…Ô©p`’…Ô                       1 0 6 5 1 5 ~ 1 . 2 ~ 6       Æ²     p Z     &“    7 –Å‚¥BÔ‘6=JÔ‘6=JÔ‘6=JÔ                       1 0 6 5 1 5 ~ 1 . 3 ~ 4       9“     p Z     &“    7 ®O6p
+Ô®O6p
+Ô®O6p
+Ô®O6p
+Ô                       1 0 6 5 1 5 ~ 1 . 3 ~ 5       İ     p Z     &“    7 ´BåEÔÅiåEÔÅiåEÔÅiåE                        1 0 6 5 1 5 ~ 1 . 3 ~ 6       ²“     p Z     &“    7 ÿ%g¢œÔ”…h¢œÔ”…h¢œÔ”…h¢œÔ                       1 0 6 5 1 5 ~ 2 . 2 ~ 5       °     p Z     &“    7 ë w‚ŒÔ,ÈÕtÔ,ÈÕtÔ,ÈÕtÔ                       1 0 6 5 1 5 ~ 2 . 2 ~ 6       Q³     p Z     &“    7 A˜DÓwÔA˜DÓwÔA˜DÓwÔA˜DÓwÔ                       1 0 6 5 1 5 ~ 2 . 3 ~ 5       Ù     p Z     &“    7 Ìb.JÔÌb.JÔÌb.JÔÌb.JÔ                       1 0 6 5 1 5 ~ 2 . 3 ~ 6       ”     p Z     &“    7 ³ ›+¡Ô³ ›+¡Ô³ ›+¡Ô³ ›+¡Ô                       1 0 6 5 1 5 ~ 3 . 2 ~ 5       è     p Z     &“    7 6û¼Ô6û¼Ô6û¼Ô6û¼Ô                       1 0 6 5 1 5 ~ 3 . 3 ~ 6       Î‘     p Z     &“    7 á*¬Ô¼Zİ ¬Ô¼Zİ ¬Ô¼Zİ ¬Ô                       1 0 6 5 1 5 ~ 4 . 2 ~ 5       À¯     p Z     &“    7 hXuÉÅÔáÖ§	ëÔáÖ§	ëÔáÖ§	ëÔ                       1 0 6 5 1 5 ~ 4 . 3 ~ 6       ş¯     p Z     &“    7 ı±Ñ“Ôı±Ñ“Ôı±Ñ“Ôı±Ñ“Ô                      1 0 7 A D 1 ~ 1 . 3 ~ 6       $”     p Z     &“    7 ¦$¶°Ô•'=¶Ô•'=¶Ô•'=¶Ô                       1 0 9 7 D 2 ~ 1 . 2 ~ 5        °     p Z     &“    7 Óõ—KÔ3ÇÓKÔ3ÇÓKÔ3ÇÓKÔ                       1 0 A 8 2 E ~ 1 . 3 ~ 6       à¯     p Z     &“    7 …ÜûÔæ}IÿÔæ}IÿÔæ}IÿÔ                       1 0 F 2 5 0 ~ 1 . 3 ~ 6       ü²     p Z     &“    7 $xé¦ÔëLé¦ÔëLé¦ÔëLé¦Ô                       1 0 F 8 5 B ~ 1 . 2 ~ 5       Ê¯     p Z     &“     øÄö£Ô	ìö£Ô	ìö£Ô	ìö£Ô                       1 0 F E B 2 ~ 1 . 3 ~ 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ÿØÿà JFIF      ÿÛ C ÿÛ CÿÀ   " ÿÄ           	
+ÿÄ µ   } !1AQa"q2‘¡#B±ÁRÑğ$3br‚	
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚáâãäåæçèéêñòóôõö÷øùúÿÄ        	
+ÿÄ µ  w !1AQaq"2B‘¡±Á	#3RğbrÑ
+$4á%ñ&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz‚ƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚâãäåæçèéêòóôõö÷øùúÿÚ   ? ş8®-ÍÊº‘ÀÛ‚§Œ| rrNGBqV6I·icòîã<Œç¯qØœjÇ4Å,ÎçæùyîrİÏ9öèkT]3Æ±<k€Ä22>öíã8Èäé_ÙÎÉi$´è¬“¾ûÜı$”¤›‚×vİõ×³×m­èE ZÅ8’wò
+I·1’HCƒšèì´•œ˜"VX•ÌB(›ŞLŠ^BÓåÅK“,ÌÁU7(e\Õ(œ’ÄÛ-€FàÒ•* ‘ \À9=+¾Òtfşßì~¶MoS¸…¢²´µšK©GÚçÊO$Q¨gKxœ´ƒ÷"uÉÆjÂŒ'V¬áJœêT«VJ:qŠrœçRmB„Sr”¥©JëtãIÆã*“”£
+p¦œ§)>XÆ„S“”¥¢QMÉÙYìùMWPÑ4R+ÕÑQ²ÂÛ&†×ecp{Ü\cÌ;¼‹gBÎ8Ù¼aªßM®™o¯Ÿ*C!c•™åahÒ;@X•P~Î0qóu'Ò¢ı—ÿ h-RGš‡Õä®Ûä¶èï#¼˜9bú˜,Ç##9 ®F­«Ùö›şÓÓá²øK¯¾£$Âk¾Õ¡şö{P.¼¥fÕDFqor–¬ë<ÖÖ÷SÅÃks$\ëÓUaş±ä2¯KS8ÔÎ2ä©Ò…'WÛT‡×©áãS©:ÒJ*”G;4ÍëdÙÿ $¥Ÿ3O•(såøÕ:‰Æ‚›ú¶Õ*Ê”U­ÍÏhsIÁKÕo?cÚpëš¿…4«ÿ x‹Åñg„|âÿ 
+xcÇ¾¸Öü¯ø×T]B·ñ¸{8,íÎ±"i··–×7vÖ7-›‰%yWÎuÿ €?¼1eá½^ÓUğ÷toøÇUø¦ê_ü_¢øúÔxÏE³Óµ-CÃ·°hÓ_]YêiÚ¥ú$¶»f´Ë°\Ø˜´¿ÚGJ›Åßü#û=[h>%øŸáÄo‰6÷ñ<şÖ<IàOiş+—ÃĞêW_/ì4-:ûR{‹GMÓ&–á"¶Ú|wIumú[ÿ [ı’ì>*^j+×¾x6ÏÂ>#ø»Åz?†u¿ˆ1Gñ·Z²Ğü7â}B[_ŞÚ°ğ‘ ÚYioc‡R¸¹¿s4V·/ü×…ñ¯‹08YgÕnÆdù}l·™¬²§Ê¼±U0ãœÁÔÁgÙ‚Ãá©ç0….Åááˆ†k—Fµlê8La	<p,¾’˜ş%È0\oÂ0áüƒË°™ÆiáìÈa¡C'¯[‹ñs­Æ£†/Î¡†¡ÁØ¼º¸g¹~"3â•bçN3üÿ ‚}şÃjÏº·ÃmjßMğ¾‰ğşÙ¯~!ê~%Ò5Cm§“úÖşÖü)«O¨j/"IZk¶çÉ( E'Ş?ğSïø%¶û1øJÓâïÂ;Mü0”F­áh—Åwú§†MÕ¼)oª_x‡Å.ñÚœ7zŠÜ®ûK=sSArˆ÷Cûø«û0è	ü{yñ£ÀôÍYøÁtÒüK‡ÃºDTŞ$‚’ÏU[fšòM>	Q¹(ÒJ¶lºbÂyOÈßµ?ÂÍ{âïÂŸ|:Õ¼#¨^izæ›sêKoÇµ¢mŒ>vkm`Øùqœñ^msÏ=ÈóXbpy~KZ–
+–/(–#.z®(æqUåVœêU†"¬tÔZ¥?¹ûêˆşÍÈø?.ÇğÔjÊKÎ…E<N¦&xjxØ¨©Ò£‡75U…H'Z¬©Ï5Ó?ïø%ì›àmE¶øŸñ×Á:èøwñGÍÓ|)ñGÃìºœŞ ñœà½½Åµ±¸µ¼hÖmgÃ‹o­Ë§:ê:\w9…_ú0Ñ|=?À(4ÏüJÓ4Šüqh×Ö4™¡Ô4½_Ey>¹àËó"µ–£bò¤º†ƒs-¬¶—Ä43ÚÍ,zÇæ—ì"ñ|›âwìıñn[ÿ xÇŞñO†.fÔmo®ìôŸègá¿ŒM°†îæ[«?i–Ú3]ZÁ%ÊXkW¨[É2+~Ä|øMâ¯‹ÿ ²Îğïâ5µàY|)ñ)¼Yğû^½Óá–îãÁzşŸ#ø—INº»¶¼°Š}U›Q´º½·Ë5Ì7ÌP:ø3Ägy¦+K\kÏÛ`êR¨êá]ÚcÊ¥j0½/r¬©TŒ*T‡´Q„å4x˜•†Ê)G›Rtp4ëa0øš5¡ˆ‚¯J½Zy–_R0£¥˜àq”ùq¢êßZ…KEA{_ş9şÍ·ÿ õ¿‡ş.ø9y«ø‹Eø•k¯t«‹z&ò,¯?³.a†ûak=J¶HíV­uo}f†2‰ßğJO…ß¶$_ş"şÕúeÇ‚õŸE5ç‹</àÛë1õå‚êo³Á©ëğ5ãhÚ~£c­Ö©c¥Éöè'š{[MCOx‘ÖÏíGÿ pı—ÿ bÏ
+é?¾j—?´GÅÚ\hz?…ôMvŞïÃ¾»šiàøÏÇ°ÛÜØ[ÏÄ²	ô?ZêšœB8ôÉíôKağ|—û5~×´çíMãS]øñ9ü-cwoi{¥xGÂº&oá!&Ö4İ=mìlõidº–6×RŸR¿Ô/õ=GVÖÆ]óUò~g:ÆVál¾¿SqXì7S	âq8zJUc
+5#R¦+<:uœù7hò8¸ûHøØüÇŠ1Ù&"®KB¥9fù•<EVa‚xØ¬,çC	„ÄÖ£(Q¥J´ğî¤«*µ)N„jT“ıÀø)ào„¿¼ ü6ı›>xÀ>Ó¯¾É†‘ Í Ù¸Œ˜/5i£¹Š_\Õ.Å·ïuınK›İP¢ŞMu{Ç3ûlş¸º‘¥ºq&1¾_›¿İPpzœ(
+3Ó&¼ÿ ödğŞ·¨Zkë~*¾ñ82M‰¸±Ó-"X£i`ŒcM–Q%¶¡yöLãpŠB§ßfa'üò÷Å|÷ñoÄ˜|Ë6Í±´kÎ¦:¥:ğ´ëÓÂĞ¥nuJšÅÂªÕ!½®#½µYËUÇ’¡,/ÕéÕ«G^¥9âkV¢±I?¬Tç£IÏN*££J)9Ô£EÊU%îû¾ïÊz÷€¾Ù¥ŞB Ì­m:Ç‘œ»DÛ éÎóÜşF¿;|ğÇ[µñÄSj¡im¦Ùê¿h¹¼²Ş• {XÕeš4YŞ^ÉMÏ÷°ıµºĞ¡lG$. ÇLçİ=+ó[ã·‡¾([êå•4ÛM.ş;¥6R¼V÷+c,MÍ¾Ÿ-ëI/ïcH >s0E†G’hC|O‰š¸<n&…N]ƒ{—ÓÁb±xç‹‹„!ÏÕ¥¿µ­5kFÕ}œ5ÏïiôYzÕ²."Éébr¬sl<0•q™”±÷¡Fº©B¤ğğÀáqÖ¤c:’Të{*nN?¼\Ö_ÇïüÀqê~%ñ†»o“?ˆõ»Ô•TÉ.£s"•pC+.<ƒœšüYŸK °9È<ç¨#Œgƒ×©=:uâ¿¦Û/ÁQÜØëvDGrÖ²Ş[™âc’D$‹<”®å=Jx¯çÇ_ÑÇR½µhpĞÏ"rÃ½#~rkúWÃş%§›	…[ÇCJ›æånœ(P§“k•8B³³¼š²kOÒñÙE*P¡
+0s¥.7òJTèáèR§-T\oNœM¦”­k¦—ŠÜiá9#© ŒzcÃ€p}k:ÖIl.ã–2Ê²!å$Fa• vàC(ãŠô[­?©ÛÆN:vàvúçöÎ^Yí$‘ŒĞ äğ>™Ïq_±à3ˆÕIJji«5túuJıÏ™ÄåşÍ¹F“¶‘ÒÑ}Ûnï¾şGg¦#3ßG•]¶óGBÉ9!™AûªÄ«0R gŒß²—½Ö×pY;YNr„¡WçÎ8ÉãÖº}.âéí¡Å"Àì·–ÛÔgcÏ~ƒ‘“™h‹%ş»8V¸ÒDw nhÜÆy`pqÛŒ^”ùÜÚŒ×¥éİüÕßÊİUøyšOVÔ´ih×2ÑßU§ácõköÿ ‚Í~Ñß±Å÷†şøºæëã¯Àˆä[àÿ êsÂQá:!Æ¾ñmÂÜÜØÛÚÄƒÃš¼zƒå¢ÛXE£3µİ~¶|[ı‰àœğYÿ ë?d¯ˆ:gÁÚJ;V¿ñV™a¦C¢ßI«\(”ÅñwáT7ÿ h[»—1·ÄO$7÷2Ks.©âymšÍ?»¤xoôë‰"hãŠíLÄ¡*ªJqÆ6W`Idñ]†~ xóáoôÏˆß
+<a¯ø#ÅÚÜwzWŠ</ªÜèúµŒ±¤{Œ7v’Dæ	ù6²ï¶ºŒµ½ÌRÁ#F|¬VE	â~¿•â%”æ<­¼M†ÄÏî3¿uV3¿½(Æ3½äã9{Ç•‰Ë!UÊ¾O	ŠæK¹*{¼ÏÚÑJÓMï$“Níİ–?l?ØKöı†<jŞı ~_èv7—SÃáˆ?™­ü9ñ´–"çÃ^+·‰-e™¡<Ú&©™âM>7CªhÖEĞ7é_‚~ÚØ|Tı‘ü1áÏÙÓáŸ‰?fÿ |øcâŒ¿µ¿‡º‰´ë½W[Ğµ-cÇú«ñCU7'FÆAPÛÁ©Ù1ÒmíÂ4Q?è¯ì¥ÿ ÓøSñ×ÁòşÌßğT†şñ_„¼Eo‡sñm<1o¬xOW0Oñ+ÀĞZHt{øeıô^2ğL[-.Œ7#Ãú0·›Vÿ ãÿ ø!—Áßè_Ä/Ø§âÏ…o¾ë"oxwÃSø_ÃÜÛj77×’¯…>$]ëq6½¡§Ûå¶²Ò5Ï´êV)mh_[Ôu3I:oäŞ-K?Çäøhã*bòºÙn‰pÕå€£c0Y„3ÌeX|ó/§‘f™f:YçÕ„ó\ŸUã(G^u¥…æÃÇŸğßxŒ|@¥’åYu„É1p¡Å¹ME™fxü§&¯SŠxqdx!†e€Î²5‡ÎøKfœ<³ØŒ¾eŒxŒE*o¯ğÓá·ÁM;ÁŞøiã}?Â6ßü!ãOx×ÄöğOì×ğâlšGƒ4Ïˆ:¦›áÏ|Kø­Ûx…ï5½.ŞCa,p];JxRÚWñ4œ×ˆôV_¾×ÿ fO‚ß´?ê´gÇ¸¾,ø;ÄŞøãxF‹ÄÖr|?ğn¡qñBËR—KÒ´ç²ƒû-4ÇòRãrÑ¥ûúø"¿„4w]¿Õ<yy½}5úêVš§Â½{{›ë¡stl´oSÔt­.Eº[%®ZÛ;Al‘ÀU¨ÿ Á+<¢ŞR/Z	b†Kx¾ü'[Û6îö^½¶’X‚‘çIÉ6ç{†™ÎGó¼7şÔ«‰¯Ç¹†m¥›C<>cÃ<W†Ë±Ğ¡W:äÈ³Ü–m€Áâ£„Y¥¬Ê£«˜d´1¸š1¥ŠÄ`i]¡_UóœÕÆå9õG›áóÈ¬Óˆ©SÈóŒW‘gù]Ä´2¼Ë‡¥ŸàåK<ÂÔ†7Èp™x<6?—Òü	ÿ ‚†i_ôoÚÓâmÂûoØøXCàùŞÃÀGIÿ „ZÃÄ7>Ğ'ñ]›‚ï£[˜<FúšİÛi„Z[^yğÄˆ¢üV¬ÈÁ‘™YNU”•`GBÁzƒ_Ñ—Äoø%‡ÂıwQMOSñïŒmç¶´1[øwÃß|)§ˆc¹¸¹tíÂvÖ1{©wÜ<m;Æ"ä)a|Vÿ ‚f|ÓcÆ§*ÁGúo…Ç]Ü°_
+’m$¶p;ú×ô‡xıá~YÂœ5Ë?âÓ“d™nU_ŠÈ³¸ŒmLybk×©‰j¥Zêœg):•Á	U«(J­_Şø#ÀŞ=á
+á>ÌçK1Æğïå&+2Æçx\^/[,ÂC,f'YV­ˆöpœåík4½œ%^¼©Î½oÇëxÁF'«ÛN£õúzUÁÛ?çôşŸ…E=û~<n=:ñ•-Gÿ _æpI$ìÒ·ßeÄš"7tã?‰ôöã<ı}«êÙ‘£?ô´pYZÓP_ŸF Ç\}Ñ:úsŸ•â8` ÉÏ÷ tü¸äWØ<	ãˆg>8²¶³±·²²½])µ¦5Û«Y-í1²5ÛY%Ä‘½Ìácqnd”m'ÑX®Î°q¦ñyv/	ÊJ•jpÔõQs“v|ªÍYkêdaG;ÊjTæPeƒæä<ä¥^œ-¦¹¤ÜÔb¯ÉÅ]'xş±xKlâm¡ˆŒÜlà3±–0H'8Ûx
+ WÔşÓ¬[F’û·KpöäGÏks>­5ÄKc-ìntû¨/¾Îö¼ÑÜiBn š#h¿è·ßÎdlcğDzıÜIqwâ	­ŒK{buqIg¡kQwö,Ï!Y<‘.á¼§t=kâLŸ…$´—Àö1ërWíoâI¥’	4mZlê¶éŸÚ²Ù¬…Ãn…b"]€ÿ  ñ&OŠ.uáœd˜z•3¬V6¬iç5pÕ¥ªj¸<9ĞËåV”)JšxAóP¤ªMF¬©Ó‹ş°Áfª¹S¯•f•¨×©QV¦òõ(Ô§M;QjXÈ§%¦–åN>ôa(şˆ|Òağ½¶cñƒÄˆ¼_+[èŞ3¸Ó-ôı;Ä×wY£ğÿ †ôd–ßGñ-¥¸0é±É©x–ÂÍµË'Ô¤·×-´/×ßØ¯ÆşğÂëû=j)ÓQÔ¾;|v±ğş‡.‡}¥ëş*ÕäøÃãËAğ¥®©k¥Ë©k6Ú\Á,vs*è–šUıåıÍ¤^_Û~ øKÅ+¹Õü;aâ+†“¥ÊİÙøZÆM;Æ7½ßŒnšÜéğxJ[nÂşIcøğıÆ—%®£cj×Éggìéú£ğGLñ·%ÏÃm;ÃÏy¤ë¿¾Í­xëÃ-ñ–—ñÇâ÷Š!øŸ?‡ï´ŸØh^Ô®¼ouws¨OukgwâÍ¯†ïµHÕ,toÌßÕÍ°8üu\Û	<Ã3ÄäU"ÍjG/|¯›Â”8~®“ËpUªb!ËÃ{=Xãa—Æ´Ô|9Ì=®]—åµa¥†¥G(ã³a¥„Ã×¡B:XéÏR§‡t]J5ëV¡V­)ÓuÔëA×ÅşšxªóÄVú/ˆ/> ëVš×ˆõ6ŸPğ­µ¼köoøl­¬¯à¨®Ô¤zİı…Ø/¨øµìlµBlÒî'I¶Uù§Â¶>%ñÁº·°²uÒUŞÕ/â°[iG0G!Bn^İ¼ÈDë!HÒ—`!ë£ø‰ñÁŸ<sñö°ø›àiÖ7—Ù=”Z¶‘ax¢ÑÑtÍ;C½ÕµíÅZÄ±´Ò/G‚i&6iòym%~+ümÿ ‚Äkÿ bÔü!û0h—¼!6œ:Öí­Œõ;U-	“BÑãk7Âv®…LÊú†®#xä´‹•h“érßs·ñÅ_ªà¡e–ä­ÎOB«xoaˆQ¥‡ÀBt\iÕ§F¯
+R¬éÕ¨Ü¿=á~-­‡Â¾à~a^¥Jø¬ÿ 5¦ğÙF^Ô!N¬°˜t•l}UÊªrÁRÃÊ¥¤¡SÚIŸ«ş#øƒû:~Äpx“VñOŠTø…ã[=<ßxoMû>¡âfßO7o§Ek¢G CÒŞK»‡}GWº·†ñÿ K¸hbµò‡ö†ı¶~(şÒ–Z·ƒcó|ğ¿TI-.¼'áıJòÛR×t÷;L'ñ%›XßŞÁq)s¥Y"XœÃwizQfoÎëmCU×5;­k\ÔïõcT¸{ÍKUÕn§Ô5ëÉX™î//.k‹›‰—–iF9%Qì^µæ?»´ôùyç¦r½Éİ}{œ|§x‘˜S¢òìšo ËhÉû*9}IÒÄÍŞRS¯„ã]ÊSnr)Ñ§wgÌ’ŠûŞğë.¥wŸÍñ>Š’«ˆÌ3*4•K(òà²îG†£
+i*t¥Rj±„b ©nbxöLø©jö>oÃMÛÏG8—TN¤şïPPyÉÈ<õÉûağö[ø%¦éZrÛ|?Óàbˆ¹Kım~U\(Ôñíùs_|Ò„ú½³•BÇƒ³ı¬ 0ês_²¿¬•—KƒFøÁùOH8ÀÉwã¯<b¿›s¯¸ª­^GÅüãÌíç9œÒnM=%šì­o3îs<³/Âå˜Ê´ğ:s§BrS§…¡Nqå‹•ã(RŒ¢×.–hûÿ à·Âÿ 	øB°¶ğŞ˜†Ô<‹÷sn2.îİÄäg öÏ9êkÜ¿³”vÏâ ÿ ,zÿ ¹ş·	af \}0puÈ Æ8O®ä[ddsÆ{úã×ÿ ­_Ú	ãş¹Á8:˜ŒT±Êµ«V­V½IT­7Q¥)ÎrœíÚòm¥äq&¾+6ÆW¯V¥YÊ¬ÒIÊ£PJŠ0R”¤ÔaFMF1²JÖ99Z	ßá<dO××Å|Wñãàß€µ±­ªxvË¦ßÌ×º”EÃs÷`½‰1’z/§\q÷åÄ!#aÇ*zî#ô=ÿ ı]ñó¯Åëd:$€…,¬Ì¼}9¸5ùïÒ9­—G*©€ÇUÂ×Qp©S	Z¥šT”Ô\èÊ2k–RÓ™v¶Öú. Ä×¡á#
+•#
+õáJ´!)F5)É5ËQ&£8©Ù¥+Ù««=OÄß³§Â+í.øKà»	IYp$¼Õ› «wj<òO_|Wá×ÄßÙwà½–¿ ø{£’V`YõÉ$“÷Œ	çƒ×¥Hÿ %ÓîÔ…ÆøÂ?„ŒŸLó×¯s_4Ÿ+SšUUÃI f*ÎN1Çİç¯tç5üıø…ÄTåeÄ™Ôbäİ¡šæ
+)_ow¦–²ùu?·pÙN
+¦‡´ÀàêOÙGšU0Ô'7+_YJ”›oUvõêÏÌ[àÂk}Ş_€|<£æÁk7“‚01æ;äd`qšñ¯|øyn²5·‚|6‚4r¿ñ)´a¸+wDÄr0{N+î]~Ô†qÆO_•H9ÉÂäc9Ó<xWŒ Óïä å²”ËCå“’sÀ$ñüWôq¾{‰­†ƒÎ³zÎ­Z4¢§™æ3»©8GU,s¾²µ¿#ÊÇäÙ}8Î_PÁÇ–—»„Ã+(©=ı†ÖW»V?4ï~^Zyj¦ÂÚXËÆßf%)v0°."t!2@Âç×|s4ŞrİÁp@‚Äp Ü@$|½ÎI¯§õKYGF,ÅÉÀÆ ;¹ã$ägŸ~s^c­Ã*#C½”ï'²ı2sŒÀ#Øè6ObeKMÊ2«ÉN'eË~X'kÉÚòRêú&ï«ştÆåtZœ­+Îs^üš§MÎRIè¯%tÕì¬Ò_<jŞk‡)öÄZ $HY‹8ùwüÒüÙ {I'•¹ğêZ….Yò»Xù*àœó$‡'*s×½zíürÀIá¸àç¸ü¿<p—É#XÎwÜB8ã¡ş˜¯·¡Z¼ÔcíŠWiòİÉ¤şÍö³v¿T.Xzù®íhßYnßº®ï{6Ûv[ÚÛXòMGD·O9ŒY6>P¹ ˜m99äóÜóéõßìqÿ ı§ÿ `ÿ G©|ñ´·>½½çÅ	¼VgÖ~ø0Ufi´fÑ5gEP!ğİÎ“­±Ã=ÕÍ‡›e?Ìº”9Y¹;K}òÙ `ä£>¤õÍp·ğ@ÎH¹Áãú‚}ÁÅzßW£Œ ğøÊtñTj¶¥N´#(KİşV´j÷Œ¢ã4×4g®y8å†”gEÓ„àìššrRÒkTï¯»tãfªIŸßì{ÿ CıŒà¤v:_‚<Jmş~ÑsAªxÅ:•¥µî±|$|:ñsÇi§øÖÑßsÅ ^Agâ$O5×Ch¢şĞoKøéğÅ~¶¼ÕÑµÏ¢³oO™m# ªRÔ%°<ç1{=ÅT\ï`•şuÉ5­ÌWI$Ã$sC<.ÑKÑ6èåD*é,nªé"ÈÁYH8¯èöÿ ƒƒ~:~Î/¡ü.ıª­µŸÚ'à²$:l&æ)ş1x;N
+°#WÔæKoˆu´[³¥x¦îYˆàñDPG“ÿ 3ø±ô`á~7usœ¢öf}Ë)Ç„8bªJ	¸ÃéaózK•EGìsA(ĞÌªrÆ™îpˆ|UÁ.8lg›ä“©Ãùj“§Fno*ÅIÔ­€©g)F”\ğ³—Ç…ÖS¤¾5!çèÇrpFy9¶|©âˆ—Ì™p1“Ç›yĞã95û{ÃÙ[ş
+ğâ_?±wÅ/
+İ^\ }SD³’[K-VxÌ­£x·Â“Ãˆ~k»ƒ|’é‰g:´ÚØ\ÚÍûş>|køiñá‰o|/ñÃ§…õˆL¯
+_"Ég©Ú	^8õ#Rµy¬5;	Ìlb¹²¹•T††eŠxå…?’jø{Ä¼Œ–7ÂÉÑ¥SÙÃF^£^êU#R1­„¬ÒÖ†&—üû«^.3—ôKÇÜ;ÆT\²ìCÃf‡6''ÇrĞÌ(IYÍÆPÅÑ‹½«á]Hr´êS¢ÛGò08 zuÍhiÚeö«r–¶Ò\Ìä ¨2wgnŠ£«1 É®§Ã~¿ÖLwY²°$3P9"ÏÎNİŠz¾á°ûö…£iº-¸ƒO·H²›!æyOv•ñ““–¸E$íQ’ú·ˆÆBãN§eğÇüMuşêÖûØşU§…©5Ï;Â[¦¥+ëî§ÓÍü®døá¦\YİëI©©Kqo­Ğö±İ\ËVĞGÇİÌ³<qF¤iX$i#'í-THtİBÁ˜+éÆÊ+•WàYÜ¤Í%BÊ†Ş9"µºŠxÑ£½¶¹™­Œ72|ãoâkï{›ã§Ç¨A.”o6¤†½Ù“ä¶»ŠHá„É3Ã$³E©H„UÕş'ÚØŞHkMV×S[{­VKƒuíBHü˜US(âDiÓÈ‘£M;ÊÌkâó9fÙ†6¶QŸÔUŒ~Ù&£Wˆ¡:4©ª’J(Ñ”ß,!'Ru%íª¸Ó¥/–/:å¸8?cÃØ$3^;ÙNOŒxŒ4¨ÓúÄ ©Óú·°ª£‡¡9â+Õ©íªû* §úá~Ëì‘ÄÓ S†Úxà–Ævpsê:f½ßÂzåÖ½-–ƒ¤Yjšæ¿©\ÛXiZ?‡¬.u}sQÕä‘NŸ¦ZEqu}{=ÊÅ%¤A.XbPc]¾‘ûÿ Á1¿k?ÚÆ>ğ_‡¾|»û=ä^'ñ¾â)|mâ6@²	|à™õ:õíî¢ØÖúî¾ú>“$2Çw§f50ŸÒŒß·§ü_ş	-¤jÿ ¾økIøåûGZÛ¾¬ÛøoS²Õõ+MV1IÄOŠ-öŸáˆâ˜2ŞxCÂv×7Ö³#G{ iòÈ÷‡ùëáî/5Ï'‡t':Ÿ]£š?ìÌ^Wƒ„qq•HP/ií=´¥ìT•éU”gB¯ô.cãY‚£Z–M†ÄæY´š–—³T°¸lL’Œêâ±r‹¢¥Í'Fšu%+EÊS¿§~È_°—|+¤Xü~ı´õ?	|,Ã×z³x2MwL¾Óü/¥Û3ìÕuÏêBÛHğÔ·éî¥25Ö«“û0_i	i¶ıª¿àºÿ ş
+Øj¿	a
+i_µÔ»Ö%»ø¡«C{oğÏIÕµ[ë›ıWSĞ¬$xu¿ˆ¥Ö¥uw{.§uq¤è2]J—°İøŠÖI-ÏóOû]ÿ ÁHÿ j¯ÛŸX{Œ^;–ËÀñ_µÎğ—Á¿hĞ>èQ«0¶gÒâkjp‚ÅuÏ^kª4’GiqgfÉiÍÇ” cP:r0AüÂ¿UÉ|1É¸~œñxŒ6b&ãàğÜë†§FîjNr“T):“å£‡TiJS©:õqÕg*ÏòÌ^cqMzoˆ±óÅaèÖ•jYe*Y}:õS­Vq–+(Ó„e^´¦İ8B8Ğ¡Q_k|Køíñ‹öŠñ´>øÏãíÇ~%¼Vİky³Ó •ÃıƒBÒ`éZ™åéÚM¥¢‘»Ê.YÏ®|“É¾º´$bOT3•'ı@\öÉÅ|™áü¼P? ° tÛó`çıïlœWÔ?á¿]JßQ·³º–ÉQâñ"akL›§b³ R6i@s”ë_âmcxk7ÀáéûĞÃJxz4 —ï0ÒUcB)$Üa4’J÷v»zşÂN0ËªÉÓÃÑE‡—ÁNœ)Ö%–‘I)8ŞÑê´Õ³íİÛXnÂH9ÜäztéÏQÛİ<=ıÑç€¸}0;œä:?ğÌÊÁ:q´¯>ã¨=±œı8Å{÷‡ cÇÌ[p1·“Ø÷ôã$×ù‹ÆyŒàêÇšWWkŞµ¬ÚÒí]êùé\ËôºMßfÕìŞ÷k¥¶±öWÁ{CÄÊHİİñF8Æxôõ ôú×ğVE7‡Œ#&Ğ2^= Ï\×åWÂ€!6äãªñ¸cF}ÏCüu¯ÓŸƒwÀgÎß.9õÉÉçƒÓ½~˜ãfñ¼¦×µ“éİ´ôzëµôrxgÔœò¬}4•ç†©»ò¾Úì~¸øbP4ëãæ·„œŸºqÁúúâ»4¸;zç§(ÇÓ=³ë‡½yWƒu%ºÑìÊ¾]"U °'ùq“œwÏ¾1]ÊÜœpÙ89lãŒä È g¯õG†œw,³&Ãác^pöPå²} ·é×§ºŸÀÆQÇâ¡8¥(b+&š}*Í­õÚÚÛSNæ|‚	äƒÎ?—N8?_­|õñnãmƒDH;ãfäœÏ#Œ8ë’@ï^Ù=Á+÷ºü\tÆsúş}:×Ëßõuy$e%#ŠXŠ†Î	ÜOŞÎAæäŒ|_‹|`óˆĞ„«9:sS»wvåšï§­–×zj}7 å³«Ÿ`”#g?i&“Ñ¦’üv×ôGç¿Ä‹‘åİE‘€X…áNN?ÿ õëòÿ ãU§š÷'™!sŒ“Ó Èü³Ï\ú9ñ*ùEÍÂc¿q\T\Ì×ÄÆxó÷â¢yÂàõñ.qÔœgüx±_‹e‡+^ô¯¥šjßÛŞòü4ÑÜ¸H~ê”m´"›{±ÿ ƒo¸ø#_€™9Ú	ä//O^xíØcëó¯Ä41éï-ºiN	Á8
+ÀŒF‘OƒŞ¾–ñ1Xšäev‚ø¯Şàôà>¸ã'¿Ë_şÙx#û%µÌñ@XÏ$<Â-äî2¬[
+¬_o– |Ì3ı;á-Zù{”Ò‚œéÓÄCV×—%,?ïe)Ûd¥iôNKvÕ¼%”0Ùf.sœ)^”©EÉ¨Ş¥e(B)¶¯9'+E=lÚ>qÖb†y‰†9Á“×#óÆp|‡YİŸpÉ,Ã$p=±Æ	à‘Œò==‡U•X2î8e`FÁÇ$pr1Û<çäíÚ…t_Ÿ8 ã?@}‰ÆkıÈ1ÎÔÒr”ôMu[+¾‘Z©t¿Ş>c°´Õã'{7$µ—âıØüú]¶Ï"ñòĞ•LœŒóŒ`üÈÀ cÔó]R@‘É!1ƒ=}pÇ>—«ù÷rîìä9>œôÈÈï^[¬°f1rB/¨ûÄŒƒôˆ%½~Ã”Õr„wkŞ“şgöšß¥•´Ùm©òX¼4c+/³/i=ov´QwoFùl¿–ú]œeë©†G8ùÉé×y9èrqĞŒ'R!£fçåaôãÿ W Øõ=¦¢DW•ËP;ç'ü\sÈW!~‰”Œ¯r×Û#ö¯¯ ì¡µå>mµiÙtÓKõßä|î*“–©©F6kK(ËÉßâôV{N¢Ená»gnÇŒus\íäa£ß™AôÏéÁükª¼ŒÜàğI=H ~N}<f°dPÊë1·¹§çÛ<æ½*nñ•¯xIïİYémôoï<ëZÍ=S½–»j“MzÜïşşÑ?fˆzwÅ€ß¼IğÛÆzw–§RĞ/vÚ¢È%“I×ô™Öm'Ä:,ì ¸Òu›+Û	¸f€È¨ëısşÇ¿ğ]¯ÙƒöÊğÆ™û?ÁF<áO‡>2Ô:u‡Äß.døMâ-FEE©OzÒ6·ğ‹Ä2³(kÓ¨]xlÈ³\¶½¡Á4:J’«$¬÷ÁÆ;ŸO¯Š6ƒœ“œx ‘ô9 óè8¯>áŒŸˆ°²£˜á©ÔœéÊœq…?j¡%ğO…zK­ğ©åtß¼®®~ê½*•(bğòL>/RTq4§c*u©ÊN==æ©YI©~àŸø&Gíˆ–È‘xÃÛÂ"`øóÂKª£ŒjcÁÁÎÏZHàš¶R"©øs  dŸˆ~#¹#T$ğqƒ##œ×ôÙöÜÿ üˆşKGÛG÷Ïëÿ Ä×ù¾3ë|—Ãçv›o"Î;ZÚq"v?ÒÙ}8[æ\[òÌ2ÿ şsÌkÁ+?kÿ jºF—ªx{ÁşÒ%½oµİOÆº&¥k¦@øŞÍg¢Í¨jw^Rn)¤²É!DÌhZEş¿bØOö ı‰ô«_ˆ·üSûL|~Ñm?´l¼Kâ½ÃVú~­@lP|:ğ¹­§†<=t.~Å¯ø‡SÔ5»I\[kz±·Ø/@ş#øƒÿ ÄÒ›ĞNw~v?ôäÇ}7ühÇÑXz™wÑ¡¯=<&Sœaı²{Â­Hñª¸5tã”âÓ|Ê[˜Ÿ¡ï‡ø˜{9giN­(ÑÌòÚ|ë_vRY#›VviJ)İŞçç?íëñşû_¾±à_‡^ğßìçğ.ôOg'…|ñsÃMãé’îŒ§üwm{e}-µÔ$¥ÎƒáÈômHe’ÏRÒ;~*Åÿ “ıµÆCx#ÂY+ù(^9'şßsÆqÜµı`5ú ,ïµ@%‰È
+ $œ Àœôä÷5è:÷ÃßøcÂ:õ½>ÚÛBñÑÁkäê·š›=Ö›i®i–#Óàg¸Ğ/µ}
+şÏZÓìo„w2éÓ†–8®"ıÜ—éã¬2¼Ç’pg‡ÿ Ù™-*³LN‡sw,1=¸ª²â…Z´êM>i/¬N%*Ó†Z>&'è¯àşGÉòœ_q×¯C'Á×ÍrØWÌ±zµxR_ØSS:KGZ¥Î£
+3«‰œ0ÓşGlà”?¶t«'‚¼(0¸Àøár7’r/IÆ0>•ê^ÿ ‚\~ÖÉoı«áßXEŞtñƒy3ÛÈ¢¼T84Ë´ä…#Šş-´-vëÂZŸ¢·ƒş#ÄZ7…nîÚê5ºşÜ×4ı[T²‚+e’e£^I5Ñ*ˆşL`;9)Ñê ñ¶àüPÔ4/Á^1¼Õlt]^ˆî€ºÒ/î´ùíõ(¡,úl×3XİÉ`“ñy¼/±Fó¦gÒ"¾‰\Á3Ãarl/bkQÈsYª&?<4¨¡Å5'-\U9QçtÜ©8óW§B“UIÑ×Áì.+ƒ\aŸÓÅâóü_a¨ÖÍrØN¿eø8æ¼—´È©Âxê8*±®è©şòQ¡:ÕW±?<ÿ óø«áå¯¼¤jw1`ù·ş*Ğ®"Wã;,ã¸¸$¾bJã<×¿Çû(|iû)¶_i ‡ËE_èÊŠíÂ*ÌTt@ c«õÊ_x¾ËÀ:?Äëí%¬¼âvóÃº§=Äi>­}§Û½ÅåÅ¥MÁÓ"1Oo¡&Èn.mçKa4h%nz+ÁŒäCÏÏÛ9ãŠüsŒ>˜¾8åUá…Î¸_ƒrüN'ƒÌiáñY&qJ´ğ9¦b°8‡Mñ¥
+x¼,Õzj¤iTöSŒ§J—<Sôr¿£Ç†¹¥ØÌ›ˆ³ìÒ†Ëjâ0ù]ˆ¥O1Êñ?UÇá}¤r¨ÂUpx¸Ê…_fçN5c8Æ¤ùdãù¹áßÙƒã5‚ ¹Ğ´¡ÁS·ÄzS p û²üğ=yìúÀ¯‰–RÂ×:VœªŒÄêÁóÓ#äsp§9Ç\ş’xsáV»â-VñŸâÏ‡?ÙŞÓtíOÄ‰îb¸Ñmu;¨,mMí¸Ñ™‹‹û˜¬¦¦åc¸pìev«áßë>&ñDşĞµ/j7všf©¬İjñj³/‡ãÒô]}oSº[ùlRáÅ­¼©"%‘”ÏÄŠê¡ÏóŸñ—ŒxœFUüÃR¯Ä¸a‘ÑÁæ8D³*“xù_O	Ç8É<57—fêâê*8,=Lz8œe
+ô¥Hö0ø.§O5tx2öyW7©ŠË³<røAal±RÄğÎ1­8ã0•)áàêbkÓÅP«GZXT~	àÿ 
+ø—G«tòÂÙ{lã# à.sœäà:zŸ¯~øŞ˜–şD@Ÿ4n$bà¶õÚ¨@Q„*ÛâX Üı§ÃRûJñ¯£ø—Á ƒÂšCkºÍ®İË©C¥%İ­Œ—°ÚßéVæ8nom’o&W‘<Õ%áQxÁZÿ Ä=a´_='(§¸¼Õõt½2Ûí7vÚ}Œ3_\)nµ-Fî×OÓíÆeººœ*¨D–Xÿ Íx«ÅÈçy.ECòœnoÄ”ñø—×Y¤sZXJøŒ6*¦–q^a–Ê8<F½S«™áÖ¤91‹©KÚç[/àêùnk˜TÏëÒÀe2§G5­Š£S,«Ñ§Z„18|nQ„ÅÁ×¡^Z¸:Úæ£í9f¡÷ïjh°$:œº’ \a,n%dv2xÇH8¯VOÛáûV°?îxÿ È=1ØcÄWäâézšk‡ÃsÚÉm¬¦©ı‹-•×îßSû_ØšÚrÃ14wCÊ‘òml‚ è/Âßk¿ïşi°ØMâÍ6ï\²¸µá±7‚òâı"½•&l¥KwqJå7´jÅ‡Íä:xÛ‰­…ÀğïåY†#Ä´ø3	‡§—fòÄâ8¦¦¥Ãñ¡S<ÂUYœ°Y~6²ÃT§I¥…«	T…hûù¯xá|«bsÏ;Ì°j9dóìEHæXJxxe0¯F„ó7(åµáõHÖÄĞƒ¬ªN/ÛBIJS_¢šíğ±­ä—³JÊÀnÒïúæçÏS’kæüyğî¼×&Ôİ±ÈS|&wthğ¹Î@çğùºÏÀ+½ñeÏ‚M“Mñ-¤Z´—z~¬Mƒ[®¦Şj·¾fôn~Çe+Û•VK‚còÜ£‡¬m7Ãz¾³ x§Ä¶InÚWƒáÒ.5§–ãdèšæ¢º]‡Ù`*ÆáÛ4AY“-Â×Ÿ[ÆŸó™¨âø.„Üøª¥,·9ÂW…NÂCÅÔêáñy½M
+Ü;„«Ùô(Õ¡hS¯5*kĞÈ|$ğã‡ªıcc'?øHš«[ƒÅAÇ<¯ì2YB¥§:y•uìğ“§R¤*ËíÆ6“«ãn]eäk(Co.y"§QŒ`¨<qêyæ¾dñƒ<Q¬‰~ËelùÈµxùÚq÷‡QĞtã¯Ööÿ ¼q©|?¹ø›§èí¨xJËT¹Òo®¬å[‹Ë	,áµšk»Ûh‹N_¶C½Q$QÊà\•£gân´=Z
+ÚxÎD€hw¾!Ô|1m*Ü¹}OJÓtİVñZØ()n¶š¥ bß¼—ÌM«³'èp~ x­€¥‡Åc¸‚Ãb8b‡á±ŒoK‰áJõ°˜zYş¼óOeŠË¥ˆÇa0ó©‡«^­ÕéÑ¯†ÃÕnô\SÂ¸Š’¡†âÖ­K8—U¥K„©Vy
+uªË+­MPu(ã=µUN¬)Ft©Ê¥:•`”Ÿæ×Šgß‰úƒLlô0†$‚Úİ‚œ»qñÇ\W˜Áû/ü`€ÎÏ¡é%ŞBÃ!Ó>îÀH“Ôg×§Zı’½øc­iÖº5Æ»â_ønm{BÒ¼I§éº÷ˆæƒSşÆÖí–÷J»¹†ÓK¿†wfñÜ,&å¥\$Ë›yÿ ‹4kŸ
+êK¦]jz¬òYYêŞøoX¶ÖôÉ ½‹Î„-İ¾<»„Rö—[İ[¿É4ÛAş‡áßühğ×Úf¸á<§ì0˜ckPÆâp•st±)bòÜâ³LjĞ„ZX¼»éİB²¡9(>5Â\ÇUÿ 5Äº×JX\.'GçFµL6;Ã”pªt§))<>6·5¹é{XEÉ~4ø»ö3øŸâ#·…4arã›¸<I¥Z]±çIc™LÛGİ*c9Lr~oñü×öŠiô}A¼ˆÛÿ Š´[yÀ<ÿ ÇÄr˜œ€pA<xÿ @z]µÎ»¬iz%ŒÖ0]ë›m>¥v¶|3_\%¼RŞŞ:º[[«È¾lî»"Q¹ğ °Õ¸ğ7Œcñü¿ßJ0øÒrçA¸Óîn!··µ¸±YçÔo®ïåe·‡GÓôëk­bïSf6é¤[K|$aC@ğ¯ÒÛÇlÊ–ğãicóŠY¥Ÿ5©í³š¸xã)eòk‰¡:Uªá\±!ağó¡GR8—.-á¼Ì_åµ1”s)Ï009=lûN¶a§ìrj8‡„¯˜Zy<ãSGl5O`ëÕ¥Z®”°ñ+Oó+¨Á9j¹Öc„|;æ8;wxãÃ‹‚x"ìª“ÎNzpx>uÿ Èı¯‹xa›$Ÿø®¼48è:ßúu8ëšş¦|¦xc[Öuø·ş]GĞuİfk½>ÒÛRÔuËÍ*Ö~ĞP½Òì†¥¬NêÖ—ŒÑ4PÉ·ÏÅèg~x£Á_|[áoüI¶ Ñíï×Œ</á«_êÚµÖ£ce…`Ö´nr#¹‚îKûm=âãìv³ÜKl±msû}*<wÍ²º˜üÂ*8<ë,²ºÍÿ µV SşÑÄÔÃPÌ±t0Ô/JQÂUÇfXc›¥õYÕ#ñ;ø7ávK˜ÓË³*¾'(WÇpşûV†_‚–PñüK:tòœ$qÕè`ëb«ÍÖ„±trü·3«€ıëÅÂ‹ÃâVù¼ÿ ‚]~ØSí	à¿Ãş+ß¨ã¿Û@íõÎ=k
+ëş	WûfJ„/‚|-Î6ÿ ÅÀğ¶89ï}€zú‚EY¾ğ7‹> AâY|)mgªÜx[J:İö‹üiâ+İ.&"öóEÑÙÚÄzj-üVO%Ü0˜[ºr0µm\Ğm4KÍnÕtÁâÕ4»™Õu£¥D²Õ/ô ¦çK²ÕÁ–}_ù7wöQF;U°¹²¹¹èÿ ‰ÉúCSÊ¡¾àU“ı^¨f%Ì¥”%xÓX•Å®›Æır2¤òåÿ 
+qIÖ_2úÙéÿ Ä¹x;[9—®,â)gĞÅK<Ÿëø5˜Æ¢À¬ÑÕ–ğê¬°_Q”qÌ¹²¤š£Îx§õ5üšËÿ ı´\cş
+wÈÿ ……áNr1Şÿ ¯×ŒÕßğIÛg¼)ÏıTO	`öï¨útéøWõ‘öÑŒn=sœÿ è=(ûhãæ<{Ÿ¯Ë^L~Ş6Å·—ÃÅÍkÿ Âp×É¬½´=·ô=ğõó_4ãyİÛ1ËW}¿áÛ}µ?‘ë¿ø$í¿3nÀ~$•É?|#œŒã“¨çéß#=êªÿ Á ?nL€Şğ™
+~#xC¹ïÿ  89>¾¢¿®¯¶ïü{ÿ ‰£í¸ş3ùüÖ«ş'ßÆä’Y/‡Z^ßğœivßıÛk§e¡_ñ'şòòÿ jqƒ²²o2Ë®½ö.Z3‹ûyşğüÏøQöóıñùŸğ¯>şÔÿ i¿ï¯şµ*ê»yù•aù2‘úWò—öSşEÿ €£û©äÒÿ Ÿjÿ á·ãËú3¿şĞ?Şÿ Ç‡øÒhŸï¦FŸùş\:ë’/Fñ†İº½	©Gˆ®C§6¶gß½±«YM>¼ËÒŠû–&2Éñ?cJ_â¨ãùaäzï‚5
+Zø¯F¾ñÍ½Æ¥ám2iµMOEµPòx…ôëi®ôßNşbm;]Ôâ³Óu›Ì»ÛhóßËR\c?Jé?´OÃŠú|{¢hŸEÎ³¬k:OˆõÜxoÆvy¨øc\Ñ´-ZH-Ö=Fàé÷0EwßØ³If“Éo„‰®—¡¶ültóüí?ş›Î9µã¦tı4ÿ ;:û<“ˆ³lƒ/†W—Ï¯¯ŒÃ×Èp8Å™¼Ç	ıŸ‰§­ˆœñ2¤òç,¾œ0˜Œ½ÓÂÎqS•I{UùÇx9”ñ^gS9Í°¹”³8árÌ.]ŠÁñNi–¬•e9‚Î0uò¼6OJÎ!K4­W0Âfª¶.…*K†ŸĞšwÄÓàwŠ>Ë%Ññ¯ñKÂ/´tMÑô/x¯H½ónLÁãº7zÕ©‚ÜBÂH|×i¦×ô¯~ĞºO‡¼;àO	êñ¯‚£øuªø?âOõ[«3OÖ/&øãèÚ†•¨ÙNnì5-"-MË[²÷¶òû$a†FøÑ|W{ÌqÎtí3ãşœ½qW#ñmöæ²ÎG#KÒÏ~ßèGĞrqÆ+—ıdÎ2çF®°•pùNO’S©¢[åù&30Ça(Ö§ˆÆWÃâa^¦c‹¡¥ŠÃâ0øì,Ö¾Ás>|ÏÁÌŸ3§Š§˜dïGŸgÜIZLÿ G—6â,·+Ë1˜Œ=\6W†Å`å…¥“àq9U\+‹ËqôåŒÃc=£å_Rø‡ã,ø_/‡59?ËñE|Skagl–ŞÑü/màÛoéº>‘LÆÓJĞXiúlQàÓ­ ıë0$ùZ<ï~aÜznÓ×Šó{ïˆ±h±ÙÍªê:>Ÿíı¦—h÷z~Üê:„¢+(KY2âêb†YØ€Å]‡â…™Ö'ğÿ ö¾†5«k5ÔfÒŞÇEKÈìIí¾CY†6ÀtˆÇÁ³ŸÉxÎ7‰ñÍ3LFeŒÄÒË¨àåŒYMj“¯‡Ë%Zœ±8šß]¨«WLÆ_\Ä¹(ûZÔTãCš•7×“pGú­‚ÄeÙ&MƒÂàkf8üÑa£™ËØaªã~¦ëQÂÂ<cCB¨Ñ÷Õ
+|Î¥yÊ¬ªOê_‡ßt_ø'â÷‡õºşÑñ¿…ô#D6ğ¤½;Åú>·ro$3!·‹ìVˆRólŒ¨Yw>|JÒ¾øÂ÷Äz°iboxãE²l-uXŸU×|1¨éZR^XŞ1µ¹°7×0‹ä¸I¡{c ’	“1·ÈMñ}Ãßğ’h0ŸXV#ğ¦‰ j—7mö‘m+Ù™ÒÖhm¤ÜÓÈ·"5Hä*]—i¡áÚ¼Aâeğ¤~ñ&—ªG	¸½şÕğ¿„à‡LƒÈ3G. mï¯'¶YÇ—¸6ÌòI<(¼Áğu±ş]‹á¼ï/©Z#Ãœ>>WRy&O	csœÇW0ÃWâ6&­J¾"Åºu%…¢ ş©IF­J>Î¯Íæ>WÍğ<a†G,FŠçKÄ–rÒ§_“à ÿ ²c<-„Ê0
+¿îëEÊ­fêBXˆÂ¢ßğ»<5©ü,Ö<=k¢ø{á÷®-“ªjğ/…í,~"xnæîÖöM+Yº´µ·Ô|7yiucm(—FuÓu5EŠîÒ"Åâoü9à?Â1xR_jZ¶­oâÏk3kZ¯†æ·Õ´É/ìü?¢i¤\y—Z^‘§ÎúƒKu´É­jwrCkmníñZ|zğ„R4ã	,Ñ;Ç$m‚$™Jı†FR¬1Áà€+»¶ø‘³Û[G©èsy§VÖ§èdÚb”ş%ûZØŒq° F=â/xÖºY/_û^Ÿ
+>¡œcø	‹Ä<†úY1SÂfXŠ™1yŠ§„ÃçY–"¡ˆÌ°”(UÆÉãêb3LgÄUğ…ÃÖÂSÈëáòÜNy.$x\E™á(K1
+XZXªY],Î®•±Y~¦mˆÃ`*Ö”h8àc‡Áaş¼ø‡ñKÁ>5ñ¿‚ş$é–z¹q.“uñFÅ˜Õ´[øû_H¾y„—­¬iĞÅ=äWC"_Æï,“É<²›ÖŸü5Æˆ¾=ß¨.‰â‹Šé;mÓíË'‹´mrÃG7€!Ûq¨[ı©–g0&÷_0¨ãÈ>,é¯¦O­.»áæÒ-fò'ÔÖÇCk›ÎH¡fĞ³8ÁG`]ÑËÙÓ>/é:½ÊØé^ ğåıãÆò¥µ½–ƒ,ïc22F,K8E9bªØ\œ’?0Í8ó‰ªç •Oeÿ ]¨ø˜b0ü°Øz¼[‡áobóeí-	f9vkÌ³L5(`iUÎñµsHSÁ*ÒÂË†>{,½eÔò¼\°Xl†¿Sö¹î.»Âdµ3œ>{OõŠ™ê/©VÃap¸J¸š•*ÒË)QÂÔu”a‰>ìø}ûDèâÆ‘s¯kğçˆ4¯xïO(|Ehš¦ƒ¨hñh^"ß4C^Ñ•o¬î.d{ı5ÇÊÓ@ì±ø§…<y£h~,øbğÜSÆV·ÑŒ0«ÛĞ¼I«|næ2£B>Ê¤@V9<ÉG–Bº¼ÿ âÄv:¥âsa

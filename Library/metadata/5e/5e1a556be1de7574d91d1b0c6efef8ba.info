@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: astragalus -->
+  <Plant_Astragalus.label>astràgal</Plant_Astragalus.label>
+  <!-- EN: A small perennial wildflower that grows in alpine climates. -->
+  <Plant_Astragalus.description>Una petita flor salvatge perenne, que creix en climes alpins.</Plant_Astragalus.description>
+  
+  <!-- EN: berry bush -->
+  <Plant_Berry.label>morera</Plant_Berry.label>
+  <!-- EN: A bushy wild plant which yields delicious berries. Berries can be cooked, but they're also good to eat even when raw. -->
+  <Plant_Berry.description>Una planta espessa que produeix unes mores vermelles boníssimes.</Plant_Berry.description>
+  
+  <!-- EN: dandelions -->
+  <Plant_Dandelion.label>dent de lle

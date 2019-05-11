@@ -1,0 +1,77 @@
+      [SerializeField]
+        private TouchScreenKeyboardType m_KeyboardType = TouchScreenKeyboardType.Default;
+
+        [SerializeField]
+        private LineType m_LineType = LineType.SingleLine;
+
+        /// <summary>
+        /// Should hide mobile input.
+        /// </summary>
+        [SerializeField]
+        private bool m_HideMobileInput = false;
+
+        /// <summary>
+        /// What kind of validation to use with the input field's data.
+        /// </summary>
+        [SerializeField]
+        private CharacterValidation m_CharacterValidation = CharacterValidation.None;
+
+        /// <summary>
+        /// The Regex expression used for validating the text input.
+        /// </summary>
+        [SerializeField]
+        private string m_RegexValue = string.Empty;
+
+        /// <summary>
+        /// The point sized used by the placeholder and input text object.
+        /// </summary>
+        [SerializeField]
+        private float m_GlobalPointSize = 14;
+
+        /// <summary>
+        /// Maximum number of characters allowed before input no longer works.
+        /// </summary>
+        [SerializeField]
+        private int m_CharacterLimit = 0;
+
+        /// <summary>
+        /// Event delegates triggered when the input field submits its data.
+        /// </summary>
+        [SerializeField]
+        private SubmitEvent m_OnEndEdit = new SubmitEvent();
+
+        /// <summary>
+        /// Event delegates triggered when the input field submits its data.
+        /// </summary>
+        [SerializeField]
+        private SubmitEvent m_OnSubmit = new SubmitEvent();
+
+        /// <summary>
+        /// Event delegates triggered when the input field is focused.
+        /// </summary>
+        [SerializeField]
+        private SelectionEvent m_OnSelect = new SelectionEvent();
+
+        /// <summary>
+        /// Event delegates triggered when the input field focus is lost.
+        /// </summary>
+        [SerializeField]
+        private SelectionEvent m_OnDeselect = new SelectionEvent();
+
+        /// <summary>
+        /// Event delegates triggered when the text is selected / highlighted.
+        /// </summary>
+        [SerializeField]
+        private TextSelectionEvent m_OnTextSelection = new TextSelectionEvent();
+
+        /// <summary>
+        /// Event delegates triggered when text is no longer select / highlighted.
+        /// </summary>
+        [SerializeField]
+        private TextSelectionEvent m_OnEndTextSelection = new TextSelectionEvent();
+
+        /// <summary>
+        /// Event delegates triggered when the input field changes its data.
+        /// </summary>
+        [SerializeField]
+        private OnChangeEvent m_OnVal

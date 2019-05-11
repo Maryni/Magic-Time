@@ -1,0 +1,10 @@
+<p1>text 1</p1>
+<a>text 2
+<a>text 3
+<a>text 4
+<q>text 5
+<q>text 6
+<q>text 7
+<q>text 8
+<q +0.5f>text 9
+text 10

@@ -1,0 +1,60 @@
+param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&amp;amp;lt;br&amp;amp;gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The edited string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.TextArea(System.String,System.Int32,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a multi-line text field where the user can edit a string.</para>
+      </summary>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textField style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&amp;amp;lt;br&amp;amp;gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The edited string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.TextField(System.String,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single-line text field where the user can edit a string.</para>
+      </summary>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textArea style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The edited string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.TextField(System.String,System.Int32,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single-line text field where the user can edit a string.</para>
+      </summary>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textArea style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>The edited string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.GUILayout.TextField(System.String,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a single-line text field where the user can edit a string.</para>
+      </summary>
+      <param name="text">Text to edit. The return value of this function should be assigned back to the string as shown in the example.</param>
+      <param name="maxLength">The maximum length of the string. If left out, the user can type for ever and ever.</param>
+      <param name="style">The style to use. If left out, the textArea style from the current GUISkin is used.</param>
+      <param name="options">An optional list of layout options that specify extra layouting properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,

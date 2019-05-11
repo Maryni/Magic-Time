@@ -1,0 +1,26 @@
+
+    u_xlat6.y = u_xlat4.z;
+    u_xlat6.z = u_xlat5.z;
+    u_xlat18.z = dot(u_xlat6, u_xlat9);
+    u_xlat3.xyz = u_xlat2.www * u_xlat18.xyz + u_xlat0.xyz;
+    u_xlat1.z = u_xlat0.w;
+    u_xlat0.x = dot(u_xlat8.yzx, u_xlat1.xyz);
+    u_xlat0.y = dot(u_xlat10.yzx, u_xlat1.xyz);
+    u_xlat0.z = dot(u_xlat7.yzx, u_xlat1.xyz);
+    u_xlat4.x = dot(u_xlat12.yzx, u_xlat1.xyz);
+    u_xlat4.y = dot(u_xlat14.yzx, u_xlat1.xyz);
+    u_xlat4.z = dot(u_xlat11.yzx, u_xlat1.xyz);
+    u_xlat4.xyz = u_xlat2.yyy * u_xlat4.xyz;
+    u_xlat0.xyz = u_xlat2.xxx * u_xlat0.xyz + u_xlat4.xyz;
+    u_xlat4.x = dot(u_xlat15.yzx, u_xlat1.xyz);
+    u_xlat4.y = dot(u_xlat16.yzx, u_xlat1.xyz);
+    u_xlat4.z = dot(u_xlat13.yzx, u_xlat1.xyz);
+    u_xlat0.xyz = u_xlat2.zzz * u_xlat4.xyz + u_xlat0.xyz;
+    u_xlat2.x = dot(u_xlat17.yzx, u_xlat1.xyz);
+    u_xlat2.y = dot(u_xlat19.yzx, u_xlat1.xyz);
+    u_xlat2.z = dot(u_xlat6.yzx, u_xlat1.xyz);
+    u_xlat0.xyz = u_xlat2.www * u_xlat2.xyz + u_xlat0.xyz;
+    u_xlat3.w = u_xlat0.x;
+    g_MeshVertsOut_buf[gl_GlobalInvocationID.x].value[(0 >> 2)] = floatBitsToUint(u_xlat3).x;
+    g_MeshVertsOut_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 1] = floatBitsToUint(u_xlat3).y;
+    g_MeshVertsOut_buf[gl_GlobalInvocationID.x].value[(0 >> 2

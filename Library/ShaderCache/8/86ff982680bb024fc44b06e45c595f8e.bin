@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: hay -->
+  <Hay.label>farratge</Hay.label>
+  <!-- EN: Nutrient-rich grasses and shoots, harvested and compacted for storage. Hay is good animal feed, but inedible for humans. -->
+  <Hay.description>Brots i herbes molt nutritives, collides i compactades per emmagatzemar-les. El farratge és un bon aliment pels animals, però les persones no en mengen.</Hay.description>
+  
+  <!-- EN: psychoid leaves -->
+  <PsychoidLeaves.label>fulles psicòides</PsychoidLeaves.label>
+  <!-- EN: Raw cut leaves of a psychoid plant. Can be refined into various form of the stimulant drug psychite. -->
+  <PsychoidLeaves.des
